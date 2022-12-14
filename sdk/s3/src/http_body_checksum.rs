@@ -205,6 +205,7 @@ mod tests {
     use aws_smithy_checksums::ChecksumAlgorithm;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::byte_stream::ByteStream;
+    use aws_smithy_types::error::display::DisplayErrorContext;
     use bytes::{Bytes, BytesMut};
     use http_body::Body;
     use std::sync::Once;
@@ -336,7 +337,7 @@ mod tests {
 
         let mut validated_body = Vec::new();
         if let Err(e) = tokio::io::copy(&mut body.into_async_read(), &mut validated_body).await {
-            tracing::error!("{}", e);
+            tracing::error!("{}", DisplayErrorContext(&e));
             panic!("checksum validation has failed");
         };
         let body = std::str::from_utf8(&validated_body).unwrap();

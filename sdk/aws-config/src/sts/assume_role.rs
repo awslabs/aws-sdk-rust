@@ -263,7 +263,7 @@ impl Inner {
                     }
                     _ => {}
                 }
-                tracing::warn!(error = ?err.message(), "sts refused to grant assume role");
+                tracing::warn!(error = ?err.message(), "STS refused to grant assume role");
                 Err(CredentialsError::provider_error(SdkError::ServiceError {
                     err,
                     raw,

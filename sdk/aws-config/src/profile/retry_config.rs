@@ -5,13 +5,12 @@
 
 //! Load retry configuration properties from an AWS profile
 
-use std::str::FromStr;
-
+use crate::profile::profile_file::ProfileFiles;
+use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 use aws_types::os_shim_internal::{Env, Fs};
-
-use super::profile_file::ProfileFiles;
-use crate::provider_config::ProviderConfig;
+use std::str::FromStr;
 
 /// Load retry configuration properties from a profile file
 ///
@@ -106,7 +105,7 @@ impl ProfileFileRetryConfigProvider {
         let profile = match super::parser::load(&self.fs, &self.env, &self.profile_files).await {
             Ok(profile) => profile,
             Err(err) => {
-                tracing::warn!(err = %err, "failed to parse profile");
+                tracing::warn!(err = %DisplayErrorContext(&err), "failed to parse profile");
                 // return an empty builder
                 return Ok(RetryConfigBuilder::new());
             }

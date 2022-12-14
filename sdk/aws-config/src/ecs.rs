@@ -53,6 +53,7 @@ use std::net::IpAddr;
 
 use aws_smithy_client::erase::boxclone::BoxCloneService;
 use aws_smithy_http::endpoint::Endpoint;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use http::uri::{InvalidUri, Scheme};
@@ -182,7 +183,7 @@ impl Provider {
         let mut relative_uri = match relative_uri.parse::<Uri>() {
             Ok(uri) => uri,
             Err(invalid_uri) => {
-                tracing::warn!(uri = ?invalid_uri, "invalid URI loaded from environment");
+                tracing::warn!(uri = %DisplayErrorContext(&invalid_uri), "invalid URI loaded from environment");
                 return Err(EcsConfigurationErr::InvalidRelativeUri {
                     err: invalid_uri,
                     uri: relative_uri,

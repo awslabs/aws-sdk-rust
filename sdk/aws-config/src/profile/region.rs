@@ -6,12 +6,12 @@
 //! Load a region from an AWS profile
 
 use crate::meta::region::{future, ProvideRegion};
+use crate::profile::profile_file::ProfileFiles;
+use crate::profile::ProfileSet;
 use crate::provider_config::ProviderConfig;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
-
-use super::profile_file::ProfileFiles;
-use super::ProfileSet;
 
 /// Load a region from a profile file
 ///
@@ -105,7 +105,9 @@ impl ProfileFileRegionProvider {
     async fn region(&self) -> Option<Region> {
         let profile_set = super::parser::load(&self.fs, &self.env, &self.profile_files)
             .await
-            .map_err(|err| tracing::warn!(err = %err, "failed to parse profile"))
+            .map_err(
+                |err| tracing::warn!(err = %DisplayErrorContext(&err), "failed to parse profile"),
+            )
             .ok()?;
 
         resolve_profile_chain_for_region(&profile_set, self.profile_override.as_deref())

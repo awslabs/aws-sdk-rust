@@ -27,6 +27,7 @@ use aws_smithy_http::retry::ClassifyRetry;
 use aws_smithy_http_tower::map_request::{
     AsyncMapRequestLayer, AsyncMapRequestService, MapRequestLayer, MapRequestService,
 };
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_types::os_shim_internal::{Env, Fs};
 
@@ -163,7 +164,7 @@ impl LazyClient {
             .get_or_init(|| async {
                 let client = builder.clone().build().await;
                 if let Err(err) = &client {
-                    tracing::warn!(err = % err, "failed to create IMDS client")
+                    tracing::warn!(err = %DisplayErrorContext(err), "failed to create IMDS client")
                 }
                 client
             })

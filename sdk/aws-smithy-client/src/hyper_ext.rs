@@ -86,6 +86,7 @@ use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
+use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use http::Uri;
 use hyper::client::connect::{Connected, Connection};
@@ -177,7 +178,7 @@ fn to_connector_error(err: hyper::Error) -> ConnectorError {
     else if err.is_incomplete_message() {
         ConnectorError::other(err.into(), Some(ErrorKind::TransientError))
     } else {
-        tracing::warn!(err = ?err, "unrecognized error from Hyper. If this error should be retried, please file an issue.");
+        tracing::warn!(err = %DisplayErrorContext(&err), "unrecognized error from Hyper. If this error should be retried, please file an issue.");
         ConnectorError::other(err.into(), None)
     }
 }
