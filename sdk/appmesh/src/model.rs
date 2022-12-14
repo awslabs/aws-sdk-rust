@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a service mesh returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshRef {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
@@ -54,19 +54,6 @@ impl MeshRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for MeshRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`MeshRef`](crate::model::MeshRef).
@@ -186,7 +173,7 @@ impl MeshRef {
 
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
@@ -217,16 +204,6 @@ impl MeshData {
     /// <p>The status of the service mesh.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::MeshStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for MeshData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`MeshData`](crate::model::MeshData).
@@ -304,7 +281,7 @@ impl MeshData {
 
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshStatus {
     /// <p>The current mesh status.</p>
     #[doc(hidden)]
@@ -314,13 +291,6 @@ impl MeshStatus {
     /// <p>The current mesh status.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::MeshStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for MeshStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`MeshStatus`](crate::model::MeshStatus).
@@ -457,7 +427,7 @@ impl AsRef<str> for MeshStatusCode {
 
 /// <p>An object that represents metadata for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
@@ -509,19 +479,6 @@ impl ResourceMetadata {
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceMetadata");
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("uid", &self.uid);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.finish()
     }
 }
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
@@ -641,7 +598,7 @@ impl ResourceMetadata {
 
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     #[doc(hidden)]
@@ -658,14 +615,6 @@ impl MeshSpec {
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     pub fn service_discovery(&self) -> std::option::Option<&crate::model::MeshServiceDiscovery> {
         self.service_discovery.as_ref()
-    }
-}
-impl std::fmt::Debug for MeshSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshSpec");
-        formatter.field("egress_filter", &self.egress_filter);
-        formatter.field("service_discovery", &self.service_discovery);
-        formatter.finish()
     }
 }
 /// See [`MeshSpec`](crate::model::MeshSpec).
@@ -722,7 +671,7 @@ impl MeshSpec {
 
 /// <p>An object that represents the service discovery information for a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     #[doc(hidden)]
@@ -732,13 +681,6 @@ impl MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
         self.ip_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for MeshServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MeshServiceDiscovery");
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
     }
 }
 /// See [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
@@ -880,7 +822,7 @@ impl AsRef<str> for IpPreference {
 
 /// <p>An object that represents the egress filter rules for a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     #[doc(hidden)]
@@ -890,13 +832,6 @@ impl EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EgressFilterType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for EgressFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressFilter");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`EgressFilter`](crate::model::EgressFilter).
@@ -1028,7 +963,7 @@ impl AsRef<str> for EgressFilterType {
 
 /// <p>Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagRef {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
@@ -1045,14 +980,6 @@ impl TagRef {
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for TagRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagRef");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`TagRef`](crate::model::TagRef).
@@ -1103,7 +1030,7 @@ impl TagRef {
 
 /// <p>An object that represents a virtual service returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
@@ -1162,20 +1089,6 @@ impl VirtualServiceRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualServiceRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`VirtualServiceRef`](crate::model::VirtualServiceRef).
@@ -1310,7 +1223,7 @@ impl VirtualServiceRef {
 
 /// <p>An object that represents a virtual service returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
@@ -1348,17 +1261,6 @@ impl VirtualServiceData {
     /// <p>The current status of the virtual service.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualServiceData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualServiceData`](crate::model::VirtualServiceData).
@@ -1457,7 +1359,7 @@ impl VirtualServiceData {
 
 /// <p>An object that represents the status of a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
     #[doc(hidden)]
@@ -1467,13 +1369,6 @@ impl VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualServiceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
@@ -1612,7 +1507,7 @@ impl AsRef<str> for VirtualServiceStatusCode {
 
 /// <p>An object that represents the specification of a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     #[doc(hidden)]
@@ -1622,13 +1517,6 @@ impl VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     pub fn provider(&self) -> std::option::Option<&crate::model::VirtualServiceProvider> {
         self.provider.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualServiceSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceSpec");
-        formatter.field("provider", &self.provider);
-        formatter.finish()
     }
 }
 /// See [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
@@ -1725,7 +1613,7 @@ impl VirtualServiceProvider {
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     #[doc(hidden)]
@@ -1735,13 +1623,6 @@ impl VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterServiceProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterServiceProvider");
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
@@ -1783,7 +1664,7 @@ impl VirtualRouterServiceProvider {
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     #[doc(hidden)]
@@ -1793,13 +1674,6 @@ impl VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     pub fn virtual_node_name(&self) -> std::option::Option<&str> {
         self.virtual_node_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualNodeServiceProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeServiceProvider");
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
@@ -1841,7 +1715,7 @@ impl VirtualNodeServiceProvider {
 
 /// <p>An object that represents a virtual router returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterRef {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
@@ -1900,20 +1774,6 @@ impl VirtualRouterRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterRef`](crate::model::VirtualRouterRef).
@@ -2048,7 +1908,7 @@ impl VirtualRouterRef {
 
 /// <p>An object that represents a virtual router returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
@@ -2086,17 +1946,6 @@ impl VirtualRouterData {
     /// <p>The current status of the virtual router.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterData`](crate::model::VirtualRouterData).
@@ -2195,7 +2044,7 @@ impl VirtualRouterData {
 
 /// <p>An object that represents the status of a virtual router. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
     #[doc(hidden)]
@@ -2205,13 +2054,6 @@ impl VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
@@ -2350,7 +2192,7 @@ impl AsRef<str> for VirtualRouterStatusCode {
 
 /// <p>An object that represents the specification of a virtual router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     #[doc(hidden)]
@@ -2360,13 +2202,6 @@ impl VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualRouterListener]> {
         self.listeners.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterSpec");
-        formatter.field("listeners", &self.listeners);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
@@ -2415,7 +2250,7 @@ impl VirtualRouterSpec {
 
 /// <p>An object that represents a virtual router listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
     #[doc(hidden)]
@@ -2425,13 +2260,6 @@ impl VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
     pub fn port_mapping(&self) -> std::option::Option<&crate::model::PortMapping> {
         self.port_mapping.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualRouterListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualRouterListener");
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.finish()
     }
 }
 /// See [`VirtualRouterListener`](crate::model::VirtualRouterListener).
@@ -2473,7 +2301,7 @@ impl VirtualRouterListener {
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
     #[doc(hidden)]
@@ -2490,14 +2318,6 @@ impl PortMapping {
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for PortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PortMapping");
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
@@ -2651,7 +2471,7 @@ impl AsRef<str> for PortProtocol {
 
 /// <p>An object that represents a route returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteRef {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
@@ -2717,21 +2537,6 @@ impl RouteRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("route_name", &self.route_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`RouteRef`](crate::model::RouteRef).
@@ -2878,7 +2683,7 @@ impl RouteRef {
 
 /// <p>An object that represents a route returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteData {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
@@ -2923,18 +2728,6 @@ impl RouteData {
     /// <p>The status of the route.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RouteStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_router_name", &self.virtual_router_name);
-        formatter.field("route_name", &self.route_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RouteData`](crate::model::RouteData).
@@ -3039,7 +2832,7 @@ impl RouteData {
 
 /// <p>An object that represents the current status of a route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteStatus {
     /// <p>The current status for the route.</p>
     #[doc(hidden)]
@@ -3049,13 +2842,6 @@ impl RouteStatus {
     /// <p>The current status for the route.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::RouteStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`RouteStatus`](crate::model::RouteStatus).
@@ -3192,7 +2978,7 @@ impl AsRef<str> for RouteStatusCode {
 
 /// <p>An object that represents a route specification. Specify one route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RouteSpec {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     #[doc(hidden)]
@@ -3230,17 +3016,6 @@ impl RouteSpec {
     /// <p>An object that represents the specification of a gRPC route.</p>
     pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcRoute> {
         self.grpc_route.as_ref()
-    }
-}
-impl std::fmt::Debug for RouteSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RouteSpec");
-        formatter.field("priority", &self.priority);
-        formatter.field("http_route", &self.http_route);
-        formatter.field("tcp_route", &self.tcp_route);
-        formatter.field("http2_route", &self.http2_route);
-        formatter.field("grpc_route", &self.grpc_route);
-        formatter.finish()
     }
 }
 /// See [`RouteSpec`](crate::model::RouteSpec).
@@ -3336,7 +3111,7 @@ impl RouteSpec {
 
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     #[doc(hidden)]
@@ -3367,16 +3142,6 @@ impl GrpcRoute {
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(&self) -> std::option::Option<&crate::model::GrpcTimeout> {
         self.timeout.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRoute");
-        formatter.field("action", &self.action);
-        formatter.field("r#match", &self.r#match);
-        formatter.field("retry_policy", &self.retry_policy);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
     }
 }
 /// See [`GrpcRoute`](crate::model::GrpcRoute).
@@ -3463,7 +3228,7 @@ impl GrpcRoute {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
@@ -3480,14 +3245,6 @@ impl GrpcTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
         self.idle.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcTimeout");
-        formatter.field("per_request", &self.per_request);
-        formatter.field("idle", &self.idle);
-        formatter.finish()
     }
 }
 /// See [`GrpcTimeout`](crate::model::GrpcTimeout).
@@ -3541,7 +3298,7 @@ impl GrpcTimeout {
 
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Duration {
     /// <p>A number of time units.</p>
     #[doc(hidden)]
@@ -3558,14 +3315,6 @@ impl Duration {
     /// <p>A unit of time.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::DurationUnit> {
         self.unit.as_ref()
-    }
-}
-impl std::fmt::Debug for Duration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Duration");
-        formatter.field("value", &self.value);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`Duration`](crate::model::Duration).
@@ -3706,7 +3455,7 @@ impl AsRef<str> for DurationUnit {
 
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
@@ -3756,17 +3505,6 @@ impl GrpcRetryPolicy {
     /// <p>Specify at least one of the valid values.</p>
     pub fn grpc_retry_events(&self) -> std::option::Option<&[crate::model::GrpcRetryPolicyEvent]> {
         self.grpc_retry_events.as_deref()
-    }
-}
-impl std::fmt::Debug for GrpcRetryPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRetryPolicy");
-        formatter.field("per_retry_timeout", &self.per_retry_timeout);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("http_retry_events", &self.http_retry_events);
-        formatter.field("tcp_retry_events", &self.tcp_retry_events);
-        formatter.field("grpc_retry_events", &self.grpc_retry_events);
-        formatter.finish()
     }
 }
 /// See [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
@@ -4097,7 +3835,7 @@ impl AsRef<str> for TcpRetryPolicyEvent {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
@@ -4128,16 +3866,6 @@ impl GrpcRouteMatch {
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for GrpcRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteMatch");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("method_name", &self.method_name);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
@@ -4221,7 +3949,7 @@ impl GrpcRouteMatch {
 
 /// <p>An object that represents the match metadata for the route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteMetadata {
     /// <p>The name of the route.</p>
     #[doc(hidden)]
@@ -4245,15 +3973,6 @@ impl GrpcRouteMetadata {
     /// <p>An object that represents the data to match from the request.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcRouteMetadataMatchMethod> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcRouteMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
@@ -4415,7 +4134,7 @@ impl GrpcRouteMetadataMatchMethod {
 
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchRange {
     /// <p>The start of the range.</p>
     #[doc(hidden)]
@@ -4432,14 +4151,6 @@ impl MatchRange {
     /// <p>The end of the range.</p>
     pub fn end(&self) -> std::option::Option<i64> {
         self.end
-    }
-}
-impl std::fmt::Debug for MatchRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchRange");
-        formatter.field("start", &self.start);
-        formatter.field("end", &self.end);
-        formatter.finish()
     }
 }
 /// See [`MatchRange`](crate::model::MatchRange).
@@ -4490,7 +4201,7 @@ impl MatchRange {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -4500,13 +4211,6 @@ impl GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for GrpcRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
     }
 }
 /// See [`GrpcRouteAction`](crate::model::GrpcRouteAction).
@@ -4555,7 +4259,7 @@ impl GrpcRouteAction {
 
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
     #[doc(hidden)]
@@ -4579,15 +4283,6 @@ impl WeightedTarget {
     /// <p>The targeted port of the weighted object.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for WeightedTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WeightedTarget");
-        formatter.field("virtual_node", &self.virtual_node);
-        formatter.field("weight", &self.weight);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`WeightedTarget`](crate::model::WeightedTarget).
@@ -4650,7 +4345,7 @@ impl WeightedTarget {
 
 /// <p>An object that represents an HTTP or HTTP/2 route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -4681,16 +4376,6 @@ impl HttpRoute {
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(&self) -> std::option::Option<&crate::model::HttpTimeout> {
         self.timeout.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.field("retry_policy", &self.retry_policy);
-        formatter.field("timeout", &self.timeout);
-        formatter.finish()
     }
 }
 /// See [`HttpRoute`](crate::model::HttpRoute).
@@ -4777,7 +4462,7 @@ impl HttpRoute {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
@@ -4794,14 +4479,6 @@ impl HttpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
         self.idle.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpTimeout");
-        formatter.field("per_request", &self.per_request);
-        formatter.field("idle", &self.idle);
-        formatter.finish()
     }
 }
 /// See [`HttpTimeout`](crate::model::HttpTimeout).
@@ -4855,7 +4532,7 @@ impl HttpTimeout {
 
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
@@ -4898,16 +4575,6 @@ impl HttpRetryPolicy {
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
     pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::model::TcpRetryPolicyEvent]> {
         self.tcp_retry_events.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpRetryPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRetryPolicy");
-        formatter.field("per_retry_timeout", &self.per_retry_timeout);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("http_retry_events", &self.http_retry_events);
-        formatter.field("tcp_retry_events", &self.tcp_retry_events);
-        formatter.finish()
     }
 }
 /// See [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
@@ -5016,7 +4683,7 @@ impl HttpRetryPolicy {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -5026,13 +4693,6 @@ impl HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
     }
 }
 /// See [`HttpRouteAction`](crate::model::HttpRouteAction).
@@ -5081,7 +4741,7 @@ impl HttpRouteAction {
 
 /// <p>An object that represents the requirements for a route to match HTTP requests for a virtual router.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
@@ -5133,19 +4793,6 @@ impl HttpRouteMatch {
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for HttpRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteMatch");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("method", &self.method);
-        formatter.field("scheme", &self.scheme);
-        formatter.field("headers", &self.headers);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`HttpRouteMatch`](crate::model::HttpRouteMatch).
@@ -5275,7 +4922,7 @@ impl HttpRouteMatch {
 
 /// <p>An object that represents the HTTP header in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
     #[doc(hidden)]
@@ -5299,15 +4946,6 @@ impl HttpRouteHeader {
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpRouteHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpRouteHeader");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`HttpRouteHeader`](crate::model::HttpRouteHeader).
@@ -5686,7 +5324,7 @@ impl AsRef<str> for HttpMethod {
 
 /// <p>An object that represents the query parameter in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
     #[doc(hidden)]
@@ -5703,14 +5341,6 @@ impl HttpQueryParameter {
     /// <p>The query parameter to match on.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::QueryParameterMatch> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpQueryParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpQueryParameter");
-        formatter.field("name", &self.name);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`HttpQueryParameter`](crate::model::HttpQueryParameter).
@@ -5764,7 +5394,7 @@ impl HttpQueryParameter {
 
 /// <p>An object representing the query parameter to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
     #[doc(hidden)]
@@ -5774,13 +5404,6 @@ impl QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
     pub fn exact(&self) -> std::option::Option<&str> {
         self.exact.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryParameterMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryParameterMatch");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
     }
 }
 /// See [`QueryParameterMatch`](crate::model::QueryParameterMatch).
@@ -5817,7 +5440,7 @@ impl QueryParameterMatch {
 
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpPathMatch {
     /// <p>The exact path to match on.</p>
     #[doc(hidden)]
@@ -5834,14 +5457,6 @@ impl HttpPathMatch {
     /// <p>The regex used to match the path.</p>
     pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpPathMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpPathMatch");
-        formatter.field("exact", &self.exact);
-        formatter.field("regex", &self.regex);
-        formatter.finish()
     }
 }
 /// See [`HttpPathMatch`](crate::model::HttpPathMatch).
@@ -5892,7 +5507,7 @@ impl HttpPathMatch {
 
 /// <p>An object that represents a TCP route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRoute {
     /// <p>The action to take if a match is determined.</p>
     #[doc(hidden)]
@@ -5916,15 +5531,6 @@ impl TcpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::TcpRouteMatch> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for TcpRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRoute");
-        formatter.field("action", &self.action);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`TcpRoute`](crate::model::TcpRoute).
@@ -5993,7 +5599,7 @@ impl TcpRoute {
 
 /// <p>An object representing the TCP route to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRouteMatch {
     /// <p>The port number to match on.</p>
     #[doc(hidden)]
@@ -6003,13 +5609,6 @@ impl TcpRouteMatch {
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for TcpRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRouteMatch");
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`TcpRouteMatch`](crate::model::TcpRouteMatch).
@@ -6046,7 +5645,7 @@ impl TcpRouteMatch {
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     #[doc(hidden)]
@@ -6056,13 +5655,6 @@ impl TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
         self.idle.as_ref()
-    }
-}
-impl std::fmt::Debug for TcpTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpTimeout");
-        formatter.field("idle", &self.idle);
-        formatter.finish()
     }
 }
 /// See [`TcpTimeout`](crate::model::TcpTimeout).
@@ -6099,7 +5691,7 @@ impl TcpTimeout {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
@@ -6109,13 +5701,6 @@ impl TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
-    }
-}
-impl std::fmt::Debug for TcpRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TcpRouteAction");
-        formatter.field("weighted_targets", &self.weighted_targets);
-        formatter.finish()
     }
 }
 /// See [`TcpRouteAction`](crate::model::TcpRouteAction).
@@ -6164,7 +5749,7 @@ impl TcpRouteAction {
 
 /// <p>An object that represents a virtual node returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeRef {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
@@ -6223,20 +5808,6 @@ impl VirtualNodeRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualNodeRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeRef`](crate::model::VirtualNodeRef).
@@ -6371,7 +5942,7 @@ impl VirtualNodeRef {
 
 /// <p>An object that represents a virtual node returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeData {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
@@ -6409,17 +5980,6 @@ impl VirtualNodeData {
     /// <p>The current status for the virtual node.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualNodeData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_node_name", &self.virtual_node_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeData`](crate::model::VirtualNodeData).
@@ -6518,7 +6078,7 @@ impl VirtualNodeData {
 
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
     #[doc(hidden)]
@@ -6528,13 +6088,6 @@ impl VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualNodeStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
@@ -6673,7 +6226,7 @@ impl AsRef<str> for VirtualNodeStatusCode {
 
 /// <p>An object that represents the specification of a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeSpec {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
     #[doc(hidden)]
@@ -6711,17 +6264,6 @@ impl VirtualNodeSpec {
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
     pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
         self.logging.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualNodeSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeSpec");
-        formatter.field("service_discovery", &self.service_discovery);
-        formatter.field("listeners", &self.listeners);
-        formatter.field("backends", &self.backends);
-        formatter.field("backend_defaults", &self.backend_defaults);
-        formatter.field("logging", &self.logging);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
@@ -6832,7 +6374,7 @@ impl VirtualNodeSpec {
 
 /// <p>An object that represents the logging information for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
     #[doc(hidden)]
@@ -6842,13 +6384,6 @@ impl Logging {
     /// <p>The access log configuration for a virtual node.</p>
     pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
         self.access_log.as_ref()
-    }
-}
-impl std::fmt::Debug for Logging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logging");
-        formatter.field("access_log", &self.access_log);
-        formatter.finish()
     }
 }
 /// See [`Logging`](crate::model::Logging).
@@ -6927,7 +6462,7 @@ impl AccessLog {
 
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
@@ -6948,14 +6483,6 @@ impl FileAccessLog {
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
         self.format.as_ref()
-    }
-}
-impl std::fmt::Debug for FileAccessLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileAccessLog");
-        formatter.field("path", &self.path);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`FileAccessLog`](crate::model::FileAccessLog).
@@ -7066,7 +6593,7 @@ impl LoggingFormat {
 
 /// <p>An object that represents the key value pairs for the JSON.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonFormatRef {
     /// <p>The specified key for the JSON.</p>
     #[doc(hidden)]
@@ -7083,14 +6610,6 @@ impl JsonFormatRef {
     /// <p>The specified value for the JSON.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonFormatRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonFormatRef");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`JsonFormatRef`](crate::model::JsonFormatRef).
@@ -7141,7 +6660,7 @@ impl JsonFormatRef {
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
@@ -7151,13 +6670,6 @@ impl BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
         self.client_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for BackendDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BackendDefaults");
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
     }
 }
 /// See [`BackendDefaults`](crate::model::BackendDefaults).
@@ -7199,7 +6711,7 @@ impl BackendDefaults {
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
@@ -7209,13 +6721,6 @@ impl ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub fn tls(&self) -> std::option::Option<&crate::model::ClientPolicyTls> {
         self.tls.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientPolicy");
-        formatter.field("tls", &self.tls);
-        formatter.finish()
     }
 }
 /// See [`ClientPolicy`](crate::model::ClientPolicy).
@@ -7255,7 +6760,7 @@ impl ClientPolicy {
 
 /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
@@ -7286,16 +6791,6 @@ impl ClientPolicyTls {
     /// <p>A reference to an object that represents a TLS validation context.</p>
     pub fn validation(&self) -> std::option::Option<&crate::model::TlsValidationContext> {
         self.validation.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientPolicyTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientPolicyTls");
-        formatter.field("enforce", &self.enforce);
-        formatter.field("ports", &self.ports);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
     }
 }
 /// See [`ClientPolicyTls`](crate::model::ClientPolicyTls).
@@ -7382,7 +6877,7 @@ impl ClientPolicyTls {
 
 /// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -7401,14 +6896,6 @@ impl TlsValidationContext {
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
-    }
-}
-impl std::fmt::Debug for TlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
     }
 }
 /// See [`TlsValidationContext`](crate::model::TlsValidationContext).
@@ -7469,7 +6956,7 @@ impl TlsValidationContext {
 
 /// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     #[doc(hidden)]
@@ -7479,13 +6966,6 @@ impl SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::SubjectAlternativeNameMatchers> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for SubjectAlternativeNames {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectAlternativeNames");
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
@@ -7527,7 +7007,7 @@ impl SubjectAlternativeNames {
 
 /// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
     #[doc(hidden)]
@@ -7537,13 +7017,6 @@ impl SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
     pub fn exact(&self) -> std::option::Option<&[std::string::String]> {
         self.exact.as_deref()
-    }
-}
-impl std::fmt::Debug for SubjectAlternativeNameMatchers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubjectAlternativeNameMatchers");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
     }
 }
 /// See [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
@@ -7661,7 +7134,7 @@ impl TlsValidationContextTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
@@ -7671,13 +7144,6 @@ impl TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsValidationContextSdsTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextSdsTrust");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
     }
 }
 /// See [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
@@ -7716,7 +7182,7 @@ impl TlsValidationContextSdsTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
@@ -7726,13 +7192,6 @@ impl TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsValidationContextFileTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextFileTrust");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.finish()
     }
 }
 /// See [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
@@ -7774,7 +7233,7 @@ impl TlsValidationContextFileTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
@@ -7784,16 +7243,6 @@ impl TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.certificate_authority_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for TlsValidationContextAcmTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TlsValidationContextAcmTrust");
-        formatter.field(
-            "certificate_authority_arns",
-            &self.certificate_authority_arns,
-        );
-        formatter.finish()
     }
 }
 /// See [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
@@ -7893,7 +7342,7 @@ impl ClientTlsCertificate {
 
 /// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
@@ -7903,13 +7352,6 @@ impl ListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ListenerTlsSdsCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsSdsCertificate");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
     }
 }
 /// See [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
@@ -7948,7 +7390,7 @@ impl ListenerTlsSdsCertificate {
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
@@ -7965,14 +7407,6 @@ impl ListenerTlsFileCertificate {
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn private_key(&self) -> std::option::Option<&str> {
         self.private_key.as_deref()
-    }
-}
-impl std::fmt::Debug for ListenerTlsFileCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsFileCertificate");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("private_key", &self.private_key);
-        formatter.finish()
     }
 }
 /// See [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
@@ -8065,7 +7499,7 @@ impl Backend {
 
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     #[doc(hidden)]
@@ -8082,14 +7516,6 @@ impl VirtualServiceBackend {
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
         self.client_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualServiceBackend {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualServiceBackend");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
     }
 }
 /// See [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
@@ -8146,7 +7572,7 @@ impl VirtualServiceBackend {
 
 /// <p>An object that represents a listener for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Listener {
     /// <p>The port mapping information for the listener.</p>
     #[doc(hidden)]
@@ -8191,18 +7617,6 @@ impl Listener {
     /// <p>The connection pool information for the listener.</p>
     pub fn connection_pool(&self) -> std::option::Option<&crate::model::VirtualNodeConnectionPool> {
         self.connection_pool.as_ref()
-    }
-}
-impl std::fmt::Debug for Listener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Listener");
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.field("tls", &self.tls);
-        formatter.field("health_check", &self.health_check);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("outlier_detection", &self.outlier_detection);
-        formatter.field("connection_pool", &self.connection_pool);
-        formatter.finish()
     }
 }
 /// See [`Listener`](crate::model::Listener).
@@ -8408,7 +7822,7 @@ impl VirtualNodeConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8418,13 +7832,6 @@ impl VirtualNodeGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
-    }
-}
-impl std::fmt::Debug for VirtualNodeGrpcConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeGrpcConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
@@ -8463,7 +7870,7 @@ impl VirtualNodeGrpcConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8473,13 +7880,6 @@ impl VirtualNodeHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
-    }
-}
-impl std::fmt::Debug for VirtualNodeHttp2ConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeHttp2ConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
@@ -8518,7 +7918,7 @@ impl VirtualNodeHttp2ConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8535,14 +7935,6 @@ impl VirtualNodeHttpConnectionPool {
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(&self) -> std::option::Option<i32> {
         self.max_pending_requests
-    }
-}
-impl std::fmt::Debug for VirtualNodeHttpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeHttpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.field("max_pending_requests", &self.max_pending_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
@@ -8593,7 +7985,7 @@ impl VirtualNodeHttpConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -8603,13 +7995,6 @@ impl VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
-    }
-}
-impl std::fmt::Debug for VirtualNodeTcpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualNodeTcpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.finish()
     }
 }
 /// See [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
@@ -8648,7 +8033,7 @@ impl VirtualNodeTcpConnectionPool {
 
 /// <p>An object that represents the outlier detection for a virtual node's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     #[doc(hidden)]
@@ -8679,16 +8064,6 @@ impl OutlierDetection {
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn max_ejection_percent(&self) -> std::option::Option<i32> {
         self.max_ejection_percent
-    }
-}
-impl std::fmt::Debug for OutlierDetection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutlierDetection");
-        formatter.field("max_server_errors", &self.max_server_errors);
-        formatter.field("interval", &self.interval);
-        formatter.field("base_ejection_duration", &self.base_ejection_duration);
-        formatter.field("max_ejection_percent", &self.max_ejection_percent);
-        formatter.finish()
     }
 }
 /// See [`OutlierDetection`](crate::model::OutlierDetection).
@@ -8847,7 +8222,7 @@ impl ListenerTimeout {
 
 /// <p>An object that represents the health check policy for a virtual node's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
@@ -8899,19 +8274,6 @@ impl HealthCheckPolicy {
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
     pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
-    }
-}
-impl std::fmt::Debug for HealthCheckPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckPolicy");
-        formatter.field("timeout_millis", &self.timeout_millis);
-        formatter.field("interval_millis", &self.interval_millis);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("path", &self.path);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
@@ -9025,7 +8387,7 @@ impl HealthCheckPolicy {
 
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
@@ -9059,15 +8421,6 @@ impl ListenerTls {
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn validation(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContext> {
         self.validation.as_ref()
-    }
-}
-impl std::fmt::Debug for ListenerTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTls");
-        formatter.field("mode", &self.mode);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
     }
 }
 /// See [`ListenerTls`](crate::model::ListenerTls).
@@ -9149,7 +8502,7 @@ impl ListenerTls {
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -9168,14 +8521,6 @@ impl ListenerTlsValidationContext {
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
-    }
-}
-impl std::fmt::Debug for ListenerTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
     }
 }
 /// See [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
@@ -9357,7 +8702,7 @@ impl ListenerTlsCertificate {
 
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
@@ -9367,13 +8712,6 @@ impl ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListenerTlsAcmCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListenerTlsAcmCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
     }
 }
 /// See [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
@@ -9565,7 +8903,7 @@ impl ServiceDiscovery {
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
     #[doc(hidden)]
@@ -9596,16 +8934,6 @@ impl AwsCloudMapServiceDiscovery {
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
         self.ip_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for AwsCloudMapServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsCloudMapServiceDiscovery");
-        formatter.field("namespace_name", &self.namespace_name);
-        formatter.field("service_name", &self.service_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
     }
 }
 /// See [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
@@ -9698,7 +9026,7 @@ impl AwsCloudMapServiceDiscovery {
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AwsCloudMapInstanceAttribute {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     #[doc(hidden)]
@@ -9715,14 +9043,6 @@ impl AwsCloudMapInstanceAttribute {
     /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AwsCloudMapInstanceAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AwsCloudMapInstanceAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
@@ -9773,7 +9093,7 @@ impl AwsCloudMapInstanceAttribute {
 
 /// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
     #[doc(hidden)]
@@ -9797,15 +9117,6 @@ impl DnsServiceDiscovery {
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
         self.ip_preference.as_ref()
-    }
-}
-impl std::fmt::Debug for DnsServiceDiscovery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DnsServiceDiscovery");
-        formatter.field("hostname", &self.hostname);
-        formatter.field("response_type", &self.response_type);
-        formatter.field("ip_preference", &self.ip_preference);
-        formatter.finish()
     }
 }
 /// See [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
@@ -9964,7 +9275,7 @@ impl AsRef<str> for DnsResponseType {
 
 /// <p>An object that represents a virtual gateway returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
     #[doc(hidden)]
@@ -10023,20 +9334,6 @@ impl VirtualGatewayRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
@@ -10171,7 +9468,7 @@ impl VirtualGatewayRef {
 
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayData {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     #[doc(hidden)]
@@ -10209,17 +9506,6 @@ impl VirtualGatewayData {
     /// <p>The current status of the virtual gateway.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayData`](crate::model::VirtualGatewayData).
@@ -10318,7 +9604,7 @@ impl VirtualGatewayData {
 
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
     #[doc(hidden)]
@@ -10328,13 +9614,6 @@ impl VirtualGatewayStatus {
     /// <p>The current status.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
@@ -10473,7 +9752,7 @@ impl AsRef<str> for VirtualGatewayStatusCode {
 
 /// <p>An object that represents the specification of a service mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     #[doc(hidden)]
@@ -10499,15 +9778,6 @@ impl VirtualGatewaySpec {
     /// <p>An object that represents logging information.</p>
     pub fn logging(&self) -> std::option::Option<&crate::model::VirtualGatewayLogging> {
         self.logging.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewaySpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewaySpec");
-        formatter.field("backend_defaults", &self.backend_defaults);
-        formatter.field("listeners", &self.listeners);
-        formatter.field("logging", &self.logging);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
@@ -10590,7 +9860,7 @@ impl VirtualGatewaySpec {
 
 /// <p>An object that represents logging information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
     #[doc(hidden)]
@@ -10600,13 +9870,6 @@ impl VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
     pub fn access_log(&self) -> std::option::Option<&crate::model::VirtualGatewayAccessLog> {
         self.access_log.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayLogging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayLogging");
-        formatter.field("access_log", &self.access_log);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
@@ -10687,7 +9950,7 @@ impl VirtualGatewayAccessLog {
 
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     #[doc(hidden)]
@@ -10704,14 +9967,6 @@ impl VirtualGatewayFileAccessLog {
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
         self.format.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayFileAccessLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayFileAccessLog");
-        formatter.field("path", &self.path);
-        formatter.field("format", &self.format);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
@@ -10765,7 +10020,7 @@ impl VirtualGatewayFileAccessLog {
 
 /// <p>An object that represents a listener for a virtual gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListener {
     /// <p>The health check information for the listener.</p>
     #[doc(hidden)]
@@ -10800,16 +10055,6 @@ impl VirtualGatewayListener {
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayConnectionPool> {
         self.connection_pool.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListener {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListener");
-        formatter.field("health_check", &self.health_check);
-        formatter.field("port_mapping", &self.port_mapping);
-        formatter.field("tls", &self.tls);
-        formatter.field("connection_pool", &self.connection_pool);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
@@ -10976,7 +10221,7 @@ impl VirtualGatewayConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -10986,13 +10231,6 @@ impl VirtualGatewayGrpcConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
-    }
-}
-impl std::fmt::Debug for VirtualGatewayGrpcConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayGrpcConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
@@ -11031,7 +10269,7 @@ impl VirtualGatewayGrpcConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -11041,13 +10279,6 @@ impl VirtualGatewayHttp2ConnectionPool {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
-    }
-}
-impl std::fmt::Debug for VirtualGatewayHttp2ConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHttp2ConnectionPool");
-        formatter.field("max_requests", &self.max_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
@@ -11086,7 +10317,7 @@ impl VirtualGatewayHttp2ConnectionPool {
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -11103,14 +10334,6 @@ impl VirtualGatewayHttpConnectionPool {
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(&self) -> std::option::Option<i32> {
         self.max_pending_requests
-    }
-}
-impl std::fmt::Debug for VirtualGatewayHttpConnectionPool {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHttpConnectionPool");
-        formatter.field("max_connections", &self.max_connections);
-        formatter.field("max_pending_requests", &self.max_pending_requests);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
@@ -11161,7 +10384,7 @@ impl VirtualGatewayHttpConnectionPool {
 
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
@@ -11199,15 +10422,6 @@ impl VirtualGatewayListenerTls {
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsCertificate> {
         self.certificate.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListenerTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTls");
-        formatter.field("mode", &self.mode);
-        formatter.field("validation", &self.validation);
-        formatter.field("certificate", &self.certificate);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
@@ -11369,7 +10583,7 @@ impl VirtualGatewayListenerTlsCertificate {
 
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
@@ -11379,13 +10593,6 @@ impl VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListenerTlsSdsCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsSdsCertificate");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
@@ -11424,7 +10631,7 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
@@ -11441,14 +10648,6 @@ impl VirtualGatewayListenerTlsFileCertificate {
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub fn private_key(&self) -> std::option::Option<&str> {
         self.private_key.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListenerTlsFileCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsFileCertificate");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.field("private_key", &self.private_key);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
@@ -11502,7 +10701,7 @@ impl VirtualGatewayListenerTlsFileCertificate {
 
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
@@ -11512,13 +10711,6 @@ impl VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListenerTlsAcmCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsAcmCertificate");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
@@ -11560,7 +10752,7 @@ impl VirtualGatewayListenerTlsAcmCertificate {
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -11581,14 +10773,6 @@ impl VirtualGatewayListenerTlsValidationContext {
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayListenerTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayListenerTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
@@ -11711,7 +10895,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
@@ -11721,13 +10905,6 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextSdsTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextSdsTrust");
-        formatter.field("secret_name", &self.secret_name);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
@@ -11766,7 +10943,7 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
@@ -11776,13 +10953,6 @@ impl VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextFileTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextFileTrust");
-        formatter.field("certificate_chain", &self.certificate_chain);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
@@ -11921,7 +11091,7 @@ impl AsRef<str> for VirtualGatewayListenerTlsMode {
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayPortMapping {
     /// <p>The port used for the port mapping. Specify one protocol.</p>
     #[doc(hidden)]
@@ -11938,14 +11108,6 @@ impl VirtualGatewayPortMapping {
     /// <p>The protocol used for the port mapping.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayPortMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayPortMapping");
-        formatter.field("port", &self.port);
-        formatter.field("protocol", &self.protocol);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
@@ -12096,7 +11258,7 @@ impl AsRef<str> for VirtualGatewayPortProtocol {
 
 /// <p>An object that represents the health check policy for a virtual gateway's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayHealthCheckPolicy {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
@@ -12148,19 +11310,6 @@ impl VirtualGatewayHealthCheckPolicy {
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
     pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
-    }
-}
-impl std::fmt::Debug for VirtualGatewayHealthCheckPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayHealthCheckPolicy");
-        formatter.field("timeout_millis", &self.timeout_millis);
-        formatter.field("interval_millis", &self.interval_millis);
-        formatter.field("protocol", &self.protocol);
-        formatter.field("port", &self.port);
-        formatter.field("path", &self.path);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
@@ -12274,7 +11423,7 @@ impl VirtualGatewayHealthCheckPolicy {
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
@@ -12284,13 +11433,6 @@ impl VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn client_policy(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicy> {
         self.client_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayBackendDefaults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayBackendDefaults");
-        formatter.field("client_policy", &self.client_policy);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
@@ -12332,7 +11474,7 @@ impl VirtualGatewayBackendDefaults {
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
@@ -12342,13 +11484,6 @@ impl VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub fn tls(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicyTls> {
         self.tls.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayClientPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayClientPolicy");
-        formatter.field("tls", &self.tls);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
@@ -12388,7 +11523,7 @@ impl VirtualGatewayClientPolicy {
 
 /// <p>An object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayClientPolicyTls {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
@@ -12423,16 +11558,6 @@ impl VirtualGatewayClientPolicyTls {
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContext> {
         self.validation.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayClientPolicyTls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayClientPolicyTls");
-        formatter.field("enforce", &self.enforce);
-        formatter.field("ports", &self.ports);
-        formatter.field("certificate", &self.certificate);
-        formatter.field("validation", &self.validation);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
@@ -12527,7 +11652,7 @@ impl VirtualGatewayClientPolicyTls {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
@@ -12548,14 +11673,6 @@ impl VirtualGatewayTlsValidationContext {
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayTlsValidationContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContext");
-        formatter.field("trust", &self.trust);
-        formatter.field("subject_alternative_names", &self.subject_alternative_names);
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
@@ -12693,7 +11810,7 @@ impl VirtualGatewayTlsValidationContextTrust {
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
@@ -12703,16 +11820,6 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.certificate_authority_arns.as_deref()
-    }
-}
-impl std::fmt::Debug for VirtualGatewayTlsValidationContextAcmTrust {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualGatewayTlsValidationContextAcmTrust");
-        formatter.field(
-            "certificate_authority_arns",
-            &self.certificate_authority_arns,
-        );
-        formatter.finish()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
@@ -12816,7 +11923,7 @@ impl VirtualGatewayClientTlsCertificate {
 
 /// <p>An object that represents a gateway route returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
@@ -12882,21 +11989,6 @@ impl GatewayRouteRef {
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteRef {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteRef");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("mesh_owner", &self.mesh_owner);
-        formatter.field("resource_owner", &self.resource_owner);
-        formatter.field("arn", &self.arn);
-        formatter.field("version", &self.version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteRef`](crate::model::GatewayRouteRef).
@@ -13046,7 +12138,7 @@ impl GatewayRouteRef {
 
 /// <p>An object that represents a gateway route returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
@@ -13091,18 +12183,6 @@ impl GatewayRouteData {
     /// <p>The status of the gateway route.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteData");
-        formatter.field("mesh_name", &self.mesh_name);
-        formatter.field("gateway_route_name", &self.gateway_route_name);
-        formatter.field("virtual_gateway_name", &self.virtual_gateway_name);
-        formatter.field("spec", &self.spec);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteData`](crate::model::GatewayRouteData).
@@ -13216,7 +12296,7 @@ impl GatewayRouteData {
 
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
     #[doc(hidden)]
@@ -13226,13 +12306,6 @@ impl GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatusCode> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteStatus");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
@@ -13371,7 +12444,7 @@ impl AsRef<str> for GatewayRouteStatusCode {
 
 /// <p>An object that represents a gateway route specification. Specify one gateway route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteSpec {
     /// <p>The ordering of the gateway routes spec.</p>
     #[doc(hidden)]
@@ -13402,16 +12475,6 @@ impl GatewayRouteSpec {
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
     pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcGatewayRoute> {
         self.grpc_route.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteSpec");
-        formatter.field("priority", &self.priority);
-        formatter.field("http_route", &self.http_route);
-        formatter.field("http2_route", &self.http2_route);
-        formatter.field("grpc_route", &self.grpc_route);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
@@ -13495,7 +12558,7 @@ impl GatewayRouteSpec {
 
 /// <p>An object that represents a gRPC gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -13512,14 +12575,6 @@ impl GrpcGatewayRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcGatewayRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
@@ -13576,7 +12631,7 @@ impl GrpcGatewayRoute {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
@@ -13593,14 +12648,6 @@ impl GrpcGatewayRouteAction {
     /// <p>The gateway route action to rewrite.</p>
     pub fn rewrite(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteRewrite> {
         self.rewrite.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcGatewayRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteAction");
-        formatter.field("target", &self.target);
-        formatter.field("rewrite", &self.rewrite);
-        formatter.finish()
     }
 }
 /// See [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
@@ -13657,7 +12704,7 @@ impl GrpcGatewayRouteAction {
 
 /// <p>An object that represents the gateway route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
     #[doc(hidden)]
@@ -13667,13 +12714,6 @@ impl GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
     pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
         self.hostname.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcGatewayRouteRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteRewrite");
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
     }
 }
 /// See [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
@@ -13715,7 +12755,7 @@ impl GrpcGatewayRouteRewrite {
 
 /// <p>An object representing the gateway route host name to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
     #[doc(hidden)]
@@ -13727,13 +12767,6 @@ impl GatewayRouteHostnameRewrite {
         &self,
     ) -> std::option::Option<&crate::model::DefaultGatewayRouteRewrite> {
         self.default_target_hostname.as_ref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteHostnameRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteHostnameRewrite");
-        formatter.field("default_target_hostname", &self.default_target_hostname);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
@@ -13871,7 +12904,7 @@ impl AsRef<str> for DefaultGatewayRouteRewrite {
 
 /// <p>An object that represents a gateway route target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
@@ -13890,14 +12923,6 @@ impl GatewayRouteTarget {
     /// <p>The port number of the gateway route target.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for GatewayRouteTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteTarget");
-        formatter.field("virtual_service", &self.virtual_service);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
@@ -13951,7 +12976,7 @@ impl GatewayRouteTarget {
 
 /// <p>An object that represents the virtual service that traffic is routed to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     #[doc(hidden)]
@@ -13961,13 +12986,6 @@ impl GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     pub fn virtual_service_name(&self) -> std::option::Option<&str> {
         self.virtual_service_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteVirtualService {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteVirtualService");
-        formatter.field("virtual_service_name", &self.virtual_service_name);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
@@ -14009,7 +13027,7 @@ impl GatewayRouteVirtualService {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
@@ -14040,16 +13058,6 @@ impl GrpcGatewayRouteMatch {
     /// <p>The port number to match from the request.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for GrpcGatewayRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteMatch");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
@@ -14137,7 +13145,7 @@ impl GrpcGatewayRouteMatch {
 
 /// <p>An object representing the metadata of the gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
     #[doc(hidden)]
@@ -14161,15 +13169,6 @@ impl GrpcGatewayRouteMetadata {
     /// <p>The criteria for determining a metadata match.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcMetadataMatchMethod> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for GrpcGatewayRouteMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrpcGatewayRouteMetadata");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
@@ -14331,7 +13330,7 @@ impl GrpcMetadataMatchMethod {
 
 /// <p>An object representing the gateway route host name to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
     #[doc(hidden)]
@@ -14348,14 +13347,6 @@ impl GatewayRouteHostnameMatch {
     /// <p>The specified ending characters of the host name to match on.</p>
     pub fn suffix(&self) -> std::option::Option<&str> {
         self.suffix.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayRouteHostnameMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayRouteHostnameMatch");
-        formatter.field("exact", &self.exact);
-        formatter.field("suffix", &self.suffix);
-        formatter.finish()
     }
 }
 /// See [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
@@ -14406,7 +13397,7 @@ impl GatewayRouteHostnameMatch {
 
 /// <p>An object that represents an HTTP gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
@@ -14423,14 +13414,6 @@ impl HttpGatewayRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(&self) -> std::option::Option<&crate::model::HttpGatewayRouteAction> {
         self.action.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRoute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoute");
-        formatter.field("r#match", &self.r#match);
-        formatter.field("action", &self.action);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
@@ -14487,7 +13470,7 @@ impl HttpGatewayRoute {
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
@@ -14504,14 +13487,6 @@ impl HttpGatewayRouteAction {
     /// <p>The gateway route action to rewrite.</p>
     pub fn rewrite(&self) -> std::option::Option<&crate::model::HttpGatewayRouteRewrite> {
         self.rewrite.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRouteAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteAction");
-        formatter.field("target", &self.target);
-        formatter.field("rewrite", &self.rewrite);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
@@ -14568,7 +13543,7 @@ impl HttpGatewayRouteAction {
 
 /// <p>An object representing the gateway route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteRewrite {
     /// <p>The specified beginning characters to rewrite.</p>
     #[doc(hidden)]
@@ -14592,15 +13567,6 @@ impl HttpGatewayRouteRewrite {
     /// <p>The host name to rewrite.</p>
     pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
         self.hostname.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRouteRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteRewrite");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("hostname", &self.hostname);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
@@ -14672,7 +13638,7 @@ impl HttpGatewayRouteRewrite {
 
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
     #[doc(hidden)]
@@ -14682,13 +13648,6 @@ impl HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
     pub fn exact(&self) -> std::option::Option<&str> {
         self.exact.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRoutePathRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoutePathRewrite");
-        formatter.field("exact", &self.exact);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
@@ -14725,7 +13684,7 @@ impl HttpGatewayRoutePathRewrite {
 
 /// <p>An object representing the beginning characters of the route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
     #[doc(hidden)]
@@ -14742,14 +13701,6 @@ impl HttpGatewayRoutePrefixRewrite {
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRoutePrefixRewrite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRoutePrefixRewrite");
-        formatter.field("default_prefix", &self.default_prefix);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
@@ -14803,7 +13754,7 @@ impl HttpGatewayRoutePrefixRewrite {
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
@@ -14855,19 +13806,6 @@ impl HttpGatewayRouteMatch {
     /// <p>The port number to match on.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
-    }
-}
-impl std::fmt::Debug for HttpGatewayRouteMatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteMatch");
-        formatter.field("prefix", &self.prefix);
-        formatter.field("path", &self.path);
-        formatter.field("query_parameters", &self.query_parameters);
-        formatter.field("method", &self.method);
-        formatter.field("hostname", &self.hostname);
-        formatter.field("headers", &self.headers);
-        formatter.field("port", &self.port);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
@@ -15001,7 +13939,7 @@ impl HttpGatewayRouteMatch {
 
 /// <p>An object that represents the HTTP header in the gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
     #[doc(hidden)]
@@ -15025,15 +13963,6 @@ impl HttpGatewayRouteHeader {
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
         self.r#match.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpGatewayRouteHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpGatewayRouteHeader");
-        formatter.field("name", &self.name);
-        formatter.field("invert", &self.invert);
-        formatter.field("r#match", &self.r#match);
-        formatter.finish()
     }
 }
 /// See [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).

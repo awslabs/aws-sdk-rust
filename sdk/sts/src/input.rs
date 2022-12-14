@@ -1688,7 +1688,7 @@ impl GetSessionTokenInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSessionTokenInput {
     /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
     #[doc(hidden)]
@@ -1718,19 +1718,10 @@ impl GetSessionTokenInput {
         self.token_code.as_deref()
     }
 }
-impl std::fmt::Debug for GetSessionTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSessionTokenInput");
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("token_code", &self.token_code);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFederationTokenInput {
     /// <p>The name of the federated user. The name is used as an identifier for the temporary security credentials (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based policy, such as in an Amazon S3 bucket policy.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
@@ -1808,32 +1799,15 @@ impl GetFederationTokenInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for GetFederationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFederationTokenInput");
-        formatter.field("name", &self.name);
-        formatter.field("policy", &self.policy);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCallerIdentityInput {}
-impl std::fmt::Debug for GetCallerIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCallerIdentityInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccessKeyInfoInput {
     /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or lowercase letter or digit.</p>
@@ -1847,17 +1821,10 @@ impl GetAccessKeyInfoInput {
         self.access_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccessKeyInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccessKeyInfoInput");
-        formatter.field("access_key_id", &self.access_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageInput {
     /// <p>The encoded message that was returned with the response.</p>
     #[doc(hidden)]
@@ -1869,17 +1836,10 @@ impl DecodeAuthorizationMessageInput {
         self.encoded_message.as_deref()
     }
 }
-impl std::fmt::Debug for DecodeAuthorizationMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DecodeAuthorizationMessageInput");
-        formatter.field("encoded_message", &self.encoded_message);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentityInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     #[doc(hidden)]
@@ -1961,23 +1921,10 @@ impl AssumeRoleWithWebIdentityInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for AssumeRoleWithWebIdentityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithWebIdentityInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_session_name", &self.role_session_name);
-        formatter.field("web_identity_token", &self.web_identity_token);
-        formatter.field("provider_id", &self.provider_id);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleWithSamlInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
     #[doc(hidden)]
@@ -2048,22 +1995,10 @@ impl AssumeRoleWithSamlInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for AssumeRoleWithSamlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleWithSamlInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("principal_arn", &self.principal_arn);
-        formatter.field("saml_assertion", &self.saml_assertion);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssumeRoleInput {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
     #[doc(hidden)]
@@ -2197,22 +2132,5 @@ impl AssumeRoleInput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     pub fn source_identity(&self) -> std::option::Option<&str> {
         self.source_identity.as_deref()
-    }
-}
-impl std::fmt::Debug for AssumeRoleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssumeRoleInput");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("role_session_name", &self.role_session_name);
-        formatter.field("policy_arns", &self.policy_arns);
-        formatter.field("policy", &self.policy);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.field("tags", &self.tags);
-        formatter.field("transitive_tag_keys", &self.transitive_tag_keys);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("token_code", &self.token_code);
-        formatter.field("source_identity", &self.source_identity);
-        formatter.finish()
     }
 }

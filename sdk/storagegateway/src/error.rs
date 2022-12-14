@@ -2,7 +2,7 @@
 
 /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGatewayRequestException {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl InvalidGatewayRequestException {
     /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidGatewayRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGatewayRequestException");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 impl InvalidGatewayRequestException {
@@ -94,7 +86,7 @@ impl InvalidGatewayRequestException {
 
 /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternalServerError {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl InternalServerError {
     /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerError");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 impl InternalServerError {
@@ -186,7 +170,7 @@ impl InternalServerError {
 
 /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableError {
     /// <p>A human-readable message describing the error that occurred.</p>
     #[doc(hidden)]
@@ -199,14 +183,6 @@ impl ServiceUnavailableError {
     /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceUnavailableError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableError");
-        formatter.field("message", &self.message);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 impl ServiceUnavailableError {

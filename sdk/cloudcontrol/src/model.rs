@@ -121,7 +121,7 @@ impl std::fmt::Debug for ProgressEvent {
 pub mod progress_event {
 
     /// A builder for [`ProgressEvent`](crate::model::ProgressEvent).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -297,6 +297,22 @@ pub mod progress_event {
                 error_code: self.error_code,
                 retry_after: self.retry_after,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("identifier", &self.identifier);
+            formatter.field("request_token", &self.request_token);
+            formatter.field("operation", &self.operation);
+            formatter.field("operation_status", &self.operation_status);
+            formatter.field("event_time", &self.event_time);
+            formatter.field("resource_model", &"*** Sensitive Data Redacted ***");
+            formatter.field("status_message", &self.status_message);
+            formatter.field("error_code", &self.error_code);
+            formatter.field("retry_after", &self.retry_after);
+            formatter.finish()
         }
     }
 }
@@ -725,7 +741,7 @@ impl std::fmt::Debug for ResourceDescription {
 pub mod resource_description {
 
     /// A builder for [`ResourceDescription`](crate::model::ResourceDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) properties: std::option::Option<std::string::String>,
@@ -761,6 +777,14 @@ pub mod resource_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("identifier", &self.identifier);
+            formatter.field("properties", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ResourceDescription {
     /// Creates a new builder-style object to manufacture [`ResourceDescription`](crate::model::ResourceDescription).
@@ -771,7 +795,7 @@ impl ResourceDescription {
 
 /// <p>The filter criteria to use in determining the requests returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
     #[doc(hidden)]
@@ -804,14 +828,6 @@ impl ResourceRequestStatusFilter {
     /// </ul>
     pub fn operation_statuses(&self) -> std::option::Option<&[crate::model::OperationStatus]> {
         self.operation_statuses.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceRequestStatusFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceRequestStatusFilter");
-        formatter.field("operations", &self.operations);
-        formatter.field("operation_statuses", &self.operation_statuses);
-        formatter.finish()
     }
 }
 /// See [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).

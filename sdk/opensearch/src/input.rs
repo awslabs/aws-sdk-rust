@@ -7375,7 +7375,7 @@ impl UpgradeDomainInput {
 
 /// <p> Container for the request parameters to <code> <code>UpgradeDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeDomainInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     #[doc(hidden)]
@@ -7422,20 +7422,10 @@ impl UpgradeDomainInput {
         self.advanced_options.as_ref()
     }
 }
-impl std::fmt::Debug for UpgradeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("perform_check_only", &self.perform_check_only);
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to the <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageInput {
     /// <p>The unique identifier for the package.</p>
     #[doc(hidden)]
@@ -7468,20 +7458,10 @@ impl UpdatePackageInput {
         self.commit_message.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_source", &self.package_source);
-        formatter.field("package_description", &self.package_description);
-        formatter.field("commit_message", &self.commit_message);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>UpdateDomain</code> </code> operation. Specifies the type and number of instances in the domain cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainConfigInput {
     /// <p>The name of the domain you're updating.</p>
     #[doc(hidden)]
@@ -7610,37 +7590,10 @@ impl UpdateDomainConfigInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for UpdateDomainConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainConfigInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("cluster_config", &self.cluster_config);
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>StartServiceSoftwareUpdate</code> </code> operation. Specifies the name of the domain to schedule a service software update for. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     #[doc(hidden)]
@@ -7652,17 +7605,10 @@ impl StartServiceSoftwareUpdateInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartServiceSoftwareUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartServiceSoftwareUpdateInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>RemoveTags</code> </code> operation. Specify the <code>ARN</code> for the domain from which you want to remove the specified <code>TagKey</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The <code>ARN</code> of the domain from which you want to delete the specified tags. </p>
     #[doc(hidden)]
@@ -7681,18 +7627,10 @@ impl RemoveTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>RejectInboundConnection</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInboundConnectionInput {
     /// <p>The ID of the inbound connection to reject.</p>
     #[doc(hidden)]
@@ -7704,17 +7642,10 @@ impl RejectInboundConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for RejectInboundConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInboundConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>PurchaseReservedInstanceOffering</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the reserved OpenSearch instance offering to purchase.</p>
     #[doc(hidden)]
@@ -7740,25 +7671,13 @@ impl PurchaseReservedInstanceOfferingInput {
         self.instance_count
     }
 }
-impl std::fmt::Debug for PurchaseReservedInstanceOfferingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseReservedInstanceOfferingInput");
-        formatter.field(
-            "reserved_instance_offering_id",
-            &self.reserved_instance_offering_id,
-        );
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.field("instance_count", &self.instance_count);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code> <code>ListVersions</code> </code> operation. </p>
 /// <p> Use <code> <code>MaxResults</code> </code> to control the maximum number of results to retrieve in a single call. </p>
 /// <p> Use <code> <code>NextToken</code> </code> in response to retrieve more results. If the received response does not contain a NextToken, there are no more results to retrieve. </p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVersionsInput {
     /// <p> Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored. </p>
     #[doc(hidden)]
@@ -7777,18 +7696,10 @@ impl ListVersionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVersionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>ListTags</code> </code> operation. Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>Specify the <code>ARN</code> of the domain that the tags you want to view are attached to. </p>
     #[doc(hidden)]
@@ -7800,17 +7711,10 @@ impl ListTagsInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesForDomainInput {
     /// <p>The name of the domain for which you want to list associated packages.</p>
     #[doc(hidden)]
@@ -7836,19 +7740,10 @@ impl ListPackagesForDomainInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackagesForDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesForDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -7881,20 +7776,10 @@ impl ListInstanceTypeDetailsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstanceTypeDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceTypeDetailsInput");
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsForPackageInput {
     /// <p>The package for which to list associated domains.</p>
     #[doc(hidden)]
@@ -7920,19 +7805,10 @@ impl ListDomainsForPackageInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDomainsForPackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsForPackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code><code>ListDomainNames</code></code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     #[doc(hidden)]
@@ -7944,17 +7820,10 @@ impl ListDomainNamesInput {
         self.engine_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListDomainNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesInput");
-        formatter.field("engine_type", &self.engine_type);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeStatusInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     #[doc(hidden)]
@@ -7966,17 +7835,10 @@ impl GetUpgradeStatusInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetUpgradeStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeStatusInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeHistoryInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     #[doc(hidden)]
@@ -8002,19 +7864,10 @@ impl GetUpgradeHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetUpgradeHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeHistoryInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryInput {
     /// <p>Returns an audit history of package versions.</p>
     #[doc(hidden)]
@@ -8040,19 +7893,10 @@ impl GetPackageVersionHistoryInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionHistoryInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to <code> <code>GetCompatibleVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCompatibleVersionsInput {
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     #[doc(hidden)]
@@ -8064,17 +7908,10 @@ impl GetCompatibleVersionsInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCompatibleVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCompatibleVersionsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DissociatePackageInput {
     /// <p>The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     #[doc(hidden)]
@@ -8093,18 +7930,10 @@ impl DissociatePackageInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DissociatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DissociatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>DescribeReservedInstances</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedInstancesInput {
     /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID. </p>
     #[doc(hidden)]
@@ -8130,19 +7959,10 @@ impl DescribeReservedInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedInstancesInput");
-        formatter.field("reserved_instance_id", &self.reserved_instance_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for parameters to <code>DescribeReservedInstanceOfferings</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedInstanceOfferingsInput {
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier. </p>
     #[doc(hidden)]
@@ -8168,22 +7988,10 @@ impl DescribeReservedInstanceOfferingsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReservedInstanceOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedInstanceOfferingsInput");
-        formatter.field(
-            "reserved_instance_offering_id",
-            &self.reserved_instance_offering_id,
-        );
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>DescribePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values. </p>
     #[doc(hidden)]
@@ -8209,19 +8017,10 @@ impl DescribePackagesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagesInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DescribeOutboundConnections</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOutboundConnectionsInput {
     /// <p> A list of filters used to match properties for outbound cross-cluster connections. Available <code> <code>Filter</code> </code> names for this operation are: </p>
     /// <ul>
@@ -8263,19 +8062,10 @@ impl DescribeOutboundConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeOutboundConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOutboundConnectionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the parameters to the <code> <code>DescribeInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceTypeLimitsInput {
     /// <p> The name of the domain you want to modify. Only include this value if you're querying OpenSearch <code> <code>Limits</code> </code> for an existing domain. </p>
     #[doc(hidden)]
@@ -8303,19 +8093,10 @@ impl DescribeInstanceTypeLimitsInput {
         self.engine_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInstanceTypeLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceTypeLimitsInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DescribeInboundConnections</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInboundConnectionsInput {
     /// <p> A list of filters used to match properties for inbound cross-cluster connections. Available <code> <code>Filter</code> </code> values are: </p>
     /// <ul>
@@ -8357,19 +8138,10 @@ impl DescribeInboundConnectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeInboundConnectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInboundConnectionsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DescribeDomains</code> </code> operation. By default, the API returns the status of all domains. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainsInput {
     /// <p>The domains for which you want information.</p>
     #[doc(hidden)]
@@ -8381,17 +8153,10 @@ impl DescribeDomainsInput {
         self.domain_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainsInput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>DescribeDomainConfig</code> operation. Specifies the domain name for which you want configuration information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainConfigInput {
     /// <p>The domain you want to get information about.</p>
     #[doc(hidden)]
@@ -8403,17 +8168,10 @@ impl DescribeDomainConfigInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainConfigInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressInput {
     /// <p>The domain you want to get the progress information about.</p>
     #[doc(hidden)]
@@ -8432,18 +8190,10 @@ impl DescribeDomainChangeProgressInput {
         self.change_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainChangeProgressInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainChangeProgressInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("change_id", &self.change_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesInput {
     /// <p>The domain name for which you want Auto-Tune action details.</p>
     #[doc(hidden)]
@@ -8469,19 +8219,10 @@ impl DescribeDomainAutoTunesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainAutoTunesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainAutoTunesInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DescribeDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p>The name of the domain for which you want information.</p>
     #[doc(hidden)]
@@ -8493,17 +8234,10 @@ impl DescribeDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>The internal ID of the package you want to delete. Use <code>DescribePackages</code> to find this value. </p>
     #[doc(hidden)]
@@ -8515,17 +8249,10 @@ impl DeletePackageInput {
         self.package_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DeleteOutboundConnection</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutboundConnectionInput {
     /// <p>The ID of the outbound connection you want to permanently delete.</p>
     #[doc(hidden)]
@@ -8537,17 +8264,10 @@ impl DeleteOutboundConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteOutboundConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutboundConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DeleteInboundConnection</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
     #[doc(hidden)]
@@ -8559,17 +8279,10 @@ impl DeleteInboundConnectionInput {
         self.connection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteInboundConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInboundConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>DeleteDomain</code> </code> operation. Specifies the name of the domain you want to delete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The name of the domain you want to permanently delete.</p>
     #[doc(hidden)]
@@ -8581,17 +8294,10 @@ impl DeleteDomainInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for request parameters to the <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageInput {
     /// <p>Unique identifier for the package.</p>
     #[doc(hidden)]
@@ -8624,20 +8330,10 @@ impl CreatePackageInput {
         self.package_source.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageInput");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_type", &self.package_type);
-        formatter.field("package_description", &self.package_description);
-        formatter.field("package_source", &self.package_source);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>CreateOutboundConnection</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOutboundConnectionInput {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
     #[doc(hidden)]
@@ -8667,19 +8363,10 @@ impl CreateOutboundConnectionInput {
         self.connection_alias.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOutboundConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOutboundConnectionInput");
-        formatter.field("local_domain_info", &self.local_domain_info);
-        formatter.field("remote_domain_info", &self.remote_domain_info);
-        formatter.field("connection_alias", &self.connection_alias);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>The name of the Amazon OpenSearch Service domain you're creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). </p>
     #[doc(hidden)]
@@ -8815,38 +8502,10 @@ impl CreateDomainInput {
         self.auto_tune_options.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("cluster_config", &self.cluster_config);
-        formatter.field("ebs_options", &self.ebs_options);
-        formatter.field("access_policies", &self.access_policies);
-        formatter.field("snapshot_options", &self.snapshot_options);
-        formatter.field("vpc_options", &self.vpc_options);
-        formatter.field("cognito_options", &self.cognito_options);
-        formatter.field(
-            "encryption_at_rest_options",
-            &self.encryption_at_rest_options,
-        );
-        formatter.field(
-            "node_to_node_encryption_options",
-            &self.node_to_node_encryption_options,
-        );
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("log_publishing_options", &self.log_publishing_options);
-        formatter.field("domain_endpoint_options", &self.domain_endpoint_options);
-        formatter.field("advanced_security_options", &self.advanced_security_options);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field("auto_tune_options", &self.auto_tune_options);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>CancelServiceSoftwareUpdate</code> </code> operation. Specifies the name of the domain that you wish to cancel a service software update on. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to stop the latest service software update on.</p>
     #[doc(hidden)]
@@ -8858,17 +8517,10 @@ impl CancelServiceSoftwareUpdateInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelServiceSoftwareUpdateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelServiceSoftwareUpdateInput");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p> Container for the request parameters to the <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePackageInput {
     /// <p>Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. </p>
     #[doc(hidden)]
@@ -8887,18 +8539,10 @@ impl AssociatePackageInput {
         self.domain_name.as_deref()
     }
 }
-impl std::fmt::Debug for AssociatePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePackageInput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>AddTags</code> </code> operation. Specifies the tags to attach to the domain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>Specify the <code>ARN</code> of the domain you want to add tags to. </p>
     #[doc(hidden)]
@@ -8917,18 +8561,10 @@ impl AddTagsInput {
         self.tag_list.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code> <code>AcceptInboundConnection</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInboundConnectionInput {
     /// <p>The ID of the inbound connection you want to accept.</p>
     #[doc(hidden)]
@@ -8938,12 +8574,5 @@ impl AcceptInboundConnectionInput {
     /// <p>The ID of the inbound connection you want to accept.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AcceptInboundConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInboundConnectionInput");
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
     }
 }

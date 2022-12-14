@@ -2,7 +2,7 @@
 
 /// <p>An object that contains the full name, description, and unit of a metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl ResponseResourceMetric {
     /// <p>The unit of the metric.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseResourceMetric {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseResourceMetric");
-        formatter.field("metric", &self.metric);
-        formatter.field("description", &self.description);
-        formatter.field("unit", &self.unit);
-        formatter.finish()
     }
 }
 /// See [`ResponseResourceMetric`](crate::model::ResponseResourceMetric).
@@ -187,7 +178,7 @@ impl AsRef<str> for ServiceType {
 
 /// <p>The available dimension information for a metric type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
     #[doc(hidden)]
@@ -204,14 +195,6 @@ impl MetricDimensionGroups {
     /// <p>The available dimension groups for a metric type.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::model::DimensionGroupDetail]> {
         self.groups.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricDimensionGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDimensionGroups");
-        formatter.field("metric", &self.metric);
-        formatter.field("groups", &self.groups);
-        formatter.finish()
     }
 }
 /// See [`MetricDimensionGroups`](crate::model::MetricDimensionGroups).
@@ -271,7 +254,7 @@ impl MetricDimensionGroups {
 
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
     #[doc(hidden)]
@@ -288,14 +271,6 @@ impl DimensionGroupDetail {
     /// <p>The dimensions within a dimension group.</p>
     pub fn dimensions(&self) -> std::option::Option<&[crate::model::DimensionDetail]> {
         self.dimensions.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionGroupDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionGroupDetail");
-        formatter.field("group", &self.group);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`DimensionGroupDetail`](crate::model::DimensionGroupDetail).
@@ -355,7 +330,7 @@ impl DimensionGroupDetail {
 
 /// <p>The information about a dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionDetail {
     /// <p>The identifier of a dimension.</p>
     #[doc(hidden)]
@@ -365,13 +340,6 @@ impl DimensionDetail {
     /// <p>The identifier of a dimension.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionDetail");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 /// See [`DimensionDetail`](crate::model::DimensionDetail).
@@ -410,7 +378,7 @@ impl DimensionDetail {
 
 /// <p>A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
     #[doc(hidden)]
@@ -427,14 +395,6 @@ impl MetricKeyDataPoints {
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
     pub fn data_points(&self) -> std::option::Option<&[crate::model::DataPoint]> {
         self.data_points.as_deref()
-    }
-}
-impl std::fmt::Debug for MetricKeyDataPoints {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricKeyDataPoints");
-        formatter.field("key", &self.key);
-        formatter.field("data_points", &self.data_points);
-        formatter.finish()
     }
 }
 /// See [`MetricKeyDataPoints`](crate::model::MetricKeyDataPoints).
@@ -497,7 +457,7 @@ impl MetricKeyDataPoints {
 
 /// <p>A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The time, in epoch format, associated with a particular <code>Value</code>.</p>
     #[doc(hidden)]
@@ -514,14 +474,6 @@ impl DataPoint {
     /// <p>The actual value associated with a particular <code>Timestamp</code>.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
-    }
-}
-impl std::fmt::Debug for DataPoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPoint");
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DataPoint`](crate::model::DataPoint).
@@ -575,7 +527,7 @@ impl DataPoint {
 
 /// <p>An object describing a Performance Insights metric and one or more dimensions for that metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseResourceMetricKey {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -610,14 +562,6 @@ impl ResponseResourceMetricKey {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.dimensions.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponseResourceMetricKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseResourceMetricKey");
-        formatter.field("metric", &self.metric);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`ResponseResourceMetricKey`](crate::model::ResponseResourceMetricKey).
@@ -699,7 +643,7 @@ impl ResponseResourceMetricKey {
 
 /// <p>A single query to be processed. You must provide the metric to query. If no other parameters are specified, Performance Insights returns all data points for the specified metric. Optionally, you can request that the data points be aggregated by dimension group (<code>GroupBy</code>), and return only those data points that match your criteria (<code>Filter</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MetricQuery {
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -749,15 +693,6 @@ impl MetricQuery {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.filter.as_ref()
-    }
-}
-impl std::fmt::Debug for MetricQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricQuery");
-        formatter.field("metric", &self.metric);
-        formatter.field("group_by", &self.group_by);
-        formatter.field("filter", &self.filter);
-        formatter.finish()
     }
 }
 /// See [`MetricQuery`](crate::model::MetricQuery).
@@ -870,7 +805,7 @@ impl MetricQuery {
 /// <p>Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionGroup {
     /// <p>The name of the dimension group. Valid values are as follows:</p>
     /// <ul>
@@ -1030,15 +965,6 @@ impl DimensionGroup {
     /// <p>The maximum number of items to fetch for this dimension group.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
-    }
-}
-impl std::fmt::Debug for DimensionGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionGroup");
-        formatter.field("group", &self.group);
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
     }
 }
 /// See [`DimensionGroup`](crate::model::DimensionGroup).
@@ -1246,7 +1172,7 @@ impl DimensionGroup {
 
 /// <p>The metadata for a feature. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
@@ -1272,13 +1198,6 @@ impl FeatureMetadata {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::FeatureStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for FeatureMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeatureMetadata");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`FeatureMetadata`](crate::model::FeatureMetadata).
@@ -1453,7 +1372,7 @@ impl AsRef<str> for FeatureStatus {
 
 /// <p>An object that describes the details for a specified dimension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionKeyDetail {
     /// <p>The value of the dimension detail data. Depending on the return status, this value is either the full or truncated SQL query for the following dimensions:</p>
     /// <ul>
@@ -1503,15 +1422,6 @@ impl DimensionKeyDetail {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::DetailStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for DimensionKeyDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionKeyDetail");
-        formatter.field("value", &self.value);
-        formatter.field("dimension", &self.dimension);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`DimensionKeyDetail`](crate::model::DimensionKeyDetail).
@@ -1698,7 +1608,7 @@ impl AsRef<str> for DetailStatus {
 
 /// <p>An object that includes the requested dimension key values and aggregated metric values within a dimension group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DimensionKeyDescription {
     /// <p>A map of name-value pairs for the dimensions in the group.</p>
     #[doc(hidden)]
@@ -1736,16 +1646,6 @@ impl DimensionKeyDescription {
     /// <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the dimensions that were.</p>
     pub fn partitions(&self) -> std::option::Option<&[f64]> {
         self.partitions.as_deref()
-    }
-}
-impl std::fmt::Debug for DimensionKeyDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DimensionKeyDescription");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.field("total", &self.total);
-        formatter.field("additional_metrics", &self.additional_metrics);
-        formatter.field("partitions", &self.partitions);
-        formatter.finish()
     }
 }
 /// See [`DimensionKeyDescription`](crate::model::DimensionKeyDescription).
@@ -1853,7 +1753,7 @@ impl DimensionKeyDescription {
 
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     #[doc(hidden)]
@@ -1867,13 +1767,6 @@ impl ResponsePartitionKey {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.dimensions.as_ref()
-    }
-}
-impl std::fmt::Debug for ResponsePartitionKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponsePartitionKey");
-        formatter.field("dimensions", &self.dimensions);
-        formatter.finish()
     }
 }
 /// See [`ResponsePartitionKey`](crate::model::ResponsePartitionKey).

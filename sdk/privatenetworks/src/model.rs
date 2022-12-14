@@ -2,7 +2,7 @@
 
 /// <p>Information about a field that failed validation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field name that failed validation.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The message about the validation failure.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -190,7 +182,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>Information about a network site.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkSite {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
@@ -270,23 +262,6 @@ impl NetworkSite {
     /// <p> The parent Availability Zone ID for the network site. </p>
     pub fn availability_zone_id(&self) -> std::option::Option<&str> {
         self.availability_zone_id.as_deref()
-    }
-}
-impl std::fmt::Debug for NetworkSite {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkSite");
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("network_site_name", &self.network_site_name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("pending_plan", &self.pending_plan);
-        formatter.field("current_plan", &self.current_plan);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("availability_zone", &self.availability_zone);
-        formatter.field("availability_zone_id", &self.availability_zone_id);
-        formatter.finish()
     }
 }
 /// See [`NetworkSite`](crate::model::NetworkSite).
@@ -472,7 +447,7 @@ impl NetworkSite {
 
 /// <p>Information about a site plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SitePlan {
     /// <p>The resource definitions of the plan.</p>
     #[doc(hidden)]
@@ -492,14 +467,6 @@ impl SitePlan {
     /// <p>The options of the plan.</p>
     pub fn options(&self) -> std::option::Option<&[crate::model::NameValuePair]> {
         self.options.as_deref()
-    }
-}
-impl std::fmt::Debug for SitePlan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SitePlan");
-        formatter.field("resource_definitions", &self.resource_definitions);
-        formatter.field("options", &self.options);
-        formatter.finish()
     }
 }
 /// See [`SitePlan`](crate::model::SitePlan).
@@ -572,7 +539,7 @@ impl SitePlan {
 
 /// <p>Information about a name/value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NameValuePair {
     /// <p>The name of the pair.</p>
     #[doc(hidden)]
@@ -589,14 +556,6 @@ impl NameValuePair {
     /// <p>The value of the pair.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for NameValuePair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NameValuePair");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`NameValuePair`](crate::model::NameValuePair).
@@ -647,7 +606,7 @@ impl NameValuePair {
 
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
     #[doc(hidden)]
@@ -671,15 +630,6 @@ impl NetworkResourceDefinition {
     /// <p>The count in the network resource definition.</p>
     pub fn count(&self) -> std::option::Option<i32> {
         self.count
-    }
-}
-impl std::fmt::Debug for NetworkResourceDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResourceDefinition");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("options", &self.options);
-        formatter.field("count", &self.count);
-        formatter.finish()
     }
 }
 /// See [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
@@ -959,7 +909,7 @@ impl AsRef<str> for NetworkSiteStatus {
 
 /// <p>Information about an order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
@@ -1015,19 +965,6 @@ impl Order {
     /// <p>The creation time of the order.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Order {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Order");
-        formatter.field("order_arn", &self.order_arn);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("tracking_information", &self.tracking_information);
-        formatter.field("acknowledgment_status", &self.acknowledgment_status);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Order`](crate::model::Order).
@@ -1257,7 +1194,7 @@ impl AsRef<str> for AcknowledgmentStatus {
 
 /// <p>Information about tracking a shipment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
     #[doc(hidden)]
@@ -1267,13 +1204,6 @@ impl TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
     pub fn tracking_number(&self) -> std::option::Option<&str> {
         self.tracking_number.as_deref()
-    }
-}
-impl std::fmt::Debug for TrackingInformation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrackingInformation");
-        formatter.field("tracking_number", &self.tracking_number);
-        formatter.finish()
     }
 }
 /// See [`TrackingInformation`](crate::model::TrackingInformation).
@@ -1410,7 +1340,7 @@ impl std::fmt::Debug for Address {
 pub mod address {
 
     /// A builder for [`Address`](crate::model::Address).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) city: std::option::Option<std::string::String>,
         pub(crate) company: std::option::Option<std::string::String>,
@@ -1541,6 +1471,22 @@ pub mod address {
                 street2: self.street2,
                 street3: self.street3,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("city", &"*** Sensitive Data Redacted ***");
+            formatter.field("company", &"*** Sensitive Data Redacted ***");
+            formatter.field("country", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("state_or_province", &"*** Sensitive Data Redacted ***");
+            formatter.field("street1", &"*** Sensitive Data Redacted ***");
+            formatter.field("street2", &"*** Sensitive Data Redacted ***");
+            formatter.field("street3", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1730,7 +1676,7 @@ impl AsRef<str> for NetworkSiteFilterKeys {
 
 /// <p>Information about a network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
@@ -1775,18 +1721,6 @@ impl Network {
     /// <p>The creation time of the network.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Network {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Network");
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("network_name", &self.network_name);
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Network`](crate::model::Network).
@@ -2092,7 +2026,7 @@ impl AsRef<str> for NetworkFilterKeys {
 
 /// <p>Information about a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     #[doc(hidden)]
@@ -2200,27 +2134,6 @@ impl NetworkResource {
     /// <p>The creation time of the network resource.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkResource");
-        formatter.field("network_resource_arn", &self.network_resource_arn);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("vendor", &self.vendor);
-        formatter.field("model", &self.model);
-        formatter.field("serial_number", &self.serial_number);
-        formatter.field("health", &self.health);
-        formatter.field("network_arn", &self.network_arn);
-        formatter.field("network_site_arn", &self.network_site_arn);
-        formatter.field("order_arn", &self.order_arn);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("position", &self.position);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`NetworkResource`](crate::model::NetworkResource).
@@ -2460,7 +2373,7 @@ impl NetworkResource {
 
 /// <p>Information about a position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Position {
     /// <p>The latitude of the position.</p>
     #[doc(hidden)]
@@ -2498,17 +2411,6 @@ impl Position {
     /// <p>The reference point from which elevation is reported.</p>
     pub fn elevation_reference(&self) -> std::option::Option<&crate::model::ElevationReference> {
         self.elevation_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for Position {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Position");
-        formatter.field("latitude", &self.latitude);
-        formatter.field("longitude", &self.longitude);
-        formatter.field("elevation", &self.elevation);
-        formatter.field("elevation_unit", &self.elevation_unit);
-        formatter.field("elevation_reference", &self.elevation_reference);
-        formatter.finish()
     }
 }
 /// See [`Position`](crate::model::Position).
@@ -3270,7 +3172,7 @@ impl std::fmt::Debug for DeviceIdentifier {
 pub mod device_identifier {
 
     /// A builder for [`DeviceIdentifier`](crate::model::DeviceIdentifier).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) device_identifier_arn: std::option::Option<std::string::String>,
         pub(crate) traffic_group_arn: std::option::Option<std::string::String>,
@@ -3398,6 +3300,21 @@ pub mod device_identifier {
                 order_arn: self.order_arn,
                 created_at: self.created_at,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("device_identifier_arn", &self.device_identifier_arn);
+            formatter.field("traffic_group_arn", &self.traffic_group_arn);
+            formatter.field("network_arn", &self.network_arn);
+            formatter.field("imsi", &"*** Sensitive Data Redacted ***");
+            formatter.field("iccid", &self.iccid);
+            formatter.field("vendor", &self.vendor);
+            formatter.field("status", &self.status);
+            formatter.field("order_arn", &self.order_arn);
+            formatter.field("created_at", &self.created_at);
+            formatter.finish()
         }
     }
 }

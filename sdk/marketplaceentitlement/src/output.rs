@@ -2,7 +2,7 @@
 
 /// <p>The GetEntitlementsRequest contains results from the GetEntitlements operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEntitlementsOutput {
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl GetEntitlementsOutput {
     /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetEntitlementsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEntitlementsOutput");
-        formatter.field("entitlements", &self.entitlements);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).

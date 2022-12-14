@@ -2,7 +2,7 @@
 
 /// <p>The HTTP package configuration properties for the requested VOD source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpPackageConfiguration {
     /// <p>The relative path to the URL for this VOD source. This is combined with SourceLocation::HttpConfiguration::BaseUrl to form a valid URL.</p>
     #[doc(hidden)]
@@ -26,15 +26,6 @@ impl HttpPackageConfiguration {
     /// <p>The streaming protocol for this package configuration. Supported values are HLS and DASH.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for HttpPackageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpPackageConfiguration");
-        formatter.field("path", &self.path);
-        formatter.field("source_group", &self.source_group);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`HttpPackageConfiguration`](crate::model::HttpPackageConfiguration).
@@ -187,7 +178,7 @@ impl AsRef<str> for Type {
 
 /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SegmentDeliveryConfiguration {
     /// <p>The base URL of the host or path of the segment delivery server that you're using to serve segments. This is typically a content delivery network (CDN). The URL can be absolute or relative. To use an absolute URL include the protocol, such as https://example.com/some/path. To use a relative URL specify the relative path, such as /some/path*.</p>
     #[doc(hidden)]
@@ -204,14 +195,6 @@ impl SegmentDeliveryConfiguration {
     /// <p>A unique identifier used to distinguish between multiple segment delivery configurations in a source location.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for SegmentDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SegmentDeliveryConfiguration");
-        formatter.field("base_url", &self.base_url);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration).
@@ -262,7 +245,7 @@ impl SegmentDeliveryConfiguration {
 
 /// <p>The HTTP configuration for the source location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     #[doc(hidden)]
@@ -272,13 +255,6 @@ impl HttpConfiguration {
     /// <p>The base URL for the source location host server. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn base_url(&self) -> std::option::Option<&str> {
         self.base_url.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpConfiguration");
-        formatter.field("base_url", &self.base_url);
-        formatter.finish()
     }
 }
 /// See [`HttpConfiguration`](crate::model::HttpConfiguration).
@@ -317,7 +293,7 @@ impl HttpConfiguration {
 
 /// <p>The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     #[doc(hidden)]
@@ -327,13 +303,6 @@ impl DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     pub fn base_url(&self) -> std::option::Option<&str> {
         self.base_url.as_deref()
-    }
-}
-impl std::fmt::Debug for DefaultSegmentDeliveryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultSegmentDeliveryConfiguration");
-        formatter.field("base_url", &self.base_url);
-        formatter.finish()
     }
 }
 /// See [`DefaultSegmentDeliveryConfiguration`](crate::model::DefaultSegmentDeliveryConfiguration).
@@ -372,7 +341,7 @@ impl DefaultSegmentDeliveryConfiguration {
 
 /// <p>Access configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessConfiguration {
     /// <p>The type of authentication used to access content from HttpConfiguration::BaseUrl on your source location. Accepted value: S3_SIGV4.</p>
     /// <p>S3_SIGV4 - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
@@ -402,17 +371,6 @@ impl AccessConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::SecretsManagerAccessTokenConfiguration> {
         self.secrets_manager_access_token_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessConfiguration");
-        formatter.field("access_type", &self.access_type);
-        formatter.field(
-            "secrets_manager_access_token_configuration",
-            &self.secrets_manager_access_token_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AccessConfiguration`](crate::model::AccessConfiguration).
@@ -484,7 +442,7 @@ impl AccessConfiguration {
 
 /// <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SecretsManagerAccessTokenConfiguration {
     /// <p>The name of the HTTP header used to supply the access token in requests to the source location.</p>
     #[doc(hidden)]
@@ -508,15 +466,6 @@ impl SecretsManagerAccessTokenConfiguration {
     /// <p>The AWS Secrets Manager <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html#SecretsManager-CreateSecret-request-SecretString.html">SecretString</a> key associated with the access token. MediaTailor uses the key to look up SecretString key and value pair containing the access token.</p>
     pub fn secret_string_key(&self) -> std::option::Option<&str> {
         self.secret_string_key.as_deref()
-    }
-}
-impl std::fmt::Debug for SecretsManagerAccessTokenConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SecretsManagerAccessTokenConfiguration");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("secret_string_key", &self.secret_string_key);
-        formatter.finish()
     }
 }
 /// See [`SecretsManagerAccessTokenConfiguration`](crate::model::SecretsManagerAccessTokenConfiguration).
@@ -672,7 +621,7 @@ impl AsRef<str> for AccessType {
 
 /// <p>This response includes only the "property" : "type" property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
     #[doc(hidden)]
@@ -712,17 +661,6 @@ impl ResponseOutputItem {
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub fn source_group(&self) -> std::option::Option<&str> {
         self.source_group.as_deref()
-    }
-}
-impl std::fmt::Debug for ResponseOutputItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseOutputItem");
-        formatter.field("dash_playlist_settings", &self.dash_playlist_settings);
-        formatter.field("hls_playlist_settings", &self.hls_playlist_settings);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("playback_url", &self.playback_url);
-        formatter.field("source_group", &self.source_group);
-        formatter.finish()
     }
 }
 /// See [`ResponseOutputItem`](crate::model::ResponseOutputItem).
@@ -818,7 +756,7 @@ impl ResponseOutputItem {
 
 /// <p>HLS playlist configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
     #[doc(hidden)]
@@ -828,13 +766,6 @@ impl HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
     pub fn manifest_window_seconds(&self) -> i32 {
         self.manifest_window_seconds
-    }
-}
-impl std::fmt::Debug for HlsPlaylistSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsPlaylistSettings");
-        formatter.field("manifest_window_seconds", &self.manifest_window_seconds);
-        formatter.finish()
     }
 }
 /// See [`HlsPlaylistSettings`](crate::model::HlsPlaylistSettings).
@@ -873,7 +804,7 @@ impl HlsPlaylistSettings {
 
 /// <p>Dash manifest configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.</p>
     #[doc(hidden)]
@@ -904,19 +835,6 @@ impl DashPlaylistSettings {
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.</p>
     pub fn suggested_presentation_delay_seconds(&self) -> i32 {
         self.suggested_presentation_delay_seconds
-    }
-}
-impl std::fmt::Debug for DashPlaylistSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashPlaylistSettings");
-        formatter.field("manifest_window_seconds", &self.manifest_window_seconds);
-        formatter.field("min_buffer_time_seconds", &self.min_buffer_time_seconds);
-        formatter.field("min_update_period_seconds", &self.min_update_period_seconds);
-        formatter.field(
-            "suggested_presentation_delay_seconds",
-            &self.suggested_presentation_delay_seconds,
-        );
-        formatter.finish()
     }
 }
 /// See [`DashPlaylistSettings`](crate::model::DashPlaylistSettings).
@@ -996,7 +914,7 @@ impl DashPlaylistSettings {
 
 /// <p>Slate VOD source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlateSource {
     /// <p>The name of the source location where the slate VOD source is stored.</p>
     #[doc(hidden)]
@@ -1013,14 +931,6 @@ impl SlateSource {
     /// <p>The slate VOD source name. The VOD source must already exist in a source location before it can be used for slate.</p>
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for SlateSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlateSource");
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
     }
 }
 /// See [`SlateSource`](crate::model::SlateSource).
@@ -1167,7 +1077,7 @@ impl AsRef<str> for ChannelState {
 
 /// <p>The output configuration for this channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestOutputItem {
     /// <p>DASH manifest configuration parameters.</p>
     #[doc(hidden)]
@@ -1200,16 +1110,6 @@ impl RequestOutputItem {
     /// <p>A string used to match which HttpPackageConfiguration is used for each VodSource.</p>
     pub fn source_group(&self) -> std::option::Option<&str> {
         self.source_group.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestOutputItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestOutputItem");
-        formatter.field("dash_playlist_settings", &self.dash_playlist_settings);
-        formatter.field("hls_playlist_settings", &self.hls_playlist_settings);
-        formatter.field("manifest_name", &self.manifest_name);
-        formatter.field("source_group", &self.source_group);
-        formatter.finish()
     }
 }
 /// See [`RequestOutputItem`](crate::model::RequestOutputItem).
@@ -1293,7 +1193,7 @@ impl RequestOutputItem {
 
 /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManifestProcessingRules {
     /// <p>For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
     /// <p>No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for that ad break, MediaTailor will not set the value to 0.</p>
@@ -1305,13 +1205,6 @@ impl ManifestProcessingRules {
     /// <p>No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for that ad break, MediaTailor will not set the value to 0.</p>
     pub fn ad_marker_passthrough(&self) -> std::option::Option<&crate::model::AdMarkerPassthrough> {
         self.ad_marker_passthrough.as_ref()
-    }
-}
-impl std::fmt::Debug for ManifestProcessingRules {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManifestProcessingRules");
-        formatter.field("ad_marker_passthrough", &self.ad_marker_passthrough);
-        formatter.finish()
     }
 }
 /// See [`ManifestProcessingRules`](crate::model::ManifestProcessingRules).
@@ -1356,7 +1249,7 @@ impl ManifestProcessingRules {
 /// <p>For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
 /// <p>No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for that ad break, MediaTailor will not set the value to 0.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdMarkerPassthrough {
     /// <p>Enables ad marker passthrough for your configuration.</p>
     #[doc(hidden)]
@@ -1366,13 +1259,6 @@ impl AdMarkerPassthrough {
     /// <p>Enables ad marker passthrough for your configuration.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for AdMarkerPassthrough {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdMarkerPassthrough");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`AdMarkerPassthrough`](crate::model::AdMarkerPassthrough).
@@ -1411,7 +1297,7 @@ impl AdMarkerPassthrough {
 
 /// <p>Returns Amazon CloudWatch log settings for a playback configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogConfiguration {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
     /// <p>Valid values: 0 - 100</p>
@@ -1423,13 +1309,6 @@ impl LogConfiguration {
     /// <p>Valid values: 0 - 100</p>
     pub fn percent_enabled(&self) -> i32 {
         self.percent_enabled
-    }
-}
-impl std::fmt::Debug for LogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogConfiguration");
-        formatter.field("percent_enabled", &self.percent_enabled);
-        formatter.finish()
     }
 }
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
@@ -1470,7 +1349,7 @@ impl LogConfiguration {
 
 /// <p>The configuration for pre-roll ad insertion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     #[doc(hidden)]
@@ -1487,14 +1366,6 @@ impl LivePreRollConfiguration {
     /// The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.
     pub fn max_duration_seconds(&self) -> i32 {
         self.max_duration_seconds
-    }
-}
-impl std::fmt::Debug for LivePreRollConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LivePreRollConfiguration");
-        formatter.field("ad_decision_server_url", &self.ad_decision_server_url);
-        formatter.field("max_duration_seconds", &self.max_duration_seconds);
-        formatter.finish()
     }
 }
 /// See [`LivePreRollConfiguration`](crate::model::LivePreRollConfiguration).
@@ -1548,7 +1419,7 @@ impl LivePreRollConfiguration {
 
 /// <p>The configuration for HLS content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsConfiguration {
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     #[doc(hidden)]
@@ -1558,13 +1429,6 @@ impl HlsConfiguration {
     /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
     pub fn manifest_endpoint_prefix(&self) -> std::option::Option<&str> {
         self.manifest_endpoint_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsConfiguration");
-        formatter.field("manifest_endpoint_prefix", &self.manifest_endpoint_prefix);
-        formatter.finish()
     }
 }
 /// See [`HlsConfiguration`](crate::model::HlsConfiguration).
@@ -1606,7 +1470,7 @@ impl HlsConfiguration {
 
 /// <p>The configuration for DASH content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashConfiguration {
     /// <p>The URL generated by MediaTailor to initiate a playback session. The session uses server-side reporting. This setting is ignored in PUT operations.</p>
     #[doc(hidden)]
@@ -1630,15 +1494,6 @@ impl DashConfiguration {
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
     pub fn origin_manifest_type(&self) -> std::option::Option<&crate::model::OriginManifestType> {
         self.origin_manifest_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DashConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashConfiguration");
-        formatter.field("manifest_endpoint_prefix", &self.manifest_endpoint_prefix);
-        formatter.field("mpd_location", &self.mpd_location);
-        formatter.field("origin_manifest_type", &self.origin_manifest_type);
-        formatter.finish()
     }
 }
 /// See [`DashConfiguration`](crate::model::DashConfiguration).
@@ -1799,7 +1654,7 @@ impl AsRef<str> for OriginManifestType {
 
 /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CdnConfiguration {
     /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
     #[doc(hidden)]
@@ -1816,17 +1671,6 @@ impl CdnConfiguration {
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
     pub fn content_segment_url_prefix(&self) -> std::option::Option<&str> {
         self.content_segment_url_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for CdnConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CdnConfiguration");
-        formatter.field("ad_segment_url_prefix", &self.ad_segment_url_prefix);
-        formatter.field(
-            "content_segment_url_prefix",
-            &self.content_segment_url_prefix,
-        );
-        formatter.finish()
     }
 }
 /// See [`CdnConfiguration`](crate::model::CdnConfiguration).
@@ -1883,7 +1727,7 @@ impl CdnConfiguration {
 
 /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Bumper {
     /// <p>The URL for the end bumper asset.</p>
     #[doc(hidden)]
@@ -1900,14 +1744,6 @@ impl Bumper {
     /// <p>The URL for the start bumper asset.</p>
     pub fn start_url(&self) -> std::option::Option<&str> {
         self.start_url.as_deref()
-    }
-}
-impl std::fmt::Debug for Bumper {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Bumper");
-        formatter.field("end_url", &self.end_url);
-        formatter.field("start_url", &self.start_url);
-        formatter.finish()
     }
 }
 /// See [`Bumper`](crate::model::Bumper).
@@ -1958,7 +1794,7 @@ impl Bumper {
 
 /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailSuppression {
     /// <p>Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.</p>
     #[doc(hidden)]
@@ -1975,14 +1811,6 @@ impl AvailSuppression {
     /// <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the live edge.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for AvailSuppression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailSuppression");
-        formatter.field("mode", &self.mode);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AvailSuppression`](crate::model::AvailSuppression).
@@ -2123,7 +1951,7 @@ impl AsRef<str> for Mode {
 
 /// <p>The configuration for DASH PUT operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DashConfigurationForPut {
     /// <p>The setting that controls whether MediaTailor includes the Location tag in DASH manifests. MediaTailor populates the Location tag with the URL for manifest update requests, to be used by players that don't support sticky redirects. Disable this if you have CDN routing rules set up for accessing MediaTailor manifests, and you are either using client-side reporting or your players support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the tag and is the default value.</p>
     #[doc(hidden)]
@@ -2140,14 +1968,6 @@ impl DashConfigurationForPut {
     /// <p>The setting that controls whether MediaTailor handles manifests from the origin server as multi-period manifests or single-period manifests. If your origin server produces single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD. For multi-period manifests, omit this setting or set it to MULTI_PERIOD.</p>
     pub fn origin_manifest_type(&self) -> std::option::Option<&crate::model::OriginManifestType> {
         self.origin_manifest_type.as_ref()
-    }
-}
-impl std::fmt::Debug for DashConfigurationForPut {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DashConfigurationForPut");
-        formatter.field("mpd_location", &self.mpd_location);
-        formatter.field("origin_manifest_type", &self.origin_manifest_type);
-        formatter.finish()
     }
 }
 /// See [`DashConfigurationForPut`](crate::model::DashConfigurationForPut).
@@ -2201,7 +2021,7 @@ impl DashConfigurationForPut {
 
 /// <p>VOD source configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VodSource {
     /// <p>The ARN for the VOD source.</p>
     #[doc(hidden)]
@@ -2260,22 +2080,6 @@ impl VodSource {
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for VodSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VodSource");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
     }
 }
 /// See [`VodSource`](crate::model::VodSource).
@@ -2428,7 +2232,7 @@ impl VodSource {
 
 /// <p>This response includes only the "type" : "object" property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceLocation {
     /// <p>The access configuration for the source location.</p>
     #[doc(hidden)]
@@ -2504,27 +2308,6 @@ impl SourceLocation {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceLocation");
-        formatter.field("access_configuration", &self.access_configuration);
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "default_segment_delivery_configuration",
-            &self.default_segment_delivery_configuration,
-        );
-        formatter.field("http_configuration", &self.http_configuration);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field(
-            "segment_delivery_configurations",
-            &self.segment_delivery_configurations,
-        );
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SourceLocation`](crate::model::SourceLocation).
@@ -2711,7 +2494,7 @@ impl SourceLocation {
 
 /// <p>A complex type that contains prefetch schedule information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
     #[doc(hidden)]
@@ -2756,21 +2539,6 @@ impl PrefetchSchedule {
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PrefetchSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrefetchSchedule");
-        formatter.field("arn", &self.arn);
-        formatter.field("consumption", &self.consumption);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "playback_configuration_name",
-            &self.playback_configuration_name,
-        );
-        formatter.field("retrieval", &self.retrieval);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.finish()
     }
 }
 /// See [`PrefetchSchedule`](crate::model::PrefetchSchedule).
@@ -2881,7 +2649,7 @@ impl PrefetchSchedule {
 
 /// <p>A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrefetchRetrieval {
     /// <p>The dynamic variables to use for substitution during prefetch requests to the ad decision server (ADS).</p>
     /// <p>You intially configure <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">dynamic variables</a> for the ADS URL when you set up your playback configuration. When you specify DynamicVariables for prefetch retrieval, MediaTailor includes the dynamic variables in the request to the ADS.</p>
@@ -2911,15 +2679,6 @@ impl PrefetchRetrieval {
     /// <p>The time when prefetch retrievals can start for this break. Ad prefetching will be attempted for manifest requests that occur at or after this time. Defaults to the current time. If not specified, the prefetch retrieval starts as soon as possible.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PrefetchRetrieval {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrefetchRetrieval");
-        formatter.field("dynamic_variables", &self.dynamic_variables);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`PrefetchRetrieval`](crate::model::PrefetchRetrieval).
@@ -3007,7 +2766,7 @@ impl PrefetchRetrieval {
 
 /// <p>A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrefetchConsumption {
     /// <p>If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that match specific dynamic variables, such as scte.event_id, set the avail matching criteria.</p>
     #[doc(hidden)]
@@ -3034,15 +2793,6 @@ impl PrefetchConsumption {
     /// <p>The time when prefetched ads are considered for use in an ad break. If you don't specify StartTime, the prefetched ads are available after MediaTailor retrives them from the ad decision server.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PrefetchConsumption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrefetchConsumption");
-        formatter.field("avail_matching_criteria", &self.avail_matching_criteria);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("start_time", &self.start_time);
-        formatter.finish()
     }
 }
 /// See [`PrefetchConsumption`](crate::model::PrefetchConsumption).
@@ -3126,7 +2876,7 @@ impl PrefetchConsumption {
 /// <p>As an example, let's say that you set DynamicVariable to scte.event_id and Operator to EQUALS, and your playback configuration has an ADS URL of https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]. And the prefetch request to the ADS contains these values https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of my-awesome-event, since it must match the event id that MediaTailor uses to query the ADS.</p>
 /// <p>You can specify up to five AvailMatchingCriteria. If you specify multiple AvailMatchingCriteria, MediaTailor combines them to match using a logical AND. You can model logical OR combinations by creating multiple prefetch schedules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AvailMatchingCriteria {
     /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
     /// <p>You can include up to 100 dynamic variables.</p>
@@ -3145,14 +2895,6 @@ impl AvailMatchingCriteria {
     /// <p>For the DynamicVariable specified in AvailMatchingCriteria, the Operator that is used for the comparison.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for AvailMatchingCriteria {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AvailMatchingCriteria");
-        formatter.field("dynamic_variable", &self.dynamic_variable);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria).
@@ -3293,7 +3035,7 @@ impl AsRef<str> for Operator {
 
 /// <p>Creates a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     #[doc(hidden)]
@@ -3449,43 +3191,6 @@ impl PlaybackConfiguration {
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub fn video_content_source_url(&self) -> std::option::Option<&str> {
         self.video_content_source_url.as_deref()
-    }
-}
-impl std::fmt::Debug for PlaybackConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlaybackConfiguration");
-        formatter.field("ad_decision_server_url", &self.ad_decision_server_url);
-        formatter.field("avail_suppression", &self.avail_suppression);
-        formatter.field("bumper", &self.bumper);
-        formatter.field("cdn_configuration", &self.cdn_configuration);
-        formatter.field("configuration_aliases", &self.configuration_aliases);
-        formatter.field("dash_configuration", &self.dash_configuration);
-        formatter.field("hls_configuration", &self.hls_configuration);
-        formatter.field(
-            "live_pre_roll_configuration",
-            &self.live_pre_roll_configuration,
-        );
-        formatter.field("log_configuration", &self.log_configuration);
-        formatter.field("manifest_processing_rules", &self.manifest_processing_rules);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "personalization_threshold_seconds",
-            &self.personalization_threshold_seconds,
-        );
-        formatter.field(
-            "playback_configuration_arn",
-            &self.playback_configuration_arn,
-        );
-        formatter.field("playback_endpoint_prefix", &self.playback_endpoint_prefix);
-        formatter.field(
-            "session_initialization_endpoint_prefix",
-            &self.session_initialization_endpoint_prefix,
-        );
-        formatter.field("slate_ad_url", &self.slate_ad_url);
-        formatter.field("tags", &self.tags);
-        formatter.field("transcode_profile_name", &self.transcode_profile_name);
-        formatter.field("video_content_source_url", &self.video_content_source_url);
-        formatter.finish()
     }
 }
 /// See [`PlaybackConfiguration`](crate::model::PlaybackConfiguration).
@@ -3835,7 +3540,7 @@ impl PlaybackConfiguration {
 
 /// <p>Live source configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiveSource {
     /// <p>The ARN for the live source.</p>
     #[doc(hidden)]
@@ -3894,22 +3599,6 @@ impl LiveSource {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for LiveSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LiveSource");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "http_package_configurations",
-            &self.http_package_configurations,
-        );
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`LiveSource`](crate::model::LiveSource).
@@ -4062,7 +3751,7 @@ impl LiveSource {
 
 /// <p>The configuration parameters for a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Channel {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -4143,22 +3832,6 @@ impl Channel {
     /// <p>The tier for this channel. STANDARD tier channels can contain live programs.</p>
     pub fn tier(&self) -> std::option::Option<&str> {
         self.tier.as_deref()
-    }
-}
-impl std::fmt::Debug for Channel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Channel");
-        formatter.field("arn", &self.arn);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("channel_state", &self.channel_state);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("filler_slate", &self.filler_slate);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("playback_mode", &self.playback_mode);
-        formatter.field("tags", &self.tags);
-        formatter.field("tier", &self.tier);
-        formatter.finish()
     }
 }
 /// See [`Channel`](crate::model::Channel).
@@ -4350,7 +4023,7 @@ impl Channel {
 
 /// <p>Alert configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Alert {
     /// <p>The code for the alert. For example, NOT_PROCESSED.</p>
     #[doc(hidden)]
@@ -4388,17 +4061,6 @@ impl Alert {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Alert {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Alert");
-        formatter.field("alert_code", &self.alert_code);
-        formatter.field("alert_message", &self.alert_message);
-        formatter.field("last_modified_time", &self.last_modified_time);
-        formatter.field("related_resource_arns", &self.related_resource_arns);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }
 /// See [`Alert`](crate::model::Alert).
@@ -4500,7 +4162,7 @@ impl Alert {
 
 /// <p>The properties for a schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
     #[doc(hidden)]
@@ -4575,25 +4237,6 @@ impl ScheduleEntry {
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduleEntry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleEntry");
-        formatter.field(
-            "approximate_duration_seconds",
-            &self.approximate_duration_seconds,
-        );
-        formatter.field("approximate_start_time", &self.approximate_start_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("channel_name", &self.channel_name);
-        formatter.field("live_source_name", &self.live_source_name);
-        formatter.field("program_name", &self.program_name);
-        formatter.field("schedule_ad_breaks", &self.schedule_ad_breaks);
-        formatter.field("schedule_entry_type", &self.schedule_entry_type);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
     }
 }
 /// See [`ScheduleEntry`](crate::model::ScheduleEntry).
@@ -4859,7 +4502,7 @@ impl AsRef<str> for ScheduleEntryType {
 
 /// <p>The schedule's ad break properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleAdBreak {
     /// <p>The approximate duration of the ad break, in seconds.</p>
     #[doc(hidden)]
@@ -4890,19 +4533,6 @@ impl ScheduleAdBreak {
     /// <p>The name of the VOD source used for the ad break.</p>
     pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ScheduleAdBreak {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleAdBreak");
-        formatter.field(
-            "approximate_duration_seconds",
-            &self.approximate_duration_seconds,
-        );
-        formatter.field("approximate_start_time", &self.approximate_start_time);
-        formatter.field("source_location_name", &self.source_location_name);
-        formatter.field("vod_source_name", &self.vod_source_name);
-        formatter.finish()
     }
 }
 /// See [`ScheduleAdBreak`](crate::model::ScheduleAdBreak).
@@ -4986,7 +4616,7 @@ impl ScheduleAdBreak {
 
 /// <p>Ad break configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdBreak {
     /// <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
     #[doc(hidden)]
@@ -5017,16 +4647,6 @@ impl AdBreak {
     /// <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For information about using splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.</p>
     pub fn splice_insert_message(&self) -> std::option::Option<&crate::model::SpliceInsertMessage> {
         self.splice_insert_message.as_ref()
-    }
-}
-impl std::fmt::Debug for AdBreak {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdBreak");
-        formatter.field("message_type", &self.message_type);
-        formatter.field("offset_millis", &self.offset_millis);
-        formatter.field("slate", &self.slate);
-        formatter.field("splice_insert_message", &self.splice_insert_message);
-        formatter.finish()
     }
 }
 /// See [`AdBreak`](crate::model::AdBreak).
@@ -5107,7 +4727,7 @@ impl AdBreak {
 
 /// <p>Splice insert message configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpliceInsertMessage {
     /// <p>This is written to splice_insert.avail_num, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
     #[doc(hidden)]
@@ -5138,16 +4758,6 @@ impl SpliceInsertMessage {
     /// <p>This is written to splice_insert.unique_program_id, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is 0. Values must be between 0 and 256, inclusive.</p>
     pub fn unique_program_id(&self) -> i32 {
         self.unique_program_id
-    }
-}
-impl std::fmt::Debug for SpliceInsertMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpliceInsertMessage");
-        formatter.field("avail_num", &self.avail_num);
-        formatter.field("avails_expected", &self.avails_expected);
-        formatter.field("splice_event_id", &self.splice_event_id);
-        formatter.field("unique_program_id", &self.unique_program_id);
-        formatter.finish()
     }
 }
 /// See [`SpliceInsertMessage`](crate::model::SpliceInsertMessage).
@@ -5307,7 +4917,7 @@ impl AsRef<str> for MessageType {
 
 /// <p>Schedule configuration parameters. A channel must be stopped before changes can be made to the schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
     #[doc(hidden)]
@@ -5317,13 +4927,6 @@ impl ScheduleConfiguration {
     /// <p>Program transition configurations.</p>
     pub fn transition(&self) -> std::option::Option<&crate::model::Transition> {
         self.transition.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduleConfiguration");
-        formatter.field("transition", &self.transition);
-        formatter.finish()
     }
 }
 /// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
@@ -5365,7 +4968,7 @@ impl ScheduleConfiguration {
 
 /// <p>Program transition configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Transition {
     /// <p>The duration of the live program in seconds.</p>
     #[doc(hidden)]
@@ -5413,20 +5016,6 @@ impl Transition {
     /// <p>RELATIVE - The program is inserted into the schedule either before or after a program that you specify via RelativePosition.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Transition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Transition");
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.field("relative_position", &self.relative_position);
-        formatter.field("relative_program", &self.relative_program);
-        formatter.field(
-            "scheduled_start_time_millis",
-            &self.scheduled_start_time_millis,
-        );
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Transition`](crate::model::Transition).

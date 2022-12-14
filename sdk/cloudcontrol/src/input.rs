@@ -157,7 +157,7 @@ impl CancelResourceRequestInput {
 pub mod create_resource_input {
 
     /// A builder for [`CreateResourceInput`](crate::input::CreateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -262,6 +262,17 @@ pub mod create_resource_input {
                 client_token: self.client_token,
                 desired_state: self.desired_state,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("desired_state", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1132,7 +1143,7 @@ impl ListResourceRequestsInput {
 pub mod list_resources_input {
 
     /// A builder for [`ListResourcesInput`](crate::input::ListResourcesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -1225,6 +1236,18 @@ pub mod list_resources_input {
                 max_results: self.max_results,
                 resource_model: self.resource_model,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("resource_model", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1347,7 +1370,7 @@ impl ListResourcesInput {
 pub mod update_resource_input {
 
     /// A builder for [`UpdateResourceInput`](crate::input::UpdateResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
         pub(crate) type_version_id: std::option::Option<std::string::String>,
@@ -1452,6 +1475,18 @@ pub mod update_resource_input {
                 identifier: self.identifier,
                 patch_document: self.patch_document,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("type_name", &self.type_name);
+            formatter.field("type_version_id", &self.type_version_id);
+            formatter.field("role_arn", &self.role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("identifier", &self.identifier);
+            formatter.field("patch_document", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -1719,7 +1754,7 @@ impl std::fmt::Debug for ListResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourceRequestsInput {
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     /// <p>The default is <code>20</code>.</p>
@@ -1750,22 +1785,10 @@ impl ListResourceRequestsInput {
         self.resource_request_status_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourceRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourceRequestsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "resource_request_status_filter",
-            &self.resource_request_status_filter,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceRequestStatusInput {
     /// <p>A unique token used to track the progress of the resource operation request.</p>
     /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
@@ -1779,17 +1802,10 @@ impl GetResourceRequestStatusInput {
         self.request_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceRequestStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceRequestStatusInput");
-        formatter.field("request_token", &self.request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetResourceInput {
     /// <p>The name of the resource type.</p>
     #[doc(hidden)]
@@ -1832,20 +1848,10 @@ impl GetResourceInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetResourceInput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_version_id", &self.type_version_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteResourceInput {
     /// <p>The name of the resource type.</p>
     #[doc(hidden)]
@@ -1899,17 +1905,6 @@ impl DeleteResourceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteResourceInput");
-        formatter.field("type_name", &self.type_name);
-        formatter.field("type_version_id", &self.type_version_id);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
     }
 }
 
@@ -1997,7 +1992,7 @@ impl std::fmt::Debug for CreateResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     #[doc(hidden)]
@@ -2007,12 +2002,5 @@ impl CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     pub fn request_token(&self) -> std::option::Option<&str> {
         self.request_token.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelResourceRequestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelResourceRequestInput");
-        formatter.field("request_token", &self.request_token);
-        formatter.finish()
     }
 }

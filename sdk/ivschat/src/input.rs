@@ -2122,7 +2122,7 @@ impl UpdateRoomInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
     #[doc(hidden)]
@@ -2164,24 +2164,10 @@ impl UpdateRoomInput {
         self.message_review_handler.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoomInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "maximum_message_rate_per_second",
-            &self.maximum_message_rate_per_second,
-        );
-        formatter.field("maximum_message_length", &self.maximum_message_length);
-        formatter.field("message_review_handler", &self.message_review_handler);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the resource to be untagged. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -2200,18 +2186,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the resource to be tagged. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -2234,18 +2212,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
     #[doc(hidden)]
@@ -2275,19 +2245,10 @@ impl SendEventInput {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for SendEventInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SendEventInput");
-        formatter.field("room_identifier", &self.room_identifier);
-        formatter.field("event_name", &self.event_name);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
     #[doc(hidden)]
@@ -2299,17 +2260,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoomsInput {
     /// <p>Filters the list to match the specified room name.</p>
     #[doc(hidden)]
@@ -2342,23 +2296,10 @@ impl ListRoomsInput {
         self.message_review_handler_uri.as_deref()
     }
 }
-impl std::fmt::Debug for ListRoomsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoomsInput");
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field(
-            "message_review_handler_uri",
-            &self.message_review_handler_uri,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoomInput {
     /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
     #[doc(hidden)]
@@ -2370,17 +2311,10 @@ impl GetRoomInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for GetRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoomInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisconnectUserInput {
     /// <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
     #[doc(hidden)]
@@ -2406,19 +2340,10 @@ impl DisconnectUserInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DisconnectUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisconnectUserInput");
-        formatter.field("room_identifier", &self.room_identifier);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRoomInput {
     /// <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
     #[doc(hidden)]
@@ -2430,17 +2355,10 @@ impl DeleteRoomInput {
         self.identifier.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRoomInput");
-        formatter.field("identifier", &self.identifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMessageInput {
     /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
     #[doc(hidden)]
@@ -2466,19 +2384,10 @@ impl DeleteMessageInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMessageInput");
-        formatter.field("room_identifier", &self.room_identifier);
-        formatter.field("id", &self.id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRoomInput {
     /// <p>Room name. The value does not need to be unique.</p>
     #[doc(hidden)]
@@ -2524,24 +2433,10 @@ impl CreateRoomInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRoomInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "maximum_message_rate_per_second",
-            &self.maximum_message_rate_per_second,
-        );
-        formatter.field("maximum_message_length", &self.maximum_message_length);
-        formatter.field("message_review_handler", &self.message_review_handler);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     #[doc(hidden)]
@@ -2583,19 +2478,5 @@ impl CreateChatTokenInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateChatTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChatTokenInput");
-        formatter.field("room_identifier", &self.room_identifier);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field(
-            "session_duration_in_minutes",
-            &self.session_duration_in_minutes,
-        );
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }

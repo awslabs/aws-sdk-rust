@@ -5,7 +5,7 @@ use std::fmt::Write;
 pub mod create_media_capture_pipeline_input {
 
     /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -129,6 +129,22 @@ pub mod create_media_capture_pipeline_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_type", &self.source_type);
+            formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("sink_type", &self.sink_type);
+            formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "chime_sdk_meeting_configuration",
+                &self.chime_sdk_meeting_configuration,
+            );
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateMediaCapturePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreateMediaCapturePipeline`](crate::operation::CreateMediaCapturePipeline)>
@@ -246,7 +262,7 @@ impl CreateMediaCapturePipelineInput {
 pub mod create_media_concatenation_pipeline_input {
 
     /// A builder for [`CreateMediaConcatenationPipelineInput`](crate::input::CreateMediaConcatenationPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::ConcatenationSource>>,
         pub(crate) sinks: std::option::Option<std::vec::Vec<crate::model::ConcatenationSink>>,
@@ -337,6 +353,16 @@ pub mod create_media_concatenation_pipeline_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sources", &self.sources);
+            formatter.field("sinks", &self.sinks);
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -457,7 +483,7 @@ impl CreateMediaConcatenationPipelineInput {
 pub mod create_media_live_connector_pipeline_input {
 
     /// A builder for [`CreateMediaLiveConnectorPipelineInput`](crate::input::CreateMediaLiveConnectorPipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) sources:
             std::option::Option<std::vec::Vec<crate::model::LiveConnectorSourceConfiguration>>,
@@ -552,6 +578,16 @@ pub mod create_media_live_connector_pipeline_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("sources", &self.sources);
+            formatter.field("sinks", &self.sinks);
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2104,7 +2140,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the pipeline that you want to untag.</p>
     #[doc(hidden)]
@@ -2123,18 +2159,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
@@ -2153,18 +2181,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
     #[doc(hidden)]
@@ -2176,17 +2196,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMediaPipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -2205,18 +2218,10 @@ impl ListMediaPipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMediaPipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMediaPipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -2235,18 +2240,10 @@ impl ListMediaCapturePipelinesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMediaCapturePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMediaCapturePipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaPipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -2258,17 +2255,10 @@ impl GetMediaPipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaPipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -2280,17 +2270,10 @@ impl GetMediaCapturePipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaPipelineInput {
     /// <p>The ID of the media pipeline to delete.</p>
     #[doc(hidden)]
@@ -2302,17 +2285,10 @@ impl DeleteMediaPipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMediaPipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMediaPipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
     #[doc(hidden)]
@@ -2322,13 +2298,6 @@ impl DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media pipeline being deleted. </p>
     pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
         self.media_pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
     }
 }
 

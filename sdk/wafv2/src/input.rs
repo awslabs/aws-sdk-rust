@@ -9287,7 +9287,7 @@ impl UpdateWebAclInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -9382,26 +9382,10 @@ impl UpdateWebAclInput {
         self.captcha_config.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWebAclInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("default_action", &self.default_action);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.field("captcha_config", &self.captcha_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -9482,24 +9466,10 @@ impl UpdateRuleGroupInput {
         self.custom_response_bodies.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRuleGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
@@ -9556,22 +9526,10 @@ impl UpdateRegexPatternSetInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRegexPatternSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("regular_expression_list", &self.regular_expression_list);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -9632,22 +9590,10 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
         self.expiry_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateManagedRuleSetVersionExpiryDateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateManagedRuleSetVersionExpiryDateInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("version_to_expire", &self.version_to_expire);
-        formatter.field("expiry_timestamp", &self.expiry_timestamp);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateIpSetInput {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -9734,22 +9680,10 @@ impl UpdateIpSetInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateIpSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("description", &self.description);
-        formatter.field("addresses", &self.addresses);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -9768,18 +9702,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -9798,18 +9724,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the <code>RuleGroup</code> to which you want to attach the policy.</p>
     #[doc(hidden)]
@@ -9846,18 +9764,10 @@ impl PutPermissionPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutPermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutManagedRuleSetVersionsInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -9922,22 +9832,10 @@ impl PutManagedRuleSetVersionsInput {
         self.versions_to_publish.as_ref()
     }
 }
-impl std::fmt::Debug for PutManagedRuleSetVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutManagedRuleSetVersionsInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.field("recommended_version", &self.recommended_version);
-        formatter.field("versions_to_publish", &self.versions_to_publish);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLoggingConfigurationInput {
     /// <p></p>
     #[doc(hidden)]
@@ -9951,17 +9849,10 @@ impl PutLoggingConfigurationInput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLoggingConfigurationInput");
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebAcLsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -9997,19 +9888,10 @@ impl ListWebAcLsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListWebAcLsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebAcLsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
@@ -10035,19 +9917,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10083,19 +9956,10 @@ impl ListRuleGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     #[doc(hidden)]
@@ -10120,18 +9984,10 @@ impl ListResourcesForWebAclInput {
         self.resource_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListResourcesForWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListResourcesForWebAclInput");
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRegexPatternSetsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10167,19 +10023,10 @@ impl ListRegexPatternSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListRegexPatternSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRegexPatternSetsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMobileSdkReleasesInput {
     /// <p>The device platform to retrieve the list for.</p>
     #[doc(hidden)]
@@ -10205,19 +10052,10 @@ impl ListMobileSdkReleasesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListMobileSdkReleasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMobileSdkReleasesInput");
-        formatter.field("platform", &self.platform);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListManagedRuleSetsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10253,19 +10091,10 @@ impl ListManagedRuleSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListManagedRuleSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListManagedRuleSetsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLoggingConfigurationsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10301,19 +10130,10 @@ impl ListLoggingConfigurationsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListLoggingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLoggingConfigurationsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIpSetsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10349,19 +10169,10 @@ impl ListIpSetsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListIpSetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIpSetsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupVersionsInput {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     #[doc(hidden)]
@@ -10411,21 +10222,10 @@ impl ListAvailableManagedRuleGroupVersionsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListAvailableManagedRuleGroupVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableManagedRuleGroupVersionsInput");
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10461,19 +10261,10 @@ impl ListAvailableManagedRuleGroupsInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListAvailableManagedRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAvailableManagedRuleGroupsInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("next_marker", &self.next_marker);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
     /// <p>The ARN must be in one of the following formats:</p>
@@ -10499,17 +10290,10 @@ impl GetWebAclForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetWebAclForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -10545,19 +10329,10 @@ impl GetWebAclInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWebAclInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSampledRequestsInput {
     /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     #[doc(hidden)]
@@ -10607,21 +10382,10 @@ impl GetSampledRequestsInput {
         self.max_items
     }
 }
-impl std::fmt::Debug for GetSampledRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSampledRequestsInput");
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("rule_metric_name", &self.rule_metric_name);
-        formatter.field("scope", &self.scope);
-        formatter.field("time_window", &self.time_window);
-        formatter.field("max_items", &self.max_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -10664,20 +10428,10 @@ impl GetRuleGroupInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRuleGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
@@ -10713,19 +10467,10 @@ impl GetRegexPatternSetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRegexPatternSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -10775,21 +10520,10 @@ impl GetRateBasedStatementManagedKeysInput {
         self.rule_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetRateBasedStatementManagedKeysInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRateBasedStatementManagedKeysInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("web_acl_name", &self.web_acl_name);
-        formatter.field("web_acl_id", &self.web_acl_id);
-        formatter.field("rule_group_rule_name", &self.rule_group_rule_name);
-        formatter.field("rule_name", &self.rule_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
     #[doc(hidden)]
@@ -10801,17 +10535,10 @@ impl GetPermissionPolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetPermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMobileSdkReleaseInput {
     /// <p>The device platform.</p>
     #[doc(hidden)]
@@ -10830,18 +10557,10 @@ impl GetMobileSdkReleaseInput {
         self.release_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetMobileSdkReleaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMobileSdkReleaseInput");
-        formatter.field("platform", &self.platform);
-        formatter.field("release_version", &self.release_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetManagedRuleSetInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
@@ -10879,19 +10598,10 @@ impl GetManagedRuleSetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetManagedRuleSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetManagedRuleSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     #[doc(hidden)]
@@ -10903,17 +10613,10 @@ impl GetLoggingConfigurationInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLoggingConfigurationInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetIpSetInput {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -10949,19 +10652,10 @@ impl GetIpSetInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetIpSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlInput {
     /// <p>The device platform.</p>
     #[doc(hidden)]
@@ -10980,18 +10674,10 @@ impl GenerateMobileSdkReleaseUrlInput {
         self.release_version.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateMobileSdkReleaseUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GenerateMobileSdkReleaseUrlInput");
-        formatter.field("platform", &self.platform);
-        formatter.field("release_version", &self.release_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>
     /// <p>The ARN must be in one of the following formats:</p>
@@ -11017,17 +10703,10 @@ impl DisassociateWebAclInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateWebAclInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupInput {
     /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     #[doc(hidden)]
@@ -11070,20 +10749,10 @@ impl DescribeManagedRuleGroupInput {
         self.version_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeManagedRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeManagedRuleGroupInput");
-        formatter.field("vendor_name", &self.vendor_name);
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("version_name", &self.version_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -11126,20 +10795,10 @@ impl DeleteWebAclInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebAclInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -11182,20 +10841,10 @@ impl DeleteRuleGroupInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
@@ -11238,20 +10887,10 @@ impl DeleteRegexPatternSetInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRegexPatternSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
@@ -11265,17 +10904,10 @@ impl DeletePermissionPolicyInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePermissionPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePermissionPolicyInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     #[doc(hidden)]
@@ -11287,17 +10919,10 @@ impl DeleteLoggingConfigurationInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggingConfigurationInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteIpSetInput {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -11340,20 +10965,10 @@ impl DeleteIpSetInput {
         self.lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteIpSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("id", &self.id);
-        formatter.field("lock_token", &self.lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     #[doc(hidden)]
@@ -11372,18 +10987,10 @@ impl DeleteFirewallManagerRuleGroupsInput {
         self.web_acl_lock_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFirewallManagerRuleGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFirewallManagerRuleGroupsInput");
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("web_acl_lock_token", &self.web_acl_lock_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
@@ -11471,25 +11078,10 @@ impl CreateWebAclInput {
         self.captcha_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWebAclInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("default_action", &self.default_action);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.field("captcha_config", &self.captcha_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
@@ -11574,24 +11166,10 @@ impl CreateRuleGroupInput {
         self.custom_response_bodies.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("capacity", &self.capacity);
-        formatter.field("description", &self.description);
-        formatter.field("rules", &self.rules);
-        formatter.field("visibility_config", &self.visibility_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("custom_response_bodies", &self.custom_response_bodies);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     #[doc(hidden)]
@@ -11641,21 +11219,10 @@ impl CreateRegexPatternSetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRegexPatternSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRegexPatternSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("description", &self.description);
-        formatter.field("regular_expression_list", &self.regular_expression_list);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIpSetInput {
     /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
     #[doc(hidden)]
@@ -11742,22 +11309,10 @@ impl CreateIpSetInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIpSetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIpSetInput");
-        formatter.field("name", &self.name);
-        formatter.field("scope", &self.scope);
-        formatter.field("description", &self.description);
-        formatter.field("ip_address_version", &self.ip_address_version);
-        formatter.field("addresses", &self.addresses);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CheckCapacityInput {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -11786,18 +11341,10 @@ impl CheckCapacityInput {
         self.rules.as_deref()
     }
 }
-impl std::fmt::Debug for CheckCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CheckCapacityInput");
-        formatter.field("scope", &self.scope);
-        formatter.field("rules", &self.rules);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
     #[doc(hidden)]
@@ -11828,13 +11375,5 @@ impl AssociateWebAclInput {
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateWebAclInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateWebAclInput");
-        formatter.field("web_acl_arn", &self.web_acl_arn);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

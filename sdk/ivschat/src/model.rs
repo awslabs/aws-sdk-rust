@@ -2,7 +2,7 @@
 
 /// <p>This object is used in the ValidationException error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>Name of the field which failed validation.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>Explanation of the reason for the validation error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -259,7 +251,7 @@ impl AsRef<str> for ResourceType {
 
 /// <p>Configuration information for optional message review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageReviewHandler {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
     #[doc(hidden)]
@@ -276,14 +268,6 @@ impl MessageReviewHandler {
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     pub fn fallback_result(&self) -> std::option::Option<&crate::model::FallbackResult> {
         self.fallback_result.as_ref()
-    }
-}
-impl std::fmt::Debug for MessageReviewHandler {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageReviewHandler");
-        formatter.field("uri", &self.uri);
-        formatter.field("fallback_result", &self.fallback_result);
-        formatter.finish()
     }
 }
 /// See [`MessageReviewHandler`](crate::model::MessageReviewHandler).
@@ -427,7 +411,7 @@ impl AsRef<str> for FallbackResult {
 
 /// <p>Summary information about a room.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RoomSummary {
     /// <p>Room ARN.</p>
     #[doc(hidden)]
@@ -485,19 +469,6 @@ impl RoomSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RoomSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RoomSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("message_review_handler", &self.message_review_handler);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`RoomSummary`](crate::model::RoomSummary).

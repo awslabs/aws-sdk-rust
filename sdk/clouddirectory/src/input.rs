@@ -11781,7 +11781,7 @@ impl UpgradePublishedSchemaInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradePublishedSchemaInput {
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
     #[doc(hidden)]
@@ -11814,20 +11814,10 @@ impl UpgradePublishedSchemaInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for UpgradePublishedSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradePublishedSchemaInput");
-        formatter.field("development_schema_arn", &self.development_schema_arn);
-        formatter.field("published_schema_arn", &self.published_schema_arn);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
     #[doc(hidden)]
@@ -11853,19 +11843,10 @@ impl UpgradeAppliedSchemaInput {
         self.dry_run
     }
 }
-impl std::fmt::Debug for UpgradeAppliedSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeAppliedSchemaInput");
-        formatter.field("published_schema_arn", &self.published_schema_arn);
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("dry_run", &self.dry_run);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -11901,20 +11882,10 @@ impl UpdateTypedLinkFacetInput {
         self.identity_attribute_order.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTypedLinkFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTypedLinkFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.field("identity_attribute_order", &self.identity_attribute_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -11933,18 +11904,10 @@ impl UpdateSchemaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSchemaInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -11970,19 +11933,10 @@ impl UpdateObjectAttributesInput {
         self.attribute_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateObjectAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateObjectAttributesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
@@ -12008,19 +11962,10 @@ impl UpdateLinkAttributesInput {
         self.attribute_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLinkAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLinkAttributesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12053,20 +11998,10 @@ impl UpdateFacetInput {
         self.object_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.field("object_type", &self.object_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     #[doc(hidden)]
@@ -12085,18 +12020,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     #[doc(hidden)]
@@ -12115,18 +12042,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveFacetFromObjectInput {
     /// <p>The ARN of the directory in which the object resides.</p>
     #[doc(hidden)]
@@ -12152,19 +12071,10 @@ impl RemoveFacetFromObjectInput {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for RemoveFacetFromObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveFacetFromObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSchemaFromJsonInput {
     /// <p>The ARN of the schema to update.</p>
     #[doc(hidden)]
@@ -12183,18 +12093,10 @@ impl PutSchemaFromJsonInput {
         self.document.as_deref()
     }
 }
-impl std::fmt::Debug for PutSchemaFromJsonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSchemaFromJsonInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublishSchemaInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12227,20 +12129,10 @@ impl PublishSchemaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for PublishSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublishSchemaInput");
-        formatter.field("development_schema_arn", &self.development_schema_arn);
-        formatter.field("version", &self.version);
-        formatter.field("minor_version", &self.minor_version);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookupPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12273,20 +12165,10 @@ impl LookupPolicyInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for LookupPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LookupPolicyInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypedLinkFacetNamesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12312,19 +12194,10 @@ impl ListTypedLinkFacetNamesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTypedLinkFacetNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypedLinkFacetNamesInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12357,20 +12230,10 @@ impl ListTypedLinkFacetAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTypedLinkFacetAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTypedLinkFacetAttributesInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     #[doc(hidden)]
@@ -12396,19 +12259,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPublishedSchemaArnsInput {
     /// <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     #[doc(hidden)]
@@ -12434,19 +12288,10 @@ impl ListPublishedSchemaArnsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPublishedSchemaArnsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPublishedSchemaArnsInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPolicyAttachmentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12486,21 +12331,10 @@ impl ListPolicyAttachmentsInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListPolicyAttachmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPolicyAttachmentsInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOutgoingTypedLinksInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     #[doc(hidden)]
@@ -12559,23 +12393,10 @@ impl ListOutgoingTypedLinksInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListOutgoingTypedLinksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOutgoingTypedLinksInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectPoliciesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12615,21 +12436,10 @@ impl ListObjectPoliciesInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListObjectPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectPoliciesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectParentsInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12676,25 +12486,10 @@ impl ListObjectParentsInput {
         self.include_all_links_to_each_parent
     }
 }
-impl std::fmt::Debug for ListObjectParentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectParentsInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.field(
-            "include_all_links_to_each_parent",
-            &self.include_all_links_to_each_parent,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectParentPathsInput {
     /// <p>The ARN of the directory to which the parent path applies.</p>
     #[doc(hidden)]
@@ -12727,20 +12522,10 @@ impl ListObjectParentPathsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListObjectParentPathsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectParentPathsInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectChildrenInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12780,21 +12565,10 @@ impl ListObjectChildrenInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListObjectChildrenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectChildrenInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -12841,22 +12615,10 @@ impl ListObjectAttributesInput {
         self.facet_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListObjectAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListObjectAttributesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.field("facet_filter", &self.facet_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListManagedSchemaArnsInput {
     /// <p>The response for ListManagedSchemaArns. When this parameter is used, all minor version ARNs for a major version are listed.</p>
     #[doc(hidden)]
@@ -12882,19 +12644,10 @@ impl ListManagedSchemaArnsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListManagedSchemaArnsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListManagedSchemaArnsInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIndexInput {
     /// <p>The ARN of the directory that the index exists in.</p>
     #[doc(hidden)]
@@ -12944,22 +12697,10 @@ impl ListIndexInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIndexInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("ranges_on_indexed_values", &self.ranges_on_indexed_values);
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIncomingTypedLinksInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
     #[doc(hidden)]
@@ -13018,23 +12759,10 @@ impl ListIncomingTypedLinksInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListIncomingTypedLinksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIncomingTypedLinksInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("filter_attribute_ranges", &self.filter_attribute_ranges);
-        formatter.field("filter_typed_link", &self.filter_typed_link);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFacetNamesInput {
     /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
     #[doc(hidden)]
@@ -13060,19 +12788,10 @@ impl ListFacetNamesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFacetNamesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFacetNamesInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFacetAttributesInput {
     /// <p>The ARN of the schema where the facet resides.</p>
     #[doc(hidden)]
@@ -13105,20 +12824,10 @@ impl ListFacetAttributesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFacetAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFacetAttributesInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDirectoriesInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -13144,19 +12853,10 @@ impl ListDirectoriesInput {
         self.state.as_ref()
     }
 }
-impl std::fmt::Debug for ListDirectoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDirectoriesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("state", &self.state);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevelopmentSchemaArnsInput {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
@@ -13175,18 +12875,10 @@ impl ListDevelopmentSchemaArnsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDevelopmentSchemaArnsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevelopmentSchemaArnsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttachedIndicesInput {
     /// <p>The ARN of the directory.</p>
     #[doc(hidden)]
@@ -13226,21 +12918,10 @@ impl ListAttachedIndicesInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for ListAttachedIndicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttachedIndicesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAppliedSchemaArnsInput {
     /// <p>The ARN of the directory you are listing.</p>
     #[doc(hidden)]
@@ -13273,20 +12954,10 @@ impl ListAppliedSchemaArnsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAppliedSchemaArnsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAppliedSchemaArnsInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTypedLinkFacetInformationInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13305,18 +12976,10 @@ impl GetTypedLinkFacetInformationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetTypedLinkFacetInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTypedLinkFacetInformationInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSchemaAsJsonInput {
     /// <p>The ARN of the schema to retrieve.</p>
     #[doc(hidden)]
@@ -13328,17 +12991,10 @@ impl GetSchemaAsJsonInput {
         self.schema_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetSchemaAsJsonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSchemaAsJsonInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectInformationInput {
     /// <p>The ARN of the directory being retrieved.</p>
     #[doc(hidden)]
@@ -13364,19 +13020,10 @@ impl GetObjectInformationInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for GetObjectInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectInformationInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetObjectAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
     #[doc(hidden)]
@@ -13416,21 +13063,10 @@ impl GetObjectAttributesInput {
         self.attribute_names.as_deref()
     }
 }
-impl std::fmt::Debug for GetObjectAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetObjectAttributesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
@@ -13463,20 +13099,10 @@ impl GetLinkAttributesInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for GetLinkAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLinkAttributesInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.field("attribute_names", &self.attribute_names);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13495,18 +13121,10 @@ impl GetFacetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for GetFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDirectoryInput {
     /// <p>The ARN of the directory.</p>
     #[doc(hidden)]
@@ -13518,17 +13136,10 @@ impl GetDirectoryInput {
         self.directory_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDirectoryInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppliedSchemaVersionInput {
     /// <p>The ARN of the applied schema.</p>
     #[doc(hidden)]
@@ -13540,17 +13151,10 @@ impl GetAppliedSchemaVersionInput {
         self.schema_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppliedSchemaVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppliedSchemaVersionInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableDirectoryInput {
     /// <p>The ARN of the directory to enable.</p>
     #[doc(hidden)]
@@ -13562,17 +13166,10 @@ impl EnableDirectoryInput {
         self.directory_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EnableDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableDirectoryInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableDirectoryInput {
     /// <p>The ARN of the directory to disable.</p>
     #[doc(hidden)]
@@ -13584,17 +13181,10 @@ impl DisableDirectoryInput {
         self.directory_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisableDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableDirectoryInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
     #[doc(hidden)]
@@ -13613,18 +13203,10 @@ impl DetachTypedLinkInput {
         self.typed_link_specifier.as_ref()
     }
 }
-impl std::fmt::Debug for DetachTypedLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachTypedLinkInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("typed_link_specifier", &self.typed_link_specifier);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13650,19 +13232,10 @@ impl DetachPolicyInput {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for DetachPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachPolicyInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13688,19 +13261,10 @@ impl DetachObjectInput {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for DetachObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachFromIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
     #[doc(hidden)]
@@ -13726,19 +13290,10 @@ impl DetachFromIndexInput {
         self.target_reference.as_ref()
     }
 }
-impl std::fmt::Debug for DetachFromIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachFromIndexInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13757,18 +13312,10 @@ impl DeleteTypedLinkFacetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTypedLinkFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTypedLinkFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchemaInput {
     /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13780,17 +13327,10 @@ impl DeleteSchemaInput {
         self.schema_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchemaInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13809,18 +13349,10 @@ impl DeleteObjectInput {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13839,18 +13371,10 @@ impl DeleteFacetInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDirectoryInput {
     /// <p>The ARN of the directory to delete.</p>
     #[doc(hidden)]
@@ -13862,17 +13386,10 @@ impl DeleteDirectoryInput {
         self.directory_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDirectoryInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13891,18 +13408,10 @@ impl CreateTypedLinkFacetInput {
         self.facet.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTypedLinkFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTypedLinkFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("facet", &self.facet);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSchemaInput {
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     #[doc(hidden)]
@@ -13914,17 +13423,10 @@ impl CreateSchemaInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSchemaInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -13967,21 +13469,10 @@ impl CreateObjectInput {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("schema_facets", &self.schema_facets);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIndexInput {
     /// <p>The ARN of the directory where the index should be created.</p>
     #[doc(hidden)]
@@ -14024,24 +13515,10 @@ impl CreateIndexInput {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateIndexInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field(
-            "ordered_indexed_attribute_list",
-            &self.ordered_indexed_attribute_list,
-        );
-        formatter.field("is_unique", &self.is_unique);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFacetInput {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14105,21 +13582,10 @@ impl CreateFacetInput {
         self.facet_style.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFacetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFacetInput");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("name", &self.name);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("object_type", &self.object_type);
-        formatter.field("facet_style", &self.facet_style);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDirectoryInput {
     /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
     #[doc(hidden)]
@@ -14138,18 +13604,10 @@ impl CreateDirectoryInput {
         self.schema_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDirectoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDirectoryInput");
-        formatter.field("name", &self.name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14168,18 +13626,10 @@ impl BatchWriteInput {
         self.operations.as_deref()
     }
 }
-impl std::fmt::Debug for BatchWriteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("operations", &self.operations);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchReadInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14205,19 +13655,10 @@ impl BatchReadInput {
         self.consistency_level.as_ref()
     }
 }
-impl std::fmt::Debug for BatchReadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchReadInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("operations", &self.operations);
-        formatter.field("consistency_level", &self.consistency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachTypedLinkInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
     #[doc(hidden)]
@@ -14259,21 +13700,10 @@ impl AttachTypedLinkInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for AttachTypedLinkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachTypedLinkInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("source_object_reference", &self.source_object_reference);
-        formatter.field("target_object_reference", &self.target_object_reference);
-        formatter.field("typed_link_facet", &self.typed_link_facet);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachToIndexInput {
     /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
     #[doc(hidden)]
@@ -14299,19 +13729,10 @@ impl AttachToIndexInput {
         self.target_reference.as_ref()
     }
 }
-impl std::fmt::Debug for AttachToIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachToIndexInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("index_reference", &self.index_reference);
-        formatter.field("target_reference", &self.target_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14337,19 +13758,10 @@ impl AttachPolicyInput {
         self.object_reference.as_ref()
     }
 }
-impl std::fmt::Debug for AttachPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachPolicyInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("policy_reference", &self.policy_reference);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachObjectInput {
     /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14382,20 +13794,10 @@ impl AttachObjectInput {
         self.link_name.as_deref()
     }
 }
-impl std::fmt::Debug for AttachObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("parent_reference", &self.parent_reference);
-        formatter.field("child_reference", &self.child_reference);
-        formatter.field("link_name", &self.link_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplySchemaInput {
     /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14414,18 +13816,10 @@ impl ApplySchemaInput {
         self.directory_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ApplySchemaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplySchemaInput");
-        formatter.field("published_schema_arn", &self.published_schema_arn);
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddFacetToObjectInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
@@ -14459,15 +13853,5 @@ impl AddFacetToObjectInput {
     /// <p>A reference to the object you are adding the specified facet to.</p>
     pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
         self.object_reference.as_ref()
-    }
-}
-impl std::fmt::Debug for AddFacetToObjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddFacetToObjectInput");
-        formatter.field("directory_arn", &self.directory_arn);
-        formatter.field("schema_facet", &self.schema_facet);
-        formatter.field("object_attribute_list", &self.object_attribute_list);
-        formatter.field("object_reference", &self.object_reference);
-        formatter.finish()
     }
 }

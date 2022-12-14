@@ -1358,7 +1358,7 @@ impl BatchUpdateDevicePositionInput {
 pub mod calculate_route_input {
 
     /// A builder for [`CalculateRouteInput`](crate::input::CalculateRouteInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) departure_position: std::option::Option<std::vec::Vec<f64>>,
@@ -1630,6 +1630,23 @@ pub mod calculate_route_input {
                 car_mode_options: self.car_mode_options,
                 truck_mode_options: self.truck_mode_options,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("calculator_name", &self.calculator_name);
+            formatter.field("departure_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("destination_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("waypoint_positions", &self.waypoint_positions);
+            formatter.field("travel_mode", &self.travel_mode);
+            formatter.field("departure_time", &self.departure_time);
+            formatter.field("depart_now", &self.depart_now);
+            formatter.field("distance_unit", &self.distance_unit);
+            formatter.field("include_leg_geometry", &self.include_leg_geometry);
+            formatter.field("car_mode_options", &self.car_mode_options);
+            formatter.field("truck_mode_options", &self.truck_mode_options);
+            formatter.finish()
         }
     }
 }
@@ -8729,7 +8746,7 @@ impl PutGeofenceInput {
 pub mod search_place_index_for_position_input {
 
     /// A builder for [`SearchPlaceIndexForPositionInput`](crate::input::SearchPlaceIndexForPositionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
@@ -8810,6 +8827,16 @@ pub mod search_place_index_for_position_input {
                 max_results: self.max_results.unwrap_or_default(),
                 language: self.language,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("index_name", &self.index_name);
+            formatter.field("position", &"*** Sensitive Data Redacted ***");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("language", &self.language);
+            formatter.finish()
         }
     }
 }
@@ -8952,7 +8979,7 @@ impl SearchPlaceIndexForPositionInput {
 pub mod search_place_index_for_suggestions_input {
 
     /// A builder for [`SearchPlaceIndexForSuggestionsInput`](crate::input::SearchPlaceIndexForSuggestionsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -9104,6 +9131,19 @@ pub mod search_place_index_for_suggestions_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("index_name", &self.index_name);
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_countries", &self.filter_countries);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("language", &self.language);
+            formatter.finish()
+        }
+    }
 }
 impl SearchPlaceIndexForSuggestionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchPlaceIndexForSuggestions`](crate::operation::SearchPlaceIndexForSuggestions)>
@@ -9244,7 +9284,7 @@ impl SearchPlaceIndexForSuggestionsInput {
 pub mod search_place_index_for_text_input {
 
     /// A builder for [`SearchPlaceIndexForTextInput`](crate::input::SearchPlaceIndexForTextInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
@@ -9394,6 +9434,19 @@ pub mod search_place_index_for_text_input {
                 max_results: self.max_results.unwrap_or_default(),
                 language: self.language,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("index_name", &self.index_name);
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_b_box", &"*** Sensitive Data Redacted ***");
+            formatter.field("filter_countries", &self.filter_countries);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("language", &self.language);
+            formatter.finish()
         }
     }
 }
@@ -11042,7 +11095,7 @@ impl UpdateTrackerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrackerConsumersInput {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     #[doc(hidden)]
@@ -11072,19 +11125,10 @@ impl ListTrackerConsumersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTrackerConsumersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrackerConsumersInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDevicePositionsInput {
     /// <p>The tracker resource containing the requested devices.</p>
     #[doc(hidden)]
@@ -11114,19 +11158,10 @@ impl ListDevicePositionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDevicePositionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDevicePositionsInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicePositionHistoryInput {
     /// <p>The tracker resource receiving the request for the device position history.</p>
     #[doc(hidden)]
@@ -11193,22 +11228,10 @@ impl GetDevicePositionHistoryInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetDevicePositionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicePositionHistoryInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("start_time_inclusive", &self.start_time_inclusive);
-        formatter.field("end_time_exclusive", &self.end_time_exclusive);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
     #[doc(hidden)]
@@ -11227,18 +11250,10 @@ impl GetDevicePositionInput {
         self.device_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDevicePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDevicePositionInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
     #[doc(hidden)]
@@ -11263,18 +11278,10 @@ impl DisassociateTrackerConsumerInput {
         self.consumer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateTrackerConsumerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateTrackerConsumerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
     #[doc(hidden)]
@@ -11293,18 +11300,10 @@ impl BatchUpdateDevicePositionInput {
         self.updates.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateDevicePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateDevicePositionInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("updates", &self.updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
     #[doc(hidden)]
@@ -11329,18 +11328,10 @@ impl BatchGetDevicePositionInput {
         self.device_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetDevicePositionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDevicePositionInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("device_ids", &self.device_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryInput {
     /// <p>The name of the tracker resource to delete the device position history from.</p>
     #[doc(hidden)]
@@ -11365,18 +11356,10 @@ impl BatchDeleteDevicePositionHistoryInput {
         self.device_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDevicePositionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDevicePositionHistoryInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("device_ids", &self.device_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
     #[doc(hidden)]
@@ -11401,18 +11384,10 @@ impl AssociateTrackerConsumerInput {
         self.consumer_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateTrackerConsumerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateTrackerConsumerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("consumer_arn", &self.consumer_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTrackersInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
@@ -11435,18 +11410,10 @@ impl ListTrackersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTrackersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTrackersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTrackerInput {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
@@ -11560,23 +11527,10 @@ impl CreateTrackerInput {
         self.position_filtering.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTrackerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTrackerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("position_filtering", &self.position_filtering);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTrackerInput {
     /// <p>The name of the tracker resource to be deleted.</p>
     #[doc(hidden)]
@@ -11588,17 +11542,10 @@ impl DeleteTrackerInput {
         self.tracker_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTrackerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTrackerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
     #[doc(hidden)]
@@ -11660,21 +11607,10 @@ impl UpdateTrackerInput {
         self.position_filtering.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTrackerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTrackerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("description", &self.description);
-        formatter.field("position_filtering", &self.position_filtering);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
@@ -11686,17 +11622,10 @@ impl DescribeTrackerInput {
         self.tracker_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTrackerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTrackerInput");
-        formatter.field("tracker_name", &self.tracker_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CalculateRouteMatrixInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
     #[doc(hidden)]
@@ -11818,21 +11747,6 @@ impl CalculateRouteMatrixInput {
         &self,
     ) -> std::option::Option<&crate::model::CalculateRouteTruckModeOptions> {
         self.truck_mode_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CalculateRouteMatrixInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CalculateRouteMatrixInput");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.field("departure_positions", &self.departure_positions);
-        formatter.field("destination_positions", &self.destination_positions);
-        formatter.field("travel_mode", &self.travel_mode);
-        formatter.field("departure_time", &self.departure_time);
-        formatter.field("depart_now", &self.depart_now);
-        formatter.field("distance_unit", &self.distance_unit);
-        formatter.field("car_mode_options", &self.car_mode_options);
-        formatter.field("truck_mode_options", &self.truck_mode_options);
-        formatter.finish()
     }
 }
 
@@ -12020,7 +11934,7 @@ impl std::fmt::Debug for CalculateRouteInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRouteCalculatorsInput {
     /// <p>An optional maximum number of results returned in a single call.</p>
     /// <p>Default Value: <code>100</code> </p>
@@ -12043,18 +11957,10 @@ impl ListRouteCalculatorsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRouteCalculatorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRouteCalculatorsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRouteCalculatorInput {
     /// <p>The name of the route calculator resource. </p>
     /// <p>Requirements:</p>
@@ -12160,21 +12066,10 @@ impl CreateRouteCalculatorInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRouteCalculatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRouteCalculatorInput");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRouteCalculatorInput {
     /// <p>The name of the route calculator resource to be deleted.</p>
     #[doc(hidden)]
@@ -12186,17 +12081,10 @@ impl DeleteRouteCalculatorInput {
         self.calculator_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRouteCalculatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRouteCalculatorInput");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
     #[doc(hidden)]
@@ -12230,19 +12118,10 @@ impl UpdateRouteCalculatorInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRouteCalculatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRouteCalculatorInput");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
     #[doc(hidden)]
@@ -12252,13 +12131,6 @@ impl DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeRouteCalculatorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRouteCalculatorInput");
-        formatter.field("calculator_name", &self.calculator_name);
-        formatter.finish()
     }
 }
 
@@ -12528,7 +12400,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPlaceInput {
     /// <p>The name of the place index resource that you want to use for the search.</p>
     #[doc(hidden)]
@@ -12562,19 +12434,10 @@ impl GetPlaceInput {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for GetPlaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPlaceInput");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("place_id", &self.place_id);
-        formatter.field("language", &self.language);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPlaceIndexesInput {
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
     /// <p>Default value: <code>100</code> </p>
@@ -12597,18 +12460,10 @@ impl ListPlaceIndexesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPlaceIndexesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPlaceIndexesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePlaceIndexInput {
     /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
@@ -12721,22 +12576,10 @@ impl CreatePlaceIndexInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreatePlaceIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePlaceIndexInput");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("data_source", &self.data_source);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.field("data_source_configuration", &self.data_source_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
     #[doc(hidden)]
@@ -12748,17 +12591,10 @@ impl DeletePlaceIndexInput {
         self.index_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePlaceIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePlaceIndexInput");
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
     #[doc(hidden)]
@@ -12801,20 +12637,10 @@ impl UpdatePlaceIndexInput {
         self.data_source_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePlaceIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePlaceIndexInput");
-        formatter.field("index_name", &self.index_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.field("data_source_configuration", &self.data_source_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePlaceIndexInput {
     /// <p>The name of the place index resource.</p>
     #[doc(hidden)]
@@ -12826,17 +12652,10 @@ impl DescribePlaceIndexInput {
         self.index_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePlaceIndexInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePlaceIndexInput");
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMapTileInput {
     /// <p>The map resource to retrieve the map tiles from.</p>
     #[doc(hidden)]
@@ -12869,20 +12688,10 @@ impl GetMapTileInput {
         self.y.as_deref()
     }
 }
-impl std::fmt::Debug for GetMapTileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMapTileInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("z", &self.z);
-        formatter.field("x", &self.x);
-        formatter.field("y", &self.y);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMapStyleDescriptorInput {
     /// <p>The map resource to retrieve the style descriptor from.</p>
     #[doc(hidden)]
@@ -12894,17 +12703,10 @@ impl GetMapStyleDescriptorInput {
         self.map_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMapStyleDescriptorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMapStyleDescriptorInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMapSpritesInput {
     /// <p>The map resource associated with the sprite ﬁle.</p>
     #[doc(hidden)]
@@ -12941,18 +12743,10 @@ impl GetMapSpritesInput {
         self.file_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMapSpritesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMapSpritesInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("file_name", &self.file_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
     #[doc(hidden)]
@@ -13004,19 +12798,10 @@ impl GetMapGlyphsInput {
         self.font_unicode_range.as_deref()
     }
 }
-impl std::fmt::Debug for GetMapGlyphsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMapGlyphsInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("font_stack", &self.font_stack);
-        formatter.field("font_unicode_range", &self.font_unicode_range);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMapsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
@@ -13039,18 +12824,10 @@ impl ListMapsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMapsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMapsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMapInput {
     /// <p>The name for the map resource.</p>
     /// <p>Requirements:</p>
@@ -13134,21 +12911,10 @@ impl CreateMapInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMapInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("configuration", &self.configuration);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMapInput {
     /// <p>The name of the map resource to be deleted.</p>
     #[doc(hidden)]
@@ -13160,17 +12926,10 @@ impl DeleteMapInput {
         self.map_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMapInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
     #[doc(hidden)]
@@ -13204,19 +12963,10 @@ impl UpdateMapInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMapInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMapInput {
     /// <p>The name of the map resource.</p>
     #[doc(hidden)]
@@ -13228,17 +12978,10 @@ impl DescribeMapInput {
         self.map_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeMapInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMapInput");
-        formatter.field("map_name", &self.map_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutGeofenceInput {
     /// <p>The geofence collection to store the geofence in.</p>
     #[doc(hidden)]
@@ -13268,19 +13011,10 @@ impl PutGeofenceInput {
         self.geometry.as_ref()
     }
 }
-impl std::fmt::Debug for PutGeofenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutGeofenceInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.field("geometry", &self.geometry);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
     #[doc(hidden)]
@@ -13310,19 +13044,10 @@ impl ListGeofencesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListGeofencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeofencesInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGeofenceInput {
     /// <p>The geofence collection storing the target geofence.</p>
     #[doc(hidden)]
@@ -13341,18 +13066,10 @@ impl GetGeofenceInput {
         self.geofence_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetGeofenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGeofenceInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("geofence_id", &self.geofence_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
     #[doc(hidden)]
@@ -13371,18 +13088,10 @@ impl BatchPutGeofenceInput {
         self.entries.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutGeofenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutGeofenceInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("entries", &self.entries);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesInput {
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     #[doc(hidden)]
@@ -13404,18 +13113,10 @@ impl BatchEvaluateGeofencesInput {
         self.device_position_updates.as_deref()
     }
 }
-impl std::fmt::Debug for BatchEvaluateGeofencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchEvaluateGeofencesInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("device_position_updates", &self.device_position_updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteGeofenceInput {
     /// <p>The geofence collection storing the geofences to be deleted.</p>
     #[doc(hidden)]
@@ -13434,18 +13135,10 @@ impl BatchDeleteGeofenceInput {
         self.geofence_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteGeofenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteGeofenceInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("geofence_ids", &self.geofence_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGeofenceCollectionsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
@@ -13468,18 +13161,10 @@ impl ListGeofenceCollectionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGeofenceCollectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGeofenceCollectionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGeofenceCollectionInput {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
@@ -13572,22 +13257,10 @@ impl CreateGeofenceCollectionInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGeofenceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGeofenceCollectionInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteGeofenceCollectionInput {
     /// <p>The name of the geofence collection to be deleted.</p>
     #[doc(hidden)]
@@ -13599,17 +13272,10 @@ impl DeleteGeofenceCollectionInput {
         self.collection_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteGeofenceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteGeofenceCollectionInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
     #[doc(hidden)]
@@ -13652,20 +13318,10 @@ impl UpdateGeofenceCollectionInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGeofenceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGeofenceCollectionInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.field("pricing_plan", &self.pricing_plan);
-        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
     #[doc(hidden)]
@@ -13677,17 +13333,10 @@ impl DescribeGeofenceCollectionInput {
         self.collection_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGeofenceCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGeofenceCollectionInput");
-        formatter.field("collection_name", &self.collection_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
@@ -13712,18 +13361,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
@@ -13772,18 +13413,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
@@ -13799,12 +13432,5 @@ impl ListTagsForResourceInput {
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

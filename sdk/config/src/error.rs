@@ -4,18 +4,11 @@
 /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
 /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -71,18 +64,11 @@ impl ValidationException {
 
 /// <p>You have specified a resource that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
@@ -138,18 +124,11 @@ impl ResourceNotFoundException {
 
 /// <p>You have reached the limit of the number of tags you can use. You have more than 50 tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsException {
     /// Returns the error message.
@@ -205,18 +184,11 @@ impl TooManyTagsException {
 
 /// <p>You have specified a configuration recorder that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchConfigurationRecorderException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchConfigurationRecorderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchConfigurationRecorderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchConfigurationRecorderException {
     /// Returns the error message.
@@ -272,18 +244,11 @@ impl NoSuchConfigurationRecorderException {
 
 /// <p>You specified an Config rule without a remediation configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchRemediationConfigurationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchRemediationConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchRemediationConfigurationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchRemediationConfigurationException {
     /// Returns the error message.
@@ -339,18 +304,11 @@ impl NoSuchRemediationConfigurationException {
 
 /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterValueException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
@@ -416,18 +374,11 @@ impl InvalidParameterValueException {
 /// </ul> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientPermissionsException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientPermissionsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientPermissionsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientPermissionsException {
     /// Returns the error message.
@@ -483,18 +434,11 @@ impl InsufficientPermissionsException {
 
 /// <p>There is no delivery channel available to record configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoAvailableDeliveryChannelException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoAvailableDeliveryChannelException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoAvailableDeliveryChannelException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoAvailableDeliveryChannelException {
     /// Returns the error message.
@@ -559,18 +503,11 @@ impl NoAvailableDeliveryChannelException {
 /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceInUseException {
     /// Returns the error message.
@@ -626,18 +563,11 @@ impl ResourceInUseException {
 
 /// <p>The Config rule in the request is not valid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchConfigRuleException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchConfigRuleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchConfigRuleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchConfigRuleException {
     /// Returns the error message.
@@ -694,18 +624,11 @@ impl NoSuchConfigRuleException {
 /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
 /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LimitExceededException {
     /// Returns the error message.
@@ -761,18 +684,11 @@ impl LimitExceededException {
 
 /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidNextTokenException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidNextTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
@@ -828,18 +744,11 @@ impl InvalidNextTokenException {
 
 /// <p>The specified limit is outside the allowable range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLimitException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLimitException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLimitException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLimitException {
     /// Returns the error message.
@@ -895,18 +804,11 @@ impl InvalidLimitException {
 
 /// <p>The syntax of the query is incorrect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidExpressionException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidExpressionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidExpressionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidExpressionException {
     /// Returns the error message.
@@ -962,18 +864,11 @@ impl InvalidExpressionException {
 
 /// <p>You have specified a configuration aggregator that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchConfigurationAggregatorException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchConfigurationAggregatorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchConfigurationAggregatorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchConfigurationAggregatorException {
     /// Returns the error message.
@@ -1029,18 +924,11 @@ impl NoSuchConfigurationAggregatorException {
 
 /// <p>Two users are trying to modify the same query at the same time. Wait for a moment and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceConcurrentModificationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceConcurrentModificationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceConcurrentModificationException {
     /// Returns the error message.
@@ -1096,18 +984,11 @@ impl ResourceConcurrentModificationException {
 
 /// <p>Failed to add the retention configuration because a retention configuration with that name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfRetentionConfigurationsExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfRetentionConfigurationsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfRetentionConfigurationsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfRetentionConfigurationsExceededException {
     /// Returns the error message.
@@ -1164,18 +1045,11 @@ impl MaxNumberOfRetentionConfigurationsExceededException {
 
 /// <p>There is no configuration recorder running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoRunningConfigurationRecorderException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoRunningConfigurationRecorderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoRunningConfigurationRecorderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoRunningConfigurationRecorderException {
     /// Returns the error message.
@@ -1231,18 +1105,11 @@ impl NoRunningConfigurationRecorderException {
 
 /// <p>You have reached the limit (100,000) of active custom resource types in your account. Delete unused resources using <code>DeleteResourceConfig</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxActiveResourcesExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxActiveResourcesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxActiveResourcesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxActiveResourcesExceededException {
     /// Returns the error message.
@@ -1298,19 +1165,11 @@ impl MaxActiveResourcesExceededException {
 
 /// <p>You have specified a template that is not valid or supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationConformancePackTemplateValidationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationConformancePackTemplateValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("OrganizationConformancePackTemplateValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationConformancePackTemplateValidationException {
     /// Returns the error message.
@@ -1368,18 +1227,11 @@ impl OrganizationConformancePackTemplateValidationException {
 
 /// <p>Config resource cannot be created because your organization does not have all features enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationAllFeaturesNotEnabledException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationAllFeaturesNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationAllFeaturesNotEnabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationAllFeaturesNotEnabledException {
     /// Returns the error message.
@@ -1442,18 +1294,11 @@ impl OrganizationAllFeaturesNotEnabledException {
 /// </ul>
 /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization master account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OrganizationAccessDeniedException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OrganizationAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OrganizationAccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OrganizationAccessDeniedException {
     /// Returns the error message.
@@ -1509,18 +1354,11 @@ impl OrganizationAccessDeniedException {
 
 /// <p>Organization is no longer available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoAvailableOrganizationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoAvailableOrganizationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoAvailableOrganizationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoAvailableOrganizationException {
     /// Returns the error message.
@@ -1576,19 +1414,11 @@ impl NoAvailableOrganizationException {
 
 /// <p>You have reached the limit (6) of the number of organization conformance packs in an account (6 conformance pack with 25 Config rules per pack per account).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfOrganizationConformancePacksExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfOrganizationConformancePacksExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("MaxNumberOfOrganizationConformancePacksExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfOrganizationConformancePacksExceededException {
     /// Returns the error message.
@@ -1651,18 +1481,11 @@ impl MaxNumberOfOrganizationConformancePacksExceededException {
 
 /// <p>You have reached the limit of the number of organization Config rules you can create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfOrganizationConfigRulesExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfOrganizationConfigRulesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfOrganizationConfigRulesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfOrganizationConfigRulesExceededException {
     /// Returns the error message.
@@ -1719,18 +1542,11 @@ impl MaxNumberOfOrganizationConfigRulesExceededException {
 
 /// <p>The specified <code>ResultToken</code> is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResultTokenException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResultTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResultTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResultTokenException {
     /// Returns the error message.
@@ -1786,18 +1602,11 @@ impl InvalidResultTokenException {
 
 /// <p>The specified Amazon S3 bucket does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchBucketException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchBucketException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchBucketException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchBucketException {
     /// Returns the error message.
@@ -1853,18 +1662,11 @@ impl NoSuchBucketException {
 
 /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoAvailableConfigurationRecorderException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoAvailableConfigurationRecorderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoAvailableConfigurationRecorderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoAvailableConfigurationRecorderException {
     /// Returns the error message.
@@ -1920,18 +1722,11 @@ impl NoAvailableConfigurationRecorderException {
 
 /// <p>You have reached the limit of the number of delivery channels you can create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfDeliveryChannelsExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfDeliveryChannelsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfDeliveryChannelsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfDeliveryChannelsExceededException {
     /// Returns the error message.
@@ -1987,18 +1782,11 @@ impl MaxNumberOfDeliveryChannelsExceededException {
 
 /// <p>The specified Amazon SNS topic does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSnsTopicArnException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSnsTopicArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSnsTopicArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSnsTopicArnException {
     /// Returns the error message.
@@ -2057,18 +1845,11 @@ impl InvalidSnsTopicArnException {
 
 /// <p>The specified Amazon KMS Key ARN is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3KmsKeyArnException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3KmsKeyArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3KmsKeyArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3KmsKeyArnException {
     /// Returns the error message.
@@ -2124,18 +1905,11 @@ impl InvalidS3KmsKeyArnException {
 
 /// <p>The specified Amazon S3 key prefix is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidS3KeyPrefixException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidS3KeyPrefixException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidS3KeyPrefixException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidS3KeyPrefixException {
     /// Returns the error message.
@@ -2191,18 +1965,11 @@ impl InvalidS3KeyPrefixException {
 
 /// <p>The specified delivery channel name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeliveryChannelNameException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDeliveryChannelNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeliveryChannelNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDeliveryChannelNameException {
     /// Returns the error message.
@@ -2258,18 +2025,11 @@ impl InvalidDeliveryChannelNameException {
 
 /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InsufficientDeliveryPolicyException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InsufficientDeliveryPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InsufficientDeliveryPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InsufficientDeliveryPolicyException {
     /// Returns the error message.
@@ -2325,18 +2085,11 @@ impl InsufficientDeliveryPolicyException {
 
 /// <p>You have reached the limit (6) of the number of conformance packs in an account (6 conformance pack with 25 Config rules per pack).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfConformancePacksExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfConformancePacksExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfConformancePacksExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfConformancePacksExceededException {
     /// Returns the error message.
@@ -2392,18 +2145,11 @@ impl MaxNumberOfConformancePacksExceededException {
 
 /// <p>You have specified a template that is not valid or supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConformancePackTemplateValidationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConformancePackTemplateValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConformancePackTemplateValidationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConformancePackTemplateValidationException {
     /// Returns the error message.
@@ -2459,18 +2205,11 @@ impl ConformancePackTemplateValidationException {
 
 /// <p>You have reached the limit of the number of recorders you can create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfConfigurationRecordersExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfConfigurationRecordersExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfConfigurationRecordersExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfConfigurationRecordersExceededException {
     /// Returns the error message.
@@ -2527,18 +2266,11 @@ impl MaxNumberOfConfigurationRecordersExceededException {
 
 /// <p>You have provided a null or empty role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRoleException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRoleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRoleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRoleException {
     /// Returns the error message.
@@ -2594,18 +2326,11 @@ impl InvalidRoleException {
 
 /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRecordingGroupException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRecordingGroupException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRecordingGroupException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRecordingGroupException {
     /// Returns the error message.
@@ -2661,18 +2386,11 @@ impl InvalidRecordingGroupException {
 
 /// <p>You have provided a configuration recorder name that is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConfigurationRecorderNameException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConfigurationRecorderNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConfigurationRecorderNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConfigurationRecorderNameException {
     /// Returns the error message.
@@ -2728,18 +2446,11 @@ impl InvalidConfigurationRecorderNameException {
 
 /// <p>Failed to add the Config rule because the account already contains the maximum number of 150 rules. Consider deleting any deactivated rules before you add new rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaxNumberOfConfigRulesExceededException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaxNumberOfConfigRulesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaxNumberOfConfigRulesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaxNumberOfConfigRulesExceededException {
     /// Returns the error message.
@@ -2795,18 +2506,11 @@ impl MaxNumberOfConfigRulesExceededException {
 
 /// <p>You have specified a resource that is either unknown or has not been discovered.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotDiscoveredException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceNotDiscoveredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotDiscoveredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceNotDiscoveredException {
     /// Returns the error message.
@@ -2862,18 +2566,11 @@ impl ResourceNotDiscoveredException {
 
 /// <p>The specified time range is not valid. The earlier time is not chronologically before the later time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTimeRangeException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTimeRangeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTimeRangeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTimeRangeException {
     /// Returns the error message.
@@ -2929,18 +2626,11 @@ impl InvalidTimeRangeException {
 
 /// <p>The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOrganizationConfigRuleException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOrganizationConfigRuleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOrganizationConfigRuleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchOrganizationConfigRuleException {
     /// Returns the error message.
@@ -2997,18 +2687,11 @@ impl NoSuchOrganizationConfigRuleException {
 /// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
 /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOrganizationConformancePackException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOrganizationConformancePackException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOrganizationConformancePackException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchOrganizationConformancePackException {
     /// Returns the error message.
@@ -3064,18 +2747,11 @@ impl NoSuchOrganizationConformancePackException {
 
 /// <p>You specified one or more conformance packs that do not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchConformancePackException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchConformancePackException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchConformancePackException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchConformancePackException {
     /// Returns the error message.
@@ -3131,18 +2807,11 @@ impl NoSuchConformancePackException {
 
 /// <p>Config rule that you passed in the filter does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchConfigRuleInConformancePackException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchConfigRuleInConformancePackException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchConfigRuleInConformancePackException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchConfigRuleInConformancePackException {
     /// Returns the error message.
@@ -3198,18 +2867,11 @@ impl NoSuchConfigRuleInConformancePackException {
 
 /// <p>The configuration item size is outside the allowable range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OversizedConfigurationItemException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OversizedConfigurationItemException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OversizedConfigurationItemException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OversizedConfigurationItemException {
     /// Returns the error message.
@@ -3265,18 +2927,11 @@ impl OversizedConfigurationItemException {
 
 /// <p>You have specified a retention configuration that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchRetentionConfigurationException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchRetentionConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchRetentionConfigurationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchRetentionConfigurationException {
     /// Returns the error message.
@@ -3332,18 +2987,11 @@ impl NoSuchRetentionConfigurationException {
 
 /// <p>You have specified a delivery channel that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchDeliveryChannelException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchDeliveryChannelException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchDeliveryChannelException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchDeliveryChannelException {
     /// Returns the error message.
@@ -3399,18 +3047,11 @@ impl NoSuchDeliveryChannelException {
 
 /// <p>You tried to delete a remediation exception that does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchRemediationExceptionException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchRemediationExceptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchRemediationExceptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchRemediationExceptionException {
     /// Returns the error message.
@@ -3466,18 +3107,11 @@ impl NoSuchRemediationExceptionException {
 
 /// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemediationInProgressException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RemediationInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemediationInProgressException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RemediationInProgressException {
     /// Returns the error message.
@@ -3533,18 +3167,11 @@ impl RemediationInProgressException {
 
 /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LastDeliveryChannelDeleteFailedException {
     /// <p>Error executing the command</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LastDeliveryChannelDeleteFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LastDeliveryChannelDeleteFailedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl LastDeliveryChannelDeleteFailedException {
     /// Returns the error message.

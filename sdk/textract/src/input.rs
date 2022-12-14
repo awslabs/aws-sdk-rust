@@ -1868,7 +1868,7 @@ impl StartExpenseAnalysisInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartExpenseAnalysisInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -1915,22 +1915,10 @@ impl StartExpenseAnalysisInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartExpenseAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartExpenseAnalysisInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentTextDetectionInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -1977,22 +1965,10 @@ impl StartDocumentTextDetectionInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDocumentTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDocumentTextDetectionInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartDocumentAnalysisInput {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
@@ -2053,24 +2029,10 @@ impl StartDocumentAnalysisInput {
         self.queries_config.as_ref()
     }
 }
-impl std::fmt::Debug for StartDocumentAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartDocumentAnalysisInput");
-        formatter.field("document_location", &self.document_location);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("queries_config", &self.queries_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetExpenseAnalysisInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2096,19 +2058,10 @@ impl GetExpenseAnalysisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetExpenseAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetExpenseAnalysisInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentTextDetectionInput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2134,19 +2087,10 @@ impl GetDocumentTextDetectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentTextDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDocumentAnalysisInput {
     /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
@@ -2172,19 +2116,10 @@ impl GetDocumentAnalysisInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetDocumentAnalysisInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDocumentAnalysisInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectDocumentTextInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
@@ -2198,17 +2133,10 @@ impl DetectDocumentTextInput {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for DetectDocumentTextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectDocumentTextInput");
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeIdInput {
     /// <p>The document being passed to AnalyzeID.</p>
     #[doc(hidden)]
@@ -2220,17 +2148,10 @@ impl AnalyzeIdInput {
         self.document_pages.as_deref()
     }
 }
-impl std::fmt::Debug for AnalyzeIdInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeIdInput");
-        formatter.field("document_pages", &self.document_pages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeExpenseInput {
     /// <p>The input document, either as bytes or as an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
@@ -2252,17 +2173,10 @@ impl AnalyzeExpenseInput {
         self.document.as_ref()
     }
 }
-impl std::fmt::Debug for AnalyzeExpenseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeExpenseInput");
-        formatter.field("document", &self.document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyzeDocumentInput {
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
@@ -2295,15 +2209,5 @@ impl AnalyzeDocumentInput {
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub fn queries_config(&self) -> std::option::Option<&crate::model::QueriesConfig> {
         self.queries_config.as_ref()
-    }
-}
-impl std::fmt::Debug for AnalyzeDocumentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyzeDocumentInput");
-        formatter.field("document", &self.document);
-        formatter.field("feature_types", &self.feature_types);
-        formatter.field("human_loop_config", &self.human_loop_config);
-        formatter.field("queries_config", &self.queries_config);
-        formatter.finish()
     }
 }

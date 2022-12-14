@@ -4520,7 +4520,7 @@ impl UpdateMissionProfileInput {
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSatellitesInput {
     /// <p>Maximum number of satellites returned.</p>
     #[doc(hidden)]
@@ -4539,18 +4539,10 @@ impl ListSatellitesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSatellitesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSatellitesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
@@ -4562,17 +4554,10 @@ impl GetSatelliteInput {
         self.satellite_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSatelliteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSatelliteInput");
-        formatter.field("satellite_id", &self.satellite_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMissionProfilesInput {
     /// <p>Maximum number of mission profiles returned.</p>
     #[doc(hidden)]
@@ -4591,18 +4576,10 @@ impl ListMissionProfilesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListMissionProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMissionProfilesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
     #[doc(hidden)]
@@ -4660,32 +4637,10 @@ impl CreateMissionProfileInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMissionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMissionProfileInput");
-        formatter.field("name", &self.name);
-        formatter.field(
-            "contact_pre_pass_duration_seconds",
-            &self.contact_pre_pass_duration_seconds,
-        );
-        formatter.field(
-            "contact_post_pass_duration_seconds",
-            &self.contact_post_pass_duration_seconds,
-        );
-        formatter.field(
-            "minimum_viable_contact_duration_seconds",
-            &self.minimum_viable_contact_duration_seconds,
-        );
-        formatter.field("dataflow_edges", &self.dataflow_edges);
-        formatter.field("tracking_config_arn", &self.tracking_config_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -4697,17 +4652,10 @@ impl DeleteMissionProfileInput {
         self.mission_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMissionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMissionProfileInput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -4761,32 +4709,10 @@ impl UpdateMissionProfileInput {
         self.tracking_config_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateMissionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateMissionProfileInput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.field("name", &self.name);
-        formatter.field(
-            "contact_pre_pass_duration_seconds",
-            &self.contact_pre_pass_duration_seconds,
-        );
-        formatter.field(
-            "contact_post_pass_duration_seconds",
-            &self.contact_post_pass_duration_seconds,
-        );
-        formatter.field(
-            "minimum_viable_contact_duration_seconds",
-            &self.minimum_viable_contact_duration_seconds,
-        );
-        formatter.field("dataflow_edges", &self.dataflow_edges);
-        formatter.field("tracking_config_arn", &self.tracking_config_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
@@ -4798,17 +4724,10 @@ impl GetMissionProfileInput {
         self.mission_profile_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMissionProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMissionProfileInput");
-        formatter.field("mission_profile_id", &self.mission_profile_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGroundStationsInput {
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
     #[doc(hidden)]
@@ -4834,19 +4753,10 @@ impl ListGroundStationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListGroundStationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGroundStationsInput");
-        formatter.field("satellite_id", &self.satellite_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDataflowEndpointGroupsInput {
     /// <p>Maximum number of dataflow endpoint groups returned.</p>
     #[doc(hidden)]
@@ -4865,18 +4775,10 @@ impl ListDataflowEndpointGroupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDataflowEndpointGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDataflowEndpointGroupsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupInput {
     /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -4899,18 +4801,10 @@ impl CreateDataflowEndpointGroupInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDataflowEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataflowEndpointGroupInput");
-        formatter.field("endpoint_details", &self.endpoint_details);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -4922,20 +4816,10 @@ impl DeleteDataflowEndpointGroupInput {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDataflowEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataflowEndpointGroupInput");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
@@ -4947,20 +4831,10 @@ impl GetDataflowEndpointGroupInput {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDataflowEndpointGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDataflowEndpointGroupInput");
-        formatter.field(
-            "dataflow_endpoint_group_id",
-            &self.dataflow_endpoint_group_id,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContactsInput {
     /// <p>Maximum number of contacts returned.</p>
     #[doc(hidden)]
@@ -5021,24 +4895,10 @@ impl ListContactsInput {
         self.mission_profile_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListContactsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContactsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("status_list", &self.status_list);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("ground_station", &self.ground_station);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
     #[doc(hidden)]
@@ -5089,22 +4949,10 @@ impl ReserveContactInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ReserveContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReserveContactInput");
-        formatter.field("mission_profile_arn", &self.mission_profile_arn);
-        formatter.field("satellite_arn", &self.satellite_arn);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("ground_station", &self.ground_station);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelContactInput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -5116,17 +4964,10 @@ impl CancelContactInput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
@@ -5138,17 +4979,10 @@ impl DescribeContactInput {
         self.contact_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContactInput");
-        formatter.field("contact_id", &self.contact_id);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListConfigsInput {
     /// <p>Maximum number of <code>Configs</code> returned.</p>
     #[doc(hidden)]
@@ -5167,18 +5001,10 @@ impl ListConfigsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListConfigsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListConfigsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateConfigInput {
     /// <p>Name of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -5208,19 +5034,10 @@ impl CreateConfigInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateConfigInput");
-        formatter.field("name", &self.name);
-        formatter.field("config_data", &self.config_data);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -5239,18 +5056,10 @@ impl DeleteConfigInput {
         self.config_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteConfigInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -5283,20 +5092,10 @@ impl UpdateConfigInput {
         self.config_data.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateConfigInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("name", &self.name);
-        formatter.field("config_type", &self.config_type);
-        formatter.field("config_data", &self.config_data);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
@@ -5315,18 +5114,10 @@ impl GetConfigInput {
         self.config_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetConfigInput");
-        formatter.field("config_id", &self.config_id);
-        formatter.field("config_type", &self.config_type);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>ARN of a resource.</p>
     #[doc(hidden)]
@@ -5345,18 +5136,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>ARN of a resource tag.</p>
     #[doc(hidden)]
@@ -5379,18 +5162,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>ARN of a resource.</p>
     #[doc(hidden)]
@@ -5402,17 +5177,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMinuteUsageInput {
     /// <p>The month being requested, with a value of 1-12.</p>
     #[doc(hidden)]
@@ -5429,13 +5197,5 @@ impl GetMinuteUsageInput {
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn year(&self) -> std::option::Option<i32> {
         self.year
-    }
-}
-impl std::fmt::Debug for GetMinuteUsageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMinuteUsageInput");
-        formatter.field("month", &self.month);
-        formatter.field("year", &self.year);
-        formatter.finish()
     }
 }

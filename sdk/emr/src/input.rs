@@ -9509,7 +9509,7 @@ impl UpdateStudioSessionMappingInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -9549,21 +9549,10 @@ impl UpdateStudioSessionMappingInput {
         self.session_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStudioSessionMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioSessionMappingInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("session_policy_arn", &self.session_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStudioInput {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
     #[doc(hidden)]
@@ -9603,21 +9592,10 @@ impl UpdateStudioInput {
         self.default_s3_location.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStudioInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("default_s3_location", &self.default_s3_location);
-        formatter.finish()
-    }
-}
 
 /// <p> Input to the <code>TerminateJobFlows</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
     #[doc(hidden)]
@@ -9629,17 +9607,10 @@ impl TerminateJobFlowsInput {
         self.job_flow_ids.as_deref()
     }
 }
-impl std::fmt::Debug for TerminateJobFlowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateJobFlowsInput");
-        formatter.field("job_flow_ids", &self.job_flow_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
@@ -9651,17 +9622,10 @@ impl StopNotebookExecutionInput {
         self.notebook_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopNotebookExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopNotebookExecutionInput");
-        formatter.field("notebook_execution_id", &self.notebook_execution_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartNotebookExecutionInput {
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
     #[doc(hidden)]
@@ -9722,27 +9686,10 @@ impl StartNotebookExecutionInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for StartNotebookExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartNotebookExecutionInput");
-        formatter.field("editor_id", &self.editor_id);
-        formatter.field("relative_path", &self.relative_path);
-        formatter.field("notebook_execution_name", &self.notebook_execution_name);
-        formatter.field("notebook_params", &self.notebook_params);
-        formatter.field("execution_engine", &self.execution_engine);
-        formatter.field("service_role", &self.service_role);
-        formatter.field(
-            "notebook_instance_security_group_id",
-            &self.notebook_instance_security_group_id,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The input to the SetVisibleToAllUsers action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
     #[doc(hidden)]
@@ -9761,18 +9708,10 @@ impl SetVisibleToAllUsersInput {
         self.visible_to_all_users
     }
 }
-impl std::fmt::Debug for SetVisibleToAllUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetVisibleToAllUsersInput");
-        formatter.field("job_flow_ids", &self.job_flow_ids);
-        formatter.field("visible_to_all_users", &self.visible_to_all_users);
-        formatter.finish()
-    }
-}
 
 /// <p> The input argument to the <code>TerminationProtection</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
     #[doc(hidden)]
@@ -9791,18 +9730,10 @@ impl SetTerminationProtectionInput {
         self.termination_protected
     }
 }
-impl std::fmt::Debug for SetTerminationProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetTerminationProtectionInput");
-        formatter.field("job_flow_ids", &self.job_flow_ids);
-        formatter.field("termination_protected", &self.termination_protected);
-        formatter.finish()
-    }
-}
 
 /// <p> Input to the <code>RunJobFlow</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunJobFlowInput {
     /// <p>The name of the job flow.</p>
     #[doc(hidden)]
@@ -10070,45 +10001,10 @@ impl RunJobFlowInput {
         self.os_release_label.as_deref()
     }
 }
-impl std::fmt::Debug for RunJobFlowInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RunJobFlowInput");
-        formatter.field("name", &self.name);
-        formatter.field("log_uri", &self.log_uri);
-        formatter.field("log_encryption_kms_key_id", &self.log_encryption_kms_key_id);
-        formatter.field("additional_info", &self.additional_info);
-        formatter.field("ami_version", &self.ami_version);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("instances", &self.instances);
-        formatter.field("steps", &self.steps);
-        formatter.field("bootstrap_actions", &self.bootstrap_actions);
-        formatter.field("supported_products", &self.supported_products);
-        formatter.field("new_supported_products", &self.new_supported_products);
-        formatter.field("applications", &self.applications);
-        formatter.field("configurations", &self.configurations);
-        formatter.field("visible_to_all_users", &self.visible_to_all_users);
-        formatter.field("job_flow_role", &self.job_flow_role);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("tags", &self.tags);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.field("auto_scaling_role", &self.auto_scaling_role);
-        formatter.field("scale_down_behavior", &self.scale_down_behavior);
-        formatter.field("custom_ami_id", &self.custom_ami_id);
-        formatter.field("ebs_root_volume_size", &self.ebs_root_volume_size);
-        formatter.field("repo_upgrade_on_boot", &self.repo_upgrade_on_boot);
-        formatter.field("kerberos_attributes", &self.kerberos_attributes);
-        formatter.field("step_concurrency_level", &self.step_concurrency_level);
-        formatter.field("managed_scaling_policy", &self.managed_scaling_policy);
-        formatter.field("placement_group_configs", &self.placement_group_configs);
-        formatter.field("auto_termination_policy", &self.auto_termination_policy);
-        formatter.field("os_release_label", &self.os_release_label);
-        formatter.finish()
-    }
-}
 
 /// <p>This input identifies an Amazon EMR resource and a list of tags to remove.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     #[doc(hidden)]
@@ -10127,18 +10023,10 @@ impl RemoveTagsInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyInput {
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     #[doc(hidden)]
@@ -10150,17 +10038,10 @@ impl RemoveManagedScalingPolicyInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveManagedScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveManagedScalingPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
     #[doc(hidden)]
@@ -10172,17 +10053,10 @@ impl RemoveAutoTerminationPolicyInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveAutoTerminationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAutoTerminationPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     #[doc(hidden)]
@@ -10201,18 +10075,10 @@ impl RemoveAutoScalingPolicyInput {
         self.instance_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for RemoveAutoScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveAutoScalingPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutManagedScalingPolicyInput {
     /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
     #[doc(hidden)]
@@ -10233,18 +10099,10 @@ impl PutManagedScalingPolicyInput {
         self.managed_scaling_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutManagedScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutManagedScalingPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("managed_scaling_policy", &self.managed_scaling_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutBlockPublicAccessConfigurationInput {
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>
@@ -10263,20 +10121,10 @@ impl PutBlockPublicAccessConfigurationInput {
         self.block_public_access_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutBlockPublicAccessConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutBlockPublicAccessConfigurationInput");
-        formatter.field(
-            "block_public_access_configuration",
-            &self.block_public_access_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
     #[doc(hidden)]
@@ -10297,18 +10145,10 @@ impl PutAutoTerminationPolicyInput {
         self.auto_termination_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutAutoTerminationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAutoTerminationPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("auto_termination_policy", &self.auto_termination_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     #[doc(hidden)]
@@ -10334,19 +10174,10 @@ impl PutAutoScalingPolicyInput {
         self.auto_scaling_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutAutoScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAutoScalingPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
-        formatter.finish()
-    }
-}
 
 /// <p>Change the size of some instance groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
     #[doc(hidden)]
@@ -10368,18 +10199,10 @@ impl ModifyInstanceGroupsInput {
         self.instance_groups.as_deref()
     }
 }
-impl std::fmt::Debug for ModifyInstanceGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyInstanceGroupsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_groups", &self.instance_groups);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyInstanceFleetInput {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -10398,18 +10221,10 @@ impl ModifyInstanceFleetInput {
         self.instance_fleet.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyInstanceFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyInstanceFleetInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_fleet", &self.instance_fleet);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyClusterInput {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -10428,18 +10243,10 @@ impl ModifyClusterInput {
         self.step_concurrency_level
     }
 }
-impl std::fmt::Debug for ModifyClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("step_concurrency_level", &self.step_concurrency_level);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudioSessionMappingsInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -10465,19 +10272,10 @@ impl ListStudioSessionMappingsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListStudioSessionMappingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudioSessionMappingsInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudiosInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     #[doc(hidden)]
@@ -10489,17 +10287,10 @@ impl ListStudiosInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListStudiosInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudiosInput");
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which steps to list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStepsInput {
     /// <p>The identifier of the cluster for which to list the steps.</p>
     #[doc(hidden)]
@@ -10532,20 +10323,10 @@ impl ListStepsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStepsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("step_states", &self.step_states);
-        formatter.field("step_ids", &self.step_ids);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSecurityConfigurationsInput {
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     #[doc(hidden)]
@@ -10557,17 +10338,10 @@ impl ListSecurityConfigurationsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListSecurityConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSecurityConfigurationsInput");
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListReleaseLabelsInput {
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
     #[doc(hidden)]
@@ -10593,19 +10367,10 @@ impl ListReleaseLabelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListReleaseLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListReleaseLabelsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     #[doc(hidden)]
@@ -10669,21 +10434,10 @@ impl ListNotebookExecutionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListNotebookExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotebookExecutionsInput");
-        formatter.field("editor_id", &self.editor_id);
-        formatter.field("status", &self.status);
-        formatter.field("from", &self.from);
-        formatter.field("to", &self.to);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which instances to list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstancesInput {
     /// <p>The identifier of the cluster for which to list the instances.</p>
     #[doc(hidden)]
@@ -10737,23 +10491,10 @@ impl ListInstancesInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstancesInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_group_id", &self.instance_group_id);
-        formatter.field("instance_group_types", &self.instance_group_types);
-        formatter.field("instance_fleet_id", &self.instance_fleet_id);
-        formatter.field("instance_fleet_type", &self.instance_fleet_type);
-        formatter.field("instance_states", &self.instance_states);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which instance groups to retrieve.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceGroupsInput {
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     #[doc(hidden)]
@@ -10772,18 +10513,10 @@ impl ListInstanceGroupsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstanceGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceGroupsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceFleetsInput {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -10802,18 +10535,10 @@ impl ListInstanceFleetsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListInstanceFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceFleetsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines how the ListClusters action filters the list of clusters that it returns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClustersInput {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     #[doc(hidden)]
@@ -10846,20 +10571,10 @@ impl ListClustersInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClustersInput");
-        formatter.field("created_after", &self.created_after);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("cluster_states", &self.cluster_states);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which bootstrap actions to retrieve.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     #[doc(hidden)]
@@ -10878,18 +10593,10 @@ impl ListBootstrapActionsInput {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for ListBootstrapActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBootstrapActionsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("marker", &self.marker);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -10922,20 +10629,10 @@ impl GetStudioSessionMappingInput {
         self.identity_type.as_ref()
     }
 }
-impl std::fmt::Debug for GetStudioSessionMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioSessionMappingInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetManagedScalingPolicyInput {
     /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     #[doc(hidden)]
@@ -10947,28 +10644,15 @@ impl GetManagedScalingPolicyInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetManagedScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetManagedScalingPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBlockPublicAccessConfigurationInput {}
-impl std::fmt::Debug for GetBlockPublicAccessConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBlockPublicAccessConfigurationInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
     #[doc(hidden)]
@@ -10980,17 +10664,10 @@ impl GetAutoTerminationPolicyInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAutoTerminationPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAutoTerminationPolicyInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStudioInput {
     /// <p>The Amazon EMR Studio ID.</p>
     #[doc(hidden)]
@@ -11002,17 +10679,10 @@ impl DescribeStudioInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStudioInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which step to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStepInput {
     /// <p>The identifier of the cluster with steps to describe.</p>
     #[doc(hidden)]
@@ -11031,18 +10701,10 @@ impl DescribeStepInput {
         self.step_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStepInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStepInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("step_id", &self.step_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
@@ -11054,17 +10716,10 @@ impl DescribeSecurityConfigurationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSecurityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSecurityConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReleaseLabelInput {
     /// <p>The target release label to be described.</p>
     #[doc(hidden)]
@@ -11090,19 +10745,10 @@ impl DescribeReleaseLabelInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeReleaseLabelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReleaseLabelInput");
-        formatter.field("release_label", &self.release_label);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotebookExecutionInput {
     /// <p>The unique identifier of the notebook execution.</p>
     #[doc(hidden)]
@@ -11114,17 +10760,10 @@ impl DescribeNotebookExecutionInput {
         self.notebook_execution_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNotebookExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotebookExecutionInput");
-        formatter.field("notebook_execution_id", &self.notebook_execution_id);
-        formatter.finish()
-    }
-}
 
 /// <p> The input for the <code>DescribeJobFlows</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobFlowsInput {
     /// <p>Return only job flows created after this date and time.</p>
     #[doc(hidden)]
@@ -11157,20 +10796,10 @@ impl DescribeJobFlowsInput {
         self.job_flow_states.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobFlowsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobFlowsInput");
-        formatter.field("created_after", &self.created_after);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("job_flow_ids", &self.job_flow_ids);
-        formatter.field("job_flow_states", &self.job_flow_states);
-        formatter.finish()
-    }
-}
 
 /// <p>This input determines which cluster to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeClusterInput {
     /// <p>The identifier of the cluster to describe.</p>
     #[doc(hidden)]
@@ -11182,17 +10811,10 @@ impl DescribeClusterInput {
         self.cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeClusterInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -11225,20 +10847,10 @@ impl DeleteStudioSessionMappingInput {
         self.identity_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteStudioSessionMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioSessionMappingInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -11250,17 +10862,10 @@ impl DeleteStudioInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
@@ -11272,17 +10877,10 @@ impl DeleteSecurityConfigurationInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSecurityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSecurityConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
     #[doc(hidden)]
@@ -11322,21 +10920,10 @@ impl CreateStudioSessionMappingInput {
         self.session_policy_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStudioSessionMappingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioSessionMappingInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("identity_id", &self.identity_id);
-        formatter.field("identity_name", &self.identity_name);
-        formatter.field("identity_type", &self.identity_type);
-        formatter.field("session_policy_arn", &self.session_policy_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStudioInput {
     /// <p>A descriptive name for the Amazon EMR Studio.</p>
     #[doc(hidden)]
@@ -11432,35 +11019,10 @@ impl CreateStudioInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStudioInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("auth_mode", &self.auth_mode);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("user_role", &self.user_role);
-        formatter.field(
-            "workspace_security_group_id",
-            &self.workspace_security_group_id,
-        );
-        formatter.field("engine_security_group_id", &self.engine_security_group_id);
-        formatter.field("default_s3_location", &self.default_s3_location);
-        formatter.field("idp_auth_url", &self.idp_auth_url);
-        formatter.field(
-            "idp_relay_state_parameter_name",
-            &self.idp_relay_state_parameter_name,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
@@ -11479,18 +11041,10 @@ impl CreateSecurityConfigurationInput {
         self.security_configuration.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSecurityConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSecurityConfigurationInput");
-        formatter.field("name", &self.name);
-        formatter.field("security_configuration", &self.security_configuration);
-        formatter.finish()
-    }
-}
 
 /// <p>The input argument to the <code>CancelSteps</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelStepsInput {
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     #[doc(hidden)]
@@ -11518,19 +11072,10 @@ impl CancelStepsInput {
         self.step_cancellation_option.as_ref()
     }
 }
-impl std::fmt::Debug for CancelStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelStepsInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("step_ids", &self.step_ids);
-        formatter.field("step_cancellation_option", &self.step_cancellation_option);
-        formatter.finish()
-    }
-}
 
 /// <p>This input identifies an Amazon EMR resource and a list of tags to attach.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     #[doc(hidden)]
@@ -11549,18 +11094,10 @@ impl AddTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for AddTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsInput");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p> The input argument to the <code>AddJobFlowSteps</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddJobFlowStepsInput {
     /// <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
     #[doc(hidden)]
@@ -11588,19 +11125,10 @@ impl AddJobFlowStepsInput {
         self.execution_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AddJobFlowStepsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddJobFlowStepsInput");
-        formatter.field("job_flow_id", &self.job_flow_id);
-        formatter.field("steps", &self.steps);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to an AddInstanceGroups call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddInstanceGroupsInput {
     /// <p>Instance groups to add.</p>
     #[doc(hidden)]
@@ -11619,18 +11147,10 @@ impl AddInstanceGroupsInput {
         self.job_flow_id.as_deref()
     }
 }
-impl std::fmt::Debug for AddInstanceGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddInstanceGroupsInput");
-        formatter.field("instance_groups", &self.instance_groups);
-        formatter.field("job_flow_id", &self.job_flow_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddInstanceFleetInput {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
@@ -11647,13 +11167,5 @@ impl AddInstanceFleetInput {
     /// <p>Specifies the configuration of the instance fleet.</p>
     pub fn instance_fleet(&self) -> std::option::Option<&crate::model::InstanceFleetConfig> {
         self.instance_fleet.as_ref()
-    }
-}
-impl std::fmt::Debug for AddInstanceFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddInstanceFleetInput");
-        formatter.field("cluster_id", &self.cluster_id);
-        formatter.field("instance_fleet", &self.instance_fleet);
-        formatter.finish()
     }
 }

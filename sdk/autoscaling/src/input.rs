@@ -11757,7 +11757,7 @@ impl UpdateAutoScalingGroupInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -11935,40 +11935,10 @@ impl UpdateAutoScalingGroupInput {
         self.default_instance_warmup
     }
 }
-impl std::fmt::Debug for UpdateAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupInput {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -11987,21 +11957,10 @@ impl TerminateInstanceInAutoScalingGroupInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for TerminateInstanceInAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateInstanceInAutoScalingGroupInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuspendProcessesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12044,18 +12003,10 @@ impl SuspendProcessesInput {
         self.scaling_processes.as_deref()
     }
 }
-impl std::fmt::Debug for SuspendProcessesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuspendProcessesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scaling_processes", &self.scaling_processes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12098,20 +12049,10 @@ impl StartInstanceRefreshInput {
         self.preferences.as_ref()
     }
 }
-impl std::fmt::Debug for StartInstanceRefreshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartInstanceRefreshInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("strategy", &self.strategy);
-        formatter.field("desired_configuration", &self.desired_configuration);
-        formatter.field("preferences", &self.preferences);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetInstanceProtectionInput {
     /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
     #[doc(hidden)]
@@ -12137,19 +12078,10 @@ impl SetInstanceProtectionInput {
         self.protected_from_scale_in
     }
 }
-impl std::fmt::Debug for SetInstanceProtectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetInstanceProtectionInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("protected_from_scale_in", &self.protected_from_scale_in);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetInstanceHealthInput {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
@@ -12177,22 +12109,10 @@ impl SetInstanceHealthInput {
         self.should_respect_grace_period
     }
 }
-impl std::fmt::Debug for SetInstanceHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetInstanceHealthInput");
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("health_status", &self.health_status);
-        formatter.field(
-            "should_respect_grace_period",
-            &self.should_respect_grace_period,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SetDesiredCapacityInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12218,19 +12138,10 @@ impl SetDesiredCapacityInput {
         self.honor_cooldown
     }
 }
-impl std::fmt::Debug for SetDesiredCapacityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SetDesiredCapacityInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("honor_cooldown", &self.honor_cooldown);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResumeProcessesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12273,18 +12184,10 @@ impl ResumeProcessesInput {
         self.scaling_processes.as_deref()
     }
 }
-impl std::fmt::Debug for ResumeProcessesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResumeProcessesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scaling_processes", &self.scaling_processes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordLifecycleActionHeartbeatInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -12317,20 +12220,10 @@ impl RecordLifecycleActionHeartbeatInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for RecordLifecycleActionHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordLifecycleActionHeartbeatInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_action_token", &self.lifecycle_action_token);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12378,24 +12271,10 @@ impl PutWarmPoolInput {
         self.instance_reuse_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "max_group_prepared_capacity",
-            &self.max_group_prepared_capacity,
-        );
-        formatter.field("min_size", &self.min_size);
-        formatter.field("pool_state", &self.pool_state);
-        formatter.field("instance_reuse_policy", &self.instance_reuse_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScheduledUpdateGroupActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12482,26 +12361,10 @@ impl PutScheduledUpdateGroupActionInput {
         self.time_zone.as_deref()
     }
 }
-impl std::fmt::Debug for PutScheduledUpdateGroupActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScheduledUpdateGroupActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.field("time", &self.time);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("recurrence", &self.recurrence);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("time_zone", &self.time_zone);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutScalingPolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12674,36 +12537,10 @@ impl PutScalingPolicyInput {
         self.predictive_scaling_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutScalingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutScalingPolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_type", &self.policy_type);
-        formatter.field("adjustment_type", &self.adjustment_type);
-        formatter.field("min_adjustment_step", &self.min_adjustment_step);
-        formatter.field("min_adjustment_magnitude", &self.min_adjustment_magnitude);
-        formatter.field("scaling_adjustment", &self.scaling_adjustment);
-        formatter.field("cooldown", &self.cooldown);
-        formatter.field("metric_aggregation_type", &self.metric_aggregation_type);
-        formatter.field("step_adjustments", &self.step_adjustments);
-        formatter.field("estimated_instance_warmup", &self.estimated_instance_warmup);
-        formatter.field(
-            "target_tracking_configuration",
-            &self.target_tracking_configuration,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "predictive_scaling_configuration",
-            &self.predictive_scaling_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12729,19 +12566,10 @@ impl PutNotificationConfigurationInput {
         self.notification_types.as_deref()
     }
 }
-impl std::fmt::Debug for PutNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutNotificationConfigurationInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.field("notification_types", &self.notification_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecycleHookInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -12822,24 +12650,10 @@ impl PutLifecycleHookInput {
         self.default_result.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecycleHookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecycleHookInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_transition", &self.lifecycle_transition);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("notification_target_arn", &self.notification_target_arn);
-        formatter.field("notification_metadata", &self.notification_metadata);
-        formatter.field("heartbeat_timeout", &self.heartbeat_timeout);
-        formatter.field("default_result", &self.default_result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12874,20 +12688,10 @@ impl GetPredictiveScalingForecastInput {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for GetPredictiveScalingForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPredictiveScalingForecastInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExitStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -12906,18 +12710,10 @@ impl ExitStandbyInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for ExitStandbyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExitStandbyInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecutePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -12965,21 +12761,10 @@ impl ExecutePolicyInput {
         self.breach_threshold
     }
 }
-impl std::fmt::Debug for ExecutePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecutePolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("honor_cooldown", &self.honor_cooldown);
-        formatter.field("metric_value", &self.metric_value);
-        formatter.field("breach_threshold", &self.breach_threshold);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnterStandbyInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -13005,22 +12790,10 @@ impl EnterStandbyInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for EnterStandbyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnterStandbyInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13096,19 +12869,10 @@ impl EnableMetricsCollectionInput {
         self.granularity.as_deref()
     }
 }
-impl std::fmt::Debug for EnableMetricsCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableMetricsCollectionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("metrics", &self.metrics);
-        formatter.field("granularity", &self.granularity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableMetricsCollectionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13177,18 +12941,10 @@ impl DisableMetricsCollectionInput {
         self.metrics.as_deref()
     }
 }
-impl std::fmt::Debug for DisableMetricsCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableMetricsCollectionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13207,18 +12963,10 @@ impl DetachLoadBalancerTargetGroupsInput {
         self.target_group_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13237,18 +12985,10 @@ impl DetachLoadBalancersInput {
         self.load_balancer_names.as_deref()
     }
 }
-impl std::fmt::Debug for DetachLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -13274,22 +13014,10 @@ impl DetachInstancesInput {
         self.should_decrement_desired_capacity
     }
 }
-impl std::fmt::Debug for DetachInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetachInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "should_decrement_desired_capacity",
-            &self.should_decrement_desired_capacity,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13315,30 +13043,15 @@ impl DescribeWarmPoolInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTerminationPolicyTypesInput {}
-impl std::fmt::Debug for DescribeTerminationPolicyTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTerminationPolicyTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTagsInput {
     /// <p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
     #[doc(hidden)]
@@ -13364,19 +13077,10 @@ impl DescribeTagsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTagsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScheduledActionsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13425,33 +13129,15 @@ impl DescribeScheduledActionsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeScheduledActionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScheduledActionsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_names", &self.scheduled_action_names);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingProcessTypesInput {}
-impl std::fmt::Debug for DescribeScalingProcessTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingProcessTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeScalingActivitiesInput {
     /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
@@ -13493,21 +13179,10 @@ impl DescribeScalingActivitiesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeScalingActivitiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeScalingActivitiesInput");
-        formatter.field("activity_ids", &self.activity_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("include_deleted_groups", &self.include_deleted_groups);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePoliciesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13549,21 +13224,10 @@ impl DescribePoliciesInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribePoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePoliciesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_names", &self.policy_names);
-        formatter.field("policy_types", &self.policy_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13589,30 +13253,15 @@ impl DescribeNotificationConfigurationsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeNotificationConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNotificationConfigurationsInput");
-        formatter.field("auto_scaling_group_names", &self.auto_scaling_group_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeMetricCollectionTypesInput {}
-impl std::fmt::Debug for DescribeMetricCollectionTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeMetricCollectionTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13638,19 +13287,10 @@ impl DescribeLoadBalancerTargetGroupsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13676,30 +13316,15 @@ impl DescribeLoadBalancersInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLifecycleHookTypesInput {}
-impl std::fmt::Debug for DescribeLifecycleHookTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLifecycleHookTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLifecycleHooksInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13718,18 +13343,10 @@ impl DescribeLifecycleHooksInput {
         self.lifecycle_hook_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLifecycleHooksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLifecycleHooksInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_hook_names", &self.lifecycle_hook_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLaunchConfigurationsInput {
     /// <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
@@ -13757,22 +13374,10 @@ impl DescribeLaunchConfigurationsInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeLaunchConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLaunchConfigurationsInput");
-        formatter.field(
-            "launch_configuration_names",
-            &self.launch_configuration_names,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13805,31 +13410,15 @@ impl DescribeInstanceRefreshesInput {
         self.max_records
     }
 }
-impl std::fmt::Debug for DescribeInstanceRefreshesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceRefreshesInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("instance_refresh_ids", &self.instance_refresh_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingNotificationTypesInput {}
-impl std::fmt::Debug for DescribeAutoScalingNotificationTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingNotificationTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingInstancesInput {
     /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
     /// <p>Array Members: Maximum number of 50 items.</p>
@@ -13857,19 +13446,10 @@ impl DescribeAutoScalingInstancesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoScalingInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsInput {
     /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>
     /// <p>If you omit this property, all Auto Scaling groups are described.</p>
@@ -13904,42 +13484,20 @@ impl DescribeAutoScalingGroupsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAutoScalingGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAutoScalingGroupsInput");
-        formatter.field("auto_scaling_group_names", &self.auto_scaling_group_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_records", &self.max_records);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAdjustmentTypesInput {}
-impl std::fmt::Debug for DescribeAdjustmentTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAdjustmentTypesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountLimitsInput {}
-impl std::fmt::Debug for DescribeAccountLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountLimitsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -13958,18 +13516,10 @@ impl DeleteWarmPoolInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteWarmPoolInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWarmPoolInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTagsInput {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
@@ -13981,17 +13531,10 @@ impl DeleteTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTagsInput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14010,18 +13553,10 @@ impl DeleteScheduledActionInput {
         self.scheduled_action_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteScheduledActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_name", &self.scheduled_action_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14040,18 +13575,10 @@ impl DeletePolicyInput {
         self.policy_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePolicyInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteNotificationConfigurationInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14070,18 +13597,10 @@ impl DeleteNotificationConfigurationInput {
         self.topic_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteNotificationConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteNotificationConfigurationInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("topic_arn", &self.topic_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLifecycleHookInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -14100,18 +13619,10 @@ impl DeleteLifecycleHookInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLifecycleHookInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLifecycleHookInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationInput {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
@@ -14123,17 +13634,10 @@ impl DeleteLaunchConfigurationInput {
         self.launch_configuration_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLaunchConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchConfigurationInput");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14152,18 +13656,10 @@ impl DeleteAutoScalingGroupInput {
         self.force_delete
     }
 }
-impl std::fmt::Debug for DeleteAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("force_delete", &self.force_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOrUpdateTagsInput {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
@@ -14175,17 +13671,10 @@ impl CreateOrUpdateTagsInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateOrUpdateTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOrUpdateTagsInput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLaunchConfigurationInput {
     /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
     #[doc(hidden)]
@@ -14369,41 +13858,10 @@ impl CreateLaunchConfigurationInput {
         self.metadata_options.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLaunchConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLaunchConfigurationInput");
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("image_id", &self.image_id);
-        formatter.field("key_name", &self.key_name);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("classic_link_vpc_id", &self.classic_link_vpc_id);
-        formatter.field(
-            "classic_link_vpc_security_groups",
-            &self.classic_link_vpc_security_groups,
-        );
-        formatter.field("user_data", &self.user_data);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("kernel_id", &self.kernel_id);
-        formatter.field("ramdisk_id", &self.ramdisk_id);
-        formatter.field("block_device_mappings", &self.block_device_mappings);
-        formatter.field("instance_monitoring", &self.instance_monitoring);
-        formatter.field("spot_price", &self.spot_price);
-        formatter.field("iam_instance_profile", &self.iam_instance_profile);
-        formatter.field("ebs_optimized", &self.ebs_optimized);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("placement_tenancy", &self.placement_tenancy);
-        formatter.field("metadata_options", &self.metadata_options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
     #[doc(hidden)]
@@ -14635,48 +14093,10 @@ impl CreateAutoScalingGroupInput {
         self.default_instance_warmup
     }
 }
-impl std::fmt::Debug for CreateAutoScalingGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAutoScalingGroupInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("launch_configuration_name", &self.launch_configuration_name);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("mixed_instances_policy", &self.mixed_instances_policy);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_capacity", &self.desired_capacity);
-        formatter.field("default_cooldown", &self.default_cooldown);
-        formatter.field("availability_zones", &self.availability_zones);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.field("health_check_type", &self.health_check_type);
-        formatter.field("health_check_grace_period", &self.health_check_grace_period);
-        formatter.field("placement_group", &self.placement_group);
-        formatter.field("vpc_zone_identifier", &self.vpc_zone_identifier);
-        formatter.field("termination_policies", &self.termination_policies);
-        formatter.field(
-            "new_instances_protected_from_scale_in",
-            &self.new_instances_protected_from_scale_in,
-        );
-        formatter.field("capacity_rebalance", &self.capacity_rebalance);
-        formatter.field(
-            "lifecycle_hook_specification_list",
-            &self.lifecycle_hook_specification_list,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.field("service_linked_role_arn", &self.service_linked_role_arn);
-        formatter.field("max_instance_lifetime", &self.max_instance_lifetime);
-        formatter.field("context", &self.context);
-        formatter.field("desired_capacity_type", &self.desired_capacity_type);
-        formatter.field("default_instance_warmup", &self.default_instance_warmup);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompleteLifecycleActionInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
@@ -14716,21 +14136,10 @@ impl CompleteLifecycleActionInput {
         self.instance_id.as_deref()
     }
 }
-impl std::fmt::Debug for CompleteLifecycleActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompleteLifecycleActionInput");
-        formatter.field("lifecycle_hook_name", &self.lifecycle_hook_name);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("lifecycle_action_token", &self.lifecycle_action_token);
-        formatter.field("lifecycle_action_result", &self.lifecycle_action_result);
-        formatter.field("instance_id", &self.instance_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14742,17 +14151,10 @@ impl CancelInstanceRefreshInput {
         self.auto_scaling_group_name.as_deref()
     }
 }
-impl std::fmt::Debug for CancelInstanceRefreshInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelInstanceRefreshInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14774,21 +14176,10 @@ impl BatchPutScheduledUpdateGroupActionInput {
         self.scheduled_update_group_actions.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutScheduledUpdateGroupActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutScheduledUpdateGroupActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field(
-            "scheduled_update_group_actions",
-            &self.scheduled_update_group_actions,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14807,18 +14198,10 @@ impl BatchDeleteScheduledActionInput {
         self.scheduled_action_names.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteScheduledActionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteScheduledActionInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("scheduled_action_names", &self.scheduled_action_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14837,18 +14220,10 @@ impl AttachLoadBalancerTargetGroupsInput {
         self.target_group_ar_ns.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancerTargetGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancerTargetGroupsInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("target_group_ar_ns", &self.target_group_ar_ns);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -14867,18 +14242,10 @@ impl AttachLoadBalancersInput {
         self.load_balancer_names.as_deref()
     }
 }
-impl std::fmt::Debug for AttachLoadBalancersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachLoadBalancersInput");
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.field("load_balancer_names", &self.load_balancer_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
@@ -14895,13 +14262,5 @@ impl AttachInstancesInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AttachInstancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttachInstancesInput");
-        formatter.field("instance_ids", &self.instance_ids);
-        formatter.field("auto_scaling_group_name", &self.auto_scaling_group_name);
-        formatter.finish()
     }
 }

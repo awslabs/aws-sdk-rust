@@ -2,7 +2,7 @@
 
 /// <p>Information about the knowledge base.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KnowledgeBaseData {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
@@ -93,29 +93,6 @@ impl KnowledgeBaseData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for KnowledgeBaseData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KnowledgeBaseData");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
-        formatter.field("name", &self.name);
-        formatter.field("knowledge_base_type", &self.knowledge_base_type);
-        formatter.field("status", &self.status);
-        formatter.field(
-            "last_content_modification_time",
-            &self.last_content_modification_time,
-        );
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("rendering_configuration", &self.rendering_configuration);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
@@ -323,7 +300,7 @@ impl KnowledgeBaseData {
 
 /// <p>The KMS key used for encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerSideEncryptionConfiguration {
     /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     #[doc(hidden)]
@@ -333,13 +310,6 @@ impl ServerSideEncryptionConfiguration {
     /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerSideEncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerSideEncryptionConfiguration");
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -378,7 +348,7 @@ impl ServerSideEncryptionConfiguration {
 
 /// <p>Information about how to render the content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RenderingConfiguration {
     /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format. This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow, the variable must be one of the following:</p>
     /// <ul>
@@ -398,13 +368,6 @@ impl RenderingConfiguration {
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     pub fn template_uri(&self) -> std::option::Option<&str> {
         self.template_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for RenderingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RenderingConfiguration");
-        formatter.field("template_uri", &self.template_uri);
-        formatter.finish()
     }
 }
 /// See [`RenderingConfiguration`](crate::model::RenderingConfiguration).
@@ -492,7 +455,7 @@ impl SourceConfiguration {
 
 /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppIntegrationsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     #[doc(hidden)]
@@ -519,14 +482,6 @@ impl AppIntegrationsConfiguration {
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
         self.object_fields.as_deref()
-    }
-}
-impl std::fmt::Debug for AppIntegrationsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppIntegrationsConfiguration");
-        formatter.field("app_integration_arn", &self.app_integration_arn);
-        formatter.field("object_fields", &self.object_fields);
-        formatter.finish()
     }
 }
 /// See [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
@@ -810,7 +765,7 @@ impl AsRef<str> for KnowledgeBaseType {
 
 /// <p>Summary information about the content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentSummary {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     #[doc(hidden)]
@@ -898,23 +853,6 @@ impl ContentSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ContentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentSummary");
-        formatter.field("content_arn", &self.content_arn);
-        formatter.field("content_id", &self.content_id);
-        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("name", &self.name);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.field("title", &self.title);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("status", &self.status);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ContentSummary`](crate::model::ContentSummary).
@@ -1239,7 +1177,7 @@ impl AsRef<str> for ContentStatus {
 
 /// <p>The search expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchExpression {
     /// <p>The search expression filters.</p>
     #[doc(hidden)]
@@ -1249,13 +1187,6 @@ impl SearchExpression {
     /// <p>The search expression filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchExpression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchExpression");
-        formatter.field("filters", &self.filters);
-        formatter.finish()
     }
 }
 /// See [`SearchExpression`](crate::model::SearchExpression).
@@ -1303,7 +1234,7 @@ impl SearchExpression {
 
 /// <p>A search filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Filter {
     /// <p>The field on which to filter.</p>
     #[doc(hidden)]
@@ -1327,15 +1258,6 @@ impl Filter {
     /// <p>The desired field value on which to filter.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Filter");
-        formatter.field("field", &self.field);
-        formatter.field("operator", &self.operator);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Filter`](crate::model::Filter).
@@ -1571,7 +1493,7 @@ impl AsRef<str> for FilterField {
 
 /// <p>Summary information about the knowledge base.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KnowledgeBaseSummary {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
@@ -1653,25 +1575,6 @@ impl KnowledgeBaseSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for KnowledgeBaseSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KnowledgeBaseSummary");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
-        formatter.field("name", &self.name);
-        formatter.field("knowledge_base_type", &self.knowledge_base_type);
-        formatter.field("status", &self.status);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("rendering_configuration", &self.rendering_configuration);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
@@ -1999,7 +1902,7 @@ impl std::fmt::Debug for ContentData {
 pub mod content_data {
 
     /// A builder for [`ContentData`](crate::model::ContentData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) content_arn: std::option::Option<std::string::String>,
         pub(crate) content_id: std::option::Option<std::string::String>,
@@ -2223,6 +2126,26 @@ pub mod content_data {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("content_arn", &self.content_arn);
+            formatter.field("content_id", &self.content_id);
+            formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+            formatter.field("knowledge_base_id", &self.knowledge_base_id);
+            formatter.field("name", &self.name);
+            formatter.field("revision_id", &self.revision_id);
+            formatter.field("title", &self.title);
+            formatter.field("content_type", &self.content_type);
+            formatter.field("status", &self.status);
+            formatter.field("metadata", &self.metadata);
+            formatter.field("tags", &self.tags);
+            formatter.field("link_out_uri", &self.link_out_uri);
+            formatter.field("url", &"*** Sensitive Data Redacted ***");
+            formatter.field("url_expiry", &self.url_expiry);
+            formatter.finish()
+        }
+    }
 }
 impl ContentData {
     /// Creates a new builder-style object to manufacture [`ContentData`](crate::model::ContentData).
@@ -2233,7 +2156,7 @@ impl ContentData {
 
 /// <p>Summary information about the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
     #[doc(hidden)]
@@ -2264,16 +2187,6 @@ impl SessionSummary {
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(&self) -> std::option::Option<&str> {
         self.assistant_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SessionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionSummary");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("session_arn", &self.session_arn);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("assistant_arn", &self.assistant_arn);
-        formatter.finish()
     }
 }
 /// See [`SessionSummary`](crate::model::SessionSummary).
@@ -2351,7 +2264,7 @@ impl SessionSummary {
 
 /// <p>Information about the result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResultData {
     /// <p>The identifier of the result data.</p>
     #[doc(hidden)]
@@ -2375,15 +2288,6 @@ impl ResultData {
     /// <p>The relevance score of the results.</p>
     pub fn relevance_score(&self) -> f64 {
         self.relevance_score
-    }
-}
-impl std::fmt::Debug for ResultData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResultData");
-        formatter.field("result_id", &self.result_id);
-        formatter.field("document", &self.document);
-        formatter.field("relevance_score", &self.relevance_score);
-        formatter.finish()
     }
 }
 /// See [`ResultData`](crate::model::ResultData).
@@ -2446,7 +2350,7 @@ impl ResultData {
 
 /// <p>The document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Document {
     /// <p>A reference to the content resource.</p>
     #[doc(hidden)]
@@ -2470,15 +2374,6 @@ impl Document {
     /// <p>The excerpt from the document.</p>
     pub fn excerpt(&self) -> std::option::Option<&crate::model::DocumentText> {
         self.excerpt.as_ref()
-    }
-}
-impl std::fmt::Debug for Document {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Document");
-        formatter.field("content_reference", &self.content_reference);
-        formatter.field("title", &self.title);
-        formatter.field("excerpt", &self.excerpt);
-        formatter.finish()
     }
 }
 /// See [`Document`](crate::model::Document).
@@ -2578,7 +2473,7 @@ impl std::fmt::Debug for DocumentText {
 pub mod document_text {
 
     /// A builder for [`DocumentText`](crate::model::DocumentText).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) highlights: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
@@ -2621,6 +2516,14 @@ pub mod document_text {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.field("highlights", &self.highlights);
+            formatter.finish()
+        }
+    }
 }
 impl DocumentText {
     /// Creates a new builder-style object to manufacture [`DocumentText`](crate::model::DocumentText).
@@ -2631,7 +2534,7 @@ impl DocumentText {
 
 /// <p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The offset for the start of the highlight.</p>
     #[doc(hidden)]
@@ -2648,14 +2551,6 @@ impl Highlight {
     /// <p>The offset for the end of the highlight.</p>
     pub fn end_offset_exclusive(&self) -> i32 {
         self.end_offset_exclusive
-    }
-}
-impl std::fmt::Debug for Highlight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Highlight");
-        formatter.field("begin_offset_inclusive", &self.begin_offset_inclusive);
-        formatter.field("end_offset_exclusive", &self.end_offset_exclusive);
-        formatter.finish()
     }
 }
 /// See [`Highlight`](crate::model::Highlight).
@@ -2706,7 +2601,7 @@ impl Highlight {
 
 /// <p>Reference information about the content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     #[doc(hidden)]
@@ -2737,16 +2632,6 @@ impl ContentReference {
     /// <p>The identifier of the content.</p>
     pub fn content_id(&self) -> std::option::Option<&str> {
         self.content_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ContentReference {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentReference");
-        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("content_arn", &self.content_arn);
-        formatter.field("content_id", &self.content_id);
-        formatter.finish()
     }
 }
 /// See [`ContentReference`](crate::model::ContentReference).
@@ -2827,7 +2712,7 @@ impl ContentReference {
 
 /// <p>The feedback to submit to Wisdom.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FeedbackData {
     /// <p>The relevance of the target this feedback is for.</p>
     #[doc(hidden)]
@@ -2837,13 +2722,6 @@ impl FeedbackData {
     /// <p>The relevance of the target this feedback is for.</p>
     pub fn relevance(&self) -> std::option::Option<&crate::model::Relevance> {
         self.relevance.as_ref()
-    }
-}
-impl std::fmt::Debug for FeedbackData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FeedbackData");
-        formatter.field("relevance", &self.relevance);
-        formatter.finish()
     }
 }
 /// See [`FeedbackData`](crate::model::FeedbackData).
@@ -3065,7 +2943,7 @@ impl AsRef<str> for TargetType {
 
 /// <p>An error occurred when creating a recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedError {
     /// <p>The identifier of the recommendation that is in error.</p>
     #[doc(hidden)]
@@ -3082,14 +2960,6 @@ impl NotifyRecommendationsReceivedError {
     /// <p>A recommendation is causing an error.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for NotifyRecommendationsReceivedError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyRecommendationsReceivedError");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
@@ -3143,7 +3013,7 @@ impl NotifyRecommendationsReceivedError {
 
 /// <p>A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationTrigger {
     /// <p>The identifier of the recommendation trigger.</p>
     #[doc(hidden)]
@@ -3189,17 +3059,6 @@ impl RecommendationTrigger {
     /// <p>The identifiers of the recommendations.</p>
     pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.recommendation_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationTrigger {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationTrigger");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("source", &self.source);
-        formatter.field("data", &self.data);
-        formatter.field("recommendation_ids", &self.recommendation_ids);
-        formatter.finish()
     }
 }
 /// See [`RecommendationTrigger`](crate::model::RecommendationTrigger).
@@ -3374,7 +3233,7 @@ impl std::fmt::Debug for QueryRecommendationTriggerData {
 pub mod query_recommendation_trigger_data {
 
     /// A builder for [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
     }
@@ -3392,6 +3251,13 @@ pub mod query_recommendation_trigger_data {
         /// Consumes the builder and constructs a [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
         pub fn build(self) -> crate::model::QueryRecommendationTriggerData {
             crate::model::QueryRecommendationTriggerData { text: self.text }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("text", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3588,7 +3454,7 @@ impl AsRef<str> for RecommendationTriggerType {
 
 /// <p>Information about the recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationData {
     /// <p>The identifier of the recommendation.</p>
     #[doc(hidden)]
@@ -3626,17 +3492,6 @@ impl RecommendationData {
     /// <p>The type of recommendation.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RecommendationType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for RecommendationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationData");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("document", &self.document);
-        formatter.field("relevance_score", &self.relevance_score);
-        formatter.field("relevance_level", &self.relevance_level);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`RecommendationData`](crate::model::RecommendationData).
@@ -3914,7 +3769,7 @@ impl AsRef<str> for RelevanceLevel {
 
 /// <p>Summary information about the assistant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssistantSummary {
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
@@ -3980,23 +3835,6 @@ impl AssistantSummary {
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AssistantSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssistantSummary");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("assistant_arn", &self.assistant_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssistantSummary`](crate::model::AssistantSummary).
@@ -4351,7 +4189,7 @@ impl AsRef<str> for AssistantType {
 
 /// <p>The assistant data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssistantData {
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
@@ -4417,23 +4255,6 @@ impl AssistantData {
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AssistantData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssistantData");
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("assistant_arn", &self.assistant_arn);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AssistantData`](crate::model::AssistantData).
@@ -4586,7 +4407,7 @@ impl AssistantData {
 
 /// <p>Information about the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     #[doc(hidden)]
@@ -4628,17 +4449,6 @@ impl SessionData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SessionData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SessionData");
-        formatter.field("session_arn", &self.session_arn);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SessionData`](crate::model::SessionData).
@@ -4742,7 +4552,7 @@ impl SessionData {
 
 /// <p>Summary information about the assistant association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssistantAssociationSummary {
     /// <p>The identifier of the assistant association.</p>
     #[doc(hidden)]
@@ -4800,19 +4610,6 @@ impl AssistantAssociationSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AssistantAssociationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssistantAssociationSummary");
-        formatter.field("assistant_association_id", &self.assistant_association_id);
-        formatter.field("assistant_association_arn", &self.assistant_association_arn);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("assistant_arn", &self.assistant_arn);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("association_data", &self.association_data);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
@@ -4998,7 +4795,7 @@ impl AssistantAssociationOutputData {
 
 /// <p>Association information about the knowledge base.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KnowledgeBaseAssociationData {
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
@@ -5015,14 +4812,6 @@ impl KnowledgeBaseAssociationData {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for KnowledgeBaseAssociationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KnowledgeBaseAssociationData");
-        formatter.field("knowledge_base_id", &self.knowledge_base_id);
-        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
-        formatter.finish()
     }
 }
 /// See [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
@@ -5164,7 +4953,7 @@ impl AsRef<str> for AssociationType {
 
 /// <p>Information about the assistant association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssistantAssociationData {
     /// <p>The identifier of the assistant association.</p>
     #[doc(hidden)]
@@ -5222,19 +5011,6 @@ impl AssistantAssociationData {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for AssistantAssociationData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssistantAssociationData");
-        formatter.field("assistant_association_id", &self.assistant_association_id);
-        formatter.field("assistant_association_arn", &self.assistant_association_arn);
-        formatter.field("assistant_id", &self.assistant_id);
-        formatter.field("assistant_arn", &self.assistant_arn);
-        formatter.field("association_type", &self.association_type);
-        formatter.field("association_data", &self.association_data);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`AssistantAssociationData`](crate::model::AssistantAssociationData).

@@ -2,7 +2,7 @@
 
 /// <p>Represents the output of an <code>UpdatePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineOutput {
     /// <p>The structure of the updated pipeline.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl UpdatePipelineOutput {
     /// <p>The structure of the updated pipeline.</p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
         self.pipeline.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
     }
 }
 /// See [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
@@ -60,14 +53,8 @@ impl UpdatePipelineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateActionTypeOutput {}
-impl std::fmt::Debug for UpdateActionTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateActionTypeOutput");
-        formatter.finish()
-    }
-}
 /// See [`UpdateActionTypeOutput`](crate::output::UpdateActionTypeOutput).
 pub mod update_action_type_output {
 
@@ -90,14 +77,8 @@ impl UpdateActionTypeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -120,14 +101,8 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -150,7 +125,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
     #[doc(hidden)]
@@ -160,13 +135,6 @@ impl StopPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StopPipelineExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopPipelineExecutionOutput");
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.finish()
     }
 }
 /// See [`StopPipelineExecutionOutput`](crate::output::StopPipelineExecutionOutput).
@@ -208,7 +176,7 @@ impl StopPipelineExecutionOutput {
 
 /// <p>Represents the output of a <code>StartPipelineExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     #[doc(hidden)]
@@ -218,13 +186,6 @@ impl StartPipelineExecutionOutput {
     /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for StartPipelineExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPipelineExecutionOutput");
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.finish()
     }
 }
 /// See [`StartPipelineExecutionOutput`](crate::output::StartPipelineExecutionOutput).
@@ -266,7 +227,7 @@ impl StartPipelineExecutionOutput {
 
 /// <p>Represents the output of a <code>RetryStageExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
     #[doc(hidden)]
@@ -276,13 +237,6 @@ impl RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RetryStageExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RetryStageExecutionOutput");
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.finish()
     }
 }
 /// See [`RetryStageExecutionOutput`](crate::output::RetryStageExecutionOutput).
@@ -324,14 +278,8 @@ impl RetryStageExecutionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyOutput {}
-impl std::fmt::Debug for RegisterWebhookWithThirdPartyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterWebhookWithThirdPartyOutput");
-        formatter.finish()
-    }
-}
 /// See [`RegisterWebhookWithThirdPartyOutput`](crate::output::RegisterWebhookWithThirdPartyOutput).
 pub mod register_webhook_with_third_party_output {
 
@@ -354,7 +302,7 @@ impl RegisterWebhookWithThirdPartyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutWebhookOutput {
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
     #[doc(hidden)]
@@ -364,13 +312,6 @@ impl PutWebhookOutput {
     /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::ListWebhookItem> {
         self.webhook.as_ref()
-    }
-}
-impl std::fmt::Debug for PutWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutWebhookOutput");
-        formatter.field("webhook", &self.webhook);
-        formatter.finish()
     }
 }
 /// See [`PutWebhookOutput`](crate::output::PutWebhookOutput).
@@ -412,14 +353,8 @@ impl PutWebhookOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutThirdPartyJobSuccessResultOutput {}
-impl std::fmt::Debug for PutThirdPartyJobSuccessResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutThirdPartyJobSuccessResultOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutThirdPartyJobSuccessResultOutput`](crate::output::PutThirdPartyJobSuccessResultOutput).
 pub mod put_third_party_job_success_result_output {
 
@@ -442,14 +377,8 @@ impl PutThirdPartyJobSuccessResultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutThirdPartyJobFailureResultOutput {}
-impl std::fmt::Debug for PutThirdPartyJobFailureResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutThirdPartyJobFailureResultOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutThirdPartyJobFailureResultOutput`](crate::output::PutThirdPartyJobFailureResultOutput).
 pub mod put_third_party_job_failure_result_output {
 
@@ -472,14 +401,8 @@ impl PutThirdPartyJobFailureResultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobSuccessResultOutput {}
-impl std::fmt::Debug for PutJobSuccessResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobSuccessResultOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutJobSuccessResultOutput`](crate::output::PutJobSuccessResultOutput).
 pub mod put_job_success_result_output {
 
@@ -502,14 +425,8 @@ impl PutJobSuccessResultOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutJobFailureResultOutput {}
-impl std::fmt::Debug for PutJobFailureResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutJobFailureResultOutput");
-        formatter.finish()
-    }
-}
 /// See [`PutJobFailureResultOutput`](crate::output::PutJobFailureResultOutput).
 pub mod put_job_failure_result_output {
 
@@ -532,7 +449,7 @@ impl PutJobFailureResultOutput {
 
 /// <p>Represents the output of a <code>PutApprovalResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
     #[doc(hidden)]
@@ -542,13 +459,6 @@ impl PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
     pub fn approved_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.approved_at.as_ref()
-    }
-}
-impl std::fmt::Debug for PutApprovalResultOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutApprovalResultOutput");
-        formatter.field("approved_at", &self.approved_at);
-        formatter.finish()
     }
 }
 /// See [`PutApprovalResultOutput`](crate::output::PutApprovalResultOutput).
@@ -590,7 +500,7 @@ impl PutApprovalResultOutput {
 
 /// <p>Represents the output of a <code>PutActionRevision</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutActionRevisionOutput {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     #[doc(hidden)]
@@ -607,14 +517,6 @@ impl PutActionRevisionOutput {
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PutActionRevisionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutActionRevisionOutput");
-        formatter.field("new_revision", &self.new_revision);
-        formatter.field("pipeline_execution_id", &self.pipeline_execution_id);
-        formatter.finish()
     }
 }
 /// See [`PutActionRevisionOutput`](crate::output::PutActionRevisionOutput).
@@ -668,7 +570,7 @@ impl PutActionRevisionOutput {
 
 /// <p>Represents the output of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     #[doc(hidden)]
@@ -678,13 +580,6 @@ impl PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     pub fn jobs(&self) -> std::option::Option<&[crate::model::ThirdPartyJob]> {
         self.jobs.as_deref()
-    }
-}
-impl std::fmt::Debug for PollForThirdPartyJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForThirdPartyJobsOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.finish()
     }
 }
 /// See [`PollForThirdPartyJobsOutput`](crate::output::PollForThirdPartyJobsOutput).
@@ -730,7 +625,7 @@ impl PollForThirdPartyJobsOutput {
 
 /// <p>Represents the output of a <code>PollForJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     #[doc(hidden)]
@@ -740,13 +635,6 @@ impl PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
         self.jobs.as_deref()
-    }
-}
-impl std::fmt::Debug for PollForJobsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForJobsOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.finish()
     }
 }
 /// See [`PollForJobsOutput`](crate::output::PollForJobsOutput).
@@ -792,7 +680,7 @@ impl PollForJobsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
     #[doc(hidden)]
@@ -809,14 +697,6 @@ impl ListWebhooksOutput {
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListWebhooksOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWebhooksOutput");
-        formatter.field("webhooks", &self.webhooks);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListWebhooksOutput`](crate::output::ListWebhooksOutput).
@@ -876,7 +756,7 @@ impl ListWebhooksOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
@@ -893,14 +773,6 @@ impl ListTagsForResourceOutput {
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -960,7 +832,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>Represents the output of a <code>ListPipelines</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The list of pipelines.</p>
     #[doc(hidden)]
@@ -977,14 +849,6 @@ impl ListPipelinesOutput {
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPipelinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesOutput");
-        formatter.field("pipelines", &self.pipelines);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
@@ -1044,7 +908,7 @@ impl ListPipelinesOutput {
 
 /// <p>Represents the output of a <code>ListPipelineExecutions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
     #[doc(hidden)]
@@ -1064,17 +928,6 @@ impl ListPipelineExecutionsOutput {
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPipelineExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelineExecutionsOutput");
-        formatter.field(
-            "pipeline_execution_summaries",
-            &self.pipeline_execution_summaries,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListPipelineExecutionsOutput`](crate::output::ListPipelineExecutionsOutput).
@@ -1138,7 +991,7 @@ impl ListPipelineExecutionsOutput {
 
 /// <p>Represents the output of a <code>ListActionTypes</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
     #[doc(hidden)]
@@ -1155,14 +1008,6 @@ impl ListActionTypesOutput {
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListActionTypesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActionTypesOutput");
-        formatter.field("action_types", &self.action_types);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListActionTypesOutput`](crate::output::ListActionTypesOutput).
@@ -1222,7 +1067,7 @@ impl ListActionTypesOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
     #[doc(hidden)]
@@ -1242,14 +1087,6 @@ impl ListActionExecutionsOutput {
     /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListActionExecutionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActionExecutionsOutput");
-        formatter.field("action_execution_details", &self.action_execution_details);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListActionExecutionsOutput`](crate::output::ListActionExecutionsOutput).
@@ -1313,7 +1150,7 @@ impl ListActionExecutionsOutput {
 
 /// <p>Represents the output of a <code>GetThirdPartyJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
     #[doc(hidden)]
@@ -1323,13 +1160,6 @@ impl GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn job_details(&self) -> std::option::Option<&crate::model::ThirdPartyJobDetails> {
         self.job_details.as_ref()
-    }
-}
-impl std::fmt::Debug for GetThirdPartyJobDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetThirdPartyJobDetailsOutput");
-        formatter.field("job_details", &self.job_details);
-        formatter.finish()
     }
 }
 /// See [`GetThirdPartyJobDetailsOutput`](crate::output::GetThirdPartyJobDetailsOutput).
@@ -1371,7 +1201,7 @@ impl GetThirdPartyJobDetailsOutput {
 
 /// <p>Represents the output of a <code>GetPipelineState</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
     #[doc(hidden)]
@@ -1413,17 +1243,6 @@ impl GetPipelineStateOutput {
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPipelineStateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineStateOutput");
-        formatter.field("pipeline_name", &self.pipeline_name);
-        formatter.field("pipeline_version", &self.pipeline_version);
-        formatter.field("stage_states", &self.stage_states);
-        formatter.field("created", &self.created);
-        formatter.field("updated", &self.updated);
-        formatter.finish()
     }
 }
 /// See [`GetPipelineStateOutput`](crate::output::GetPipelineStateOutput).
@@ -1532,7 +1351,7 @@ impl GetPipelineStateOutput {
 
 /// <p>Represents the output of a <code>GetPipelineExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
     #[doc(hidden)]
@@ -1542,13 +1361,6 @@ impl GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
     pub fn pipeline_execution(&self) -> std::option::Option<&crate::model::PipelineExecution> {
         self.pipeline_execution.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPipelineExecutionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineExecutionOutput");
-        formatter.field("pipeline_execution", &self.pipeline_execution);
-        formatter.finish()
     }
 }
 /// See [`GetPipelineExecutionOutput`](crate::output::GetPipelineExecutionOutput).
@@ -1590,7 +1402,7 @@ impl GetPipelineExecutionOutput {
 
 /// <p>Represents the output of a <code>GetPipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
@@ -1607,14 +1419,6 @@ impl GetPipelineOutput {
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn metadata(&self) -> std::option::Option<&crate::model::PipelineMetadata> {
         self.metadata.as_ref()
-    }
-}
-impl std::fmt::Debug for GetPipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("metadata", &self.metadata);
-        formatter.finish()
     }
 }
 /// See [`GetPipelineOutput`](crate::output::GetPipelineOutput).
@@ -1671,7 +1475,7 @@ impl GetPipelineOutput {
 
 /// <p>Represents the output of a <code>GetJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetJobDetailsOutput {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
@@ -1685,13 +1489,6 @@ impl GetJobDetailsOutput {
     /// </note>
     pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
         self.job_details.as_ref()
-    }
-}
-impl std::fmt::Debug for GetJobDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetJobDetailsOutput");
-        formatter.field("job_details", &self.job_details);
-        formatter.finish()
     }
 }
 /// See [`GetJobDetailsOutput`](crate::output::GetJobDetailsOutput).
@@ -1737,7 +1534,7 @@ impl GetJobDetailsOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetActionTypeOutput {
     /// <p>The action type information for the requested action type, such as the action type ID.</p>
     #[doc(hidden)]
@@ -1747,13 +1544,6 @@ impl GetActionTypeOutput {
     /// <p>The action type information for the requested action type, such as the action type ID.</p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionTypeDeclaration> {
         self.action_type.as_ref()
-    }
-}
-impl std::fmt::Debug for GetActionTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetActionTypeOutput");
-        formatter.field("action_type", &self.action_type);
-        formatter.finish()
     }
 }
 /// See [`GetActionTypeOutput`](crate::output::GetActionTypeOutput).
@@ -1795,14 +1585,8 @@ impl GetActionTypeOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableStageTransitionOutput {}
-impl std::fmt::Debug for EnableStageTransitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableStageTransitionOutput");
-        formatter.finish()
-    }
-}
 /// See [`EnableStageTransitionOutput`](crate::output::EnableStageTransitionOutput).
 pub mod enable_stage_transition_output {
 
@@ -1825,14 +1609,8 @@ impl EnableStageTransitionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableStageTransitionOutput {}
-impl std::fmt::Debug for DisableStageTransitionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableStageTransitionOutput");
-        formatter.finish()
-    }
-}
 /// See [`DisableStageTransitionOutput`](crate::output::DisableStageTransitionOutput).
 pub mod disable_stage_transition_output {
 
@@ -1855,14 +1633,8 @@ impl DisableStageTransitionOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyOutput {}
-impl std::fmt::Debug for DeregisterWebhookWithThirdPartyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterWebhookWithThirdPartyOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeregisterWebhookWithThirdPartyOutput`](crate::output::DeregisterWebhookWithThirdPartyOutput).
 pub mod deregister_webhook_with_third_party_output {
 
@@ -1885,14 +1657,8 @@ impl DeregisterWebhookWithThirdPartyOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWebhookOutput {}
-impl std::fmt::Debug for DeleteWebhookOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWebhookOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
 pub mod delete_webhook_output {
 
@@ -1915,14 +1681,8 @@ impl DeleteWebhookOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineOutput {}
-impl std::fmt::Debug for DeletePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
@@ -1945,14 +1705,8 @@ impl DeletePipelineOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCustomActionTypeOutput {}
-impl std::fmt::Debug for DeleteCustomActionTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCustomActionTypeOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteCustomActionTypeOutput`](crate::output::DeleteCustomActionTypeOutput).
 pub mod delete_custom_action_type_output {
 
@@ -1975,7 +1729,7 @@ impl DeleteCustomActionTypeOutput {
 
 /// <p>Represents the output of a <code>CreatePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
@@ -1992,14 +1746,6 @@ impl CreatePipelineOutput {
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
@@ -2062,7 +1808,7 @@ impl CreatePipelineOutput {
 
 /// <p>Represents the output of a <code>CreateCustomActionType</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCustomActionTypeOutput {
     /// <p>Returns information about the details of an action type.</p>
     #[doc(hidden)]
@@ -2079,14 +1825,6 @@ impl CreateCustomActionTypeOutput {
     /// <p>Specifies the tags applied to the custom action.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateCustomActionTypeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCustomActionTypeOutput");
-        formatter.field("action_type", &self.action_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`CreateCustomActionTypeOutput`](crate::output::CreateCustomActionTypeOutput).
@@ -2149,7 +1887,7 @@ impl CreateCustomActionTypeOutput {
 
 /// <p>Represents the output of an AcknowledgeThirdPartyJob action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
     #[doc(hidden)]
@@ -2159,13 +1897,6 @@ impl AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AcknowledgeThirdPartyJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeThirdPartyJobOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AcknowledgeThirdPartyJobOutput`](crate::output::AcknowledgeThirdPartyJobOutput).
@@ -2204,7 +1935,7 @@ impl AcknowledgeThirdPartyJobOutput {
 
 /// <p>Represents the output of an AcknowledgeJob action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
     #[doc(hidden)]
@@ -2214,13 +1945,6 @@ impl AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for AcknowledgeJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcknowledgeJobOutput");
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`AcknowledgeJobOutput`](crate::output::AcknowledgeJobOutput).

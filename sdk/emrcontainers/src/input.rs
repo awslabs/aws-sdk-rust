@@ -3254,7 +3254,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
@@ -3273,18 +3273,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN of resources.</p>
     #[doc(hidden)]
@@ -3307,18 +3299,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The name of the job run.</p>
     #[doc(hidden)]
@@ -3385,24 +3369,10 @@ impl StartJobRunInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartJobRunInput");
-        formatter.field("name", &self.name);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("job_driver", &self.job_driver);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVirtualClustersInput {
     /// <p>The container provider ID of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3458,23 +3428,10 @@ impl ListVirtualClustersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVirtualClustersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVirtualClustersInput");
-        formatter.field("container_provider_id", &self.container_provider_id);
-        formatter.field("container_provider_type", &self.container_provider_type);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of tagged resources.</p>
     #[doc(hidden)]
@@ -3486,17 +3443,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListManagedEndpointsInput {
     /// <p>The ID of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3550,23 +3500,10 @@ impl ListManagedEndpointsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListManagedEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListManagedEndpointsInput");
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("types", &self.types);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
     #[doc(hidden)]
@@ -3620,23 +3557,10 @@ impl ListJobRunsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobRunsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobRunsInput");
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("created_before", &self.created_before);
-        formatter.field("created_after", &self.created_after);
-        formatter.field("name", &self.name);
-        formatter.field("states", &self.states);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
     #[doc(hidden)]
@@ -3648,17 +3572,10 @@ impl DescribeVirtualClusterInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVirtualClusterInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeManagedEndpointInput {
     /// <p>This output displays ID of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3677,18 +3594,10 @@ impl DescribeManagedEndpointInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeManagedEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobRunInput {
     /// <p>The ID of the job run request. </p>
     #[doc(hidden)]
@@ -3707,18 +3616,10 @@ impl DescribeJobRunInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobRunInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be deleted.</p>
     #[doc(hidden)]
@@ -3730,17 +3631,10 @@ impl DeleteVirtualClusterInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVirtualClusterInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteManagedEndpointInput {
     /// <p>The ID of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3759,18 +3653,10 @@ impl DeleteManagedEndpointInput {
         self.virtual_cluster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteManagedEndpointInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
     #[doc(hidden)]
@@ -3807,20 +3693,10 @@ impl CreateVirtualClusterInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateVirtualClusterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVirtualClusterInput");
-        formatter.field("name", &self.name);
-        formatter.field("container_provider", &self.container_provider);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateManagedEndpointInput {
     /// <p>The name of the managed endpoint.</p>
     #[doc(hidden)]
@@ -3900,25 +3776,10 @@ impl CreateManagedEndpointInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateManagedEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateManagedEndpointInput");
-        formatter.field("name", &self.name);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("release_label", &self.release_label);
-        formatter.field("execution_role_arn", &self.execution_role_arn);
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.field("configuration_overrides", &self.configuration_overrides);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobRunInput {
     /// <p>The ID of the job run to cancel.</p>
     #[doc(hidden)]
@@ -3935,13 +3796,5 @@ impl CancelJobRunInput {
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
         self.virtual_cluster_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJobRunInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobRunInput");
-        formatter.field("id", &self.id);
-        formatter.field("virtual_cluster_id", &self.virtual_cluster_id);
-        formatter.finish()
     }
 }

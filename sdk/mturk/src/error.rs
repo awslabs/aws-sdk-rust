@@ -2,7 +2,7 @@
 
 /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl ServiceFault {
     #[allow(missing_docs)] // documentation missing in model
     pub fn turk_error_code(&self) -> std::option::Option<&str> {
         self.turk_error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceFault");
-        formatter.field("message", &self.message);
-        formatter.field("turk_error_code", &self.turk_error_code);
-        formatter.finish()
     }
 }
 impl ServiceFault {
@@ -94,7 +86,7 @@ impl ServiceFault {
 
 /// <p>Your request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestError {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -107,14 +99,6 @@ impl RequestError {
     #[allow(missing_docs)] // documentation missing in model
     pub fn turk_error_code(&self) -> std::option::Option<&str> {
         self.turk_error_code.as_deref()
-    }
-}
-impl std::fmt::Debug for RequestError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestError");
-        formatter.field("message", &self.message);
-        formatter.field("turk_error_code", &self.turk_error_code);
-        formatter.finish()
     }
 }
 impl RequestError {

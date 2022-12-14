@@ -3,7 +3,7 @@
 /// <p>Describes an App Runner service. It can describe a service in any state, including deleted services.</p>
 /// <p>This type contains the full information about a service, including configuration details. It's returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html">CreateService</a>, <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeService.html">DescribeService</a>, and <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteService.html">DeleteService</a> actions. A subset of this information is returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html">ListServices</a> action using the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ServiceSummary.html">ServiceSummary</a> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Service {
     /// <p>The customer-provided service name.</p>
     #[doc(hidden)]
@@ -133,36 +133,6 @@ impl Service {
         &self,
     ) -> std::option::Option<&crate::model::ServiceObservabilityConfiguration> {
         self.observability_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Service {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Service");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_id", &self.service_id);
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("service_url", &self.service_url);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("deleted_at", &self.deleted_at);
-        formatter.field("status", &self.status);
-        formatter.field("source_configuration", &self.source_configuration);
-        formatter.field("instance_configuration", &self.instance_configuration);
-        formatter.field("encryption_configuration", &self.encryption_configuration);
-        formatter.field(
-            "health_check_configuration",
-            &self.health_check_configuration,
-        );
-        formatter.field(
-            "auto_scaling_configuration_summary",
-            &self.auto_scaling_configuration_summary,
-        );
-        formatter.field("network_configuration", &self.network_configuration);
-        formatter.field(
-            "observability_configuration",
-            &self.observability_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`Service`](crate::model::Service).
@@ -429,7 +399,7 @@ impl Service {
 
 /// <p>Describes the observability configuration of an App Runner service. These are additional observability features, like tracing, that you choose to enable. They're configured in a separate resource that you associate with your service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceObservabilityConfiguration {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
     #[doc(hidden)]
@@ -450,17 +420,6 @@ impl ServiceObservabilityConfiguration {
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
     pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
         self.observability_configuration_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceObservabilityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceObservabilityConfiguration");
-        formatter.field("observability_enabled", &self.observability_enabled);
-        formatter.field(
-            "observability_configuration_arn",
-            &self.observability_configuration_arn,
-        );
-        formatter.finish()
     }
 }
 /// See [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration).
@@ -521,7 +480,7 @@ impl ServiceObservabilityConfiguration {
 
 /// <p>Describes configuration settings related to network traffic of an App Runner service. Consists of embedded objects for each configurable network feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
     #[doc(hidden)]
@@ -531,13 +490,6 @@ impl NetworkConfiguration {
     /// <p>Network configuration settings for outbound message traffic.</p>
     pub fn egress_configuration(&self) -> std::option::Option<&crate::model::EgressConfiguration> {
         self.egress_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkConfiguration");
-        formatter.field("egress_configuration", &self.egress_configuration);
-        formatter.finish()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -579,7 +531,7 @@ impl NetworkConfiguration {
 
 /// <p>Describes configuration settings related to outbound network traffic of an App Runner service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EgressConfiguration {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
@@ -600,14 +552,6 @@ impl EgressConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
     pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
         self.vpc_connector_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for EgressConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EgressConfiguration");
-        formatter.field("egress_type", &self.egress_type);
-        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
-        formatter.finish()
     }
 }
 /// See [`EgressConfiguration`](crate::model::EgressConfiguration).
@@ -759,7 +703,7 @@ impl AsRef<str> for EgressType {
 /// <p>Provides summary information about an App Runner automatic scaling configuration resource.</p>
 /// <p>This type contains limited information about an auto scaling configuration. It includes only identification information, without configuration details. It's returned by the <code>ListAutoScalingConfigurations</code> action. Complete configuration information is returned by the <code>CreateAutoScalingConfiguration</code>, <code>DescribeAutoScalingConfiguration</code>, and <code>DeleteAutoScalingConfiguration</code> actions using the <code>AutoScalingConfiguration</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     #[doc(hidden)]
@@ -783,24 +727,6 @@ impl AutoScalingConfigurationSummary {
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn auto_scaling_configuration_revision(&self) -> i32 {
         self.auto_scaling_configuration_revision
-    }
-}
-impl std::fmt::Debug for AutoScalingConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingConfigurationSummary");
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.field(
-            "auto_scaling_configuration_name",
-            &self.auto_scaling_configuration_name,
-        );
-        formatter.field(
-            "auto_scaling_configuration_revision",
-            &self.auto_scaling_configuration_revision,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoScalingConfigurationSummary`](crate::model::AutoScalingConfigurationSummary).
@@ -880,7 +806,7 @@ impl AutoScalingConfigurationSummary {
 
 /// <p>Describes the settings for the health check that App Runner performs to monitor the health of a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HealthCheckConfiguration {
     /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
     /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
@@ -941,18 +867,6 @@ impl HealthCheckConfiguration {
     /// <p>Default: <code>5</code> </p>
     pub fn unhealthy_threshold(&self) -> std::option::Option<i32> {
         self.unhealthy_threshold
-    }
-}
-impl std::fmt::Debug for HealthCheckConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HealthCheckConfiguration");
-        formatter.field("protocol", &self.protocol);
-        formatter.field("path", &self.path);
-        formatter.field("interval", &self.interval);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("healthy_threshold", &self.healthy_threshold);
-        formatter.field("unhealthy_threshold", &self.unhealthy_threshold);
-        formatter.finish()
     }
 }
 /// See [`HealthCheckConfiguration`](crate::model::HealthCheckConfiguration).
@@ -1162,7 +1076,7 @@ impl AsRef<str> for HealthCheckProtocol {
 
 /// <p>Describes a custom encryption key that App Runner uses to encrypt copies of the source repository and service logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     #[doc(hidden)]
@@ -1172,13 +1086,6 @@ impl EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfiguration");
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
@@ -1217,7 +1124,7 @@ impl EncryptionConfiguration {
 
 /// <p>Describes the runtime configuration of an App Runner service instance (scaling unit).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
@@ -1245,15 +1152,6 @@ impl InstanceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub fn instance_role_arn(&self) -> std::option::Option<&str> {
         self.instance_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for InstanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InstanceConfiguration");
-        formatter.field("cpu", &self.cpu);
-        formatter.field("memory", &self.memory);
-        formatter.field("instance_role_arn", &self.instance_role_arn);
-        formatter.finish()
     }
 }
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
@@ -1323,7 +1221,7 @@ impl InstanceConfiguration {
 
 /// <p>Describes the source deployed to an App Runner service. It can be a code or an image repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConfiguration {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
@@ -1363,19 +1261,6 @@ impl SourceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConfiguration");
-        formatter.field("code_repository", &self.code_repository);
-        formatter.field("image_repository", &self.image_repository);
-        formatter.field("auto_deployments_enabled", &self.auto_deployments_enabled);
-        formatter.field(
-            "authentication_configuration",
-            &self.authentication_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
@@ -1469,7 +1354,7 @@ impl SourceConfiguration {
 
 /// <p>Describes resources needed to authenticate access to some source repositories. The specific resource depends on the repository provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the App Runner connection that enables the App Runner service to connect to a source repository. It's required for GitHub code repositories.</p>
     #[doc(hidden)]
@@ -1486,14 +1371,6 @@ impl AuthenticationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants the App Runner service access to a source repository. It's required for ECR image repositories (but not for ECR Public repositories).</p>
     pub fn access_role_arn(&self) -> std::option::Option<&str> {
         self.access_role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthenticationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationConfiguration");
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("access_role_arn", &self.access_role_arn);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
@@ -1550,7 +1427,7 @@ impl AuthenticationConfiguration {
 
 /// <p>Describes a source image repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageRepository {
     /// <p>The identifier of an image.</p>
     /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
@@ -1576,15 +1453,6 @@ impl ImageRepository {
     /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
     pub fn image_repository_type(&self) -> std::option::Option<&crate::model::ImageRepositoryType> {
         self.image_repository_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ImageRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageRepository");
-        formatter.field("image_identifier", &self.image_identifier);
-        formatter.field("image_configuration", &self.image_configuration);
-        formatter.field("image_repository_type", &self.image_repository_type);
-        formatter.finish()
     }
 }
 /// See [`ImageRepository`](crate::model::ImageRepository).
@@ -1798,7 +1666,7 @@ impl std::fmt::Debug for ImageConfiguration {
 pub mod image_configuration {
 
     /// A builder for [`ImageConfiguration`](crate::model::ImageConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) runtime_environment_variables: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1866,6 +1734,18 @@ pub mod image_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "runtime_environment_variables",
+                &self.runtime_environment_variables,
+            );
+            formatter.field("start_command", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.finish()
+        }
+    }
 }
 impl ImageConfiguration {
     /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
@@ -1876,7 +1756,7 @@ impl ImageConfiguration {
 
 /// <p>Describes a source code repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeRepository {
     /// <p>The location of the repository that contains the source code.</p>
     #[doc(hidden)]
@@ -1904,15 +1784,6 @@ impl CodeRepository {
     /// </note>
     pub fn code_configuration(&self) -> std::option::Option<&crate::model::CodeConfiguration> {
         self.code_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeRepository {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeRepository");
-        formatter.field("repository_url", &self.repository_url);
-        formatter.field("source_code_version", &self.source_code_version);
-        formatter.field("code_configuration", &self.code_configuration);
-        formatter.finish()
     }
 }
 /// See [`CodeRepository`](crate::model::CodeRepository).
@@ -1988,7 +1859,7 @@ impl CodeRepository {
 
 /// <p>Describes the configuration that App Runner uses to build and run an App Runner service from a source code repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeConfiguration {
     /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
     /// <ul>
@@ -2015,14 +1886,6 @@ impl CodeConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::CodeConfigurationValues> {
         self.code_configuration_values.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeConfiguration");
-        formatter.field("configuration_source", &self.configuration_source);
-        formatter.field("code_configuration_values", &self.code_configuration_values);
-        formatter.finish()
     }
 }
 /// See [`CodeConfiguration`](crate::model::CodeConfiguration).
@@ -2155,7 +2018,7 @@ impl std::fmt::Debug for CodeConfigurationValues {
 pub mod code_configuration_values {
 
     /// A builder for [`CodeConfigurationValues`](crate::model::CodeConfigurationValues).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) runtime: std::option::Option<crate::model::Runtime>,
         pub(crate) build_command: std::option::Option<std::string::String>,
@@ -2248,6 +2111,20 @@ pub mod code_configuration_values {
                 port: self.port,
                 runtime_environment_variables: self.runtime_environment_variables,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("runtime", &self.runtime);
+            formatter.field("build_command", &"*** Sensitive Data Redacted ***");
+            formatter.field("start_command", &"*** Sensitive Data Redacted ***");
+            formatter.field("port", &self.port);
+            formatter.field(
+                "runtime_environment_variables",
+                &self.runtime_environment_variables,
+            );
+            formatter.finish()
         }
     }
 }
@@ -2469,7 +2346,7 @@ impl AsRef<str> for ConfigurationSource {
 
 /// <p>Identifies a version of code that App Runner refers to within a source code repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceCodeVersion {
     /// <p>The type of version identifier.</p>
     /// <p>For a git-based repository, branches represent versions.</p>
@@ -2490,14 +2367,6 @@ impl SourceCodeVersion {
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SourceCodeVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceCodeVersion");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SourceCodeVersion`](crate::model::SourceCodeVersion).
@@ -2759,7 +2628,7 @@ impl AsRef<str> for ServiceStatus {
 
 /// <p>Describes a tag that is applied to an App Runner resource. A tag is a metadata item consisting of a key-value pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
@@ -2776,14 +2645,6 @@ impl Tag {
     /// <p>The value of the tag.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -2837,7 +2698,7 @@ impl Tag {
 /// <p>At this time, App Runner supports only one revision per name.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConnector {
     /// <p>The customer-provided VPC connector name.</p>
     #[doc(hidden)]
@@ -2900,20 +2761,6 @@ impl VpcConnector {
     /// <p>The time when the VPC connector was deleted. It's in Unix time stamp format.</p>
     pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
-    }
-}
-impl std::fmt::Debug for VpcConnector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConnector");
-        formatter.field("vpc_connector_name", &self.vpc_connector_name);
-        formatter.field("vpc_connector_arn", &self.vpc_connector_arn);
-        formatter.field("vpc_connector_revision", &self.vpc_connector_revision);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deleted_at", &self.deleted_at);
-        formatter.finish()
     }
 }
 /// See [`VpcConnector`](crate::model::VpcConnector).
@@ -3166,7 +3013,7 @@ impl AsRef<str> for VpcConnectorStatus {
 /// <p>Provides summary information for an App Runner service.</p>
 /// <p>This type contains limited information about a service. It doesn't include configuration details. It's returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListServices.html">ListServices</a> action. Complete service information is returned by the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_CreateService.html">CreateService</a>, <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DescribeService.html">DescribeService</a>, and <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_DeleteService.html">DeleteService</a> actions using the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_Service.html">Service</a> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceSummary {
     /// <p>The customer-provided service name.</p>
     #[doc(hidden)]
@@ -3226,19 +3073,6 @@ impl ServiceSummary {
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ServiceStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceSummary");
-        formatter.field("service_name", &self.service_name);
-        formatter.field("service_id", &self.service_id);
-        formatter.field("service_arn", &self.service_arn);
-        formatter.field("service_url", &self.service_url);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
@@ -3366,7 +3200,7 @@ impl ServiceSummary {
 
 /// <p>Provides summary information for an operation that occurred on an App Runner service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
     #[doc(hidden)]
@@ -3418,19 +3252,6 @@ impl OperationSummary {
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for OperationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OperationSummary");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("status", &self.status);
-        formatter.field("target_arn", &self.target_arn);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("ended_at", &self.ended_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`OperationSummary`](crate::model::OperationSummary).
@@ -3788,7 +3609,7 @@ impl AsRef<str> for OperationType {
 /// <p>Provides summary information about an App Runner observability configuration resource.</p>
 /// <p>This type contains limited information about an observability configuration. It includes only identification information, without configuration details. It's returned by the <code>ListObservabilityConfigurations</code> action. Complete configuration information is returned by the <code>CreateObservabilityConfiguration</code>, <code>DescribeObservabilityConfiguration</code>, and <code>DeleteObservabilityConfiguration</code> actions using the <code>ObservabilityConfiguration</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObservabilityConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
     #[doc(hidden)]
@@ -3812,24 +3633,6 @@ impl ObservabilityConfigurationSummary {
     /// <p>The revision of this observability configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.</p>
     pub fn observability_configuration_revision(&self) -> i32 {
         self.observability_configuration_revision
-    }
-}
-impl std::fmt::Debug for ObservabilityConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObservabilityConfigurationSummary");
-        formatter.field(
-            "observability_configuration_arn",
-            &self.observability_configuration_arn,
-        );
-        formatter.field(
-            "observability_configuration_name",
-            &self.observability_configuration_name,
-        );
-        formatter.field(
-            "observability_configuration_revision",
-            &self.observability_configuration_revision,
-        );
-        formatter.finish()
     }
 }
 /// See [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary).
@@ -3909,7 +3712,7 @@ impl ObservabilityConfigurationSummary {
 
 /// <p>Provides summary information about an App Runner connection resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionSummary {
     /// <p>The customer-provided connection name.</p>
     #[doc(hidden)]
@@ -3947,17 +3750,6 @@ impl ConnectionSummary {
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionSummary");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`ConnectionSummary`](crate::model::ConnectionSummary).
@@ -4244,7 +4036,7 @@ impl AsRef<str> for ProviderType {
 
 /// <p>Describes a custom domain that's associated with an App Runner service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDomain {
     /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     #[doc(hidden)]
@@ -4278,19 +4070,6 @@ impl CustomDomain {
     /// <p>The current state of the domain name association.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CustomDomainAssociationStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CustomDomain {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDomain");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("enable_www_subdomain", &self.enable_www_subdomain);
-        formatter.field(
-            "certificate_validation_records",
-            &self.certificate_validation_records,
-        );
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CustomDomain`](crate::model::CustomDomain).
@@ -4510,7 +4289,7 @@ impl AsRef<str> for CustomDomainAssociationStatus {
 
 /// <p>Describes a certificate CNAME record to add to your DNS. For more information, see <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_AssociateCustomDomain.html">AssociateCustomDomain</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CertificateValidationRecord {
     /// <p>The certificate CNAME record name.</p>
     #[doc(hidden)]
@@ -4541,16 +4320,6 @@ impl CertificateValidationRecord {
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::CertificateValidationRecordStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for CertificateValidationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CertificateValidationRecord");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`CertificateValidationRecord`](crate::model::CertificateValidationRecord).
@@ -4726,7 +4495,7 @@ impl AsRef<str> for CertificateValidationRecordStatus {
 /// <p>Describes an App Runner observability configuration resource. Multiple revisions of a configuration have the same <code>ObservabilityConfigurationName</code> and different <code>ObservabilityConfigurationRevision</code> values.</p>
 /// <p>The resource is designed to configure multiple features (currently one feature, tracing). This type contains optional members that describe the configuration of these features (currently one member, <code>TraceConfiguration</code>). If a feature member isn't specified, the feature isn't enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObservabilityConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this observability configuration.</p>
     #[doc(hidden)]
@@ -4785,29 +4554,6 @@ impl ObservabilityConfiguration {
     /// <p>The time when the observability configuration was deleted. It's in Unix time stamp format.</p>
     pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ObservabilityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObservabilityConfiguration");
-        formatter.field(
-            "observability_configuration_arn",
-            &self.observability_configuration_arn,
-        );
-        formatter.field(
-            "observability_configuration_name",
-            &self.observability_configuration_name,
-        );
-        formatter.field("trace_configuration", &self.trace_configuration);
-        formatter.field(
-            "observability_configuration_revision",
-            &self.observability_configuration_revision,
-        );
-        formatter.field("latest", &self.latest);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deleted_at", &self.deleted_at);
-        formatter.finish()
     }
 }
 /// See [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration).
@@ -5051,7 +4797,7 @@ impl AsRef<str> for ObservabilityConfigurationStatus {
 
 /// <p>Describes the configuration of the tracing feature within an App Runner observability configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     #[doc(hidden)]
@@ -5061,13 +4807,6 @@ impl TraceConfiguration {
     /// <p>The implementation provider chosen for tracing App Runner services.</p>
     pub fn vendor(&self) -> std::option::Option<&crate::model::TracingVendor> {
         self.vendor.as_ref()
-    }
-}
-impl std::fmt::Debug for TraceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TraceConfiguration");
-        formatter.field("vendor", &self.vendor);
-        formatter.finish()
     }
 }
 /// See [`TraceConfiguration`](crate::model::TraceConfiguration).
@@ -5197,7 +4936,7 @@ impl AsRef<str> for TracingVendor {
 /// <p>A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness during peak demand.</p>
 /// <p>Multiple revisions of a configuration might have the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     #[doc(hidden)]
@@ -5272,31 +5011,6 @@ impl AutoScalingConfiguration {
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
     pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AutoScalingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingConfiguration");
-        formatter.field(
-            "auto_scaling_configuration_arn",
-            &self.auto_scaling_configuration_arn,
-        );
-        formatter.field(
-            "auto_scaling_configuration_name",
-            &self.auto_scaling_configuration_name,
-        );
-        formatter.field(
-            "auto_scaling_configuration_revision",
-            &self.auto_scaling_configuration_revision,
-        );
-        formatter.field("latest", &self.latest);
-        formatter.field("status", &self.status);
-        formatter.field("max_concurrency", &self.max_concurrency);
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("deleted_at", &self.deleted_at);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingConfiguration`](crate::model::AutoScalingConfiguration).
@@ -5563,7 +5277,7 @@ impl AsRef<str> for AutoScalingConfigurationStatus {
 
 /// <p>Describes an App Runner connection resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Connection {
     /// <p>The customer-provided connection name.</p>
     #[doc(hidden)]
@@ -5601,17 +5315,6 @@ impl Connection {
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Connection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Connection");
-        formatter.field("connection_name", &self.connection_name);
-        formatter.field("connection_arn", &self.connection_arn);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.finish()
     }
 }
 /// See [`Connection`](crate::model::Connection).

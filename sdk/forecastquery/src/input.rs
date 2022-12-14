@@ -438,7 +438,7 @@ impl QueryWhatIfForecastInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryWhatIfForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
     #[doc(hidden)]
@@ -486,21 +486,10 @@ impl QueryWhatIfForecastInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for QueryWhatIfForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryWhatIfForecastInput");
-        formatter.field("what_if_forecast_arn", &self.what_if_forecast_arn);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryForecastInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
     #[doc(hidden)]
@@ -546,16 +535,5 @@ impl QueryForecastInput {
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryForecastInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryForecastInput");
-        formatter.field("forecast_arn", &self.forecast_arn);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }

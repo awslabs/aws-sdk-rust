@@ -11443,7 +11443,7 @@ impl UpdateStreamProcessorInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateStreamProcessorInput {
     /// <p> Name of the stream processor that you want to update. </p>
     #[doc(hidden)]
@@ -11494,27 +11494,10 @@ impl UpdateStreamProcessorInput {
         self.parameters_to_delete.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateStreamProcessorInput");
-        formatter.field("name", &self.name);
-        formatter.field("settings_for_update", &self.settings_for_update);
-        formatter.field(
-            "regions_of_interest_for_update",
-            &self.regions_of_interest_for_update,
-        );
-        formatter.field(
-            "data_sharing_preference_for_update",
-            &self.data_sharing_preference_for_update,
-        );
-        formatter.field("parameters_to_delete", &self.parameters_to_delete);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
     #[doc(hidden)]
@@ -11533,18 +11516,10 @@ impl UpdateDatasetEntriesInput {
         self.changes.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDatasetEntriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDatasetEntriesInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("changes", &self.changes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
     #[doc(hidden)]
@@ -11563,18 +11538,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
     #[doc(hidden)]
@@ -11597,18 +11564,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     #[doc(hidden)]
@@ -11620,17 +11579,10 @@ impl StopStreamProcessorInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for StopStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStreamProcessorInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     /// <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
@@ -11644,17 +11596,10 @@ impl StopProjectVersionInput {
         self.project_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StopProjectVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopProjectVersionInput");
-        formatter.field("project_version_arn", &self.project_version_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTextDetectionInput {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     #[doc(hidden)]
@@ -11694,21 +11639,10 @@ impl StartTextDetectionInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for StartTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartTextDetectionInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStreamProcessorInput {
     /// <p>The name of the stream processor to start processing.</p>
     #[doc(hidden)]
@@ -11742,19 +11676,10 @@ impl StartStreamProcessorInput {
         self.stop_selector.as_ref()
     }
 }
-impl std::fmt::Debug for StartStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStreamProcessorInput");
-        formatter.field("name", &self.name);
-        formatter.field("start_selector", &self.start_selector);
-        formatter.field("stop_selector", &self.stop_selector);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSegmentDetectionInput {
     /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
     #[doc(hidden)]
@@ -11801,22 +11726,10 @@ impl StartSegmentDetectionInput {
         self.segment_types.as_deref()
     }
 }
-impl std::fmt::Debug for StartSegmentDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSegmentDetectionInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.field("filters", &self.filters);
-        formatter.field("segment_types", &self.segment_types);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     #[doc(hidden)]
@@ -11846,19 +11759,10 @@ impl StartProjectVersionInput {
         self.max_inference_units
     }
 }
-impl std::fmt::Debug for StartProjectVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartProjectVersionInput");
-        formatter.field("project_version_arn", &self.project_version_arn);
-        formatter.field("min_inference_units", &self.min_inference_units);
-        formatter.field("max_inference_units", &self.max_inference_units);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartPersonTrackingInput {
     /// <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -11891,20 +11795,10 @@ impl StartPersonTrackingInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartPersonTrackingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartPersonTrackingInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartLabelDetectionInput {
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -11946,21 +11840,10 @@ impl StartLabelDetectionInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartLabelDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartLabelDetectionInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFaceSearchInput {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -12007,22 +11890,10 @@ impl StartFaceSearchInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartFaceSearchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFaceSearchInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("face_match_threshold", &self.face_match_threshold);
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartFaceDetectionInput {
     /// <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -12066,21 +11937,10 @@ impl StartFaceDetectionInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartFaceDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartFaceDetectionInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("face_attributes", &self.face_attributes);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartContentModerationInput {
     /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -12120,21 +11980,10 @@ impl StartContentModerationInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartContentModerationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartContentModerationInput");
-        formatter.field("video", &self.video);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartCelebrityRecognitionInput {
     /// <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -12167,20 +12016,10 @@ impl StartCelebrityRecognitionInput {
         self.job_tag.as_deref()
     }
 }
-impl std::fmt::Debug for StartCelebrityRecognitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartCelebrityRecognitionInput");
-        formatter.field("video", &self.video);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("job_tag", &self.job_tag);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchFacesByImageInput {
     /// <p>ID of the collection to search.</p>
     #[doc(hidden)]
@@ -12224,21 +12063,10 @@ impl SearchFacesByImageInput {
         self.quality_filter.as_ref()
     }
 }
-impl std::fmt::Debug for SearchFacesByImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchFacesByImageInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("image", &self.image);
-        formatter.field("max_faces", &self.max_faces);
-        formatter.field("face_match_threshold", &self.face_match_threshold);
-        formatter.field("quality_filter", &self.quality_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchFacesInput {
     /// <p>ID of the collection the face belongs to.</p>
     #[doc(hidden)]
@@ -12271,20 +12099,10 @@ impl SearchFacesInput {
         self.face_match_threshold
     }
 }
-impl std::fmt::Debug for SearchFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchFacesInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("face_id", &self.face_id);
-        formatter.field("max_faces", &self.max_faces);
-        formatter.field("face_match_threshold", &self.face_match_threshold);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecognizeCelebritiesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -12298,17 +12116,10 @@ impl RecognizeCelebritiesInput {
         self.image.as_ref()
     }
 }
-impl std::fmt::Debug for RecognizeCelebritiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecognizeCelebritiesInput");
-        formatter.field("image", &self.image);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy is attached to.</p>
     #[doc(hidden)]
@@ -12341,20 +12152,10 @@ impl PutProjectPolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutProjectPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutProjectPolicyInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_revision_id", &self.policy_revision_id);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
     #[doc(hidden)]
@@ -12366,17 +12167,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamProcessorsInput {
     /// <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
     #[doc(hidden)]
@@ -12395,18 +12189,10 @@ impl ListStreamProcessorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListStreamProcessorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamProcessorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProjectPoliciesInput {
     /// <p>The ARN of the project for which you want to list the project policies.</p>
     #[doc(hidden)]
@@ -12432,19 +12218,10 @@ impl ListProjectPoliciesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProjectPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProjectPoliciesInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
     #[doc(hidden)]
@@ -12470,19 +12247,10 @@ impl ListFacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFacesInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetLabelsInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
     #[doc(hidden)]
@@ -12508,19 +12276,10 @@ impl ListDatasetLabelsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetLabelsInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDatasetEntriesInput {
     /// <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
     #[doc(hidden)]
@@ -12574,23 +12333,10 @@ impl ListDatasetEntriesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDatasetEntriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDatasetEntriesInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.field("contains_labels", &self.contains_labels);
-        formatter.field("labeled", &self.labeled);
-        formatter.field("source_ref_contains", &self.source_ref_contains);
-        formatter.field("has_errors", &self.has_errors);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCollectionsInput {
     /// <p>Pagination token from the previous response.</p>
     #[doc(hidden)]
@@ -12609,18 +12355,10 @@ impl ListCollectionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCollectionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCollectionsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexFacesInput {
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
     #[doc(hidden)]
@@ -12679,22 +12417,10 @@ impl IndexFacesInput {
         self.quality_filter.as_ref()
     }
 }
-impl std::fmt::Debug for IndexFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexFacesInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("image", &self.image);
-        formatter.field("external_image_id", &self.external_image_id);
-        formatter.field("detection_attributes", &self.detection_attributes);
-        formatter.field("max_faces", &self.max_faces);
-        formatter.field("quality_filter", &self.quality_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTextDetectionInput {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     #[doc(hidden)]
@@ -12720,19 +12446,10 @@ impl GetTextDetectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetTextDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTextDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSegmentDetectionInput {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
     #[doc(hidden)]
@@ -12758,19 +12475,10 @@ impl GetSegmentDetectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetSegmentDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSegmentDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPersonTrackingInput {
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     #[doc(hidden)]
@@ -12803,20 +12511,10 @@ impl GetPersonTrackingInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetPersonTrackingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPersonTrackingInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLabelDetectionInput {
     /// <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
     #[doc(hidden)]
@@ -12849,20 +12547,10 @@ impl GetLabelDetectionInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetLabelDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLabelDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFaceSearchInput {
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
     #[doc(hidden)]
@@ -12895,20 +12583,10 @@ impl GetFaceSearchInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetFaceSearchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFaceSearchInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFaceDetectionInput {
     /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
     #[doc(hidden)]
@@ -12934,19 +12612,10 @@ impl GetFaceDetectionInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetFaceDetectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFaceDetectionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContentModerationInput {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     #[doc(hidden)]
@@ -12979,20 +12648,10 @@ impl GetContentModerationInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetContentModerationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContentModerationInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCelebrityRecognitionInput {
     /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
     #[doc(hidden)]
@@ -13025,20 +12684,10 @@ impl GetCelebrityRecognitionInput {
         self.sort_by.as_ref()
     }
 }
-impl std::fmt::Debug for GetCelebrityRecognitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCelebrityRecognitionInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCelebrityInfoInput {
     /// <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     #[doc(hidden)]
@@ -13050,17 +12699,10 @@ impl GetCelebrityInfoInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCelebrityInfoInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCelebrityInfoInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     #[doc(hidden)]
@@ -13072,17 +12714,10 @@ impl DistributeDatasetEntriesInput {
         self.datasets.as_deref()
     }
 }
-impl std::fmt::Debug for DistributeDatasetEntriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributeDatasetEntriesInput");
-        formatter.field("datasets", &self.datasets);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectTextInput {
     /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -13103,18 +12738,10 @@ impl DetectTextInput {
         self.filters.as_ref()
     }
 }
-impl std::fmt::Debug for DetectTextInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectTextInput");
-        formatter.field("image", &self.image);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentInput {
     /// <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
     #[doc(hidden)]
@@ -13136,18 +12763,10 @@ impl DetectProtectiveEquipmentInput {
         self.summarization_attributes.as_ref()
     }
 }
-impl std::fmt::Debug for DetectProtectiveEquipmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectProtectiveEquipmentInput");
-        formatter.field("image", &self.image);
-        formatter.field("summarization_attributes", &self.summarization_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectModerationLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -13177,19 +12796,10 @@ impl DetectModerationLabelsInput {
         self.human_loop_config.as_ref()
     }
 }
-impl std::fmt::Debug for DetectModerationLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectModerationLabelsInput");
-        formatter.field("image", &self.image);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.field("human_loop_config", &self.human_loop_config);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectLabelsInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -13219,19 +12829,10 @@ impl DetectLabelsInput {
         self.min_confidence
     }
 }
-impl std::fmt::Debug for DetectLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectLabelsInput");
-        formatter.field("image", &self.image);
-        formatter.field("max_labels", &self.max_labels);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectFacesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -13254,18 +12855,10 @@ impl DetectFacesInput {
         self.attributes.as_deref()
     }
 }
-impl std::fmt::Debug for DetectFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectFacesInput");
-        formatter.field("image", &self.image);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectCustomLabelsInput {
     /// <p>The ARN of the model version that you want to use.</p>
     #[doc(hidden)]
@@ -13310,20 +12903,10 @@ impl DetectCustomLabelsInput {
         self.min_confidence
     }
 }
-impl std::fmt::Debug for DetectCustomLabelsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectCustomLabelsInput");
-        formatter.field("project_version_arn", &self.project_version_arn);
-        formatter.field("image", &self.image);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("min_confidence", &self.min_confidence);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStreamProcessorInput {
     /// <p>Name of the stream processor for which you want information.</p>
     #[doc(hidden)]
@@ -13335,17 +12918,10 @@ impl DescribeStreamProcessorInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStreamProcessorInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
     #[doc(hidden)]
@@ -13378,20 +12954,10 @@ impl DescribeProjectVersionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeProjectVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectVersionsInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("version_names", &self.version_names);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProjectsInput {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
@@ -13417,19 +12983,10 @@ impl DescribeProjectsInput {
         self.project_names.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeProjectsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProjectsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("project_names", &self.project_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDatasetInput {
     /// <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     #[doc(hidden)]
@@ -13441,17 +12998,10 @@ impl DescribeDatasetInput {
         self.dataset_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDatasetInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
     #[doc(hidden)]
@@ -13463,17 +13013,10 @@ impl DescribeCollectionInput {
         self.collection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeCollectionInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamProcessorInput {
     /// <p>The name of the stream processor you want to delete.</p>
     #[doc(hidden)]
@@ -13485,17 +13028,10 @@ impl DeleteStreamProcessorInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamProcessorInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
     #[doc(hidden)]
@@ -13507,17 +13043,10 @@ impl DeleteProjectVersionInput {
         self.project_version_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectVersionInput");
-        formatter.field("project_version_arn", &self.project_version_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     #[doc(hidden)]
@@ -13543,19 +13072,10 @@ impl DeleteProjectPolicyInput {
         self.policy_revision_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectPolicyInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("policy_name", &self.policy_name);
-        formatter.field("policy_revision_id", &self.policy_revision_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     #[doc(hidden)]
@@ -13567,17 +13087,10 @@ impl DeleteProjectInput {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProjectInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFacesInput {
     /// <p>Collection from which to remove the specific faces.</p>
     #[doc(hidden)]
@@ -13596,18 +13109,10 @@ impl DeleteFacesInput {
         self.face_ids.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFacesInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("face_ids", &self.face_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDatasetInput {
     /// <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
     #[doc(hidden)]
@@ -13619,17 +13124,10 @@ impl DeleteDatasetInput {
         self.dataset_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDatasetInput");
-        formatter.field("dataset_arn", &self.dataset_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
     #[doc(hidden)]
@@ -13641,17 +13139,10 @@ impl DeleteCollectionInput {
         self.collection_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCollectionInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamProcessorInput {
     /// <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>. This is required for both face search and label detection stream processors.</p>
     #[doc(hidden)]
@@ -13741,26 +13232,10 @@ impl CreateStreamProcessorInput {
         self.data_sharing_preference.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamProcessorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamProcessorInput");
-        formatter.field("input", &self.input);
-        formatter.field("output", &self.output);
-        formatter.field("name", &self.name);
-        formatter.field("settings", &self.settings);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.field("notification_channel", &self.notification_channel);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("regions_of_interest", &self.regions_of_interest);
-        formatter.field("data_sharing_preference", &self.data_sharing_preference);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectVersionInput {
     /// <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
     #[doc(hidden)]
@@ -13834,23 +13309,10 @@ impl CreateProjectVersionInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProjectVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectVersionInput");
-        formatter.field("project_arn", &self.project_arn);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("training_data", &self.training_data);
-        formatter.field("testing_data", &self.testing_data);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of the project to create.</p>
     #[doc(hidden)]
@@ -13862,17 +13324,10 @@ impl CreateProjectInput {
         self.project_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateProjectInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProjectInput");
-        formatter.field("project_name", &self.project_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
     #[doc(hidden)]
@@ -13898,19 +13353,10 @@ impl CreateDatasetInput {
         self.project_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDatasetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDatasetInput");
-        formatter.field("dataset_source", &self.dataset_source);
-        formatter.field("dataset_type", &self.dataset_type);
-        formatter.field("project_arn", &self.project_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCollectionInput {
     /// <p>ID for the collection that you are creating.</p>
     #[doc(hidden)]
@@ -13933,18 +13379,10 @@ impl CreateCollectionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateCollectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCollectionInput");
-        formatter.field("collection_id", &self.collection_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyProjectVersionInput {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
     #[doc(hidden)]
@@ -14018,26 +13456,10 @@ impl CopyProjectVersionInput {
         self.kms_key_id.as_deref()
     }
 }
-impl std::fmt::Debug for CopyProjectVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyProjectVersionInput");
-        formatter.field("source_project_arn", &self.source_project_arn);
-        formatter.field(
-            "source_project_version_arn",
-            &self.source_project_version_arn,
-        );
-        formatter.field("destination_project_arn", &self.destination_project_arn);
-        formatter.field("version_name", &self.version_name);
-        formatter.field("output_config", &self.output_config);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompareFacesInput {
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
@@ -14074,15 +13496,5 @@ impl CompareFacesInput {
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(&self) -> std::option::Option<&crate::model::QualityFilter> {
         self.quality_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for CompareFacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompareFacesInput");
-        formatter.field("source_image", &self.source_image);
-        formatter.field("target_image", &self.target_image);
-        formatter.field("similarity_threshold", &self.similarity_threshold);
-        formatter.field("quality_filter", &self.quality_filter);
-        formatter.finish()
     }
 }

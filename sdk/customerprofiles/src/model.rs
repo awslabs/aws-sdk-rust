@@ -2,7 +2,7 @@
 
 /// <p>Updates associated with the address properties of a customer profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAddress {
     /// <p>The first line of a customer address.</p>
     #[doc(hidden)]
@@ -75,22 +75,6 @@ impl UpdateAddress {
     /// <p>The postal code of a customer address.</p>
     pub fn postal_code(&self) -> std::option::Option<&str> {
         self.postal_code.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAddress");
-        formatter.field("address1", &self.address1);
-        formatter.field("address2", &self.address2);
-        formatter.field("address3", &self.address3);
-        formatter.field("address4", &self.address4);
-        formatter.field("city", &self.city);
-        formatter.field("county", &self.county);
-        formatter.field("state", &self.state);
-        formatter.field("province", &self.province);
-        formatter.field("country", &self.country);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.finish()
     }
 }
 /// See [`UpdateAddress`](crate::model::UpdateAddress).
@@ -427,7 +411,7 @@ impl AsRef<str> for PartyType {
 
 /// <p>The flag that enables the matching process of duplicate profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     #[doc(hidden)]
@@ -458,16 +442,6 @@ impl MatchingResponse {
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
         self.exporting_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchingResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchingResponse");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("job_schedule", &self.job_schedule);
-        formatter.field("auto_merging", &self.auto_merging);
-        formatter.field("exporting_config", &self.exporting_config);
-        formatter.finish()
     }
 }
 /// See [`MatchingResponse`](crate::model::MatchingResponse).
@@ -553,7 +527,7 @@ impl MatchingResponse {
 /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
@@ -563,13 +537,6 @@ impl ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub fn s3_exporting(&self) -> std::option::Option<&crate::model::S3ExportingConfig> {
         self.s3_exporting.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportingConfig");
-        formatter.field("s3_exporting", &self.s3_exporting);
-        formatter.finish()
     }
 }
 /// See [`ExportingConfig`](crate::model::ExportingConfig).
@@ -611,7 +578,7 @@ impl ExportingConfig {
 
 /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ExportingConfig {
     /// <p>The name of the S3 bucket where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
@@ -628,14 +595,6 @@ impl S3ExportingConfig {
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     pub fn s3_key_name(&self) -> std::option::Option<&str> {
         self.s3_key_name.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ExportingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ExportingConfig");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_name", &self.s3_key_name);
-        formatter.finish()
     }
 }
 /// See [`S3ExportingConfig`](crate::model::S3ExportingConfig).
@@ -689,7 +648,7 @@ impl S3ExportingConfig {
 
 /// <p>Configuration settings for how to perform the auto-merging of profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoMerging {
     /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
     #[doc(hidden)]
@@ -720,19 +679,6 @@ impl AutoMerging {
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
     pub fn min_allowed_confidence_score_for_merging(&self) -> std::option::Option<f64> {
         self.min_allowed_confidence_score_for_merging
-    }
-}
-impl std::fmt::Debug for AutoMerging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoMerging");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("consolidation", &self.consolidation);
-        formatter.field("conflict_resolution", &self.conflict_resolution);
-        formatter.field(
-            "min_allowed_confidence_score_for_merging",
-            &self.min_allowed_confidence_score_for_merging,
-        );
-        formatter.finish()
     }
 }
 /// See [`AutoMerging`](crate::model::AutoMerging).
@@ -817,7 +763,7 @@ impl AutoMerging {
 
 /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
@@ -844,14 +790,6 @@ impl ConflictResolution {
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictResolution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictResolution");
-        formatter.field("conflict_resolving_model", &self.conflict_resolving_model);
-        formatter.field("source_name", &self.source_name);
-        formatter.finish()
     }
 }
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
@@ -1009,7 +947,7 @@ impl AsRef<str> for ConflictResolvingModel {
 
 /// <p>The matching criteria to be used during the auto-merging process. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Consolidation {
     /// <p>A list of matching criteria.</p>
     #[doc(hidden)]
@@ -1022,13 +960,6 @@ impl Consolidation {
         &self,
     ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.matching_attributes_list.as_deref()
-    }
-}
-impl std::fmt::Debug for Consolidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Consolidation");
-        formatter.field("matching_attributes_list", &self.matching_attributes_list);
-        formatter.finish()
     }
 }
 /// See [`Consolidation`](crate::model::Consolidation).
@@ -1080,7 +1011,7 @@ impl Consolidation {
 
 /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobSchedule {
     /// <p>The day when the Identity Resolution Job should run every week.</p>
     #[doc(hidden)]
@@ -1097,14 +1028,6 @@ impl JobSchedule {
     /// <p>The time when the Identity Resolution Job should run every week.</p>
     pub fn time(&self) -> std::option::Option<&str> {
         self.time.as_deref()
-    }
-}
-impl std::fmt::Debug for JobSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobSchedule");
-        formatter.field("day_of_the_week", &self.day_of_the_week);
-        formatter.field("time", &self.time);
-        formatter.finish()
     }
 }
 /// See [`JobSchedule`](crate::model::JobSchedule).
@@ -1283,7 +1206,7 @@ impl AsRef<str> for JobScheduleDayOfTheWeek {
 
 /// <p>The flag that enables the matching process of duplicate profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchingRequest {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     #[doc(hidden)]
@@ -1314,16 +1237,6 @@ impl MatchingRequest {
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(&self) -> std::option::Option<&crate::model::ExportingConfig> {
         self.exporting_config.as_ref()
-    }
-}
-impl std::fmt::Debug for MatchingRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchingRequest");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("job_schedule", &self.job_schedule);
-        formatter.field("auto_merging", &self.auto_merging);
-        formatter.field("exporting_config", &self.exporting_config);
-        formatter.finish()
     }
 }
 /// See [`MatchingRequest`](crate::model::MatchingRequest).
@@ -1407,7 +1320,7 @@ impl MatchingRequest {
 
 /// <p>The standard profile of a customer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Profile {
     /// <p>The unique identifier of a customer profile.</p>
     #[doc(hidden)]
@@ -1568,34 +1481,6 @@ impl Profile {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Profile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Profile");
-        formatter.field("profile_id", &self.profile_id);
-        formatter.field("account_number", &self.account_number);
-        formatter.field("additional_information", &self.additional_information);
-        formatter.field("party_type", &self.party_type);
-        formatter.field("business_name", &self.business_name);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("middle_name", &self.middle_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("birth_date", &self.birth_date);
-        formatter.field("gender", &self.gender);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("mobile_phone_number", &self.mobile_phone_number);
-        formatter.field("home_phone_number", &self.home_phone_number);
-        formatter.field("business_phone_number", &self.business_phone_number);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("personal_email_address", &self.personal_email_address);
-        formatter.field("business_email_address", &self.business_email_address);
-        formatter.field("address", &self.address);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("mailing_address", &self.mailing_address);
-        formatter.field("billing_address", &self.billing_address);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Profile`](crate::model::Profile).
@@ -1942,7 +1827,7 @@ impl Profile {
 
 /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Address {
     /// <p>The first line of a customer address.</p>
     #[doc(hidden)]
@@ -2015,22 +1900,6 @@ impl Address {
     /// <p>The postal code of a customer address.</p>
     pub fn postal_code(&self) -> std::option::Option<&str> {
         self.postal_code.as_deref()
-    }
-}
-impl std::fmt::Debug for Address {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Address");
-        formatter.field("address1", &self.address1);
-        formatter.field("address2", &self.address2);
-        formatter.field("address3", &self.address3);
-        formatter.field("address4", &self.address4);
-        formatter.field("city", &self.city);
-        formatter.field("county", &self.county);
-        formatter.field("state", &self.state);
-        formatter.field("province", &self.province);
-        formatter.field("country", &self.country);
-        formatter.field("postal_code", &self.postal_code);
-        formatter.finish()
     }
 }
 /// See [`Address`](crate::model::Address).
@@ -2177,7 +2046,7 @@ impl Address {
 
 /// <p>An object that defines the Key element of a ProfileObject. A Key is a special element that can be used to search for a customer profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectTypeKey {
     /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1 UNIQUE key but multiple PROFILE keys. PROFILE, ASSET, CASE, or ORDER means that this key can be used to tie an object to a PROFILE, ASSET, CASE, or ORDER respectively. UNIQUE means that it can be used to uniquely identify an object. If a key a is marked as SECONDARY, it will be used to search for profiles after all other PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the profile does not already exist before the object is ingested, otherwise it is only used for matching objects to profiles.</p>
     #[doc(hidden)]
@@ -2194,14 +2063,6 @@ impl ObjectTypeKey {
     /// <p>The reference for the key name of the fields map.</p>
     pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
         self.field_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectTypeKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectTypeKey");
-        formatter.field("standard_identifiers", &self.standard_identifiers);
-        formatter.field("field_names", &self.field_names);
-        formatter.finish()
     }
 }
 /// See [`ObjectTypeKey`](crate::model::ObjectTypeKey).
@@ -2402,7 +2263,7 @@ impl AsRef<str> for StandardIdentifier {
 
 /// <p>Represents a field in a ProfileObjectType.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     #[doc(hidden)]
@@ -2426,15 +2287,6 @@ impl ObjectTypeField {
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub fn content_type(&self) -> std::option::Option<&crate::model::FieldContentType> {
         self.content_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ObjectTypeField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectTypeField");
-        formatter.field("source", &self.source);
-        formatter.field("target", &self.target);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
     }
 }
 /// See [`ObjectTypeField`](crate::model::ObjectTypeField).
@@ -2605,7 +2457,7 @@ impl AsRef<str> for FieldContentType {
 
 /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
     #[doc(hidden)]
@@ -2650,18 +2502,6 @@ impl FlowDefinition {
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
-    }
-}
-impl std::fmt::Debug for FlowDefinition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FlowDefinition");
-        formatter.field("description", &self.description);
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("kms_arn", &self.kms_arn);
-        formatter.field("source_flow_config", &self.source_flow_config);
-        formatter.field("tasks", &self.tasks);
-        formatter.field("trigger_config", &self.trigger_config);
-        formatter.finish()
     }
 }
 /// See [`FlowDefinition`](crate::model::FlowDefinition).
@@ -2775,7 +2615,7 @@ impl FlowDefinition {
 
 /// <p>The trigger settings that determine how and when Amazon AppFlow runs the specified flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerConfig {
     /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
     #[doc(hidden)]
@@ -2792,14 +2632,6 @@ impl TriggerConfig {
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only apply to the Scheduled trigger type.</p>
     pub fn trigger_properties(&self) -> std::option::Option<&crate::model::TriggerProperties> {
         self.trigger_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerConfig");
-        formatter.field("trigger_type", &self.trigger_type);
-        formatter.field("trigger_properties", &self.trigger_properties);
-        formatter.finish()
     }
 }
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
@@ -2856,7 +2688,7 @@ impl TriggerConfig {
 
 /// <p>Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the Scheduled trigger type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TriggerProperties {
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
     #[doc(hidden)]
@@ -2866,13 +2698,6 @@ impl TriggerProperties {
     /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
     pub fn scheduled(&self) -> std::option::Option<&crate::model::ScheduledTriggerProperties> {
         self.scheduled.as_ref()
-    }
-}
-impl std::fmt::Debug for TriggerProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TriggerProperties");
-        formatter.field("scheduled", &self.scheduled);
-        formatter.finish()
     }
 }
 /// See [`TriggerProperties`](crate::model::TriggerProperties).
@@ -2914,7 +2739,7 @@ impl TriggerProperties {
 
 /// <p>Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply to the scheduled-trigger type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScheduledTriggerProperties {
     /// <p>The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).</p>
     #[doc(hidden)]
@@ -2966,19 +2791,6 @@ impl ScheduledTriggerProperties {
     /// <p>Specifies the date range for the records to import from the connector in the first flow run.</p>
     pub fn first_execution_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_execution_from.as_ref()
-    }
-}
-impl std::fmt::Debug for ScheduledTriggerProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScheduledTriggerProperties");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.field("data_pull_mode", &self.data_pull_mode);
-        formatter.field("schedule_start_time", &self.schedule_start_time);
-        formatter.field("schedule_end_time", &self.schedule_end_time);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("schedule_offset", &self.schedule_offset);
-        formatter.field("first_execution_from", &self.first_execution_from);
-        formatter.finish()
     }
 }
 /// See [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
@@ -3289,7 +3101,7 @@ impl AsRef<str> for TriggerType {
 
 /// <p>A class for modeling different type of tasks. Task implementation varies based on the TaskType.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Task {
     /// <p>The operation to be performed on the provided source fields.</p>
     #[doc(hidden)]
@@ -3333,17 +3145,6 @@ impl Task {
     /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
     pub fn task_type(&self) -> std::option::Option<&crate::model::TaskType> {
         self.task_type.as_ref()
-    }
-}
-impl std::fmt::Debug for Task {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Task");
-        formatter.field("connector_operator", &self.connector_operator);
-        formatter.field("destination_field", &self.destination_field);
-        formatter.field("source_fields", &self.source_fields);
-        formatter.field("task_properties", &self.task_properties);
-        formatter.field("task_type", &self.task_type);
-        formatter.finish()
     }
 }
 /// See [`Task`](crate::model::Task).
@@ -3755,7 +3556,7 @@ impl AsRef<str> for OperatorPropertiesKeys {
 
 /// <p>The operation to be performed on the provided source fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorOperator {
     /// <p>The operation to be performed on the provided Marketo source fields.</p>
     #[doc(hidden)]
@@ -3793,17 +3594,6 @@ impl ConnectorOperator {
     /// <p>The operation to be performed on the provided Zendesk source fields.</p>
     pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskConnectorOperator> {
         self.zendesk.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorOperator {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorOperator");
-        formatter.field("marketo", &self.marketo);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.finish()
     }
 }
 /// See [`ConnectorOperator`](crate::model::ConnectorOperator).
@@ -4872,7 +4662,7 @@ impl AsRef<str> for MarketoConnectorOperator {
 
 /// <p>Contains information about the configuration of the source connector used in the flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFlowConfig {
     /// <p>The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS account.</p>
     #[doc(hidden)]
@@ -4907,19 +4697,6 @@ impl SourceFlowConfig {
         &self,
     ) -> std::option::Option<&crate::model::SourceConnectorProperties> {
         self.source_connector_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceFlowConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFlowConfig");
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("connector_type", &self.connector_type);
-        formatter.field("incremental_pull_config", &self.incremental_pull_config);
-        formatter.field(
-            "source_connector_properties",
-            &self.source_connector_properties,
-        );
-        formatter.finish()
     }
 }
 /// See [`SourceFlowConfig`](crate::model::SourceFlowConfig).
@@ -5014,7 +4791,7 @@ impl SourceFlowConfig {
 
 /// <p>Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceConnectorProperties {
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
     #[doc(hidden)]
@@ -5052,17 +4829,6 @@ impl SourceConnectorProperties {
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
     pub fn zendesk(&self) -> std::option::Option<&crate::model::ZendeskSourceProperties> {
         self.zendesk.as_ref()
-    }
-}
-impl std::fmt::Debug for SourceConnectorProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceConnectorProperties");
-        formatter.field("marketo", &self.marketo);
-        formatter.field("s3", &self.s3);
-        formatter.field("salesforce", &self.salesforce);
-        formatter.field("service_now", &self.service_now);
-        formatter.field("zendesk", &self.zendesk);
-        formatter.finish()
     }
 }
 /// See [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
@@ -5164,7 +4930,7 @@ impl SourceConnectorProperties {
 
 /// <p>The properties that are applied when using Zendesk as a flow source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZendeskSourceProperties {
     /// <p>The object specified in the Zendesk flow source.</p>
     #[doc(hidden)]
@@ -5174,13 +4940,6 @@ impl ZendeskSourceProperties {
     /// <p>The object specified in the Zendesk flow source.</p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for ZendeskSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZendeskSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
@@ -5219,7 +4978,7 @@ impl ZendeskSourceProperties {
 
 /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
     #[doc(hidden)]
@@ -5229,13 +4988,6 @@ impl ServiceNowSourceProperties {
     /// <p>The object specified in the ServiceNow flow source.</p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
@@ -5274,7 +5026,7 @@ impl ServiceNowSourceProperties {
 
 /// <p>The properties that are applied when Salesforce is being used as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
     #[doc(hidden)]
@@ -5298,18 +5050,6 @@ impl SalesforceSourceProperties {
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn include_deleted_records(&self) -> bool {
         self.include_deleted_records
-    }
-}
-impl std::fmt::Debug for SalesforceSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.field(
-            "enable_dynamic_field_update",
-            &self.enable_dynamic_field_update,
-        );
-        formatter.field("include_deleted_records", &self.include_deleted_records);
-        formatter.finish()
     }
 }
 /// See [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
@@ -5372,7 +5112,7 @@ impl SalesforceSourceProperties {
 
 /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SourceProperties {
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
     #[doc(hidden)]
@@ -5389,14 +5129,6 @@ impl S3SourceProperties {
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
     pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3SourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SourceProperties");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("bucket_prefix", &self.bucket_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3SourceProperties`](crate::model::S3SourceProperties).
@@ -5450,7 +5182,7 @@ impl S3SourceProperties {
 
 /// <p>The properties that are applied when Marketo is being used as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoSourceProperties {
     /// <p>The object specified in the Marketo flow source.</p>
     #[doc(hidden)]
@@ -5460,13 +5192,6 @@ impl MarketoSourceProperties {
     /// <p>The object specified in the Marketo flow source.</p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for MarketoSourceProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MarketoSourceProperties");
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
@@ -5505,7 +5230,7 @@ impl MarketoSourceProperties {
 
 /// <p>Specifies the configuration used when importing incremental records from the source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IncrementalPullConfig {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     #[doc(hidden)]
@@ -5515,13 +5240,6 @@ impl IncrementalPullConfig {
     /// <p>A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source.</p>
     pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
         self.datetime_type_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for IncrementalPullConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IncrementalPullConfig");
-        formatter.field("datetime_type_field_name", &self.datetime_type_field_name);
-        formatter.finish()
     }
 }
 /// See [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
@@ -5670,7 +5388,7 @@ impl AsRef<str> for SourceConnectorType {
 
 /// <p>A duplicate customer profile that is to be merged into a main profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldSourceProfileIds {
     /// <p>A unique identifier for the account number field to be merged. </p>
     #[doc(hidden)]
@@ -5824,33 +5542,6 @@ impl FieldSourceProfileIds {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for FieldSourceProfileIds {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldSourceProfileIds");
-        formatter.field("account_number", &self.account_number);
-        formatter.field("additional_information", &self.additional_information);
-        formatter.field("party_type", &self.party_type);
-        formatter.field("business_name", &self.business_name);
-        formatter.field("first_name", &self.first_name);
-        formatter.field("middle_name", &self.middle_name);
-        formatter.field("last_name", &self.last_name);
-        formatter.field("birth_date", &self.birth_date);
-        formatter.field("gender", &self.gender);
-        formatter.field("phone_number", &self.phone_number);
-        formatter.field("mobile_phone_number", &self.mobile_phone_number);
-        formatter.field("home_phone_number", &self.home_phone_number);
-        formatter.field("business_phone_number", &self.business_phone_number);
-        formatter.field("email_address", &self.email_address);
-        formatter.field("personal_email_address", &self.personal_email_address);
-        formatter.field("business_email_address", &self.business_email_address);
-        formatter.field("address", &self.address);
-        formatter.field("shipping_address", &self.shipping_address);
-        formatter.field("mailing_address", &self.mailing_address);
-        formatter.field("billing_address", &self.billing_address);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`FieldSourceProfileIds`](crate::model::FieldSourceProfileIds).
@@ -6182,7 +5873,7 @@ impl FieldSourceProfileIds {
 
 /// <p>A workflow in list of workflows.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowsItem {
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     #[doc(hidden)]
@@ -6227,18 +5918,6 @@ impl ListWorkflowsItem {
     /// <p>Last updated timestamp for workflow.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ListWorkflowsItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowsItem");
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("status", &self.status);
-        formatter.field("status_description", &self.status_description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`ListWorkflowsItem`](crate::model::ListWorkflowsItem).
@@ -6557,7 +6236,7 @@ impl AsRef<str> for WorkflowType {
 
 /// <p>A ProfileObjectTypeTemplate in a list of ProfileObjectTypeTemplates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplateItem {
     /// <p>A unique identifier for the object template.</p>
     #[doc(hidden)]
@@ -6581,15 +6260,6 @@ impl ListProfileObjectTypeTemplateItem {
     /// <p>The source of the object template.</p>
     pub fn source_object(&self) -> std::option::Option<&str> {
         self.source_object.as_deref()
-    }
-}
-impl std::fmt::Debug for ListProfileObjectTypeTemplateItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectTypeTemplateItem");
-        formatter.field("template_id", &self.template_id);
-        formatter.field("source_name", &self.source_name);
-        formatter.field("source_object", &self.source_object);
-        formatter.finish()
     }
 }
 /// See [`ListProfileObjectTypeTemplateItem`](crate::model::ListProfileObjectTypeTemplateItem).
@@ -6655,7 +6325,7 @@ impl ListProfileObjectTypeTemplateItem {
 
 /// <p>A ProfileObjectType instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectTypeItem {
     /// <p>The name of the profile object type.</p>
     #[doc(hidden)]
@@ -6697,17 +6367,6 @@ impl ListProfileObjectTypeItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListProfileObjectTypeItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectTypeItem");
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("description", &self.description);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListProfileObjectTypeItem`](crate::model::ListProfileObjectTypeItem).
@@ -6820,7 +6479,7 @@ impl ListProfileObjectTypeItem {
 
 /// <p>A ProfileObject in a list of ProfileObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileObjectsItem {
     /// <p>Specifies the kind of object being added to a profile, such as "Salesforce-Account."</p>
     #[doc(hidden)]
@@ -6844,15 +6503,6 @@ impl ListProfileObjectsItem {
     /// <p>A JSON representation of a ProfileObject that belongs to a profile.</p>
     pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
-    }
-}
-impl std::fmt::Debug for ListProfileObjectsItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileObjectsItem");
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("profile_object_unique_key", &self.profile_object_unique_key);
-        formatter.field("object", &self.object);
-        formatter.finish()
     }
 }
 /// See [`ListProfileObjectsItem`](crate::model::ListProfileObjectsItem).
@@ -6921,7 +6571,7 @@ impl ListProfileObjectsItem {
 
 /// <p>The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObjectFilter {
     /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined keys you can use to search for _case include: _caseId. The predefined keys you can use to search for _order include: _orderId.</p>
     #[doc(hidden)]
@@ -6938,14 +6588,6 @@ impl ObjectFilter {
     /// <p>A list of key values.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for ObjectFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObjectFilter");
-        formatter.field("key_name", &self.key_name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`ObjectFilter`](crate::model::ObjectFilter).
@@ -7005,7 +6647,7 @@ impl ObjectFilter {
 
 /// <p>An integration in list of integrations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListIntegrationItem {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -7079,21 +6721,6 @@ impl ListIntegrationItem {
     /// <p>Boolean to indicate if the Flow associated with the Integration is created via Appflow console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition</p>
     pub fn is_unstructured(&self) -> std::option::Option<bool> {
         self.is_unstructured
-    }
-}
-impl std::fmt::Debug for ListIntegrationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListIntegrationItem");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("uri", &self.uri);
-        formatter.field("object_type_name", &self.object_type_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("tags", &self.tags);
-        formatter.field("object_type_names", &self.object_type_names);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("is_unstructured", &self.is_unstructured);
-        formatter.finish()
     }
 }
 /// See [`ListIntegrationItem`](crate::model::ListIntegrationItem).
@@ -7271,7 +6898,7 @@ impl ListIntegrationItem {
 
 /// <p>Information about the Identity Resolution Job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityResolutionJob {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -7348,20 +6975,6 @@ impl IdentityResolutionJob {
     /// <p>The error messages that are generated when the Identity Resolution Job runs.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for IdentityResolutionJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityResolutionJob");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("status", &self.status);
-        formatter.field("job_start_time", &self.job_start_time);
-        formatter.field("job_end_time", &self.job_end_time);
-        formatter.field("job_stats", &self.job_stats);
-        formatter.field("exporting_location", &self.exporting_location);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`IdentityResolutionJob`](crate::model::IdentityResolutionJob).
@@ -7514,7 +7127,7 @@ impl IdentityResolutionJob {
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
@@ -7524,13 +7137,6 @@ impl ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     pub fn s3_exporting(&self) -> std::option::Option<&crate::model::S3ExportingLocation> {
         self.s3_exporting.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportingLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportingLocation");
-        formatter.field("s3_exporting", &self.s3_exporting);
-        formatter.finish()
     }
 }
 /// See [`ExportingLocation`](crate::model::ExportingLocation).
@@ -7572,7 +7178,7 @@ impl ExportingLocation {
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3ExportingLocation {
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
@@ -7589,14 +7195,6 @@ impl S3ExportingLocation {
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     pub fn s3_key_name(&self) -> std::option::Option<&str> {
         self.s3_key_name.as_deref()
-    }
-}
-impl std::fmt::Debug for S3ExportingLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3ExportingLocation");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_key_name", &self.s3_key_name);
-        formatter.finish()
     }
 }
 /// See [`S3ExportingLocation`](crate::model::S3ExportingLocation).
@@ -7650,7 +7248,7 @@ impl S3ExportingLocation {
 
 /// <p>Statistics about the Identity Resolution Job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobStats {
     /// <p>The number of profiles reviewed.</p>
     #[doc(hidden)]
@@ -7674,18 +7272,6 @@ impl JobStats {
     /// <p>The number of merges completed.</p>
     pub fn number_of_merges_done(&self) -> i64 {
         self.number_of_merges_done
-    }
-}
-impl std::fmt::Debug for JobStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobStats");
-        formatter.field(
-            "number_of_profiles_reviewed",
-            &self.number_of_profiles_reviewed,
-        );
-        formatter.field("number_of_matches_found", &self.number_of_matches_found);
-        formatter.field("number_of_merges_done", &self.number_of_merges_done);
-        formatter.finish()
     }
 }
 /// See [`JobStats`](crate::model::JobStats).
@@ -7873,7 +7459,7 @@ impl AsRef<str> for IdentityResolutionJobStatus {
 
 /// <p>An object in a list that represents a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainItem {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
@@ -7908,16 +7494,6 @@ impl ListDomainItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListDomainItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainItem");
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListDomainItem`](crate::model::ListDomainItem).
@@ -8015,7 +7591,7 @@ impl ListDomainItem {
 
 /// <p>List containing steps in workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowStepItem {
     /// <p>Workflow step information specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
@@ -8027,13 +7603,6 @@ impl WorkflowStepItem {
         &self,
     ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowStep> {
         self.appflow_integration.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowStepItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowStepItem");
-        formatter.field("appflow_integration", &self.appflow_integration);
-        formatter.finish()
     }
 }
 /// See [`WorkflowStepItem`](crate::model::WorkflowStepItem).
@@ -8079,7 +7648,7 @@ impl WorkflowStepItem {
 
 /// <p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowStep {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
     #[doc(hidden)]
@@ -8138,20 +7707,6 @@ impl AppflowIntegrationWorkflowStep {
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AppflowIntegrationWorkflowStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowStep");
-        formatter.field("flow_name", &self.flow_name);
-        formatter.field("status", &self.status);
-        formatter.field("execution_message", &self.execution_message);
-        formatter.field("records_processed", &self.records_processed);
-        formatter.field("batch_records_start_time", &self.batch_records_start_time);
-        formatter.field("batch_records_end_time", &self.batch_records_end_time);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.finish()
     }
 }
 /// See [`AppflowIntegrationWorkflowStep`](crate::model::AppflowIntegrationWorkflowStep).
@@ -8289,7 +7844,7 @@ impl AppflowIntegrationWorkflowStep {
 
 /// <p>Generic object containing workflow execution metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowMetrics {
     /// <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
@@ -8301,13 +7856,6 @@ impl WorkflowMetrics {
         &self,
     ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowMetrics> {
         self.appflow_integration.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowMetrics");
-        formatter.field("appflow_integration", &self.appflow_integration);
-        formatter.finish()
     }
 }
 /// See [`WorkflowMetrics`](crate::model::WorkflowMetrics).
@@ -8353,7 +7901,7 @@ impl WorkflowMetrics {
 
 /// <p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowMetrics {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
@@ -8377,15 +7925,6 @@ impl AppflowIntegrationWorkflowMetrics {
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn total_steps(&self) -> i64 {
         self.total_steps
-    }
-}
-impl std::fmt::Debug for AppflowIntegrationWorkflowMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowMetrics");
-        formatter.field("records_processed", &self.records_processed);
-        formatter.field("steps_completed", &self.steps_completed);
-        formatter.field("total_steps", &self.total_steps);
-        formatter.finish()
     }
 }
 /// See [`AppflowIntegrationWorkflowMetrics`](crate::model::AppflowIntegrationWorkflowMetrics).
@@ -8448,7 +7987,7 @@ impl AppflowIntegrationWorkflowMetrics {
 
 /// <p>Structure to hold workflow attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkflowAttributes {
     /// <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
@@ -8461,13 +8000,6 @@ impl WorkflowAttributes {
         &self,
     ) -> std::option::Option<&crate::model::AppflowIntegrationWorkflowAttributes> {
         self.appflow_integration.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkflowAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkflowAttributes");
-        formatter.field("appflow_integration", &self.appflow_integration);
-        formatter.finish()
     }
 }
 /// See [`WorkflowAttributes`](crate::model::WorkflowAttributes).
@@ -8513,7 +8045,7 @@ impl WorkflowAttributes {
 
 /// <p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowAttributes {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     #[doc(hidden)]
@@ -8537,15 +8069,6 @@ impl AppflowIntegrationWorkflowAttributes {
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for AppflowIntegrationWorkflowAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppflowIntegrationWorkflowAttributes");
-        formatter.field("source_connector_type", &self.source_connector_type);
-        formatter.field("connector_profile_name", &self.connector_profile_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`AppflowIntegrationWorkflowAttributes`](crate::model::AppflowIntegrationWorkflowAttributes).
@@ -8614,7 +8137,7 @@ impl AppflowIntegrationWorkflowAttributes {
 
 /// <p>The Match group object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MatchItem {
     /// <p>The unique identifiers for this group of profiles that match.</p>
     #[doc(hidden)]
@@ -8638,15 +8161,6 @@ impl MatchItem {
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub fn confidence_score(&self) -> std::option::Option<f64> {
         self.confidence_score
-    }
-}
-impl std::fmt::Debug for MatchItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MatchItem");
-        formatter.field("match_id", &self.match_id);
-        formatter.field("profile_ids", &self.profile_ids);
-        formatter.field("confidence_score", &self.confidence_score);
-        formatter.finish()
     }
 }
 /// See [`MatchItem`](crate::model::MatchItem).
@@ -8718,7 +8232,7 @@ impl MatchItem {
 
 /// <p>Usage-specific statistics about the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainStats {
     /// <p>The total number of profiles currently in the domain.</p>
     #[doc(hidden)]
@@ -8749,16 +8263,6 @@ impl DomainStats {
     /// <p>The total size, in bytes, of all objects in the domain.</p>
     pub fn total_size(&self) -> i64 {
         self.total_size
-    }
-}
-impl std::fmt::Debug for DomainStats {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainStats");
-        formatter.field("profile_count", &self.profile_count);
-        formatter.field("metering_profile_count", &self.metering_profile_count);
-        formatter.field("object_count", &self.object_count);
-        formatter.field("total_size", &self.total_size);
-        formatter.finish()
     }
 }
 /// See [`DomainStats`](crate::model::DomainStats).
@@ -8833,7 +8337,7 @@ impl DomainStats {
 
 /// <p>Configuration data for integration workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntegrationConfig {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
     #[doc(hidden)]
@@ -8843,13 +8347,6 @@ impl IntegrationConfig {
     /// <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
     pub fn appflow_integration(&self) -> std::option::Option<&crate::model::AppflowIntegration> {
         self.appflow_integration.as_ref()
-    }
-}
-impl std::fmt::Debug for IntegrationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntegrationConfig");
-        formatter.field("appflow_integration", &self.appflow_integration);
-        formatter.finish()
     }
 }
 /// See [`IntegrationConfig`](crate::model::IntegrationConfig).
@@ -8891,7 +8388,7 @@ impl IntegrationConfig {
 
 /// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppflowIntegration {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     #[doc(hidden)]
@@ -8908,14 +8405,6 @@ impl AppflowIntegration {
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
     pub fn batches(&self) -> std::option::Option<&[crate::model::Batch]> {
         self.batches.as_deref()
-    }
-}
-impl std::fmt::Debug for AppflowIntegration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppflowIntegration");
-        formatter.field("flow_definition", &self.flow_definition);
-        formatter.field("batches", &self.batches);
-        formatter.finish()
     }
 }
 /// See [`AppflowIntegration`](crate::model::AppflowIntegration).
@@ -8978,7 +8467,7 @@ impl AppflowIntegration {
 
 /// <p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Batch {
     /// <p>Start time of batch to split ingestion.</p>
     #[doc(hidden)]
@@ -8995,14 +8484,6 @@ impl Batch {
     /// <p>End time of batch to split ingestion.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Batch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Batch");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`Batch`](crate::model::Batch).

@@ -2,7 +2,7 @@
 
 /// <p>Describes a configuration management server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Server {
     /// <p>Associate a public IP address with a server that you are launching. </p>
     #[doc(hidden)]
@@ -193,42 +193,6 @@ impl Server {
     /// <p>The ARN of the server. </p>
     pub fn server_arn(&self) -> std::option::Option<&str> {
         self.server_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Server {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Server");
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
-        formatter.field("backup_retention_count", &self.backup_retention_count);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("cloud_formation_stack_arn", &self.cloud_formation_stack_arn);
-        formatter.field("custom_domain", &self.custom_domain);
-        formatter.field("disable_automated_backup", &self.disable_automated_backup);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_model", &self.engine_model);
-        formatter.field("engine_attributes", &self.engine_attributes);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("instance_profile_arn", &self.instance_profile_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field("maintenance_status", &self.maintenance_status);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("server_arn", &self.server_arn);
-        formatter.finish()
     }
 }
 /// See [`Server`](crate::model::Server).
@@ -912,7 +876,7 @@ impl std::fmt::Debug for EngineAttribute {
 pub mod engine_attribute {
 
     /// A builder for [`EngineAttribute`](crate::model::EngineAttribute).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -946,6 +910,14 @@ pub mod engine_attribute {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl EngineAttribute {
     /// Creates a new builder-style object to manufacture [`EngineAttribute`](crate::model::EngineAttribute).
@@ -956,7 +928,7 @@ impl EngineAttribute {
 
 /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server. Leading and trailing white spaces are trimmed from both the key and value. A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     #[doc(hidden)]
@@ -973,14 +945,6 @@ impl Tag {
     /// <p>An optional tag value, such as <code>Production</code> or <code>test-owcm-server</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1149,7 +1113,7 @@ impl AsRef<str> for NodeAssociationStatus {
 
 /// <p>An event that is related to the server, such as the start of maintenance or backup. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerEvent {
     /// <p>The time when the event occurred. </p>
     #[doc(hidden)]
@@ -1180,16 +1144,6 @@ impl ServerEvent {
     /// <p>The Amazon S3 URL of the event's log file.</p>
     pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerEvent");
-        formatter.field("created_at", &self.created_at);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("message", &self.message);
-        formatter.field("log_url", &self.log_url);
-        formatter.finish()
     }
 }
 /// See [`ServerEvent`](crate::model::ServerEvent).
@@ -1267,7 +1221,7 @@ impl ServerEvent {
 
 /// <p>Describes a single backup. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Backup {
     /// <p>The ARN of the backup. </p>
     #[doc(hidden)]
@@ -1442,39 +1396,6 @@ impl Backup {
     /// <p> The IAM user ARN of the requester for manual backups. This field is empty for automated backups. </p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Backup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Backup");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("backup_type", &self.backup_type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("description", &self.description);
-        formatter.field("engine", &self.engine);
-        formatter.field("engine_model", &self.engine_model);
-        formatter.field("engine_version", &self.engine_version);
-        formatter.field("instance_profile_arn", &self.instance_profile_arn);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("s3_data_size", &self.s3_data_size);
-        formatter.field("s3_data_url", &self.s3_data_url);
-        formatter.field("s3_log_url", &self.s3_log_url);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("service_role_arn", &self.service_role_arn);
-        formatter.field("status", &self.status);
-        formatter.field("status_description", &self.status_description);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("tools_version", &self.tools_version);
-        formatter.field("user_arn", &self.user_arn);
-        formatter.finish()
     }
 }
 /// See [`Backup`](crate::model::Backup).
@@ -2037,7 +1958,7 @@ impl AsRef<str> for BackupType {
 
 /// <p>Stores account attributes. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p> The attribute name. The following are supported attribute names. </p>
     /// <ul>
@@ -2069,15 +1990,6 @@ impl AccountAttribute {
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
     pub fn used(&self) -> std::option::Option<i32> {
         self.used
-    }
-}
-impl std::fmt::Debug for AccountAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountAttribute");
-        formatter.field("name", &self.name);
-        formatter.field("maximum", &self.maximum);
-        formatter.field("used", &self.used);
-        formatter.finish()
     }
 }
 /// See [`AccountAttribute`](crate::model::AccountAttribute).

@@ -856,6 +856,7 @@ impl UploadDocumentsInput {
 
 /// <p>Container for the parameters to the <code>UploadDocuments</code> request.</p>
 #[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UploadDocumentsInput {
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub documents: aws_smithy_http::byte_stream::ByteStream,
@@ -881,18 +882,10 @@ impl UploadDocumentsInput {
         self.content_type.as_ref()
     }
 }
-impl std::fmt::Debug for UploadDocumentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UploadDocumentsInput");
-        formatter.field("documents", &self.documents);
-        formatter.field("content_type", &self.content_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>Suggest</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestInput {
     /// <p>Specifies the string for which you want to get suggestions.</p>
     #[doc(hidden)]
@@ -918,19 +911,10 @@ impl SuggestInput {
         self.size
     }
 }
-impl std::fmt::Debug for SuggestInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestInput");
-        formatter.field("query", &self.query);
-        formatter.field("suggester", &self.suggester);
-        formatter.field("size", &self.size);
-        formatter.finish()
-    }
-}
 
 /// <p>Container for the parameters to the <code>Search</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchInput {
     /// <p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
@@ -1131,25 +1115,5 @@ impl SearchInput {
     /// <p>There are currently no options supported for statistics.</p>
     pub fn stats(&self) -> std::option::Option<&str> {
         self.stats.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchInput");
-        formatter.field("cursor", &self.cursor);
-        formatter.field("expr", &self.expr);
-        formatter.field("facet", &self.facet);
-        formatter.field("filter_query", &self.filter_query);
-        formatter.field("highlight", &self.highlight);
-        formatter.field("partial", &self.partial);
-        formatter.field("query", &self.query);
-        formatter.field("query_options", &self.query_options);
-        formatter.field("query_parser", &self.query_parser);
-        formatter.field("r#return", &self.r#return);
-        formatter.field("size", &self.size);
-        formatter.field("sort", &self.sort);
-        formatter.field("start", &self.start);
-        formatter.field("stats", &self.stats);
-        formatter.finish()
     }
 }

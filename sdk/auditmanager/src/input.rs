@@ -11414,7 +11414,7 @@ impl ValidateAssessmentReportIntegrityInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidateAssessmentReportIntegrityInput {
     /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     #[doc(hidden)]
@@ -11426,17 +11426,10 @@ impl ValidateAssessmentReportIntegrityInput {
         self.s3_relative_path.as_deref()
     }
 }
-impl std::fmt::Debug for ValidateAssessmentReportIntegrityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidateAssessmentReportIntegrityInput");
-        formatter.field("s3_relative_path", &self.s3_relative_path);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSettingsInput {
     /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     #[doc(hidden)]
@@ -11472,23 +11465,10 @@ impl UpdateSettingsInput {
         self.kms_key.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSettingsInput");
-        formatter.field("sns_topic", &self.sns_topic);
-        formatter.field(
-            "default_assessment_reports_destination",
-            &self.default_assessment_reports_destination,
-        );
-        formatter.field("default_process_owners", &self.default_process_owners);
-        formatter.field("kms_key", &self.kms_key);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateControlInput {
     /// <p> The identifier for the control. </p>
     #[doc(hidden)]
@@ -11545,23 +11525,10 @@ impl UpdateControlInput {
         self.control_mapping_sources.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateControlInput");
-        formatter.field("control_id", &self.control_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("testing_information", &self.testing_information);
-        formatter.field("action_plan_title", &self.action_plan_title);
-        formatter.field("action_plan_instructions", &self.action_plan_instructions);
-        formatter.field("control_mapping_sources", &self.control_mapping_sources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentStatusInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -11580,18 +11547,10 @@ impl UpdateAssessmentStatusInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentStatusInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the share request. </p>
     #[doc(hidden)]
@@ -11617,19 +11576,10 @@ impl UpdateAssessmentFrameworkShareInput {
         self.action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentFrameworkShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentFrameworkShareInput");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("request_type", &self.request_type);
-        formatter.field("action", &self.action);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkInput {
     /// <p> The unique identifier for the framework. </p>
     #[doc(hidden)]
@@ -11672,21 +11622,10 @@ impl UpdateAssessmentFrameworkInput {
         self.control_sets.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentFrameworkInput");
-        formatter.field("framework_id", &self.framework_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("control_sets", &self.control_sets);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentControlSetStatusInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -11719,20 +11658,10 @@ impl UpdateAssessmentControlSetStatusInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentControlSetStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentControlSetStatusInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("status", &self.status);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentControlInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -11772,21 +11701,10 @@ impl UpdateAssessmentControlInput {
         self.comment_body.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentControlInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_id", &self.control_id);
-        formatter.field("control_status", &self.control_status);
-        formatter.field("comment_body", &self.comment_body);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -11836,25 +11754,10 @@ impl UpdateAssessmentInput {
         self.roles.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("assessment_description", &self.assessment_description);
-        formatter.field("scope", &self.scope);
-        formatter.field(
-            "assessment_reports_destination",
-            &self.assessment_reports_destination,
-        );
-        formatter.field("roles", &self.roles);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
     #[doc(hidden)]
@@ -11873,18 +11776,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource. </p>
     #[doc(hidden)]
@@ -11907,18 +11802,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the custom framework to be shared. </p>
     #[doc(hidden)]
@@ -11951,20 +11838,10 @@ impl StartAssessmentFrameworkShareInput {
         self.comment.as_deref()
     }
 }
-impl std::fmt::Debug for StartAssessmentFrameworkShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAssessmentFrameworkShareInput");
-        formatter.field("framework_id", &self.framework_id);
-        formatter.field("destination_account", &self.destination_account);
-        formatter.field("destination_region", &self.destination_region);
-        formatter.field("comment", &self.comment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterOrganizationAdminAccountInput {
     /// <p> The identifier for the delegated administrator account. </p>
     #[doc(hidden)]
@@ -11976,17 +11853,10 @@ impl RegisterOrganizationAdminAccountInput {
         self.admin_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterOrganizationAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterOrganizationAdminAccountInput");
-        formatter.field("admin_account_id", &self.admin_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterAccountInput {
     /// <p> The KMS key details. </p>
     #[doc(hidden)]
@@ -12005,18 +11875,10 @@ impl RegisterAccountInput {
         self.delegated_admin_account.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterAccountInput");
-        formatter.field("kms_key", &self.kms_key);
-        formatter.field("delegated_admin_account", &self.delegated_admin_account);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource. </p>
     #[doc(hidden)]
@@ -12028,17 +11890,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
@@ -12057,18 +11912,10 @@ impl ListNotificationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListKeywordsForDataSourceInput {
     /// <p> The control mapping data source that the keywords apply to. </p>
     #[doc(hidden)]
@@ -12094,19 +11941,10 @@ impl ListKeywordsForDataSourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListKeywordsForDataSourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListKeywordsForDataSourceInput");
-        formatter.field("source", &self.source);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListControlsInput {
     /// <p> The type of control, such as a standard control or a custom control. </p>
     #[doc(hidden)]
@@ -12132,19 +11970,10 @@ impl ListControlsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListControlsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListControlsInput");
-        formatter.field("control_type", &self.control_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
     #[doc(hidden)]
@@ -12170,19 +11999,10 @@ impl ListControlInsightsByControlDomainInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListControlInsightsByControlDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListControlInsightsByControlDomainInput");
-        formatter.field("control_domain_id", &self.control_domain_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListControlDomainInsightsByAssessmentInput {
     /// <p>The unique identifier for the active assessment. </p>
     #[doc(hidden)]
@@ -12208,19 +12028,10 @@ impl ListControlDomainInsightsByAssessmentInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListControlDomainInsightsByAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListControlDomainInsightsByAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListControlDomainInsightsInput {
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
@@ -12239,18 +12050,10 @@ impl ListControlDomainInsightsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListControlDomainInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListControlDomainInsightsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentsInput {
     /// <p> The current status of the assessment.</p>
     #[doc(hidden)]
@@ -12276,19 +12079,10 @@ impl ListAssessmentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentsInput");
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentReportsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
@@ -12307,18 +12101,10 @@ impl ListAssessmentReportsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentReportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentReportsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsInput {
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
     #[doc(hidden)]
@@ -12344,19 +12130,10 @@ impl ListAssessmentFrameworkShareRequestsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentFrameworkShareRequestsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentFrameworkShareRequestsInput");
-        formatter.field("request_type", &self.request_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentFrameworksInput {
     /// <p> The type of framework, such as a standard framework or a custom framework. </p>
     #[doc(hidden)]
@@ -12382,19 +12159,10 @@ impl ListAssessmentFrameworksInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentFrameworksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentFrameworksInput");
-        formatter.field("framework_type", &self.framework_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAssessmentControlInsightsByControlDomainInput {
     /// <p>The unique identifier for the control domain. </p>
     #[doc(hidden)]
@@ -12427,20 +12195,10 @@ impl ListAssessmentControlInsightsByControlDomainInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAssessmentControlInsightsByControlDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAssessmentControlInsightsByControlDomainInput");
-        formatter.field("control_domain_id", &self.control_domain_id);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSettingsInput {
     /// <p> The list of <code>SettingAttribute</code> enum values. </p>
     #[doc(hidden)]
@@ -12452,39 +12210,20 @@ impl GetSettingsInput {
         self.attribute.as_ref()
     }
 }
-impl std::fmt::Debug for GetSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSettingsInput");
-        formatter.field("attribute", &self.attribute);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServicesInScopeInput {}
-impl std::fmt::Debug for GetServicesInScopeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServicesInScopeInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountInput {}
-impl std::fmt::Debug for GetOrganizationAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetOrganizationAdminAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightsByAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12496,28 +12235,15 @@ impl GetInsightsByAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetInsightsByAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightsByAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetInsightsInput {}
-impl std::fmt::Debug for GetInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetInsightsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12557,21 +12283,10 @@ impl GetEvidenceFoldersByAssessmentControlInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEvidenceFoldersByAssessmentControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvidenceFoldersByAssessmentControlInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_id", &self.control_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceFoldersByAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12597,19 +12312,10 @@ impl GetEvidenceFoldersByAssessmentInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEvidenceFoldersByAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvidenceFoldersByAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceFolderInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12635,19 +12341,10 @@ impl GetEvidenceFolderInput {
         self.evidence_folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEvidenceFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvidenceFolderInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12687,21 +12384,10 @@ impl GetEvidenceByEvidenceFolderInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetEvidenceByEvidenceFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvidenceByEvidenceFolderInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEvidenceInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12734,20 +12420,10 @@ impl GetEvidenceInput {
         self.evidence_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEvidenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEvidenceInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.field("evidence_id", &self.evidence_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDelegationsInput {
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
@@ -12766,18 +12442,10 @@ impl GetDelegationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetDelegationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDelegationsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetControlInput {
     /// <p> The identifier for the control. </p>
     #[doc(hidden)]
@@ -12789,17 +12457,10 @@ impl GetControlInput {
         self.control_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetControlInput");
-        formatter.field("control_id", &self.control_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChangeLogsInput {
     /// <p>The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12839,21 +12500,10 @@ impl GetChangeLogsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetChangeLogsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChangeLogsInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_id", &self.control_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssessmentReportUrlInput {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
@@ -12872,18 +12522,10 @@ impl GetAssessmentReportUrlInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssessmentReportUrlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssessmentReportUrlInput");
-        formatter.field("assessment_report_id", &self.assessment_report_id);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
     #[doc(hidden)]
@@ -12895,17 +12537,10 @@ impl GetAssessmentFrameworkInput {
         self.framework_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssessmentFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssessmentFrameworkInput");
-        formatter.field("framework_id", &self.framework_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12917,28 +12552,15 @@ impl GetAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountStatusInput {}
-impl std::fmt::Debug for GetAccountStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountStatusInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateAssessmentReportEvidenceFolderInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -12957,18 +12579,10 @@ impl DisassociateAssessmentReportEvidenceFolderInput {
         self.evidence_folder_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateAssessmentReportEvidenceFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateAssessmentReportEvidenceFolderInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountInput {
     /// <p> The identifier for the administrator account. </p>
     #[doc(hidden)]
@@ -12980,28 +12594,15 @@ impl DeregisterOrganizationAdminAccountInput {
         self.admin_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterOrganizationAdminAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterOrganizationAdminAccountInput");
-        formatter.field("admin_account_id", &self.admin_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterAccountInput {}
-impl std::fmt::Debug for DeregisterAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterAccountInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteControlInput {
     /// <p> The unique identifier for the control. </p>
     #[doc(hidden)]
@@ -13013,17 +12614,10 @@ impl DeleteControlInput {
         self.control_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteControlInput");
-        formatter.field("control_id", &self.control_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentReportInput {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13042,18 +12636,10 @@ impl DeleteAssessmentReportInput {
         self.assessment_report_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentReportInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("assessment_report_id", &self.assessment_report_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkShareInput {
     /// <p>The unique identifier for the share request to be deleted.</p>
     #[doc(hidden)]
@@ -13072,18 +12658,10 @@ impl DeleteAssessmentFrameworkShareInput {
         self.request_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentFrameworkShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentFrameworkShareInput");
-        formatter.field("request_id", &self.request_id);
-        formatter.field("request_type", &self.request_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkInput {
     /// <p> The identifier for the custom framework. </p>
     #[doc(hidden)]
@@ -13095,17 +12673,10 @@ impl DeleteAssessmentFrameworkInput {
         self.framework_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentFrameworkInput");
-        formatter.field("framework_id", &self.framework_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAssessmentInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13117,17 +12688,10 @@ impl DeleteAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateControlInput {
     /// <p> The name of the control. </p>
     #[doc(hidden)]
@@ -13188,23 +12752,10 @@ impl CreateControlInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateControlInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("testing_information", &self.testing_information);
-        formatter.field("action_plan_title", &self.action_plan_title);
-        formatter.field("action_plan_instructions", &self.action_plan_instructions);
-        formatter.field("control_mapping_sources", &self.control_mapping_sources);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentReportInput {
     /// <p> The name of the new assessment report. </p>
     #[doc(hidden)]
@@ -13230,19 +12781,10 @@ impl CreateAssessmentReportInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAssessmentReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentReportInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkInput {
     /// <p> The name of the new custom framework. </p>
     #[doc(hidden)]
@@ -13289,21 +12831,10 @@ impl CreateAssessmentFrameworkInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssessmentFrameworkInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentFrameworkInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("compliance_type", &self.compliance_type);
-        formatter.field("control_sets", &self.control_sets);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAssessmentInput {
     /// <p> The name of the assessment to be created. </p>
     #[doc(hidden)]
@@ -13364,26 +12895,10 @@ impl CreateAssessmentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAssessmentInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "assessment_reports_destination",
-            &self.assessment_reports_destination,
-        );
-        formatter.field("scope", &self.scope);
-        formatter.field("roles", &self.roles);
-        formatter.field("framework_id", &self.framework_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13416,20 +12931,10 @@ impl BatchImportEvidenceToAssessmentControlInput {
         self.manual_evidence.as_deref()
     }
 }
-impl std::fmt::Debug for BatchImportEvidenceToAssessmentControlInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchImportEvidenceToAssessmentControlInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("control_set_id", &self.control_set_id);
-        formatter.field("control_id", &self.control_id);
-        formatter.field("manual_evidence", &self.manual_evidence);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisassociateAssessmentReportEvidenceInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13455,19 +12960,10 @@ impl BatchDisassociateAssessmentReportEvidenceInput {
         self.evidence_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisassociateAssessmentReportEvidenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisassociateAssessmentReportEvidenceInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.field("evidence_ids", &self.evidence_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentInput {
     /// <p> The identifiers for the delegations. </p>
     #[doc(hidden)]
@@ -13486,18 +12982,10 @@ impl BatchDeleteDelegationByAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDelegationByAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDelegationByAssessmentInput");
-        formatter.field("delegation_ids", &self.delegation_ids);
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateDelegationByAssessmentInput {
     /// <p> The API request to batch create delegations in Audit Manager. </p>
     #[doc(hidden)]
@@ -13519,21 +13007,10 @@ impl BatchCreateDelegationByAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateDelegationByAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateDelegationByAssessmentInput");
-        formatter.field(
-            "create_delegation_requests",
-            &self.create_delegation_requests,
-        );
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAssociateAssessmentReportEvidenceInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13559,19 +13036,10 @@ impl BatchAssociateAssessmentReportEvidenceInput {
         self.evidence_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchAssociateAssessmentReportEvidenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAssociateAssessmentReportEvidenceInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.field("evidence_ids", &self.evidence_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
@@ -13588,13 +13056,5 @@ impl AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
         self.evidence_folder_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateAssessmentReportEvidenceFolderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateAssessmentReportEvidenceFolderInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.field("evidence_folder_id", &self.evidence_folder_id);
-        formatter.finish()
     }
 }

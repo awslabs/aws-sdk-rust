@@ -2,7 +2,7 @@
 
 /// <p>Points to an <code>S3Destination</code> object that contains information about your S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Destination {
     /// <p>The <code>S3Destination</code> object.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl Destination {
     /// <p>The <code>S3Destination</code> object.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Destination");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`Destination`](crate::model::Destination).
@@ -55,7 +48,7 @@ impl Destination {
 
 /// <p>The name and prefix of the S3 bucket where code signing saves your signed objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -72,14 +65,6 @@ impl S3Destination {
     /// <p>An Amazon S3 prefix that you can use to limit responses to those that begin with the specified prefix.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Destination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Destination");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Destination`](crate::model::S3Destination).
@@ -130,7 +115,7 @@ impl S3Destination {
 
 /// <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Source {
     /// <p>The <code>S3Source</code> object.</p>
     #[doc(hidden)]
@@ -140,13 +125,6 @@ impl Source {
     /// <p>The <code>S3Source</code> object.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3Source> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Source");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`Source`](crate::model::Source).
@@ -183,7 +161,7 @@ impl Source {
 
 /// <p>Information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Source {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -207,15 +185,6 @@ impl S3Source {
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Source {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Source");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key", &self.key);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`S3Source`](crate::model::S3Source).
@@ -278,7 +247,7 @@ impl S3Source {
 
 /// <p>Any overrides that are applied to the signing configuration of a code signing platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
     #[doc(hidden)]
@@ -297,14 +266,6 @@ impl SigningPlatformOverrides {
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
     pub fn signing_image_format(&self) -> std::option::Option<&crate::model::ImageFormat> {
         self.signing_image_format.as_ref()
-    }
-}
-impl std::fmt::Debug for SigningPlatformOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningPlatformOverrides");
-        formatter.field("signing_configuration", &self.signing_configuration);
-        formatter.field("signing_image_format", &self.signing_image_format);
-        formatter.finish()
     }
 }
 /// See [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
@@ -460,7 +421,7 @@ impl AsRef<str> for ImageFormat {
 
 /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
     #[doc(hidden)]
@@ -477,14 +438,6 @@ impl SigningConfigurationOverrides {
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
     pub fn hash_algorithm(&self) -> std::option::Option<&crate::model::HashAlgorithm> {
         self.hash_algorithm.as_ref()
-    }
-}
-impl std::fmt::Debug for SigningConfigurationOverrides {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningConfigurationOverrides");
-        formatter.field("encryption_algorithm", &self.encryption_algorithm);
-        formatter.field("hash_algorithm", &self.hash_algorithm);
-        formatter.finish()
     }
 }
 /// See [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
@@ -723,7 +676,7 @@ impl AsRef<str> for EncryptionAlgorithm {
 
 /// <p>The validity period for a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignatureValidityPeriod {
     /// <p>The numerical value of the time unit for signature validity.</p>
     #[doc(hidden)]
@@ -740,14 +693,6 @@ impl SignatureValidityPeriod {
     /// <p>The time unit for signature validity.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ValidityType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for SignatureValidityPeriod {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignatureValidityPeriod");
-        formatter.field("value", &self.value);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
@@ -893,7 +838,7 @@ impl AsRef<str> for ValidityType {
 
 /// <p>The ACM certificate that is used to sign your code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     #[doc(hidden)]
@@ -903,13 +848,6 @@ impl SigningMaterial {
     /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your code.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for SigningMaterial {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningMaterial");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
     }
 }
 /// See [`SigningMaterial`](crate::model::SigningMaterial).
@@ -951,7 +889,7 @@ impl SigningMaterial {
 
 /// <p>Contains information about the ACM certificates and code signing configuration parameters that can be used by a given code signing user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningProfile {
     /// <p>The name of the signing profile.</p>
     #[doc(hidden)]
@@ -1041,23 +979,6 @@ impl SigningProfile {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for SigningProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningProfile");
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("profile_version_arn", &self.profile_version_arn);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("signature_validity_period", &self.signature_validity_period);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("platform_display_name", &self.platform_display_name);
-        formatter.field("signing_parameters", &self.signing_parameters);
-        formatter.field("status", &self.status);
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`SigningProfile`](crate::model::SigningProfile).
@@ -1369,7 +1290,7 @@ impl AsRef<str> for SigningProfileStatus {
 
 /// <p>Contains information about the signing configurations and parameters that are used to perform a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningPlatform {
     /// <p>The ID of a code signing; platform.</p>
     #[doc(hidden)]
@@ -1437,21 +1358,6 @@ impl SigningPlatform {
     /// <p>Indicates whether revocation is supported for the platform.</p>
     pub fn revocation_supported(&self) -> bool {
         self.revocation_supported
-    }
-}
-impl std::fmt::Debug for SigningPlatform {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningPlatform");
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("display_name", &self.display_name);
-        formatter.field("partner", &self.partner);
-        formatter.field("target", &self.target);
-        formatter.field("category", &self.category);
-        formatter.field("signing_configuration", &self.signing_configuration);
-        formatter.field("signing_image_format", &self.signing_image_format);
-        formatter.field("max_size_in_mb", &self.max_size_in_mb);
-        formatter.field("revocation_supported", &self.revocation_supported);
-        formatter.finish()
     }
 }
 /// See [`SigningPlatform`](crate::model::SigningPlatform).
@@ -1592,7 +1498,7 @@ impl SigningPlatform {
 
 /// <p>The image format of a code signing platform or profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningImageFormat {
     /// <p>The supported formats of a code signing image.</p>
     #[doc(hidden)]
@@ -1609,14 +1515,6 @@ impl SigningImageFormat {
     /// <p>The default format of a code signing image.</p>
     pub fn default_format(&self) -> std::option::Option<&crate::model::ImageFormat> {
         self.default_format.as_ref()
-    }
-}
-impl std::fmt::Debug for SigningImageFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningImageFormat");
-        formatter.field("supported_formats", &self.supported_formats);
-        formatter.field("default_format", &self.default_format);
-        formatter.finish()
     }
 }
 /// See [`SigningImageFormat`](crate::model::SigningImageFormat).
@@ -1679,7 +1577,7 @@ impl SigningImageFormat {
 
 /// <p>The configuration of a code signing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningConfiguration {
     /// <p>The encryption algorithm options that are available for a code signing job.</p>
     #[doc(hidden)]
@@ -1700,17 +1598,6 @@ impl SigningConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::HashAlgorithmOptions> {
         self.hash_algorithm_options.as_ref()
-    }
-}
-impl std::fmt::Debug for SigningConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningConfiguration");
-        formatter.field(
-            "encryption_algorithm_options",
-            &self.encryption_algorithm_options,
-        );
-        formatter.field("hash_algorithm_options", &self.hash_algorithm_options);
-        formatter.finish()
     }
 }
 /// See [`SigningConfiguration`](crate::model::SigningConfiguration).
@@ -1771,7 +1658,7 @@ impl SigningConfiguration {
 
 /// <p>The hash algorithms that are available to a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
     #[doc(hidden)]
@@ -1788,14 +1675,6 @@ impl HashAlgorithmOptions {
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     pub fn default_value(&self) -> std::option::Option<&crate::model::HashAlgorithm> {
         self.default_value.as_ref()
-    }
-}
-impl std::fmt::Debug for HashAlgorithmOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HashAlgorithmOptions");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
@@ -1858,7 +1737,7 @@ impl HashAlgorithmOptions {
 
 /// <p>The encryption algorithm options that are available to a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAlgorithmOptions {
     /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
     #[doc(hidden)]
@@ -1875,14 +1754,6 @@ impl EncryptionAlgorithmOptions {
     /// <p>The default encryption algorithm that is used by a code signing job.</p>
     pub fn default_value(&self) -> std::option::Option<&crate::model::EncryptionAlgorithm> {
         self.default_value.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionAlgorithmOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAlgorithmOptions");
-        formatter.field("allowed_values", &self.allowed_values);
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
@@ -2031,7 +1902,7 @@ impl AsRef<str> for Category {
 
 /// <p>Contains information about a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningJob {
     /// <p>The ID of the signing job.</p>
     #[doc(hidden)]
@@ -2132,26 +2003,6 @@ impl SigningJob {
     /// <p>The AWS account ID of the job invoker.</p>
     pub fn job_invoker(&self) -> std::option::Option<&str> {
         self.job_invoker.as_deref()
-    }
-}
-impl std::fmt::Debug for SigningJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("source", &self.source);
-        formatter.field("signed_object", &self.signed_object);
-        formatter.field("signing_material", &self.signing_material);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("is_revoked", &self.is_revoked);
-        formatter.field("profile_name", &self.profile_name);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.field("platform_id", &self.platform_id);
-        formatter.field("platform_display_name", &self.platform_display_name);
-        formatter.field("signature_expires_at", &self.signature_expires_at);
-        formatter.field("job_owner", &self.job_owner);
-        formatter.field("job_invoker", &self.job_invoker);
-        formatter.finish()
     }
 }
 /// See [`SigningJob`](crate::model::SigningJob).
@@ -2462,7 +2313,7 @@ impl AsRef<str> for SigningStatus {
 
 /// <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
     #[doc(hidden)]
@@ -2472,13 +2323,6 @@ impl SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
     pub fn s3(&self) -> std::option::Option<&crate::model::S3SignedObject> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for SignedObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignedObject");
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`SignedObject`](crate::model::SignedObject).
@@ -2515,7 +2359,7 @@ impl SignedObject {
 
 /// <p>The S3 bucket name and key where code signing saved your signed code image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3SignedObject {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
@@ -2532,14 +2376,6 @@ impl S3SignedObject {
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3SignedObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3SignedObject");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3SignedObject`](crate::model::S3SignedObject).
@@ -2590,7 +2426,7 @@ impl S3SignedObject {
 
 /// <p>A cross-account permission for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     #[doc(hidden)]
@@ -2621,16 +2457,6 @@ impl Permission {
     /// <p>The signing profile version that a permission applies to.</p>
     pub fn profile_version(&self) -> std::option::Option<&str> {
         self.profile_version.as_deref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("action", &self.action);
-        formatter.field("principal", &self.principal);
-        formatter.field("statement_id", &self.statement_id);
-        formatter.field("profile_version", &self.profile_version);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -2708,7 +2534,7 @@ impl Permission {
 
 /// <p>Revocation information for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
     #[doc(hidden)]
@@ -2732,15 +2558,6 @@ impl SigningProfileRevocationRecord {
     /// <p>The identity of the revoker.</p>
     pub fn revoked_by(&self) -> std::option::Option<&str> {
         self.revoked_by.as_deref()
-    }
-}
-impl std::fmt::Debug for SigningProfileRevocationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningProfileRevocationRecord");
-        formatter.field("revocation_effective_from", &self.revocation_effective_from);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revoked_by", &self.revoked_by);
-        formatter.finish()
     }
 }
 /// See [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
@@ -2809,7 +2626,7 @@ impl SigningProfileRevocationRecord {
 
 /// <p>Revocation information for a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
     #[doc(hidden)]
@@ -2833,15 +2650,6 @@ impl SigningJobRevocationRecord {
     /// <p>The identity of the revoker.</p>
     pub fn revoked_by(&self) -> std::option::Option<&str> {
         self.revoked_by.as_deref()
-    }
-}
-impl std::fmt::Debug for SigningJobRevocationRecord {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SigningJobRevocationRecord");
-        formatter.field("reason", &self.reason);
-        formatter.field("revoked_at", &self.revoked_at);
-        formatter.field("revoked_by", &self.revoked_by);
-        formatter.finish()
     }
 }
 /// See [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).

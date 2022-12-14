@@ -2,7 +2,7 @@
 
 /// <p>A validation exception field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// <p>The field's name.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// <p>The field's message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -77,7 +69,7 @@ impl ValidationExceptionField {
 
 /// <p>A validation exception error argument.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionErrorArgument {
     /// <p>The argument's name.</p>
     #[doc(hidden)]
@@ -94,14 +86,6 @@ impl ValidationExceptionErrorArgument {
     /// <p>The argument's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionErrorArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionErrorArgument");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionErrorArgument`](crate::model::ValidationExceptionErrorArgument).
@@ -259,7 +243,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// <p>A conflict exception error argument.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConflictExceptionErrorArgument {
     /// <p>The error argument's name.</p>
     #[doc(hidden)]
@@ -276,14 +260,6 @@ impl ConflictExceptionErrorArgument {
     /// <p>The error argument's value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for ConflictExceptionErrorArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictExceptionErrorArgument");
-        formatter.field("name", &self.name);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`ConflictExceptionErrorArgument`](crate::model::ConflictExceptionErrorArgument).
@@ -451,7 +427,7 @@ impl AsRef<str> for DeviceStatus {
 
 /// <p>The network configuration for a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
     #[doc(hidden)]
@@ -475,15 +451,6 @@ impl NetworkPayload {
     /// <p>Network time protocol (NTP) server settings.</p>
     pub fn ntp(&self) -> std::option::Option<&crate::model::NtpPayload> {
         self.ntp.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkPayload");
-        formatter.field("ethernet0", &self.ethernet0);
-        formatter.field("ethernet1", &self.ethernet1);
-        formatter.field("ntp", &self.ntp);
-        formatter.finish()
     }
 }
 /// See [`NetworkPayload`](crate::model::NetworkPayload).
@@ -552,7 +519,7 @@ impl NetworkPayload {
 
 /// <p>Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NtpPayload {
     /// <p>NTP servers to use, in order of preference.</p>
     #[doc(hidden)]
@@ -562,13 +529,6 @@ impl NtpPayload {
     /// <p>NTP servers to use, in order of preference.</p>
     pub fn ntp_servers(&self) -> std::option::Option<&[std::string::String]> {
         self.ntp_servers.as_deref()
-    }
-}
-impl std::fmt::Debug for NtpPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NtpPayload");
-        formatter.field("ntp_servers", &self.ntp_servers);
-        formatter.finish()
     }
 }
 /// See [`NtpPayload`](crate::model::NtpPayload).
@@ -616,7 +576,7 @@ impl NtpPayload {
 
 /// <p>A device's network configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EthernetPayload {
     /// <p>How the device gets an IP address.</p>
     #[doc(hidden)]
@@ -635,14 +595,6 @@ impl EthernetPayload {
         &self,
     ) -> std::option::Option<&crate::model::StaticIpConnectionInfo> {
         self.static_ip_connection_info.as_ref()
-    }
-}
-impl std::fmt::Debug for EthernetPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EthernetPayload");
-        formatter.field("connection_type", &self.connection_type);
-        formatter.field("static_ip_connection_info", &self.static_ip_connection_info);
-        formatter.finish()
     }
 }
 /// See [`EthernetPayload`](crate::model::EthernetPayload).
@@ -703,7 +655,7 @@ impl EthernetPayload {
 
 /// <p>A static IP configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
     #[doc(hidden)]
@@ -734,16 +686,6 @@ impl StaticIpConnectionInfo {
     /// <p>The connection's default gateway.</p>
     pub fn default_gateway(&self) -> std::option::Option<&str> {
         self.default_gateway.as_deref()
-    }
-}
-impl std::fmt::Debug for StaticIpConnectionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StaticIpConnectionInfo");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("mask", &self.mask);
-        formatter.field("dns", &self.dns);
-        formatter.field("default_gateway", &self.default_gateway);
-        formatter.finish()
     }
 }
 /// See [`StaticIpConnectionInfo`](crate::model::StaticIpConnectionInfo).
@@ -920,7 +862,7 @@ impl AsRef<str> for ConnectionType {
 
 /// <p>A package summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageListItem {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
@@ -962,17 +904,6 @@ impl PackageListItem {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageListItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageListItem");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`PackageListItem`](crate::model::PackageListItem).
@@ -1079,7 +1010,7 @@ impl PackageListItem {
 
 /// <p>A job to import a package version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageImportJob {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -1124,18 +1055,6 @@ impl PackageImportJob {
     /// <p>When the job was updated.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageImportJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageImportJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("job_type", &self.job_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`PackageImportJob`](crate::model::PackageImportJob).
@@ -1442,7 +1361,7 @@ impl AsRef<str> for PackageImportJobType {
 
 /// <p>An application node that represents a camera stream, a model, code, or output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Node {
     /// <p>The node's ID.</p>
     #[doc(hidden)]
@@ -1522,23 +1441,6 @@ impl Node {
     /// <p>When the node was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Node {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Node");
-        formatter.field("node_id", &self.node_id);
-        formatter.field("name", &self.name);
-        formatter.field("category", &self.category);
-        formatter.field("owner_account", &self.owner_account);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_arn", &self.package_arn);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.field("description", &self.description);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`Node`](crate::model::Node).
@@ -1812,7 +1714,7 @@ impl AsRef<str> for NodeCategory {
 
 /// <p>A job to create a camera stream node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeFromTemplateJob {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -1857,18 +1759,6 @@ impl NodeFromTemplateJob {
     /// <p>The node's name.</p>
     pub fn node_name(&self) -> std::option::Option<&str> {
         self.node_name.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeFromTemplateJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeFromTemplateJob");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("template_type", &self.template_type);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("node_name", &self.node_name);
-        formatter.finish()
     }
 }
 /// See [`NodeFromTemplateJob`](crate::model::NodeFromTemplateJob).
@@ -2161,7 +2051,7 @@ impl AsRef<str> for TemplateType {
 
 /// <p>A job that runs on a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceJob {
     /// <p>The name of the target device</p>
     #[doc(hidden)]
@@ -2192,16 +2082,6 @@ impl DeviceJob {
     /// <p>When the job was created.</p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceJob");
-        formatter.field("device_name", &self.device_name);
-        formatter.field("device_id", &self.device_id);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`DeviceJob`](crate::model::DeviceJob).
@@ -2279,7 +2159,7 @@ impl DeviceJob {
 
 /// <p>A device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Device {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
@@ -2379,25 +2259,6 @@ impl Device {
         &self,
     ) -> std::option::Option<&crate::model::DeviceAggregatedStatus> {
         self.device_aggregated_status.as_ref()
-    }
-}
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Device");
-        formatter.field("device_id", &self.device_id);
-        formatter.field("name", &self.name);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("provisioning_status", &self.provisioning_status);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("lease_expiration_time", &self.lease_expiration_time);
-        formatter.field("brand", &self.brand);
-        formatter.field("current_software", &self.current_software);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("latest_device_job", &self.latest_device_job);
-        formatter.field("device_aggregated_status", &self.device_aggregated_status);
-        formatter.finish()
     }
 }
 /// See [`Device`](crate::model::Device).
@@ -2759,7 +2620,7 @@ impl AsRef<str> for DeviceAggregatedStatus {
 
 /// <p>Returns information about the latest device job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LatestDeviceJob {
     /// <p>The target version of the device software.</p>
     #[doc(hidden)]
@@ -2776,14 +2637,6 @@ impl LatestDeviceJob {
     /// <p>Status of the latest device job.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::UpdateProgress> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for LatestDeviceJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LatestDeviceJob");
-        formatter.field("image_version", &self.image_version);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`LatestDeviceJob`](crate::model::LatestDeviceJob).
@@ -3340,7 +3193,7 @@ impl AsRef<str> for ListDevicesSortBy {
 
 /// <p>An application instance on a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApplicationInstance {
     /// <p>The application instance's name.</p>
     #[doc(hidden)]
@@ -3426,29 +3279,6 @@ impl ApplicationInstance {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ApplicationInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApplicationInstance");
-        formatter.field("name", &self.name);
-        formatter.field("application_instance_id", &self.application_instance_id);
-        formatter.field(
-            "default_runtime_context_device",
-            &self.default_runtime_context_device,
-        );
-        formatter.field(
-            "default_runtime_context_device_name",
-            &self.default_runtime_context_device_name,
-        );
-        formatter.field("description", &self.description);
-        formatter.field("status", &self.status);
-        formatter.field("health_status", &self.health_status);
-        formatter.field("status_description", &self.status_description);
-        formatter.field("created_time", &self.created_time);
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ApplicationInstance`](crate::model::ApplicationInstance).
@@ -4024,7 +3854,7 @@ impl AsRef<str> for StatusFilter {
 
 /// <p>A node instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeInstance {
     /// <p>The instance's ID.</p>
     #[doc(hidden)]
@@ -4076,19 +3906,6 @@ impl NodeInstance {
     /// <p>The instance's current status.</p>
     pub fn current_status(&self) -> std::option::Option<&crate::model::NodeInstanceStatus> {
         self.current_status.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeInstance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeInstance");
-        formatter.field("node_instance_id", &self.node_instance_id);
-        formatter.field("node_id", &self.node_id);
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("package_patch_version", &self.package_patch_version);
-        formatter.field("node_name", &self.node_name);
-        formatter.field("current_status", &self.current_status);
-        formatter.finish()
     }
 }
 /// See [`NodeInstance`](crate::model::NodeInstance).
@@ -4308,7 +4125,7 @@ impl AsRef<str> for NodeInstanceStatus {
 
 /// <p>A package object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageObject {
     /// <p>The object's name.</p>
     #[doc(hidden)]
@@ -4332,15 +4149,6 @@ impl PackageObject {
     /// <p>The object's patch version.</p>
     pub fn patch_version(&self) -> std::option::Option<&str> {
         self.patch_version.as_deref()
-    }
-}
-impl std::fmt::Debug for PackageObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageObject");
-        formatter.field("name", &self.name);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.finish()
     }
 }
 /// See [`PackageObject`](crate::model::PackageObject).
@@ -4516,7 +4324,7 @@ impl AsRef<str> for PackageVersionStatus {
 
 /// <p>Tags for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobResourceTags {
     /// <p>The job's type.</p>
     #[doc(hidden)]
@@ -4537,14 +4345,6 @@ impl JobResourceTags {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for JobResourceTags {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobResourceTags");
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`JobResourceTags`](crate::model::JobResourceTags).
@@ -4700,7 +4500,7 @@ impl AsRef<str> for JobResourceType {
 
 /// <p>Results of a package import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageImportJobOutput {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
@@ -4731,16 +4531,6 @@ impl PackageImportJobOutput {
     /// <p>The package's output location.</p>
     pub fn output_s3_location(&self) -> std::option::Option<&crate::model::OutPutS3Location> {
         self.output_s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageImportJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageImportJobOutput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("patch_version", &self.patch_version);
-        formatter.field("output_s3_location", &self.output_s3_location);
-        formatter.finish()
     }
 }
 /// See [`PackageImportJobOutput`](crate::model::PackageImportJobOutput).
@@ -4824,7 +4614,7 @@ impl PackageImportJobOutput {
 
 /// <p>The location of an output object in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutPutS3Location {
     /// <p>The object's bucket.</p>
     #[doc(hidden)]
@@ -4841,14 +4631,6 @@ impl OutPutS3Location {
     /// <p>The object's key.</p>
     pub fn object_key(&self) -> std::option::Option<&str> {
         self.object_key.as_deref()
-    }
-}
-impl std::fmt::Debug for OutPutS3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutPutS3Location");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("object_key", &self.object_key);
-        formatter.finish()
     }
 }
 /// See [`OutPutS3Location`](crate::model::OutPutS3Location).
@@ -4899,7 +4681,7 @@ impl OutPutS3Location {
 
 /// <p>An output configuration for a package import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageImportJobOutputConfig {
     /// <p>The package version's output configuration.</p>
     #[doc(hidden)]
@@ -4912,16 +4694,6 @@ impl PackageImportJobOutputConfig {
         &self,
     ) -> std::option::Option<&crate::model::PackageVersionOutputConfig> {
         self.package_version_output_config.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageImportJobOutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageImportJobOutputConfig");
-        formatter.field(
-            "package_version_output_config",
-            &self.package_version_output_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`PackageImportJobOutputConfig`](crate::model::PackageImportJobOutputConfig).
@@ -4967,7 +4739,7 @@ impl PackageImportJobOutputConfig {
 
 /// <p>A package version output configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
     #[doc(hidden)]
@@ -4991,15 +4763,6 @@ impl PackageVersionOutputConfig {
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn mark_latest(&self) -> bool {
         self.mark_latest
-    }
-}
-impl std::fmt::Debug for PackageVersionOutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionOutputConfig");
-        formatter.field("package_name", &self.package_name);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("mark_latest", &self.mark_latest);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionOutputConfig`](crate::model::PackageVersionOutputConfig).
@@ -5065,7 +4828,7 @@ impl PackageVersionOutputConfig {
 
 /// <p>A configuration for a package import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageImportJobInputConfig {
     /// <p>The package version's input configuration.</p>
     #[doc(hidden)]
@@ -5077,16 +4840,6 @@ impl PackageImportJobInputConfig {
         &self,
     ) -> std::option::Option<&crate::model::PackageVersionInputConfig> {
         self.package_version_input_config.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageImportJobInputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageImportJobInputConfig");
-        formatter.field(
-            "package_version_input_config",
-            &self.package_version_input_config,
-        );
-        formatter.finish()
     }
 }
 /// See [`PackageImportJobInputConfig`](crate::model::PackageImportJobInputConfig).
@@ -5132,7 +4885,7 @@ impl PackageImportJobInputConfig {
 
 /// <p>A package version input configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PackageVersionInputConfig {
     /// <p>A location in Amazon S3.</p>
     #[doc(hidden)]
@@ -5142,13 +4895,6 @@ impl PackageVersionInputConfig {
     /// <p>A location in Amazon S3.</p>
     pub fn s3_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.s3_location.as_ref()
-    }
-}
-impl std::fmt::Debug for PackageVersionInputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PackageVersionInputConfig");
-        formatter.field("s3_location", &self.s3_location);
-        formatter.finish()
     }
 }
 /// See [`PackageVersionInputConfig`](crate::model::PackageVersionInputConfig).
@@ -5190,7 +4936,7 @@ impl PackageVersionInputConfig {
 
 /// <p>A location in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The bucket's Region.</p>
     #[doc(hidden)]
@@ -5214,15 +4960,6 @@ impl S3Location {
     /// <p>An object key.</p>
     pub fn object_key(&self) -> std::option::Option<&str> {
         self.object_key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("region", &self.region);
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("object_key", &self.object_key);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -5285,7 +5022,7 @@ impl S3Location {
 
 /// <p>A storage location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageLocation {
     /// <p>The location's bucket.</p>
     #[doc(hidden)]
@@ -5323,17 +5060,6 @@ impl StorageLocation {
     /// <p>The location's manifest prefix.</p>
     pub fn manifest_prefix_location(&self) -> std::option::Option<&str> {
         self.manifest_prefix_location.as_deref()
-    }
-}
-impl std::fmt::Debug for StorageLocation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageLocation");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("repo_prefix_location", &self.repo_prefix_location);
-        formatter.field("generated_prefix_location", &self.generated_prefix_location);
-        formatter.field("binary_prefix_location", &self.binary_prefix_location);
-        formatter.field("manifest_prefix_location", &self.manifest_prefix_location);
-        formatter.finish()
     }
 }
 /// See [`StorageLocation`](crate::model::StorageLocation).
@@ -5432,7 +5158,7 @@ impl StorageLocation {
 
 /// <p>A node interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeInterface {
     /// <p>The node interface's inputs.</p>
     #[doc(hidden)]
@@ -5449,14 +5175,6 @@ impl NodeInterface {
     /// <p>The node interface's outputs.</p>
     pub fn outputs(&self) -> std::option::Option<&[crate::model::NodeOutputPort]> {
         self.outputs.as_deref()
-    }
-}
-impl std::fmt::Debug for NodeInterface {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeInterface");
-        formatter.field("inputs", &self.inputs);
-        formatter.field("outputs", &self.outputs);
-        formatter.finish()
     }
 }
 /// See [`NodeInterface`](crate::model::NodeInterface).
@@ -5525,7 +5243,7 @@ impl NodeInterface {
 
 /// <p>A node output port.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeOutputPort {
     /// <p>The output port's name.</p>
     #[doc(hidden)]
@@ -5549,15 +5267,6 @@ impl NodeOutputPort {
     /// <p>The output port's type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PortType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeOutputPort {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeOutputPort");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`NodeOutputPort`](crate::model::NodeOutputPort).
@@ -5725,7 +5434,7 @@ impl AsRef<str> for PortType {
 
 /// <p>A node input port.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeInputPort {
     /// <p>The input port's name.</p>
     #[doc(hidden)]
@@ -5763,17 +5472,6 @@ impl NodeInputPort {
     /// <p>The input port's max connections.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
-    }
-}
-impl std::fmt::Debug for NodeInputPort {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeInputPort");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("default_value", &self.default_value);
-        formatter.field("max_connections", &self.max_connections);
-        formatter.finish()
     }
 }
 /// See [`NodeInputPort`](crate::model::NodeInputPort).
@@ -5863,7 +5561,7 @@ impl NodeInputPort {
 
 /// <p>Details about a beta appliance software update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlternateSoftwareMetadata {
     /// <p>The appliance software version.</p>
     #[doc(hidden)]
@@ -5873,13 +5571,6 @@ impl AlternateSoftwareMetadata {
     /// <p>The appliance software version.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for AlternateSoftwareMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlternateSoftwareMetadata");
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata).
@@ -5918,7 +5609,7 @@ impl AlternateSoftwareMetadata {
 
 /// <p>The network status of a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NetworkStatus {
     /// <p>The status of Ethernet port 0.</p>
     #[doc(hidden)]
@@ -5949,16 +5640,6 @@ impl NetworkStatus {
     /// <p>When the network status changed.</p>
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
-    }
-}
-impl std::fmt::Debug for NetworkStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NetworkStatus");
-        formatter.field("ethernet0_status", &self.ethernet0_status);
-        formatter.field("ethernet1_status", &self.ethernet1_status);
-        formatter.field("ntp_status", &self.ntp_status);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.finish()
     }
 }
 /// See [`NetworkStatus`](crate::model::NetworkStatus).
@@ -6045,7 +5726,7 @@ impl NetworkStatus {
 
 /// <p>Details about an NTP server connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NtpStatus {
     /// <p>The connection's status.</p>
     #[doc(hidden)]
@@ -6069,15 +5750,6 @@ impl NtpStatus {
     /// <p>The domain name of the server.</p>
     pub fn ntp_server_name(&self) -> std::option::Option<&str> {
         self.ntp_server_name.as_deref()
-    }
-}
-impl std::fmt::Debug for NtpStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NtpStatus");
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("ntp_server_name", &self.ntp_server_name);
-        formatter.finish()
     }
 }
 /// See [`NtpStatus`](crate::model::NtpStatus).
@@ -6243,7 +5915,7 @@ impl AsRef<str> for NetworkConnectionStatus {
 
 /// <p>A device's Ethernet status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EthernetStatus {
     /// <p>The device's IP address.</p>
     #[doc(hidden)]
@@ -6267,15 +5939,6 @@ impl EthernetStatus {
     /// <p>The device's physical address.</p>
     pub fn hw_address(&self) -> std::option::Option<&str> {
         self.hw_address.as_deref()
-    }
-}
-impl std::fmt::Debug for EthernetStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EthernetStatus");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("hw_address", &self.hw_address);
-        formatter.finish()
     }
 }
 /// See [`EthernetStatus`](crate::model::EthernetStatus).
@@ -6528,7 +6191,7 @@ impl ManifestPayload {
 
 /// <p>A job for a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Job {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
@@ -6545,14 +6208,6 @@ impl Job {
     /// <p>The target device's ID.</p>
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Job");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("device_id", &self.device_id);
-        formatter.finish()
     }
 }
 /// See [`Job`](crate::model::Job).
@@ -6688,7 +6343,7 @@ impl AsRef<str> for JobType {
 
 /// <p>A job's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     #[doc(hidden)]
@@ -6698,13 +6353,6 @@ impl DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     pub fn ota_job_config(&self) -> std::option::Option<&crate::model::OtaJobConfig> {
         self.ota_job_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceJobConfig");
-        formatter.field("ota_job_config", &self.ota_job_config);
-        formatter.finish()
     }
 }
 /// See [`DeviceJobConfig`](crate::model::DeviceJobConfig).
@@ -6746,7 +6394,7 @@ impl DeviceJobConfig {
 
 /// <p>An over-the-air update (OTA) job configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
     #[doc(hidden)]
@@ -6756,13 +6404,6 @@ impl OtaJobConfig {
     /// <p>The target version of the device software.</p>
     pub fn image_version(&self) -> std::option::Option<&str> {
         self.image_version.as_deref()
-    }
-}
-impl std::fmt::Debug for OtaJobConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OtaJobConfig");
-        formatter.field("image_version", &self.image_version);
-        formatter.finish()
     }
 }
 /// See [`OtaJobConfig`](crate::model::OtaJobConfig).

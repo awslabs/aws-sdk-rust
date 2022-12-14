@@ -2,7 +2,7 @@
 
 /// <p> Container for response returned by <code> <code>UpgradeDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeDomainOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -63,18 +63,6 @@ impl UpgradeDomainOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
-    }
-}
-impl std::fmt::Debug for UpgradeDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeDomainOutput");
-        formatter.field("upgrade_id", &self.upgrade_id);
-        formatter.field("domain_name", &self.domain_name);
-        formatter.field("target_version", &self.target_version);
-        formatter.field("perform_check_only", &self.perform_check_only);
-        formatter.field("advanced_options", &self.advanced_options);
-        formatter.field("change_progress_details", &self.change_progress_details);
-        formatter.finish()
     }
 }
 /// See [`UpgradeDomainOutput`](crate::output::UpgradeDomainOutput).
@@ -210,7 +198,7 @@ impl UpgradeDomainOutput {
 
 /// <p> Container for the response returned by the <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageOutput {
     /// <p>Information about the package. </p>
     #[doc(hidden)]
@@ -220,13 +208,6 @@ impl UpdatePackageOutput {
     /// <p>Information about the package. </p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
@@ -268,7 +249,7 @@ impl UpdatePackageOutput {
 
 /// <p>The result of an <code>UpdateDomain</code> request. Contains the status of the domain being updated. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDomainConfigOutput {
     /// <p>The status of the updated domain.</p>
     #[doc(hidden)]
@@ -285,14 +266,6 @@ impl UpdateDomainConfigOutput {
     /// <p>Contains result of DryRun. </p>
     pub fn dry_run_results(&self) -> std::option::Option<&crate::model::DryRunResults> {
         self.dry_run_results.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateDomainConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDomainConfigOutput");
-        formatter.field("domain_config", &self.domain_config);
-        formatter.field("dry_run_results", &self.dry_run_results);
-        formatter.finish()
     }
 }
 /// See [`UpdateDomainConfigOutput`](crate::output::UpdateDomainConfigOutput).
@@ -349,7 +322,7 @@ impl UpdateDomainConfigOutput {
 
 /// <p>The result of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
     #[doc(hidden)]
@@ -361,13 +334,6 @@ impl StartServiceSoftwareUpdateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
-    }
-}
-impl std::fmt::Debug for StartServiceSoftwareUpdateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartServiceSoftwareUpdateOutput");
-        formatter.field("service_software_options", &self.service_software_options);
-        formatter.finish()
     }
 }
 /// See [`StartServiceSoftwareUpdateOutput`](crate::output::StartServiceSoftwareUpdateOutput).
@@ -413,14 +379,8 @@ impl StartServiceSoftwareUpdateOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveTagsOutput {}
-impl std::fmt::Debug for RemoveTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -443,7 +403,7 @@ impl RemoveTagsOutput {
 
 /// <p>The result of a <code> <code>RejectInboundConnection</code> </code> operation. Contains details about the rejected inbound connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RejectInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the rejected inbound connection. </p>
     #[doc(hidden)]
@@ -453,13 +413,6 @@ impl RejectInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the rejected inbound connection. </p>
     pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
         self.connection.as_ref()
-    }
-}
-impl std::fmt::Debug for RejectInboundConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RejectInboundConnectionOutput");
-        formatter.field("connection", &self.connection);
-        formatter.finish()
     }
 }
 /// See [`RejectInboundConnectionOutput`](crate::output::RejectInboundConnectionOutput).
@@ -501,7 +454,7 @@ impl RejectInboundConnectionOutput {
 
 /// <p>Represents the output of a <code>PurchaseReservedInstanceOffering</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingOutput {
     /// <p>Details of the reserved OpenSearch instance which was purchased.</p>
     #[doc(hidden)]
@@ -518,14 +471,6 @@ impl PurchaseReservedInstanceOfferingOutput {
     /// <p>The customer-specified identifier used to track this reservation.</p>
     pub fn reservation_name(&self) -> std::option::Option<&str> {
         self.reservation_name.as_deref()
-    }
-}
-impl std::fmt::Debug for PurchaseReservedInstanceOfferingOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PurchaseReservedInstanceOfferingOutput");
-        formatter.field("reserved_instance_id", &self.reserved_instance_id);
-        formatter.field("reservation_name", &self.reservation_name);
-        formatter.finish()
     }
 }
 /// See [`PurchaseReservedInstanceOfferingOutput`](crate::output::PurchaseReservedInstanceOfferingOutput).
@@ -582,7 +527,7 @@ impl PurchaseReservedInstanceOfferingOutput {
 
 /// <p> Container for the parameters for response received from the <code> <code>ListVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVersionsOutput {
     /// <p>List of supported OpenSearch versions. </p>
     #[doc(hidden)]
@@ -599,14 +544,6 @@ impl ListVersionsOutput {
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVersionsOutput");
-        formatter.field("versions", &self.versions);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListVersionsOutput`](crate::output::ListVersionsOutput).
@@ -666,7 +603,7 @@ impl ListVersionsOutput {
 
 /// <p>The result of a <code>ListTags</code> operation. Contains tags for all requested domains. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p>List of <code>Tag</code> for the requested domain. </p>
     #[doc(hidden)]
@@ -676,13 +613,6 @@ impl ListTagsOutput {
     /// <p>List of <code>Tag</code> for the requested domain. </p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOutput");
-        formatter.field("tag_list", &self.tag_list);
-        formatter.finish()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -730,7 +660,7 @@ impl ListTagsOutput {
 
 /// <p> Container for the response parameters to the <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects. </p>
     #[doc(hidden)]
@@ -750,17 +680,6 @@ impl ListPackagesForDomainOutput {
     /// <p>Pagination token to supply to the next call to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPackagesForDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesForDomainOutput");
-        formatter.field(
-            "domain_package_details_list",
-            &self.domain_package_details_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
@@ -824,7 +743,7 @@ impl ListPackagesForDomainOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -844,14 +763,6 @@ impl ListInstanceTypeDetailsOutput {
     /// <p> Paginated APIs accept the NextToken input to return the next page of results and provide a NextToken output in the response, which you can use to retrieve more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListInstanceTypeDetailsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListInstanceTypeDetailsOutput");
-        formatter.field("instance_type_details", &self.instance_type_details);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListInstanceTypeDetailsOutput`](crate::output::ListInstanceTypeDetailsOutput).
@@ -911,7 +822,7 @@ impl ListInstanceTypeDetailsOutput {
 
 /// <p> Container for the response parameters to the <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects. </p>
     #[doc(hidden)]
@@ -931,17 +842,6 @@ impl ListDomainsForPackageOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainsForPackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsForPackageOutput");
-        formatter.field(
-            "domain_package_details_list",
-            &self.domain_package_details_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
@@ -1005,7 +905,7 @@ impl ListDomainsForPackageOutput {
 
 /// <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     #[doc(hidden)]
@@ -1015,13 +915,6 @@ impl ListDomainNamesOutput {
     /// <p>List of domain names and respective engine types.</p>
     pub fn domain_names(&self) -> std::option::Option<&[crate::model::DomainInfo]> {
         self.domain_names.as_deref()
-    }
-}
-impl std::fmt::Debug for ListDomainNamesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainNamesOutput");
-        formatter.field("domain_names", &self.domain_names);
-        formatter.finish()
     }
 }
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
@@ -1069,7 +962,7 @@ impl ListDomainNamesOutput {
 
 /// <p> Container for the response returned by the <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeStatusOutput {
     /// <p> One of three steps an upgrade or upgrade eligibility check goes through: </p>
     /// <ul>
@@ -1119,15 +1012,6 @@ impl GetUpgradeStatusOutput {
     /// <p>A string that briefly describes the update.</p>
     pub fn upgrade_name(&self) -> std::option::Option<&str> {
         self.upgrade_name.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUpgradeStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeStatusOutput");
-        formatter.field("upgrade_step", &self.upgrade_step);
-        formatter.field("step_status", &self.step_status);
-        formatter.field("upgrade_name", &self.upgrade_name);
-        formatter.finish()
     }
 }
 /// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
@@ -1222,7 +1106,7 @@ impl GetUpgradeStatusOutput {
 
 /// <p> Container for the response returned by the <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
     #[doc(hidden)]
@@ -1239,14 +1123,6 @@ impl GetUpgradeHistoryOutput {
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetUpgradeHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUpgradeHistoryOutput");
-        formatter.field("upgrade_histories", &self.upgrade_histories);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
@@ -1307,7 +1183,7 @@ impl GetUpgradeHistoryOutput {
 
 /// <p> Container for response returned by <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1334,18 +1210,6 @@ impl GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPackageVersionHistoryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionHistoryOutput");
-        formatter.field("package_id", &self.package_id);
-        formatter.field(
-            "package_version_history_list",
-            &self.package_version_history_list,
-        );
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
@@ -1421,7 +1285,7 @@ impl GetPackageVersionHistoryOutput {
 
 /// <p> Container for the response returned by the <code> <code>GetCompatibleVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCompatibleVersionsOutput {
     /// <p> A map of compatible OpenSearch versions returned as part of the <code> <code>GetCompatibleVersions</code> </code> operation. </p>
     #[doc(hidden)]
@@ -1434,13 +1298,6 @@ impl GetCompatibleVersionsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::CompatibleVersionsMap]> {
         self.compatible_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for GetCompatibleVersionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCompatibleVersionsOutput");
-        formatter.field("compatible_versions", &self.compatible_versions);
-        formatter.finish()
     }
 }
 /// See [`GetCompatibleVersionsOutput`](crate::output::GetCompatibleVersionsOutput).
@@ -1489,7 +1346,7 @@ impl GetCompatibleVersionsOutput {
 
 /// <p> Container for the response returned by <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DissociatePackageOutput {
     /// <p> <code>DomainPackageDetails</code> </p>
     #[doc(hidden)]
@@ -1501,13 +1358,6 @@ impl DissociatePackageOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DissociatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DissociatePackageOutput");
-        formatter.field("domain_package_details", &self.domain_package_details);
-        formatter.finish()
     }
 }
 /// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
@@ -1549,7 +1399,7 @@ impl DissociatePackageOutput {
 
 /// <p>Container for results from <code>DescribeReservedInstances</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
@@ -1566,14 +1416,6 @@ impl DescribeReservedInstancesOutput {
     /// <p>List of reserved OpenSearch instances.</p>
     pub fn reserved_instances(&self) -> std::option::Option<&[crate::model::ReservedInstance]> {
         self.reserved_instances.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReservedInstancesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedInstancesOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("reserved_instances", &self.reserved_instances);
-        formatter.finish()
     }
 }
 /// See [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput).
@@ -1634,7 +1476,7 @@ impl DescribeReservedInstancesOutput {
 
 /// <p>Container for results from <code>DescribeReservedInstanceOfferings</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReservedInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
@@ -1654,17 +1496,6 @@ impl DescribeReservedInstanceOfferingsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::ReservedInstanceOffering]> {
         self.reserved_instance_offerings.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeReservedInstanceOfferingsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReservedInstanceOfferingsOutput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field(
-            "reserved_instance_offerings",
-            &self.reserved_instance_offerings,
-        );
-        formatter.finish()
     }
 }
 /// See [`DescribeReservedInstanceOfferingsOutput`](crate::output::DescribeReservedInstanceOfferingsOutput).
@@ -1728,7 +1559,7 @@ impl DescribeReservedInstanceOfferingsOutput {
 
 /// <p> Container for the response returned by the <code> <code>DescribePackages</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects. </p>
     #[doc(hidden)]
@@ -1745,14 +1576,6 @@ impl DescribePackagesOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribePackagesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackagesOutput");
-        formatter.field("package_details_list", &self.package_details_list);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
@@ -1813,7 +1636,7 @@ impl DescribePackagesOutput {
 
 /// <p>The result of a <code> <code>DescribeOutboundConnections</code> </code> request. Contains the list of connections matching the filter criteria. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeOutboundConnectionsOutput {
     /// <p>A list of <code> <code>OutboundConnection</code> </code> matching the specified filter criteria. </p>
     #[doc(hidden)]
@@ -1830,14 +1653,6 @@ impl DescribeOutboundConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeOutboundConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeOutboundConnectionsOutput");
-        formatter.field("connections", &self.connections);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeOutboundConnectionsOutput`](crate::output::DescribeOutboundConnectionsOutput).
@@ -1898,7 +1713,7 @@ impl DescribeOutboundConnectionsOutput {
 
 /// <p> Container for the parameters received from the <code> <code>DescribeInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInstanceTypeLimitsOutput {
     /// <p> The role of a given instance and all applicable limits. The role performed by a given OpenSearch instance can be one of the following: </p>
     /// <ul>
@@ -1924,13 +1739,6 @@ impl DescribeInstanceTypeLimitsOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Limits>>
     {
         self.limits_by_role.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeInstanceTypeLimitsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInstanceTypeLimitsOutput");
-        formatter.field("limits_by_role", &self.limits_by_role);
-        formatter.finish()
     }
 }
 /// See [`DescribeInstanceTypeLimitsOutput`](crate::output::DescribeInstanceTypeLimitsOutput).
@@ -1998,7 +1806,7 @@ impl DescribeInstanceTypeLimitsOutput {
 
 /// <p>The result of a <code> <code>DescribeInboundConnections</code> </code> request. Contains a list of connections matching the filter criteria. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeInboundConnectionsOutput {
     /// <p>A list of <code> <code>InboundConnection</code> </code> matching the specified filter criteria. </p>
     #[doc(hidden)]
@@ -2015,14 +1823,6 @@ impl DescribeInboundConnectionsOutput {
     /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeInboundConnectionsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeInboundConnectionsOutput");
-        formatter.field("connections", &self.connections);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeInboundConnectionsOutput`](crate::output::DescribeInboundConnectionsOutput).
@@ -2082,7 +1882,7 @@ impl DescribeInboundConnectionsOutput {
 
 /// <p>The result of a <code>DescribeDomains</code> request. Contains the status of the specified domains or all domains owned by the account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeDomains</code> request. </p>
     #[doc(hidden)]
@@ -2092,13 +1892,6 @@ impl DescribeDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeDomains</code> request. </p>
     pub fn domain_status_list(&self) -> std::option::Option<&[crate::model::DomainStatus]> {
         self.domain_status_list.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainsOutput");
-        formatter.field("domain_status_list", &self.domain_status_list);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
@@ -2147,7 +1940,7 @@ impl DescribeDomainsOutput {
 
 /// <p>The result of a <code>DescribeDomainConfig</code> request. Contains the configuration information of the requested domain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request. </p>
     #[doc(hidden)]
@@ -2157,13 +1950,6 @@ impl DescribeDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request. </p>
     pub fn domain_config(&self) -> std::option::Option<&crate::model::DomainConfig> {
         self.domain_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainConfigOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainConfigOutput");
-        formatter.field("domain_config", &self.domain_config);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainConfigOutput`](crate::output::DescribeDomainConfigOutput).
@@ -2205,7 +1991,7 @@ impl DescribeDomainConfigOutput {
 
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
     #[doc(hidden)]
@@ -2217,13 +2003,6 @@ impl DescribeDomainChangeProgressOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainChangeProgressOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainChangeProgressOutput");
-        formatter.field("change_progress_status", &self.change_progress_status);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
@@ -2269,7 +2048,7 @@ impl DescribeDomainChangeProgressOutput {
 
 /// <p>The result of a <code>DescribeDomainAutoTunes</code> request. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainAutoTunesOutput {
     /// <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information. </p>
     #[doc(hidden)]
@@ -2286,14 +2065,6 @@ impl DescribeDomainAutoTunesOutput {
     /// <p>An identifier to allow retrieval of paginated results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainAutoTunesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainAutoTunesOutput");
-        formatter.field("auto_tunes", &self.auto_tunes);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
@@ -2353,7 +2124,7 @@ impl DescribeDomainAutoTunesOutput {
 
 /// <p>The result of a <code>DescribeDomain</code> request. Contains the status of the domain specified in the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p>The current status of the domain.</p>
     #[doc(hidden)]
@@ -2363,13 +2134,6 @@ impl DescribeDomainOutput {
     /// <p>The current status of the domain.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
@@ -2411,7 +2175,7 @@ impl DescribeDomainOutput {
 
 /// <p> Container for the response parameters to the <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageOutput {
     /// <p> <code>PackageDetails</code> </p>
     #[doc(hidden)]
@@ -2421,13 +2185,6 @@ impl DeletePackageOutput {
     /// <p> <code>PackageDetails</code> </p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for DeletePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`DeletePackageOutput`](crate::output::DeletePackageOutput).
@@ -2469,7 +2226,7 @@ impl DeletePackageOutput {
 
 /// <p>The result of a <code> <code>DeleteOutboundConnection</code> </code> operation. Contains details about the deleted outbound connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteOutboundConnectionOutput {
     /// <p>The <code> <code>OutboundConnection</code> </code> of the deleted outbound connection. </p>
     #[doc(hidden)]
@@ -2479,13 +2236,6 @@ impl DeleteOutboundConnectionOutput {
     /// <p>The <code> <code>OutboundConnection</code> </code> of the deleted outbound connection. </p>
     pub fn connection(&self) -> std::option::Option<&crate::model::OutboundConnection> {
         self.connection.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteOutboundConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteOutboundConnectionOutput");
-        formatter.field("connection", &self.connection);
-        formatter.finish()
     }
 }
 /// See [`DeleteOutboundConnectionOutput`](crate::output::DeleteOutboundConnectionOutput).
@@ -2527,7 +2277,7 @@ impl DeleteOutboundConnectionOutput {
 
 /// <p>The result of a <code> <code>DeleteInboundConnection</code> </code> operation. Contains details about the deleted inbound connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the deleted inbound connection. </p>
     #[doc(hidden)]
@@ -2537,13 +2287,6 @@ impl DeleteInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the deleted inbound connection. </p>
     pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
         self.connection.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteInboundConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteInboundConnectionOutput");
-        formatter.field("connection", &self.connection);
-        formatter.finish()
     }
 }
 /// See [`DeleteInboundConnectionOutput`](crate::output::DeleteInboundConnectionOutput).
@@ -2585,7 +2328,7 @@ impl DeleteInboundConnectionOutput {
 
 /// <p>The result of a <code>DeleteDomain</code> request. Contains the status of the pending deletion, or a "domain not found" error if the domain and all of its resources have been deleted. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainOutput {
     /// <p>The status of the domain being deleted.</p>
     #[doc(hidden)]
@@ -2595,13 +2338,6 @@ impl DeleteDomainOutput {
     /// <p>The status of the domain being deleted.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for DeleteDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -2643,7 +2379,7 @@ impl DeleteDomainOutput {
 
 /// <p> Container for the response returned by the <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePackageOutput {
     /// <p>Information about the package. </p>
     #[doc(hidden)]
@@ -2653,13 +2389,6 @@ impl CreatePackageOutput {
     /// <p>Information about the package. </p>
     pub fn package_details(&self) -> std::option::Option<&crate::model::PackageDetails> {
         self.package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for CreatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePackageOutput");
-        formatter.field("package_details", &self.package_details);
-        formatter.finish()
     }
 }
 /// See [`CreatePackageOutput`](crate::output::CreatePackageOutput).
@@ -2701,7 +2430,7 @@ impl CreatePackageOutput {
 
 /// <p>The result of a <code> <code>CreateOutboundConnection</code> </code> request. Contains the details about the newly created cross-cluster connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateOutboundConnectionOutput {
     /// <p>The <code> <code>AWSDomainInformation</code> </code> for the local OpenSearch domain. </p>
     #[doc(hidden)]
@@ -2745,17 +2474,6 @@ impl CreateOutboundConnectionOutput {
     /// <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateOutboundConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateOutboundConnectionOutput");
-        formatter.field("local_domain_info", &self.local_domain_info);
-        formatter.field("remote_domain_info", &self.remote_domain_info);
-        formatter.field("connection_alias", &self.connection_alias);
-        formatter.field("connection_status", &self.connection_status);
-        formatter.field("connection_id", &self.connection_id);
-        formatter.finish()
     }
 }
 /// See [`CreateOutboundConnectionOutput`](crate::output::CreateOutboundConnectionOutput).
@@ -2864,7 +2582,7 @@ impl CreateOutboundConnectionOutput {
 
 /// <p>The result of a <code>CreateDomain</code> operation. Contains the status of the newly created Amazon OpenSearch Service domain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The status of the newly created domain.</p>
     #[doc(hidden)]
@@ -2874,13 +2592,6 @@ impl CreateDomainOutput {
     /// <p>The status of the newly created domain.</p>
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateDomainOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainOutput");
-        formatter.field("domain_status", &self.domain_status);
-        formatter.finish()
     }
 }
 /// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
@@ -2922,7 +2633,7 @@ impl CreateDomainOutput {
 
 /// <p>The result of a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch service software update.</p>
     #[doc(hidden)]
@@ -2934,13 +2645,6 @@ impl CancelServiceSoftwareUpdateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
-    }
-}
-impl std::fmt::Debug for CancelServiceSoftwareUpdateOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelServiceSoftwareUpdateOutput");
-        formatter.field("service_software_options", &self.service_software_options);
-        formatter.finish()
     }
 }
 /// See [`CancelServiceSoftwareUpdateOutput`](crate::output::CancelServiceSoftwareUpdateOutput).
@@ -2986,7 +2690,7 @@ impl CancelServiceSoftwareUpdateOutput {
 
 /// <p> Container for the response returned by <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePackageOutput {
     /// <p> <code>DomainPackageDetails</code> </p>
     #[doc(hidden)]
@@ -2998,13 +2702,6 @@ impl AssociatePackageOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainPackageDetails> {
         self.domain_package_details.as_ref()
-    }
-}
-impl std::fmt::Debug for AssociatePackageOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePackageOutput");
-        formatter.field("domain_package_details", &self.domain_package_details);
-        formatter.finish()
     }
 }
 /// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
@@ -3046,14 +2743,8 @@ impl AssociatePackageOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddTagsOutput {}
-impl std::fmt::Debug for AddTagsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddTagsOutput");
-        formatter.finish()
-    }
-}
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -3076,7 +2767,7 @@ impl AddTagsOutput {
 
 /// <p>The result of an <code> <code>AcceptInboundConnection</code> </code> operation. Contains details about the accepted inbound connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the accepted inbound connection. </p>
     #[doc(hidden)]
@@ -3086,13 +2777,6 @@ impl AcceptInboundConnectionOutput {
     /// <p>The <code> <code>InboundConnection</code> </code> of the accepted inbound connection. </p>
     pub fn connection(&self) -> std::option::Option<&crate::model::InboundConnection> {
         self.connection.as_ref()
-    }
-}
-impl std::fmt::Debug for AcceptInboundConnectionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptInboundConnectionOutput");
-        formatter.field("connection", &self.connection);
-        formatter.finish()
     }
 }
 /// See [`AcceptInboundConnectionOutput`](crate::output::AcceptInboundConnectionOutput).

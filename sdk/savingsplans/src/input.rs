@@ -2003,7 +2003,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2022,18 +2022,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2056,18 +2048,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
@@ -2079,17 +2063,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingsInput {
     /// <p>The IDs of the offerings.</p>
     #[doc(hidden)]
@@ -2189,29 +2166,10 @@ impl DescribeSavingsPlansOfferingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansOfferingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingsInput");
-        formatter.field("offering_ids", &self.offering_ids);
-        formatter.field("payment_options", &self.payment_options);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("plan_types", &self.plan_types);
-        formatter.field("durations", &self.durations);
-        formatter.field("currencies", &self.currencies);
-        formatter.field("descriptions", &self.descriptions);
-        formatter.field("service_codes", &self.service_codes);
-        formatter.field("usage_types", &self.usage_types);
-        formatter.field("operations", &self.operations);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
     #[doc(hidden)]
@@ -2294,29 +2252,10 @@ impl DescribeSavingsPlansOfferingRatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansOfferingRatesInput");
-        formatter.field("savings_plan_offering_ids", &self.savings_plan_offering_ids);
-        formatter.field(
-            "savings_plan_payment_options",
-            &self.savings_plan_payment_options,
-        );
-        formatter.field("savings_plan_types", &self.savings_plan_types);
-        formatter.field("products", &self.products);
-        formatter.field("service_codes", &self.service_codes);
-        formatter.field("usage_types", &self.usage_types);
-        formatter.field("operations", &self.operations);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlansInput {
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
     #[doc(hidden)]
@@ -2363,22 +2302,10 @@ impl DescribeSavingsPlansInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlansInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlansInput");
-        formatter.field("savings_plan_arns", &self.savings_plan_arns);
-        formatter.field("savings_plan_ids", &self.savings_plan_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("states", &self.states);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSavingsPlanRatesInput {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
@@ -2411,20 +2338,10 @@ impl DescribeSavingsPlanRatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSavingsPlanRatesInput");
-        formatter.field("savings_plan_id", &self.savings_plan_id);
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanInput {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
@@ -2436,17 +2353,10 @@ impl DeleteQueuedSavingsPlanInput {
         self.savings_plan_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteQueuedSavingsPlanInput");
-        formatter.field("savings_plan_id", &self.savings_plan_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSavingsPlanInput {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
@@ -2495,17 +2405,5 @@ impl CreateSavingsPlanInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateSavingsPlanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSavingsPlanInput");
-        formatter.field("savings_plan_offering_id", &self.savings_plan_offering_id);
-        formatter.field("commitment", &self.commitment);
-        formatter.field("upfront_payment_amount", &self.upfront_payment_amount);
-        formatter.field("purchase_time", &self.purchase_time);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

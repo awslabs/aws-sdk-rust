@@ -2,7 +2,7 @@
 
 /// <p>A composite slot is a combination of two or more slots that capture multiple pieces of information in a single user input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompositeSlotTypeSetting {
     /// <p>Subslots in the composite slot.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl CompositeSlotTypeSetting {
     /// <p>Subslots in the composite slot.</p>
     pub fn sub_slots(&self) -> std::option::Option<&[crate::model::SubSlotTypeComposition]> {
         self.sub_slots.as_deref()
-    }
-}
-impl std::fmt::Debug for CompositeSlotTypeSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompositeSlotTypeSetting");
-        formatter.field("sub_slots", &self.sub_slots);
-        formatter.finish()
     }
 }
 /// See [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
@@ -67,7 +60,7 @@ impl CompositeSlotTypeSetting {
 
 /// <p>Subslot type composition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
     #[doc(hidden)]
@@ -84,14 +77,6 @@ impl SubSlotTypeComposition {
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
     pub fn slot_type_id(&self) -> std::option::Option<&str> {
         self.slot_type_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SubSlotTypeComposition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubSlotTypeComposition");
-        formatter.field("name", &self.name);
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.finish()
     }
 }
 /// See [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
@@ -142,7 +127,7 @@ impl SubSlotTypeComposition {
 
 /// <p>Provides information about the external source of the slot type's definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     #[doc(hidden)]
@@ -154,13 +139,6 @@ impl ExternalSourceSetting {
         &self,
     ) -> std::option::Option<&crate::model::GrammarSlotTypeSetting> {
         self.grammar_slot_type_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for ExternalSourceSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExternalSourceSetting");
-        formatter.field("grammar_slot_type_setting", &self.grammar_slot_type_setting);
-        formatter.finish()
     }
 }
 /// See [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
@@ -206,7 +184,7 @@ impl ExternalSourceSetting {
 
 /// <p>Settings requried for a slot type based on a grammar that you provide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrammarSlotTypeSetting {
     /// <p>The source of the grammar used to create the slot type.</p>
     #[doc(hidden)]
@@ -216,13 +194,6 @@ impl GrammarSlotTypeSetting {
     /// <p>The source of the grammar used to create the slot type.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::GrammarSlotTypeSource> {
         self.source.as_ref()
-    }
-}
-impl std::fmt::Debug for GrammarSlotTypeSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrammarSlotTypeSetting");
-        formatter.field("source", &self.source);
-        formatter.finish()
     }
 }
 /// See [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
@@ -264,7 +235,7 @@ impl GrammarSlotTypeSetting {
 
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
     #[doc(hidden)]
@@ -288,15 +259,6 @@ impl GrammarSlotTypeSource {
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for GrammarSlotTypeSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GrammarSlotTypeSource");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("s3_object_key", &self.s3_object_key);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
@@ -365,7 +327,7 @@ impl GrammarSlotTypeSource {
 
 /// <p>Contains settings used by Amazon Lex to select a slot value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotValueSelectionSetting {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
@@ -403,18 +365,6 @@ impl SlotValueSelectionSetting {
         &self,
     ) -> std::option::Option<&crate::model::AdvancedRecognitionSetting> {
         self.advanced_recognition_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotValueSelectionSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotValueSelectionSetting");
-        formatter.field("resolution_strategy", &self.resolution_strategy);
-        formatter.field("regex_filter", &self.regex_filter);
-        formatter.field(
-            "advanced_recognition_setting",
-            &self.advanced_recognition_setting,
-        );
-        formatter.finish()
     }
 }
 /// See [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
@@ -504,7 +454,7 @@ impl SlotValueSelectionSetting {
 
 /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     #[doc(hidden)]
@@ -516,16 +466,6 @@ impl AdvancedRecognitionSetting {
         &self,
     ) -> std::option::Option<&crate::model::AudioRecognitionStrategy> {
         self.audio_recognition_strategy.as_ref()
-    }
-}
-impl std::fmt::Debug for AdvancedRecognitionSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdvancedRecognitionSetting");
-        formatter.field(
-            "audio_recognition_strategy",
-            &self.audio_recognition_strategy,
-        );
-        formatter.finish()
     }
 }
 /// See [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
@@ -662,7 +602,7 @@ impl AsRef<str> for AudioRecognitionStrategy {
 
 /// <p>Provides a regular expression used to validate the value of a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotValueRegexFilter {
     /// <p>A regular expression used to validate the value of a slot.</p>
     /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
@@ -700,13 +640,6 @@ impl SlotValueRegexFilter {
     /// </ul>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotValueRegexFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotValueRegexFilter");
-        formatter.field("pattern", &self.pattern);
-        formatter.finish()
     }
 }
 /// See [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
@@ -870,7 +803,7 @@ impl AsRef<str> for SlotValueResolutionStrategy {
 
 /// <p>Each slot type can have a set of values. Each <code>SlotTypeValue</code> represents a value that the slot type can take.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
     #[doc(hidden)]
@@ -887,14 +820,6 @@ impl SlotTypeValue {
     /// <p>Additional values related to the slot type entry.</p>
     pub fn synonyms(&self) -> std::option::Option<&[crate::model::SampleValue]> {
         self.synonyms.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotTypeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotTypeValue");
-        formatter.field("sample_value", &self.sample_value);
-        formatter.field("synonyms", &self.synonyms);
-        formatter.finish()
     }
 }
 /// See [`SlotTypeValue`](crate::model::SlotTypeValue).
@@ -957,7 +882,7 @@ impl SlotTypeValue {
 
 /// <p>Defines one of the values for a slot type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SampleValue {
     /// <p>The value that can be used for a slot type.</p>
     #[doc(hidden)]
@@ -967,13 +892,6 @@ impl SampleValue {
     /// <p>The value that can be used for a slot type.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SampleValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SampleValue");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SampleValue`](crate::model::SampleValue).
@@ -1010,7 +928,7 @@ impl SampleValue {
 
 /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubSlotSetting {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
     #[doc(hidden)]
@@ -1033,14 +951,6 @@ impl SubSlotSetting {
         &std::collections::HashMap<std::string::String, crate::model::Specifications>,
     > {
         self.slot_specifications.as_ref()
-    }
-}
-impl std::fmt::Debug for SubSlotSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubSlotSetting");
-        formatter.field("expression", &self.expression);
-        formatter.field("slot_specifications", &self.slot_specifications);
-        formatter.finish()
     }
 }
 /// See [`SubSlotSetting`](crate::model::SubSlotSetting).
@@ -1108,7 +1018,7 @@ impl SubSlotSetting {
 
 /// <p>Subslot specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Specifications {
     /// <p>The unique identifier assigned to the slot type.</p>
     #[doc(hidden)]
@@ -1128,14 +1038,6 @@ impl Specifications {
         &self,
     ) -> std::option::Option<&crate::model::SubSlotValueElicitationSetting> {
         self.value_elicitation_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for Specifications {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Specifications");
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("value_elicitation_setting", &self.value_elicitation_setting);
-        formatter.finish()
     }
 }
 /// See [`Specifications`](crate::model::Specifications).
@@ -1195,7 +1097,7 @@ impl Specifications {
 /// <p> <code>DefaultValueSpecification</code> is a list of default values for a constituent sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values. This is similar to <code>DefaultValueSpecification</code> for slots.</p>
 /// <p> <code>PromptSpecification</code> is the prompt that Amazon Lex uses to elicit the sub slot value from the user. This is similar to <code>PromptSpecification</code> for slots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubSlotValueElicitationSetting {
     /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
     #[doc(hidden)]
@@ -1232,22 +1134,6 @@ impl SubSlotValueElicitationSetting {
         &self,
     ) -> std::option::Option<&crate::model::WaitAndContinueSpecification> {
         self.wait_and_continue_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for SubSlotValueElicitationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubSlotValueElicitationSetting");
-        formatter.field(
-            "default_value_specification",
-            &self.default_value_specification,
-        );
-        formatter.field("prompt_specification", &self.prompt_specification);
-        formatter.field("sample_utterances", &self.sample_utterances);
-        formatter.field(
-            "wait_and_continue_specification",
-            &self.wait_and_continue_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
@@ -1349,7 +1235,7 @@ impl SubSlotValueElicitationSetting {
 
 /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WaitAndContinueSpecification {
     /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
     #[doc(hidden)]
@@ -1383,16 +1269,6 @@ impl WaitAndContinueSpecification {
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
-    }
-}
-impl std::fmt::Debug for WaitAndContinueSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WaitAndContinueSpecification");
-        formatter.field("waiting_response", &self.waiting_response);
-        formatter.field("continue_response", &self.continue_response);
-        formatter.field("still_waiting_response", &self.still_waiting_response);
-        formatter.field("active", &self.active);
-        formatter.finish()
     }
 }
 /// See [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
@@ -1480,7 +1356,7 @@ impl WaitAndContinueSpecification {
 
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     #[doc(hidden)]
@@ -1511,16 +1387,6 @@ impl StillWaitingResponseSpecification {
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
-    }
-}
-impl std::fmt::Debug for StillWaitingResponseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StillWaitingResponseSpecification");
-        formatter.field("message_groups", &self.message_groups);
-        formatter.field("frequency_in_seconds", &self.frequency_in_seconds);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.finish()
     }
 }
 /// See [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
@@ -1604,7 +1470,7 @@ impl StillWaitingResponseSpecification {
 
 /// <p>Provides one or more messages that Amazon Lex should send to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     #[doc(hidden)]
@@ -1621,14 +1487,6 @@ impl MessageGroup {
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
     pub fn variations(&self) -> std::option::Option<&[crate::model::Message]> {
         self.variations.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageGroup");
-        formatter.field("message", &self.message);
-        formatter.field("variations", &self.variations);
-        formatter.finish()
     }
 }
 /// See [`MessageGroup`](crate::model::MessageGroup).
@@ -1688,7 +1546,7 @@ impl MessageGroup {
 
 /// <p>The object that provides message text and it's type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Message {
     /// <p>A message in plain text format.</p>
     #[doc(hidden)]
@@ -1719,16 +1577,6 @@ impl Message {
     /// <p>A message that defines a response card that the client application can show to the user.</p>
     pub fn image_response_card(&self) -> std::option::Option<&crate::model::ImageResponseCard> {
         self.image_response_card.as_ref()
-    }
-}
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Message");
-        formatter.field("plain_text_message", &self.plain_text_message);
-        formatter.field("custom_payload", &self.custom_payload);
-        formatter.field("ssml_message", &self.ssml_message);
-        formatter.field("image_response_card", &self.image_response_card);
-        formatter.finish()
     }
 }
 /// See [`Message`](crate::model::Message).
@@ -1816,7 +1664,7 @@ impl Message {
 /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImageResponseCard {
     /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
     #[doc(hidden)]
@@ -1847,16 +1695,6 @@ impl ImageResponseCard {
     /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
     pub fn buttons(&self) -> std::option::Option<&[crate::model::Button]> {
         self.buttons.as_deref()
-    }
-}
-impl std::fmt::Debug for ImageResponseCard {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImageResponseCard");
-        formatter.field("title", &self.title);
-        formatter.field("subtitle", &self.subtitle);
-        formatter.field("image_url", &self.image_url);
-        formatter.field("buttons", &self.buttons);
-        formatter.finish()
     }
 }
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
@@ -1940,7 +1778,7 @@ impl ImageResponseCard {
 
 /// <p>Describes a button to use on a response card used to gather slot values from a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Button {
     /// <p>The text that appears on the button. Use this to tell the user what value is returned when they choose this button.</p>
     #[doc(hidden)]
@@ -1957,14 +1795,6 @@ impl Button {
     /// <p>The value returned to Amazon Lex when the user chooses this button. This must be one of the slot values configured for the slot.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Button {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Button");
-        formatter.field("text", &self.text);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Button`](crate::model::Button).
@@ -2015,7 +1845,7 @@ impl Button {
 
 /// <p>Defines a Speech Synthesis Markup Language (SSML) prompt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
     #[doc(hidden)]
@@ -2025,13 +1855,6 @@ impl SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for SsmlMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SsmlMessage");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`SsmlMessage`](crate::model::SsmlMessage).
@@ -2068,7 +1891,7 @@ impl SsmlMessage {
 
 /// <p>A custom response string that Amazon Lex sends to your application. You define the content and structure the string.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomPayload {
     /// <p>The string that is sent to your application.</p>
     #[doc(hidden)]
@@ -2078,13 +1901,6 @@ impl CustomPayload {
     /// <p>The string that is sent to your application.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomPayload");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`CustomPayload`](crate::model::CustomPayload).
@@ -2121,7 +1937,7 @@ impl CustomPayload {
 
 /// <p>Defines an ASCII text message to send to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlainTextMessage {
     /// <p>The message to send to the user.</p>
     #[doc(hidden)]
@@ -2131,13 +1947,6 @@ impl PlainTextMessage {
     /// <p>The message to send to the user.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for PlainTextMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlainTextMessage");
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`PlainTextMessage`](crate::model::PlainTextMessage).
@@ -2174,7 +1983,7 @@ impl PlainTextMessage {
 
 /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseSpecification {
     /// <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime.</p>
     #[doc(hidden)]
@@ -2191,14 +2000,6 @@ impl ResponseSpecification {
     /// <p>Indicates whether the user can interrupt a speech response from Amazon Lex.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
-    }
-}
-impl std::fmt::Debug for ResponseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseSpecification");
-        formatter.field("message_groups", &self.message_groups);
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.finish()
     }
 }
 /// See [`ResponseSpecification`](crate::model::ResponseSpecification).
@@ -2258,7 +2059,7 @@ impl ResponseSpecification {
 
 /// <p>A sample utterance that invokes an intent or respond to a slot elicitation prompt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     #[doc(hidden)]
@@ -2268,13 +2069,6 @@ impl SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     pub fn utterance(&self) -> std::option::Option<&str> {
         self.utterance.as_deref()
-    }
-}
-impl std::fmt::Debug for SampleUtterance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SampleUtterance");
-        formatter.field("utterance", &self.utterance);
-        formatter.finish()
     }
 }
 /// See [`SampleUtterance`](crate::model::SampleUtterance).
@@ -2313,7 +2107,7 @@ impl SampleUtterance {
 
 /// <p>Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromptSpecification {
     /// <p>A collection of messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime.</p>
     #[doc(hidden)]
@@ -2365,23 +2159,6 @@ impl PromptSpecification {
         >,
     > {
         self.prompt_attempts_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for PromptSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromptSpecification");
-        formatter.field("message_groups", &self.message_groups);
-        formatter.field("max_retries", &self.max_retries);
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.field(
-            "message_selection_strategy",
-            &self.message_selection_strategy,
-        );
-        formatter.field(
-            "prompt_attempts_specification",
-            &self.prompt_attempts_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`PromptSpecification`](crate::model::PromptSpecification).
@@ -2507,7 +2284,7 @@ impl PromptSpecification {
 
 /// <p>Specifies the settings on a prompt attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PromptAttemptSpecification {
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
     #[doc(hidden)]
@@ -2543,19 +2320,6 @@ impl PromptAttemptSpecification {
         &self,
     ) -> std::option::Option<&crate::model::TextInputSpecification> {
         self.text_input_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for PromptAttemptSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PromptAttemptSpecification");
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.field("allowed_input_types", &self.allowed_input_types);
-        formatter.field(
-            "audio_and_dtmf_input_specification",
-            &self.audio_and_dtmf_input_specification,
-        );
-        formatter.field("text_input_specification", &self.text_input_specification);
-        formatter.finish()
     }
 }
 /// See [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
@@ -2647,7 +2411,7 @@ impl PromptAttemptSpecification {
 
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     #[doc(hidden)]
@@ -2657,13 +2421,6 @@ impl TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn start_timeout_ms(&self) -> std::option::Option<i32> {
         self.start_timeout_ms
-    }
-}
-impl std::fmt::Debug for TextInputSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextInputSpecification");
-        formatter.field("start_timeout_ms", &self.start_timeout_ms);
-        formatter.finish()
     }
 }
 /// See [`TextInputSpecification`](crate::model::TextInputSpecification).
@@ -2702,7 +2459,7 @@ impl TextInputSpecification {
 
 /// <p>Specifies the audio and DTMF input specification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioAndDtmfInputSpecification {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     #[doc(hidden)]
@@ -2726,15 +2483,6 @@ impl AudioAndDtmfInputSpecification {
     /// <p>Specifies the settings on DTMF input.</p>
     pub fn dtmf_specification(&self) -> std::option::Option<&crate::model::DtmfSpecification> {
         self.dtmf_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioAndDtmfInputSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioAndDtmfInputSpecification");
-        formatter.field("start_timeout_ms", &self.start_timeout_ms);
-        formatter.field("audio_specification", &self.audio_specification);
-        formatter.field("dtmf_specification", &self.dtmf_specification);
-        formatter.finish()
     }
 }
 /// See [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
@@ -2803,7 +2551,7 @@ impl AudioAndDtmfInputSpecification {
 
 /// <p>Specifies the DTMF input specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DtmfSpecification {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     #[doc(hidden)]
@@ -2834,16 +2582,6 @@ impl DtmfSpecification {
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
     pub fn end_character(&self) -> std::option::Option<&str> {
         self.end_character.as_deref()
-    }
-}
-impl std::fmt::Debug for DtmfSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DtmfSpecification");
-        formatter.field("max_length", &self.max_length);
-        formatter.field("end_timeout_ms", &self.end_timeout_ms);
-        formatter.field("deletion_character", &self.deletion_character);
-        formatter.field("end_character", &self.end_character);
-        formatter.finish()
     }
 }
 /// See [`DtmfSpecification`](crate::model::DtmfSpecification).
@@ -2924,7 +2662,7 @@ impl DtmfSpecification {
 
 /// <p>Specifies the audio input specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioSpecification {
     /// <p>Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.</p>
     #[doc(hidden)]
@@ -2941,14 +2679,6 @@ impl AudioSpecification {
     /// <p>Time for which a bot waits after the customer stops speaking to assume the utterance is finished.</p>
     pub fn end_timeout_ms(&self) -> std::option::Option<i32> {
         self.end_timeout_ms
-    }
-}
-impl std::fmt::Debug for AudioSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioSpecification");
-        formatter.field("max_length_ms", &self.max_length_ms);
-        formatter.field("end_timeout_ms", &self.end_timeout_ms);
-        formatter.finish()
     }
 }
 /// See [`AudioSpecification`](crate::model::AudioSpecification).
@@ -2999,7 +2729,7 @@ impl AudioSpecification {
 
 /// <p>Specifies the allowed input types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
     #[doc(hidden)]
@@ -3016,14 +2746,6 @@ impl AllowedInputTypes {
     /// <p>Indicates whether DTMF input is allowed.</p>
     pub fn allow_dtmf_input(&self) -> std::option::Option<bool> {
         self.allow_dtmf_input
-    }
-}
-impl std::fmt::Debug for AllowedInputTypes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AllowedInputTypes");
-        formatter.field("allow_audio_input", &self.allow_audio_input);
-        formatter.field("allow_dtmf_input", &self.allow_dtmf_input);
-        formatter.finish()
     }
 }
 /// See [`AllowedInputTypes`](crate::model::AllowedInputTypes).
@@ -3276,7 +2998,7 @@ impl AsRef<str> for MessageSelectionStrategy {
 
 /// <p>Defines a list of values that Amazon Lex should use as the default value for a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     #[doc(hidden)]
@@ -3286,13 +3008,6 @@ impl SlotDefaultValueSpecification {
     /// <p>A list of default values. Amazon Lex chooses the default value to use in the order that they are presented in the list.</p>
     pub fn default_value_list(&self) -> std::option::Option<&[crate::model::SlotDefaultValue]> {
         self.default_value_list.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotDefaultValueSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotDefaultValueSpecification");
-        formatter.field("default_value_list", &self.default_value_list);
-        formatter.finish()
     }
 }
 /// See [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
@@ -3341,7 +3056,7 @@ impl SlotDefaultValueSpecification {
 
 /// <p>Specifies the default value to use when a user doesn't provide a value for a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
     #[doc(hidden)]
@@ -3351,13 +3066,6 @@ impl SlotDefaultValue {
     /// <p>The default value to use when a user doesn't provide a value for a slot.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotDefaultValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotDefaultValue");
-        formatter.field("default_value", &self.default_value);
-        formatter.finish()
     }
 }
 /// See [`SlotDefaultValue`](crate::model::SlotDefaultValue).
@@ -3399,7 +3107,7 @@ impl SlotDefaultValue {
 
 /// <p>Indicates whether a slot can return multiple values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleValuesSetting {
     /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
     /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
@@ -3413,13 +3121,6 @@ impl MultipleValuesSetting {
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
     pub fn allow_multiple_values(&self) -> bool {
         self.allow_multiple_values
-    }
-}
-impl std::fmt::Debug for MultipleValuesSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleValuesSetting");
-        formatter.field("allow_multiple_values", &self.allow_multiple_values);
-        formatter.finish()
     }
 }
 /// See [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
@@ -3462,7 +3163,7 @@ impl MultipleValuesSetting {
 
 /// <p>Determines whether Amazon Lex obscures slot values in conversation logs. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ObfuscationSetting {
     /// <p>Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.</p>
     #[doc(hidden)]
@@ -3474,13 +3175,6 @@ impl ObfuscationSetting {
         &self,
     ) -> std::option::Option<&crate::model::ObfuscationSettingType> {
         self.obfuscation_setting_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ObfuscationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ObfuscationSetting");
-        formatter.field("obfuscation_setting_type", &self.obfuscation_setting_type);
-        formatter.finish()
     }
 }
 /// See [`ObfuscationSetting`](crate::model::ObfuscationSetting).
@@ -3618,7 +3312,7 @@ impl AsRef<str> for ObfuscationSettingType {
 
 /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
     #[doc(hidden)]
@@ -3669,24 +3363,6 @@ impl SlotValueElicitationSetting {
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
     pub fn slot_capture_setting(&self) -> std::option::Option<&crate::model::SlotCaptureSetting> {
         self.slot_capture_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotValueElicitationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotValueElicitationSetting");
-        formatter.field(
-            "default_value_specification",
-            &self.default_value_specification,
-        );
-        formatter.field("slot_constraint", &self.slot_constraint);
-        formatter.field("prompt_specification", &self.prompt_specification);
-        formatter.field("sample_utterances", &self.sample_utterances);
-        formatter.field(
-            "wait_and_continue_specification",
-            &self.wait_and_continue_specification,
-        );
-        formatter.field("slot_capture_setting", &self.slot_capture_setting);
-        formatter.finish()
     }
 }
 /// See [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
@@ -3818,7 +3494,7 @@ impl SlotValueElicitationSetting {
 
 /// <p>Settings used when Amazon Lex successfully captures a slot value from a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotCaptureSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
@@ -3884,20 +3560,6 @@ impl SlotCaptureSetting {
         &self,
     ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotCaptureSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotCaptureSetting");
-        formatter.field("capture_response", &self.capture_response);
-        formatter.field("capture_next_step", &self.capture_next_step);
-        formatter.field("capture_conditional", &self.capture_conditional);
-        formatter.field("failure_response", &self.failure_response);
-        formatter.field("failure_next_step", &self.failure_next_step);
-        formatter.field("failure_conditional", &self.failure_conditional);
-        formatter.field("code_hook", &self.code_hook);
-        formatter.field("elicitation_code_hook", &self.elicitation_code_hook);
-        formatter.finish()
     }
 }
 /// See [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
@@ -4054,7 +3716,7 @@ impl SlotCaptureSetting {
 
 /// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ElicitationCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     #[doc(hidden)]
@@ -4071,17 +3733,6 @@ impl ElicitationCodeHookInvocationSetting {
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub fn invocation_label(&self) -> std::option::Option<&str> {
         self.invocation_label.as_deref()
-    }
-}
-impl std::fmt::Debug for ElicitationCodeHookInvocationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ElicitationCodeHookInvocationSetting");
-        formatter.field(
-            "enable_code_hook_invocation",
-            &self.enable_code_hook_invocation,
-        );
-        formatter.field("invocation_label", &self.invocation_label);
-        formatter.finish()
     }
 }
 /// See [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
@@ -4135,7 +3786,7 @@ impl ElicitationCodeHookInvocationSetting {
 
 /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DialogCodeHookInvocationSetting {
     /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
     #[doc(hidden)]
@@ -4169,22 +3820,6 @@ impl DialogCodeHookInvocationSetting {
         &self,
     ) -> std::option::Option<&crate::model::PostDialogCodeHookInvocationSpecification> {
         self.post_code_hook_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for DialogCodeHookInvocationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DialogCodeHookInvocationSetting");
-        formatter.field(
-            "enable_code_hook_invocation",
-            &self.enable_code_hook_invocation,
-        );
-        formatter.field("active", &self.active);
-        formatter.field("invocation_label", &self.invocation_label);
-        formatter.field(
-            "post_code_hook_specification",
-            &self.post_code_hook_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
@@ -4269,7 +3904,7 @@ impl DialogCodeHookInvocationSetting {
 
 /// <p>Specifies next steps to run after the dialog code hook finishes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostDialogCodeHookInvocationSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
@@ -4341,21 +3976,6 @@ impl PostDialogCodeHookInvocationSpecification {
         &self,
     ) -> std::option::Option<&crate::model::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
-    }
-}
-impl std::fmt::Debug for PostDialogCodeHookInvocationSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostDialogCodeHookInvocationSpecification");
-        formatter.field("success_response", &self.success_response);
-        formatter.field("success_next_step", &self.success_next_step);
-        formatter.field("success_conditional", &self.success_conditional);
-        formatter.field("failure_response", &self.failure_response);
-        formatter.field("failure_next_step", &self.failure_next_step);
-        formatter.field("failure_conditional", &self.failure_conditional);
-        formatter.field("timeout_response", &self.timeout_response);
-        formatter.field("timeout_next_step", &self.timeout_next_step);
-        formatter.field("timeout_conditional", &self.timeout_conditional);
-        formatter.finish()
     }
 }
 /// See [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
@@ -4526,7 +4146,7 @@ impl PostDialogCodeHookInvocationSpecification {
 
 /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
     #[doc(hidden)]
@@ -4550,15 +4170,6 @@ impl ConditionalSpecification {
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub fn default_branch(&self) -> std::option::Option<&crate::model::DefaultConditionalBranch> {
         self.default_branch.as_ref()
-    }
-}
-impl std::fmt::Debug for ConditionalSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalSpecification");
-        formatter.field("active", &self.active);
-        formatter.field("conditional_branches", &self.conditional_branches);
-        formatter.field("default_branch", &self.default_branch);
-        formatter.finish()
     }
 }
 /// See [`ConditionalSpecification`](crate::model::ConditionalSpecification).
@@ -4634,7 +4245,7 @@ impl ConditionalSpecification {
 
 /// <p>A set of actions that Amazon Lex should run if none of the other conditions are met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultConditionalBranch {
     /// <p>The next step in the conversation.</p>
     #[doc(hidden)]
@@ -4651,14 +4262,6 @@ impl DefaultConditionalBranch {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
         self.response.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultConditionalBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultConditionalBranch");
-        formatter.field("next_step", &self.next_step);
-        formatter.field("response", &self.response);
-        formatter.finish()
     }
 }
 /// See [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
@@ -4715,7 +4318,7 @@ impl DefaultConditionalBranch {
 
 /// <p>The current state of the conversation with the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DialogState {
     /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
     #[doc(hidden)]
@@ -4743,15 +4346,6 @@ impl DialogState {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.session_attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for DialogState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DialogState");
-        formatter.field("dialog_action", &self.dialog_action);
-        formatter.field("intent", &self.intent);
-        formatter.field("session_attributes", &self.session_attributes);
-        formatter.finish()
     }
 }
 /// See [`DialogState`](crate::model::DialogState).
@@ -4837,7 +4431,7 @@ impl DialogState {
 
 /// <p>Override settings to configure the intent state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentOverride {
     /// <p>The name of the intent. Only required when you're switching intents.</p>
     #[doc(hidden)]
@@ -4860,14 +4454,6 @@ impl IntentOverride {
         &std::collections::HashMap<std::string::String, crate::model::SlotValueOverride>,
     > {
         self.slots.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentOverride");
-        formatter.field("name", &self.name);
-        formatter.field("slots", &self.slots);
-        formatter.finish()
     }
 }
 /// See [`IntentOverride`](crate::model::IntentOverride).
@@ -4935,7 +4521,7 @@ impl IntentOverride {
 
 /// <p>The slot values that Amazon Lex uses when it sets slot values in a dialog step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotValueOverride {
     /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     #[doc(hidden)]
@@ -4959,15 +4545,6 @@ impl SlotValueOverride {
     /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::SlotValueOverride]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotValueOverride {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotValueOverride");
-        formatter.field("shape", &self.shape);
-        formatter.field("value", &self.value);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`SlotValueOverride`](crate::model::SlotValueOverride).
@@ -5039,7 +4616,7 @@ impl SlotValueOverride {
 
 /// <p>The value to set in a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotValue {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
     #[doc(hidden)]
@@ -5049,13 +4626,6 @@ impl SlotValue {
     /// <p>The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the first value in the <code>resolvedValues</code> list.</p>
     pub fn interpreted_value(&self) -> std::option::Option<&str> {
         self.interpreted_value.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotValue");
-        formatter.field("interpreted_value", &self.interpreted_value);
-        formatter.finish()
     }
 }
 /// See [`SlotValue`](crate::model::SlotValue).
@@ -5187,7 +4757,7 @@ impl AsRef<str> for SlotShape {
 
 /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The action that the bot should execute. </p>
     #[doc(hidden)]
@@ -5211,15 +4781,6 @@ impl DialogAction {
     /// <p>When true the next message for the intent is not used.</p>
     pub fn suppress_next_message(&self) -> std::option::Option<bool> {
         self.suppress_next_message
-    }
-}
-impl std::fmt::Debug for DialogAction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DialogAction");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("slot_to_elicit", &self.slot_to_elicit);
-        formatter.field("suppress_next_message", &self.suppress_next_message);
-        formatter.finish()
     }
 }
 /// See [`DialogAction`](crate::model::DialogAction).
@@ -5423,7 +4984,7 @@ impl AsRef<str> for DialogActionType {
 
 /// <p>A set of actions that Amazon Lex should run if the condition is matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConditionalBranch {
     /// <p>The name of the branch. </p>
     #[doc(hidden)]
@@ -5454,16 +5015,6 @@ impl ConditionalBranch {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(&self) -> std::option::Option<&crate::model::ResponseSpecification> {
         self.response.as_ref()
-    }
-}
-impl std::fmt::Debug for ConditionalBranch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConditionalBranch");
-        formatter.field("name", &self.name);
-        formatter.field("condition", &self.condition);
-        formatter.field("next_step", &self.next_step);
-        formatter.field("response", &self.response);
-        formatter.finish()
     }
 }
 /// See [`ConditionalBranch`](crate::model::ConditionalBranch).
@@ -5547,7 +5098,7 @@ impl ConditionalBranch {
 
 /// <p>Provides an expression that evaluates to true or false. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Condition {
     /// <p>The expression string that is evaluated. </p>
     #[doc(hidden)]
@@ -5557,13 +5108,6 @@ impl Condition {
     /// <p>The expression string that is evaluated. </p>
     pub fn expression_string(&self) -> std::option::Option<&str> {
         self.expression_string.as_deref()
-    }
-}
-impl std::fmt::Debug for Condition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Condition");
-        formatter.field("expression_string", &self.expression_string);
-        formatter.finish()
     }
 }
 /// See [`Condition`](crate::model::Condition).
@@ -5695,7 +5239,7 @@ impl AsRef<str> for SlotConstraint {
 
 /// <p>Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InitialResponseSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
@@ -5726,16 +5270,6 @@ impl InitialResponseSetting {
     /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
     pub fn code_hook(&self) -> std::option::Option<&crate::model::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
-    }
-}
-impl std::fmt::Debug for InitialResponseSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InitialResponseSetting");
-        formatter.field("initial_response", &self.initial_response);
-        formatter.field("next_step", &self.next_step);
-        formatter.field("conditional", &self.conditional);
-        formatter.field("code_hook", &self.code_hook);
-        formatter.finish()
     }
 }
 /// See [`InitialResponseSetting`](crate::model::InitialResponseSetting).
@@ -5822,7 +5356,7 @@ impl InitialResponseSetting {
 
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
     #[doc(hidden)]
@@ -5846,18 +5380,6 @@ impl KendraConfiguration {
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     pub fn query_filter_string(&self) -> std::option::Option<&str> {
         self.query_filter_string.as_deref()
-    }
-}
-impl std::fmt::Debug for KendraConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KendraConfiguration");
-        formatter.field("kendra_index", &self.kendra_index);
-        formatter.field(
-            "query_filter_string_enabled",
-            &self.query_filter_string_enabled,
-        );
-        formatter.field("query_filter_string", &self.query_filter_string);
-        formatter.finish()
     }
 }
 /// See [`KendraConfiguration`](crate::model::KendraConfiguration).
@@ -5923,7 +5445,7 @@ impl KendraConfiguration {
 
 /// <p>Describes a session context that is activated when an intent is fulfilled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutputContext {
     /// <p>The name of the output context.</p>
     #[doc(hidden)]
@@ -5947,15 +5469,6 @@ impl OutputContext {
     /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
     pub fn turns_to_live(&self) -> std::option::Option<i32> {
         self.turns_to_live
-    }
-}
-impl std::fmt::Debug for OutputContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputContext");
-        formatter.field("name", &self.name);
-        formatter.field("time_to_live_in_seconds", &self.time_to_live_in_seconds);
-        formatter.field("turns_to_live", &self.turns_to_live);
-        formatter.finish()
     }
 }
 /// See [`OutputContext`](crate::model::OutputContext).
@@ -6018,7 +5531,7 @@ impl OutputContext {
 
 /// <p>The name of a context that must be active for an intent to be selected by Amazon Lex.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputContext {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
@@ -6028,13 +5541,6 @@ impl InputContext {
     /// <p>The name of the context.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for InputContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputContext");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`InputContext`](crate::model::InputContext).
@@ -6071,7 +5577,7 @@ impl InputContext {
 
 /// <p>Provides a statement the Amazon Lex conveys to the user when the intent is successfully fulfilled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is complete.</p>
     #[doc(hidden)]
@@ -6102,16 +5608,6 @@ impl IntentClosingSetting {
     /// <p>A list of conditional branches associated with the intent's closing response. These branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.</p>
     pub fn conditional(&self) -> std::option::Option<&crate::model::ConditionalSpecification> {
         self.conditional.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentClosingSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentClosingSetting");
-        formatter.field("closing_response", &self.closing_response);
-        formatter.field("active", &self.active);
-        formatter.field("next_step", &self.next_step);
-        formatter.field("conditional", &self.conditional);
-        formatter.finish()
     }
 }
 /// See [`IntentClosingSetting`](crate::model::IntentClosingSetting).
@@ -6195,7 +5691,7 @@ impl IntentClosingSetting {
 
 /// <p>Provides a prompt for making sure that the user is ready for the intent to be fulfilled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p>
@@ -6304,25 +5800,6 @@ impl IntentConfirmationSetting {
         &self,
     ) -> std::option::Option<&crate::model::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentConfirmationSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentConfirmationSetting");
-        formatter.field("prompt_specification", &self.prompt_specification);
-        formatter.field("declination_response", &self.declination_response);
-        formatter.field("active", &self.active);
-        formatter.field("confirmation_response", &self.confirmation_response);
-        formatter.field("confirmation_next_step", &self.confirmation_next_step);
-        formatter.field("confirmation_conditional", &self.confirmation_conditional);
-        formatter.field("declination_next_step", &self.declination_next_step);
-        formatter.field("declination_conditional", &self.declination_conditional);
-        formatter.field("failure_response", &self.failure_response);
-        formatter.field("failure_next_step", &self.failure_next_step);
-        formatter.field("failure_conditional", &self.failure_conditional);
-        formatter.field("code_hook", &self.code_hook);
-        formatter.field("elicitation_code_hook", &self.elicitation_code_hook);
-        formatter.finish()
     }
 }
 /// See [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
@@ -6558,7 +6035,7 @@ impl IntentConfirmationSetting {
 
 /// <p>Sets the priority that Amazon Lex should use when eliciting slot values from a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotPriority {
     /// <p>The priority that a slot should be elicited.</p>
     #[doc(hidden)]
@@ -6575,14 +6052,6 @@ impl SlotPriority {
     /// <p>The unique identifier of the slot.</p>
     pub fn slot_id(&self) -> std::option::Option<&str> {
         self.slot_id.as_deref()
-    }
-}
-impl std::fmt::Debug for SlotPriority {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotPriority");
-        formatter.field("priority", &self.priority);
-        formatter.field("slot_id", &self.slot_id);
-        formatter.finish()
     }
 }
 /// See [`SlotPriority`](crate::model::SlotPriority).
@@ -6633,7 +6102,7 @@ impl SlotPriority {
 
 /// <p>Determines if a Lambda function should be invoked for a specific intent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FulfillmentCodeHookSettings {
     /// <p>Indicates whether a Lambda function should be invoked to fulfill a specific intent.</p>
     #[doc(hidden)]
@@ -6670,22 +6139,6 @@ impl FulfillmentCodeHookSettings {
     /// <p>Determines whether the fulfillment code hook is used. When <code>active</code> is false, the code hook doesn't run.</p>
     pub fn active(&self) -> std::option::Option<bool> {
         self.active
-    }
-}
-impl std::fmt::Debug for FulfillmentCodeHookSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FulfillmentCodeHookSettings");
-        formatter.field("enabled", &self.enabled);
-        formatter.field(
-            "post_fulfillment_status_specification",
-            &self.post_fulfillment_status_specification,
-        );
-        formatter.field(
-            "fulfillment_updates_specification",
-            &self.fulfillment_updates_specification,
-        );
-        formatter.field("active", &self.active);
-        formatter.finish()
     }
 }
 /// See [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
@@ -6774,7 +6227,7 @@ impl FulfillmentCodeHookSettings {
 
 /// <p>Provides information for updating the user on the progress of fulfilling an intent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FulfillmentUpdatesSpecification {
     /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
     /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
@@ -6811,16 +6264,6 @@ impl FulfillmentUpdatesSpecification {
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
     pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.timeout_in_seconds
-    }
-}
-impl std::fmt::Debug for FulfillmentUpdatesSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FulfillmentUpdatesSpecification");
-        formatter.field("active", &self.active);
-        formatter.field("start_response", &self.start_response);
-        formatter.field("update_response", &self.update_response);
-        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
-        formatter.finish()
     }
 }
 /// See [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
@@ -6911,7 +6354,7 @@ impl FulfillmentUpdatesSpecification {
 
 /// <p>Provides settings for a message that is sent periodically to the user while a fulfillment Lambda function is running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FulfillmentUpdateResponseSpecification {
     /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
     #[doc(hidden)]
@@ -6935,15 +6378,6 @@ impl FulfillmentUpdateResponseSpecification {
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
-    }
-}
-impl std::fmt::Debug for FulfillmentUpdateResponseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FulfillmentUpdateResponseSpecification");
-        formatter.field("frequency_in_seconds", &self.frequency_in_seconds);
-        formatter.field("message_groups", &self.message_groups);
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.finish()
     }
 }
 /// See [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
@@ -7015,7 +6449,7 @@ impl FulfillmentUpdateResponseSpecification {
 
 /// <p>Provides settings for a message that is sent to the user when a fulfillment Lambda function starts running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FulfillmentStartResponseSpecification {
     /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
     #[doc(hidden)]
@@ -7039,15 +6473,6 @@ impl FulfillmentStartResponseSpecification {
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn allow_interrupt(&self) -> std::option::Option<bool> {
         self.allow_interrupt
-    }
-}
-impl std::fmt::Debug for FulfillmentStartResponseSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FulfillmentStartResponseSpecification");
-        formatter.field("delay_in_seconds", &self.delay_in_seconds);
-        formatter.field("message_groups", &self.message_groups);
-        formatter.field("allow_interrupt", &self.allow_interrupt);
-        formatter.finish()
     }
 }
 /// See [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
@@ -7119,7 +6544,7 @@ impl FulfillmentStartResponseSpecification {
 
 /// <p>Provides a setting that determines whether the post-fulfillment response is sent to the user. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete">https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostFulfillmentStatusSpecification {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
@@ -7191,21 +6616,6 @@ impl PostFulfillmentStatusSpecification {
         &self,
     ) -> std::option::Option<&crate::model::ConditionalSpecification> {
         self.timeout_conditional.as_ref()
-    }
-}
-impl std::fmt::Debug for PostFulfillmentStatusSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostFulfillmentStatusSpecification");
-        formatter.field("success_response", &self.success_response);
-        formatter.field("failure_response", &self.failure_response);
-        formatter.field("timeout_response", &self.timeout_response);
-        formatter.field("success_next_step", &self.success_next_step);
-        formatter.field("success_conditional", &self.success_conditional);
-        formatter.field("failure_next_step", &self.failure_next_step);
-        formatter.field("failure_conditional", &self.failure_conditional);
-        formatter.field("timeout_next_step", &self.timeout_next_step);
-        formatter.field("timeout_conditional", &self.timeout_conditional);
-        formatter.finish()
     }
 }
 /// See [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
@@ -7376,7 +6786,7 @@ impl PostFulfillmentStatusSpecification {
 
 /// <p>Settings that determine the Lambda function that Amazon Lex uses for processing user responses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
     #[doc(hidden)]
@@ -7386,13 +6796,6 @@ impl DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for DialogCodeHookSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DialogCodeHookSettings");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
@@ -7623,7 +7026,7 @@ impl AsRef<str> for ImportExportFileFormat {
 
 /// <p>Provides information about the bot or bot locale that you want to export. You can specify the <code>botExportSpecification</code> or the <code>botLocaleExportSpecification</code>, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
     #[doc(hidden)]
@@ -7655,21 +7058,6 @@ impl ExportResourceSpecification {
         &self,
     ) -> std::option::Option<&crate::model::CustomVocabularyExportSpecification> {
         self.custom_vocabulary_export_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportResourceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportResourceSpecification");
-        formatter.field("bot_export_specification", &self.bot_export_specification);
-        formatter.field(
-            "bot_locale_export_specification",
-            &self.bot_locale_export_specification,
-        );
-        formatter.field(
-            "custom_vocabulary_export_specification",
-            &self.custom_vocabulary_export_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
@@ -7753,7 +7141,7 @@ impl ExportResourceSpecification {
 
 /// <p>Provides the parameters required for exporting a custom vocabulary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVocabularyExportSpecification {
     /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
     #[doc(hidden)]
@@ -7777,15 +7165,6 @@ impl CustomVocabularyExportSpecification {
     /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomVocabularyExportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVocabularyExportSpecification");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
     }
 }
 /// See [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
@@ -7848,7 +7227,7 @@ impl CustomVocabularyExportSpecification {
 
 /// <p>Provides the bot locale parameters required for exporting a bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleExportSpecification {
     /// <p>The identifier of the bot to create the locale for.</p>
     #[doc(hidden)]
@@ -7872,15 +7251,6 @@ impl BotLocaleExportSpecification {
     /// <p>The identifier of the language and locale to export. The string must match one of the locales in the bot.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
-    }
-}
-impl std::fmt::Debug for BotLocaleExportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleExportSpecification");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
     }
 }
 /// See [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
@@ -7943,7 +7313,7 @@ impl BotLocaleExportSpecification {
 
 /// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
     #[doc(hidden)]
@@ -7960,14 +7330,6 @@ impl BotExportSpecification {
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
-    }
-}
-impl std::fmt::Debug for BotExportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotExportSpecification");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.finish()
     }
 }
 /// See [`BotExportSpecification`](crate::model::BotExportSpecification).
@@ -8063,7 +7425,7 @@ impl std::fmt::Debug for EncryptionSetting {
 pub mod encryption_setting {
 
     /// A builder for [`EncryptionSetting`](crate::model::EncryptionSetting).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
         pub(crate) bot_locale_export_password: std::option::Option<std::string::String>,
@@ -8118,6 +7480,21 @@ pub mod encryption_setting {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("kms_key_arn", &self.kms_key_arn);
+            formatter.field(
+                "bot_locale_export_password",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field(
+                "associated_transcripts_password",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.finish()
+        }
+    }
 }
 impl EncryptionSetting {
     /// Creates a new builder-style object to manufacture [`EncryptionSetting`](crate::model::EncryptionSetting).
@@ -8128,7 +7505,7 @@ impl EncryptionSetting {
 
 /// <p>Indicates the setting of the location where the transcript is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
     #[doc(hidden)]
@@ -8140,16 +7517,6 @@ impl TranscriptSourceSetting {
         &self,
     ) -> std::option::Option<&crate::model::S3BucketTranscriptSource> {
         self.s3_bucket_transcript_source.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptSourceSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptSourceSetting");
-        formatter.field(
-            "s3_bucket_transcript_source",
-            &self.s3_bucket_transcript_source,
-        );
-        formatter.finish()
     }
 }
 /// See [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
@@ -8195,7 +7562,7 @@ impl TranscriptSourceSetting {
 
 /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     #[doc(hidden)]
@@ -8233,17 +7600,6 @@ impl S3BucketTranscriptSource {
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketTranscriptSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketTranscriptSource");
-        formatter.field("s3_bucket_name", &self.s3_bucket_name);
-        formatter.field("path_format", &self.path_format);
-        formatter.field("transcript_format", &self.transcript_format);
-        formatter.field("transcript_filter", &self.transcript_filter);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.finish()
     }
 }
 /// See [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
@@ -8342,7 +7698,7 @@ impl S3BucketTranscriptSource {
 
 /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
     #[doc(hidden)]
@@ -8352,13 +7708,6 @@ impl TranscriptFilter {
     /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript when the transcript format is the Amazon Lex format.</p>
     pub fn lex_transcript_filter(&self) -> std::option::Option<&crate::model::LexTranscriptFilter> {
         self.lex_transcript_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for TranscriptFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TranscriptFilter");
-        formatter.field("lex_transcript_filter", &self.lex_transcript_filter);
-        formatter.finish()
     }
 }
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter).
@@ -8400,7 +7749,7 @@ impl TranscriptFilter {
 
 /// <p>The object that contains transcript filter details that are associated with a bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     #[doc(hidden)]
@@ -8410,13 +7759,6 @@ impl LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     pub fn date_range_filter(&self) -> std::option::Option<&crate::model::DateRangeFilter> {
         self.date_range_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for LexTranscriptFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LexTranscriptFilter");
-        formatter.field("date_range_filter", &self.date_range_filter);
-        formatter.finish()
     }
 }
 /// See [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
@@ -8458,7 +7800,7 @@ impl LexTranscriptFilter {
 
 /// <p>The object used for specifying the data range that the customer wants Amazon Lex to read through in the input transcripts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     #[doc(hidden)]
@@ -8475,14 +7817,6 @@ impl DateRangeFilter {
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for DateRangeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DateRangeFilter");
-        formatter.field("start_date_time", &self.start_date_time);
-        formatter.field("end_date_time", &self.end_date_time);
-        formatter.finish()
     }
 }
 /// See [`DateRangeFilter`](crate::model::DateRangeFilter).
@@ -8624,7 +7958,7 @@ impl AsRef<str> for TranscriptFormat {
 
 /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     #[doc(hidden)]
@@ -8634,13 +7968,6 @@ impl PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     pub fn object_prefixes(&self) -> std::option::Option<&[std::string::String]> {
         self.object_prefixes.as_deref()
-    }
-}
-impl std::fmt::Debug for PathFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathFormat");
-        formatter.field("object_prefixes", &self.object_prefixes);
-        formatter.finish()
     }
 }
 /// See [`PathFormat`](crate::model::PathFormat).
@@ -8960,7 +8287,7 @@ impl AsRef<str> for BotLocaleStatus {
 
 /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VoiceSettings {
     /// <p>The identifier of the Amazon Polly voice to use.</p>
     #[doc(hidden)]
@@ -8979,14 +8306,6 @@ impl VoiceSettings {
     /// <p>If you do not specify a value, the default is <code>standard</code>.</p>
     pub fn engine(&self) -> std::option::Option<&crate::model::VoiceEngine> {
         self.engine.as_ref()
-    }
-}
-impl std::fmt::Debug for VoiceSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VoiceSettings");
-        formatter.field("voice_id", &self.voice_id);
-        formatter.field("engine", &self.engine);
-        formatter.finish()
     }
 }
 /// See [`VoiceSettings`](crate::model::VoiceSettings).
@@ -9229,7 +8548,7 @@ impl AsRef<str> for BotAliasStatus {
 
 /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SentimentAnalysisSettings {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     #[doc(hidden)]
@@ -9239,13 +8558,6 @@ impl SentimentAnalysisSettings {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn detect_sentiment(&self) -> bool {
         self.detect_sentiment
-    }
-}
-impl std::fmt::Debug for SentimentAnalysisSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SentimentAnalysisSettings");
-        formatter.field("detect_sentiment", &self.detect_sentiment);
-        formatter.finish()
     }
 }
 /// See [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
@@ -9284,7 +8596,7 @@ impl SentimentAnalysisSettings {
 
 /// <p>Configures conversation logging that saves audio, text, and metadata for the conversations with your users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConversationLogSettings {
     /// <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
     #[doc(hidden)]
@@ -9301,14 +8613,6 @@ impl ConversationLogSettings {
     /// <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
     pub fn audio_log_settings(&self) -> std::option::Option<&[crate::model::AudioLogSetting]> {
         self.audio_log_settings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConversationLogSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConversationLogSettings");
-        formatter.field("text_log_settings", &self.text_log_settings);
-        formatter.field("audio_log_settings", &self.audio_log_settings);
-        formatter.finish()
     }
 }
 /// See [`ConversationLogSettings`](crate::model::ConversationLogSettings).
@@ -9379,7 +8683,7 @@ impl ConversationLogSettings {
 
 /// <p>Settings for logging audio of conversations between Amazon Lex and a user. You specify whether to log audio and the Amazon S3 bucket where the audio file is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioLogSetting {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     #[doc(hidden)]
@@ -9396,14 +8700,6 @@ impl AudioLogSetting {
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::AudioLogDestination> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioLogSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioLogSetting");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`AudioLogSetting`](crate::model::AudioLogSetting).
@@ -9457,7 +8753,7 @@ impl AudioLogSetting {
 
 /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     #[doc(hidden)]
@@ -9467,13 +8763,6 @@ impl AudioLogDestination {
     /// <p>The Amazon S3 bucket where the audio log files are stored. The IAM role specified in the <code>roleArn</code> parameter of the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateBot.html">CreateBot</a> operation must have permission to write to this bucket.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&crate::model::S3BucketLogDestination> {
         self.s3_bucket.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioLogDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioLogDestination");
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
     }
 }
 /// See [`AudioLogDestination`](crate::model::AudioLogDestination).
@@ -9515,7 +8804,7 @@ impl AudioLogDestination {
 
 /// <p>Specifies an Amazon S3 bucket for logging audio conversations</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3BucketLogDestination {
     /// <p>The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting audio log files stored in an S3 bucket.</p>
     #[doc(hidden)]
@@ -9539,15 +8828,6 @@ impl S3BucketLogDestination {
     /// <p>The S3 prefix to assign to audio log files.</p>
     pub fn log_prefix(&self) -> std::option::Option<&str> {
         self.log_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3BucketLogDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3BucketLogDestination");
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("s3_bucket_arn", &self.s3_bucket_arn);
-        formatter.field("log_prefix", &self.log_prefix);
-        formatter.finish()
     }
 }
 /// See [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
@@ -9613,7 +8893,7 @@ impl S3BucketLogDestination {
 
 /// <p>Defines settings to enable text conversation logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
     #[doc(hidden)]
@@ -9630,14 +8910,6 @@ impl TextLogSetting {
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::TextLogDestination> {
         self.destination.as_ref()
-    }
-}
-impl std::fmt::Debug for TextLogSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextLogSetting");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("destination", &self.destination);
-        formatter.finish()
     }
 }
 /// See [`TextLogSetting`](crate::model::TextLogSetting).
@@ -9691,7 +8963,7 @@ impl TextLogSetting {
 
 /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
@@ -9703,13 +8975,6 @@ impl TextLogDestination {
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogGroupLogDestination> {
         self.cloud_watch.as_ref()
-    }
-}
-impl std::fmt::Debug for TextLogDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextLogDestination");
-        formatter.field("cloud_watch", &self.cloud_watch);
-        formatter.finish()
     }
 }
 /// See [`TextLogDestination`](crate::model::TextLogDestination).
@@ -9754,7 +9019,7 @@ impl TextLogDestination {
 
 /// <p>The Amazon CloudWatch Logs log group where the text and metadata logs are delivered. The log group must exist before you enable logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogGroupLogDestination {
     /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
@@ -9771,14 +9036,6 @@ impl CloudWatchLogGroupLogDestination {
     /// <p>The prefix of the log stream name within the log group that you specified </p>
     pub fn log_prefix(&self) -> std::option::Option<&str> {
         self.log_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogGroupLogDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogGroupLogDestination");
-        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
-        formatter.field("log_prefix", &self.log_prefix);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
@@ -9832,7 +9089,7 @@ impl CloudWatchLogGroupLogDestination {
 
 /// <p>Specifies settings that are unique to a locale. For example, you can use different Lambda function depending on the bot's locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotAliasLocaleSettings {
     /// <p>Determines whether the locale is enabled for the bot. If the value is <code>false</code>, the locale isn't available for use.</p>
     #[doc(hidden)]
@@ -9851,14 +9108,6 @@ impl BotAliasLocaleSettings {
         &self,
     ) -> std::option::Option<&crate::model::CodeHookSpecification> {
         self.code_hook_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for BotAliasLocaleSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotAliasLocaleSettings");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("code_hook_specification", &self.code_hook_specification);
-        formatter.finish()
     }
 }
 /// See [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
@@ -9916,7 +9165,7 @@ impl BotAliasLocaleSettings {
 
 /// <p>Contains information about code hooks that Amazon Lex calls during a conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     #[doc(hidden)]
@@ -9926,13 +9175,6 @@ impl CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub fn lambda_code_hook(&self) -> std::option::Option<&crate::model::LambdaCodeHook> {
         self.lambda_code_hook.as_ref()
-    }
-}
-impl std::fmt::Debug for CodeHookSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeHookSpecification");
-        formatter.field("lambda_code_hook", &self.lambda_code_hook);
-        formatter.finish()
     }
 }
 /// See [`CodeHookSpecification`](crate::model::CodeHookSpecification).
@@ -9974,7 +9216,7 @@ impl CodeHookSpecification {
 
 /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     #[doc(hidden)]
@@ -9991,17 +9233,6 @@ impl LambdaCodeHook {
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
     pub fn code_hook_interface_version(&self) -> std::option::Option<&str> {
         self.code_hook_interface_version.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaCodeHook {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaCodeHook");
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.field(
-            "code_hook_interface_version",
-            &self.code_hook_interface_version,
-        );
-        formatter.finish()
     }
 }
 /// See [`LambdaCodeHook`](crate::model::LambdaCodeHook).
@@ -10181,7 +9412,7 @@ impl AsRef<str> for BotStatus {
 
 /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataPrivacy {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
     #[doc(hidden)]
@@ -10191,13 +9422,6 @@ impl DataPrivacy {
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
     pub fn child_directed(&self) -> bool {
         self.child_directed
-    }
-}
-impl std::fmt::Debug for DataPrivacy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataPrivacy");
-        formatter.field("child_directed", &self.child_directed);
-        formatter.finish()
     }
 }
 /// See [`DataPrivacy`](crate::model::DataPrivacy).
@@ -10431,7 +9655,7 @@ impl AsRef<str> for MergeStrategy {
 
 /// <p>Provides information about the bot or bot locale that you want to import. You can specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
     #[doc(hidden)]
@@ -10463,21 +9687,6 @@ impl ImportResourceSpecification {
         &self,
     ) -> std::option::Option<&crate::model::CustomVocabularyImportSpecification> {
         self.custom_vocabulary_import_specification.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportResourceSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportResourceSpecification");
-        formatter.field("bot_import_specification", &self.bot_import_specification);
-        formatter.field(
-            "bot_locale_import_specification",
-            &self.bot_locale_import_specification,
-        );
-        formatter.field(
-            "custom_vocabulary_import_specification",
-            &self.custom_vocabulary_import_specification,
-        );
-        formatter.finish()
     }
 }
 /// See [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
@@ -10561,7 +9770,7 @@ impl ImportResourceSpecification {
 
 /// <p>Provides the parameters required for importing a custom vocabulary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomVocabularyImportSpecification {
     /// <p>The identifier of the bot to import the custom vocabulary to.</p>
     #[doc(hidden)]
@@ -10585,15 +9794,6 @@ impl CustomVocabularyImportSpecification {
     /// <p>The identifier of the local to import the custom vocabulary to. The value must be <code>en_GB</code>.</p>
     pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomVocabularyImportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomVocabularyImportSpecification");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.finish()
     }
 }
 /// See [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
@@ -10656,7 +9856,7 @@ impl CustomVocabularyImportSpecification {
 
 /// <p>Provides the bot locale parameters required for importing a bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
     #[doc(hidden)]
@@ -10708,20 +9908,6 @@ impl BotLocaleImportSpecification {
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
     pub fn voice_settings(&self) -> std::option::Option<&crate::model::VoiceSettings> {
         self.voice_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for BotLocaleImportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleImportSpecification");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field(
-            "nlu_intent_confidence_threshold",
-            &self.nlu_intent_confidence_threshold,
-        );
-        formatter.field("voice_settings", &self.voice_settings);
-        formatter.finish()
     }
 }
 /// See [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
@@ -10828,7 +10014,7 @@ impl BotLocaleImportSpecification {
 
 /// <p>Provides the bot parameters required for importing a bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotImportSpecification {
     /// <p>The name that Amazon Lex should use for the bot.</p>
     #[doc(hidden)]
@@ -10885,21 +10071,6 @@ impl BotImportSpecification {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.test_bot_alias_tags.as_ref()
-    }
-}
-impl std::fmt::Debug for BotImportSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotImportSpecification");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("data_privacy", &self.data_privacy);
-        formatter.field(
-            "idle_session_ttl_in_seconds",
-            &self.idle_session_ttl_in_seconds,
-        );
-        formatter.field("bot_tags", &self.bot_tags);
-        formatter.field("test_bot_alias_tags", &self.test_bot_alias_tags);
-        formatter.finish()
     }
 }
 /// See [`BotImportSpecification`](crate::model::BotImportSpecification).
@@ -11039,7 +10210,7 @@ impl BotImportSpecification {
 
 /// <p>The object containing information that associates the recommended intent/slot type with a conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     #[doc(hidden)]
@@ -11049,13 +10220,6 @@ impl AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     pub fn transcript(&self) -> std::option::Option<&str> {
         self.transcript.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociatedTranscript {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedTranscript");
-        formatter.field("transcript", &self.transcript);
-        formatter.finish()
     }
 }
 /// See [`AssociatedTranscript`](crate::model::AssociatedTranscript).
@@ -11094,7 +10258,7 @@ impl AssociatedTranscript {
 
 /// <p>Filters to search for the associated transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatedTranscriptFilter {
     /// <p>The name of the field to use for filtering. The allowed names are IntentId and SlotTypeId.</p>
     #[doc(hidden)]
@@ -11111,14 +10275,6 @@ impl AssociatedTranscriptFilter {
     /// <p>The values to use to filter the transcript.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociatedTranscriptFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatedTranscriptFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
@@ -11363,7 +10519,7 @@ impl AsRef<str> for SearchOrder {
 
 /// <p>Provides summary information about a slot type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotTypeSummary {
     /// <p>The unique identifier assigned to the slot type.</p>
     #[doc(hidden)]
@@ -11418,21 +10574,6 @@ impl SlotTypeSummary {
     /// </ul>
     pub fn slot_type_category(&self) -> std::option::Option<&crate::model::SlotTypeCategory> {
         self.slot_type_category.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotTypeSummary");
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field("slot_type_name", &self.slot_type_name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "parent_slot_type_signature",
-            &self.parent_slot_type_signature,
-        );
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("slot_type_category", &self.slot_type_category);
-        formatter.finish()
     }
 }
 /// See [`SlotTypeSummary`](crate::model::SlotTypeSummary).
@@ -11653,7 +10794,7 @@ impl AsRef<str> for SlotTypeCategory {
 
 /// <p>Filters the response from the <code>ListSlotTypes</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotTypeFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
@@ -11677,15 +10818,6 @@ impl SlotTypeFilter {
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlotTypes</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlotTypes</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::SlotTypeFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotTypeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotTypeFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`SlotTypeFilter`](crate::model::SlotTypeFilter).
@@ -11947,7 +11079,7 @@ impl AsRef<str> for SlotTypeFilterName {
 
 /// <p>Specifies attributes for sorting a list of slot types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotTypeSortBy {
     /// <p>The attribute to use to sort the list of slot types.</p>
     #[doc(hidden)]
@@ -11964,14 +11096,6 @@ impl SlotTypeSortBy {
     /// <p>The order to sort the list. You can say ascending or descending.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotTypeSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotTypeSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
@@ -12207,7 +11331,7 @@ impl AsRef<str> for SlotTypeSortAttribute {
 
 /// <p>Summary information about a slot, a value that the bot elicits from the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotSummary {
     /// <p>The unique identifier of the slot.</p>
     #[doc(hidden)]
@@ -12262,22 +11386,6 @@ impl SlotSummary {
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotSummary");
-        formatter.field("slot_id", &self.slot_id);
-        formatter.field("slot_name", &self.slot_name);
-        formatter.field("description", &self.description);
-        formatter.field("slot_constraint", &self.slot_constraint);
-        formatter.field("slot_type_id", &self.slot_type_id);
-        formatter.field(
-            "value_elicitation_prompt_specification",
-            &self.value_elicitation_prompt_specification,
-        );
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`SlotSummary`](crate::model::SlotSummary).
@@ -12401,7 +11509,7 @@ impl SlotSummary {
 
 /// <p>Filters the response from the <code>ListSlots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
@@ -12425,15 +11533,6 @@ impl SlotFilter {
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::SlotFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`SlotFilter`](crate::model::SlotFilter).
@@ -12688,7 +11787,7 @@ impl AsRef<str> for SlotFilterName {
 
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotSortBy {
     /// <p>The attribute to use to sort the list.</p>
     #[doc(hidden)]
@@ -12705,14 +11804,6 @@ impl SlotSortBy {
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for SlotSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`SlotSortBy`](crate::model::SlotSortBy).
@@ -12858,7 +11949,7 @@ impl AsRef<str> for SlotSortAttribute {
 
 /// <p>An object that contains a summary of a recommended intent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendedIntentSummary {
     /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
     #[doc(hidden)]
@@ -12882,15 +11973,6 @@ impl RecommendedIntentSummary {
     /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
     pub fn sample_utterances_count(&self) -> std::option::Option<i32> {
         self.sample_utterances_count
-    }
-}
-impl std::fmt::Debug for RecommendedIntentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendedIntentSummary");
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("intent_name", &self.intent_name);
-        formatter.field("sample_utterances_count", &self.sample_utterances_count);
-        formatter.finish()
     }
 }
 /// See [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
@@ -12953,7 +12035,7 @@ impl RecommendedIntentSummary {
 
 /// <p>Summary information about an intent returned by the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentSummary {
     /// <p>The unique identifier assigned to the intent. Use this ID to get detailed information about the intent with the <code>DescribeIntent</code> operation.</p>
     #[doc(hidden)]
@@ -13005,19 +12087,6 @@ impl IntentSummary {
     /// <p>The timestamp of the date and time that the intent was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentSummary");
-        formatter.field("intent_id", &self.intent_id);
-        formatter.field("intent_name", &self.intent_name);
-        formatter.field("description", &self.description);
-        formatter.field("parent_intent_signature", &self.parent_intent_signature);
-        formatter.field("input_contexts", &self.input_contexts);
-        formatter.field("output_contexts", &self.output_contexts);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`IntentSummary`](crate::model::IntentSummary).
@@ -13152,7 +12221,7 @@ impl IntentSummary {
 
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
     #[doc(hidden)]
@@ -13176,15 +12245,6 @@ impl IntentFilter {
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::IntentFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`IntentFilter`](crate::model::IntentFilter).
@@ -13439,7 +12499,7 @@ impl AsRef<str> for IntentFilterName {
 
 /// <p>Specifies attributes for sorting a list of intents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentSortBy {
     /// <p>The attribute to use to sort the list of intents.</p>
     #[doc(hidden)]
@@ -13456,14 +12516,6 @@ impl IntentSortBy {
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for IntentSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`IntentSortBy`](crate::model::IntentSortBy).
@@ -13609,7 +12661,7 @@ impl AsRef<str> for IntentSortAttribute {
 
 /// <p>Provides summary information about an import in an import list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
     #[doc(hidden)]
@@ -13668,20 +12720,6 @@ impl ImportSummary {
     /// <p>The type of resource that was imported.</p>
     pub fn imported_resource_type(&self) -> std::option::Option<&crate::model::ImportResourceType> {
         self.imported_resource_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSummary");
-        formatter.field("import_id", &self.import_id);
-        formatter.field("imported_resource_id", &self.imported_resource_id);
-        formatter.field("imported_resource_name", &self.imported_resource_name);
-        formatter.field("import_status", &self.import_status);
-        formatter.field("merge_strategy", &self.merge_strategy);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field("imported_resource_type", &self.imported_resource_type);
-        formatter.finish()
     }
 }
 /// See [`ImportSummary`](crate::model::ImportSummary).
@@ -13922,7 +12960,7 @@ impl AsRef<str> for ImportResourceType {
 
 /// <p>Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListImports.html">ListImports</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
@@ -13946,15 +12984,6 @@ impl ImportFilter {
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::ImportFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`ImportFilter`](crate::model::ImportFilter).
@@ -14209,7 +13238,7 @@ impl AsRef<str> for ImportFilterName {
 
 /// <p>Provides information for sorting a list of imports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportSortBy {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
@@ -14226,14 +13255,6 @@ impl ImportSortBy {
     /// <p>The order to sort the list.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for ImportSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`ImportSortBy`](crate::model::ImportSortBy).
@@ -14374,7 +13395,7 @@ impl AsRef<str> for ImportSortAttribute {
 
 /// <p>Provides summary information about an export in an export list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
@@ -14421,18 +13442,6 @@ impl ExportSummary {
     /// <p>The date and time that the export was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSummary");
-        formatter.field("export_id", &self.export_id);
-        formatter.field("resource_specification", &self.resource_specification);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("export_status", &self.export_status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`ExportSummary`](crate::model::ExportSummary).
@@ -14550,7 +13559,7 @@ impl ExportSummary {
 
 /// <p>Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
@@ -14574,15 +13583,6 @@ impl ExportFilter {
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::ExportFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`ExportFilter`](crate::model::ExportFilter).
@@ -14837,7 +13837,7 @@ impl AsRef<str> for ExportFilterName {
 
 /// <p>Provides information about sorting a list of exports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportSortBy {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
@@ -14854,14 +13854,6 @@ impl ExportSortBy {
     /// <p>The order to sort the list.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for ExportSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`ExportSortBy`](crate::model::ExportSortBy).
@@ -15002,7 +13994,7 @@ impl AsRef<str> for ExportSortAttribute {
 
 /// <p>Provides summary information about a built-in slot type for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuiltInSlotTypeSummary {
     /// <p>The signature of the built-in slot type. Use this to specify the parent slot type of a derived slot type.</p>
     #[doc(hidden)]
@@ -15019,14 +14011,6 @@ impl BuiltInSlotTypeSummary {
     /// <p>The description of the built-in slot type.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for BuiltInSlotTypeSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuiltInSlotTypeSummary");
-        formatter.field("slot_type_signature", &self.slot_type_signature);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
@@ -15080,7 +14064,7 @@ impl BuiltInSlotTypeSummary {
 
 /// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
@@ -15097,14 +14081,6 @@ impl BuiltInSlotTypeSortBy {
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for BuiltInSlotTypeSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuiltInSlotTypeSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
@@ -15245,7 +14221,7 @@ impl AsRef<str> for BuiltInSlotTypeSortAttribute {
 
 /// <p>Provides summary information about a built-in intent for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInIntents.html"> ListBuiltInIntents </a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuiltInIntentSummary {
     /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
     #[doc(hidden)]
@@ -15262,14 +14238,6 @@ impl BuiltInIntentSummary {
     /// <p>The description of the intent.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
-    }
-}
-impl std::fmt::Debug for BuiltInIntentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuiltInIntentSummary");
-        formatter.field("intent_signature", &self.intent_signature);
-        formatter.field("description", &self.description);
-        formatter.finish()
     }
 }
 /// See [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
@@ -15323,7 +14291,7 @@ impl BuiltInIntentSummary {
 
 /// <p>Specifies attributes for sorting a list of built-in intents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BuiltInIntentSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
@@ -15340,14 +14308,6 @@ impl BuiltInIntentSortBy {
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for BuiltInIntentSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BuiltInIntentSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
@@ -15488,7 +14448,7 @@ impl AsRef<str> for BuiltInIntentSortAttribute {
 
 /// <p>Summary information about a bot version returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotVersions.html">ListBotVersions</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
     #[doc(hidden)]
@@ -15526,17 +14486,6 @@ impl BotVersionSummary {
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BotVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotVersionSummary");
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("description", &self.description);
-        formatter.field("bot_status", &self.bot_status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.finish()
     }
 }
 /// See [`BotVersionSummary`](crate::model::BotVersionSummary).
@@ -15629,7 +14578,7 @@ impl BotVersionSummary {
 
 /// <p>Specifies attributes for sorting a list of bot versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotVersionSortBy {
     /// <p>The attribute to use to sort the list of versions.</p>
     #[doc(hidden)]
@@ -15646,14 +14595,6 @@ impl BotVersionSortBy {
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for BotVersionSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotVersionSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`BotVersionSortBy`](crate::model::BotVersionSortBy).
@@ -15794,7 +14735,7 @@ impl AsRef<str> for BotVersionSortAttribute {
 
 /// <p>Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a> operation.</p>
     #[doc(hidden)]
@@ -15839,18 +14780,6 @@ impl BotSummary {
     /// <p>The date and time that the bot was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BotSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotSummary");
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("bot_name", &self.bot_name);
-        formatter.field("description", &self.description);
-        formatter.field("bot_status", &self.bot_status);
-        formatter.field("latest_bot_version", &self.latest_bot_version);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`BotSummary`](crate::model::BotSummary).
@@ -15958,7 +14887,7 @@ impl BotSummary {
 
 /// <p>Filters the responses returned by the <code>ListBots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotFilter {
     /// <p>The name of the field to filter the list of bots.</p>
     #[doc(hidden)]
@@ -15982,15 +14911,6 @@ impl BotFilter {
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBots</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::BotFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for BotFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`BotFilter`](crate::model::BotFilter).
@@ -16242,7 +15162,7 @@ impl AsRef<str> for BotFilterName {
 
 /// <p>Specifies attributes for sorting a list of bots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotSortBy {
     /// <p>The attribute to use to sort the list of bots.</p>
     #[doc(hidden)]
@@ -16259,14 +15179,6 @@ impl BotSortBy {
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for BotSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`BotSortBy`](crate::model::BotSortBy).
@@ -16405,7 +15317,7 @@ impl AsRef<str> for BotSortAttribute {
 
 /// <p>A summary of the bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotRecommendationSummary {
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
@@ -16440,16 +15352,6 @@ impl BotRecommendationSummary {
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BotRecommendationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotRecommendationSummary");
-        formatter.field("bot_recommendation_status", &self.bot_recommendation_status);
-        formatter.field("bot_recommendation_id", &self.bot_recommendation_id);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
@@ -16542,7 +15444,7 @@ impl BotRecommendationSummary {
 
 /// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleSummary {
     /// <p>The language and locale of the bot locale.</p>
     #[doc(hidden)]
@@ -16589,21 +15491,6 @@ impl BotLocaleSummary {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_build_submitted_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BotLocaleSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleSummary");
-        formatter.field("locale_id", &self.locale_id);
-        formatter.field("locale_name", &self.locale_name);
-        formatter.field("description", &self.description);
-        formatter.field("bot_locale_status", &self.bot_locale_status);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.field(
-            "last_build_submitted_date_time",
-            &self.last_build_submitted_date_time,
-        );
-        formatter.finish()
     }
 }
 /// See [`BotLocaleSummary`](crate::model::BotLocaleSummary).
@@ -16711,7 +15598,7 @@ impl BotLocaleSummary {
 
 /// <p>Filters responses returned by the <code>ListBotLocales</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
     #[doc(hidden)]
@@ -16735,15 +15622,6 @@ impl BotLocaleFilter {
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(&self) -> std::option::Option<&crate::model::BotLocaleFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for BotLocaleFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`BotLocaleFilter`](crate::model::BotLocaleFilter).
@@ -17000,7 +15878,7 @@ impl AsRef<str> for BotLocaleFilterName {
 
 /// <p>Specifies attributes for sorting a list of bot locales.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
     #[doc(hidden)]
@@ -17017,14 +15895,6 @@ impl BotLocaleSortBy {
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for BotLocaleSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
@@ -17165,7 +16035,7 @@ impl AsRef<str> for BotLocaleSortAttribute {
 
 /// <p>Summary information about bot aliases returned from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotAliases.html">ListBotAliases</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotAliasSummary {
     /// <p>The unique identifier assigned to the bot alias. You can use this ID to get detailed information about the alias using the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBotAlias.html">DescribeBotAlias</a> operation.</p>
     #[doc(hidden)]
@@ -17217,19 +16087,6 @@ impl BotAliasSummary {
     /// <p>A timestamp of the date and time that the bot alias was last updated.</p>
     pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
-    }
-}
-impl std::fmt::Debug for BotAliasSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotAliasSummary");
-        formatter.field("bot_alias_id", &self.bot_alias_id);
-        formatter.field("bot_alias_name", &self.bot_alias_name);
-        formatter.field("description", &self.description);
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("bot_alias_status", &self.bot_alias_status);
-        formatter.field("creation_date_time", &self.creation_date_time);
-        formatter.field("last_updated_date_time", &self.last_updated_date_time);
-        formatter.finish()
     }
 }
 /// See [`BotAliasSummary`](crate::model::BotAliasSummary).
@@ -17352,7 +16209,7 @@ impl BotAliasSummary {
 
 /// <p>Provides summary information for aggregated utterances. The <code>ListAggregatedUtterances</code> operations combines all instances of the same utterance into a single aggregated summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedUtterancesSummary {
     /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
     #[doc(hidden)]
@@ -17405,27 +16262,6 @@ impl AggregatedUtterancesSummary {
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     pub fn contains_data_from_deleted_resources(&self) -> std::option::Option<bool> {
         self.contains_data_from_deleted_resources
-    }
-}
-impl std::fmt::Debug for AggregatedUtterancesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedUtterancesSummary");
-        formatter.field("utterance", &self.utterance);
-        formatter.field("hit_count", &self.hit_count);
-        formatter.field("missed_count", &self.missed_count);
-        formatter.field(
-            "utterance_first_recorded_in_aggregation_duration",
-            &self.utterance_first_recorded_in_aggregation_duration,
-        );
-        formatter.field(
-            "utterance_last_recorded_in_aggregation_duration",
-            &self.utterance_last_recorded_in_aggregation_duration,
-        );
-        formatter.field(
-            "contains_data_from_deleted_resources",
-            &self.contains_data_from_deleted_resources,
-        );
-        formatter.finish()
     }
 }
 /// See [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
@@ -17543,7 +16379,7 @@ impl AggregatedUtterancesSummary {
 
 /// <p>Provides parameters for setting the time window and duration for aggregating utterance data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UtteranceAggregationDuration {
     /// <p>The desired time window for aggregating utterances. </p>
     #[doc(hidden)]
@@ -17556,16 +16392,6 @@ impl UtteranceAggregationDuration {
         &self,
     ) -> std::option::Option<&crate::model::RelativeAggregationDuration> {
         self.relative_aggregation_duration.as_ref()
-    }
-}
-impl std::fmt::Debug for UtteranceAggregationDuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UtteranceAggregationDuration");
-        formatter.field(
-            "relative_aggregation_duration",
-            &self.relative_aggregation_duration,
-        );
-        formatter.finish()
     }
 }
 /// See [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
@@ -17617,7 +16443,7 @@ impl UtteranceAggregationDuration {
 /// <li> <p> <b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
     #[doc(hidden)]
@@ -17644,14 +16470,6 @@ impl RelativeAggregationDuration {
     /// </ul>
     pub fn time_value(&self) -> i32 {
         self.time_value
-    }
-}
-impl std::fmt::Debug for RelativeAggregationDuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelativeAggregationDuration");
-        formatter.field("time_dimension", &self.time_dimension);
-        formatter.field("time_value", &self.time_value);
-        formatter.finish()
     }
 }
 /// See [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
@@ -17810,7 +16628,7 @@ impl AsRef<str> for TimeDimension {
 
 /// <p>Filters responses returned by the <code>ListAggregatedUtterances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedUtterancesFilter {
     /// <p>The name of the field to filter the utterance list.</p>
     #[doc(hidden)]
@@ -17836,15 +16654,6 @@ impl AggregatedUtterancesFilter {
         &self,
     ) -> std::option::Option<&crate::model::AggregatedUtterancesFilterOperator> {
         self.operator.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregatedUtterancesFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedUtterancesFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.field("operator", &self.operator);
-        formatter.finish()
     }
 }
 /// See [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
@@ -18101,7 +16910,7 @@ impl AsRef<str> for AggregatedUtterancesFilterName {
 
 /// <p>Specifies attributes for sorting a list of utterances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
     #[doc(hidden)]
@@ -18120,14 +16929,6 @@ impl AggregatedUtterancesSortBy {
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub fn order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.order.as_ref()
-    }
-}
-impl std::fmt::Debug for AggregatedUtterancesSortBy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AggregatedUtterancesSortBy");
-        formatter.field("attribute", &self.attribute);
-        formatter.field("order", &self.order);
-        formatter.finish()
     }
 }
 /// See [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
@@ -18380,7 +17181,7 @@ impl AsRef<str> for CustomVocabularyStatus {
 
 /// <p>The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
     #[doc(hidden)]
@@ -18406,18 +17207,6 @@ impl BotRecommendationResults {
         &self,
     ) -> std::option::Option<&crate::model::BotRecommendationResultStatistics> {
         self.statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for BotRecommendationResults {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotRecommendationResults");
-        formatter.field("bot_locale_export_url", &self.bot_locale_export_url);
-        formatter.field(
-            "associated_transcripts_url",
-            &self.associated_transcripts_url,
-        );
-        formatter.field("statistics", &self.statistics);
-        formatter.finish()
     }
 }
 /// See [`BotRecommendationResults`](crate::model::BotRecommendationResults).
@@ -18492,7 +17281,7 @@ impl BotRecommendationResults {
 
 /// <p>A statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotRecommendationResultStatistics {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
     #[doc(hidden)]
@@ -18509,14 +17298,6 @@ impl BotRecommendationResultStatistics {
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
     pub fn slot_types(&self) -> std::option::Option<&crate::model::SlotTypeStatistics> {
         self.slot_types.as_ref()
-    }
-}
-impl std::fmt::Debug for BotRecommendationResultStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotRecommendationResultStatistics");
-        formatter.field("intents", &self.intents);
-        formatter.field("slot_types", &self.slot_types);
-        formatter.finish()
     }
 }
 /// See [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
@@ -18573,7 +17354,7 @@ impl BotRecommendationResultStatistics {
 
 /// <p>The object that contains the statistical summary of the recommended slot type associated with the bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     #[doc(hidden)]
@@ -18583,16 +17364,6 @@ impl SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     pub fn discovered_slot_type_count(&self) -> std::option::Option<i32> {
         self.discovered_slot_type_count
-    }
-}
-impl std::fmt::Debug for SlotTypeStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlotTypeStatistics");
-        formatter.field(
-            "discovered_slot_type_count",
-            &self.discovered_slot_type_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
@@ -18631,7 +17402,7 @@ impl SlotTypeStatistics {
 
 /// <p>The object that contains the statistical summary of recommended intents associated with the bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IntentStatistics {
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
     #[doc(hidden)]
@@ -18641,13 +17412,6 @@ impl IntentStatistics {
     /// <p>The number of recommended intents associated with the bot recommendation.</p>
     pub fn discovered_intent_count(&self) -> std::option::Option<i32> {
         self.discovered_intent_count
-    }
-}
-impl std::fmt::Debug for IntentStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IntentStatistics");
-        formatter.field("discovered_intent_count", &self.discovered_intent_count);
-        formatter.finish()
     }
 }
 /// See [`IntentStatistics`](crate::model::IntentStatistics).
@@ -18686,7 +17450,7 @@ impl IntentStatistics {
 
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
     #[doc(hidden)]
@@ -18703,14 +17467,6 @@ impl BotLocaleHistoryEvent {
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_date.as_ref()
-    }
-}
-impl std::fmt::Debug for BotLocaleHistoryEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotLocaleHistoryEvent");
-        formatter.field("event", &self.event);
-        formatter.field("event_date", &self.event_date);
-        formatter.finish()
     }
 }
 /// See [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
@@ -18764,7 +17520,7 @@ impl BotLocaleHistoryEvent {
 
 /// <p>Provides a record of an event that affects a bot alias. For example, when the version of a bot that the alias points to changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
     #[doc(hidden)]
@@ -18788,15 +17544,6 @@ impl BotAliasHistoryEvent {
     /// <p>The date and time that the event ended.</p>
     pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
-    }
-}
-impl std::fmt::Debug for BotAliasHistoryEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotAliasHistoryEvent");
-        formatter.field("bot_version", &self.bot_version);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("end_date", &self.end_date);
-        formatter.finish()
     }
 }
 /// See [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
@@ -18865,7 +17612,7 @@ impl BotAliasHistoryEvent {
 
 /// <p>The IAM principal that you allowing or denying access to an Amazon Lex action. You must provide a <code>service</code> or an <code>arn</code>, but not both in the same statement. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html"> AWS JSON policy elements: Principal </a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
     /// <p>The name of the AWS service that should allowed or denied access to an Amazon Lex action.</p>
     #[doc(hidden)]
@@ -18882,14 +17629,6 @@ impl Principal {
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("service", &self.service);
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`Principal`](crate::model::Principal).
@@ -19030,7 +17769,7 @@ impl AsRef<str> for Effect {
 
 /// <p>The version of a bot used for a bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
     #[doc(hidden)]
@@ -19040,13 +17779,6 @@ impl BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
     pub fn source_bot_version(&self) -> std::option::Option<&str> {
         self.source_bot_version.as_deref()
-    }
-}
-impl std::fmt::Debug for BotVersionLocaleDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BotVersionLocaleDetails");
-        formatter.field("source_bot_version", &self.source_bot_version);
-        formatter.finish()
     }
 }
 /// See [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).

@@ -2,7 +2,7 @@
 
 /// <p>An object representing an asynchronous update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Update {
     /// <p>A UUID that is used to track the update.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl Update {
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorDetail]> {
         self.errors.as_deref()
-    }
-}
-impl std::fmt::Debug for Update {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Update");
-        formatter.field("id", &self.id);
-        formatter.field("status", &self.status);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("params", &self.params);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("errors", &self.errors);
-        formatter.finish()
     }
 }
 /// See [`Update`](crate::model::Update).
@@ -181,7 +169,7 @@ impl Update {
 
 /// <p>An object representing an error when an asynchronous operation fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>A brief description of the error. </p>
     /// <ul>
@@ -223,15 +211,6 @@ impl ErrorDetail {
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorDetail");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
@@ -510,7 +489,7 @@ impl AsRef<str> for ErrorCode {
 
 /// <p>An object representing the details of an update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateParam {
     /// <p>The keys associated with an update request.</p>
     #[doc(hidden)]
@@ -527,14 +506,6 @@ impl UpdateParam {
     /// <p>The value of the keys submitted as part of an update request.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateParam {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateParam");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`UpdateParam`](crate::model::UpdateParam).
@@ -1037,7 +1008,7 @@ impl AsRef<str> for UpdateStatus {
 /// <p>An object representing a node group launch template specification. The launch template can't include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html"> <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
 /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
     /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
@@ -1071,15 +1042,6 @@ impl LaunchTemplateSpecification {
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for LaunchTemplateSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LaunchTemplateSpecification");
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
@@ -1152,7 +1114,7 @@ impl LaunchTemplateSpecification {
 
 /// <p>The node group update configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodegroupUpdateConfig {
     /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     #[doc(hidden)]
@@ -1169,17 +1131,6 @@ impl NodegroupUpdateConfig {
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn max_unavailable_percentage(&self) -> std::option::Option<i32> {
         self.max_unavailable_percentage
-    }
-}
-impl std::fmt::Debug for NodegroupUpdateConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodegroupUpdateConfig");
-        formatter.field("max_unavailable", &self.max_unavailable);
-        formatter.field(
-            "max_unavailable_percentage",
-            &self.max_unavailable_percentage,
-        );
-        formatter.finish()
     }
 }
 /// See [`NodegroupUpdateConfig`](crate::model::NodegroupUpdateConfig).
@@ -1230,7 +1181,7 @@ impl NodegroupUpdateConfig {
 
 /// <p>An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. When creating a node group, you must specify all or none of the properties. When updating a node group, you can specify any or none of the properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodegroupScalingConfig {
     /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
     #[doc(hidden)]
@@ -1262,15 +1213,6 @@ impl NodegroupScalingConfig {
     /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
     pub fn desired_size(&self) -> std::option::Option<i32> {
         self.desired_size
-    }
-}
-impl std::fmt::Debug for NodegroupScalingConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodegroupScalingConfig");
-        formatter.field("min_size", &self.min_size);
-        formatter.field("max_size", &self.max_size);
-        formatter.field("desired_size", &self.desired_size);
-        formatter.finish()
     }
 }
 /// See [`NodegroupScalingConfig`](crate::model::NodegroupScalingConfig).
@@ -1341,7 +1283,7 @@ impl NodegroupScalingConfig {
 
 /// <p>An object representing the details of an update to a taints payload. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTaintsPayload {
     /// <p>Kubernetes taints to be added or updated.</p>
     #[doc(hidden)]
@@ -1358,14 +1300,6 @@ impl UpdateTaintsPayload {
     /// <p>Kubernetes taints to be removed.</p>
     pub fn remove_taints(&self) -> std::option::Option<&[crate::model::Taint]> {
         self.remove_taints.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateTaintsPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTaintsPayload");
-        formatter.field("add_or_update_taints", &self.add_or_update_taints);
-        formatter.field("remove_taints", &self.remove_taints);
-        formatter.finish()
     }
 }
 /// See [`UpdateTaintsPayload`](crate::model::UpdateTaintsPayload).
@@ -1434,7 +1368,7 @@ impl UpdateTaintsPayload {
 
 /// <p>A property that allows a node to repel a set of pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Taint {
     /// <p>The key of the taint.</p>
     #[doc(hidden)]
@@ -1458,15 +1392,6 @@ impl Taint {
     /// <p>The effect of the taint.</p>
     pub fn effect(&self) -> std::option::Option<&crate::model::TaintEffect> {
         self.effect.as_ref()
-    }
-}
-impl std::fmt::Debug for Taint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Taint");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.field("effect", &self.effect);
-        formatter.finish()
     }
 }
 /// See [`Taint`](crate::model::Taint).
@@ -1624,7 +1549,7 @@ impl AsRef<str> for TaintEffect {
 
 /// <p>An object representing a Kubernetes label change for a managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLabelsPayload {
     /// <p>Kubernetes labels to be added or updated.</p>
     #[doc(hidden)]
@@ -1645,14 +1570,6 @@ impl UpdateLabelsPayload {
     /// <p>Kubernetes labels to be removed.</p>
     pub fn remove_labels(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_labels.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateLabelsPayload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLabelsPayload");
-        formatter.field("add_or_update_labels", &self.add_or_update_labels);
-        formatter.field("remove_labels", &self.remove_labels);
-        formatter.finish()
     }
 }
 /// See [`UpdateLabelsPayload`](crate::model::UpdateLabelsPayload).
@@ -1729,7 +1646,7 @@ impl UpdateLabelsPayload {
 
 /// <p>An object representing the logging configuration for resources in your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     #[doc(hidden)]
@@ -1739,13 +1656,6 @@ impl Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     pub fn cluster_logging(&self) -> std::option::Option<&[crate::model::LogSetup]> {
         self.cluster_logging.as_deref()
-    }
-}
-impl std::fmt::Debug for Logging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Logging");
-        formatter.field("cluster_logging", &self.cluster_logging);
-        formatter.finish()
     }
 }
 /// See [`Logging`](crate::model::Logging).
@@ -1793,7 +1703,7 @@ impl Logging {
 
 /// <p>An object representing the enabled or disabled Kubernetes control plane logs for your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogSetup {
     /// <p>The available cluster control plane log types.</p>
     #[doc(hidden)]
@@ -1810,14 +1720,6 @@ impl LogSetup {
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
-    }
-}
-impl std::fmt::Debug for LogSetup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogSetup");
-        formatter.field("types", &self.types);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`LogSetup`](crate::model::LogSetup).
@@ -1988,7 +1890,7 @@ impl AsRef<str> for LogType {
 
 /// <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigRequest {
     /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network interfaces in these subnets to allow communication between your nodes and the Kubernetes control plane.</p>
     #[doc(hidden)]
@@ -2036,17 +1938,6 @@ impl VpcConfigRequest {
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the cluster, then ensure that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn public_access_cidrs(&self) -> std::option::Option<&[std::string::String]> {
         self.public_access_cidrs.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigRequest");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("endpoint_public_access", &self.endpoint_public_access);
-        formatter.field("endpoint_private_access", &self.endpoint_private_access);
-        formatter.field("public_access_cidrs", &self.public_access_cidrs);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigRequest`](crate::model::VpcConfigRequest).
@@ -2265,7 +2156,7 @@ impl AsRef<str> for ResolveConflicts {
 
 /// <p>An object representing an Amazon EKS cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The name of the cluster.</p>
     #[doc(hidden)]
@@ -2415,32 +2306,6 @@ impl Cluster {
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(&self) -> std::option::Option<&crate::model::OutpostConfigResponse> {
         self.outpost_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("version", &self.version);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("resources_vpc_config", &self.resources_vpc_config);
-        formatter.field("kubernetes_network_config", &self.kubernetes_network_config);
-        formatter.field("logging", &self.logging);
-        formatter.field("identity", &self.identity);
-        formatter.field("status", &self.status);
-        formatter.field("certificate_authority", &self.certificate_authority);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("platform_version", &self.platform_version);
-        formatter.field("tags", &self.tags);
-        formatter.field("encryption_config", &self.encryption_config);
-        formatter.field("connector_config", &self.connector_config);
-        formatter.field("id", &self.id);
-        formatter.field("health", &self.health);
-        formatter.field("outpost_config", &self.outpost_config);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -2768,7 +2633,7 @@ impl Cluster {
 
 /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutpostConfigResponse {
     /// <p>The ARN of the Outpost that you specified for use with your local Amazon EKS cluster on Outposts.</p>
     #[doc(hidden)]
@@ -2785,17 +2650,6 @@ impl OutpostConfigResponse {
     /// <p>The Amazon EC2 instance type used for the control plane. The instance type is the same for all control plane instances.</p>
     pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
         self.control_plane_instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for OutpostConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutpostConfigResponse");
-        formatter.field("outpost_arns", &self.outpost_arns);
-        formatter.field(
-            "control_plane_instance_type",
-            &self.control_plane_instance_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
@@ -2861,7 +2715,7 @@ impl OutpostConfigResponse {
 
 /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
     #[doc(hidden)]
@@ -2871,13 +2725,6 @@ impl ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
     pub fn issues(&self) -> std::option::Option<&[crate::model::ClusterIssue]> {
         self.issues.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterHealth");
-        formatter.field("issues", &self.issues);
-        formatter.finish()
     }
 }
 /// See [`ClusterHealth`](crate::model::ClusterHealth).
@@ -2925,7 +2772,7 @@ impl ClusterHealth {
 
 /// <p>An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterIssue {
     /// <p>The error code of the issue.</p>
     #[doc(hidden)]
@@ -2949,15 +2796,6 @@ impl ClusterIssue {
     /// <p>The resource IDs that the issue relates to.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterIssue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterIssue");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 /// See [`ClusterIssue`](crate::model::ClusterIssue).
@@ -3149,7 +2987,7 @@ impl AsRef<str> for ClusterIssueCode {
 
 /// <p>The full description of your connected cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorConfigResponse {
     /// <p>A unique ID associated with the cluster for registration purposes.</p>
     #[doc(hidden)]
@@ -3187,17 +3025,6 @@ impl ConnectorConfigResponse {
     /// <p>The Amazon Resource Name (ARN) of the role to communicate with services from the connected Kubernetes cluster.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectorConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorConfigResponse");
-        formatter.field("activation_id", &self.activation_id);
-        formatter.field("activation_code", &self.activation_code);
-        formatter.field("activation_expiry", &self.activation_expiry);
-        formatter.field("provider", &self.provider);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse).
@@ -3293,7 +3120,7 @@ impl ConnectorConfigResponse {
 
 /// <p>The encryption configuration for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
     #[doc(hidden)]
@@ -3310,14 +3137,6 @@ impl EncryptionConfig {
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub fn provider(&self) -> std::option::Option<&crate::model::Provider> {
         self.provider.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionConfig");
-        formatter.field("resources", &self.resources);
-        formatter.field("provider", &self.provider);
-        formatter.finish()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -3377,7 +3196,7 @@ impl EncryptionConfig {
 
 /// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Provider {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -3387,13 +3206,6 @@ impl Provider {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn key_arn(&self) -> std::option::Option<&str> {
         self.key_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for Provider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Provider");
-        formatter.field("key_arn", &self.key_arn);
-        formatter.finish()
     }
 }
 /// See [`Provider`](crate::model::Provider).
@@ -3432,7 +3244,7 @@ impl Provider {
 
 /// <p>An object representing the <code>certificate-authority-data</code> for your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     #[doc(hidden)]
@@ -3442,13 +3254,6 @@ impl Certificate {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
-    }
-}
-impl std::fmt::Debug for Certificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Certificate");
-        formatter.field("data", &self.data);
-        formatter.finish()
     }
 }
 /// See [`Certificate`](crate::model::Certificate).
@@ -3597,7 +3402,7 @@ impl AsRef<str> for ClusterStatus {
 
 /// <p>An object representing an identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     #[doc(hidden)]
@@ -3607,13 +3412,6 @@ impl Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     pub fn oidc(&self) -> std::option::Option<&crate::model::Oidc> {
         self.oidc.as_ref()
-    }
-}
-impl std::fmt::Debug for Identity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Identity");
-        formatter.field("oidc", &self.oidc);
-        formatter.finish()
     }
 }
 /// See [`Identity`](crate::model::Identity).
@@ -3650,7 +3448,7 @@ impl Identity {
 
 /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> (OIDC) identity provider information for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
     #[doc(hidden)]
@@ -3660,13 +3458,6 @@ impl Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
     pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
-    }
-}
-impl std::fmt::Debug for Oidc {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Oidc");
-        formatter.field("issuer", &self.issuer);
-        formatter.finish()
     }
 }
 /// See [`Oidc`](crate::model::Oidc).
@@ -3705,7 +3496,7 @@ impl Oidc {
 
 /// <p>The Kubernetes network configuration for the cluster. The response contains a value for <b>serviceIpv6Cidr</b> or <b>serviceIpv4Cidr</b>, but not both. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KubernetesNetworkConfigResponse {
     /// <p>The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and it can't be changed.</p>
     #[doc(hidden)]
@@ -3729,15 +3520,6 @@ impl KubernetesNetworkConfigResponse {
     /// <p>The IP family used to assign Kubernetes pod and service IP addresses. The IP family is always <code>ipv4</code>, unless you have a <code>1.21</code> or later cluster running version 1.10.1 or later of the Amazon VPC CNI add-on and specified <code>ipv6</code> when you created the cluster. </p>
     pub fn ip_family(&self) -> std::option::Option<&crate::model::IpFamily> {
         self.ip_family.as_ref()
-    }
-}
-impl std::fmt::Debug for KubernetesNetworkConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KubernetesNetworkConfigResponse");
-        formatter.field("service_ipv4_cidr", &self.service_ipv4_cidr);
-        formatter.field("service_ipv6_cidr", &self.service_ipv6_cidr);
-        formatter.field("ip_family", &self.ip_family);
-        formatter.finish()
     }
 }
 /// See [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse).
@@ -3896,7 +3678,7 @@ impl AsRef<str> for IpFamily {
 
 /// <p>An object representing an Amazon EKS cluster VPC configuration response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfigResponse {
     /// <p>The subnets associated with your cluster.</p>
     #[doc(hidden)]
@@ -3948,19 +3730,6 @@ impl VpcConfigResponse {
     /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn public_access_cidrs(&self) -> std::option::Option<&[std::string::String]> {
         self.public_access_cidrs.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfigResponse");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("cluster_security_group_id", &self.cluster_security_group_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("endpoint_public_access", &self.endpoint_public_access);
-        formatter.field("endpoint_private_access", &self.endpoint_private_access);
-        formatter.field("public_access_cidrs", &self.public_access_cidrs);
-        formatter.finish()
     }
 }
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
@@ -4101,7 +3870,7 @@ impl VpcConfigResponse {
 
 /// <p>The configuration sent to a cluster for configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
     #[doc(hidden)]
@@ -4118,14 +3887,6 @@ impl ConnectorConfigRequest {
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub fn provider(&self) -> std::option::Option<&crate::model::ConnectorConfigProvider> {
         self.provider.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectorConfigRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectorConfigRequest");
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("provider", &self.provider);
-        formatter.finish()
     }
 }
 /// See [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest).
@@ -4316,7 +4077,7 @@ impl AsRef<str> for ConnectorConfigProvider {
 
 /// <p>An object representing an identity provider configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityProviderConfig {
     /// <p>The type of the identity provider configuration. The only type available is <code>oidc</code>.</p>
     #[doc(hidden)]
@@ -4333,14 +4094,6 @@ impl IdentityProviderConfig {
     /// <p>The name of the identity provider configuration.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for IdentityProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityProviderConfig");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`IdentityProviderConfig`](crate::model::IdentityProviderConfig).
@@ -4391,7 +4144,7 @@ impl IdentityProviderConfig {
 
 /// <p>An object representing an Amazon EKS managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
     #[doc(hidden)]
@@ -4569,35 +4322,6 @@ impl Nodegroup {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Nodegroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Nodegroup");
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("nodegroup_arn", &self.nodegroup_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("version", &self.version);
-        formatter.field("release_version", &self.release_version);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("status", &self.status);
-        formatter.field("capacity_type", &self.capacity_type);
-        formatter.field("scaling_config", &self.scaling_config);
-        formatter.field("instance_types", &self.instance_types);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("remote_access", &self.remote_access);
-        formatter.field("ami_type", &self.ami_type);
-        formatter.field("node_role", &self.node_role);
-        formatter.field("labels", &self.labels);
-        formatter.field("taints", &self.taints);
-        formatter.field("resources", &self.resources);
-        formatter.field("disk_size", &self.disk_size);
-        formatter.field("health", &self.health);
-        formatter.field("update_config", &self.update_config);
-        formatter.field("launch_template", &self.launch_template);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Nodegroup`](crate::model::Nodegroup).
@@ -5004,7 +4728,7 @@ impl Nodegroup {
 
 /// <p>An object representing the health status of the node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
     #[doc(hidden)]
@@ -5014,13 +4738,6 @@ impl NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
     pub fn issues(&self) -> std::option::Option<&[crate::model::Issue]> {
         self.issues.as_deref()
-    }
-}
-impl std::fmt::Debug for NodegroupHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodegroupHealth");
-        formatter.field("issues", &self.issues);
-        formatter.finish()
     }
 }
 /// See [`NodegroupHealth`](crate::model::NodegroupHealth).
@@ -5068,7 +4785,7 @@ impl NodegroupHealth {
 
 /// <p>An object representing an issue with an Amazon EKS resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Issue {
     /// <p>A brief description of the error.</p>
     /// <ul>
@@ -5126,15 +4843,6 @@ impl Issue {
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for Issue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Issue");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 /// See [`Issue`](crate::model::Issue).
@@ -5452,7 +5160,7 @@ impl AsRef<str> for NodegroupIssueCode {
 
 /// <p>An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
     #[doc(hidden)]
@@ -5469,17 +5177,6 @@ impl NodegroupResources {
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
     pub fn remote_access_security_group(&self) -> std::option::Option<&str> {
         self.remote_access_security_group.as_deref()
-    }
-}
-impl std::fmt::Debug for NodegroupResources {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodegroupResources");
-        formatter.field("auto_scaling_groups", &self.auto_scaling_groups);
-        formatter.field(
-            "remote_access_security_group",
-            &self.remote_access_security_group,
-        );
-        formatter.finish()
     }
 }
 /// See [`NodegroupResources`](crate::model::NodegroupResources).
@@ -5546,7 +5243,7 @@ impl NodegroupResources {
 
 /// <p>An Auto Scaling group that is associated with an Amazon EKS managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     #[doc(hidden)]
@@ -5556,13 +5253,6 @@ impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
-    }
-}
-impl std::fmt::Debug for AutoScalingGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AutoScalingGroup");
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
@@ -5728,7 +5418,7 @@ impl AsRef<str> for AmiTypes {
 
 /// <p>An object representing the remote access configuration for the managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoteAccessConfig {
     /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
     #[doc(hidden)]
@@ -5745,14 +5435,6 @@ impl RemoteAccessConfig {
     /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub fn source_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.source_security_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for RemoteAccessConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoteAccessConfig");
-        formatter.field("ec2_ssh_key", &self.ec2_ssh_key);
-        formatter.field("source_security_groups", &self.source_security_groups);
-        formatter.finish()
     }
 }
 /// See [`RemoteAccessConfig`](crate::model::RemoteAccessConfig).
@@ -6025,7 +5707,7 @@ impl AsRef<str> for NodegroupStatus {
 
 /// <p>The full description of your identity configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityProviderConfigResponse {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     #[doc(hidden)]
@@ -6035,13 +5717,6 @@ impl IdentityProviderConfigResponse {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(&self) -> std::option::Option<&crate::model::OidcIdentityProviderConfig> {
         self.oidc.as_ref()
-    }
-}
-impl std::fmt::Debug for IdentityProviderConfigResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityProviderConfigResponse");
-        formatter.field("oidc", &self.oidc);
-        formatter.finish()
     }
 }
 /// See [`IdentityProviderConfigResponse`](crate::model::IdentityProviderConfigResponse).
@@ -6081,7 +5756,7 @@ impl IdentityProviderConfigResponse {
 
 /// <p>An object representing the configuration for an OpenID Connect (OIDC) identity provider. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OidcIdentityProviderConfig {
     /// <p>The name of the configuration.</p>
     #[doc(hidden)]
@@ -6176,30 +5851,6 @@ impl OidcIdentityProviderConfig {
     /// <p>The status of the OIDC identity provider.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ConfigStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for OidcIdentityProviderConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OidcIdentityProviderConfig");
-        formatter.field(
-            "identity_provider_config_name",
-            &self.identity_provider_config_name,
-        );
-        formatter.field(
-            "identity_provider_config_arn",
-            &self.identity_provider_config_arn,
-        );
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("issuer_url", &self.issuer_url);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("username_claim", &self.username_claim);
-        formatter.field("username_prefix", &self.username_prefix);
-        formatter.field("groups_claim", &self.groups_claim);
-        formatter.field("groups_prefix", &self.groups_prefix);
-        formatter.field("required_claims", &self.required_claims);
-        formatter.field("tags", &self.tags);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`OidcIdentityProviderConfig`](crate::model::OidcIdentityProviderConfig).
@@ -6523,7 +6174,7 @@ impl AsRef<str> for ConfigStatus {
 
 /// <p>An object representing an Fargate profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FargateProfile {
     /// <p>The name of the Fargate profile.</p>
     #[doc(hidden)]
@@ -6593,21 +6244,6 @@ impl FargateProfile {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for FargateProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FargateProfile");
-        formatter.field("fargate_profile_name", &self.fargate_profile_name);
-        formatter.field("fargate_profile_arn", &self.fargate_profile_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("pod_execution_role_arn", &self.pod_execution_role_arn);
-        formatter.field("subnets", &self.subnets);
-        formatter.field("selectors", &self.selectors);
-        formatter.field("status", &self.status);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`FargateProfile`](crate::model::FargateProfile).
@@ -6906,7 +6542,7 @@ impl AsRef<str> for FargateProfileStatus {
 
 /// <p>An object representing an Fargate profile selector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FargateProfileSelector {
     /// <p>The Kubernetes namespace that the selector should match.</p>
     #[doc(hidden)]
@@ -6927,14 +6563,6 @@ impl FargateProfileSelector {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.labels.as_ref()
-    }
-}
-impl std::fmt::Debug for FargateProfileSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FargateProfileSelector");
-        formatter.field("namespace", &self.namespace);
-        formatter.field("labels", &self.labels);
-        formatter.finish()
     }
 }
 /// See [`FargateProfileSelector`](crate::model::FargateProfileSelector).
@@ -7002,7 +6630,7 @@ impl FargateProfileSelector {
 
 /// <p>Information about an add-on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddonInfo {
     /// <p>The name of the add-on.</p>
     #[doc(hidden)]
@@ -7026,15 +6654,6 @@ impl AddonInfo {
     /// <p>An object representing information about available add-on versions and compatible Kubernetes versions.</p>
     pub fn addon_versions(&self) -> std::option::Option<&[crate::model::AddonVersionInfo]> {
         self.addon_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for AddonInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddonInfo");
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("addon_versions", &self.addon_versions);
-        formatter.finish()
     }
 }
 /// See [`AddonInfo`](crate::model::AddonInfo).
@@ -7107,7 +6726,7 @@ impl AddonInfo {
 
 /// <p>Information about an add-on version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddonVersionInfo {
     /// <p>The version of the add-on.</p>
     #[doc(hidden)]
@@ -7131,15 +6750,6 @@ impl AddonVersionInfo {
     /// <p>An object representing the compatibilities of a version.</p>
     pub fn compatibilities(&self) -> std::option::Option<&[crate::model::Compatibility]> {
         self.compatibilities.as_deref()
-    }
-}
-impl std::fmt::Debug for AddonVersionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddonVersionInfo");
-        formatter.field("addon_version", &self.addon_version);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("compatibilities", &self.compatibilities);
-        formatter.finish()
     }
 }
 /// See [`AddonVersionInfo`](crate::model::AddonVersionInfo).
@@ -7223,7 +6833,7 @@ impl AddonVersionInfo {
 
 /// <p>Compatibility information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
     #[doc(hidden)]
@@ -7247,15 +6857,6 @@ impl Compatibility {
     /// <p>The supported default version.</p>
     pub fn default_version(&self) -> bool {
         self.default_version
-    }
-}
-impl std::fmt::Debug for Compatibility {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Compatibility");
-        formatter.field("cluster_version", &self.cluster_version);
-        formatter.field("platform_versions", &self.platform_versions);
-        formatter.field("default_version", &self.default_version);
-        formatter.finish()
     }
 }
 /// See [`Compatibility`](crate::model::Compatibility).
@@ -7330,7 +6931,7 @@ impl Compatibility {
 
 /// <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Addon {
     /// <p>The name of the add-on.</p>
     #[doc(hidden)]
@@ -7407,22 +7008,6 @@ impl Addon {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for Addon {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Addon");
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("status", &self.status);
-        formatter.field("addon_version", &self.addon_version);
-        formatter.field("health", &self.health);
-        formatter.field("addon_arn", &self.addon_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("service_account_role_arn", &self.service_account_role_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`Addon`](crate::model::Addon).
@@ -7598,7 +7183,7 @@ impl Addon {
 
 /// <p>The health of the add-on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddonHealth {
     /// <p>An object representing the health issues for an add-on.</p>
     #[doc(hidden)]
@@ -7608,13 +7193,6 @@ impl AddonHealth {
     /// <p>An object representing the health issues for an add-on.</p>
     pub fn issues(&self) -> std::option::Option<&[crate::model::AddonIssue]> {
         self.issues.as_deref()
-    }
-}
-impl std::fmt::Debug for AddonHealth {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddonHealth");
-        formatter.field("issues", &self.issues);
-        formatter.finish()
     }
 }
 /// See [`AddonHealth`](crate::model::AddonHealth).
@@ -7662,7 +7240,7 @@ impl AddonHealth {
 
 /// <p>An issue related to an add-on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddonIssue {
     /// <p>A code that describes the type of issue.</p>
     #[doc(hidden)]
@@ -7686,15 +7264,6 @@ impl AddonIssue {
     /// <p>The resource IDs of the issue.</p>
     pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for AddonIssue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddonIssue");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("resource_ids", &self.resource_ids);
-        formatter.finish()
     }
 }
 /// See [`AddonIssue`](crate::model::AddonIssue).
@@ -8027,7 +7596,7 @@ impl AsRef<str> for AddonStatus {
 
 /// <p>The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating a local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OutpostConfigRequest {
     /// <p>The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.</p>
     #[doc(hidden)]
@@ -8058,17 +7627,6 @@ impl OutpostConfigRequest {
     /// <p>For a list of the available Amazon EC2 instance types, see Compute and storage in <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not automatically scaled by Amazon EKS.</p>
     pub fn control_plane_instance_type(&self) -> std::option::Option<&str> {
         self.control_plane_instance_type.as_deref()
-    }
-}
-impl std::fmt::Debug for OutpostConfigRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutpostConfigRequest");
-        formatter.field("outpost_arns", &self.outpost_arns);
-        formatter.field(
-            "control_plane_instance_type",
-            &self.control_plane_instance_type,
-        );
-        formatter.finish()
     }
 }
 /// See [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
@@ -8148,7 +7706,7 @@ impl OutpostConfigRequest {
 
 /// <p>The Kubernetes network configuration for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KubernetesNetworkConfigRequest {
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
@@ -8181,14 +7739,6 @@ impl KubernetesNetworkConfigRequest {
     /// <p>You can only specify <code>ipv6</code> for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on. If you specify <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns services IPv6 addresses from the unique local address range (fc00::/7). You can't specify a custom IPv6 CIDR block. Pod addresses are assigned from the subnet's IPv6 CIDR.</p>
     pub fn ip_family(&self) -> std::option::Option<&crate::model::IpFamily> {
         self.ip_family.as_ref()
-    }
-}
-impl std::fmt::Debug for KubernetesNetworkConfigRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KubernetesNetworkConfigRequest");
-        formatter.field("service_ipv4_cidr", &self.service_ipv4_cidr);
-        formatter.field("ip_family", &self.ip_family);
-        formatter.finish()
     }
 }
 /// See [`KubernetesNetworkConfigRequest`](crate::model::KubernetesNetworkConfigRequest).
@@ -8258,7 +7808,7 @@ impl KubernetesNetworkConfigRequest {
 
 /// <p>An object representing an OpenID Connect (OIDC) configuration. Before associating an OIDC identity provider to your cluster, review the considerations in <a href="https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html">Authenticating users for your cluster from an OpenID Connect identity provider</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
     #[doc(hidden)]
@@ -8321,23 +7871,6 @@ impl OidcIdentityProviderConfigRequest {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.required_claims.as_ref()
-    }
-}
-impl std::fmt::Debug for OidcIdentityProviderConfigRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OidcIdentityProviderConfigRequest");
-        formatter.field(
-            "identity_provider_config_name",
-            &self.identity_provider_config_name,
-        );
-        formatter.field("issuer_url", &self.issuer_url);
-        formatter.field("client_id", &self.client_id);
-        formatter.field("username_claim", &self.username_claim);
-        formatter.field("username_prefix", &self.username_prefix);
-        formatter.field("groups_claim", &self.groups_claim);
-        formatter.field("groups_prefix", &self.groups_prefix);
-        formatter.field("required_claims", &self.required_claims);
-        formatter.finish()
     }
 }
 /// See [`OidcIdentityProviderConfigRequest`](crate::model::OidcIdentityProviderConfigRequest).

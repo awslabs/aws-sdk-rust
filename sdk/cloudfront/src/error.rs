@@ -2,18 +2,11 @@
 
 /// <p>One or more of your trusted signers don't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedSignerDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrustedSignerDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedSignerDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrustedSignerDoesNotExist {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl TrustedSignerDoesNotExist {
 
 /// <p>Your request contains more trusted signers than are allowed per distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTrustedSigners {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTrustedSigners");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTrustedSigners {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl TooManyTrustedSigners {
 
 /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyStreamingDistributionCnamEs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyStreamingDistributionCnamEs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyStreamingDistributionCnamEs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyStreamingDistributionCnamEs {
     /// Returns the error message.
@@ -206,18 +185,11 @@ impl TooManyStreamingDistributionCnamEs {
 
 /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PreconditionFailed {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PreconditionFailed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PreconditionFailed");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PreconditionFailed {
     /// Returns the error message.
@@ -273,18 +245,11 @@ impl PreconditionFailed {
 
 /// <p>The specified streaming distribution does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchStreamingDistribution {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchStreamingDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchStreamingDistribution");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchStreamingDistribution {
     /// Returns the error message.
@@ -340,18 +305,11 @@ impl NoSuchStreamingDistribution {
 
 /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MissingBody {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MissingBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MissingBody");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MissingBody {
     /// Returns the error message.
@@ -407,18 +365,11 @@ impl MissingBody {
 
 /// <p>The origin access identity is not valid or doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOriginAccessIdentity {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOriginAccessIdentity");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOriginAccessIdentity {
     /// Returns the error message.
@@ -474,18 +425,11 @@ impl InvalidOriginAccessIdentity {
 
 /// <p>The origin access control is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOriginAccessControl {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOriginAccessControl");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOriginAccessControl {
     /// Returns the error message.
@@ -541,18 +485,11 @@ impl InvalidOriginAccessControl {
 
 /// <p>The <code>If-Match</code> version is missing or not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidIfMatchVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidIfMatchVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidIfMatchVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidIfMatchVersion {
     /// Returns the error message.
@@ -608,18 +545,11 @@ impl InvalidIfMatchVersion {
 
 /// <p>An argument is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidArgument {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidArgument");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidArgument {
     /// Returns the error message.
@@ -675,18 +605,11 @@ impl InvalidArgument {
 
 /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InconsistentQuantities {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InconsistentQuantities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InconsistentQuantities");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InconsistentQuantities {
     /// Returns the error message.
@@ -742,18 +665,11 @@ impl InconsistentQuantities {
 
 /// <p>The update contains modifications that are not allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalUpdate {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalUpdate");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalUpdate {
     /// Returns the error message.
@@ -809,18 +725,11 @@ impl IllegalUpdate {
 
 /// <p>The CNAME specified is already defined for CloudFront.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CnameAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CnameAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CnameAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CnameAlreadyExists {
     /// Returns the error message.
@@ -876,18 +785,11 @@ impl CnameAlreadyExists {
 
 /// <p>Access denied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDenied {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDenied {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDenied");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDenied {
     /// Returns the error message.
@@ -944,18 +846,11 @@ impl AccessDenied {
 /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCustomHeadersInResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCustomHeadersInResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCustomHeadersInResponseHeadersPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCustomHeadersInResponseHeadersPolicy {
     /// Returns the error message.
@@ -1012,18 +907,11 @@ impl TooManyCustomHeadersInResponseHeadersPolicy {
 /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooLongCspInResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooLongCspInResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooLongCspInResponseHeadersPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooLongCspInResponseHeadersPolicy {
     /// Returns the error message.
@@ -1082,18 +970,11 @@ impl TooLongCspInResponseHeadersPolicy {
 
 /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResponseHeadersPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResponseHeadersPolicyAlreadyExists {
     /// Returns the error message.
@@ -1149,18 +1030,11 @@ impl ResponseHeadersPolicyAlreadyExists {
 
 /// <p>The response headers policy does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchResponseHeadersPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchResponseHeadersPolicy {
     /// Returns the error message.
@@ -1216,18 +1090,11 @@ impl NoSuchResponseHeadersPolicy {
 
 /// <p>The real-time log configuration does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchRealtimeLogConfig {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchRealtimeLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchRealtimeLogConfig");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchRealtimeLogConfig {
     /// Returns the error message.
@@ -1283,18 +1150,11 @@ impl NoSuchRealtimeLogConfig {
 
 /// <p>The specified public key doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchPublicKey {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchPublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchPublicKey");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchPublicKey {
     /// Returns the error message.
@@ -1350,18 +1210,11 @@ impl NoSuchPublicKey {
 
 /// <p>You can't change the value of a public key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotChangeImmutablePublicKeyFields {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CannotChangeImmutablePublicKeyFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotChangeImmutablePublicKeyFields");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CannotChangeImmutablePublicKeyFields {
     /// Returns the error message.
@@ -1417,18 +1270,11 @@ impl CannotChangeImmutablePublicKeyFields {
 
 /// <p>The number of query strings in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyQueryStringsInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyQueryStringsInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyQueryStringsInOriginRequestPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyQueryStringsInOriginRequestPolicy {
     /// Returns the error message.
@@ -1484,18 +1330,11 @@ impl TooManyQueryStringsInOriginRequestPolicy {
 
 /// <p>The number of headers in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyHeadersInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyHeadersInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyHeadersInOriginRequestPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyHeadersInOriginRequestPolicy {
     /// Returns the error message.
@@ -1551,18 +1390,11 @@ impl TooManyHeadersInOriginRequestPolicy {
 
 /// <p>The number of cookies in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCookiesInOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCookiesInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCookiesInOriginRequestPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCookiesInOriginRequestPolicy {
     /// Returns the error message.
@@ -1618,18 +1450,11 @@ impl TooManyCookiesInOriginRequestPolicy {
 
 /// <p>An origin request policy with this name already exists. You must provide a unique name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OriginRequestPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OriginRequestPolicyAlreadyExists {
     /// Returns the error message.
@@ -1685,18 +1510,11 @@ impl OriginRequestPolicyAlreadyExists {
 
 /// <p>The origin request policy does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOriginRequestPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchOriginRequestPolicy {
     /// Returns the error message.
@@ -1752,18 +1570,11 @@ impl NoSuchOriginRequestPolicy {
 
 /// <p>An origin access control with the specified parameters already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OriginAccessControlAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OriginAccessControlAlreadyExists {
     /// Returns the error message.
@@ -1819,18 +1630,11 @@ impl OriginAccessControlAlreadyExists {
 
 /// <p>The origin access control does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOriginAccessControl {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOriginAccessControl");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchOriginAccessControl {
     /// Returns the error message.
@@ -1886,18 +1690,11 @@ impl NoSuchOriginAccessControl {
 
 /// <p>The number of public keys in this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyPublicKeysInKeyGroup {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyPublicKeysInKeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyPublicKeysInKeyGroup");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyPublicKeysInKeyGroup {
     /// Returns the error message.
@@ -1953,18 +1750,11 @@ impl TooManyPublicKeysInKeyGroup {
 
 /// <p>A resource that was specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchResource {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchResource");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchResource {
     /// Returns the error message.
@@ -2020,18 +1810,11 @@ impl NoSuchResource {
 
 /// <p>A key group with this name already exists. You must provide a unique name. To modify an existing key group, use <code>UpdateKeyGroup</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KeyGroupAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for KeyGroupAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KeyGroupAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl KeyGroupAlreadyExists {
     /// Returns the error message.
@@ -2087,18 +1870,11 @@ impl KeyGroupAlreadyExists {
 
 /// <p>This operation is not supported in this region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedOperation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for UnsupportedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedOperation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl UnsupportedOperation {
     /// Returns the error message.
@@ -2154,18 +1930,11 @@ impl UnsupportedOperation {
 
 /// <p>The function does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchFunctionExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchFunctionExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchFunctionExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchFunctionExists {
     /// Returns the error message.
@@ -2221,18 +1990,11 @@ impl NoSuchFunctionExists {
 
 /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionSizeLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FunctionSizeLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionSizeLimitExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FunctionSizeLimitExceeded {
     /// Returns the error message.
@@ -2288,18 +2050,11 @@ impl FunctionSizeLimitExceeded {
 
 /// <p>The maximum number of field patterns for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionFieldPatterns {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionFieldPatterns {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionFieldPatterns");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionFieldPatterns {
     /// Returns the error message.
@@ -2355,18 +2110,11 @@ impl TooManyFieldLevelEncryptionFieldPatterns {
 
 /// <p>The maximum number of encryption entities for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionEncryptionEntities {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionEncryptionEntities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionEncryptionEntities");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionEncryptionEntities {
     /// Returns the error message.
@@ -2422,18 +2170,11 @@ impl TooManyFieldLevelEncryptionEncryptionEntities {
 
 /// <p>The specified profile for field-level encryption doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchFieldLevelEncryptionProfile {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchFieldLevelEncryptionProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchFieldLevelEncryptionProfile");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchFieldLevelEncryptionProfile {
     /// Returns the error message.
@@ -2489,18 +2230,11 @@ impl NoSuchFieldLevelEncryptionProfile {
 
 /// <p>The maximum size of a profile for field-level encryption was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileSizeExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileSizeExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileSizeExceeded");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FieldLevelEncryptionProfileSizeExceeded {
     /// Returns the error message.
@@ -2556,18 +2290,11 @@ impl FieldLevelEncryptionProfileSizeExceeded {
 
 /// <p>The specified profile for field-level encryption already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FieldLevelEncryptionProfileAlreadyExists {
     /// Returns the error message.
@@ -2623,18 +2350,11 @@ impl FieldLevelEncryptionProfileAlreadyExists {
 
 /// <p>The maximum number of query arg profiles for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionQueryArgProfiles {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionQueryArgProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionQueryArgProfiles");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionQueryArgProfiles {
     /// Returns the error message.
@@ -2690,18 +2410,11 @@ impl TooManyFieldLevelEncryptionQueryArgProfiles {
 
 /// <p>The maximum number of content type profiles for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionContentTypeProfiles {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionContentTypeProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionContentTypeProfiles");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionContentTypeProfiles {
     /// Returns the error message.
@@ -2758,18 +2471,11 @@ impl TooManyFieldLevelEncryptionContentTypeProfiles {
 
 /// <p>No profile specified for the field-level encryption query argument.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryArgProfileEmpty {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for QueryArgProfileEmpty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryArgProfileEmpty");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl QueryArgProfileEmpty {
     /// Returns the error message.
@@ -2825,18 +2531,11 @@ impl QueryArgProfileEmpty {
 
 /// <p>The specified configuration for field-level encryption doesn't exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchFieldLevelEncryptionConfig {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchFieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchFieldLevelEncryptionConfig");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchFieldLevelEncryptionConfig {
     /// Returns the error message.
@@ -2892,18 +2591,11 @@ impl NoSuchFieldLevelEncryptionConfig {
 
 /// <p>The specified key group does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrustedKeyGroupDoesNotExist {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TrustedKeyGroupDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrustedKeyGroupDoesNotExist");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TrustedKeyGroupDoesNotExist {
     /// Returns the error message.
@@ -2959,18 +2651,11 @@ impl TrustedKeyGroupDoesNotExist {
 
 /// <p>Your request contains too many query string parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyQueryStringParameters {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyQueryStringParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyQueryStringParameters");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyQueryStringParameters {
     /// Returns the error message.
@@ -3026,18 +2711,11 @@ impl TooManyQueryStringParameters {
 
 /// <p>You cannot create more origins for the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyOrigins {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyOrigins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyOrigins");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyOrigins {
     /// Returns the error message.
@@ -3093,18 +2771,11 @@ impl TooManyOrigins {
 
 /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyOriginGroupsPerDistribution {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyOriginGroupsPerDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyOriginGroupsPerDistribution");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyOriginGroupsPerDistribution {
     /// Returns the error message.
@@ -3160,18 +2831,11 @@ impl TooManyOriginGroupsPerDistribution {
 
 /// <p>Your request contains too many origin custom headers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyOriginCustomHeaders {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyOriginCustomHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyOriginCustomHeaders");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyOriginCustomHeaders {
     /// Returns the error message.
@@ -3227,18 +2891,11 @@ impl TooManyOriginCustomHeaders {
 
 /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyLambdaFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyLambdaFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyLambdaFunctionAssociations");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyLambdaFunctionAssociations {
     /// Returns the error message.
@@ -3294,18 +2951,11 @@ impl TooManyLambdaFunctionAssociations {
 
 /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyKeyGroupsAssociatedToDistribution {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyKeyGroupsAssociatedToDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyKeyGroupsAssociatedToDistribution");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyKeyGroupsAssociatedToDistribution {
     /// Returns the error message.
@@ -3361,18 +3011,11 @@ impl TooManyKeyGroupsAssociatedToDistribution {
 
 /// <p>Your request contains too many headers in forwarded values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyHeadersInForwardedValues {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyHeadersInForwardedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyHeadersInForwardedValues");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyHeadersInForwardedValues {
     /// Returns the error message.
@@ -3428,18 +3071,11 @@ impl TooManyHeadersInForwardedValues {
 
 /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFunctionAssociations");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFunctionAssociations {
     /// Returns the error message.
@@ -3495,18 +3131,11 @@ impl TooManyFunctionAssociations {
 
 /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsWithSingleFunctionArn {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsWithSingleFunctionArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsWithSingleFunctionArn");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsWithSingleFunctionArn {
     /// Returns the error message.
@@ -3565,18 +3194,11 @@ impl TooManyDistributionsWithSingleFunctionArn {
 
 /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsWithLambdaAssociations {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsWithLambdaAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsWithLambdaAssociations");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsWithLambdaAssociations {
     /// Returns the error message.
@@ -3632,18 +3254,11 @@ impl TooManyDistributionsWithLambdaAssociations {
 
 /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsWithFunctionAssociations {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsWithFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsWithFunctionAssociations");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsWithFunctionAssociations {
     /// Returns the error message.
@@ -3700,18 +3315,11 @@ impl TooManyDistributionsWithFunctionAssociations {
 /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToResponseHeadersPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToResponseHeadersPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
     /// Returns the error message.
@@ -3769,18 +3377,11 @@ impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
 
 /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToOriginRequestPolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToOriginRequestPolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToOriginRequestPolicy {
     /// Returns the error message.
@@ -3837,18 +3438,11 @@ impl TooManyDistributionsAssociatedToOriginRequestPolicy {
 
 /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToKeyGroup {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToKeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToKeyGroup");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToKeyGroup {
     /// Returns the error message.
@@ -3904,19 +3498,11 @@ impl TooManyDistributionsAssociatedToKeyGroup {
 
 /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("TooManyDistributionsAssociatedToFieldLevelEncryptionConfig");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     /// Returns the error message.
@@ -3979,18 +3565,11 @@ impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
 
 /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToCachePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToCachePolicy {
     /// Returns the error message.
@@ -4046,18 +3625,11 @@ impl TooManyDistributionsAssociatedToCachePolicy {
 
 /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionCnamEs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionCnamEs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionCnamEs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionCnamEs {
     /// Returns the error message.
@@ -4113,18 +3685,11 @@ impl TooManyDistributionCnamEs {
 
 /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCookieNamesInWhiteList {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCookieNamesInWhiteList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCookieNamesInWhiteList");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCookieNamesInWhiteList {
     /// Returns the error message.
@@ -4180,18 +3745,11 @@ impl TooManyCookieNamesInWhiteList {
 
 /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCertificates {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCertificates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCertificates");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCertificates {
     /// Returns the error message.
@@ -4247,18 +3805,11 @@ impl TooManyCertificates {
 
 /// <p>You cannot create more cache behaviors for the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCacheBehaviors {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCacheBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCacheBehaviors");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCacheBehaviors {
     /// Returns the error message.
@@ -4314,18 +3865,11 @@ impl TooManyCacheBehaviors {
 
 /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfigOwnerMismatch {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RealtimeLogConfigOwnerMismatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfigOwnerMismatch");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RealtimeLogConfigOwnerMismatch {
     /// Returns the error message.
@@ -4381,18 +3925,11 @@ impl RealtimeLogConfigOwnerMismatch {
 
 /// <p>No origin exists with the specified <code>Origin Id</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchOrigin {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchOrigin");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchOrigin {
     /// Returns the error message.
@@ -4448,18 +3985,11 @@ impl NoSuchOrigin {
 
 /// <p>The specified distribution does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchDistribution {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchDistribution");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchDistribution {
     /// Returns the error message.
@@ -4515,18 +4045,11 @@ impl NoSuchDistribution {
 
 /// <p>The cache policy does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchCachePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchCachePolicy {
     /// Returns the error message.
@@ -4582,18 +4105,11 @@ impl NoSuchCachePolicy {
 
 /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidWebAclId {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidWebAclId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidWebAclId");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidWebAclId {
     /// Returns the error message.
@@ -4649,18 +4165,11 @@ impl InvalidWebAclId {
 
 /// <p>A viewer certificate specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidViewerCertificate {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidViewerCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidViewerCertificate");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidViewerCertificate {
     /// Returns the error message.
@@ -4716,18 +4225,11 @@ impl InvalidViewerCertificate {
 
 /// <p>The TTL order specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTtlOrder {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTtlOrder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTtlOrder");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTtlOrder {
     /// Returns the error message.
@@ -4783,18 +4285,11 @@ impl InvalidTtlOrder {
 
 /// <p>A response code is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResponseCode {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResponseCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResponseCode");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResponseCode {
     /// Returns the error message.
@@ -4850,18 +4345,11 @@ impl InvalidResponseCode {
 
 /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequiredProtocol {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRequiredProtocol {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequiredProtocol");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRequiredProtocol {
     /// Returns the error message.
@@ -4917,18 +4405,11 @@ impl InvalidRequiredProtocol {
 
 /// <p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRelativePath {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRelativePath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRelativePath");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRelativePath {
     /// Returns the error message.
@@ -4984,18 +4465,11 @@ impl InvalidRelativePath {
 
 /// <p>The query string parameters specified are not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidQueryStringParameters {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidQueryStringParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidQueryStringParameters");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidQueryStringParameters {
     /// Returns the error message.
@@ -5051,18 +4525,11 @@ impl InvalidQueryStringParameters {
 
 /// <p>The read timeout specified for the origin is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOriginReadTimeout {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOriginReadTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOriginReadTimeout");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOriginReadTimeout {
     /// Returns the error message.
@@ -5118,18 +4585,11 @@ impl InvalidOriginReadTimeout {
 
 /// <p>The keep alive timeout specified for the origin is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOriginKeepaliveTimeout {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOriginKeepaliveTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOriginKeepaliveTimeout");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOriginKeepaliveTimeout {
     /// Returns the error message.
@@ -5185,18 +4645,11 @@ impl InvalidOriginKeepaliveTimeout {
 
 /// <p>The minimum protocol version specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMinimumProtocolVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMinimumProtocolVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMinimumProtocolVersion");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMinimumProtocolVersion {
     /// Returns the error message.
@@ -5252,18 +4705,11 @@ impl InvalidMinimumProtocolVersion {
 
 /// <p>The location code specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLocationCode {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLocationCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLocationCode");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLocationCode {
     /// Returns the error message.
@@ -5319,18 +4765,11 @@ impl InvalidLocationCode {
 
 /// <p>The specified Lambda@Edge function association is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidLambdaFunctionAssociation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidLambdaFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidLambdaFunctionAssociation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidLambdaFunctionAssociation {
     /// Returns the error message.
@@ -5386,18 +4825,11 @@ impl InvalidLambdaFunctionAssociation {
 
 /// <p>The headers specified are not valid for an Amazon S3 origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidHeadersForS3Origin {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidHeadersForS3Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidHeadersForS3Origin");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidHeadersForS3Origin {
     /// Returns the error message.
@@ -5453,18 +4885,11 @@ impl InvalidHeadersForS3Origin {
 
 /// <p>The specified geo restriction parameter is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidGeoRestrictionParameter {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidGeoRestrictionParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidGeoRestrictionParameter");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidGeoRestrictionParameter {
     /// Returns the error message.
@@ -5520,18 +4945,11 @@ impl InvalidGeoRestrictionParameter {
 
 /// <p>A CloudFront function association is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFunctionAssociation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFunctionAssociation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFunctionAssociation {
     /// Returns the error message.
@@ -5587,18 +5005,11 @@ impl InvalidFunctionAssociation {
 
 /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidForwardCookies {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidForwardCookies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidForwardCookies");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidForwardCookies {
     /// Returns the error message.
@@ -5654,18 +5065,11 @@ impl InvalidForwardCookies {
 
 /// <p>An invalid error code was specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidErrorCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidErrorCode");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidErrorCode {
     /// Returns the error message.
@@ -5721,18 +5125,11 @@ impl InvalidErrorCode {
 
 /// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDomainNameForOriginAccessControl {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDomainNameForOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDomainNameForOriginAccessControl");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDomainNameForOriginAccessControl {
     /// Returns the error message.
@@ -5788,18 +5185,11 @@ impl InvalidDomainNameForOriginAccessControl {
 
 /// <p>The default root object file name is too big or contains an invalid character.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDefaultRootObject {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDefaultRootObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDefaultRootObject");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDefaultRootObject {
     /// Returns the error message.
@@ -5855,18 +5245,11 @@ impl InvalidDefaultRootObject {
 
 /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalOriginAccessConfiguration {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalOriginAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalOriginAccessConfiguration");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalOriginAccessConfiguration {
     /// Returns the error message.
@@ -5922,19 +5305,11 @@ impl IllegalOriginAccessConfiguration {
 
 /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     /// Returns the error message.
@@ -5997,18 +5372,11 @@ impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
 
 /// <p>The specified origin access identity does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchCloudFrontOriginAccessIdentity {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchCloudFrontOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchCloudFrontOriginAccessIdentity");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchCloudFrontOriginAccessIdentity {
     /// Returns the error message.
@@ -6064,18 +5432,11 @@ impl NoSuchCloudFrontOriginAccessIdentity {
 
 /// <p>The number of query strings in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyQueryStringsInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyQueryStringsInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyQueryStringsInCachePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyQueryStringsInCachePolicy {
     /// Returns the error message.
@@ -6131,18 +5492,11 @@ impl TooManyQueryStringsInCachePolicy {
 
 /// <p>The number of headers in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyHeadersInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyHeadersInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyHeadersInCachePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyHeadersInCachePolicy {
     /// Returns the error message.
@@ -6198,18 +5552,11 @@ impl TooManyHeadersInCachePolicy {
 
 /// <p>The number of cookies in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCookiesInCachePolicy {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCookiesInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCookiesInCachePolicy");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCookiesInCachePolicy {
     /// Returns the error message.
@@ -6265,18 +5612,11 @@ impl TooManyCookiesInCachePolicy {
 
 /// <p>A cache policy with this name already exists. You must provide a unique name. To modify an existing cache policy, use <code>UpdateCachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CachePolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CachePolicyAlreadyExists {
     /// Returns the error message.
@@ -6332,18 +5672,11 @@ impl CachePolicyAlreadyExists {
 
 /// <p>The tagging specified is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagging {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagging");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagging {
     /// Returns the error message.
@@ -6399,18 +5732,11 @@ impl InvalidTagging {
 
 /// <p>The CloudFront function failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestFunctionFailed {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TestFunctionFailed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestFunctionFailed");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TestFunctionFailed {
     /// Returns the error message.
@@ -6466,18 +5792,11 @@ impl TestFunctionFailed {
 
 /// <p>A monitoring subscription does not exist for the specified distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchMonitoringSubscription {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchMonitoringSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchMonitoringSubscription");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchMonitoringSubscription {
     /// Returns the error message.
@@ -6533,18 +5852,11 @@ impl NoSuchMonitoringSubscription {
 
 /// <p>The specified invalidation does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoSuchInvalidation {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoSuchInvalidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoSuchInvalidation");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoSuchInvalidation {
     /// Returns the error message.
@@ -6600,18 +5912,11 @@ impl NoSuchInvalidation {
 
 /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionNotDisabled {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StreamingDistributionNotDisabled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionNotDisabled");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StreamingDistributionNotDisabled {
     /// Returns the error message.
@@ -6667,18 +5972,11 @@ impl StreamingDistributionNotDisabled {
 
 /// <p>Cannot delete the response headers policy because it is attached to one or more cache behaviors in a CloudFront distribution. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResponseHeadersPolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResponseHeadersPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResponseHeadersPolicyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResponseHeadersPolicyInUse {
     /// Returns the error message.
@@ -6734,18 +6032,11 @@ impl ResponseHeadersPolicyInUse {
 
 /// <p>You cannot delete a managed policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IllegalDelete {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IllegalDelete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IllegalDelete");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IllegalDelete {
     /// Returns the error message.
@@ -6801,18 +6092,11 @@ impl IllegalDelete {
 
 /// <p>Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfigInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RealtimeLogConfigInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfigInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RealtimeLogConfigInUse {
     /// Returns the error message.
@@ -6868,18 +6152,11 @@ impl RealtimeLogConfigInUse {
 
 /// <p>The specified public key is in use. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PublicKeyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PublicKeyInUse {
     /// Returns the error message.
@@ -6935,18 +6212,11 @@ impl PublicKeyInUse {
 
 /// <p>Cannot delete the origin request policy because it is attached to one or more cache behaviors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginRequestPolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OriginRequestPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginRequestPolicyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OriginRequestPolicyInUse {
     /// Returns the error message.
@@ -7002,18 +6272,11 @@ impl OriginRequestPolicyInUse {
 
 /// <p>Cannot delete the origin access control because it's in use by one or more distributions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OriginAccessControlInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OriginAccessControlInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OriginAccessControlInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OriginAccessControlInUse {
     /// Returns the error message.
@@ -7069,18 +6332,11 @@ impl OriginAccessControlInUse {
 
 /// <p>Cannot delete this resource because it is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceInUse {
     /// Returns the error message.
@@ -7136,18 +6392,11 @@ impl ResourceInUse {
 
 /// <p>Cannot delete the function because it’s attached to one or more cache behaviors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FunctionInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FunctionInUse {
     /// Returns the error message.
@@ -7203,18 +6452,11 @@ impl FunctionInUse {
 
 /// <p>The specified profile for field-level encryption is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionProfileInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FieldLevelEncryptionProfileInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionProfileInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FieldLevelEncryptionProfileInUse {
     /// Returns the error message.
@@ -7270,18 +6512,11 @@ impl FieldLevelEncryptionProfileInUse {
 
 /// <p>The specified configuration for field-level encryption is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfigInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FieldLevelEncryptionConfigInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionConfigInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FieldLevelEncryptionConfigInUse {
     /// Returns the error message.
@@ -7337,18 +6572,11 @@ impl FieldLevelEncryptionConfigInUse {
 
 /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionNotDisabled {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DistributionNotDisabled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionNotDisabled");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DistributionNotDisabled {
     /// Returns the error message.
@@ -7404,18 +6632,11 @@ impl DistributionNotDisabled {
 
 /// <p>The Origin Access Identity specified is already in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudFrontOriginAccessIdentityInUse {
     /// Returns the error message.
@@ -7471,18 +6692,11 @@ impl CloudFrontOriginAccessIdentityInUse {
 
 /// <p>Cannot delete the cache policy because it is attached to one or more cache behaviors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CachePolicyInUse {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CachePolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CachePolicyInUse");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CachePolicyInUse {
     /// Returns the error message.
@@ -7538,18 +6752,11 @@ impl CachePolicyInUse {
 
 /// <p>Processing your request would cause you to exceed the maximum number of streaming distributions allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyStreamingDistributions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyStreamingDistributions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyStreamingDistributions");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyStreamingDistributions {
     /// Returns the error message.
@@ -7605,18 +6812,11 @@ impl TooManyStreamingDistributions {
 
 /// <p>The caller reference you attempted to create the streaming distribution with is associated with another distribution</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StreamingDistributionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for StreamingDistributionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StreamingDistributionAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl StreamingDistributionAlreadyExists {
     /// Returns the error message.
@@ -7672,18 +6872,11 @@ impl StreamingDistributionAlreadyExists {
 
 /// <p>The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOrigin {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOrigin");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOrigin {
     /// Returns the error message.
@@ -7740,18 +6933,11 @@ impl InvalidOrigin {
 /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyResponseHeadersPolicies {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyResponseHeadersPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyResponseHeadersPolicies");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyResponseHeadersPolicies {
     /// Returns the error message.
@@ -7807,18 +6993,11 @@ impl TooManyResponseHeadersPolicies {
 
 /// <p>You have reached the maximum number of real-time log configurations for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyRealtimeLogConfigs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRealtimeLogConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRealtimeLogConfigs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyRealtimeLogConfigs {
     /// Returns the error message.
@@ -7874,18 +7053,11 @@ impl TooManyRealtimeLogConfigs {
 
 /// <p>A real-time log configuration with this name already exists. You must provide a unique name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeLogConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RealtimeLogConfigAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeLogConfigAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RealtimeLogConfigAlreadyExists {
     /// Returns the error message.
@@ -7941,18 +7113,11 @@ impl RealtimeLogConfigAlreadyExists {
 
 /// <p>The maximum number of public keys for field-level encryption have been created. To create a new public key, delete one of the existing keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyPublicKeys {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyPublicKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyPublicKeys");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyPublicKeys {
     /// Returns the error message.
@@ -8008,18 +7173,11 @@ impl TooManyPublicKeys {
 
 /// <p>The specified public key already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicKeyAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PublicKeyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicKeyAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PublicKeyAlreadyExists {
     /// Returns the error message.
@@ -8075,18 +7233,11 @@ impl PublicKeyAlreadyExists {
 
 /// <p>You have reached the maximum number of origin request policies for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyOriginRequestPolicies {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyOriginRequestPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyOriginRequestPolicies");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyOriginRequestPolicies {
     /// Returns the error message.
@@ -8143,18 +7294,11 @@ impl TooManyOriginRequestPolicies {
 /// <p>The number of origin access controls in your Amazon Web Services account exceeds the maximum allowed.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyOriginAccessControls {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyOriginAccessControls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyOriginAccessControls");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyOriginAccessControls {
     /// Returns the error message.
@@ -8210,18 +7354,11 @@ impl TooManyOriginAccessControls {
 
 /// <p>A monitoring subscription already exists for the specified distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MonitoringSubscriptionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MonitoringSubscriptionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MonitoringSubscriptionAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MonitoringSubscriptionAlreadyExists {
     /// Returns the error message.
@@ -8277,18 +7414,11 @@ impl MonitoringSubscriptionAlreadyExists {
 
 /// <p>You have reached the maximum number of key groups for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyKeyGroups {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyKeyGroups");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyKeyGroups {
     /// Returns the error message.
@@ -8344,18 +7474,11 @@ impl TooManyKeyGroups {
 
 /// <p>You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyInvalidationsInProgress {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyInvalidationsInProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyInvalidationsInProgress");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyInvalidationsInProgress {
     /// Returns the error message.
@@ -8411,18 +7534,11 @@ impl TooManyInvalidationsInProgress {
 
 /// <p>Invalidation batch specified is too large.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchTooLarge {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BatchTooLarge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchTooLarge");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BatchTooLarge {
     /// Returns the error message.
@@ -8478,18 +7594,11 @@ impl BatchTooLarge {
 
 /// <p>You have reached the maximum number of CloudFront functions for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFunctions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFunctions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFunctions");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFunctions {
     /// Returns the error message.
@@ -8545,18 +7654,11 @@ impl TooManyFunctions {
 
 /// <p>A function with the same name already exists in this Amazon Web Services account. To create a function, you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FunctionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FunctionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FunctionAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FunctionAlreadyExists {
     /// Returns the error message.
@@ -8612,18 +7714,11 @@ impl FunctionAlreadyExists {
 
 /// <p>The maximum number of profiles for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionProfiles {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionProfiles");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionProfiles {
     /// Returns the error message.
@@ -8679,18 +7774,11 @@ impl TooManyFieldLevelEncryptionProfiles {
 
 /// <p>The maximum number of configurations for field-level encryption have been created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyFieldLevelEncryptionConfigs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyFieldLevelEncryptionConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyFieldLevelEncryptionConfigs");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyFieldLevelEncryptionConfigs {
     /// Returns the error message.
@@ -8746,18 +7834,11 @@ impl TooManyFieldLevelEncryptionConfigs {
 
 /// <p>The specified configuration for field-level encryption already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FieldLevelEncryptionConfigAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FieldLevelEncryptionConfigAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FieldLevelEncryptionConfigAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FieldLevelEncryptionConfigAlreadyExists {
     /// Returns the error message.
@@ -8813,18 +7894,11 @@ impl FieldLevelEncryptionConfigAlreadyExists {
 
 /// <p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributions {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributions");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributions {
     /// Returns the error message.
@@ -8880,18 +7954,11 @@ impl TooManyDistributions {
 
 /// <p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support Server Name Indication (SNI).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidProtocolSettings {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidProtocolSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidProtocolSettings");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidProtocolSettings {
     /// Returns the error message.
@@ -8947,18 +8014,11 @@ impl InvalidProtocolSettings {
 
 /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DistributionAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DistributionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DistributionAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DistributionAlreadyExists {
     /// Returns the error message.
@@ -9015,18 +8075,11 @@ impl DistributionAlreadyExists {
 /// <p>The maximum number of distributions have been associated with the specified origin access control.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyDistributionsAssociatedToOriginAccessControl {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyDistributionsAssociatedToOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyDistributionsAssociatedToOriginAccessControl");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyDistributionsAssociatedToOriginAccessControl {
     /// Returns the error message.
@@ -9083,18 +8136,11 @@ impl TooManyDistributionsAssociatedToOriginAccessControl {
 
 /// <p>Processing your request would cause you to exceed the maximum number of origin access identities allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCloudFrontOriginAccessIdentities {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCloudFrontOriginAccessIdentities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCloudFrontOriginAccessIdentities");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCloudFrontOriginAccessIdentities {
     /// Returns the error message.
@@ -9150,18 +8196,11 @@ impl TooManyCloudFrontOriginAccessIdentities {
 
 /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentityAlreadyExists {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CloudFrontOriginAccessIdentityAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudFrontOriginAccessIdentityAlreadyExists");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CloudFrontOriginAccessIdentityAlreadyExists {
     /// Returns the error message.
@@ -9217,18 +8256,11 @@ impl CloudFrontOriginAccessIdentityAlreadyExists {
 
 /// <p>You have reached the maximum number of cache policies for this Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyCachePolicies {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyCachePolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyCachePolicies");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyCachePolicies {
     /// Returns the error message.

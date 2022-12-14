@@ -3936,7 +3936,7 @@ impl UpdateWorkspaceAliasInput {
 
 /// Represents the input of a ListWorkspaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkspacesInput {
     /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
     #[doc(hidden)]
@@ -3962,19 +3962,10 @@ impl ListWorkspacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkspacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkspacesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("alias", &self.alias);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a CreateWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
     #[doc(hidden)]
@@ -4004,19 +3995,10 @@ impl CreateWorkspaceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkspaceInput");
-        formatter.field("alias", &self.alias);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DeleteWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkspaceInput {
     /// The ID of the workspace to delete.
     #[doc(hidden)]
@@ -4035,18 +4017,10 @@ impl DeleteWorkspaceInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of an UpdateWorkspaceAlias operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasInput {
     /// The ID of the workspace being updated.
     #[doc(hidden)]
@@ -4072,19 +4046,10 @@ impl UpdateWorkspaceAliasInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateWorkspaceAliasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkspaceAliasInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DescribeWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkspaceInput {
     /// The ID of the workspace to describe.
     #[doc(hidden)]
@@ -4096,17 +4061,10 @@ impl DescribeWorkspaceInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorkspaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkspaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a ListRuleGroupsNamespaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesInput {
     /// The ID of the workspace.
     #[doc(hidden)]
@@ -4139,20 +4097,10 @@ impl ListRuleGroupsNamespacesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListRuleGroupsNamespacesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRuleGroupsNamespacesInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("name", &self.name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a CreateRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to create the rule group namespace.
     #[doc(hidden)]
@@ -4196,21 +4144,10 @@ impl CreateRuleGroupsNamespaceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRuleGroupsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRuleGroupsNamespaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("name", &self.name);
-        formatter.field("data", &self.data);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DeleteRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
     #[doc(hidden)]
@@ -4236,19 +4173,10 @@ impl DeleteRuleGroupsNamespaceInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRuleGroupsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRuleGroupsNamespaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("name", &self.name);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a PutRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRuleGroupsNamespaceInput {
     /// The ID of the workspace in which to update the rule group namespace.
     #[doc(hidden)]
@@ -4281,20 +4209,10 @@ impl PutRuleGroupsNamespaceInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutRuleGroupsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRuleGroupsNamespaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("name", &self.name);
-        formatter.field("data", &self.data);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DescribeRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceInput {
     /// The ID of the workspace to describe.
     #[doc(hidden)]
@@ -4313,18 +4231,10 @@ impl DescribeRuleGroupsNamespaceInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRuleGroupsNamespaceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRuleGroupsNamespaceInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a CreateLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
@@ -4350,19 +4260,10 @@ impl CreateLoggingConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLoggingConfigurationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DeleteLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
@@ -4381,18 +4282,10 @@ impl DeleteLoggingConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLoggingConfigurationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of an UpdateLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
@@ -4418,19 +4311,10 @@ impl UpdateLoggingConfigurationInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLoggingConfigurationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DescribeLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
@@ -4442,17 +4326,10 @@ impl DescribeLoggingConfigurationInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLoggingConfigurationInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAlertManagerDefinitionInput {
     /// The ID of the workspace in which to create the alert manager definition.
     #[doc(hidden)]
@@ -4478,19 +4355,10 @@ impl CreateAlertManagerDefinitionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAlertManagerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAlertManagerDefinitionInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("data", &self.data);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DeleteAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionInput {
     /// The ID of the workspace in which to delete the alert manager definition.
     #[doc(hidden)]
@@ -4509,18 +4377,10 @@ impl DeleteAlertManagerDefinitionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlertManagerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlertManagerDefinitionInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a PutAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionInput {
     /// The ID of the workspace in which to update the alert manager definition.
     #[doc(hidden)]
@@ -4546,19 +4406,10 @@ impl PutAlertManagerDefinitionInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for PutAlertManagerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAlertManagerDefinitionInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("data", &self.data);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 /// Represents the input of a DescribeAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionInput {
     /// The ID of the workspace to describe.
     #[doc(hidden)]
@@ -4570,17 +4421,10 @@ impl DescribeAlertManagerDefinitionInput {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlertManagerDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlertManagerDefinitionInput");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// The ARN of the resource.
     #[doc(hidden)]
@@ -4599,18 +4443,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// The ARN of the resource.
     #[doc(hidden)]
@@ -4633,18 +4469,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// The ARN of the resource.
     #[doc(hidden)]
@@ -4654,12 +4482,5 @@ impl ListTagsForResourceInput {
     /// The ARN of the resource.
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

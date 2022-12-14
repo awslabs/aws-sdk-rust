@@ -9921,7 +9921,7 @@ impl UpdateWorldTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
     #[doc(hidden)]
@@ -9954,20 +9954,10 @@ impl UpdateWorldTemplateInput {
         self.template_location.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorldTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorldTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.field("name", &self.name);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_location", &self.template_location);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
@@ -10023,23 +10013,10 @@ impl UpdateSimulationApplicationInput {
         self.environment.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSimulationApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSimulationApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("sources", &self.sources);
-        formatter.field("simulation_software_suite", &self.simulation_software_suite);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.field("rendering_engine", &self.rendering_engine);
-        formatter.field("current_revision_id", &self.current_revision_id);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
@@ -10079,21 +10056,10 @@ impl UpdateRobotApplicationInput {
         self.environment.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateRobotApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRobotApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("sources", &self.sources);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.field("current_revision_id", &self.current_revision_id);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
     #[doc(hidden)]
@@ -10112,18 +10078,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
     #[doc(hidden)]
@@ -10146,21 +10104,13 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -10179,18 +10129,10 @@ impl SyncDeploymentJobInput {
         self.fleet.as_deref()
     }
 }
-impl std::fmt::Debug for SyncDeploymentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SyncDeploymentJobInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("fleet", &self.fleet);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSimulationJobBatchInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -10230,23 +10172,10 @@ impl StartSimulationJobBatchInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartSimulationJobBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSimulationJobBatchInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("batch_policy", &self.batch_policy);
-        formatter.field(
-            "create_simulation_job_requests",
-            &self.create_simulation_job_requests,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestartSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
     #[doc(hidden)]
@@ -10258,20 +10187,13 @@ impl RestartSimulationJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for RestartSimulationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestartSimulationJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -10290,18 +10212,10 @@ impl RegisterRobotInput {
         self.robot.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterRobotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterRobotInput");
-        formatter.field("fleet", &self.fleet);
-        formatter.field("robot", &self.robot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorldTemplatesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10320,18 +10234,10 @@ impl ListWorldTemplatesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorldTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorldTemplatesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorldsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10357,19 +10263,10 @@ impl ListWorldsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorldsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorldGenerationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10395,19 +10292,10 @@ impl ListWorldGenerationJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorldGenerationJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorldGenerationJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorldExportJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10433,19 +10321,10 @@ impl ListWorldExportJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListWorldExportJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorldExportJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
     #[doc(hidden)]
@@ -10457,17 +10336,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSimulationJobsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10495,19 +10367,10 @@ impl ListSimulationJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListSimulationJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSimulationJobsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSimulationJobBatchesInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10533,19 +10396,10 @@ impl ListSimulationJobBatchesInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListSimulationJobBatchesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSimulationJobBatchesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSimulationApplicationsInput {
     /// <p>The version qualifier of the simulation application.</p>
     #[doc(hidden)]
@@ -10580,23 +10434,13 @@ impl ListSimulationApplicationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListSimulationApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSimulationApplicationsInput");
-        formatter.field("version_qualifier", &self.version_qualifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRobotsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
@@ -10624,19 +10468,10 @@ impl ListRobotsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListRobotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRobotsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRobotApplicationsInput {
     /// <p>The version qualifier of the robot application.</p>
     #[doc(hidden)]
@@ -10671,23 +10506,13 @@ impl ListRobotApplicationsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListRobotApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRobotApplicationsInput");
-        formatter.field("version_qualifier", &self.version_qualifier);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFleetsInput {
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -10719,22 +10544,13 @@ impl ListFleetsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListFleetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFleetsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDeploymentJobsInput {
     /// <p>Optional filters to limit results.</p>
     /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
@@ -10762,19 +10578,10 @@ impl ListDeploymentJobsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDeploymentJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDeploymentJobsInput");
-        formatter.field("filters", &self.filters);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     #[doc(hidden)]
@@ -10793,18 +10600,10 @@ impl GetWorldTemplateBodyInput {
         self.generation_job.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorldTemplateBodyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorldTemplateBodyInput");
-        formatter.field("template", &self.template);
-        formatter.field("generation_job", &self.generation_job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
     #[doc(hidden)]
@@ -10816,17 +10615,10 @@ impl DescribeWorldTemplateInput {
         self.template.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorldTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorldTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
     #[doc(hidden)]
@@ -10838,17 +10630,10 @@ impl DescribeWorldGenerationJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorldGenerationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorldGenerationJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
     #[doc(hidden)]
@@ -10860,17 +10645,10 @@ impl DescribeWorldExportJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorldExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorldExportJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
     #[doc(hidden)]
@@ -10882,17 +10660,10 @@ impl DescribeWorldInput {
         self.world.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeWorldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorldInput");
-        formatter.field("world", &self.world);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
     #[doc(hidden)]
@@ -10904,17 +10675,10 @@ impl DescribeSimulationJobBatchInput {
         self.batch.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSimulationJobBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSimulationJobBatchInput");
-        formatter.field("batch", &self.batch);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSimulationJobInput {
     /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
     #[doc(hidden)]
@@ -10926,17 +10690,10 @@ impl DescribeSimulationJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSimulationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSimulationJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSimulationApplicationInput {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
@@ -10955,18 +10712,10 @@ impl DescribeSimulationApplicationInput {
         self.application_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSimulationApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSimulationApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
     #[doc(hidden)]
@@ -10985,21 +10734,13 @@ impl DescribeRobotApplicationInput {
         self.application_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRobotApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRobotApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
     #[doc(hidden)]
@@ -11011,20 +10752,13 @@ impl DescribeRobotInput {
         self.robot.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRobotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRobotInput");
-        formatter.field("robot", &self.robot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -11036,20 +10770,13 @@ impl DescribeFleetInput {
         self.fleet.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFleetInput");
-        formatter.field("fleet", &self.fleet);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDeploymentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     #[doc(hidden)]
@@ -11061,20 +10788,13 @@ impl DescribeDeploymentJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDeploymentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDeploymentJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -11093,18 +10813,10 @@ impl DeregisterRobotInput {
         self.robot.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterRobotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterRobotInput");
-        formatter.field("fleet", &self.fleet);
-        formatter.field("robot", &self.robot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
     #[doc(hidden)]
@@ -11116,17 +10828,10 @@ impl DeleteWorldTemplateInput {
         self.template.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorldTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorldTemplateInput");
-        formatter.field("template", &self.template);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSimulationApplicationInput {
     /// <p>The application information for the simulation application to delete.</p>
     #[doc(hidden)]
@@ -11145,18 +10850,10 @@ impl DeleteSimulationApplicationInput {
         self.application_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSimulationApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSimulationApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRobotApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
     #[doc(hidden)]
@@ -11175,21 +10872,13 @@ impl DeleteRobotApplicationInput {
         self.application_version.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRobotApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRobotApplicationInput");
-        formatter.field("application", &self.application);
-        formatter.field("application_version", &self.application_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
@@ -11201,20 +10890,13 @@ impl DeleteRobotInput {
         self.robot.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRobotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRobotInput");
-        formatter.field("robot", &self.robot);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
@@ -11226,17 +10908,10 @@ impl DeleteFleetInput {
         self.fleet.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFleetInput");
-        formatter.field("fleet", &self.fleet);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorldTemplateInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11280,21 +10955,10 @@ impl CreateWorldTemplateInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorldTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorldTemplateInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("template_body", &self.template_body);
-        formatter.field("template_location", &self.template_location);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorldGenerationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11342,21 +11006,10 @@ impl CreateWorldGenerationJobInput {
         self.world_tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorldGenerationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorldGenerationJobInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("template", &self.template);
-        formatter.field("world_count", &self.world_count);
-        formatter.field("tags", &self.tags);
-        formatter.field("world_tags", &self.world_tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorldExportJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11400,21 +11053,10 @@ impl CreateWorldExportJobInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorldExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorldExportJobInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("worlds", &self.worlds);
-        formatter.field("output_location", &self.output_location);
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSimulationJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
@@ -11545,31 +11187,10 @@ impl CreateSimulationJobInput {
         self.compute.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSimulationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSimulationJobInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("output_location", &self.output_location);
-        formatter.field("logging_config", &self.logging_config);
-        formatter.field(
-            "max_job_duration_in_seconds",
-            &self.max_job_duration_in_seconds,
-        );
-        formatter.field("iam_role", &self.iam_role);
-        formatter.field("failure_behavior", &self.failure_behavior);
-        formatter.field("robot_applications", &self.robot_applications);
-        formatter.field("simulation_applications", &self.simulation_applications);
-        formatter.field("data_sources", &self.data_sources);
-        formatter.field("tags", &self.tags);
-        formatter.field("vpc_config", &self.vpc_config);
-        formatter.field("compute", &self.compute);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
@@ -11602,20 +11223,10 @@ impl CreateSimulationApplicationVersionInput {
         self.image_digest.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSimulationApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSimulationApplicationVersionInput");
-        formatter.field("application", &self.application);
-        formatter.field("current_revision_id", &self.current_revision_id);
-        formatter.field("s3_etags", &self.s3_etags);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSimulationApplicationInput {
     /// <p>The name of the simulation application.</p>
     #[doc(hidden)]
@@ -11675,23 +11286,10 @@ impl CreateSimulationApplicationInput {
         self.environment.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSimulationApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSimulationApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("sources", &self.sources);
-        formatter.field("simulation_software_suite", &self.simulation_software_suite);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.field("rendering_engine", &self.rendering_engine);
-        formatter.field("tags", &self.tags);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
@@ -11724,20 +11322,10 @@ impl CreateRobotApplicationVersionInput {
         self.image_digest.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRobotApplicationVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRobotApplicationVersionInput");
-        formatter.field("application", &self.application);
-        formatter.field("current_revision_id", &self.current_revision_id);
-        formatter.field("s3_etags", &self.s3_etags);
-        formatter.field("image_digest", &self.image_digest);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRobotApplicationInput {
     /// <p>The name of the robot application.</p>
     #[doc(hidden)]
@@ -11781,24 +11369,13 @@ impl CreateRobotApplicationInput {
         self.environment.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRobotApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRobotApplicationInput");
-        formatter.field("name", &self.name);
-        formatter.field("sources", &self.sources);
-        formatter.field("robot_software_suite", &self.robot_software_suite);
-        formatter.field("tags", &self.tags);
-        formatter.field("environment", &self.environment);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRobotInput {
     /// <p>The name for the robot.</p>
     #[doc(hidden)]
@@ -11835,23 +11412,13 @@ impl CreateRobotInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRobotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRobotInput");
-        formatter.field("name", &self.name);
-        formatter.field("architecture", &self.architecture);
-        formatter.field("greengrass_group_id", &self.greengrass_group_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
@@ -11874,21 +11441,13 @@ impl CreateFleetInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFleetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFleetInput");
-        formatter.field("name", &self.name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDeploymentJobInput {
     /// <p>The requested deployment configuration.</p>
     #[doc(hidden)]
@@ -11935,24 +11494,10 @@ impl CreateDeploymentJobInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateDeploymentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDeploymentJobInput");
-        formatter.field("deployment_config", &self.deployment_config);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("fleet", &self.fleet);
-        formatter.field(
-            "deployment_application_configs",
-            &self.deployment_application_configs,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
     #[doc(hidden)]
@@ -11964,17 +11509,10 @@ impl CancelWorldGenerationJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for CancelWorldGenerationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorldGenerationJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelWorldExportJobInput {
     /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
     #[doc(hidden)]
@@ -11986,17 +11524,10 @@ impl CancelWorldExportJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for CancelWorldExportJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelWorldExportJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSimulationJobBatchInput {
     /// <p>The id of the batch to cancel.</p>
     #[doc(hidden)]
@@ -12008,17 +11539,10 @@ impl CancelSimulationJobBatchInput {
         self.batch.as_deref()
     }
 }
-impl std::fmt::Debug for CancelSimulationJobBatchInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSimulationJobBatchInput");
-        formatter.field("batch", &self.batch);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSimulationJobInput {
     /// <p>The simulation job ARN to cancel.</p>
     #[doc(hidden)]
@@ -12030,20 +11554,13 @@ impl CancelSimulationJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for CancelSimulationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelSimulationJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelDeploymentJobInput {
     /// <p>The deployment job ARN to cancel.</p>
     #[doc(hidden)]
@@ -12055,17 +11572,10 @@ impl CancelDeploymentJobInput {
         self.job.as_deref()
     }
 }
-impl std::fmt::Debug for CancelDeploymentJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelDeploymentJobInput");
-        formatter.field("job", &self.job);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobInput {
     /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
     #[doc(hidden)]
@@ -12077,17 +11587,10 @@ impl BatchDescribeSimulationJobInput {
         self.jobs.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDescribeSimulationJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDescribeSimulationJobInput");
-        formatter.field("jobs", &self.jobs);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     #[doc(hidden)]
@@ -12097,12 +11600,5 @@ impl BatchDeleteWorldsInput {
     /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
     pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
         self.worlds.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteWorldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteWorldsInput");
-        formatter.field("worlds", &self.worlds);
-        formatter.finish()
     }
 }

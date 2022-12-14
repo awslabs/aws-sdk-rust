@@ -3283,7 +3283,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     #[doc(hidden)]
@@ -3302,18 +3302,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container. </p>
     #[doc(hidden)]
@@ -3332,18 +3324,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAccessLoggingInput {
     /// <p>The name of the container that you want to stop access logging on.</p>
     #[doc(hidden)]
@@ -3355,17 +3339,10 @@ impl StopAccessLoggingInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for StopAccessLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAccessLoggingInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAccessLoggingInput {
     /// <p>The name of the container that you want to start access logging on.</p>
     #[doc(hidden)]
@@ -3377,17 +3354,10 @@ impl StartAccessLoggingInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for StartAccessLoggingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAccessLoggingInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutMetricPolicyInput {
     /// <p>The name of the container that you want to add the metric policy to.</p>
     #[doc(hidden)]
@@ -3414,18 +3384,10 @@ impl PutMetricPolicyInput {
         self.metric_policy.as_ref()
     }
 }
-impl std::fmt::Debug for PutMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("metric_policy", &self.metric_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLifecyclePolicyInput {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     #[doc(hidden)]
@@ -3444,18 +3406,10 @@ impl PutLifecyclePolicyInput {
         self.lifecycle_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("lifecycle_policy", &self.lifecycle_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCorsPolicyInput {
     /// <p>The name of the container that you want to assign the CORS policy to.</p>
     #[doc(hidden)]
@@ -3474,18 +3428,10 @@ impl PutCorsPolicyInput {
         self.cors_policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("cors_policy", &self.cors_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContainerPolicyInput {
     /// <p>The name of the container.</p>
     #[doc(hidden)]
@@ -3512,18 +3458,10 @@ impl PutContainerPolicyInput {
         self.policy.as_deref()
     }
 }
-impl std::fmt::Debug for PutContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("policy", &self.policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the container.</p>
     #[doc(hidden)]
@@ -3535,17 +3473,10 @@ impl ListTagsForResourceInput {
         self.resource.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource", &self.resource);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContainersInput {
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     #[doc(hidden)]
@@ -3564,18 +3495,10 @@ impl ListContainersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContainersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContainersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy.</p>
     #[doc(hidden)]
@@ -3587,17 +3510,10 @@ impl GetMetricPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLifecyclePolicyInput {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
     #[doc(hidden)]
@@ -3609,17 +3525,10 @@ impl GetLifecyclePolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCorsPolicyInput {
     /// <p>The name of the container that the policy is assigned to.</p>
     #[doc(hidden)]
@@ -3631,17 +3540,10 @@ impl GetCorsPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
     #[doc(hidden)]
@@ -3653,17 +3555,10 @@ impl GetContainerPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for GetContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContainerInput {
     /// <p>The name of the container to query.</p>
     #[doc(hidden)]
@@ -3675,17 +3570,10 @@ impl DescribeContainerInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMetricPolicyInput {
     /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
     #[doc(hidden)]
@@ -3697,17 +3585,10 @@ impl DeleteMetricPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMetricPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMetricPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     #[doc(hidden)]
@@ -3719,17 +3600,10 @@ impl DeleteLifecyclePolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLifecyclePolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLifecyclePolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
     #[doc(hidden)]
@@ -3741,17 +3615,10 @@ impl DeleteCorsPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteCorsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteCorsPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContainerPolicyInput {
     /// <p>The name of the container that holds the policy.</p>
     #[doc(hidden)]
@@ -3763,17 +3630,10 @@ impl DeleteContainerPolicyInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContainerPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContainerPolicyInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteContainerInput {
     /// <p>The name of the container to delete. </p>
     #[doc(hidden)]
@@ -3785,17 +3645,10 @@ impl DeleteContainerInput {
         self.container_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateContainerInput {
     /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
     #[doc(hidden)]
@@ -3812,13 +3665,5 @@ impl CreateContainerInput {
     /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateContainerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateContainerInput");
-        formatter.field("container_name", &self.container_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }

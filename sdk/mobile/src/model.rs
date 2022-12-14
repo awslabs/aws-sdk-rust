@@ -2,7 +2,7 @@
 
 /// <p> Detailed information about an AWS Mobile Hub project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectDetails {
     /// <p> Name of the project. </p>
     #[doc(hidden)]
@@ -61,20 +61,6 @@ impl ProjectDetails {
     /// <p> List of AWS resources associated with a project. </p>
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectDetails");
-        formatter.field("name", &self.name);
-        formatter.field("project_id", &self.project_id);
-        formatter.field("region", &self.region);
-        formatter.field("state", &self.state);
-        formatter.field("created_date", &self.created_date);
-        formatter.field("last_updated_date", &self.last_updated_date);
-        formatter.field("console_url", &self.console_url);
-        formatter.field("resources", &self.resources);
-        formatter.finish()
     }
 }
 /// See [`ProjectDetails`](crate::model::ProjectDetails).
@@ -212,7 +198,7 @@ impl ProjectDetails {
 
 /// <p> Information about an instance of an AWS resource associated with a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Resource {
     /// <p> Simplified name for type of AWS resource (e.g., bucket is an Amazon S3 bucket). </p>
     #[doc(hidden)]
@@ -254,17 +240,6 @@ impl Resource {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.attributes.as_ref()
-    }
-}
-impl std::fmt::Debug for Resource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Resource");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("name", &self.name);
-        formatter.field("arn", &self.arn);
-        formatter.field("feature", &self.feature);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`Resource`](crate::model::Resource).
@@ -465,7 +440,7 @@ impl AsRef<str> for ProjectState {
 
 /// <p> Summary information about an AWS Mobile Hub project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p> Name of the project. </p>
     #[doc(hidden)]
@@ -482,14 +457,6 @@ impl ProjectSummary {
     /// <p> Unique project identifier. </p>
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ProjectSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProjectSummary");
-        formatter.field("name", &self.name);
-        formatter.field("project_id", &self.project_id);
-        formatter.finish()
     }
 }
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
@@ -540,7 +507,7 @@ impl ProjectSummary {
 
 /// <p> The details of the bundle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BundleDetails {
     /// <p> Unique bundle identifier. </p>
     #[doc(hidden)]
@@ -585,18 +552,6 @@ impl BundleDetails {
     /// <p> Developer desktop or mobile app or website platforms. </p>
     pub fn available_platforms(&self) -> std::option::Option<&[crate::model::Platform]> {
         self.available_platforms.as_deref()
-    }
-}
-impl std::fmt::Debug for BundleDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BundleDetails");
-        formatter.field("bundle_id", &self.bundle_id);
-        formatter.field("title", &self.title);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field("icon_url", &self.icon_url);
-        formatter.field("available_platforms", &self.available_platforms);
-        formatter.finish()
     }
 }
 /// See [`BundleDetails`](crate::model::BundleDetails).

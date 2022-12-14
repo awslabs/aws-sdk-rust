@@ -4,7 +4,7 @@
 /// <p>For example, you could specify <code>Browser</code> as the <code>Name</code> and specify <code>Chrome,Firefox</code> as the <code>Values</code> to return events generated only from those browsers.</p>
 /// <p>Specifying <code>Invert</code> as the <code>Name</code> works as a "not equal to" filter. For example, specify <code>Invert</code> as the <code>Name</code> and specify <code>Chrome</code> as the value to return all events except events from user sessions with the Chrome browser.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
     /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
@@ -23,14 +23,6 @@ impl QueryFilter {
     /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryFilter");
-        formatter.field("name", &self.name);
-        formatter.field("values", &self.values);
-        formatter.finish()
     }
 }
 /// See [`QueryFilter`](crate::model::QueryFilter).
@@ -92,7 +84,7 @@ impl QueryFilter {
 
 /// <p>A structure that defines the time range that you want to retrieve results from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The beginning of the time range to retrieve performance events from.</p>
     #[doc(hidden)]
@@ -109,14 +101,6 @@ impl TimeRange {
     /// <p>The end of the time range to retrieve performance events from. If you omit this, the time range extends to the time that this operation is performed.</p>
     pub fn before(&self) -> i64 {
         self.before
-    }
-}
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("after", &self.after);
-        formatter.field("before", &self.before);
-        formatter.finish()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
@@ -167,7 +151,7 @@ impl TimeRange {
 
 /// <p>This structure contains much of the configuration data for the app monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorConfiguration {
     /// <p>The ID of the Amazon Cognito identity pool that is used to authorize the sending of data to RUM.</p>
     #[doc(hidden)]
@@ -251,21 +235,6 @@ impl AppMonitorConfiguration {
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a> </p>
     pub fn enable_x_ray(&self) -> std::option::Option<bool> {
         self.enable_x_ray
-    }
-}
-impl std::fmt::Debug for AppMonitorConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorConfiguration");
-        formatter.field("identity_pool_id", &self.identity_pool_id);
-        formatter.field("excluded_pages", &self.excluded_pages);
-        formatter.field("included_pages", &self.included_pages);
-        formatter.field("favorite_pages", &self.favorite_pages);
-        formatter.field("session_sample_rate", &self.session_sample_rate);
-        formatter.field("guest_role_arn", &self.guest_role_arn);
-        formatter.field("allow_cookies", &self.allow_cookies);
-        formatter.field("telemetries", &self.telemetries);
-        formatter.field("enable_x_ray", &self.enable_x_ray);
-        formatter.finish()
     }
 }
 /// See [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
@@ -555,7 +524,7 @@ impl AsRef<str> for Telemetry {
 
 /// <p>A structure that includes some data about app monitors and their settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorSummary {
     /// <p>The name of this app monitor.</p>
     #[doc(hidden)]
@@ -593,17 +562,6 @@ impl AppMonitorSummary {
     /// <p>The current state of this app monitor.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::StateEnum> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for AppMonitorSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`AppMonitorSummary`](crate::model::AppMonitorSummary).
@@ -788,7 +746,7 @@ impl AsRef<str> for StateEnum {
 
 /// <p>A RUM app monitor collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitor {
     /// <p>The name of the app monitor.</p>
     #[doc(hidden)]
@@ -860,21 +818,6 @@ impl AppMonitor {
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
     pub fn data_storage(&self) -> std::option::Option<&crate::model::DataStorage> {
         self.data_storage.as_ref()
-    }
-}
-impl std::fmt::Debug for AppMonitor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitor");
-        formatter.field("name", &self.name);
-        formatter.field("domain", &self.domain);
-        formatter.field("id", &self.id);
-        formatter.field("created", &self.created);
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("tags", &self.tags);
-        formatter.field("state", &self.state);
-        formatter.field("app_monitor_configuration", &self.app_monitor_configuration);
-        formatter.field("data_storage", &self.data_storage);
-        formatter.finish()
     }
 }
 /// See [`AppMonitor`](crate::model::AppMonitor).
@@ -1039,7 +982,7 @@ impl AppMonitor {
 
 /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
     #[doc(hidden)]
@@ -1049,13 +992,6 @@ impl DataStorage {
     /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
     pub fn cw_log(&self) -> std::option::Option<&crate::model::CwLog> {
         self.cw_log.as_ref()
-    }
-}
-impl std::fmt::Debug for DataStorage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataStorage");
-        formatter.field("cw_log", &self.cw_log);
-        formatter.finish()
     }
 }
 /// See [`DataStorage`](crate::model::DataStorage).
@@ -1094,7 +1030,7 @@ impl DataStorage {
 
 /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
     #[doc(hidden)]
@@ -1111,14 +1047,6 @@ impl CwLog {
     /// <p>The name of the log group where the copies are stored.</p>
     pub fn cw_log_group(&self) -> std::option::Option<&str> {
         self.cw_log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for CwLog {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CwLog");
-        formatter.field("cw_log_enabled", &self.cw_log_enabled);
-        formatter.field("cw_log_group", &self.cw_log_group);
-        formatter.finish()
     }
 }
 /// See [`CwLog`](crate::model::CwLog).
@@ -1169,7 +1097,7 @@ impl CwLog {
 
 /// <p>A structure that contains the information for one performance event that RUM collects from a user session with your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RumEvent {
     /// <p>A unique ID for this event.</p>
     #[doc(hidden)]
@@ -1207,17 +1135,6 @@ impl RumEvent {
     /// <p>A string containing details about the event.</p>
     pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
-    }
-}
-impl std::fmt::Debug for RumEvent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RumEvent");
-        formatter.field("id", &self.id);
-        formatter.field("timestamp", &self.timestamp);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("metadata", &self.metadata);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`RumEvent`](crate::model::RumEvent).
@@ -1307,7 +1224,7 @@ impl RumEvent {
 
 /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDetails {
     /// <p>The ID of the user for this user session. This ID is generated by RUM and does not include any personally identifiable information about the user.</p>
     #[doc(hidden)]
@@ -1324,14 +1241,6 @@ impl UserDetails {
     /// <p>The session ID that the performance events are from.</p>
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
-    }
-}
-impl std::fmt::Debug for UserDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserDetails");
-        formatter.field("user_id", &self.user_id);
-        formatter.field("session_id", &self.session_id);
-        formatter.finish()
     }
 }
 /// See [`UserDetails`](crate::model::UserDetails).
@@ -1382,7 +1291,7 @@ impl UserDetails {
 
 /// <p>A structure that contains information about the RUM app monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppMonitorDetails {
     /// <p>The name of the app monitor.</p>
     #[doc(hidden)]
@@ -1406,15 +1315,6 @@ impl AppMonitorDetails {
     /// <p>The version of the app monitor.</p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
-    }
-}
-impl std::fmt::Debug for AppMonitorDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppMonitorDetails");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("version", &self.version);
-        formatter.finish()
     }
 }
 /// See [`AppMonitorDetails`](crate::model::AppMonitorDetails).

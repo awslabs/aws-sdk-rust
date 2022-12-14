@@ -2,7 +2,7 @@
 
 /// <p>A summary of enabled controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     pub fn control_identifier(&self) -> std::option::Option<&str> {
         self.control_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for EnabledControlSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnabledControlSummary");
-        formatter.field("control_identifier", &self.control_identifier);
-        formatter.finish()
     }
 }
 /// See [`EnabledControlSummary`](crate::model::EnabledControlSummary).
@@ -60,7 +53,7 @@ impl EnabledControlSummary {
 
 /// <p>An operation performed by the control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ControlOperation {
     /// <p>One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.</p>
     #[doc(hidden)]
@@ -98,17 +91,6 @@ impl ControlOperation {
     /// <p>If the operation result is <code>FAILED</code>, this string contains a message explaining why the operation failed.</p>
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
-    }
-}
-impl std::fmt::Debug for ControlOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ControlOperation");
-        formatter.field("operation_type", &self.operation_type);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status", &self.status);
-        formatter.field("status_message", &self.status_message);
-        formatter.finish()
     }
 }
 /// See [`ControlOperation`](crate::model::ControlOperation).

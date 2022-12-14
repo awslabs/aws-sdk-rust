@@ -627,7 +627,7 @@ impl PutReportDefinitionInput {
 
 /// <p>Creates a Cost and Usage Report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutReportDefinitionInput {
     /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
     #[doc(hidden)]
@@ -639,17 +639,10 @@ impl PutReportDefinitionInput {
         self.report_definition.as_ref()
     }
 }
-impl std::fmt::Debug for PutReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutReportDefinitionInput");
-        formatter.field("report_definition", &self.report_definition);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ModifyReportDefinitionInput {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     #[doc(hidden)]
@@ -668,18 +661,10 @@ impl ModifyReportDefinitionInput {
         self.report_definition.as_ref()
     }
 }
-impl std::fmt::Debug for ModifyReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ModifyReportDefinitionInput");
-        formatter.field("report_name", &self.report_name);
-        formatter.field("report_definition", &self.report_definition);
-        formatter.finish()
-    }
-}
 
 /// <p>Requests a list of AWS Cost and Usage reports owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeReportDefinitionsInput {
     /// <p>The maximum number of results that AWS returns for the operation.</p>
     #[doc(hidden)]
@@ -698,18 +683,10 @@ impl DescribeReportDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeReportDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeReportDefinitionsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Deletes the specified report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     #[doc(hidden)]
@@ -719,12 +696,5 @@ impl DeleteReportDefinitionInput {
     /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
     pub fn report_name(&self) -> std::option::Option<&str> {
         self.report_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteReportDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteReportDefinitionInput");
-        formatter.field("report_name", &self.report_name);
-        formatter.finish()
     }
 }

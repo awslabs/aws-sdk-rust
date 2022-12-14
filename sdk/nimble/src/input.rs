@@ -206,7 +206,7 @@ impl AcceptEulasInput {
 pub mod create_launch_profile_input {
 
     /// A builder for [`CreateLaunchProfileInput`](crate::input::CreateLaunchProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -384,6 +384,24 @@ pub mod create_launch_profile_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_subnet_ids", &self.ec2_subnet_ids);
+            formatter.field(
+                "launch_profile_protocol_versions",
+                &self.launch_profile_protocol_versions,
+            );
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("stream_configuration", &self.stream_configuration);
+            formatter.field("studio_component_ids", &self.studio_component_ids);
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
+        }
+    }
 }
 impl CreateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunchProfile`](crate::operation::CreateLaunchProfile)>
@@ -527,7 +545,7 @@ impl CreateLaunchProfileInput {
 pub mod create_streaming_image_input {
 
     /// A builder for [`CreateStreamingImageInput`](crate::input::CreateStreamingImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -629,6 +647,18 @@ pub mod create_streaming_image_input {
                 studio_id: self.studio_id,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_image_id", &self.ec2_image_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -1274,7 +1304,7 @@ impl CreateStreamingSessionStreamInput {
 pub mod create_studio_input {
 
     /// A builder for [`CreateStudioInput`](crate::input::CreateStudioInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1401,6 +1431,22 @@ pub mod create_studio_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("admin_role_arn", &self.admin_role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "studio_encryption_configuration",
+                &self.studio_encryption_configuration,
+            );
+            formatter.field("studio_name", &self.studio_name);
+            formatter.field("tags", &self.tags);
+            formatter.field("user_role_arn", &self.user_role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl CreateStudioInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudio`](crate::operation::CreateStudio)>
@@ -1520,7 +1566,7 @@ impl CreateStudioInput {
 pub mod create_studio_component_input {
 
     /// A builder for [`CreateStudioComponentInput`](crate::input::CreateStudioComponentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -1758,6 +1804,28 @@ pub mod create_studio_component_input {
                 secure_initialization_role_arn: self.secure_initialization_role_arn,
                 runtime_role_arn: self.runtime_role_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("configuration", &self.configuration);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+            formatter.field("initialization_scripts", &self.initialization_scripts);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("script_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("subtype", &self.subtype);
+            formatter.field("tags", &self.tags);
+            formatter.field("r#type", &self.r#type);
+            formatter.field(
+                "secure_initialization_role_arn",
+                &self.secure_initialization_role_arn,
+            );
+            formatter.field("runtime_role_arn", &self.runtime_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -8875,7 +8943,7 @@ impl UntagResourceInput {
 pub mod update_launch_profile_input {
 
     /// A builder for [`UpdateLaunchProfileInput`](crate::input::UpdateLaunchProfileInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9016,6 +9084,23 @@ pub mod update_launch_profile_input {
                 studio_component_ids: self.studio_component_ids,
                 studio_id: self.studio_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("launch_profile_id", &self.launch_profile_id);
+            formatter.field(
+                "launch_profile_protocol_versions",
+                &self.launch_profile_protocol_versions,
+            );
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("stream_configuration", &self.stream_configuration);
+            formatter.field("studio_component_ids", &self.studio_component_ids);
+            formatter.field("studio_id", &self.studio_id);
+            formatter.finish()
         }
     }
 }
@@ -9441,7 +9526,7 @@ impl UpdateLaunchProfileMemberInput {
 pub mod update_streaming_image_input {
 
     /// A builder for [`UpdateStreamingImageInput`](crate::input::UpdateStreamingImageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
@@ -9517,6 +9602,17 @@ pub mod update_streaming_image_input {
                 streaming_image_id: self.streaming_image_id,
                 studio_id: self.studio_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("streaming_image_id", &self.streaming_image_id);
+            formatter.field("studio_id", &self.studio_id);
+            formatter.finish()
         }
     }
 }
@@ -9685,7 +9781,7 @@ impl UpdateStreamingImageInput {
 pub mod update_studio_input {
 
     /// A builder for [`UpdateStudioInput`](crate::input::UpdateStudioInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) admin_role_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -9762,6 +9858,17 @@ pub mod update_studio_input {
                 studio_id: self.studio_id,
                 user_role_arn: self.user_role_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("admin_role_arn", &self.admin_role_arn);
+            formatter.field("client_token", &self.client_token);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("user_role_arn", &self.user_role_arn);
+            formatter.finish()
         }
     }
 }
@@ -9907,7 +10014,7 @@ impl UpdateStudioInput {
 pub mod update_studio_component_input {
 
     /// A builder for [`UpdateStudioComponentInput`](crate::input::UpdateStudioComponentInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -10133,6 +10240,28 @@ pub mod update_studio_component_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_token", &self.client_token);
+            formatter.field("configuration", &self.configuration);
+            formatter.field("description", &"*** Sensitive Data Redacted ***");
+            formatter.field("ec2_security_group_ids", &self.ec2_security_group_ids);
+            formatter.field("initialization_scripts", &self.initialization_scripts);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("script_parameters", &"*** Sensitive Data Redacted ***");
+            formatter.field("studio_component_id", &self.studio_component_id);
+            formatter.field("studio_id", &self.studio_id);
+            formatter.field("subtype", &self.subtype);
+            formatter.field("r#type", &self.r#type);
+            formatter.field(
+                "secure_initialization_role_arn",
+                &self.secure_initialization_role_arn,
+            );
+            formatter.field("runtime_role_arn", &self.runtime_role_arn);
+            formatter.finish()
+        }
+    }
 }
 impl UpdateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudioComponent`](crate::operation::UpdateStudioComponent)>
@@ -10297,7 +10426,7 @@ impl UpdateStudioComponentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStudioSsoConfigurationRepairInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -10316,18 +10445,10 @@ impl StartStudioSsoConfigurationRepairInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStudioSsoConfigurationRepairInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutStudioMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -10360,20 +10481,10 @@ impl PutStudioMembersInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutStudioMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutStudioMembersInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("members", &self.members);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
@@ -10399,19 +10510,10 @@ impl ListStudioMembersInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListStudioMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudioMembersInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStudioMemberInput {
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     #[doc(hidden)]
@@ -10430,18 +10532,10 @@ impl GetStudioMemberInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStudioMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioMemberInput");
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -10467,19 +10561,10 @@ impl DeleteStudioMemberInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStudioMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudiosInput {
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
@@ -10489,13 +10574,6 @@ impl ListStudiosInput {
     /// <p>The token to request the next page of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListStudiosInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudiosInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 
@@ -10581,7 +10659,7 @@ impl std::fmt::Debug for CreateStudioInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -10598,14 +10676,6 @@ impl DeleteStudioInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -10665,7 +10735,7 @@ impl std::fmt::Debug for UpdateStudioInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStudioInput {
     /// <p>The studio ID. </p>
     #[doc(hidden)]
@@ -10677,17 +10747,10 @@ impl GetStudioInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStudioInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioInput");
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
@@ -10725,17 +10788,6 @@ impl ListStudioComponentsInput {
     /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub fn types(&self) -> std::option::Option<&[crate::model::StudioComponentType]> {
         self.types.as_deref()
-    }
-}
-impl std::fmt::Debug for ListStudioComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStudioComponentsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("states", &self.states);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("types", &self.types);
-        formatter.finish()
     }
 }
 
@@ -10874,7 +10926,7 @@ impl std::fmt::Debug for CreateStudioComponentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStudioComponentInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -10898,15 +10950,6 @@ impl DeleteStudioComponentInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStudioComponentInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("studio_component_id", &self.studio_component_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -11041,7 +11084,7 @@ impl std::fmt::Debug for UpdateStudioComponentInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStudioComponentInput {
     /// <p>The studio component ID.</p>
     #[doc(hidden)]
@@ -11060,18 +11103,10 @@ impl GetStudioComponentInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStudioComponentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStudioComponentInput");
-        formatter.field("studio_component_id", &self.studio_component_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11097,19 +11132,10 @@ impl StopStreamingSessionInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11135,19 +11161,10 @@ impl StartStreamingSessionInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for StartStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingSessionStreamInput {
     /// <p>The streaming session ID.</p>
     #[doc(hidden)]
@@ -11173,19 +11190,10 @@ impl GetStreamingSessionStreamInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamingSessionStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionStreamInput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("stream_id", &self.stream_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingSessionStreamInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11218,20 +11226,10 @@ impl CreateStreamingSessionStreamInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateStreamingSessionStreamInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionStreamInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("expiration_in_seconds", &self.expiration_in_seconds);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingSessionsInput {
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     #[doc(hidden)]
@@ -11271,21 +11269,10 @@ impl ListStreamingSessionsInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListStreamingSessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamingSessionsInput");
-        formatter.field("created_by", &self.created_by);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("session_ids", &self.session_ids);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11343,23 +11330,10 @@ impl CreateStreamingSessionInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("ec2_instance_type", &self.ec2_instance_type);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("owned_by", &self.owned_by);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11385,19 +11359,10 @@ impl DeleteStreamingSessionInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingSessionInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingSessionInput {
     /// <p>The streaming session ID.</p>
     #[doc(hidden)]
@@ -11416,18 +11381,10 @@ impl GetStreamingSessionInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamingSessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingSessionInput");
-        formatter.field("session_id", &self.session_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListStreamingImagesInput {
     /// <p>The token to request the next page of results. </p>
     #[doc(hidden)]
@@ -11451,15 +11408,6 @@ impl ListStreamingImagesInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ListStreamingImagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListStreamingImagesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("owner", &self.owner);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -11531,7 +11479,7 @@ impl std::fmt::Debug for CreateStreamingImageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStreamingImageInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11555,15 +11503,6 @@ impl DeleteStreamingImageInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStreamingImageInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -11623,7 +11562,7 @@ impl std::fmt::Debug for UpdateStreamingImageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStreamingImageInput {
     /// <p>The streaming image ID.</p>
     #[doc(hidden)]
@@ -11642,18 +11581,10 @@ impl GetStreamingImageInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetStreamingImageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetStreamingImageInput");
-        formatter.field("streaming_image_id", &self.streaming_image_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11693,21 +11624,10 @@ impl UpdateLaunchProfileMemberInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLaunchProfileMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("persona", &self.persona);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutLaunchProfileMembersInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11747,21 +11667,10 @@ impl PutLaunchProfileMembersInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutLaunchProfileMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutLaunchProfileMembersInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("identity_store_id", &self.identity_store_id);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("members", &self.members);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLaunchProfileMembersInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
@@ -11794,20 +11703,10 @@ impl ListLaunchProfileMembersInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListLaunchProfileMembersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLaunchProfileMembersInput");
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileMemberInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
@@ -11833,19 +11732,10 @@ impl GetLaunchProfileMemberInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLaunchProfileMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchProfileMemberInput");
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
@@ -11885,24 +11775,10 @@ impl GetLaunchProfileInitializationInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLaunchProfileInitializationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchProfileInitializationInput");
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field(
-            "launch_profile_protocol_versions",
-            &self.launch_profile_protocol_versions,
-        );
-        formatter.field("launch_purpose", &self.launch_purpose);
-        formatter.field("platform", &self.platform);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileDetailsInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
@@ -11921,18 +11797,10 @@ impl GetLaunchProfileDetailsInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLaunchProfileDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchProfileDetailsInput");
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchProfileMemberInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -11965,20 +11833,10 @@ impl DeleteLaunchProfileMemberInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLaunchProfileMemberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchProfileMemberInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLaunchProfilesInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
@@ -12016,17 +11874,6 @@ impl ListLaunchProfilesInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ListLaunchProfilesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLaunchProfilesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("principal_id", &self.principal_id);
-        formatter.field("states", &self.states);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -12127,7 +11974,7 @@ impl std::fmt::Debug for CreateLaunchProfileInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLaunchProfileInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -12151,15 +11998,6 @@ impl DeleteLaunchProfileInput {
     /// <p>The studio ID. </p>
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteLaunchProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLaunchProfileInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
     }
 }
 
@@ -12248,7 +12086,7 @@ impl std::fmt::Debug for UpdateLaunchProfileInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLaunchProfileInput {
     /// <p>The Launch Profile ID.</p>
     #[doc(hidden)]
@@ -12267,18 +12105,10 @@ impl GetLaunchProfileInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLaunchProfileInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLaunchProfileInput");
-        formatter.field("launch_profile_id", &self.launch_profile_id);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEulasInput {
     /// <p>The list of EULA IDs that should be returned</p>
     #[doc(hidden)]
@@ -12297,18 +12127,10 @@ impl ListEulasInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListEulasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulasInput");
-        formatter.field("eula_ids", &self.eula_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEulaInput {
     /// <p>The EULA ID.</p>
     #[doc(hidden)]
@@ -12320,17 +12142,10 @@ impl GetEulaInput {
         self.eula_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEulaInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEulaInput");
-        formatter.field("eula_id", &self.eula_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
     #[doc(hidden)]
@@ -12356,19 +12171,10 @@ impl ListEulaAcceptancesInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListEulaAcceptancesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListEulaAcceptancesInput");
-        formatter.field("eula_ids", &self.eula_ids);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AcceptEulasInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
@@ -12394,19 +12200,10 @@ impl AcceptEulasInput {
         self.studio_id.as_deref()
     }
 }
-impl std::fmt::Debug for AcceptEulasInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AcceptEulasInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("eula_ids", &self.eula_ids);
-        formatter.field("studio_id", &self.studio_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
     #[doc(hidden)]
@@ -12425,18 +12222,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
     #[doc(hidden)]
@@ -12459,18 +12248,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     #[doc(hidden)]
@@ -12480,12 +12261,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
     }
 }

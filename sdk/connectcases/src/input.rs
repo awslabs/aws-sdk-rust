@@ -5799,7 +5799,7 @@ impl UpdateTemplateInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -5825,19 +5825,10 @@ impl ListTemplatesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTemplatesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTemplatesInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -5877,21 +5868,10 @@ impl CreateTemplateInput {
         self.required_fields.as_deref()
     }
 }
-impl std::fmt::Debug for CreateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTemplateInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("layout_configuration", &self.layout_configuration);
-        formatter.field("required_fields", &self.required_fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -5938,22 +5918,10 @@ impl UpdateTemplateInput {
         self.required_fields.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTemplateInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("layout_configuration", &self.layout_configuration);
-        formatter.field("required_fields", &self.required_fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -5972,18 +5940,10 @@ impl GetTemplateInput {
         self.template_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetTemplateInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetTemplateInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLayoutsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6009,19 +5969,10 @@ impl ListLayoutsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListLayoutsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLayoutsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6047,19 +5998,10 @@ impl CreateLayoutInput {
         self.content.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLayoutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLayoutInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("name", &self.name);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6092,20 +6034,10 @@ impl UpdateLayoutInput {
         self.content.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLayoutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLayoutInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("layout_id", &self.layout_id);
-        formatter.field("name", &self.name);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6124,18 +6056,10 @@ impl GetLayoutInput {
         self.layout_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetLayoutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLayoutInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("layout_id", &self.layout_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6175,21 +6099,10 @@ impl ListFieldOptionsInput {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for ListFieldOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldOptionsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("field_id", &self.field_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("values", &self.values);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6215,19 +6128,10 @@ impl BatchPutFieldOptionsInput {
         self.options.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutFieldOptionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutFieldOptionsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("field_id", &self.field_id);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6246,18 +6150,10 @@ impl BatchGetFieldInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for BatchGetFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetFieldInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFieldsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6283,19 +6179,10 @@ impl ListFieldsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListFieldsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFieldsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6328,20 +6215,10 @@ impl CreateFieldInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFieldInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6374,20 +6251,10 @@ impl UpdateFieldInput {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFieldInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFieldInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("field_id", &self.field_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6406,18 +6273,10 @@ impl PutCaseEventConfigurationInput {
         self.event_bridge.as_ref()
     }
 }
-impl std::fmt::Debug for PutCaseEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutCaseEventConfigurationInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("event_bridge", &self.event_bridge);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6429,17 +6288,10 @@ impl GetCaseEventConfigurationInput {
         self.domain_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetCaseEventConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCaseEventConfigurationInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>The maximum number of results to return per page.</p>
     #[doc(hidden)]
@@ -6458,18 +6310,10 @@ impl ListDomainsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -6481,17 +6325,10 @@ impl CreateDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6503,17 +6340,10 @@ impl GetDomainInput {
         self.domain_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchCasesInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6567,23 +6397,10 @@ impl SearchCasesInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for SearchCasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchCasesInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("search_term", &self.search_term);
-        formatter.field("filter", &self.filter);
-        formatter.field("sorts", &self.sorts);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCasesForContactInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6616,20 +6433,10 @@ impl ListCasesForContactInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListCasesForContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCasesForContactInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("contact_arn", &self.contact_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6662,20 +6469,10 @@ impl CreateCaseInput {
         self.client_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateCaseInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("template_id", &self.template_id);
-        formatter.field("fields", &self.fields);
-        formatter.field("client_token", &self.client_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateCaseInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6701,19 +6498,10 @@ impl UpdateCaseInput {
         self.fields.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateCaseInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("case_id", &self.case_id);
-        formatter.field("fields", &self.fields);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetCaseInput {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
@@ -6746,20 +6534,10 @@ impl GetCaseInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCaseInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetCaseInput");
-        formatter.field("case_id", &self.case_id);
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("fields", &self.fields);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchRelatedItemsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6799,21 +6577,10 @@ impl SearchRelatedItemsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for SearchRelatedItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchRelatedItemsInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("case_id", &self.case_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
@@ -6846,20 +6613,10 @@ impl CreateRelatedItemInput {
         self.content.as_ref()
     }
 }
-impl std::fmt::Debug for CreateRelatedItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRelatedItemInput");
-        formatter.field("domain_id", &self.domain_id);
-        formatter.field("case_id", &self.case_id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("content", &self.content);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
     #[doc(hidden)]
@@ -6878,18 +6635,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
     #[doc(hidden)]
@@ -6914,18 +6663,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
     #[doc(hidden)]
@@ -6935,12 +6676,5 @@ impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN)</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }

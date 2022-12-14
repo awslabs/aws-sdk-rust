@@ -2,7 +2,7 @@
 
 /// <p>The pipeline (queue) that is used to manage jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The identifier for the pipeline. You use this value to identify the pipeline in which you want to perform a variety of operations, such as creating a job or a preset.</p>
     #[doc(hidden)]
@@ -198,23 +198,6 @@ impl Pipeline {
     /// </ul>
     pub fn thumbnail_config(&self) -> std::option::Option<&crate::model::PipelineOutputConfig> {
         self.thumbnail_config.as_ref()
-    }
-}
-impl std::fmt::Debug for Pipeline {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Pipeline");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("input_bucket", &self.input_bucket);
-        formatter.field("output_bucket", &self.output_bucket);
-        formatter.field("role", &self.role);
-        formatter.field("aws_kms_key_arn", &self.aws_kms_key_arn);
-        formatter.field("notifications", &self.notifications);
-        formatter.field("content_config", &self.content_config);
-        formatter.field("thumbnail_config", &self.thumbnail_config);
-        formatter.finish()
     }
 }
 /// See [`Pipeline`](crate::model::Pipeline).
@@ -504,7 +487,7 @@ impl Pipeline {
 
 /// <p>The <code>PipelineOutputConfig</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PipelineOutputConfig {
     /// <p> The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. Specify this value when all of the following are true:</p>
     /// <ul>
@@ -546,15 +529,6 @@ impl PipelineOutputConfig {
     /// <p> If you omit <code>Permissions</code>, Elastic Transcoder grants full control over the transcoded files and playlists to the owner of the role specified by <code>Role</code>, and grants no other permissions to any other user or group.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
-    }
-}
-impl std::fmt::Debug for PipelineOutputConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PipelineOutputConfig");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("storage_class", &self.storage_class);
-        formatter.field("permissions", &self.permissions);
-        formatter.finish()
     }
 }
 /// See [`PipelineOutputConfig`](crate::model::PipelineOutputConfig).
@@ -647,7 +621,7 @@ impl PipelineOutputConfig {
 
 /// <p>The <code>Permission</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Permission {
     /// <p>The type of value that appears in the Grantee object:</p>
     /// <ul>
@@ -697,15 +671,6 @@ impl Permission {
     /// </ul>
     pub fn access(&self) -> std::option::Option<&[std::string::String]> {
         self.access.as_deref()
-    }
-}
-impl std::fmt::Debug for Permission {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Permission");
-        formatter.field("grantee_type", &self.grantee_type);
-        formatter.field("grantee", &self.grantee);
-        formatter.field("access", &self.access);
-        formatter.finish()
     }
 }
 /// See [`Permission`](crate::model::Permission).
@@ -805,7 +770,7 @@ impl Permission {
 /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Notifications {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
     #[doc(hidden)]
@@ -836,16 +801,6 @@ impl Notifications {
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
-    }
-}
-impl std::fmt::Debug for Notifications {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Notifications");
-        formatter.field("progressing", &self.progressing);
-        formatter.field("completed", &self.completed);
-        formatter.field("warning", &self.warning);
-        formatter.field("error", &self.error);
-        formatter.finish()
     }
 }
 /// See [`Notifications`](crate::model::Notifications).
@@ -921,7 +876,7 @@ impl Notifications {
 /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
 /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Warning {
     /// <p>The code of the cross-regional warning.</p>
     #[doc(hidden)]
@@ -942,14 +897,6 @@ impl Warning {
     /// </note>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for Warning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Warning");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`Warning`](crate::model::Warning).
@@ -1004,7 +951,7 @@ impl Warning {
 
 /// <p>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Preset {
     /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
     #[doc(hidden)]
@@ -1070,21 +1017,6 @@ impl Preset {
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for Preset {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Preset");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("container", &self.container);
-        formatter.field("audio", &self.audio);
-        formatter.field("video", &self.video);
-        formatter.field("thumbnails", &self.thumbnails);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Preset`](crate::model::Preset).
@@ -1228,7 +1160,7 @@ impl Preset {
 
 /// <p>Thumbnails for videos.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Thumbnails {
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
@@ -1321,20 +1253,6 @@ impl Thumbnails {
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
     pub fn padding_policy(&self) -> std::option::Option<&str> {
         self.padding_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for Thumbnails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Thumbnails");
-        formatter.field("format", &self.format);
-        formatter.field("interval", &self.interval);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("aspect_ratio", &self.aspect_ratio);
-        formatter.field("max_width", &self.max_width);
-        formatter.field("max_height", &self.max_height);
-        formatter.field("sizing_policy", &self.sizing_policy);
-        formatter.field("padding_policy", &self.padding_policy);
-        formatter.finish()
     }
 }
 /// See [`Thumbnails`](crate::model::Thumbnails).
@@ -1497,7 +1415,7 @@ impl Thumbnails {
 
 /// <p>The <code>VideoParameters</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VideoParameters {
     /// <p>The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>, <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code> and <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code> when the container type is <code>gif</code>, and <code>mpeg2</code> when the container type is <code>mpg</code>.</p>
     #[doc(hidden)]
@@ -1909,27 +1827,6 @@ impl VideoParameters {
     /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
     pub fn watermarks(&self) -> std::option::Option<&[crate::model::PresetWatermark]> {
         self.watermarks.as_deref()
-    }
-}
-impl std::fmt::Debug for VideoParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VideoParameters");
-        formatter.field("codec", &self.codec);
-        formatter.field("codec_options", &self.codec_options);
-        formatter.field("keyframes_max_dist", &self.keyframes_max_dist);
-        formatter.field("fixed_gop", &self.fixed_gop);
-        formatter.field("bit_rate", &self.bit_rate);
-        formatter.field("frame_rate", &self.frame_rate);
-        formatter.field("max_frame_rate", &self.max_frame_rate);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("aspect_ratio", &self.aspect_ratio);
-        formatter.field("max_width", &self.max_width);
-        formatter.field("max_height", &self.max_height);
-        formatter.field("display_aspect_ratio", &self.display_aspect_ratio);
-        formatter.field("sizing_policy", &self.sizing_policy);
-        formatter.field("padding_policy", &self.padding_policy);
-        formatter.field("watermarks", &self.watermarks);
-        formatter.finish()
     }
 }
 /// See [`VideoParameters`](crate::model::VideoParameters).
@@ -2479,7 +2376,7 @@ impl VideoParameters {
 /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
 /// <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PresetWatermark {
     /// <p> A unique identifier for the settings for one watermark. The value of <code>Id</code> can be up to 40 characters long. </p>
     #[doc(hidden)]
@@ -2642,22 +2539,6 @@ impl PresetWatermark {
     /// </ul>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
-    }
-}
-impl std::fmt::Debug for PresetWatermark {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PresetWatermark");
-        formatter.field("id", &self.id);
-        formatter.field("max_width", &self.max_width);
-        formatter.field("max_height", &self.max_height);
-        formatter.field("sizing_policy", &self.sizing_policy);
-        formatter.field("horizontal_align", &self.horizontal_align);
-        formatter.field("horizontal_offset", &self.horizontal_offset);
-        formatter.field("vertical_align", &self.vertical_align);
-        formatter.field("vertical_offset", &self.vertical_offset);
-        formatter.field("opacity", &self.opacity);
-        formatter.field("target", &self.target);
-        formatter.finish()
     }
 }
 /// See [`PresetWatermark`](crate::model::PresetWatermark).
@@ -2909,7 +2790,7 @@ impl PresetWatermark {
 
 /// <p>Parameters required for transcoding audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioParameters {
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
     #[doc(hidden)]
@@ -3064,18 +2945,6 @@ impl AudioParameters {
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
     pub fn codec_options(&self) -> std::option::Option<&crate::model::AudioCodecOptions> {
         self.codec_options.as_ref()
-    }
-}
-impl std::fmt::Debug for AudioParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioParameters");
-        formatter.field("codec", &self.codec);
-        formatter.field("sample_rate", &self.sample_rate);
-        formatter.field("bit_rate", &self.bit_rate);
-        formatter.field("channels", &self.channels);
-        formatter.field("audio_packing_mode", &self.audio_packing_mode);
-        formatter.field("codec_options", &self.codec_options);
-        formatter.finish()
     }
 }
 /// See [`AudioParameters`](crate::model::AudioParameters).
@@ -3290,7 +3159,7 @@ impl AudioParameters {
 
 /// <p>Options associated with your audio codec.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AudioCodecOptions {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
@@ -3355,16 +3224,6 @@ impl AudioCodecOptions {
     /// <p>The supported value is <code>Signed</code>.</p>
     pub fn signed(&self) -> std::option::Option<&str> {
         self.signed.as_deref()
-    }
-}
-impl std::fmt::Debug for AudioCodecOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AudioCodecOptions");
-        formatter.field("profile", &self.profile);
-        formatter.field("bit_depth", &self.bit_depth);
-        formatter.field("bit_order", &self.bit_order);
-        formatter.field("signed", &self.signed);
-        formatter.finish()
     }
 }
 /// See [`AudioCodecOptions`](crate::model::AudioCodecOptions).
@@ -3473,7 +3332,7 @@ impl AudioCodecOptions {
 
 /// <p>A section of the response body that provides information about the job that is created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Job {
     /// <p>The identifier that Elastic Transcoder assigned to the job. You use this value to get settings for the job or to delete the job.</p>
     #[doc(hidden)]
@@ -3594,24 +3453,6 @@ impl Job {
     /// <p>Details about the timing of a job.</p>
     pub fn timing(&self) -> std::option::Option<&crate::model::Timing> {
         self.timing.as_ref()
-    }
-}
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Job");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("pipeline_id", &self.pipeline_id);
-        formatter.field("input", &self.input);
-        formatter.field("inputs", &self.inputs);
-        formatter.field("output", &self.output);
-        formatter.field("outputs", &self.outputs);
-        formatter.field("output_key_prefix", &self.output_key_prefix);
-        formatter.field("playlists", &self.playlists);
-        formatter.field("status", &self.status);
-        formatter.field("user_metadata", &self.user_metadata);
-        formatter.field("timing", &self.timing);
-        formatter.finish()
     }
 }
 /// See [`Job`](crate::model::Job).
@@ -3859,7 +3700,7 @@ impl Job {
 
 /// <p>Details about the timing of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Timing {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     #[doc(hidden)]
@@ -3883,15 +3724,6 @@ impl Timing {
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     pub fn finish_time_millis(&self) -> std::option::Option<i64> {
         self.finish_time_millis
-    }
-}
-impl std::fmt::Debug for Timing {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Timing");
-        formatter.field("submit_time_millis", &self.submit_time_millis);
-        formatter.field("start_time_millis", &self.start_time_millis);
-        formatter.field("finish_time_millis", &self.finish_time_millis);
-        formatter.finish()
     }
 }
 /// See [`Timing`](crate::model::Timing).
@@ -3954,7 +3786,7 @@ impl Timing {
 
 /// <p> Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Playlist {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
@@ -4026,19 +3858,6 @@ impl Playlist {
     /// <p>Information that further explains the status.</p>
     pub fn status_detail(&self) -> std::option::Option<&str> {
         self.status_detail.as_deref()
-    }
-}
-impl std::fmt::Debug for Playlist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Playlist");
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("output_keys", &self.output_keys);
-        formatter.field("hls_content_protection", &self.hls_content_protection);
-        formatter.field("play_ready_drm", &self.play_ready_drm);
-        formatter.field("status", &self.status);
-        formatter.field("status_detail", &self.status_detail);
-        formatter.finish()
     }
 }
 /// See [`Playlist`](crate::model::Playlist).
@@ -4187,7 +4006,7 @@ impl Playlist {
 /// <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p>
 /// <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PlayReadyDrm {
     /// <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     #[doc(hidden)]
@@ -4238,18 +4057,6 @@ impl PlayReadyDrm {
     /// <p>The location of the license key required to play DRM content. The URL must be an absolute path, and is referenced by the PlayReady header. The PlayReady header is referenced in the protection header of the client manifest for Smooth Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example URL looks like this: <code>https://www.example.com/exampleKey/</code> </p>
     pub fn license_acquisition_url(&self) -> std::option::Option<&str> {
         self.license_acquisition_url.as_deref()
-    }
-}
-impl std::fmt::Debug for PlayReadyDrm {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PlayReadyDrm");
-        formatter.field("format", &self.format);
-        formatter.field("key", &self.key);
-        formatter.field("key_md5", &self.key_md5);
-        formatter.field("key_id", &self.key_id);
-        formatter.field("initialization_vector", &self.initialization_vector);
-        formatter.field("license_acquisition_url", &self.license_acquisition_url);
-        formatter.finish()
     }
 }
 /// See [`PlayReadyDrm`](crate::model::PlayReadyDrm).
@@ -4360,7 +4167,7 @@ impl PlayReadyDrm {
 
 /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HlsContentProtection {
     /// <p>The content protection method for your output. The only valid value is: <code>aes-128</code>.</p>
     /// <p>This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata tag in the output playlist.</p>
@@ -4415,18 +4222,6 @@ impl HlsContentProtection {
     /// <p>Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code> must be left blank and Elastic Transcoder writes your data key into the same bucket as the associated playlist.</p>
     pub fn key_storage_policy(&self) -> std::option::Option<&str> {
         self.key_storage_policy.as_deref()
-    }
-}
-impl std::fmt::Debug for HlsContentProtection {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HlsContentProtection");
-        formatter.field("method", &self.method);
-        formatter.field("key", &self.key);
-        formatter.field("key_md5", &self.key_md5);
-        formatter.field("initialization_vector", &self.initialization_vector);
-        formatter.field("license_acquisition_url", &self.license_acquisition_url);
-        formatter.field("key_storage_policy", &self.key_storage_policy);
-        formatter.finish()
     }
 }
 /// See [`HlsContentProtection`](crate::model::HlsContentProtection).
@@ -4547,7 +4342,7 @@ impl HlsContentProtection {
 /// </important>
 /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobOutput {
     /// <p>A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is always 1.</p>
     #[doc(hidden)]
@@ -4767,36 +4562,6 @@ impl JobOutput {
     /// <p>If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined in the preset, this parameter is not be included in the job response.</p>
     pub fn applied_color_space_conversion(&self) -> std::option::Option<&str> {
         self.applied_color_space_conversion.as_deref()
-    }
-}
-impl std::fmt::Debug for JobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobOutput");
-        formatter.field("id", &self.id);
-        formatter.field("key", &self.key);
-        formatter.field("thumbnail_pattern", &self.thumbnail_pattern);
-        formatter.field("thumbnail_encryption", &self.thumbnail_encryption);
-        formatter.field("rotate", &self.rotate);
-        formatter.field("preset_id", &self.preset_id);
-        formatter.field("segment_duration", &self.segment_duration);
-        formatter.field("status", &self.status);
-        formatter.field("status_detail", &self.status_detail);
-        formatter.field("duration", &self.duration);
-        formatter.field("width", &self.width);
-        formatter.field("height", &self.height);
-        formatter.field("frame_rate", &self.frame_rate);
-        formatter.field("file_size", &self.file_size);
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.field("watermarks", &self.watermarks);
-        formatter.field("album_art", &self.album_art);
-        formatter.field("composition", &self.composition);
-        formatter.field("captions", &self.captions);
-        formatter.field("encryption", &self.encryption);
-        formatter.field(
-            "applied_color_space_conversion",
-            &self.applied_color_space_conversion,
-        );
-        formatter.finish()
     }
 }
 /// See [`JobOutput`](crate::model::JobOutput).
@@ -5187,7 +4952,7 @@ impl JobOutput {
 
 /// <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Encryption {
     /// <p>The specific server-side encryption mode that you want Elastic Transcoder to use when decrypting your input files or encrypting your output files. Elastic Transcoder supports the following options:</p>
     /// <ul>
@@ -5252,16 +5017,6 @@ impl Encryption {
     /// <p>The series of random bits created by a random bit generator, unique for every encryption operation, that you used to encrypt your input files or that you want Elastic Transcoder to use to encrypt your output files. The initialization vector must be base64-encoded, and it must be exactly 16 bytes long before being base64-encoded.</p>
     pub fn initialization_vector(&self) -> std::option::Option<&str> {
         self.initialization_vector.as_deref()
-    }
-}
-impl std::fmt::Debug for Encryption {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Encryption");
-        formatter.field("mode", &self.mode);
-        formatter.field("key", &self.key);
-        formatter.field("key_md5", &self.key_md5);
-        formatter.field("initialization_vector", &self.initialization_vector);
-        formatter.finish()
     }
 }
 /// See [`Encryption`](crate::model::Encryption).
@@ -5373,7 +5128,7 @@ impl Encryption {
 
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Captions {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
@@ -5413,15 +5168,6 @@ impl Captions {
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
     pub fn caption_formats(&self) -> std::option::Option<&[crate::model::CaptionFormat]> {
         self.caption_formats.as_deref()
-    }
-}
-impl std::fmt::Debug for Captions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Captions");
-        formatter.field("merge_policy", &self.merge_policy);
-        formatter.field("caption_sources", &self.caption_sources);
-        formatter.field("caption_formats", &self.caption_formats);
-        formatter.finish()
     }
 }
 /// See [`Captions`](crate::model::Captions).
@@ -5518,7 +5264,7 @@ impl Captions {
 
 /// <p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionFormat {
     /// <p>The format you specify determines whether Elastic Transcoder generates an embedded or sidecar caption for this output.</p>
     /// <ul>
@@ -5586,15 +5332,6 @@ impl CaptionFormat {
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your caption formats.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptionFormat {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionFormat");
-        formatter.field("format", &self.format);
-        formatter.field("pattern", &self.pattern);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`CaptionFormat`](crate::model::CaptionFormat).
@@ -5704,7 +5441,7 @@ impl CaptionFormat {
 
 /// <p>A source file for the input sidecar captions used during the transcoding process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CaptionSource {
     /// <p>The name of the sidecar caption file that you want Elastic Transcoder to include in the output file.</p>
     #[doc(hidden)]
@@ -5754,17 +5491,6 @@ impl CaptionSource {
     /// <p>The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption sources, or that you want Elastic Transcoder to apply to your caption sources.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for CaptionSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CaptionSource");
-        formatter.field("key", &self.key);
-        formatter.field("language", &self.language);
-        formatter.field("time_offset", &self.time_offset);
-        formatter.field("label", &self.label);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`CaptionSource`](crate::model::CaptionSource).
@@ -5867,7 +5593,7 @@ impl CaptionSource {
 /// <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     #[doc(hidden)]
@@ -5877,13 +5603,6 @@ impl Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     pub fn time_span(&self) -> std::option::Option<&crate::model::TimeSpan> {
         self.time_span.as_ref()
-    }
-}
-impl std::fmt::Debug for Clip {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Clip");
-        formatter.field("time_span", &self.time_span);
-        formatter.finish()
     }
 }
 /// See [`Clip`](crate::model::Clip).
@@ -5922,7 +5641,7 @@ impl Clip {
 
 /// <p>Settings that determine when a clip begins and how long it lasts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeSpan {
     /// <p>The place in the input file where you want a clip to start. The format can be either HH:mm:ss.SSS (maximum value: 23:59:59.999; SSS is thousandths of a second) or sssss.SSS (maximum value: 86399.999). If you don't specify a value, Elastic Transcoder starts at the beginning of the input file.</p>
     #[doc(hidden)]
@@ -5941,14 +5660,6 @@ impl TimeSpan {
     /// <p>If you specify a value longer than the duration of the input file, Elastic Transcoder transcodes the file and returns a warning message.</p>
     pub fn duration(&self) -> std::option::Option<&str> {
         self.duration.as_deref()
-    }
-}
-impl std::fmt::Debug for TimeSpan {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeSpan");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("duration", &self.duration);
-        formatter.finish()
     }
 }
 /// See [`TimeSpan`](crate::model::TimeSpan).
@@ -6001,7 +5712,7 @@ impl TimeSpan {
 
 /// <p>The .jpg or .png file associated with an audio file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobAlbumArt {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple album artwork files.</p>
     /// <ul>
@@ -6030,14 +5741,6 @@ impl JobAlbumArt {
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
     pub fn artwork(&self) -> std::option::Option<&[crate::model::Artwork]> {
         self.artwork.as_deref()
-    }
-}
-impl std::fmt::Debug for JobAlbumArt {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobAlbumArt");
-        formatter.field("merge_policy", &self.merge_policy);
-        formatter.field("artwork", &self.artwork);
-        formatter.finish()
     }
 }
 /// See [`JobAlbumArt`](crate::model::JobAlbumArt).
@@ -6111,7 +5814,7 @@ impl JobAlbumArt {
 /// <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.</p>
 /// <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Artwork {
     /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
     /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
@@ -6181,19 +5884,6 @@ impl Artwork {
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for Artwork {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Artwork");
-        formatter.field("input_key", &self.input_key);
-        formatter.field("max_width", &self.max_width);
-        formatter.field("max_height", &self.max_height);
-        formatter.field("sizing_policy", &self.sizing_policy);
-        formatter.field("padding_policy", &self.padding_policy);
-        formatter.field("album_art_format", &self.album_art_format);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`Artwork`](crate::model::Artwork).
@@ -6334,7 +6024,7 @@ impl Artwork {
 
 /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobWatermark {
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
     #[doc(hidden)]
@@ -6360,15 +6050,6 @@ impl JobWatermark {
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for JobWatermark {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobWatermark");
-        formatter.field("preset_watermark_id", &self.preset_watermark_id);
-        formatter.field("input_key", &self.input_key);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`JobWatermark`](crate::model::JobWatermark).
@@ -6439,7 +6120,7 @@ impl JobWatermark {
 
 /// <p>Information about the file that you're transcoding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JobInput {
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
@@ -6546,22 +6227,6 @@ impl JobInput {
     /// <p>The detected properties of the input file.</p>
     pub fn detected_properties(&self) -> std::option::Option<&crate::model::DetectedProperties> {
         self.detected_properties.as_ref()
-    }
-}
-impl std::fmt::Debug for JobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JobInput");
-        formatter.field("key", &self.key);
-        formatter.field("frame_rate", &self.frame_rate);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("aspect_ratio", &self.aspect_ratio);
-        formatter.field("interlaced", &self.interlaced);
-        formatter.field("container", &self.container);
-        formatter.field("encryption", &self.encryption);
-        formatter.field("time_span", &self.time_span);
-        formatter.field("input_captions", &self.input_captions);
-        formatter.field("detected_properties", &self.detected_properties);
-        formatter.finish()
     }
 }
 /// See [`JobInput`](crate::model::JobInput).
@@ -6751,7 +6416,7 @@ impl JobInput {
 
 /// <p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DetectedProperties {
     /// <p>The detected width of the input file, in pixels.</p>
     #[doc(hidden)]
@@ -6789,17 +6454,6 @@ impl DetectedProperties {
     /// <p>The detected duration of the input file, in milliseconds.</p>
     pub fn duration_millis(&self) -> std::option::Option<i64> {
         self.duration_millis
-    }
-}
-impl std::fmt::Debug for DetectedProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DetectedProperties");
-        formatter.field("width", &self.width);
-        formatter.field("height", &self.height);
-        formatter.field("frame_rate", &self.frame_rate);
-        formatter.field("file_size", &self.file_size);
-        formatter.field("duration_millis", &self.duration_millis);
-        formatter.finish()
     }
 }
 /// See [`DetectedProperties`](crate::model::DetectedProperties).
@@ -6886,7 +6540,7 @@ impl DetectedProperties {
 
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputCaptions {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
@@ -6915,14 +6569,6 @@ impl InputCaptions {
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     pub fn caption_sources(&self) -> std::option::Option<&[crate::model::CaptionSource]> {
         self.caption_sources.as_deref()
-    }
-}
-impl std::fmt::Debug for InputCaptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputCaptions");
-        formatter.field("merge_policy", &self.merge_policy);
-        formatter.field("caption_sources", &self.caption_sources);
-        formatter.finish()
     }
 }
 /// See [`InputCaptions`](crate::model::InputCaptions).
@@ -6994,7 +6640,7 @@ impl InputCaptions {
 
 /// <p>Information about the master playlist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobPlaylist {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p> Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
@@ -7052,17 +6698,6 @@ impl CreateJobPlaylist {
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn play_ready_drm(&self) -> std::option::Option<&crate::model::PlayReadyDrm> {
         self.play_ready_drm.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateJobPlaylist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobPlaylist");
-        formatter.field("name", &self.name);
-        formatter.field("format", &self.format);
-        formatter.field("output_keys", &self.output_keys);
-        formatter.field("hls_content_protection", &self.hls_content_protection);
-        formatter.field("play_ready_drm", &self.play_ready_drm);
-        formatter.finish()
     }
 }
 /// See [`CreateJobPlaylist`](crate::model::CreateJobPlaylist).
@@ -7182,7 +6817,7 @@ impl CreateJobPlaylist {
 
 /// <p>The <code>CreateJobOutput</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p> The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline that is specified by the pipeline ID. If a file with the specified name already exists in the output bucket, the job fails. </p>
     #[doc(hidden)]
@@ -7312,23 +6947,6 @@ impl CreateJobOutput {
     /// <p>You can specify encryption settings for any output files that you want to use for a transcoding job. This includes the output file and any watermarks, thumbnails, album art, or captions that you want to use. You must specify encryption settings for each file individually.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
         self.encryption.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobOutput");
-        formatter.field("key", &self.key);
-        formatter.field("thumbnail_pattern", &self.thumbnail_pattern);
-        formatter.field("thumbnail_encryption", &self.thumbnail_encryption);
-        formatter.field("rotate", &self.rotate);
-        formatter.field("preset_id", &self.preset_id);
-        formatter.field("segment_duration", &self.segment_duration);
-        formatter.field("watermarks", &self.watermarks);
-        formatter.field("album_art", &self.album_art);
-        formatter.field("composition", &self.composition);
-        formatter.field("captions", &self.captions);
-        formatter.field("encryption", &self.encryption);
-        formatter.finish()
     }
 }
 /// See [`CreateJobOutput`](crate::model::CreateJobOutput).

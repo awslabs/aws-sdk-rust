@@ -94,7 +94,7 @@ impl AsRef<str> for VerifySoftwareTokenResponseType {
 
 /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDomainConfigType {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
     #[doc(hidden)]
@@ -104,13 +104,6 @@ impl CustomDomainConfigType {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomDomainConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDomainConfigType");
-        formatter.field("certificate_arn", &self.certificate_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomDomainConfigType`](crate::model::CustomDomainConfigType).
@@ -511,7 +504,7 @@ impl std::fmt::Debug for UserPoolClientType {
 pub mod user_pool_client_type {
 
     /// A builder for [`UserPoolClientType`](crate::model::UserPoolClientType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_name: std::option::Option<std::string::String>,
@@ -1057,6 +1050,49 @@ pub mod user_pool_client_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_name", &self.client_name);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_modified_date", &self.last_modified_date);
+            formatter.field("creation_date", &self.creation_date);
+            formatter.field("refresh_token_validity", &self.refresh_token_validity);
+            formatter.field("access_token_validity", &self.access_token_validity);
+            formatter.field("id_token_validity", &self.id_token_validity);
+            formatter.field("token_validity_units", &self.token_validity_units);
+            formatter.field("read_attributes", &self.read_attributes);
+            formatter.field("write_attributes", &self.write_attributes);
+            formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
+            formatter.field(
+                "supported_identity_providers",
+                &self.supported_identity_providers,
+            );
+            formatter.field("callback_ur_ls", &self.callback_ur_ls);
+            formatter.field("logout_ur_ls", &self.logout_ur_ls);
+            formatter.field("default_redirect_uri", &self.default_redirect_uri);
+            formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
+            formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
+            formatter.field(
+                "allowed_o_auth_flows_user_pool_client",
+                &self.allowed_o_auth_flows_user_pool_client,
+            );
+            formatter.field("analytics_configuration", &self.analytics_configuration);
+            formatter.field(
+                "prevent_user_existence_errors",
+                &self.prevent_user_existence_errors,
+            );
+            formatter.field("enable_token_revocation", &self.enable_token_revocation);
+            formatter.field(
+                "enable_propagate_additional_user_context_data",
+                &self.enable_propagate_additional_user_context_data,
+            );
+            formatter.field("auth_session_validity", &self.auth_session_validity);
+            formatter.finish()
+        }
+    }
 }
 impl UserPoolClientType {
     /// Creates a new builder-style object to manufacture [`UserPoolClientType`](crate::model::UserPoolClientType).
@@ -1161,7 +1197,7 @@ impl AsRef<str> for PreventUserExistenceErrorTypes {
 /// <p>In Regions where Amazon Pinpointisn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsConfigurationType {
     /// <p>The application ID for an Amazon Pinpoint application.</p>
     #[doc(hidden)]
@@ -1199,17 +1235,6 @@ impl AnalyticsConfigurationType {
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub fn user_data_shared(&self) -> bool {
         self.user_data_shared
-    }
-}
-impl std::fmt::Debug for AnalyticsConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsConfigurationType");
-        formatter.field("application_id", &self.application_id);
-        formatter.field("application_arn", &self.application_arn);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("user_data_shared", &self.user_data_shared);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsConfigurationType`](crate::model::AnalyticsConfigurationType).
@@ -1528,7 +1553,7 @@ impl AsRef<str> for ExplicitAuthFlowsType {
 
 /// <p>The data type TokenValidityUnits specifies the time units you use when you set the duration of ID, access, and refresh tokens.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TokenValidityUnitsType {
     /// <p> A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>AccessTokenValidity</code> parameter. The default <code>AccessTokenValidity</code> time unit is hours.</p>
     #[doc(hidden)]
@@ -1552,15 +1577,6 @@ impl TokenValidityUnitsType {
     /// <p>A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code> parameter. The default <code>RefreshTokenValidity</code> time unit is days.</p>
     pub fn refresh_token(&self) -> std::option::Option<&crate::model::TimeUnitsType> {
         self.refresh_token.as_ref()
-    }
-}
-impl std::fmt::Debug for TokenValidityUnitsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TokenValidityUnitsType");
-        formatter.field("access_token", &self.access_token);
-        formatter.field("id_token", &self.id_token);
-        formatter.field("refresh_token", &self.refresh_token);
-        formatter.finish()
     }
 }
 /// See [`TokenValidityUnitsType`](crate::model::TokenValidityUnitsType).
@@ -1732,7 +1748,7 @@ impl AsRef<str> for TimeUnitsType {
 
 /// <p>The data type for <code>AccountRecoverySetting</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
     #[doc(hidden)]
@@ -1742,13 +1758,6 @@ impl AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
     pub fn recovery_mechanisms(&self) -> std::option::Option<&[crate::model::RecoveryOptionType]> {
         self.recovery_mechanisms.as_deref()
-    }
-}
-impl std::fmt::Debug for AccountRecoverySettingType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountRecoverySettingType");
-        formatter.field("recovery_mechanisms", &self.recovery_mechanisms);
-        formatter.finish()
     }
 }
 /// See [`AccountRecoverySettingType`](crate::model::AccountRecoverySettingType).
@@ -1797,7 +1806,7 @@ impl AccountRecoverySettingType {
 
 /// <p>A map containing a priority as a key, and recovery method name as a value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecoveryOptionType {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     #[doc(hidden)]
@@ -1814,14 +1823,6 @@ impl RecoveryOptionType {
     /// <p>The recovery method for a user.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::RecoveryOptionNameType> {
         self.name.as_ref()
-    }
-}
-impl std::fmt::Debug for RecoveryOptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecoveryOptionType");
-        formatter.field("priority", &self.priority);
-        formatter.field("name", &self.name);
-        formatter.finish()
     }
 }
 /// See [`RecoveryOptionType`](crate::model::RecoveryOptionType).
@@ -1972,7 +1973,7 @@ impl AsRef<str> for RecoveryOptionNameType {
 
 /// <p>The user pool add-ons type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
     #[doc(hidden)]
@@ -1984,13 +1985,6 @@ impl UserPoolAddOnsType {
         &self,
     ) -> std::option::Option<&crate::model::AdvancedSecurityModeType> {
         self.advanced_security_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPoolAddOnsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolAddOnsType");
-        formatter.field("advanced_security_mode", &self.advanced_security_mode);
-        formatter.finish()
     }
 }
 /// See [`UserPoolAddOnsType`](crate::model::UserPoolAddOnsType).
@@ -2133,7 +2127,7 @@ impl AsRef<str> for AdvancedSecurityModeType {
 
 /// <p>The configuration for creating a new user profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdminCreateUserConfigType {
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
     #[doc(hidden)]
@@ -2165,21 +2159,6 @@ impl AdminCreateUserConfigType {
         &self,
     ) -> std::option::Option<&crate::model::MessageTemplateType> {
         self.invite_message_template.as_ref()
-    }
-}
-impl std::fmt::Debug for AdminCreateUserConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdminCreateUserConfigType");
-        formatter.field(
-            "allow_admin_create_user_only",
-            &self.allow_admin_create_user_only,
-        );
-        formatter.field(
-            "unused_account_validity_days",
-            &self.unused_account_validity_days,
-        );
-        formatter.field("invite_message_template", &self.invite_message_template);
-        formatter.finish()
     }
 }
 /// See [`AdminCreateUserConfigType`](crate::model::AdminCreateUserConfigType).
@@ -2254,7 +2233,7 @@ impl AdminCreateUserConfigType {
 
 /// <p>The message template structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MessageTemplateType {
     /// <p>The message template for SMS messages.</p>
     #[doc(hidden)]
@@ -2278,15 +2257,6 @@ impl MessageTemplateType {
     /// <p>The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     pub fn email_subject(&self) -> std::option::Option<&str> {
         self.email_subject.as_deref()
-    }
-}
-impl std::fmt::Debug for MessageTemplateType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MessageTemplateType");
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("email_message", &self.email_message);
-        formatter.field("email_subject", &self.email_subject);
-        formatter.finish()
     }
 }
 /// See [`MessageTemplateType`](crate::model::MessageTemplateType).
@@ -2355,7 +2325,7 @@ impl MessageTemplateType {
 
 /// <p>The SMS configuration type is the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsConfigurationType {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>. </p>
     #[doc(hidden)]
@@ -2383,15 +2353,6 @@ impl SmsConfigurationType {
     /// <p> Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
     pub fn sns_region(&self) -> std::option::Option<&str> {
         self.sns_region.as_deref()
-    }
-}
-impl std::fmt::Debug for SmsConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsConfigurationType");
-        formatter.field("sns_caller_arn", &self.sns_caller_arn);
-        formatter.field("external_id", &self.external_id);
-        formatter.field("sns_region", &self.sns_region);
-        formatter.finish()
     }
 }
 /// See [`SmsConfigurationType`](crate::model::SmsConfigurationType).
@@ -2463,7 +2424,7 @@ impl SmsConfigurationType {
 /// <p>Amazon Cognito can send email messages with Amazon Simple Email Service resources in the Amazon Web Services Region where you created your user pool, and in alternate Regions in some cases. For more information on the supported Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email settings for Amazon Cognito user pools</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EmailConfigurationType {
     /// <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this email address in one of the following ways, depending on the value that you specify for the <code>EmailSendingAccount</code> parameter:</p>
     /// <ul>
@@ -2579,17 +2540,6 @@ impl EmailConfigurationType {
     /// </dl>
     pub fn configuration_set(&self) -> std::option::Option<&str> {
         self.configuration_set.as_deref()
-    }
-}
-impl std::fmt::Debug for EmailConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EmailConfigurationType");
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("reply_to_email_address", &self.reply_to_email_address);
-        formatter.field("email_sending_account", &self.email_sending_account);
-        formatter.field("from", &self.from);
-        formatter.field("configuration_set", &self.configuration_set);
-        formatter.finish()
     }
 }
 /// See [`EmailConfigurationType`](crate::model::EmailConfigurationType).
@@ -2860,7 +2810,7 @@ impl AsRef<str> for EmailSendingAccountType {
 /// <p>When you provide a value for any property of <code>DeviceConfiguration</code>, you activate the device remembering for the user pool.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceConfigurationType {
     /// <p>When true, a remembered device can sign in with device authentication instead of SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
     /// <p>Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in with devices that have not been confirmed or remembered must still provide a second factor in a user pool that requires MFA.</p>
@@ -2883,20 +2833,6 @@ impl DeviceConfigurationType {
     /// <p>When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito immediately remembers devices that you register in a <code>ConfirmDevice</code> API request.</p>
     pub fn device_only_remembered_on_user_prompt(&self) -> bool {
         self.device_only_remembered_on_user_prompt
-    }
-}
-impl std::fmt::Debug for DeviceConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceConfigurationType");
-        formatter.field(
-            "challenge_required_on_new_device",
-            &self.challenge_required_on_new_device,
-        );
-        formatter.field(
-            "device_only_remembered_on_user_prompt",
-            &self.device_only_remembered_on_user_prompt,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceConfigurationType`](crate::model::DeviceConfigurationType).
@@ -3058,7 +2994,7 @@ impl AsRef<str> for UserPoolMfaType {
 
 /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserAttributeUpdateSettingsType {
     /// <p>Requires that your user verifies their email address, phone number, or both before Amazon Cognito updates the value of that attribute. When you update a user attribute that has this option activated, Amazon Cognito sends a verification message to the new phone number or email address. Amazon Cognito doesn’t change the value of the attribute until your user responds to the verification message and confirms the new value.</p>
     /// <p>You can verify an updated email address or phone number with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html">VerifyUserAttribute</a> API request. You can also call the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a> API and set <code>email_verified</code> or <code>phone_number_verified</code> to true.</p>
@@ -3076,16 +3012,6 @@ impl UserAttributeUpdateSettingsType {
     ) -> std::option::Option<&[crate::model::VerifiedAttributeType]> {
         self.attributes_require_verification_before_update
             .as_deref()
-    }
-}
-impl std::fmt::Debug for UserAttributeUpdateSettingsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserAttributeUpdateSettingsType");
-        formatter.field(
-            "attributes_require_verification_before_update",
-            &self.attributes_require_verification_before_update,
-        );
-        formatter.finish()
     }
 }
 /// See [`UserAttributeUpdateSettingsType`](crate::model::UserAttributeUpdateSettingsType).
@@ -3236,7 +3162,7 @@ impl AsRef<str> for VerifiedAttributeType {
 
 /// <p>The template for verification messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VerificationMessageTemplateType {
     /// <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
     #[doc(hidden)]
@@ -3283,18 +3209,6 @@ impl VerificationMessageTemplateType {
         &self,
     ) -> std::option::Option<&crate::model::DefaultEmailOptionType> {
         self.default_email_option.as_ref()
-    }
-}
-impl std::fmt::Debug for VerificationMessageTemplateType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VerificationMessageTemplateType");
-        formatter.field("sms_message", &self.sms_message);
-        formatter.field("email_message", &self.email_message);
-        formatter.field("email_subject", &self.email_subject);
-        formatter.field("email_message_by_link", &self.email_message_by_link);
-        formatter.field("email_subject_by_link", &self.email_subject_by_link);
-        formatter.field("default_email_option", &self.default_email_option);
-        formatter.finish()
     }
 }
 /// See [`VerificationMessageTemplateType`](crate::model::VerificationMessageTemplateType).
@@ -3500,7 +3414,7 @@ impl AsRef<str> for DefaultEmailOptionType {
 
 /// <p>Specifies the configuration for Lambda triggers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaConfigType {
     /// <p>A pre-registration Lambda trigger.</p>
     #[doc(hidden)]
@@ -3598,28 +3512,6 @@ impl LambdaConfigType {
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaConfigType");
-        formatter.field("pre_sign_up", &self.pre_sign_up);
-        formatter.field("custom_message", &self.custom_message);
-        formatter.field("post_confirmation", &self.post_confirmation);
-        formatter.field("pre_authentication", &self.pre_authentication);
-        formatter.field("post_authentication", &self.post_authentication);
-        formatter.field("define_auth_challenge", &self.define_auth_challenge);
-        formatter.field("create_auth_challenge", &self.create_auth_challenge);
-        formatter.field(
-            "verify_auth_challenge_response",
-            &self.verify_auth_challenge_response,
-        );
-        formatter.field("pre_token_generation", &self.pre_token_generation);
-        formatter.field("user_migration", &self.user_migration);
-        formatter.field("custom_sms_sender", &self.custom_sms_sender);
-        formatter.field("custom_email_sender", &self.custom_email_sender);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`LambdaConfigType`](crate::model::LambdaConfigType).
@@ -3846,7 +3738,7 @@ impl LambdaConfigType {
 
 /// <p>A custom email sender Lambda configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomEmailLambdaVersionConfigType {
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
     #[doc(hidden)]
@@ -3865,14 +3757,6 @@ impl CustomEmailLambdaVersionConfigType {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomEmailLambdaVersionConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomEmailLambdaVersionConfigType");
-        formatter.field("lambda_version", &self.lambda_version);
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomEmailLambdaVersionConfigType`](crate::model::CustomEmailLambdaVersionConfigType).
@@ -4017,7 +3901,7 @@ impl AsRef<str> for CustomEmailSenderLambdaVersionType {
 
 /// <p>A custom SMS sender Lambda configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomSmsLambdaVersionConfigType {
     /// <p>Signature of the "request" attribute in the "event" information that Amazon Cognito passes to your custom SMS Lambda function. The only supported value is <code>V1_0</code>.</p>
     #[doc(hidden)]
@@ -4036,14 +3920,6 @@ impl CustomSmsLambdaVersionConfigType {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send SMS notifications to users.</p>
     pub fn lambda_arn(&self) -> std::option::Option<&str> {
         self.lambda_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomSmsLambdaVersionConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomSmsLambdaVersionConfigType");
-        formatter.field("lambda_version", &self.lambda_version);
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomSmsLambdaVersionConfigType`](crate::model::CustomSmsLambdaVersionConfigType).
@@ -4188,7 +4064,7 @@ impl AsRef<str> for CustomSmsSenderLambdaVersionType {
 
 /// <p>The policy associated with a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolPolicyType {
     /// <p>The password policy.</p>
     #[doc(hidden)]
@@ -4198,13 +4074,6 @@ impl UserPoolPolicyType {
     /// <p>The password policy.</p>
     pub fn password_policy(&self) -> std::option::Option<&crate::model::PasswordPolicyType> {
         self.password_policy.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPoolPolicyType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolPolicyType");
-        formatter.field("password_policy", &self.password_policy);
-        formatter.finish()
     }
 }
 /// See [`UserPoolPolicyType`](crate::model::UserPoolPolicyType).
@@ -4246,7 +4115,7 @@ impl UserPoolPolicyType {
 
 /// <p>The password policy type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PasswordPolicyType {
     /// <p>The minimum length of the password in the policy that you have set. This value can't be less than 6.</p>
     #[doc(hidden)]
@@ -4295,21 +4164,6 @@ impl PasswordPolicyType {
     /// </note>
     pub fn temporary_password_validity_days(&self) -> i32 {
         self.temporary_password_validity_days
-    }
-}
-impl std::fmt::Debug for PasswordPolicyType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PasswordPolicyType");
-        formatter.field("minimum_length", &self.minimum_length);
-        formatter.field("require_uppercase", &self.require_uppercase);
-        formatter.field("require_lowercase", &self.require_lowercase);
-        formatter.field("require_numbers", &self.require_numbers);
-        formatter.field("require_symbols", &self.require_symbols);
-        formatter.field(
-            "temporary_password_validity_days",
-            &self.temporary_password_validity_days,
-        );
-        formatter.finish()
     }
 }
 /// See [`PasswordPolicyType`](crate::model::PasswordPolicyType).
@@ -4417,7 +4271,7 @@ impl PasswordPolicyType {
 
 /// <p>The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CodeDeliveryDetailsType {
     /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
     #[doc(hidden)]
@@ -4441,15 +4295,6 @@ impl CodeDeliveryDetailsType {
     /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for CodeDeliveryDetailsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CodeDeliveryDetailsType");
-        formatter.field("destination", &self.destination);
-        formatter.field("delivery_medium", &self.delivery_medium);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
     }
 }
 /// See [`CodeDeliveryDetailsType`](crate::model::CodeDeliveryDetailsType).
@@ -4641,7 +4486,7 @@ impl std::fmt::Debug for AttributeType {
 pub mod attribute_type {
 
     /// A builder for [`AttributeType`](crate::model::AttributeType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
@@ -4675,6 +4520,14 @@ pub mod attribute_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("value", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl AttributeType {
     /// Creates a new builder-style object to manufacture [`AttributeType`](crate::model::AttributeType).
@@ -4685,7 +4538,7 @@ impl AttributeType {
 
 /// <p>A container for information about a resource server for a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceServerType {
     /// <p>The user pool ID for the user pool that hosts the resource server.</p>
     #[doc(hidden)]
@@ -4716,16 +4569,6 @@ impl ResourceServerType {
     /// <p>A list of scopes that are defined for the resource server.</p>
     pub fn scopes(&self) -> std::option::Option<&[crate::model::ResourceServerScopeType]> {
         self.scopes.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceServerType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceServerType");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("identifier", &self.identifier);
-        formatter.field("name", &self.name);
-        formatter.field("scopes", &self.scopes);
-        formatter.finish()
     }
 }
 /// See [`ResourceServerType`](crate::model::ResourceServerType).
@@ -4810,7 +4653,7 @@ impl ResourceServerType {
 
 /// <p>A resource server scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceServerScopeType {
     /// <p>The name of the scope.</p>
     #[doc(hidden)]
@@ -4827,14 +4670,6 @@ impl ResourceServerScopeType {
     /// <p>A description of the scope.</p>
     pub fn scope_description(&self) -> std::option::Option<&str> {
         self.scope_description.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceServerScopeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceServerScopeType");
-        formatter.field("scope_name", &self.scope_name);
-        formatter.field("scope_description", &self.scope_description);
-        formatter.finish()
     }
 }
 /// See [`ResourceServerScopeType`](crate::model::ResourceServerScopeType).
@@ -4888,7 +4723,7 @@ impl ResourceServerScopeType {
 
 /// <p>A container for information about an IdP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdentityProviderType {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -5049,20 +4884,6 @@ impl IdentityProviderType {
     /// <p>The date the IdP was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for IdentityProviderType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdentityProviderType");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("provider_details", &self.provider_details);
-        formatter.field("attribute_mapping", &self.attribute_mapping);
-        formatter.field("idp_identifiers", &self.idp_identifiers);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`IdentityProviderType`](crate::model::IdentityProviderType).
@@ -5453,7 +5274,7 @@ impl AsRef<str> for IdentityProviderTypeType {
 
 /// <p>The group type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupType {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
@@ -5509,19 +5330,6 @@ impl GroupType {
     /// <p>The date the group was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for GroupType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupType");
-        formatter.field("group_name", &self.group_name);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("description", &self.description);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("precedence", &self.precedence);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`GroupType`](crate::model::GroupType).
@@ -5826,7 +5634,7 @@ impl AsRef<str> for FeedbackValueType {
 
 /// <p>The user import job type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserImportJobType {
     /// <p>The job name for the user import job.</p>
     #[doc(hidden)]
@@ -5940,25 +5748,6 @@ impl UserImportJobType {
     /// <p>The message returned when the user import job is completed.</p>
     pub fn completion_message(&self) -> std::option::Option<&str> {
         self.completion_message.as_deref()
-    }
-}
-impl std::fmt::Debug for UserImportJobType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserImportJobType");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_id", &self.job_id);
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("pre_signed_url", &self.pre_signed_url);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("start_date", &self.start_date);
-        formatter.field("completion_date", &self.completion_date);
-        formatter.field("status", &self.status);
-        formatter.field("cloud_watch_logs_role_arn", &self.cloud_watch_logs_role_arn);
-        formatter.field("imported_users", &self.imported_users);
-        formatter.field("skipped_users", &self.skipped_users);
-        formatter.field("failed_users", &self.failed_users);
-        formatter.field("completion_message", &self.completion_message);
-        formatter.finish()
     }
 }
 /// See [`UserImportJobType`](crate::model::UserImportJobType).
@@ -6313,7 +6102,7 @@ impl AsRef<str> for UserImportJobStatusType {
 
 /// <p>Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserContextDataType {
     /// <p>The source IP address of your user's device.</p>
     #[doc(hidden)]
@@ -6330,14 +6119,6 @@ impl UserContextDataType {
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(&self) -> std::option::Option<&str> {
         self.encoded_data.as_deref()
-    }
-}
-impl std::fmt::Debug for UserContextDataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserContextDataType");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("encoded_data", &self.encoded_data);
-        formatter.finish()
     }
 }
 /// See [`UserContextDataType`](crate::model::UserContextDataType).
@@ -6389,7 +6170,7 @@ impl UserContextDataType {
 /// <p>An Amazon Pinpoint analytics endpoint.</p>
 /// <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics. For more information about Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon Cognito user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using Amazon Pinpoint analytics with Amazon Cognito user pools</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AnalyticsMetadataType {
     /// <p>The endpoint ID.</p>
     #[doc(hidden)]
@@ -6399,13 +6180,6 @@ impl AnalyticsMetadataType {
     /// <p>The endpoint ID.</p>
     pub fn analytics_endpoint_id(&self) -> std::option::Option<&str> {
         self.analytics_endpoint_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AnalyticsMetadataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalyticsMetadataType");
-        formatter.field("analytics_endpoint_id", &self.analytics_endpoint_id);
-        formatter.finish()
     }
 }
 /// See [`AnalyticsMetadataType`](crate::model::AnalyticsMetadataType).
@@ -6447,7 +6221,7 @@ impl AnalyticsMetadataType {
 
 /// <p> <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MfaOptionType {
     /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
     #[doc(hidden)]
@@ -6464,14 +6238,6 @@ impl MfaOptionType {
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for MfaOptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MfaOptionType");
-        formatter.field("delivery_medium", &self.delivery_medium);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.finish()
     }
 }
 /// See [`MfaOptionType`](crate::model::MfaOptionType).
@@ -6528,7 +6294,7 @@ impl MfaOptionType {
 
 /// <p>The type used for enabling software token MFA at the user pool level.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SoftwareTokenMfaConfigType {
     /// <p>Specifies whether software token MFA is activated.</p>
     #[doc(hidden)]
@@ -6538,13 +6304,6 @@ impl SoftwareTokenMfaConfigType {
     /// <p>Specifies whether software token MFA is activated.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for SoftwareTokenMfaConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SoftwareTokenMfaConfigType");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`SoftwareTokenMfaConfigType`](crate::model::SoftwareTokenMfaConfigType).
@@ -6583,7 +6342,7 @@ impl SoftwareTokenMfaConfigType {
 
 /// <p>The SMS text message multi-factor authentication (MFA) configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMfaConfigType {
     /// <p>The SMS authentication message that will be sent to users with the code they must sign in. The message must contain the ‘{####}’ placeholder, which is replaced with the code. If the message isn't included, and default message will be used.</p>
     #[doc(hidden)]
@@ -6600,17 +6359,6 @@ impl SmsMfaConfigType {
     /// <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role that you provide for your Amazon Web Services account.</p>
     pub fn sms_configuration(&self) -> std::option::Option<&crate::model::SmsConfigurationType> {
         self.sms_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SmsMfaConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMfaConfigType");
-        formatter.field(
-            "sms_authentication_message",
-            &self.sms_authentication_message,
-        );
-        formatter.field("sms_configuration", &self.sms_configuration);
-        formatter.finish()
     }
 }
 /// See [`SmsMfaConfigType`](crate::model::SmsMfaConfigType).
@@ -6667,7 +6415,7 @@ impl SmsMfaConfigType {
 
 /// <p>The type used for enabling software token MFA at the user level. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SoftwareTokenMfaSettingsType {
     /// <p>Specifies whether software token MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     #[doc(hidden)]
@@ -6684,14 +6432,6 @@ impl SoftwareTokenMfaSettingsType {
     /// <p>Specifies whether software token MFA is the preferred MFA method.</p>
     pub fn preferred_mfa(&self) -> bool {
         self.preferred_mfa
-    }
-}
-impl std::fmt::Debug for SoftwareTokenMfaSettingsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SoftwareTokenMfaSettingsType");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("preferred_mfa", &self.preferred_mfa);
-        formatter.finish()
     }
 }
 /// See [`SoftwareTokenMfaSettingsType`](crate::model::SoftwareTokenMfaSettingsType).
@@ -6742,7 +6482,7 @@ impl SoftwareTokenMfaSettingsType {
 
 /// <p>The type used for enabling SMS multi-factor authentication (MFA) at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SmsMfaSettingsType {
     /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     #[doc(hidden)]
@@ -6759,14 +6499,6 @@ impl SmsMfaSettingsType {
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub fn preferred_mfa(&self) -> bool {
         self.preferred_mfa
-    }
-}
-impl std::fmt::Debug for SmsMfaSettingsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SmsMfaSettingsType");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("preferred_mfa", &self.preferred_mfa);
-        formatter.finish()
     }
 }
 /// See [`SmsMfaSettingsType`](crate::model::SmsMfaSettingsType).
@@ -6888,7 +6620,7 @@ impl std::fmt::Debug for UiCustomizationType {
 pub mod ui_customization_type {
 
     /// A builder for [`UiCustomizationType`](crate::model::UiCustomizationType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -6988,6 +6720,19 @@ pub mod ui_customization_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("image_url", &self.image_url);
+            formatter.field("css", &self.css);
+            formatter.field("css_version", &self.css_version);
+            formatter.field("last_modified_date", &self.last_modified_date);
+            formatter.field("creation_date", &self.creation_date);
+            formatter.finish()
+        }
+    }
 }
 impl UiCustomizationType {
     /// Creates a new builder-style object to manufacture [`UiCustomizationType`](crate::model::UiCustomizationType).
@@ -7079,7 +6824,7 @@ impl std::fmt::Debug for RiskConfigurationType {
 pub mod risk_configuration_type {
 
     /// A builder for [`RiskConfigurationType`](crate::model::RiskConfigurationType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -7186,6 +6931,27 @@ pub mod risk_configuration_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "compromised_credentials_risk_configuration",
+                &self.compromised_credentials_risk_configuration,
+            );
+            formatter.field(
+                "account_takeover_risk_configuration",
+                &self.account_takeover_risk_configuration,
+            );
+            formatter.field(
+                "risk_exception_configuration",
+                &self.risk_exception_configuration,
+            );
+            formatter.field("last_modified_date", &self.last_modified_date);
+            formatter.finish()
+        }
+    }
 }
 impl RiskConfigurationType {
     /// Creates a new builder-style object to manufacture [`RiskConfigurationType`](crate::model::RiskConfigurationType).
@@ -7196,7 +6962,7 @@ impl RiskConfigurationType {
 
 /// <p>The type of the configuration to override the risk decision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RiskExceptionConfigurationType {
     /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
     #[doc(hidden)]
@@ -7213,14 +6979,6 @@ impl RiskExceptionConfigurationType {
     /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
     pub fn skipped_ip_range_list(&self) -> std::option::Option<&[std::string::String]> {
         self.skipped_ip_range_list.as_deref()
-    }
-}
-impl std::fmt::Debug for RiskExceptionConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RiskExceptionConfigurationType");
-        formatter.field("blocked_ip_range_list", &self.blocked_ip_range_list);
-        formatter.field("skipped_ip_range_list", &self.skipped_ip_range_list);
-        formatter.finish()
     }
 }
 /// See [`RiskExceptionConfigurationType`](crate::model::RiskExceptionConfigurationType).
@@ -7289,7 +7047,7 @@ impl RiskExceptionConfigurationType {
 
 /// <p>Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountTakeoverRiskConfigurationType {
     /// <p>The notify configuration used to construct email notifications.</p>
     #[doc(hidden)]
@@ -7308,14 +7066,6 @@ impl AccountTakeoverRiskConfigurationType {
     /// <p>Account takeover risk configuration actions.</p>
     pub fn actions(&self) -> std::option::Option<&crate::model::AccountTakeoverActionsType> {
         self.actions.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountTakeoverRiskConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountTakeoverRiskConfigurationType");
-        formatter.field("notify_configuration", &self.notify_configuration);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`AccountTakeoverRiskConfigurationType`](crate::model::AccountTakeoverRiskConfigurationType).
@@ -7375,7 +7125,7 @@ impl AccountTakeoverRiskConfigurationType {
 
 /// <p>Account takeover actions type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountTakeoverActionsType {
     /// <p>Action to take for a low risk.</p>
     #[doc(hidden)]
@@ -7399,15 +7149,6 @@ impl AccountTakeoverActionsType {
     /// <p>Action to take for a high risk.</p>
     pub fn high_action(&self) -> std::option::Option<&crate::model::AccountTakeoverActionType> {
         self.high_action.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountTakeoverActionsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountTakeoverActionsType");
-        formatter.field("low_action", &self.low_action);
-        formatter.field("medium_action", &self.medium_action);
-        formatter.field("high_action", &self.high_action);
-        formatter.finish()
     }
 }
 /// See [`AccountTakeoverActionsType`](crate::model::AccountTakeoverActionsType).
@@ -7479,7 +7220,7 @@ impl AccountTakeoverActionsType {
 
 /// <p>Account takeover action type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
     #[doc(hidden)]
@@ -7510,14 +7251,6 @@ impl AccountTakeoverActionType {
         &self,
     ) -> std::option::Option<&crate::model::AccountTakeoverEventActionType> {
         self.event_action.as_ref()
-    }
-}
-impl std::fmt::Debug for AccountTakeoverActionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccountTakeoverActionType");
-        formatter.field("notify", &self.notify);
-        formatter.field("event_action", &self.event_action);
-        formatter.finish()
     }
 }
 /// See [`AccountTakeoverActionType`](crate::model::AccountTakeoverActionType).
@@ -7685,7 +7418,7 @@ impl AsRef<str> for AccountTakeoverEventActionType {
 
 /// <p>The notify configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyConfigurationType {
     /// <p>The email address that is sending the email. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
     #[doc(hidden)]
@@ -7730,18 +7463,6 @@ impl NotifyConfigurationType {
     /// <p>The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk.</p>
     pub fn mfa_email(&self) -> std::option::Option<&crate::model::NotifyEmailType> {
         self.mfa_email.as_ref()
-    }
-}
-impl std::fmt::Debug for NotifyConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyConfigurationType");
-        formatter.field("from", &self.from);
-        formatter.field("reply_to", &self.reply_to);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("block_email", &self.block_email);
-        formatter.field("no_action_email", &self.no_action_email);
-        formatter.field("mfa_email", &self.mfa_email);
-        formatter.finish()
     }
 }
 /// See [`NotifyConfigurationType`](crate::model::NotifyConfigurationType).
@@ -7849,7 +7570,7 @@ impl NotifyConfigurationType {
 
 /// <p>The notify email type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotifyEmailType {
     /// <p>The email subject.</p>
     #[doc(hidden)]
@@ -7873,15 +7594,6 @@ impl NotifyEmailType {
     /// <p>The email text body.</p>
     pub fn text_body(&self) -> std::option::Option<&str> {
         self.text_body.as_deref()
-    }
-}
-impl std::fmt::Debug for NotifyEmailType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotifyEmailType");
-        formatter.field("subject", &self.subject);
-        formatter.field("html_body", &self.html_body);
-        formatter.field("text_body", &self.text_body);
-        formatter.finish()
     }
 }
 /// See [`NotifyEmailType`](crate::model::NotifyEmailType).
@@ -7944,7 +7656,7 @@ impl NotifyEmailType {
 
 /// <p>The compromised credentials risk configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompromisedCredentialsRiskConfigurationType {
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
     #[doc(hidden)]
@@ -7961,14 +7673,6 @@ impl CompromisedCredentialsRiskConfigurationType {
     /// <p>The compromised credentials risk configuration actions.</p>
     pub fn actions(&self) -> std::option::Option<&crate::model::CompromisedCredentialsActionsType> {
         self.actions.as_ref()
-    }
-}
-impl std::fmt::Debug for CompromisedCredentialsRiskConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompromisedCredentialsRiskConfigurationType");
-        formatter.field("event_filter", &self.event_filter);
-        formatter.field("actions", &self.actions);
-        formatter.finish()
     }
 }
 /// See [`CompromisedCredentialsRiskConfigurationType`](crate::model::CompromisedCredentialsRiskConfigurationType).
@@ -8031,7 +7735,7 @@ impl CompromisedCredentialsRiskConfigurationType {
 
 /// <p>The compromised credentials actions type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
     #[doc(hidden)]
@@ -8043,13 +7747,6 @@ impl CompromisedCredentialsActionsType {
         &self,
     ) -> std::option::Option<&crate::model::CompromisedCredentialsEventActionType> {
         self.event_action.as_ref()
-    }
-}
-impl std::fmt::Debug for CompromisedCredentialsActionsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompromisedCredentialsActionsType");
-        formatter.field("event_action", &self.event_action);
-        formatter.finish()
     }
 }
 /// See [`CompromisedCredentialsActionsType`](crate::model::CompromisedCredentialsActionsType).
@@ -8345,7 +8042,7 @@ impl std::fmt::Debug for AuthenticationResultType {
 pub mod authentication_result_type {
 
     /// A builder for [`AuthenticationResultType`](crate::model::AuthenticationResultType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
         pub(crate) expires_in: std::option::Option<i32>,
@@ -8433,6 +8130,18 @@ pub mod authentication_result_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("expires_in", &self.expires_in);
+            formatter.field("token_type", &self.token_type);
+            formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("id_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("new_device_metadata", &self.new_device_metadata);
+            formatter.finish()
+        }
+    }
 }
 impl AuthenticationResultType {
     /// Creates a new builder-style object to manufacture [`AuthenticationResultType`](crate::model::AuthenticationResultType).
@@ -8443,7 +8152,7 @@ impl AuthenticationResultType {
 
 /// <p>The new device metadata type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NewDeviceMetadataType {
     /// <p>The device key.</p>
     #[doc(hidden)]
@@ -8460,14 +8169,6 @@ impl NewDeviceMetadataType {
     /// <p>The device group key.</p>
     pub fn device_group_key(&self) -> std::option::Option<&str> {
         self.device_group_key.as_deref()
-    }
-}
-impl std::fmt::Debug for NewDeviceMetadataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NewDeviceMetadataType");
-        formatter.field("device_key", &self.device_key);
-        formatter.field("device_group_key", &self.device_group_key);
-        formatter.finish()
     }
 }
 /// See [`NewDeviceMetadataType`](crate::model::NewDeviceMetadataType).
@@ -8753,7 +8454,7 @@ impl std::fmt::Debug for UserType {
 pub mod user_type {
 
     /// A builder for [`UserType`](crate::model::UserType).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeType>>,
@@ -8892,6 +8593,19 @@ pub mod user_type {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("username", &"*** Sensitive Data Redacted ***");
+            formatter.field("attributes", &self.attributes);
+            formatter.field("user_create_date", &self.user_create_date);
+            formatter.field("user_last_modified_date", &self.user_last_modified_date);
+            formatter.field("enabled", &self.enabled);
+            formatter.field("user_status", &self.user_status);
+            formatter.field("mfa_options", &self.mfa_options);
+            formatter.finish()
+        }
+    }
 }
 impl UserType {
     /// Creates a new builder-style object to manufacture [`UserType`](crate::model::UserType).
@@ -9025,7 +8739,7 @@ impl AsRef<str> for UserStatusType {
 
 /// <p>A user pool description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolDescriptionType {
     /// <p>The ID in a user pool description.</p>
     #[doc(hidden)]
@@ -9070,18 +8784,6 @@ impl UserPoolDescriptionType {
     /// <p>The date the user pool description was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPoolDescriptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolDescriptionType");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`UserPoolDescriptionType`](crate::model::UserPoolDescriptionType).
@@ -9318,7 +9020,7 @@ impl std::fmt::Debug for UserPoolClientDescription {
 pub mod user_pool_client_description {
 
     /// A builder for [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -9364,6 +9066,15 @@ pub mod user_pool_client_description {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_pool_id", &self.user_pool_id);
+            formatter.field("client_name", &self.client_name);
+            formatter.finish()
+        }
+    }
 }
 impl UserPoolClientDescription {
     /// Creates a new builder-style object to manufacture [`UserPoolClientDescription`](crate::model::UserPoolClientDescription).
@@ -9374,7 +9085,7 @@ impl UserPoolClientDescription {
 
 /// <p>A container for IdP details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProviderDescription {
     /// <p>The IdP name.</p>
     #[doc(hidden)]
@@ -9405,16 +9116,6 @@ impl ProviderDescription {
     /// <p>The date the provider was added to the user pool.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
-    }
-}
-impl std::fmt::Debug for ProviderDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProviderDescription");
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("provider_type", &self.provider_type);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.finish()
     }
 }
 /// See [`ProviderDescription`](crate::model::ProviderDescription).
@@ -9501,7 +9202,7 @@ impl ProviderDescription {
 
 /// <p>The device type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceType {
     /// <p>The device key.</p>
     #[doc(hidden)]
@@ -9541,20 +9242,6 @@ impl DeviceType {
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.device_last_authenticated_date.as_ref()
-    }
-}
-impl std::fmt::Debug for DeviceType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceType");
-        formatter.field("device_key", &self.device_key);
-        formatter.field("device_attributes", &self.device_attributes);
-        formatter.field("device_create_date", &self.device_create_date);
-        formatter.field("device_last_modified_date", &self.device_last_modified_date);
-        formatter.field(
-            "device_last_authenticated_date",
-            &self.device_last_authenticated_date,
-        );
-        formatter.finish()
     }
 }
 /// See [`DeviceType`](crate::model::DeviceType).
@@ -9783,7 +9470,7 @@ impl AsRef<str> for AuthFlowType {
 
 /// <p>A container for information about a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainDescriptionType {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
@@ -9844,20 +9531,6 @@ impl DomainDescriptionType {
         &self,
     ) -> std::option::Option<&crate::model::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
-    }
-}
-impl std::fmt::Debug for DomainDescriptionType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DomainDescriptionType");
-        formatter.field("user_pool_id", &self.user_pool_id);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.field("domain", &self.domain);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("cloud_front_distribution", &self.cloud_front_distribution);
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.field("custom_domain_config", &self.custom_domain_config);
-        formatter.finish()
     }
 }
 /// See [`DomainDescriptionType`](crate::model::DomainDescriptionType).
@@ -10097,7 +9770,7 @@ impl AsRef<str> for DomainStatusType {
 
 /// <p>A container for information about the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserPoolType {
     /// <p>The ID of the user pool.</p>
     #[doc(hidden)]
@@ -10396,62 +10069,6 @@ impl UserPoolType {
         &self,
     ) -> std::option::Option<&crate::model::AccountRecoverySettingType> {
         self.account_recovery_setting.as_ref()
-    }
-}
-impl std::fmt::Debug for UserPoolType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserPoolType");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("policies", &self.policies);
-        formatter.field("lambda_config", &self.lambda_config);
-        formatter.field("status", &self.status);
-        formatter.field("last_modified_date", &self.last_modified_date);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("schema_attributes", &self.schema_attributes);
-        formatter.field("auto_verified_attributes", &self.auto_verified_attributes);
-        formatter.field("alias_attributes", &self.alias_attributes);
-        formatter.field("username_attributes", &self.username_attributes);
-        formatter.field("sms_verification_message", &self.sms_verification_message);
-        formatter.field(
-            "email_verification_message",
-            &self.email_verification_message,
-        );
-        formatter.field(
-            "email_verification_subject",
-            &self.email_verification_subject,
-        );
-        formatter.field(
-            "verification_message_template",
-            &self.verification_message_template,
-        );
-        formatter.field(
-            "sms_authentication_message",
-            &self.sms_authentication_message,
-        );
-        formatter.field(
-            "user_attribute_update_settings",
-            &self.user_attribute_update_settings,
-        );
-        formatter.field("mfa_configuration", &self.mfa_configuration);
-        formatter.field("device_configuration", &self.device_configuration);
-        formatter.field("estimated_number_of_users", &self.estimated_number_of_users);
-        formatter.field("email_configuration", &self.email_configuration);
-        formatter.field("sms_configuration", &self.sms_configuration);
-        formatter.field("user_pool_tags", &self.user_pool_tags);
-        formatter.field("sms_configuration_failure", &self.sms_configuration_failure);
-        formatter.field(
-            "email_configuration_failure",
-            &self.email_configuration_failure,
-        );
-        formatter.field("domain", &self.domain);
-        formatter.field("custom_domain", &self.custom_domain);
-        formatter.field("admin_create_user_config", &self.admin_create_user_config);
-        formatter.field("user_pool_add_ons", &self.user_pool_add_ons);
-        formatter.field("username_configuration", &self.username_configuration);
-        formatter.field("arn", &self.arn);
-        formatter.field("account_recovery_setting", &self.account_recovery_setting);
-        formatter.finish()
     }
 }
 /// See [`UserPoolType`](crate::model::UserPoolType).
@@ -11057,7 +10674,7 @@ impl UserPoolType {
 
 /// <p>The username configuration type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UsernameConfigurationType {
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
@@ -11097,13 +10714,6 @@ impl UsernameConfigurationType {
     /// </dl>
     pub fn case_sensitive(&self) -> std::option::Option<bool> {
         self.case_sensitive
-    }
-}
-impl std::fmt::Debug for UsernameConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UsernameConfigurationType");
-        formatter.field("case_sensitive", &self.case_sensitive);
-        formatter.finish()
     }
 }
 /// See [`UsernameConfigurationType`](crate::model::UsernameConfigurationType).
@@ -11361,7 +10971,7 @@ impl AsRef<str> for AliasAttributeType {
 
 /// <p>Contains information about the schema attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaAttributeType {
     /// <p>A schema attribute of the name type.</p>
     #[doc(hidden)]
@@ -11427,25 +11037,6 @@ impl SchemaAttributeType {
         &self,
     ) -> std::option::Option<&crate::model::StringAttributeConstraintsType> {
         self.string_attribute_constraints.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaAttributeType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaAttributeType");
-        formatter.field("name", &self.name);
-        formatter.field("attribute_data_type", &self.attribute_data_type);
-        formatter.field("developer_only_attribute", &self.developer_only_attribute);
-        formatter.field("mutable", &self.mutable);
-        formatter.field("required", &self.required);
-        formatter.field(
-            "number_attribute_constraints",
-            &self.number_attribute_constraints,
-        );
-        formatter.field(
-            "string_attribute_constraints",
-            &self.string_attribute_constraints,
-        );
-        formatter.finish()
     }
 }
 /// See [`SchemaAttributeType`](crate::model::SchemaAttributeType).
@@ -11581,7 +11172,7 @@ impl SchemaAttributeType {
 
 /// <p>The constraints associated with a string attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StringAttributeConstraintsType {
     /// <p>The minimum length.</p>
     #[doc(hidden)]
@@ -11598,14 +11189,6 @@ impl StringAttributeConstraintsType {
     /// <p>The maximum length.</p>
     pub fn max_length(&self) -> std::option::Option<&str> {
         self.max_length.as_deref()
-    }
-}
-impl std::fmt::Debug for StringAttributeConstraintsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StringAttributeConstraintsType");
-        formatter.field("min_length", &self.min_length);
-        formatter.field("max_length", &self.max_length);
-        formatter.finish()
     }
 }
 /// See [`StringAttributeConstraintsType`](crate::model::StringAttributeConstraintsType).
@@ -11656,7 +11239,7 @@ impl StringAttributeConstraintsType {
 
 /// <p>The minimum and maximum values of an attribute that is of the number data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
     #[doc(hidden)]
@@ -11673,14 +11256,6 @@ impl NumberAttributeConstraintsType {
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     pub fn max_value(&self) -> std::option::Option<&str> {
         self.max_value.as_deref()
-    }
-}
-impl std::fmt::Debug for NumberAttributeConstraintsType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberAttributeConstraintsType");
-        formatter.field("min_value", &self.min_value);
-        formatter.field("max_value", &self.max_value);
-        formatter.finish()
     }
 }
 /// See [`NumberAttributeConstraintsType`](crate::model::NumberAttributeConstraintsType).
@@ -11833,7 +11408,7 @@ impl AsRef<str> for AttributeDataType {
 
 /// <p>The device verifier against which it is authenticated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeviceSecretVerifierConfigType {
     /// <p>The password verifier.</p>
     #[doc(hidden)]
@@ -11850,14 +11425,6 @@ impl DeviceSecretVerifierConfigType {
     /// <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
     pub fn salt(&self) -> std::option::Option<&str> {
         self.salt.as_deref()
-    }
-}
-impl std::fmt::Debug for DeviceSecretVerifierConfigType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeviceSecretVerifierConfigType");
-        formatter.field("password_verifier", &self.password_verifier);
-        formatter.field("salt", &self.salt);
-        formatter.finish()
     }
 }
 /// See [`DeviceSecretVerifierConfigType`](crate::model::DeviceSecretVerifierConfigType).
@@ -11911,7 +11478,7 @@ impl DeviceSecretVerifierConfigType {
 
 /// <p>Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContextDataType {
     /// <p>The source IP address of your user's device.</p>
     #[doc(hidden)]
@@ -11949,17 +11516,6 @@ impl ContextDataType {
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     pub fn encoded_data(&self) -> std::option::Option<&str> {
         self.encoded_data.as_deref()
-    }
-}
-impl std::fmt::Debug for ContextDataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContextDataType");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("server_path", &self.server_path);
-        formatter.field("http_headers", &self.http_headers);
-        formatter.field("encoded_data", &self.encoded_data);
-        formatter.finish()
     }
 }
 /// See [`ContextDataType`](crate::model::ContextDataType).
@@ -12055,7 +11611,7 @@ impl ContextDataType {
 
 /// <p>The HTTP header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HttpHeader {
     /// <p>The header name.</p>
     #[doc(hidden)]
@@ -12072,14 +11628,6 @@ impl HttpHeader {
     /// <p>The header value.</p>
     pub fn header_value(&self) -> std::option::Option<&str> {
         self.header_value.as_deref()
-    }
-}
-impl std::fmt::Debug for HttpHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HttpHeader");
-        formatter.field("header_name", &self.header_name);
-        formatter.field("header_value", &self.header_value);
-        formatter.finish()
     }
 }
 /// See [`HttpHeader`](crate::model::HttpHeader).
@@ -12130,7 +11678,7 @@ impl HttpHeader {
 
 /// <p>The authentication event type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthEventType {
     /// <p>The event ID.</p>
     #[doc(hidden)]
@@ -12192,20 +11740,6 @@ impl AuthEventType {
     /// <p>A flag specifying the user feedback captured at the time of an event request is good or bad. </p>
     pub fn event_feedback(&self) -> std::option::Option<&crate::model::EventFeedbackType> {
         self.event_feedback.as_ref()
-    }
-}
-impl std::fmt::Debug for AuthEventType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthEventType");
-        formatter.field("event_id", &self.event_id);
-        formatter.field("event_type", &self.event_type);
-        formatter.field("creation_date", &self.creation_date);
-        formatter.field("event_response", &self.event_response);
-        formatter.field("event_risk", &self.event_risk);
-        formatter.field("challenge_responses", &self.challenge_responses);
-        formatter.field("event_context_data", &self.event_context_data);
-        formatter.field("event_feedback", &self.event_feedback);
-        formatter.finish()
     }
 }
 /// See [`AuthEventType`](crate::model::AuthEventType).
@@ -12356,7 +11890,7 @@ impl AuthEventType {
 
 /// <p>Specifies the event feedback type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventFeedbackType {
     /// <p>The event feedback value.</p>
     #[doc(hidden)]
@@ -12380,15 +11914,6 @@ impl EventFeedbackType {
     /// <p>The event feedback date.</p>
     pub fn feedback_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.feedback_date.as_ref()
-    }
-}
-impl std::fmt::Debug for EventFeedbackType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventFeedbackType");
-        formatter.field("feedback_value", &self.feedback_value);
-        formatter.field("provider", &self.provider);
-        formatter.field("feedback_date", &self.feedback_date);
-        formatter.finish()
     }
 }
 /// See [`EventFeedbackType`](crate::model::EventFeedbackType).
@@ -12457,7 +11982,7 @@ impl EventFeedbackType {
 
 /// <p>Specifies the user context data captured at the time of an event request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventContextDataType {
     /// <p>The source IP address of your user's device.</p>
     #[doc(hidden)]
@@ -12495,17 +12020,6 @@ impl EventContextDataType {
     /// <p>The user's country.</p>
     pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
-    }
-}
-impl std::fmt::Debug for EventContextDataType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventContextDataType");
-        formatter.field("ip_address", &self.ip_address);
-        formatter.field("device_name", &self.device_name);
-        formatter.field("timezone", &self.timezone);
-        formatter.field("city", &self.city);
-        formatter.field("country", &self.country);
-        formatter.finish()
     }
 }
 /// See [`EventContextDataType`](crate::model::EventContextDataType).
@@ -12592,7 +12106,7 @@ impl EventContextDataType {
 
 /// <p>The challenge response type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ChallengeResponseType {
     /// <p>The challenge name.</p>
     #[doc(hidden)]
@@ -12609,14 +12123,6 @@ impl ChallengeResponseType {
     /// <p>The challenge response.</p>
     pub fn challenge_response(&self) -> std::option::Option<&crate::model::ChallengeResponse> {
         self.challenge_response.as_ref()
-    }
-}
-impl std::fmt::Debug for ChallengeResponseType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ChallengeResponseType");
-        formatter.field("challenge_name", &self.challenge_name);
-        formatter.field("challenge_response", &self.challenge_response);
-        formatter.finish()
     }
 }
 /// See [`ChallengeResponseType`](crate::model::ChallengeResponseType).
@@ -12855,7 +12361,7 @@ impl AsRef<str> for ChallengeName {
 
 /// <p>The event risk type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventRiskType {
     /// <p>The risk decision.</p>
     #[doc(hidden)]
@@ -12879,18 +12385,6 @@ impl EventRiskType {
     /// <p>Indicates whether compromised credentials were detected during an authentication event.</p>
     pub fn compromised_credentials_detected(&self) -> std::option::Option<bool> {
         self.compromised_credentials_detected
-    }
-}
-impl std::fmt::Debug for EventRiskType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EventRiskType");
-        formatter.field("risk_decision", &self.risk_decision);
-        formatter.field("risk_level", &self.risk_level);
-        formatter.field(
-            "compromised_credentials_detected",
-            &self.compromised_credentials_detected,
-        );
-        formatter.finish()
     }
 }
 /// See [`EventRiskType`](crate::model::EventRiskType).
@@ -13360,7 +12854,7 @@ impl AsRef<str> for EventType {
 
 /// <p>A container for information about an IdP for a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProviderUserIdentifierType {
     /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
     #[doc(hidden)]
@@ -13384,15 +12878,6 @@ impl ProviderUserIdentifierType {
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
     pub fn provider_attribute_value(&self) -> std::option::Option<&str> {
         self.provider_attribute_value.as_deref()
-    }
-}
-impl std::fmt::Debug for ProviderUserIdentifierType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProviderUserIdentifierType");
-        formatter.field("provider_name", &self.provider_name);
-        formatter.field("provider_attribute_name", &self.provider_attribute_name);
-        formatter.field("provider_attribute_value", &self.provider_attribute_value);
-        formatter.finish()
     }
 }
 /// See [`ProviderUserIdentifierType`](crate::model::ProviderUserIdentifierType).

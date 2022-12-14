@@ -2,7 +2,7 @@
 
 /// <p>Information about any problems encountered while processing an upload request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentServiceException {
     /// <p>The return status of a document upload request, <code>error</code> or <code>success</code>.</p>
     #[doc(hidden)]
@@ -15,14 +15,6 @@ impl DocumentServiceException {
     /// <p>The return status of a document upload request, <code>error</code> or <code>success</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentServiceException");
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl DocumentServiceException {
@@ -91,18 +83,11 @@ impl DocumentServiceException {
 
 /// <p>Information about any problems encountered while processing a search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchException {
     /// <p>A description of the error returned by the search service.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SearchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SearchException {
     /// Returns the error message.

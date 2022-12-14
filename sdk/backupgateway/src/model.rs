@@ -2,7 +2,7 @@
 
 /// <p>A virtual machine that is on a hypervisor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualMachine {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
@@ -47,18 +47,6 @@ impl VirtualMachine {
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualMachine {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualMachine");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("last_backup_date", &self.last_backup_date);
-        formatter.finish()
     }
 }
 /// See [`VirtualMachine`](crate::model::VirtualMachine).
@@ -163,7 +151,7 @@ impl VirtualMachine {
 
 /// <p>Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VirtualMachineDetails {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
@@ -208,18 +196,6 @@ impl VirtualMachineDetails {
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
-    }
-}
-impl std::fmt::Debug for VirtualMachineDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VirtualMachineDetails");
-        formatter.field("host_name", &self.host_name);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("name", &self.name);
-        formatter.field("path", &self.path);
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("last_backup_date", &self.last_backup_date);
-        formatter.finish()
     }
 }
 /// See [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
@@ -325,7 +301,7 @@ impl VirtualMachineDetails {
 /// <p>Represents the hypervisor's permissions to which the gateway will connect.</p>
 /// <p>A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Hypervisor {
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     #[doc(hidden)]
@@ -363,17 +339,6 @@ impl Hypervisor {
     /// <p>The state of the hypervisor.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::HypervisorState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for Hypervisor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Hypervisor");
-        formatter.field("host", &self.host);
-        formatter.field("hypervisor_arn", &self.hypervisor_arn);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`Hypervisor`](crate::model::Hypervisor).
@@ -566,7 +531,7 @@ impl AsRef<str> for HypervisorState {
 
 /// <p>A key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.</p>
     #[doc(hidden)]
@@ -583,14 +548,6 @@ impl Tag {
     /// <p>The value part of a tag's key-value pair.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -641,7 +598,7 @@ impl Tag {
 
 /// <p>A gateway is an Backup Gateway appliance that runs on the customer's network to provide seamless connectivity to backup storage in the Amazon Web Services Cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Gateway {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -679,17 +636,6 @@ impl Gateway {
     /// <p>The last time Backup gateway communicated with the gateway, in Unix format and UTC time.</p>
     pub fn last_seen_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_time.as_ref()
-    }
-}
-impl std::fmt::Debug for Gateway {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Gateway");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("last_seen_time", &self.last_seen_time);
-        formatter.finish()
     }
 }
 /// See [`Gateway`](crate::model::Gateway).
@@ -873,7 +819,7 @@ impl AsRef<str> for GatewayType {
 
 /// <p>The details of gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -936,23 +882,6 @@ impl GatewayDetails {
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
     pub fn vpc_endpoint(&self) -> std::option::Option<&str> {
         self.vpc_endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for GatewayDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GatewayDetails");
-        formatter.field("gateway_arn", &self.gateway_arn);
-        formatter.field("gateway_display_name", &self.gateway_display_name);
-        formatter.field("gateway_type", &self.gateway_type);
-        formatter.field("hypervisor_id", &self.hypervisor_id);
-        formatter.field("last_seen_time", &self.last_seen_time);
-        formatter.field("maintenance_start_time", &self.maintenance_start_time);
-        formatter.field(
-            "next_update_availability_time",
-            &self.next_update_availability_time,
-        );
-        formatter.field("vpc_endpoint", &self.vpc_endpoint);
-        formatter.finish()
     }
 }
 /// See [`GatewayDetails`](crate::model::GatewayDetails).
@@ -1093,7 +1022,7 @@ impl GatewayDetails {
 
 /// <p>This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaintenanceStartTime {
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     #[doc(hidden)]
@@ -1124,16 +1053,6 @@ impl MaintenanceStartTime {
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn minute_of_hour(&self) -> std::option::Option<i32> {
         self.minute_of_hour
-    }
-}
-impl std::fmt::Debug for MaintenanceStartTime {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaintenanceStartTime");
-        formatter.field("day_of_month", &self.day_of_month);
-        formatter.field("day_of_week", &self.day_of_week);
-        formatter.field("hour_of_day", &self.hour_of_day);
-        formatter.field("minute_of_hour", &self.minute_of_hour);
-        formatter.finish()
     }
 }
 /// See [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).

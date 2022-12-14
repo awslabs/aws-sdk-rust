@@ -394,7 +394,7 @@ impl CreateBackupInput {
 pub mod create_server_input {
 
     /// A builder for [`CreateServerInput`](crate::input::CreateServerInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) custom_domain: std::option::Option<std::string::String>,
@@ -798,6 +798,39 @@ pub mod create_server_input {
                 tags: self.tags,
                 backup_id: self.backup_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "associate_public_ip_address",
+                &self.associate_public_ip_address,
+            );
+            formatter.field("custom_domain", &self.custom_domain);
+            formatter.field("custom_certificate", &self.custom_certificate);
+            formatter.field("custom_private_key", &"*** Sensitive Data Redacted ***");
+            formatter.field("disable_automated_backup", &self.disable_automated_backup);
+            formatter.field("engine", &self.engine);
+            formatter.field("engine_model", &self.engine_model);
+            formatter.field("engine_version", &self.engine_version);
+            formatter.field("engine_attributes", &self.engine_attributes);
+            formatter.field("backup_retention_count", &self.backup_retention_count);
+            formatter.field("server_name", &self.server_name);
+            formatter.field("instance_profile_arn", &self.instance_profile_arn);
+            formatter.field("instance_type", &self.instance_type);
+            formatter.field("key_pair", &self.key_pair);
+            formatter.field(
+                "preferred_maintenance_window",
+                &self.preferred_maintenance_window,
+            );
+            formatter.field("preferred_backup_window", &self.preferred_backup_window);
+            formatter.field("security_group_ids", &self.security_group_ids);
+            formatter.field("service_role_arn", &self.service_role_arn);
+            formatter.field("subnet_ids", &self.subnet_ids);
+            formatter.field("tags", &self.tags);
+            formatter.field("backup_id", &self.backup_id);
+            formatter.finish()
         }
     }
 }
@@ -3665,7 +3698,7 @@ impl UpdateServerEngineAttributesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServerEngineAttributesInput {
     /// <p>The name of the server to update. </p>
     #[doc(hidden)]
@@ -3691,19 +3724,10 @@ impl UpdateServerEngineAttributesInput {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServerEngineAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServerEngineAttributesInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("attribute_name", &self.attribute_name);
-        formatter.field("attribute_value", &self.attribute_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServerInput {
     /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
     #[doc(hidden)]
@@ -3747,24 +3771,10 @@ impl UpdateServerInput {
         self.preferred_backup_window.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServerInput");
-        formatter.field("disable_automated_backup", &self.disable_automated_backup);
-        formatter.field("backup_retention_count", &self.backup_retention_count);
-        formatter.field("server_name", &self.server_name);
-        formatter.field(
-            "preferred_maintenance_window",
-            &self.preferred_maintenance_window,
-        );
-        formatter.field("preferred_backup_window", &self.preferred_backup_window);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -3783,18 +3793,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -3827,18 +3829,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMaintenanceInput {
     /// <p>The name of the server on which to run maintenance. </p>
     #[doc(hidden)]
@@ -3865,18 +3859,10 @@ impl StartMaintenanceInput {
         self.engine_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for StartMaintenanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMaintenanceInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("engine_attributes", &self.engine_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreServerInput {
     /// <p> The ID of the backup that you want to use to restore a server. </p>
     #[doc(hidden)]
@@ -3909,20 +3895,10 @@ impl RestoreServerInput {
         self.key_pair.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreServerInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("key_pair", &self.key_pair);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
     #[doc(hidden)]
@@ -3948,19 +3924,10 @@ impl ListTagsForResourceInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportServerEngineAttributeInput {
     /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>. This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
     #[doc(hidden)]
@@ -3998,19 +3965,10 @@ impl ExportServerEngineAttributeInput {
         self.input_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for ExportServerEngineAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportServerEngineAttributeInput");
-        formatter.field("export_attribute_name", &self.export_attribute_name);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("input_attributes", &self.input_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateNodeInput {
     /// <p>The name of the server from which to disassociate the node. </p>
     #[doc(hidden)]
@@ -4044,19 +4002,10 @@ impl DisassociateNodeInput {
         self.engine_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateNodeInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("node_name", &self.node_name);
-        formatter.field("engine_attributes", &self.engine_attributes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeServersInput {
     /// <p>Describes the server with the specified ServerName.</p>
     #[doc(hidden)]
@@ -4082,19 +4031,10 @@ impl DescribeServersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeServersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeServersInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeNodeAssociationStatusInput {
     /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse. </p>
     #[doc(hidden)]
@@ -4113,21 +4053,10 @@ impl DescribeNodeAssociationStatusInput {
         self.server_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeNodeAssociationStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeNodeAssociationStatusInput");
-        formatter.field(
-            "node_association_status_token",
-            &self.node_association_status_token,
-        );
-        formatter.field("server_name", &self.server_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEventsInput {
     /// <p>The name of the server for which you want to view events.</p>
     #[doc(hidden)]
@@ -4153,19 +4082,10 @@ impl DescribeEventsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeEventsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEventsInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupsInput {
     /// <p>Describes a single backup. </p>
     #[doc(hidden)]
@@ -4198,31 +4118,15 @@ impl DescribeBackupsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for DescribeBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupsInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("server_name", &self.server_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAccountAttributesInput {}
-impl std::fmt::Debug for DescribeAccountAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAccountAttributesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteServerInput {
     /// <p>The ID of the server to delete.</p>
     #[doc(hidden)]
@@ -4234,17 +4138,10 @@ impl DeleteServerInput {
         self.server_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteServerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteServerInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
     #[doc(hidden)]
@@ -4254,13 +4151,6 @@ impl DeleteBackupInput {
     /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
     pub fn backup_id(&self) -> std::option::Option<&str> {
         self.backup_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DeleteBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.finish()
     }
 }
 
@@ -4528,7 +4418,7 @@ impl std::fmt::Debug for CreateServerInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The name of the server that you want to back up. </p>
     #[doc(hidden)]
@@ -4568,19 +4458,10 @@ impl CreateBackupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackupInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("description", &self.description);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateNodeInput {
     /// <p>The name of the server with which to associate the node. </p>
     #[doc(hidden)]
@@ -4622,14 +4503,5 @@ impl AssociateNodeInput {
     /// </ul>
     pub fn engine_attributes(&self) -> std::option::Option<&[crate::model::EngineAttribute]> {
         self.engine_attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateNodeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateNodeInput");
-        formatter.field("server_name", &self.server_name);
-        formatter.field("node_name", &self.node_name);
-        formatter.field("engine_attributes", &self.engine_attributes);
-        formatter.finish()
     }
 }

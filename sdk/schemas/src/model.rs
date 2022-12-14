@@ -182,7 +182,7 @@ impl AsRef<str> for DiscovererState {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSchemaSummary {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
@@ -216,16 +216,6 @@ impl SearchSchemaSummary {
         &self,
     ) -> std::option::Option<&[crate::model::SearchSchemaVersionSummary]> {
         self.schema_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for SearchSchemaSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSchemaSummary");
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_versions", &self.schema_versions);
-        formatter.finish()
     }
 }
 /// See [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
@@ -313,7 +303,7 @@ impl SearchSchemaSummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchSchemaVersionSummary {
     /// <p>The date the schema version was created.</p>
     #[doc(hidden)]
@@ -337,15 +327,6 @@ impl SearchSchemaVersionSummary {
     /// <p>The type of schema.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for SearchSchemaVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchSchemaVersionSummary");
-        formatter.field("created_date", &self.created_date);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
@@ -511,7 +492,7 @@ impl AsRef<str> for CodeGenerationStatus {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaVersionSummary {
     /// <p>The ARN of the schema version.</p>
     #[doc(hidden)]
@@ -542,16 +523,6 @@ impl SchemaVersionSummary {
     /// <p>The type of schema.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for SchemaVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaVersionSummary");
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("schema_version", &self.schema_version);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
@@ -629,7 +600,7 @@ impl SchemaVersionSummary {
 
 /// <p>A summary of schema details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SchemaSummary {
     /// <p>The date and time that schema was modified.</p>
     #[doc(hidden)]
@@ -671,17 +642,6 @@ impl SchemaSummary {
     /// <p>The number of versions available for the schema.</p>
     pub fn version_count(&self) -> i64 {
         self.version_count
-    }
-}
-impl std::fmt::Debug for SchemaSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SchemaSummary");
-        formatter.field("last_modified", &self.last_modified);
-        formatter.field("schema_arn", &self.schema_arn);
-        formatter.field("schema_name", &self.schema_name);
-        formatter.field("tags", &self.tags);
-        formatter.field("version_count", &self.version_count);
-        formatter.finish()
     }
 }
 /// See [`SchemaSummary`](crate::model::SchemaSummary).
@@ -788,7 +748,7 @@ impl SchemaSummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegistrySummary {
     /// <p>The ARN of the registry.</p>
     #[doc(hidden)]
@@ -816,15 +776,6 @@ impl RegistrySummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RegistrySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegistrySummary");
-        formatter.field("registry_arn", &self.registry_arn);
-        formatter.field("registry_name", &self.registry_name);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`RegistrySummary`](crate::model::RegistrySummary).
@@ -907,7 +858,7 @@ impl RegistrySummary {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DiscovererSummary {
     /// <p>The ARN of the discoverer.</p>
     #[doc(hidden)]
@@ -956,18 +907,6 @@ impl DiscovererSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for DiscovererSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DiscovererSummary");
-        formatter.field("discoverer_arn", &self.discoverer_arn);
-        formatter.field("discoverer_id", &self.discoverer_id);
-        formatter.field("source_arn", &self.source_arn);
-        formatter.field("state", &self.state);
-        formatter.field("cross_account", &self.cross_account);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`DiscovererSummary`](crate::model::DiscovererSummary).

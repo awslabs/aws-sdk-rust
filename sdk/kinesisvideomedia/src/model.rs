@@ -7,7 +7,7 @@
 /// <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartSelector {
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
     /// <ul>
@@ -56,16 +56,6 @@ impl StartSelector {
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
-    }
-}
-impl std::fmt::Debug for StartSelector {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartSelector");
-        formatter.field("start_selector_type", &self.start_selector_type);
-        formatter.field("after_fragment_number", &self.after_fragment_number);
-        formatter.field("start_timestamp", &self.start_timestamp);
-        formatter.field("continuation_token", &self.continuation_token);
-        formatter.finish()
     }
 }
 /// See [`StartSelector`](crate::model::StartSelector).

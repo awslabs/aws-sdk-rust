@@ -7252,7 +7252,7 @@ impl UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -7271,18 +7271,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
@@ -7301,18 +7293,10 @@ impl UndeprecateWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for UndeprecateWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateDomainInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
@@ -7324,17 +7308,10 @@ impl UndeprecateDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for UndeprecateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UndeprecateActivityTypeInput {
     /// <p>The name of the domain of the deprecated activity type.</p>
     #[doc(hidden)]
@@ -7353,18 +7330,10 @@ impl UndeprecateActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for UndeprecateActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UndeprecateActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionInput {
     /// <p>The domain of the workflow execution to terminate.</p>
     #[doc(hidden)]
@@ -7427,22 +7396,10 @@ impl TerminateWorkflowExecutionInput {
         self.child_policy.as_ref()
     }
 }
-impl std::fmt::Debug for TerminateWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.field("child_policy", &self.child_policy);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -7463,18 +7420,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartWorkflowExecutionInput {
     /// <p>The name of the domain in which the workflow execution is created.</p>
     #[doc(hidden)]
@@ -7598,33 +7547,10 @@ impl StartWorkflowExecutionInput {
         self.lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for StartWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("task_priority", &self.task_priority);
-        formatter.field("input", &self.input);
-        formatter.field(
-            "execution_start_to_close_timeout",
-            &self.execution_start_to_close_timeout,
-        );
-        formatter.field("tag_list", &self.tag_list);
-        formatter.field(
-            "task_start_to_close_timeout",
-            &self.task_start_to_close_timeout,
-        );
-        formatter.field("child_policy", &self.child_policy);
-        formatter.field("lambda_role", &self.lambda_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SignalWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to signal.</p>
     #[doc(hidden)]
@@ -7664,21 +7590,10 @@ impl SignalWorkflowExecutionInput {
         self.input.as_deref()
     }
 }
-impl std::fmt::Debug for SignalWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SignalWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.field("signal_name", &self.signal_name);
-        formatter.field("input", &self.input);
-        formatter.finish()
-    }
-}
 
 /// <p>Input data for a TaskCompleted response to a decision task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedInput {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7708,19 +7623,10 @@ impl RespondDecisionTaskCompletedInput {
         self.execution_context.as_deref()
     }
 }
-impl std::fmt::Debug for RespondDecisionTaskCompletedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondDecisionTaskCompletedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("decisions", &self.decisions);
-        formatter.field("execution_context", &self.execution_context);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskFailedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7750,19 +7656,10 @@ impl RespondActivityTaskFailedInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskFailedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskFailedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("reason", &self.reason);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCompletedInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7785,18 +7682,10 @@ impl RespondActivityTaskCompletedInput {
         self.result.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskCompletedInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskCompletedInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("result", &self.result);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RespondActivityTaskCanceledInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
@@ -7819,18 +7708,10 @@ impl RespondActivityTaskCanceledInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RespondActivityTaskCanceledInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RespondActivityTaskCanceledInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RequestCancelWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution to cancel.</p>
     #[doc(hidden)]
@@ -7856,19 +7737,10 @@ impl RequestCancelWorkflowExecutionInput {
         self.run_id.as_deref()
     }
 }
-impl std::fmt::Debug for RequestCancelWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RequestCancelWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_id", &self.workflow_id);
-        formatter.field("run_id", &self.run_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterWorkflowTypeInput {
     /// <p>The name of the domain in which to register the workflow type.</p>
     #[doc(hidden)]
@@ -7973,32 +7845,10 @@ impl RegisterWorkflowTypeInput {
         self.default_lambda_role.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_execution_start_to_close_timeout",
-            &self.default_execution_start_to_close_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field("default_child_policy", &self.default_child_policy);
-        formatter.field("default_lambda_role", &self.default_lambda_role);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
     /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
@@ -8039,23 +7889,10 @@ impl RegisterDomainInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterDomainInput");
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "workflow_execution_retention_period_in_days",
-            &self.workflow_execution_retention_period_in_days,
-        );
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterActivityTypeInput {
     /// <p>The name of the domain in which this activity is to be registered.</p>
     #[doc(hidden)]
@@ -8148,38 +7985,10 @@ impl RegisterActivityTypeInput {
         self.default_task_schedule_to_close_timeout.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("version", &self.version);
-        formatter.field("description", &self.description);
-        formatter.field(
-            "default_task_start_to_close_timeout",
-            &self.default_task_start_to_close_timeout,
-        );
-        formatter.field(
-            "default_task_heartbeat_timeout",
-            &self.default_task_heartbeat_timeout,
-        );
-        formatter.field("default_task_list", &self.default_task_list);
-        formatter.field("default_task_priority", &self.default_task_priority);
-        formatter.field(
-            "default_task_schedule_to_start_timeout",
-            &self.default_task_schedule_to_start_timeout,
-        );
-        formatter.field(
-            "default_task_schedule_to_close_timeout",
-            &self.default_task_schedule_to_close_timeout,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatInput {
     /// <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>
@@ -8202,18 +8011,10 @@ impl RecordActivityTaskHeartbeatInput {
         self.details.as_deref()
     }
 }
-impl std::fmt::Debug for RecordActivityTaskHeartbeatInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecordActivityTaskHeartbeatInput");
-        formatter.field("task_token", &self.task_token);
-        formatter.field("details", &self.details);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
     #[doc(hidden)]
@@ -8270,22 +8071,10 @@ impl PollForDecisionTaskInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for PollForDecisionTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForDecisionTaskInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("identity", &self.identity);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PollForActivityTaskInput {
     /// <p>The name of the domain that contains the task lists being polled.</p>
     #[doc(hidden)]
@@ -8313,19 +8102,10 @@ impl PollForActivityTaskInput {
         self.identity.as_deref()
     }
 }
-impl std::fmt::Debug for PollForActivityTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PollForActivityTaskInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.field("identity", &self.identity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkflowTypesInput {
     /// <p>The name of the domain in which the workflow types have been registered.</p>
     #[doc(hidden)]
@@ -8374,22 +8154,10 @@ impl ListWorkflowTypesInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListWorkflowTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkflowTypesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
@@ -8401,17 +8169,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
@@ -8486,24 +8247,10 @@ impl ListOpenWorkflowExecutionsInput {
         self.execution_filter.as_ref()
     }
 }
-impl std::fmt::Debug for ListOpenWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListOpenWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
@@ -8538,20 +8285,10 @@ impl ListDomainsInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsInput {
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     #[doc(hidden)]
@@ -8652,26 +8389,10 @@ impl ListClosedWorkflowExecutionsInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListClosedWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListClosedWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("close_time_filter", &self.close_time_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.field("close_status_filter", &self.close_status_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListActivityTypesInput {
     /// <p>The name of the domain in which the activity types have been registered.</p>
     #[doc(hidden)]
@@ -8720,22 +8441,10 @@ impl ListActivityTypesInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for ListActivityTypesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListActivityTypesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("name", &self.name);
-        formatter.field("registration_status", &self.registration_status);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryInput {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
@@ -8777,21 +8486,10 @@ impl GetWorkflowExecutionHistoryInput {
         self.reverse_order
     }
 }
-impl std::fmt::Debug for GetWorkflowExecutionHistoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkflowExecutionHistoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("execution", &self.execution);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.field("maximum_page_size", &self.maximum_page_size);
-        formatter.field("reverse_order", &self.reverse_order);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowTypeInput {
     /// <p>The name of the domain in which this workflow type is registered.</p>
     #[doc(hidden)]
@@ -8810,18 +8508,10 @@ impl DescribeWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeWorkflowExecutionInput {
     /// <p>The name of the domain containing the workflow execution.</p>
     #[doc(hidden)]
@@ -8840,18 +8530,10 @@ impl DescribeWorkflowExecutionInput {
         self.execution.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeWorkflowExecutionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeWorkflowExecutionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("execution", &self.execution);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p>The name of the domain to describe.</p>
     #[doc(hidden)]
@@ -8863,17 +8545,10 @@ impl DescribeDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
@@ -8892,18 +8567,10 @@ impl DescribeActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateWorkflowTypeInput {
     /// <p>The name of the domain in which the workflow type is registered.</p>
     #[doc(hidden)]
@@ -8922,18 +8589,10 @@ impl DeprecateWorkflowTypeInput {
         self.workflow_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeprecateWorkflowTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateWorkflowTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("workflow_type", &self.workflow_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateDomainInput {
     /// <p>The name of the domain to deprecate.</p>
     #[doc(hidden)]
@@ -8945,17 +8604,10 @@ impl DeprecateDomainInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for DeprecateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateDomainInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeprecateActivityTypeInput {
     /// <p>The name of the domain in which the activity type is registered.</p>
     #[doc(hidden)]
@@ -8974,18 +8626,10 @@ impl DeprecateActivityTypeInput {
         self.activity_type.as_ref()
     }
 }
-impl std::fmt::Debug for DeprecateActivityTypeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeprecateActivityTypeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("activity_type", &self.activity_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountPendingDecisionTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
@@ -9004,18 +8648,10 @@ impl CountPendingDecisionTasksInput {
         self.task_list.as_ref()
     }
 }
-impl std::fmt::Debug for CountPendingDecisionTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountPendingDecisionTasksInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountPendingActivityTasksInput {
     /// <p>The name of the domain that contains the task list.</p>
     #[doc(hidden)]
@@ -9034,18 +8670,10 @@ impl CountPendingActivityTasksInput {
         self.task_list.as_ref()
     }
 }
-impl std::fmt::Debug for CountPendingActivityTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountPendingActivityTasksInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("task_list", &self.task_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
@@ -9097,21 +8725,10 @@ impl CountOpenWorkflowExecutionsInput {
         self.execution_filter.as_ref()
     }
 }
-impl std::fmt::Debug for CountOpenWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountOpenWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
@@ -9187,18 +8804,5 @@ impl CountClosedWorkflowExecutionsInput {
     /// </note>
     pub fn close_status_filter(&self) -> std::option::Option<&crate::model::CloseStatusFilter> {
         self.close_status_filter.as_ref()
-    }
-}
-impl std::fmt::Debug for CountClosedWorkflowExecutionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CountClosedWorkflowExecutionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("start_time_filter", &self.start_time_filter);
-        formatter.field("close_time_filter", &self.close_time_filter);
-        formatter.field("execution_filter", &self.execution_filter);
-        formatter.field("type_filter", &self.type_filter);
-        formatter.field("tag_filter", &self.tag_filter);
-        formatter.field("close_status_filter", &self.close_status_filter);
-        formatter.finish()
     }
 }

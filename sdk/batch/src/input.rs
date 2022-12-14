@@ -4689,7 +4689,7 @@ impl UpdateSchedulingPolicyInput {
 
 /// <p>Contains the parameters for <code>UpdateSchedulingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
     #[doc(hidden)]
@@ -4708,18 +4708,10 @@ impl UpdateSchedulingPolicyInput {
         self.fairshare_policy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSchedulingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSchedulingPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.field("fairshare_policy", &self.fairshare_policy);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>UpdateJobQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateJobQueueInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     #[doc(hidden)]
@@ -4766,21 +4758,10 @@ impl UpdateJobQueueInput {
         self.compute_environment_order.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateJobQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateJobQueueInput");
-        formatter.field("job_queue", &self.job_queue);
-        formatter.field("state", &self.state);
-        formatter.field("scheduling_policy_arn", &self.scheduling_policy_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("compute_environment_order", &self.compute_environment_order);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>UpdateComputeEnvironment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateComputeEnvironmentInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
     #[doc(hidden)]
@@ -4841,22 +4822,10 @@ impl UpdateComputeEnvironmentInput {
         self.update_policy.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateComputeEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateComputeEnvironmentInput");
-        formatter.field("compute_environment", &self.compute_environment);
-        formatter.field("state", &self.state);
-        formatter.field("unmanagedv_cpus", &self.unmanagedv_cpus);
-        formatter.field("compute_resources", &self.compute_resources);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("update_policy", &self.update_policy);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>UntagResource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     #[doc(hidden)]
@@ -4875,18 +4844,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>TerminateJob</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerminateJobInput {
     /// <p>The Batch job ID of the job to terminate.</p>
     #[doc(hidden)]
@@ -4905,18 +4866,10 @@ impl TerminateJobInput {
         self.reason.as_deref()
     }
 }
-impl std::fmt::Debug for TerminateJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerminateJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>TagResource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     #[doc(hidden)]
@@ -4939,18 +4892,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>SubmitJob</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitJobInput {
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -5067,33 +5012,10 @@ impl SubmitJobInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for SubmitJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitJobInput");
-        formatter.field("job_name", &self.job_name);
-        formatter.field("job_queue", &self.job_queue);
-        formatter.field("share_identifier", &self.share_identifier);
-        formatter.field(
-            "scheduling_priority_override",
-            &self.scheduling_priority_override,
-        );
-        formatter.field("array_properties", &self.array_properties);
-        formatter.field("depends_on", &self.depends_on);
-        formatter.field("job_definition", &self.job_definition);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("container_overrides", &self.container_overrides);
-        formatter.field("node_overrides", &self.node_overrides);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>RegisterJobDefinition</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterJobDefinitionInput {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -5199,27 +5121,10 @@ impl RegisterJobDefinitionInput {
         self.platform_capabilities.as_deref()
     }
 }
-impl std::fmt::Debug for RegisterJobDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegisterJobDefinitionInput");
-        formatter.field("job_definition_name", &self.job_definition_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("scheduling_priority", &self.scheduling_priority);
-        formatter.field("container_properties", &self.container_properties);
-        formatter.field("node_properties", &self.node_properties);
-        formatter.field("retry_strategy", &self.retry_strategy);
-        formatter.field("propagate_tags", &self.propagate_tags);
-        formatter.field("timeout", &self.timeout);
-        formatter.field("tags", &self.tags);
-        formatter.field("platform_capabilities", &self.platform_capabilities);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>ListTagsForResource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     #[doc(hidden)]
@@ -5231,17 +5136,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>ListSchedulingPolicies</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSchedulingPoliciesInput {
     /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     #[doc(hidden)]
@@ -5264,18 +5162,10 @@ impl ListSchedulingPoliciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSchedulingPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSchedulingPoliciesInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>ListJobs</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
     #[doc(hidden)]
@@ -5385,23 +5275,10 @@ impl ListJobsInput {
         self.filters.as_deref()
     }
 }
-impl std::fmt::Debug for ListJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsInput");
-        formatter.field("job_queue", &self.job_queue);
-        formatter.field("array_job_id", &self.array_job_id);
-        formatter.field("multi_node_job_id", &self.multi_node_job_id);
-        formatter.field("job_status", &self.job_status);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("filters", &self.filters);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DescribeSchedulingPolicies</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSchedulingPoliciesInput {
     /// <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
     #[doc(hidden)]
@@ -5413,17 +5290,10 @@ impl DescribeSchedulingPoliciesInput {
         self.arns.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSchedulingPoliciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSchedulingPoliciesInput");
-        formatter.field("arns", &self.arns);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DescribeJobs</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobsInput {
     /// <p>A list of up to 100 job IDs.</p>
     #[doc(hidden)]
@@ -5435,17 +5305,10 @@ impl DescribeJobsInput {
         self.jobs.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobsInput");
-        formatter.field("jobs", &self.jobs);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DescribeJobQueues</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobQueuesInput {
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
     #[doc(hidden)]
@@ -5475,19 +5338,10 @@ impl DescribeJobQueuesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobQueuesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobQueuesInput");
-        formatter.field("job_queues", &self.job_queues);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DescribeJobDefinitions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeJobDefinitionsInput {
     /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
     #[doc(hidden)]
@@ -5531,21 +5385,10 @@ impl DescribeJobDefinitionsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeJobDefinitionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeJobDefinitionsInput");
-        formatter.field("job_definitions", &self.job_definitions);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("job_definition_name", &self.job_definition_name);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DescribeComputeEnvironments</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeComputeEnvironmentsInput {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
     #[doc(hidden)]
@@ -5575,19 +5418,10 @@ impl DescribeComputeEnvironmentsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeComputeEnvironmentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeComputeEnvironmentsInput");
-        formatter.field("compute_environments", &self.compute_environments);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeregisterJobDefinitionInput {
     /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
     #[doc(hidden)]
@@ -5599,17 +5433,10 @@ impl DeregisterJobDefinitionInput {
         self.job_definition.as_deref()
     }
 }
-impl std::fmt::Debug for DeregisterJobDefinitionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeregisterJobDefinitionInput");
-        formatter.field("job_definition", &self.job_definition);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DeleteSchedulingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
     #[doc(hidden)]
@@ -5621,17 +5448,10 @@ impl DeleteSchedulingPolicyInput {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSchedulingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSchedulingPolicyInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DeleteJobQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteJobQueueInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
     #[doc(hidden)]
@@ -5643,17 +5463,10 @@ impl DeleteJobQueueInput {
         self.job_queue.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteJobQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteJobQueueInput");
-        formatter.field("job_queue", &self.job_queue);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>DeleteComputeEnvironment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteComputeEnvironmentInput {
     /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
     #[doc(hidden)]
@@ -5665,17 +5478,10 @@ impl DeleteComputeEnvironmentInput {
         self.compute_environment.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteComputeEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteComputeEnvironmentInput");
-        formatter.field("compute_environment", &self.compute_environment);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>CreateSchedulingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSchedulingPolicyInput {
     /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -5707,19 +5513,10 @@ impl CreateSchedulingPolicyInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateSchedulingPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSchedulingPolicyInput");
-        formatter.field("name", &self.name);
-        formatter.field("fairshare_policy", &self.fairshare_policy);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>CreateJobQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobQueueInput {
     /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -5777,22 +5574,10 @@ impl CreateJobQueueInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateJobQueueInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobQueueInput");
-        formatter.field("job_queue_name", &self.job_queue_name);
-        formatter.field("state", &self.state);
-        formatter.field("scheduling_policy_arn", &self.scheduling_policy_arn);
-        formatter.field("priority", &self.priority);
-        formatter.field("compute_environment_order", &self.compute_environment_order);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>CreateComputeEnvironment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateComputeEnvironmentInput {
     /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     #[doc(hidden)]
@@ -5870,23 +5655,10 @@ impl CreateComputeEnvironmentInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateComputeEnvironmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateComputeEnvironmentInput");
-        formatter.field("compute_environment_name", &self.compute_environment_name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("state", &self.state);
-        formatter.field("unmanagedv_cpus", &self.unmanagedv_cpus);
-        formatter.field("compute_resources", &self.compute_resources);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Contains the parameters for <code>CancelJob</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobInput {
     /// <p>The Batch job ID of the job to cancel.</p>
     #[doc(hidden)]
@@ -5903,13 +5675,5 @@ impl CancelJobInput {
     /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for CancelJobInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobInput");
-        formatter.field("job_id", &self.job_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }

@@ -101,7 +101,7 @@ impl std::fmt::Debug for ResiliencyPolicy {
 pub mod resiliency_policy {
 
     /// A builder for [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -275,6 +275,21 @@ pub mod resiliency_policy {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("policy_arn", &self.policy_arn);
+            formatter.field("policy_name", &self.policy_name);
+            formatter.field("policy_description", &self.policy_description);
+            formatter.field("data_location_constraint", &self.data_location_constraint);
+            formatter.field("tier", &self.tier);
+            formatter.field("estimated_cost_tier", &self.estimated_cost_tier);
+            formatter.field("policy", &self.policy);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ResiliencyPolicy {
     /// Creates a new builder-style object to manufacture [`ResiliencyPolicy`](crate::model::ResiliencyPolicy).
@@ -285,7 +300,7 @@ impl ResiliencyPolicy {
 
 /// <p>Defines a failure policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailurePolicy {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
     #[doc(hidden)]
@@ -302,14 +317,6 @@ impl FailurePolicy {
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
     pub fn rpo_in_secs(&self) -> i32 {
         self.rpo_in_secs
-    }
-}
-impl std::fmt::Debug for FailurePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailurePolicy");
-        formatter.field("rto_in_secs", &self.rto_in_secs);
-        formatter.field("rpo_in_secs", &self.rpo_in_secs);
-        formatter.finish()
     }
 }
 /// See [`FailurePolicy`](crate::model::FailurePolicy).
@@ -899,7 +906,7 @@ impl std::fmt::Debug for App {
 pub mod app {
 
     /// A builder for [`App`](crate::model::App).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1098,6 +1105,30 @@ pub mod app {
                 tags: self.tags,
                 assessment_schedule: self.assessment_schedule,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_arn", &self.app_arn);
+            formatter.field("name", &self.name);
+            formatter.field("description", &self.description);
+            formatter.field("policy_arn", &self.policy_arn);
+            formatter.field("creation_time", &self.creation_time);
+            formatter.field("status", &self.status);
+            formatter.field("compliance_status", &self.compliance_status);
+            formatter.field(
+                "last_app_compliance_evaluation_time",
+                &self.last_app_compliance_evaluation_time,
+            );
+            formatter.field("resiliency_score", &self.resiliency_score);
+            formatter.field(
+                "last_resiliency_score_evaluation_time",
+                &self.last_resiliency_score_evaluation_time,
+            );
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("assessment_schedule", &self.assessment_schedule);
+            formatter.finish()
         }
     }
 }
@@ -1557,7 +1588,7 @@ impl std::fmt::Debug for AppAssessment {
 pub mod app_assessment {
 
     /// A builder for [`AppAssessment`](crate::model::AppAssessment).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_arn: std::option::Option<std::string::String>,
         pub(crate) app_version: std::option::Option<std::string::String>,
@@ -1833,6 +1864,28 @@ pub mod app_assessment {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_arn", &self.app_arn);
+            formatter.field("app_version", &self.app_version);
+            formatter.field("invoker", &self.invoker);
+            formatter.field("cost", &self.cost);
+            formatter.field("resiliency_score", &self.resiliency_score);
+            formatter.field("compliance", &self.compliance);
+            formatter.field("compliance_status", &self.compliance_status);
+            formatter.field("assessment_status", &self.assessment_status);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("message", &self.message);
+            formatter.field("assessment_name", &self.assessment_name);
+            formatter.field("assessment_arn", &self.assessment_arn);
+            formatter.field("policy", &self.policy);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("resource_errors_details", &self.resource_errors_details);
+            formatter.finish()
+        }
+    }
 }
 impl AppAssessment {
     /// Creates a new builder-style object to manufacture [`AppAssessment`](crate::model::AppAssessment).
@@ -1843,7 +1896,7 @@ impl AppAssessment {
 
 /// <p> A list of errors retrieving an application's resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceErrorsDetails {
     /// <p> A list of errors retrieving an application's resources. </p>
     #[doc(hidden)]
@@ -1860,14 +1913,6 @@ impl ResourceErrorsDetails {
     /// <p> This indicates if there are more errors not listed in the resourceErrors list. </p>
     pub fn has_more_errors(&self) -> std::option::Option<bool> {
         self.has_more_errors
-    }
-}
-impl std::fmt::Debug for ResourceErrorsDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceErrorsDetails");
-        formatter.field("resource_errors", &self.resource_errors);
-        formatter.field("has_more_errors", &self.has_more_errors);
-        formatter.finish()
     }
 }
 /// See [`ResourceErrorsDetails`](crate::model::ResourceErrorsDetails).
@@ -1927,7 +1972,7 @@ impl ResourceErrorsDetails {
 
 /// <p> Defines application resource errors. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceError {
     /// <p> This is the identifier of the resource. </p>
     #[doc(hidden)]
@@ -1951,15 +1996,6 @@ impl ResourceError {
     /// <p> This is the error message. </p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceError");
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
     }
 }
 /// See [`ResourceError`](crate::model::ResourceError).
@@ -2218,7 +2254,7 @@ impl AsRef<str> for ComplianceStatus {
 
 /// <p>Defines the compliance against the resiliency policy for a disruption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisruptionCompliance {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     #[doc(hidden)]
@@ -2291,22 +2327,6 @@ impl DisruptionCompliance {
     /// <p>The disruption compliance message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for DisruptionCompliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisruptionCompliance");
-        formatter.field("achievable_rto_in_secs", &self.achievable_rto_in_secs);
-        formatter.field("current_rto_in_secs", &self.current_rto_in_secs);
-        formatter.field("rto_reference_id", &self.rto_reference_id);
-        formatter.field("rto_description", &self.rto_description);
-        formatter.field("current_rpo_in_secs", &self.current_rpo_in_secs);
-        formatter.field("rpo_reference_id", &self.rpo_reference_id);
-        formatter.field("rpo_description", &self.rpo_description);
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.field("achievable_rpo_in_secs", &self.achievable_rpo_in_secs);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`DisruptionCompliance`](crate::model::DisruptionCompliance).
@@ -2468,7 +2488,7 @@ impl DisruptionCompliance {
 
 /// <p>The overall resiliency score, returned as an object that includes the disruption score and outage score.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResiliencyScore {
     /// <p>The outage score for a valid key.</p>
     #[doc(hidden)]
@@ -2488,14 +2508,6 @@ impl ResiliencyScore {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<crate::model::DisruptionType, f64>> {
         self.disruption_score.as_ref()
-    }
-}
-impl std::fmt::Debug for ResiliencyScore {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResiliencyScore");
-        formatter.field("score", &self.score);
-        formatter.field("disruption_score", &self.disruption_score);
-        formatter.finish()
     }
 }
 /// See [`ResiliencyScore`](crate::model::ResiliencyScore).
@@ -2558,7 +2570,7 @@ impl ResiliencyScore {
 
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cost {
     /// <p>The cost amount.</p>
     #[doc(hidden)]
@@ -2582,15 +2594,6 @@ impl Cost {
     /// <p>The cost frequency.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::CostFrequency> {
         self.frequency.as_ref()
-    }
-}
-impl std::fmt::Debug for Cost {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cost");
-        formatter.field("amount", &self.amount);
-        formatter.field("currency", &self.currency);
-        formatter.field("frequency", &self.frequency);
-        formatter.finish()
     }
 }
 /// See [`Cost`](crate::model::Cost).
@@ -2950,7 +2953,7 @@ impl AsRef<str> for ResourceResolutionStatusType {
 
 /// <p>Defines a resource that is not supported by Resilience Hub.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedResource {
     /// <p>The logical resource identifier for the unsupported resource.</p>
     #[doc(hidden)]
@@ -2974,15 +2977,6 @@ impl UnsupportedResource {
     /// <p>The type of resource.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedResource");
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.finish()
     }
 }
 /// See [`UnsupportedResource`](crate::model::UnsupportedResource).
@@ -3054,7 +3048,7 @@ impl UnsupportedResource {
 
 /// <p>Defines a physical resource identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
     #[doc(hidden)]
@@ -3113,16 +3107,6 @@ impl PhysicalResourceId {
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PhysicalResourceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhysicalResourceId");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("aws_account_id", &self.aws_account_id);
-        formatter.finish()
     }
 }
 /// See [`PhysicalResourceId`](crate::model::PhysicalResourceId).
@@ -3323,7 +3307,7 @@ impl AsRef<str> for PhysicalIdentifierType {
 
 /// <p>Defines a logical resource identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogicalResourceId {
     /// <p>The identifier of the resource.</p>
     #[doc(hidden)]
@@ -3354,16 +3338,6 @@ impl LogicalResourceId {
     /// <p> The name of the Terraform S3 state file this resource belongs to. </p>
     pub fn terraform_source_name(&self) -> std::option::Option<&str> {
         self.terraform_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for LogicalResourceId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogicalResourceId");
-        formatter.field("identifier", &self.identifier);
-        formatter.field("logical_stack_name", &self.logical_stack_name);
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("terraform_source_name", &self.terraform_source_name);
-        formatter.finish()
     }
 }
 /// See [`LogicalResourceId`](crate::model::LogicalResourceId).
@@ -3447,7 +3421,7 @@ impl LogicalResourceId {
 
 /// <p>Defines a test recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
     #[doc(hidden)]
@@ -3527,23 +3501,6 @@ impl TestRecommendation {
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub fn depends_on_alarms(&self) -> std::option::Option<&[std::string::String]> {
         self.depends_on_alarms.as_deref()
-    }
-}
-impl std::fmt::Debug for TestRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRecommendation");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("name", &self.name);
-        formatter.field("intent", &self.intent);
-        formatter.field("risk", &self.risk);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("description", &self.description);
-        formatter.field("items", &self.items);
-        formatter.field("prerequisite", &self.prerequisite);
-        formatter.field("depends_on_alarms", &self.depends_on_alarms);
-        formatter.finish()
     }
 }
 /// See [`TestRecommendation`](crate::model::TestRecommendation).
@@ -3726,7 +3683,7 @@ impl TestRecommendation {
 
 /// <p>Defines a recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationItem {
     /// <p>The resource identifier.</p>
     #[doc(hidden)]
@@ -3757,16 +3714,6 @@ impl RecommendationItem {
     /// <p>Specifies if the recommendation has already been implemented.</p>
     pub fn already_implemented(&self) -> std::option::Option<bool> {
         self.already_implemented
-    }
-}
-impl std::fmt::Debug for RecommendationItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationItem");
-        formatter.field("resource_id", &self.resource_id);
-        formatter.field("target_account_id", &self.target_account_id);
-        formatter.field("target_region", &self.target_region);
-        formatter.field("already_implemented", &self.already_implemented);
-        formatter.finish()
     }
 }
 /// See [`RecommendationItem`](crate::model::RecommendationItem).
@@ -4042,7 +3989,7 @@ impl AsRef<str> for TestRisk {
 
 /// <p>Defines a standard operating procedure (SOP) recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SopRecommendation {
     /// <p>The service type.</p>
     #[doc(hidden)]
@@ -4101,20 +4048,6 @@ impl SopRecommendation {
     /// <p>The prerequisite for the SOP recommendation.</p>
     pub fn prerequisite(&self) -> std::option::Option<&str> {
         self.prerequisite.as_deref()
-    }
-}
-impl std::fmt::Debug for SopRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SopRecommendation");
-        formatter.field("service_type", &self.service_type);
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("description", &self.description);
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("name", &self.name);
-        formatter.field("items", &self.items);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("prerequisite", &self.prerequisite);
-        formatter.finish()
     }
 }
 /// See [`SopRecommendation`](crate::model::SopRecommendation).
@@ -4545,7 +4478,7 @@ impl std::fmt::Debug for RecommendationTemplate {
 pub mod recommendation_template {
 
     /// A builder for [`RecommendationTemplate`](crate::model::RecommendationTemplate).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) templates_location: std::option::Option<crate::model::S3Location>,
         pub(crate) assessment_arn: std::option::Option<std::string::String>,
@@ -4854,6 +4787,29 @@ pub mod recommendation_template {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("templates_location", &self.templates_location);
+            formatter.field("assessment_arn", &self.assessment_arn);
+            formatter.field("app_arn", &self.app_arn);
+            formatter.field("recommendation_ids", &self.recommendation_ids);
+            formatter.field("recommendation_types", &self.recommendation_types);
+            formatter.field("format", &self.format);
+            formatter.field(
+                "recommendation_template_arn",
+                &self.recommendation_template_arn,
+            );
+            formatter.field("message", &self.message);
+            formatter.field("status", &self.status);
+            formatter.field("name", &self.name);
+            formatter.field("start_time", &self.start_time);
+            formatter.field("end_time", &self.end_time);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("needs_replacements", &self.needs_replacements);
+            formatter.finish()
+        }
+    }
 }
 impl RecommendationTemplate {
     /// Creates a new builder-style object to manufacture [`RecommendationTemplate`](crate::model::RecommendationTemplate).
@@ -5153,7 +5109,7 @@ impl AsRef<str> for RenderRecommendationType {
 
 /// <p>The location of the Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Location {
     /// <p>The name of the Amazon S3 bucket.</p>
     #[doc(hidden)]
@@ -5170,14 +5126,6 @@ impl S3Location {
     /// <p>The prefix for the Amazon S3 bucket.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
@@ -5228,7 +5176,7 @@ impl S3Location {
 
 /// <p>The version of the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppVersionSummary {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
@@ -5238,13 +5186,6 @@ impl AppVersionSummary {
     /// <p>The version of the application.</p>
     pub fn app_version(&self) -> std::option::Option<&str> {
         self.app_version.as_deref()
-    }
-}
-impl std::fmt::Debug for AppVersionSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppVersionSummary");
-        formatter.field("app_version", &self.app_version);
-        formatter.finish()
     }
 }
 /// See [`AppVersionSummary`](crate::model::AppVersionSummary).
@@ -5283,7 +5224,7 @@ impl AppVersionSummary {
 
 /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PhysicalResource {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
@@ -5321,17 +5262,6 @@ impl PhysicalResource {
     /// <p>The application components that belong to this resource.</p>
     pub fn app_components(&self) -> std::option::Option<&[crate::model::AppComponent]> {
         self.app_components.as_deref()
-    }
-}
-impl std::fmt::Debug for PhysicalResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PhysicalResource");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("logical_resource_id", &self.logical_resource_id);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("app_components", &self.app_components);
-        formatter.finish()
     }
 }
 /// See [`PhysicalResource`](crate::model::PhysicalResource).
@@ -5439,7 +5369,7 @@ impl PhysicalResource {
 
 /// <p>Defines an application component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppComponent {
     /// <p>The name of the application component.</p>
     #[doc(hidden)]
@@ -5456,14 +5386,6 @@ impl AppComponent {
     /// <p>The type of application component.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for AppComponent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppComponent");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`AppComponent`](crate::model::AppComponent).
@@ -5514,7 +5436,7 @@ impl AppComponent {
 
 /// <p>Defines a resource mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceMapping {
     /// <p>The name of the resource this resource is mapped to.</p>
     #[doc(hidden)]
@@ -5618,19 +5540,6 @@ impl ResourceMapping {
     /// <p> The short name of the Terraform source. </p>
     pub fn terraform_source_name(&self) -> std::option::Option<&str> {
         self.terraform_source_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceMapping");
-        formatter.field("resource_name", &self.resource_name);
-        formatter.field("logical_stack_name", &self.logical_stack_name);
-        formatter.field("app_registry_app_name", &self.app_registry_app_name);
-        formatter.field("resource_group_name", &self.resource_group_name);
-        formatter.field("mapping_type", &self.mapping_type);
-        formatter.field("physical_resource_id", &self.physical_resource_id);
-        formatter.field("terraform_source_name", &self.terraform_source_name);
-        formatter.finish()
     }
 }
 /// See [`ResourceMapping`](crate::model::ResourceMapping).
@@ -5927,7 +5836,7 @@ impl AsRef<str> for ResourceMappingType {
 
 /// <p>Defines an application summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -5981,19 +5890,6 @@ impl AppSummary {
         &self,
     ) -> std::option::Option<&crate::model::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
-    }
-}
-impl std::fmt::Debug for AppSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppSummary");
-        formatter.field("app_arn", &self.app_arn);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.field("assessment_schedule", &self.assessment_schedule);
-        formatter.finish()
     }
 }
 /// See [`AppSummary`](crate::model::AppSummary).
@@ -6117,7 +6013,7 @@ impl AppSummary {
 
 /// <p>Defines recommendations for a Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ComponentRecommendation {
     /// <p>The name of the application component.</p>
     #[doc(hidden)]
@@ -6146,15 +6042,6 @@ impl ComponentRecommendation {
         &self,
     ) -> std::option::Option<&[crate::model::ConfigRecommendation]> {
         self.config_recommendations.as_deref()
-    }
-}
-impl std::fmt::Debug for ComponentRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ComponentRecommendation");
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("recommendation_status", &self.recommendation_status);
-        formatter.field("config_recommendations", &self.config_recommendations);
-        formatter.finish()
     }
 }
 /// See [`ComponentRecommendation`](crate::model::ComponentRecommendation).
@@ -6237,7 +6124,7 @@ impl ComponentRecommendation {
 
 /// <p>Defines a configuration recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigRecommendation {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
@@ -6333,22 +6220,6 @@ impl ConfigRecommendation {
     /// <p>The reference identifier for the recommendation configuration.</p>
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfigRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigRecommendation");
-        formatter.field("cost", &self.cost);
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("compliance", &self.compliance);
-        formatter.field("recommendation_compliance", &self.recommendation_compliance);
-        formatter.field("optimization_type", &self.optimization_type);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("suggested_changes", &self.suggested_changes);
-        formatter.field("ha_architecture", &self.ha_architecture);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.finish()
     }
 }
 /// See [`ConfigRecommendation`](crate::model::ConfigRecommendation).
@@ -6787,7 +6658,7 @@ impl AsRef<str> for ConfigRecommendationOptimizationType {
 
 /// <p>Defines a disruption compliance recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RecommendationDisruptionCompliance {
     /// <p>The expected compliance status after applying the recommended configuration change.</p>
     #[doc(hidden)]
@@ -6827,20 +6698,6 @@ impl RecommendationDisruptionCompliance {
     /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub fn expected_rpo_description(&self) -> std::option::Option<&str> {
         self.expected_rpo_description.as_deref()
-    }
-}
-impl std::fmt::Debug for RecommendationDisruptionCompliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RecommendationDisruptionCompliance");
-        formatter.field(
-            "expected_compliance_status",
-            &self.expected_compliance_status,
-        );
-        formatter.field("expected_rto_in_secs", &self.expected_rto_in_secs);
-        formatter.field("expected_rto_description", &self.expected_rto_description);
-        formatter.field("expected_rpo_in_secs", &self.expected_rpo_in_secs);
-        formatter.field("expected_rpo_description", &self.expected_rpo_description);
-        formatter.finish()
     }
 }
 /// See [`RecommendationDisruptionCompliance`](crate::model::RecommendationDisruptionCompliance).
@@ -7033,7 +6890,7 @@ impl AsRef<str> for RecommendationComplianceStatus {
 
 /// <p>Defines the compliance of an application component against the resiliency policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppComponentCompliance {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
@@ -7087,18 +6944,6 @@ impl AppComponentCompliance {
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(&self) -> std::option::Option<&crate::model::ResiliencyScore> {
         self.resiliency_score.as_ref()
-    }
-}
-impl std::fmt::Debug for AppComponentCompliance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppComponentCompliance");
-        formatter.field("cost", &self.cost);
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("compliance", &self.compliance);
-        formatter.field("message", &self.message);
-        formatter.field("status", &self.status);
-        formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.finish()
     }
 }
 /// See [`AppComponentCompliance`](crate::model::AppComponentCompliance).
@@ -7229,7 +7074,7 @@ impl AppComponentCompliance {
 
 /// <p>Defines an application assessment summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AppAssessmentSummary {
     /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
@@ -7316,24 +7161,6 @@ impl AppAssessmentSummary {
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(&self) -> f64 {
         self.resiliency_score
-    }
-}
-impl std::fmt::Debug for AppAssessmentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AppAssessmentSummary");
-        formatter.field("app_arn", &self.app_arn);
-        formatter.field("app_version", &self.app_version);
-        formatter.field("assessment_status", &self.assessment_status);
-        formatter.field("invoker", &self.invoker);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("message", &self.message);
-        formatter.field("assessment_name", &self.assessment_name);
-        formatter.field("assessment_arn", &self.assessment_arn);
-        formatter.field("compliance_status", &self.compliance_status);
-        formatter.field("cost", &self.cost);
-        formatter.field("resiliency_score", &self.resiliency_score);
-        formatter.finish()
     }
 }
 /// See [`AppAssessmentSummary`](crate::model::AppAssessmentSummary).
@@ -7525,7 +7352,7 @@ impl AppAssessmentSummary {
 
 /// <p>Defines a recommendation for a CloudWatch alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlarmRecommendation {
     /// <p>The identifier of the alarm recommendation.</p>
     #[doc(hidden)]
@@ -7584,20 +7411,6 @@ impl AlarmRecommendation {
     /// <p>The prerequisite for the alarm recommendation.</p>
     pub fn prerequisite(&self) -> std::option::Option<&str> {
         self.prerequisite.as_deref()
-    }
-}
-impl std::fmt::Debug for AlarmRecommendation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlarmRecommendation");
-        formatter.field("recommendation_id", &self.recommendation_id);
-        formatter.field("reference_id", &self.reference_id);
-        formatter.field("name", &self.name);
-        formatter.field("description", &self.description);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("app_component_name", &self.app_component_name);
-        formatter.field("items", &self.items);
-        formatter.field("prerequisite", &self.prerequisite);
-        formatter.finish()
     }
 }
 /// See [`AlarmRecommendation`](crate::model::AlarmRecommendation).
@@ -7840,7 +7653,7 @@ impl AsRef<str> for AlarmType {
 
 /// <p> The Terraform s3 state file you need to import. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TerraformSource {
     /// <p> The Terraform s3 state file you need to import. </p>
     #[doc(hidden)]
@@ -7850,13 +7663,6 @@ impl TerraformSource {
     /// <p> The Terraform s3 state file you need to import. </p>
     pub fn s3_state_file_url(&self) -> std::option::Option<&str> {
         self.s3_state_file_url.as_deref()
-    }
-}
-impl std::fmt::Debug for TerraformSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TerraformSource");
-        formatter.field("s3_state_file_url", &self.s3_state_file_url);
-        formatter.finish()
     }
 }
 /// See [`TerraformSource`](crate::model::TerraformSource).

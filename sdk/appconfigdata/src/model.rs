@@ -157,7 +157,7 @@ impl BadRequestDetails {
 
 /// <p>Information about an invalid parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
     #[doc(hidden)]
@@ -167,13 +167,6 @@ impl InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
     pub fn problem(&self) -> std::option::Option<&crate::model::InvalidParameterProblem> {
         self.problem.as_ref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterDetail");
-        formatter.field("problem", &self.problem);
-        formatter.finish()
     }
 }
 /// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).

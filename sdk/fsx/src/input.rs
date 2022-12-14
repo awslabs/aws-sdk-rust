@@ -2698,7 +2698,7 @@ impl CreateSnapshotInput {
 pub mod create_storage_virtual_machine_input {
 
     /// A builder for [`CreateStorageVirtualMachineInput`](crate::input::CreateStorageVirtualMachineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) active_directory_configuration:
             std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
@@ -2837,6 +2837,25 @@ pub mod create_storage_virtual_machine_input {
                 tags: self.tags,
                 root_volume_security_style: self.root_volume_security_style,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "active_directory_configuration",
+                &self.active_directory_configuration,
+            );
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field("file_system_id", &self.file_system_id);
+            formatter.field("name", &self.name);
+            formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.field(
+                "root_volume_security_style",
+                &self.root_volume_security_style,
+            );
+            formatter.finish()
         }
     }
 }
@@ -8343,7 +8362,7 @@ impl UpdateSnapshotInput {
 pub mod update_storage_virtual_machine_input {
 
     /// A builder for [`UpdateStorageVirtualMachineInput`](crate::input::UpdateStorageVirtualMachineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) active_directory_configuration:
             std::option::Option<crate::model::UpdateSvmActiveDirectoryConfiguration>,
@@ -8420,6 +8439,22 @@ pub mod update_storage_virtual_machine_input {
                 storage_virtual_machine_id: self.storage_virtual_machine_id,
                 svm_admin_password: self.svm_admin_password,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field(
+                "active_directory_configuration",
+                &self.active_directory_configuration,
+            );
+            formatter.field("client_request_token", &self.client_request_token);
+            formatter.field(
+                "storage_virtual_machine_id",
+                &self.storage_virtual_machine_id,
+            );
+            formatter.field("svm_admin_password", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -8755,7 +8790,7 @@ impl UpdateVolumeInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -8797,17 +8832,6 @@ impl UpdateVolumeInput {
         &self,
     ) -> std::option::Option<&crate::model::UpdateOpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVolumeInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("name", &self.name);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
     }
 }
 
@@ -8868,7 +8892,7 @@ impl std::fmt::Debug for UpdateStorageVirtualMachineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -8894,19 +8918,10 @@ impl UpdateSnapshotInput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSnapshotInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
     #[doc(hidden)]
@@ -8993,23 +9008,10 @@ impl UpdateFileSystemInput {
         self.open_zfs_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileSystemInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("windows_configuration", &self.windows_configuration);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateFileCacheInput {
     /// <p>The ID of the cache that you are updating.</p>
     #[doc(hidden)]
@@ -9037,19 +9039,10 @@ impl UpdateFileCacheInput {
         self.lustre_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateFileCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateFileCacheInput");
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you are updating.</p>
     #[doc(hidden)]
@@ -9084,20 +9077,10 @@ impl UpdateDataRepositoryAssociationInput {
         self.s3.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDataRepositoryAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateDataRepositoryAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("imported_file_chunk_size", &self.imported_file_chunk_size);
-        formatter.field("s3", &self.s3);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for <code>UntagResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the Amazon FSx resource to untag.</p>
     #[doc(hidden)]
@@ -9116,18 +9099,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>TagResource</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>
     #[doc(hidden)]
@@ -9146,18 +9121,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9198,20 +9165,10 @@ impl RestoreVolumeFromSnapshotInput {
         self.options.as_deref()
     }
 }
-impl std::fmt::Debug for RestoreVolumeFromSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreVolumeFromSnapshotInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.field("options", &self.options);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     #[doc(hidden)]
@@ -9230,18 +9187,10 @@ impl ReleaseFileSystemNfsV3LocksInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for ReleaseFileSystemNfsV3LocksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReleaseFileSystemNfsV3LocksInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for <code>ListTagsForResource</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
     #[doc(hidden)]
@@ -9267,19 +9216,10 @@ impl ListTagsForResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9305,19 +9245,10 @@ impl DisassociateFileSystemAliasesInput {
         self.aliases.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateFileSystemAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateFileSystemAliasesInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeVolumesInput {
     /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
     #[doc(hidden)]
@@ -9350,20 +9281,10 @@ impl DescribeVolumesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeVolumesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeVolumesInput");
-        formatter.field("volume_ids", &self.volume_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeStorageVirtualMachinesInput {
     /// <p>Enter the ID of one or more SVMs that you want to view.</p>
     #[doc(hidden)]
@@ -9396,23 +9317,10 @@ impl DescribeStorageVirtualMachinesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeStorageVirtualMachinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeStorageVirtualMachinesInput");
-        formatter.field(
-            "storage_virtual_machine_ids",
-            &self.storage_virtual_machine_ids,
-        );
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
     #[doc(hidden)]
@@ -9445,20 +9353,10 @@ impl DescribeSnapshotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeSnapshotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeSnapshotsInput");
-        formatter.field("snapshot_ids", &self.snapshot_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for <code>DescribeFileSystems</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemsInput {
     /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
@@ -9484,19 +9382,10 @@ impl DescribeFileSystemsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemsInput");
-        formatter.field("file_system_ids", &self.file_system_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for <code>DescribeFileSystemAliases</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9529,20 +9418,10 @@ impl DescribeFileSystemAliasesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileSystemAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileSystemAliasesInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeFileCachesInput {
     /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
@@ -9568,19 +9447,10 @@ impl DescribeFileCachesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFileCachesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeFileCachesInput");
-        formatter.field("file_cache_ids", &self.file_cache_ids);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksInput {
     /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
@@ -9613,20 +9483,10 @@ impl DescribeDataRepositoryTasksInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataRepositoryTasksInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataRepositoryTasksInput");
-        formatter.field("task_ids", &self.task_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsInput {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
@@ -9659,20 +9519,10 @@ impl DescribeDataRepositoryAssociationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDataRepositoryAssociationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDataRepositoryAssociationsInput");
-        formatter.field("association_ids", &self.association_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>DescribeBackups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupsInput {
     /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
     #[doc(hidden)]
@@ -9705,20 +9555,10 @@ impl DescribeBackupsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupsInput");
-        formatter.field("backup_ids", &self.backup_ids);
-        formatter.field("filters", &self.filters);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9755,20 +9595,10 @@ impl DeleteVolumeInput {
         self.open_zfs_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVolumeInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteStorageVirtualMachineInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9787,21 +9617,10 @@ impl DeleteStorageVirtualMachineInput {
         self.storage_virtual_machine_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteStorageVirtualMachineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteStorageVirtualMachineInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field(
-            "storage_virtual_machine_id",
-            &self.storage_virtual_machine_id,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -9820,18 +9639,10 @@ impl DeleteSnapshotInput {
         self.snapshot_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSnapshotInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("snapshot_id", &self.snapshot_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system that you want to delete.</p>
     #[doc(hidden)]
@@ -9880,21 +9691,10 @@ impl DeleteFileSystemInput {
         self.open_zfs_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileSystemInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("windows_configuration", &self.windows_configuration);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteFileCacheInput {
     /// <p>The ID of the cache that's being deleted.</p>
     #[doc(hidden)]
@@ -9913,18 +9713,10 @@ impl DeleteFileCacheInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteFileCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteFileCacheInput");
-        formatter.field("file_cache_id", &self.file_cache_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationInput {
     /// <p>The ID of the data repository association that you want to delete.</p>
     #[doc(hidden)]
@@ -9950,22 +9742,10 @@ impl DeleteDataRepositoryAssociationInput {
         self.delete_data_in_file_system
     }
 }
-impl std::fmt::Debug for DeleteDataRepositoryAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDataRepositoryAssociationInput");
-        formatter.field("association_id", &self.association_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field(
-            "delete_data_in_file_system",
-            &self.delete_data_in_file_system,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>DeleteBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ID of the backup that you want to delete.</p>
     #[doc(hidden)]
@@ -9984,18 +9764,10 @@ impl DeleteBackupInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVolumeFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     #[doc(hidden)]
@@ -10037,21 +9809,10 @@ impl CreateVolumeFromBackupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVolumeFromBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVolumeFromBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVolumeInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -10100,18 +9861,6 @@ impl CreateVolumeInput {
         &self,
     ) -> std::option::Option<&crate::model::CreateOpenZfsVolumeConfiguration> {
         self.open_zfs_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateVolumeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVolumeInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("volume_type", &self.volume_type);
-        formatter.field("name", &self.name);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("tags", &self.tags);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
     }
 }
 
@@ -10209,7 +9958,7 @@ impl std::fmt::Debug for CreateStorageVirtualMachineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -10242,20 +9991,10 @@ impl CreateSnapshotInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSnapshotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSnapshotInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("name", &self.name);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>CreateFileSystemFromBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemFromBackupInput {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     #[doc(hidden)]
@@ -10403,28 +10142,10 @@ impl CreateFileSystemFromBackupInput {
         self.storage_capacity
     }
 }
-impl std::fmt::Debug for CreateFileSystemFromBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemFromBackupInput");
-        formatter.field("backup_id", &self.backup_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("windows_configuration", &self.windows_configuration);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("file_system_type_version", &self.file_system_type_version);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object used to create a new Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileSystemInput {
     /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -10613,29 +10334,10 @@ impl CreateFileSystemInput {
         self.open_zfs_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateFileSystemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileSystemInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("file_system_type", &self.file_system_type);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("storage_type", &self.storage_type);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("windows_configuration", &self.windows_configuration);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field("ontap_configuration", &self.ontap_configuration);
-        formatter.field("file_system_type_version", &self.file_system_type_version);
-        formatter.field("open_zfs_configuration", &self.open_zfs_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateFileCacheInput {
     /// <p>An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     /// <p>By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation without the risk of creating an extra cache. This approach can be useful when an initial call fails in a way that makes it unclear whether a cache was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a cache, the client receives success as long as the parameters are the same.</p>
@@ -10736,33 +10438,10 @@ impl CreateFileCacheInput {
         self.data_repository_associations.as_deref()
     }
 }
-impl std::fmt::Debug for CreateFileCacheInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateFileCacheInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("file_cache_type", &self.file_cache_type);
-        formatter.field("file_cache_type_version", &self.file_cache_type_version);
-        formatter.field("storage_capacity", &self.storage_capacity);
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.field("tags", &self.tags);
-        formatter.field(
-            "copy_tags_to_data_repository_associations",
-            &self.copy_tags_to_data_repository_associations,
-        );
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("lustre_configuration", &self.lustre_configuration);
-        formatter.field(
-            "data_repository_associations",
-            &self.data_repository_associations,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataRepositoryTaskInput {
     /// <p>Specifies the type of data repository task to create.</p>
     #[doc(hidden)]
@@ -10824,23 +10503,10 @@ impl CreateDataRepositoryTaskInput {
         self.capacity_to_release
     }
 }
-impl std::fmt::Debug for CreateDataRepositoryTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataRepositoryTaskInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("paths", &self.paths);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("report", &self.report);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("capacity_to_release", &self.capacity_to_release);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDataRepositoryAssociationInput {
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     #[doc(hidden)]
@@ -10909,27 +10575,10 @@ impl CreateDataRepositoryAssociationInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDataRepositoryAssociationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDataRepositoryAssociationInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("file_system_path", &self.file_system_path);
-        formatter.field("data_repository_path", &self.data_repository_path);
-        formatter.field(
-            "batch_import_meta_data_on_create",
-            &self.batch_import_meta_data_on_create,
-        );
-        formatter.field("imported_file_chunk_size", &self.imported_file_chunk_size);
-        formatter.field("s3", &self.s3);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object for the <code>CreateBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The ID of the file system to back up.</p>
     #[doc(hidden)]
@@ -10962,20 +10611,10 @@ impl CreateBackupInput {
         self.volume_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackupInput");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.field("volume_id", &self.volume_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyBackupInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -11038,22 +10677,10 @@ impl CopyBackupInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CopyBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyBackupInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("source_backup_id", &self.source_backup_id);
-        formatter.field("source_region", &self.source_region);
-        formatter.field("kms_key_id", &self.kms_key_id);
-        formatter.field("copy_tags", &self.copy_tags);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Cancels a data repository task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
     #[doc(hidden)]
@@ -11065,17 +10692,10 @@ impl CancelDataRepositoryTaskInput {
         self.task_id.as_deref()
     }
 }
-impl std::fmt::Debug for CancelDataRepositoryTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelDataRepositoryTaskInput");
-        formatter.field("task_id", &self.task_id);
-        formatter.finish()
-    }
-}
 
 /// <p>The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File Server file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
@@ -11113,14 +10733,5 @@ impl AssociateFileSystemAliasesInput {
     /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
     pub fn aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateFileSystemAliasesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateFileSystemAliasesInput");
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("aliases", &self.aliases);
-        formatter.finish()
     }
 }

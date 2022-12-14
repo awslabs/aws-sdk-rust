@@ -1161,7 +1161,7 @@ impl UpdateS3ResourcesInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
     #[doc(hidden)]
@@ -1183,18 +1183,10 @@ impl UpdateS3ResourcesInput {
         self.s3_resources_update.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("s3_resources_update", &self.s3_resources_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListS3ResourcesInput {
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     #[doc(hidden)]
@@ -1220,19 +1212,10 @@ impl ListS3ResourcesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMemberAccountsInput {
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
     #[doc(hidden)]
@@ -1251,18 +1234,10 @@ impl ListMemberAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMemberAccountsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMemberAccountsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
     #[doc(hidden)]
@@ -1281,18 +1256,10 @@ impl DisassociateS3ResourcesInput {
         self.associated_s3_resources.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("associated_s3_resources", &self.associated_s3_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the member account that you want to remove from Amazon Macie Classic.</p>
     #[doc(hidden)]
@@ -1304,17 +1271,10 @@ impl DisassociateMemberAccountInput {
         self.member_account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateMemberAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateMemberAccountInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateS3ResourcesInput {
     /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
     #[doc(hidden)]
@@ -1333,18 +1293,10 @@ impl AssociateS3ResourcesInput {
         self.s3_resources.as_deref()
     }
 }
-impl std::fmt::Debug for AssociateS3ResourcesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateS3ResourcesInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.field("s3_resources", &self.s3_resources);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
     #[doc(hidden)]
@@ -1354,12 +1306,5 @@ impl AssociateMemberAccountInput {
     /// <p>(Discontinued) The ID of the Amazon Web Services account that you want to associate with Amazon Macie Classic as a member account.</p>
     pub fn member_account_id(&self) -> std::option::Option<&str> {
         self.member_account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateMemberAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateMemberAccountInput");
-        formatter.field("member_account_id", &self.member_account_id);
-        formatter.finish()
     }
 }

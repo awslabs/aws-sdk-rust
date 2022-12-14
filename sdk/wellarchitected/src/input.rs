@@ -8890,7 +8890,7 @@ impl UpgradeLensReviewInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpgradeLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -8937,20 +8937,10 @@ impl UpgradeLensReviewInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpgradeLensReviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpgradeLensReviewInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("milestone_name", &self.milestone_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -8976,19 +8966,10 @@ impl UpdateWorkloadShareInput {
         self.permission_type.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkloadShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkloadShareInput");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("permission_type", &self.permission_type);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to update a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9164,34 +9145,10 @@ impl UpdateWorkloadInput {
         self.improvement_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateWorkloadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateWorkloadInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment", &self.environment);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("aws_regions", &self.aws_regions);
-        formatter.field("non_aws_regions", &self.non_aws_regions);
-        formatter.field("pillar_priorities", &self.pillar_priorities);
-        formatter.field("architectural_design", &self.architectural_design);
-        formatter.field("review_owner", &self.review_owner);
-        formatter.field(
-            "is_review_owner_update_acknowledged",
-            &self.is_review_owner_update_acknowledged,
-        );
-        formatter.field("industry_type", &self.industry_type);
-        formatter.field("industry", &self.industry);
-        formatter.field("notes", &self.notes);
-        formatter.field("improvement_status", &self.improvement_status);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Update Share Invitation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
@@ -9212,18 +9169,10 @@ impl UpdateShareInvitationInput {
         self.share_invitation_action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateShareInvitationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateShareInvitationInput");
-        formatter.field("share_invitation_id", &self.share_invitation_id);
-        formatter.field("share_invitation_action", &self.share_invitation_action);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for update lens review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9266,20 +9215,10 @@ impl UpdateLensReviewInput {
         self.pillar_notes.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateLensReviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateLensReviewInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_notes", &self.lens_notes);
-        formatter.field("pillar_notes", &self.pillar_notes);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The status of organization sharing settings.</p>
     #[doc(hidden)]
@@ -9293,20 +9232,10 @@ impl UpdateGlobalSettingsInput {
         self.organization_sharing_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalSettingsInput");
-        formatter.field(
-            "organization_sharing_status",
-            &self.organization_sharing_status,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Input to update answer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9381,24 +9310,10 @@ impl UpdateAnswerInput {
         self.reason.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAnswerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAnswerInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("question_id", &self.question_id);
-        formatter.field("selected_choices", &self.selected_choices);
-        formatter.field("choice_updates", &self.choice_updates);
-        formatter.field("notes", &self.notes);
-        formatter.field("is_applicable", &self.is_applicable);
-        formatter.field("reason", &self.reason);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
@@ -9417,18 +9332,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("workload_arn", &self.workload_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
@@ -9451,18 +9358,10 @@ impl TagResourceInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("workload_arn", &self.workload_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for List Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkloadSharesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9502,21 +9401,10 @@ impl ListWorkloadSharesInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ListWorkloadSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkloadSharesInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("shared_with_prefix", &self.shared_with_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list all workloads.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListWorkloadsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     #[doc(hidden)]
@@ -9542,19 +9430,10 @@ impl ListWorkloadsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListWorkloadsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListWorkloadsInput");
-        formatter.field("workload_name_prefix", &self.workload_name_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
@@ -9566,17 +9445,10 @@ impl ListTagsForResourceInput {
         self.workload_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("workload_arn", &self.workload_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListShareInvitationsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     #[doc(hidden)]
@@ -9616,21 +9488,10 @@ impl ListShareInvitationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListShareInvitationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListShareInvitationsInput");
-        formatter.field("workload_name_prefix", &self.workload_name_prefix);
-        formatter.field("lens_name_prefix", &self.lens_name_prefix);
-        formatter.field("share_resource_type", &self.share_resource_type);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListNotificationsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9656,19 +9517,10 @@ impl ListNotificationsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListNotificationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListNotificationsInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list all milestones for a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMilestonesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9694,19 +9546,10 @@ impl ListMilestonesInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMilestonesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMilestonesInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLensSharesInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -9752,21 +9595,10 @@ impl ListLensSharesInput {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for ListLensSharesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLensSharesInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("shared_with_prefix", &self.shared_with_prefix);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("status", &self.status);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list lens reviews.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLensReviewsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9801,20 +9633,10 @@ impl ListLensReviewsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLensReviewsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLensReviewsInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list lens review improvements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLensReviewImprovementsInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9871,22 +9693,10 @@ impl ListLensReviewImprovementsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListLensReviewImprovementsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLensReviewImprovementsInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list lenses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLensesInput {
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
@@ -9926,21 +9736,10 @@ impl ListLensesInput {
         self.lens_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListLensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListLensesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("lens_type", &self.lens_type);
-        formatter.field("lens_status", &self.lens_status);
-        formatter.field("lens_name", &self.lens_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to list answers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAnswersInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -9997,22 +9796,10 @@ impl ListAnswersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAnswersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAnswersInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("pillar_id", &self.pillar_id);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportLensInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10061,20 +9848,10 @@ impl ImportLensInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ImportLensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportLensInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("json_string", &self.json_string);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to get a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10086,17 +9863,10 @@ impl GetWorkloadInput {
         self.workload_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetWorkloadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetWorkloadInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to get a milestone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMilestoneInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10117,18 +9887,10 @@ impl GetMilestoneInput {
         self.milestone_number
     }
 }
-impl std::fmt::Debug for GetMilestoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMilestoneInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLensVersionDifferenceInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10160,19 +9922,10 @@ impl GetLensVersionDifferenceInput {
         self.target_lens_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetLensVersionDifferenceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLensVersionDifferenceInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("base_lens_version", &self.base_lens_version);
-        formatter.field("target_lens_version", &self.target_lens_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to get lens review report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLensReviewReportInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10206,19 +9959,10 @@ impl GetLensReviewReportInput {
         self.milestone_number
     }
 }
-impl std::fmt::Debug for GetLensReviewReportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLensReviewReportInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to get lens review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10252,19 +9996,10 @@ impl GetLensReviewInput {
         self.milestone_number
     }
 }
-impl std::fmt::Debug for GetLensReviewInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLensReviewInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetLensInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10289,18 +10024,10 @@ impl GetLensInput {
         self.lens_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetLensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetLensInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to get answer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAnswerInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10341,20 +10068,10 @@ impl GetAnswerInput {
         self.milestone_number
     }
 }
-impl std::fmt::Debug for GetAnswerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAnswerInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("question_id", &self.question_id);
-        formatter.field("milestone_number", &self.milestone_number);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportLensInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10379,18 +10096,10 @@ impl ExportLensInput {
         self.lens_version.as_deref()
     }
 }
-impl std::fmt::Debug for ExportLensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportLensInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to disassociate lens reviews.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10411,18 +10120,10 @@ impl DisassociateLensesInput {
         self.lens_aliases.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateLensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateLensesInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_aliases", &self.lens_aliases);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Delete Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -10454,19 +10155,10 @@ impl DeleteWorkloadShareInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkloadShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkloadShareInput");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for workload deletion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteWorkloadInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10491,18 +10183,10 @@ impl DeleteWorkloadInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteWorkloadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteWorkloadInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLensShareInput {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
@@ -10540,19 +10224,10 @@ impl DeleteLensShareInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteLensShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLensShareInput");
-        formatter.field("share_id", &self.share_id);
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteLensInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10590,19 +10265,10 @@ impl DeleteLensInput {
         self.lens_status.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteLensInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteLensInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("lens_status", &self.lens_status);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for Create Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkloadShareInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10641,20 +10307,10 @@ impl CreateWorkloadShareInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkloadShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkloadShareInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("permission_type", &self.permission_type);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for workload creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateWorkloadInput {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
@@ -10836,31 +10492,10 @@ impl CreateWorkloadInput {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateWorkloadInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateWorkloadInput");
-        formatter.field("workload_name", &self.workload_name);
-        formatter.field("description", &self.description);
-        formatter.field("environment", &self.environment);
-        formatter.field("account_ids", &self.account_ids);
-        formatter.field("aws_regions", &self.aws_regions);
-        formatter.field("non_aws_regions", &self.non_aws_regions);
-        formatter.field("pillar_priorities", &self.pillar_priorities);
-        formatter.field("architectural_design", &self.architectural_design);
-        formatter.field("review_owner", &self.review_owner);
-        formatter.field("industry_type", &self.industry_type);
-        formatter.field("industry", &self.industry);
-        formatter.field("lenses", &self.lenses);
-        formatter.field("notes", &self.notes);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Input for milestone creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateMilestoneInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -10894,19 +10529,10 @@ impl CreateMilestoneInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMilestoneInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateMilestoneInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("milestone_name", &self.milestone_name);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLensVersionInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -10951,20 +10577,10 @@ impl CreateLensVersionInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLensVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLensVersionInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("lens_version", &self.lens_version);
-        formatter.field("is_major_version", &self.is_major_version);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLensShareInput {
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2::lens/serverless</code>.</p>
@@ -11002,19 +10618,10 @@ impl CreateLensShareInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLensShareInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateLensShareInput");
-        formatter.field("lens_alias", &self.lens_alias);
-        formatter.field("shared_with", &self.shared_with);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Input to associate lens reviews.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateLensesInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
@@ -11033,13 +10640,5 @@ impl AssociateLensesInput {
     /// <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.lens_aliases.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateLensesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateLensesInput");
-        formatter.field("workload_id", &self.workload_id);
-        formatter.field("lens_aliases", &self.lens_aliases);
-        formatter.finish()
     }
 }

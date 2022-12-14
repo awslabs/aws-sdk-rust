@@ -2,14 +2,8 @@
 
 /// <p>The structure representing the SubmitFeedbackResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SubmitFeedbackOutput {}
-impl std::fmt::Debug for SubmitFeedbackOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SubmitFeedbackOutput");
-        formatter.finish()
-    }
-}
 /// See [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput).
 pub mod submit_feedback_output {
 
@@ -32,7 +26,7 @@ impl SubmitFeedbackOutput {
 
 /// <p>The structure representing the <code>removePermissionResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemovePermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed. </p>
     #[doc(hidden)]
@@ -49,14 +43,6 @@ impl RemovePermissionOutput {
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy after the specified permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the response. </p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RemovePermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemovePermissionOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -107,7 +93,7 @@ impl RemovePermissionOutput {
 
 /// <p>The structure representing the RemoveNotificationChannelResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RemoveNotificationChannelOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -119,16 +105,6 @@ impl RemoveNotificationChannelOutput {
         &self,
     ) -> std::option::Option<&crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for RemoveNotificationChannelOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RemoveNotificationChannelOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
@@ -174,7 +150,7 @@ impl RemoveNotificationChannelOutput {
 
 /// <p>The structure representing the <code>putPermissionResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPermissionOutput {
     /// <p> The JSON-formatted resource-based policy on the profiling group that includes the added permissions. </p>
     #[doc(hidden)]
@@ -191,14 +167,6 @@ impl PutPermissionOutput {
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy that includes the added permissions. The JSON-formatted policy is in the <code>policy</code> element of the response. </p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for PutPermissionOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPermissionOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`PutPermissionOutput`](crate::output::PutPermissionOutput).
@@ -249,14 +217,8 @@ impl PutPermissionOutput {
 
 /// <p>The structure representing the postAgentProfileResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PostAgentProfileOutput {}
-impl std::fmt::Debug for PostAgentProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PostAgentProfileOutput");
-        formatter.finish()
-    }
-}
 /// See [`PostAgentProfileOutput`](crate::output::PostAgentProfileOutput).
 pub mod post_agent_profile_output {
 
@@ -279,7 +241,7 @@ impl PostAgentProfileOutput {
 
 /// <p>The structure representing the listProfileTimesResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     #[doc(hidden)]
@@ -296,14 +258,6 @@ impl ListProfileTimesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListProfileTimesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfileTimesOutput");
-        formatter.field("profile_times", &self.profile_times);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListProfileTimesOutput`](crate::output::ListProfileTimesOutput).
@@ -363,7 +317,7 @@ impl ListProfileTimesOutput {
 
 /// <p>The structure representing the ListFindingsReportsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListFindingsReportsOutput {
     /// <p>The list of analysis results summaries.</p>
     #[doc(hidden)]
@@ -383,14 +337,6 @@ impl ListFindingsReportsOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request. When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListFindingsReportsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListFindingsReportsOutput");
-        formatter.field("findings_report_summaries", &self.findings_report_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListFindingsReportsOutput`](crate::output::ListFindingsReportsOutput).
@@ -454,7 +400,7 @@ impl ListFindingsReportsOutput {
 
 /// <p>The structure representing the GetRecommendationsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
     #[doc(hidden)]
@@ -492,17 +438,6 @@ impl GetRecommendationsOutput {
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
     pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
         self.anomalies.as_deref()
-    }
-}
-impl std::fmt::Debug for GetRecommendationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationsOutput");
-        formatter.field("profiling_group_name", &self.profiling_group_name);
-        formatter.field("profile_start_time", &self.profile_start_time);
-        formatter.field("profile_end_time", &self.profile_end_time);
-        formatter.field("recommendations", &self.recommendations);
-        formatter.field("anomalies", &self.anomalies);
-        formatter.finish()
     }
 }
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
@@ -617,7 +552,7 @@ impl GetRecommendationsOutput {
 
 /// <p>The structure representing the getProfileResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
     #[doc(hidden)]
@@ -641,15 +576,6 @@ impl GetProfileOutput {
     /// <p>The content encoding of the profile.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
-    }
-}
-impl std::fmt::Debug for GetProfileOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProfileOutput");
-        formatter.field("profile", &self.profile);
-        formatter.field("content_type", &self.content_type);
-        formatter.field("content_encoding", &self.content_encoding);
-        formatter.finish()
     }
 }
 /// See [`GetProfileOutput`](crate::output::GetProfileOutput).
@@ -715,7 +641,7 @@ impl GetProfileOutput {
 
 /// <p>The structure representing the <code>getPolicyResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
     #[doc(hidden)]
@@ -732,14 +658,6 @@ impl GetPolicyOutput {
     /// <p>A unique identifier for the current revision of the returned policy.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetPolicyOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPolicyOutput");
-        formatter.field("policy", &self.policy);
-        formatter.field("revision_id", &self.revision_id);
-        formatter.finish()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -790,7 +708,7 @@ impl GetPolicyOutput {
 
 /// <p>The structure representing the GetNotificationConfigurationResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetNotificationConfigurationOutput {
     /// <p>The current notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -802,16 +720,6 @@ impl GetNotificationConfigurationOutput {
         &self,
     ) -> std::option::Option<&crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for GetNotificationConfigurationOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetNotificationConfigurationOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`GetNotificationConfigurationOutput`](crate::output::GetNotificationConfigurationOutput).
@@ -857,7 +765,7 @@ impl GetNotificationConfigurationOutput {
 
 /// <p>The structure representing the configureAgentResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigureAgentOutput {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
     #[doc(hidden)]
@@ -867,13 +775,6 @@ impl ConfigureAgentOutput {
     /// <p> An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html"> <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return profiling data. </p>
     pub fn configuration(&self) -> std::option::Option<&crate::model::AgentConfiguration> {
         self.configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfigureAgentOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigureAgentOutput");
-        formatter.field("configuration", &self.configuration);
-        formatter.finish()
     }
 }
 /// See [`ConfigureAgentOutput`](crate::output::ConfigureAgentOutput).
@@ -915,7 +816,7 @@ impl ConfigureAgentOutput {
 
 /// <p>The structure representing the BatchGetFrameMetricDataResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataOutput {
     /// <p> The start time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
@@ -982,18 +883,6 @@ impl BatchGetFrameMetricDataOutput {
     /// <p>Details of the metrics to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub fn frame_metric_data(&self) -> std::option::Option<&[crate::model::FrameMetricDatum]> {
         self.frame_metric_data.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetFrameMetricDataOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetFrameMetricDataOutput");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("resolution", &self.resolution);
-        formatter.field("end_times", &self.end_times);
-        formatter.field("unprocessed_end_times", &self.unprocessed_end_times);
-        formatter.field("frame_metric_data", &self.frame_metric_data);
-        formatter.finish()
     }
 }
 /// See [`BatchGetFrameMetricDataOutput`](crate::output::BatchGetFrameMetricDataOutput).
@@ -1153,7 +1042,7 @@ impl BatchGetFrameMetricDataOutput {
 
 /// <p>The structure representing the AddNotificationChannelsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
@@ -1165,16 +1054,6 @@ impl AddNotificationChannelsOutput {
         &self,
     ) -> std::option::Option<&crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AddNotificationChannelsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AddNotificationChannelsOutput");
-        formatter.field(
-            "notification_configuration",
-            &self.notification_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`AddNotificationChannelsOutput`](crate::output::AddNotificationChannelsOutput).
@@ -1220,7 +1099,7 @@ impl AddNotificationChannelsOutput {
 
 /// <p>The structure representing the listProfilingGroupsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProfilingGroupsOutput {
     /// <p> A returned list of profiling group names. A list of the names is returned only if <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects is returned. </p>
     #[doc(hidden)]
@@ -1247,15 +1126,6 @@ impl ListProfilingGroupsOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListProfilingGroupsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProfilingGroupsOutput");
-        formatter.field("profiling_group_names", &self.profiling_group_names);
-        formatter.field("profiling_groups", &self.profiling_groups);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`ListProfilingGroupsOutput`](crate::output::ListProfilingGroupsOutput).
@@ -1337,7 +1207,7 @@ impl ListProfilingGroupsOutput {
 
 /// <p>The structure representing the createProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     #[doc(hidden)]
@@ -1347,13 +1217,6 @@ impl CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
     }
 }
 /// See [`CreateProfilingGroupOutput`](crate::output::CreateProfilingGroupOutput).
@@ -1395,14 +1258,8 @@ impl CreateProfilingGroupOutput {
 
 /// <p>The structure representing the deleteProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProfilingGroupOutput {}
-impl std::fmt::Debug for DeleteProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProfilingGroupOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeleteProfilingGroupOutput`](crate::output::DeleteProfilingGroupOutput).
 pub mod delete_profiling_group_output {
 
@@ -1425,7 +1282,7 @@ impl DeleteProfilingGroupOutput {
 
 /// <p>The structure representing the updateProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
     #[doc(hidden)]
@@ -1435,13 +1292,6 @@ impl UpdateProfilingGroupOutput {
     /// <p> A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> that contains information about the returned updated profiling group. </p>
     pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
     }
 }
 /// See [`UpdateProfilingGroupOutput`](crate::output::UpdateProfilingGroupOutput).
@@ -1483,7 +1333,7 @@ impl UpdateProfilingGroupOutput {
 
 /// <p>The structure representing the describeProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
     #[doc(hidden)]
@@ -1493,13 +1343,6 @@ impl DescribeProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
     pub fn profiling_group(&self) -> std::option::Option<&crate::model::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
-    }
-}
-impl std::fmt::Debug for DescribeProfilingGroupOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeProfilingGroupOutput");
-        formatter.field("profiling_group", &self.profiling_group);
-        formatter.finish()
     }
 }
 /// See [`DescribeProfilingGroupOutput`](crate::output::DescribeProfilingGroupOutput).
@@ -1541,14 +1384,8 @@ impl DescribeProfilingGroupOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceOutput {}
-impl std::fmt::Debug for UntagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -1571,14 +1408,8 @@ impl UntagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceOutput {}
-impl std::fmt::Debug for TagResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceOutput");
-        formatter.finish()
-    }
-}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -1601,7 +1432,7 @@ impl TagResourceOutput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p> The list of tags assigned to the specified resource. This is the list of tags returned in the response. </p>
     #[doc(hidden)]
@@ -1615,13 +1446,6 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for ListTagsForResourceOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1675,7 +1499,7 @@ impl ListTagsForResourceOutput {
 
 /// <p>The structure representing the GetFindingsReportAccountSummaryResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     #[doc(hidden)]
@@ -1692,14 +1516,6 @@ impl GetFindingsReportAccountSummaryOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
-    }
-}
-impl std::fmt::Debug for GetFindingsReportAccountSummaryOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetFindingsReportAccountSummaryOutput");
-        formatter.field("report_summaries", &self.report_summaries);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
     }
 }
 /// See [`GetFindingsReportAccountSummaryOutput`](crate::output::GetFindingsReportAccountSummaryOutput).

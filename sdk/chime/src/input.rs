@@ -428,7 +428,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
 pub mod associate_phone_number_with_user_input {
 
     /// A builder for [`AssociatePhoneNumberWithUserInput`](crate::input::AssociatePhoneNumberWithUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -480,6 +480,15 @@ pub mod associate_phone_number_with_user_input {
                 user_id: self.user_id,
                 e164_phone_number: self.e164_phone_number,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("user_id", &self.user_id);
+            formatter.field("e164_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -2544,7 +2553,7 @@ impl CreateAccountInput {
 pub mod create_app_instance_input {
 
     /// A builder for [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
@@ -2617,6 +2626,16 @@ pub mod create_app_instance_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -2927,7 +2946,7 @@ impl CreateAppInstanceAdminInput {
 pub mod create_app_instance_user_input {
 
     /// A builder for [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) app_instance_user_id: std::option::Option<std::string::String>,
@@ -3030,6 +3049,18 @@ pub mod create_app_instance_user_input {
                 client_request_token: self.client_request_token,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("app_instance_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -3154,7 +3185,7 @@ impl CreateAppInstanceUserInput {
 pub mod create_attendee_input {
 
     /// A builder for [`CreateAttendeeInput`](crate::input::CreateAttendeeInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -3213,6 +3244,15 @@ pub mod create_attendee_input {
                 external_user_id: self.external_user_id,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("meeting_id", &self.meeting_id);
+            formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -3354,7 +3394,7 @@ impl CreateAttendeeInput {
 pub mod create_bot_input {
 
     /// A builder for [`CreateBotInput`](crate::input::CreateBotInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -3401,6 +3441,15 @@ pub mod create_bot_input {
                 display_name: self.display_name,
                 domain: self.domain,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("display_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("domain", &self.domain);
+            formatter.finish()
         }
     }
 }
@@ -3536,7 +3585,7 @@ impl CreateBotInput {
 pub mod create_channel_input {
 
     /// A builder for [`CreateChannelInput`](crate::input::CreateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3661,6 +3710,20 @@ pub mod create_channel_input {
                 tags: self.tags,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("mode", &self.mode);
+            formatter.field("privacy", &self.privacy);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -4387,7 +4450,7 @@ impl CreateChannelModeratorInput {
 pub mod create_media_capture_pipeline_input {
 
     /// A builder for [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) source_type: std::option::Option<crate::model::MediaPipelineSourceType>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
@@ -4488,6 +4551,21 @@ pub mod create_media_capture_pipeline_input {
                 client_request_token: self.client_request_token,
                 chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("source_type", &self.source_type);
+            formatter.field("source_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("sink_type", &self.sink_type);
+            formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field(
+                "chime_sdk_meeting_configuration",
+                &self.chime_sdk_meeting_configuration,
+            );
+            formatter.finish()
         }
     }
 }
@@ -4607,7 +4685,7 @@ impl CreateMediaCapturePipelineInput {
 pub mod create_meeting_input {
 
     /// A builder for [`CreateMeetingInput`](crate::input::CreateMeetingInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
@@ -4717,6 +4795,21 @@ pub mod create_meeting_input {
                 tags: self.tags,
                 notifications_configuration: self.notifications_configuration,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("tags", &self.tags);
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.finish()
         }
     }
 }
@@ -4837,7 +4930,7 @@ impl CreateMeetingInput {
 pub mod create_meeting_dial_out_input {
 
     /// A builder for [`CreateMeetingDialOutInput`](crate::input::CreateMeetingDialOutInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
         pub(crate) from_phone_number: std::option::Option<std::string::String>,
@@ -4904,6 +4997,16 @@ pub mod create_meeting_dial_out_input {
                 to_phone_number: self.to_phone_number,
                 join_token: self.join_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("meeting_id", &self.meeting_id);
+            formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("to_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("join_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -5047,7 +5150,7 @@ impl CreateMeetingDialOutInput {
 pub mod create_meeting_with_attendees_input {
 
     /// A builder for [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) external_meeting_id: std::option::Option<std::string::String>,
@@ -5181,6 +5284,22 @@ pub mod create_meeting_with_attendees_input {
                 notifications_configuration: self.notifications_configuration,
                 attendees: self.attendees,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("media_region", &self.media_region);
+            formatter.field("tags", &self.tags);
+            formatter.field(
+                "notifications_configuration",
+                &self.notifications_configuration,
+            );
+            formatter.field("attendees", &self.attendees);
+            formatter.finish()
         }
     }
 }
@@ -5477,7 +5596,7 @@ impl CreatePhoneNumberOrderInput {
 pub mod create_proxy_session_input {
 
     /// A builder for [`CreateProxySessionInput`](crate::input::CreateProxySessionInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) participant_phone_numbers:
@@ -5623,6 +5742,20 @@ pub mod create_proxy_session_input {
             })
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("voice_connector_id", &self.voice_connector_id);
+            formatter.field("participant_phone_numbers", &self.participant_phone_numbers);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("expiry_minutes", &self.expiry_minutes);
+            formatter.field("capabilities", &self.capabilities);
+            formatter.field("number_selection_behavior", &self.number_selection_behavior);
+            formatter.field("geo_match_level", &self.geo_match_level);
+            formatter.field("geo_match_params", &self.geo_match_params);
+            formatter.finish()
+        }
+    }
 }
 impl CreateProxySessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProxySession`](crate::operation::CreateProxySession)>
@@ -5762,7 +5895,7 @@ impl CreateProxySessionInput {
 pub mod create_room_input {
 
     /// A builder for [`CreateRoomInput`](crate::input::CreateRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5812,6 +5945,15 @@ pub mod create_room_input {
                 name: self.name,
                 client_request_token: self.client_request_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -6361,7 +6503,7 @@ impl CreateSipMediaApplicationInput {
 pub mod create_sip_media_application_call_input {
 
     /// A builder for [`CreateSipMediaApplicationCallInput`](crate::input::CreateSipMediaApplicationCallInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) from_phone_number: std::option::Option<std::string::String>,
         pub(crate) to_phone_number: std::option::Option<std::string::String>,
@@ -6448,6 +6590,16 @@ pub mod create_sip_media_application_call_input {
                 sip_media_application_id: self.sip_media_application_id,
                 sip_headers: self.sip_headers,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("from_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("to_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("sip_media_application_id", &self.sip_media_application_id);
+            formatter.field("sip_headers", &self.sip_headers);
+            formatter.finish()
         }
     }
 }
@@ -6795,7 +6947,7 @@ impl CreateSipRuleInput {
 pub mod create_user_input {
 
     /// A builder for [`CreateUserInput`](crate::input::CreateUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
@@ -6854,6 +7006,16 @@ pub mod create_user_input {
                 email: self.email,
                 user_type: self.user_type,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("username", &self.username);
+            formatter.field("email", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_type", &self.user_type);
+            formatter.finish()
         }
     }
 }
@@ -19845,7 +20007,7 @@ impl InviteUsersInput {
 pub mod list_accounts_input {
 
     /// A builder for [`ListAccountsInput`](crate::input::ListAccountsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) user_email: std::option::Option<std::string::String>,
@@ -19904,6 +20066,16 @@ pub mod list_accounts_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("user_email", &"*** Sensitive Data Redacted ***");
+            formatter.field("next_token", &self.next_token);
+            formatter.field("max_results", &self.max_results);
+            formatter.finish()
         }
     }
 }
@@ -20044,7 +20216,7 @@ impl ListAccountsInput {
 pub mod list_app_instance_admins_input {
 
     /// A builder for [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -20096,6 +20268,15 @@ pub mod list_app_instance_admins_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -20249,7 +20430,7 @@ impl ListAppInstanceAdminsInput {
 pub mod list_app_instances_input {
 
     /// A builder for [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -20286,6 +20467,14 @@ pub mod list_app_instances_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -20415,7 +20604,7 @@ impl ListAppInstancesInput {
 pub mod list_app_instance_users_input {
 
     /// A builder for [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -20467,6 +20656,15 @@ pub mod list_app_instance_users_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -21188,7 +21386,7 @@ impl ListBotsInput {
 pub mod list_channel_bans_input {
 
     /// A builder for [`ListChannelBansInput`](crate::input::ListChannelBansInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -21247,6 +21445,16 @@ pub mod list_channel_bans_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -21401,7 +21609,7 @@ impl ListChannelBansInput {
 pub mod list_channel_memberships_input {
 
     /// A builder for [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
@@ -21477,6 +21685,17 @@ pub mod list_channel_memberships_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("r#type", &self.r#type);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -21637,7 +21856,7 @@ impl ListChannelMembershipsInput {
 pub mod list_channel_memberships_for_app_instance_user_input {
 
     /// A builder for [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -21703,6 +21922,16 @@ pub mod list_channel_memberships_for_app_instance_user_input {
                     chime_bearer: self.chime_bearer,
                 },
             )
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -21846,7 +22075,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
 pub mod list_channel_messages_input {
 
     /// A builder for [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
@@ -21952,6 +22181,19 @@ pub mod list_channel_messages_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("sort_order", &self.sort_order);
+            formatter.field("not_before", &self.not_before);
+            formatter.field("not_after", &self.not_after);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -22136,7 +22378,7 @@ impl ListChannelMessagesInput {
 pub mod list_channel_moderators_input {
 
     /// A builder for [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -22197,6 +22439,16 @@ pub mod list_channel_moderators_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -22352,7 +22604,7 @@ impl ListChannelModeratorsInput {
 pub mod list_channels_input {
 
     /// A builder for [`ListChannelsInput`](crate::input::ListChannelsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) privacy: std::option::Option<crate::model::ChannelPrivacy>,
@@ -22429,6 +22681,17 @@ pub mod list_channels_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("privacy", &self.privacy);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -22583,7 +22846,7 @@ impl ListChannelsInput {
 pub mod list_channels_moderated_by_app_instance_user_input {
 
     /// A builder for [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -22647,6 +22910,16 @@ pub mod list_channels_moderated_by_app_instance_user_input {
                 next_token: self.next_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -24842,7 +25115,7 @@ impl ListSupportedPhoneNumberCountriesInput {
 pub mod list_tags_for_resource_input {
 
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
@@ -24867,6 +25140,13 @@ pub mod list_tags_for_resource_input {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -24994,7 +25274,7 @@ impl ListTagsForResourceInput {
 pub mod list_users_input {
 
     /// A builder for [`ListUsersInput`](crate::input::ListUsersInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) user_email: std::option::Option<std::string::String>,
@@ -25065,6 +25345,17 @@ pub mod list_users_input {
                 max_results: self.max_results,
                 next_token: self.next_token,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("user_email", &"*** Sensitive Data Redacted ***");
+            formatter.field("user_type", &self.user_type);
+            formatter.field("max_results", &self.max_results);
+            formatter.field("next_token", &self.next_token);
+            formatter.finish()
         }
     }
 }
@@ -26289,7 +26580,7 @@ impl PutAppInstanceStreamingConfigurationsInput {
 pub mod put_events_configuration_input {
 
     /// A builder for [`PutEventsConfigurationInput`](crate::input::PutEventsConfigurationInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) bot_id: std::option::Option<std::string::String>,
@@ -26359,6 +26650,19 @@ pub mod put_events_configuration_input {
                 outbound_events_https_endpoint: self.outbound_events_https_endpoint,
                 lambda_function_arn: self.lambda_function_arn,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("bot_id", &self.bot_id);
+            formatter.field(
+                "outbound_events_https_endpoint",
+                &"*** Sensitive Data Redacted ***",
+            );
+            formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -27452,7 +27756,7 @@ impl PutVoiceConnectorOriginationInput {
 pub mod put_voice_connector_proxy_input {
 
     /// A builder for [`PutVoiceConnectorProxyInput`](crate::input::PutVoiceConnectorProxyInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) voice_connector_id: std::option::Option<std::string::String>,
         pub(crate) default_session_expiry_minutes: std::option::Option<i32>,
@@ -27547,6 +27851,23 @@ pub mod put_voice_connector_proxy_input {
                 fall_back_phone_number: self.fall_back_phone_number,
                 disabled: self.disabled,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("voice_connector_id", &self.voice_connector_id);
+            formatter.field(
+                "default_session_expiry_minutes",
+                &self.default_session_expiry_minutes,
+            );
+            formatter.field(
+                "phone_number_pool_countries",
+                &self.phone_number_pool_countries,
+            );
+            formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("disabled", &self.disabled);
+            formatter.finish()
         }
     }
 }
@@ -29749,7 +30070,7 @@ impl SearchAvailablePhoneNumbersInput {
 pub mod send_channel_message_input {
 
     /// A builder for [`SendChannelMessageInput`](crate::input::SendChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
@@ -29855,6 +30176,19 @@ pub mod send_channel_message_input {
                 client_request_token: self.client_request_token,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("r#type", &self.r#type);
+            formatter.field("persistence", &self.persistence);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -30775,7 +31109,7 @@ impl TagMeetingInput {
 pub mod tag_resource_input {
 
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -30819,6 +31153,14 @@ pub mod tag_resource_input {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("tags", &self.tags);
+            formatter.finish()
         }
     }
 }
@@ -31361,7 +31703,7 @@ impl UntagMeetingInput {
 pub mod untag_resource_input {
 
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -31405,6 +31747,14 @@ pub mod untag_resource_input {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
+            formatter.field("tag_keys", &self.tag_keys);
+            formatter.finish()
         }
     }
 }
@@ -31901,7 +32251,7 @@ impl UpdateAccountSettingsInput {
 pub mod update_app_instance_input {
 
     /// A builder for [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -31953,6 +32303,15 @@ pub mod update_app_instance_input {
                 name: self.name,
                 metadata: self.metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_arn", &self.app_instance_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -32096,7 +32455,7 @@ impl UpdateAppInstanceInput {
 pub mod update_app_instance_user_input {
 
     /// A builder for [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32148,6 +32507,15 @@ pub mod update_app_instance_user_input {
                 name: self.name,
                 metadata: self.metadata,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -32499,7 +32867,7 @@ impl UpdateBotInput {
 pub mod update_channel_input {
 
     /// A builder for [`UpdateChannelInput`](crate::input::UpdateChannelInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32570,6 +32938,17 @@ pub mod update_channel_input {
                 metadata: self.metadata,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("mode", &self.mode);
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -32710,7 +33089,7 @@ impl UpdateChannelInput {
 pub mod update_channel_message_input {
 
     /// A builder for [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -32783,6 +33162,17 @@ pub mod update_channel_message_input {
                 metadata: self.metadata,
                 chime_bearer: self.chime_bearer,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("channel_arn", &self.channel_arn);
+            formatter.field("message_id", &self.message_id);
+            formatter.field("content", &"*** Sensitive Data Redacted ***");
+            formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+            formatter.field("chime_bearer", &self.chime_bearer);
+            formatter.finish()
         }
     }
 }
@@ -33280,7 +33670,7 @@ impl UpdateGlobalSettingsInput {
 pub mod update_phone_number_input {
 
     /// A builder for [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) phone_number_id: std::option::Option<std::string::String>,
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
@@ -33335,6 +33725,15 @@ pub mod update_phone_number_input {
                 product_type: self.product_type,
                 calling_name: self.calling_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("phone_number_id", &self.phone_number_id);
+            formatter.field("product_type", &self.product_type);
+            formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -33476,7 +33875,7 @@ impl UpdatePhoneNumberInput {
 pub mod update_phone_number_settings_input {
 
     /// A builder for [`UpdatePhoneNumberSettingsInput`](crate::input::UpdatePhoneNumberSettingsInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) calling_name: std::option::Option<std::string::String>,
     }
@@ -33501,6 +33900,13 @@ pub mod update_phone_number_settings_input {
             Ok(crate::input::UpdatePhoneNumberSettingsInput {
                 calling_name: self.calling_name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -33857,7 +34263,7 @@ impl UpdateProxySessionInput {
 pub mod update_room_input {
 
     /// A builder for [`UpdateRoomInput`](crate::input::UpdateRoomInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) room_id: std::option::Option<std::string::String>,
@@ -33904,6 +34310,15 @@ pub mod update_room_input {
                 room_id: self.room_id,
                 name: self.name,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("account_id", &self.account_id);
+            formatter.field("room_id", &self.room_id);
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -35813,7 +36228,7 @@ impl UpdateVoiceConnectorGroupInput {
 pub mod validate_e911_address_input {
 
     /// A builder for [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) street_number: std::option::Option<std::string::String>,
@@ -35916,6 +36331,19 @@ pub mod validate_e911_address_input {
                 country: self.country,
                 postal_code: self.postal_code,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("aws_account_id", &self.aws_account_id);
+            formatter.field("street_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("street_info", &"*** Sensitive Data Redacted ***");
+            formatter.field("city", &"*** Sensitive Data Redacted ***");
+            formatter.field("state", &"*** Sensitive Data Redacted ***");
+            formatter.field("country", &"*** Sensitive Data Redacted ***");
+            formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -36101,7 +36529,7 @@ impl std::fmt::Debug for ValidateE911AddressInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     #[doc(hidden)]
@@ -36129,19 +36557,10 @@ impl UpdateVoiceConnectorGroupInput {
         self.voice_connector_items.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVoiceConnectorGroupInput");
-        formatter.field("voice_connector_group_id", &self.voice_connector_group_id);
-        formatter.field("name", &self.name);
-        formatter.field("voice_connector_items", &self.voice_connector_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -36167,19 +36586,10 @@ impl UpdateVoiceConnectorInput {
         self.require_encryption
     }
 }
-impl std::fmt::Debug for UpdateVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateVoiceConnectorInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("name", &self.name);
-        formatter.field("require_encryption", &self.require_encryption);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36205,19 +36615,10 @@ impl UpdateUserSettingsInput {
         self.user_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("user_settings", &self.user_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36259,24 +36660,10 @@ impl UpdateUserInput {
         self.alexa_for_business_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("license_type", &self.license_type);
-        formatter.field("user_type", &self.user_type);
-        formatter.field(
-            "alexa_for_business_metadata",
-            &self.alexa_for_business_metadata,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipRuleInput {
     /// <p>The SIP rule ID.</p>
     #[doc(hidden)]
@@ -36312,20 +36699,10 @@ impl UpdateSipRuleInput {
         self.target_applications.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSipRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSipRuleInput");
-        formatter.field("sip_rule_id", &self.sip_rule_id);
-        formatter.field("name", &self.name);
-        formatter.field("disabled", &self.disabled);
-        formatter.field("target_applications", &self.target_applications);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallInput {
     /// <p>The ID of the SIP media application handling the call.</p>
     #[doc(hidden)]
@@ -36355,19 +36732,10 @@ impl UpdateSipMediaApplicationCallInput {
         self.arguments.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateSipMediaApplicationCallInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSipMediaApplicationCallInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field("transaction_id", &self.transaction_id);
-        formatter.field("arguments", &self.arguments);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -36393,19 +36761,10 @@ impl UpdateSipMediaApplicationInput {
         self.endpoints.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateSipMediaApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateSipMediaApplicationInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field("name", &self.name);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36436,16 +36795,6 @@ impl UpdateRoomMembershipInput {
     /// <p>The role of the member.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateRoomMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRoomMembershipInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 
@@ -36489,7 +36838,7 @@ impl std::fmt::Debug for UpdateRoomInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
@@ -36520,16 +36869,6 @@ impl UpdateProxySessionInput {
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(&self) -> std::option::Option<i32> {
         self.expiry_minutes
-    }
-}
-impl std::fmt::Debug for UpdateProxySessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateProxySessionInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("proxy_session_id", &self.proxy_session_id);
-        formatter.field("capabilities", &self.capabilities);
-        formatter.field("expiry_minutes", &self.expiry_minutes);
-        formatter.finish()
     }
 }
 
@@ -36595,7 +36934,7 @@ impl std::fmt::Debug for UpdatePhoneNumberInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsInput {
     /// <p>The Amazon Chime Business Calling settings.</p>
     #[doc(hidden)]
@@ -36614,18 +36953,10 @@ impl UpdateGlobalSettingsInput {
         self.voice_connector.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalSettingsInput");
-        formatter.field("business_calling", &self.business_calling);
-        formatter.field("voice_connector", &self.voice_connector);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateChannelReadMarkerInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -36642,14 +36973,6 @@ impl UpdateChannelReadMarkerInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdateChannelReadMarkerInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateChannelReadMarkerInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
     }
 }
 
@@ -36763,7 +37086,7 @@ impl std::fmt::Debug for UpdateChannelInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateBotInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36787,15 +37110,6 @@ impl UpdateBotInput {
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub fn disabled(&self) -> std::option::Option<bool> {
         self.disabled
-    }
-}
-impl std::fmt::Debug for UpdateBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateBotInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.field("disabled", &self.disabled);
-        formatter.finish()
     }
 }
 
@@ -36877,7 +37191,7 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36896,18 +37210,10 @@ impl UpdateAccountSettingsInput {
         self.account_settings.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("account_settings", &self.account_settings);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -36931,15 +37237,6 @@ impl UpdateAccountInput {
     /// <p>The default license applied when you add users to an Amazon Chime account.</p>
     pub fn default_license(&self) -> std::option::Option<&crate::model::License> {
         self.default_license.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("name", &self.name);
-        formatter.field("default_license", &self.default_license);
-        formatter.finish()
     }
 }
 
@@ -36975,7 +37272,7 @@ impl std::fmt::Debug for UntagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -36994,18 +37291,10 @@ impl UntagMeetingInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -37029,15 +37318,6 @@ impl UntagAttendeeInput {
     /// <p>The tag keys.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
-    }
-}
-impl std::fmt::Debug for UntagAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
     }
 }
 
@@ -37073,7 +37353,7 @@ impl std::fmt::Debug for TagResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -37092,18 +37372,10 @@ impl TagMeetingInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -37129,19 +37401,10 @@ impl TagAttendeeInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     #[doc(hidden)]
@@ -37153,17 +37416,10 @@ impl StopMeetingTranscriptionInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting being transcribed.</p>
     #[doc(hidden)]
@@ -37182,17 +37438,6 @@ impl StartMeetingTranscriptionInput {
         &self,
     ) -> std::option::Option<&crate::model::TranscriptionConfiguration> {
         self.transcription_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for StartMeetingTranscriptionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartMeetingTranscriptionInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field(
-            "transcription_configuration",
-            &self.transcription_configuration,
-        );
-        formatter.finish()
     }
 }
 
@@ -37268,7 +37513,7 @@ impl std::fmt::Debug for SendChannelMessageInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersInput {
     /// <p>The area code used to filter results. Only applies to the US.</p>
     #[doc(hidden)]
@@ -37329,24 +37574,10 @@ impl SearchAvailablePhoneNumbersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchAvailablePhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SearchAvailablePhoneNumbersInput");
-        formatter.field("area_code", &self.area_code);
-        formatter.field("city", &self.city);
-        formatter.field("country", &self.country);
-        formatter.field("state", &self.state);
-        formatter.field("toll_free_prefix", &self.toll_free_prefix);
-        formatter.field("phone_number_type", &self.phone_number_type);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestorePhoneNumberInput {
     /// <p>The phone number.</p>
     #[doc(hidden)]
@@ -37358,17 +37589,10 @@ impl RestorePhoneNumberInput {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for RestorePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestorePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResetPersonalPinInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37387,18 +37611,10 @@ impl ResetPersonalPinInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResetPersonalPinInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResetPersonalPinInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegenerateSecurityTokenInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37417,18 +37633,10 @@ impl RegenerateSecurityTokenInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for RegenerateSecurityTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RegenerateSecurityTokenInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactRoomMessageInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37454,19 +37662,10 @@ impl RedactRoomMessageInput {
         self.message_id.as_deref()
     }
 }
-impl std::fmt::Debug for RedactRoomMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactRoomMessageInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactConversationMessageInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37492,19 +37691,10 @@ impl RedactConversationMessageInput {
         self.message_id.as_deref()
     }
 }
-impl std::fmt::Debug for RedactConversationMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactConversationMessageInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("conversation_id", &self.conversation_id);
-        formatter.field("message_id", &self.message_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedactChannelMessageInput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
     #[doc(hidden)]
@@ -37530,19 +37720,10 @@ impl RedactChannelMessageInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for RedactChannelMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedactChannelMessageInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37561,18 +37742,10 @@ impl PutVoiceConnectorTerminationCredentialsInput {
         self.credentials.as_deref()
     }
 }
-impl std::fmt::Debug for PutVoiceConnectorTerminationCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorTerminationCredentialsInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("credentials", &self.credentials);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37591,18 +37764,10 @@ impl PutVoiceConnectorTerminationInput {
         self.termination.as_ref()
     }
 }
-impl std::fmt::Debug for PutVoiceConnectorTerminationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorTerminationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("termination", &self.termination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37621,14 +37786,6 @@ impl PutVoiceConnectorStreamingConfigurationInput {
         &self,
     ) -> std::option::Option<&crate::model::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for PutVoiceConnectorStreamingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorStreamingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("streaming_configuration", &self.streaming_configuration);
-        formatter.finish()
     }
 }
 
@@ -37694,7 +37851,7 @@ impl std::fmt::Debug for PutVoiceConnectorProxyInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37713,18 +37870,10 @@ impl PutVoiceConnectorOriginationInput {
         self.origination.as_ref()
     }
 }
-impl std::fmt::Debug for PutVoiceConnectorOriginationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorOriginationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("origination", &self.origination);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37745,18 +37894,10 @@ impl PutVoiceConnectorLoggingConfigurationInput {
         self.logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutVoiceConnectorLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorLoggingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("logging_configuration", &self.logging_configuration);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -37778,21 +37919,10 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInput {
         self.emergency_calling_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutVoiceConnectorEmergencyCallingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutVoiceConnectorEmergencyCallingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field(
-            "emergency_calling_configuration",
-            &self.emergency_calling_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -37814,21 +37944,10 @@ impl PutSipMediaApplicationLoggingConfigurationInput {
         self.sip_media_application_logging_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PutSipMediaApplicationLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutSipMediaApplicationLoggingConfigurationInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field(
-            "sip_media_application_logging_configuration",
-            &self.sip_media_application_logging_configuration,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37845,14 +37964,6 @@ impl PutRetentionSettingsInput {
     /// <p>The retention settings.</p>
     pub fn retention_settings(&self) -> std::option::Option<&crate::model::RetentionSettings> {
         self.retention_settings.as_ref()
-    }
-}
-impl std::fmt::Debug for PutRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRetentionSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("retention_settings", &self.retention_settings);
-        formatter.finish()
     }
 }
 
@@ -37907,7 +38018,7 @@ impl std::fmt::Debug for PutEventsConfigurationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -37929,21 +38040,10 @@ impl PutAppInstanceStreamingConfigurationsInput {
         self.app_instance_streaming_configurations.as_deref()
     }
 }
-impl std::fmt::Debug for PutAppInstanceStreamingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAppInstanceStreamingConfigurationsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.field(
-            "app_instance_streaming_configurations",
-            &self.app_instance_streaming_configurations,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -37965,21 +38065,10 @@ impl PutAppInstanceRetentionSettingsInput {
         self.app_instance_retention_settings.as_ref()
     }
 }
-impl std::fmt::Debug for PutAppInstanceRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutAppInstanceRetentionSettingsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.field(
-            "app_instance_retention_settings",
-            &self.app_instance_retention_settings,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LogoutUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -37998,18 +38087,10 @@ impl LogoutUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for LogoutUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LogoutUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -38021,17 +38102,10 @@ impl ListVoiceConnectorTerminationCredentialsInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListVoiceConnectorTerminationCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVoiceConnectorTerminationCredentialsInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVoiceConnectorsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -38050,18 +38124,10 @@ impl ListVoiceConnectorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListVoiceConnectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVoiceConnectorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListVoiceConnectorGroupsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -38078,14 +38144,6 @@ impl ListVoiceConnectorGroupsInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListVoiceConnectorGroupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListVoiceConnectorGroupsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -38167,7 +38225,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesInput {
     /// <p>The phone number product type.</p>
     #[doc(hidden)]
@@ -38179,17 +38237,10 @@ impl ListSupportedPhoneNumberCountriesInput {
         self.product_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListSupportedPhoneNumberCountriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSupportedPhoneNumberCountriesInput");
-        formatter.field("product_type", &self.product_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSipRulesInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -38215,19 +38266,10 @@ impl ListSipRulesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSipRulesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSipRulesInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListSipMediaApplicationsInput {
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     #[doc(hidden)]
@@ -38246,18 +38288,10 @@ impl ListSipMediaApplicationsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSipMediaApplicationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListSipMediaApplicationsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoomsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -38290,20 +38324,10 @@ impl ListRoomsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRoomsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoomsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRoomMembershipsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -38336,20 +38360,10 @@ impl ListRoomMembershipsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRoomMembershipsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRoomMembershipsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListProxySessionsInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
@@ -38382,20 +38396,10 @@ impl ListProxySessionsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListProxySessionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListProxySessionsInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("status", &self.status);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumbersInput {
     /// <p>The phone number status.</p>
     #[doc(hidden)]
@@ -38442,22 +38446,10 @@ impl ListPhoneNumbersInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPhoneNumbersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumbersInput");
-        formatter.field("status", &self.status);
-        formatter.field("product_type", &self.product_type);
-        formatter.field("filter_name", &self.filter_name);
-        formatter.field("filter_value", &self.filter_value);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPhoneNumberOrdersInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -38476,18 +38468,10 @@ impl ListPhoneNumberOrdersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListPhoneNumberOrdersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPhoneNumberOrdersInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMeetingTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -38499,17 +38483,10 @@ impl ListMeetingTagsInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListMeetingTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMeetingTagsInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMeetingsInput {
     /// <p>The token to use to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -38528,18 +38505,10 @@ impl ListMeetingsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListMeetingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMeetingsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesInput {
     /// <p>The token used to retrieve the next page of results.</p>
     #[doc(hidden)]
@@ -38556,14 +38525,6 @@ impl ListMediaCapturePipelinesInput {
     /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListMediaCapturePipelinesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListMediaCapturePipelinesInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -38931,7 +38892,7 @@ impl std::fmt::Debug for ListChannelBansInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBotsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -38957,19 +38918,10 @@ impl ListBotsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListBotsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBotsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttendeeTagsInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -38988,18 +38940,10 @@ impl ListAttendeeTagsInput {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for ListAttendeeTagsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttendeeTagsInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -39023,15 +38967,6 @@ impl ListAttendeesInput {
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
-    }
-}
-impl std::fmt::Debug for ListAttendeesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAttendeesInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 
@@ -39189,7 +39124,7 @@ impl std::fmt::Debug for ListAccountsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InviteUsersInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39215,19 +39150,10 @@ impl InviteUsersInput {
         self.user_type.as_ref()
     }
 }
-impl std::fmt::Debug for InviteUsersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InviteUsersInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_email_list", &self.user_email_list);
-        formatter.field("user_type", &self.user_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39239,17 +39165,10 @@ impl GetVoiceConnectorTerminationHealthInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorTerminationHealthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorTerminationHealthInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39261,17 +39180,10 @@ impl GetVoiceConnectorTerminationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorTerminationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorTerminationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39283,17 +39195,10 @@ impl GetVoiceConnectorStreamingConfigurationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorStreamingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorStreamingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorProxyInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
@@ -39305,17 +39210,10 @@ impl GetVoiceConnectorProxyInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorProxyInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39327,17 +39225,10 @@ impl GetVoiceConnectorOriginationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorOriginationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorOriginationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39349,17 +39240,10 @@ impl GetVoiceConnectorLoggingConfigurationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorLoggingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     #[doc(hidden)]
@@ -39371,17 +39255,10 @@ impl GetVoiceConnectorGroupInput {
         self.voice_connector_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorGroupInput");
-        formatter.field("voice_connector_group_id", &self.voice_connector_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39393,17 +39270,10 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorEmergencyCallingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorEmergencyCallingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -39415,17 +39285,10 @@ impl GetVoiceConnectorInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetVoiceConnectorInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39444,18 +39307,10 @@ impl GetUserSettingsInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39474,18 +39329,10 @@ impl GetUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipRuleInput {
     /// <p>The SIP rule ID.</p>
     #[doc(hidden)]
@@ -39497,17 +39344,10 @@ impl GetSipRuleInput {
         self.sip_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSipRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSipRuleInput");
-        formatter.field("sip_rule_id", &self.sip_rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipMediaApplicationLoggingConfigurationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -39519,17 +39359,10 @@ impl GetSipMediaApplicationLoggingConfigurationInput {
         self.sip_media_application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSipMediaApplicationLoggingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSipMediaApplicationLoggingConfigurationInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -39541,17 +39374,10 @@ impl GetSipMediaApplicationInput {
         self.sip_media_application_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetSipMediaApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetSipMediaApplicationInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRoomInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39570,18 +39396,10 @@ impl GetRoomInput {
         self.room_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRoomInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39593,17 +39411,10 @@ impl GetRetentionSettingsInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRetentionSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
@@ -39622,29 +39433,15 @@ impl GetProxySessionInput {
         self.proxy_session_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetProxySessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetProxySessionInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("proxy_session_id", &self.proxy_session_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPhoneNumberSettingsInput {}
-impl std::fmt::Debug for GetPhoneNumberSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPhoneNumberSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPhoneNumberOrderInput {
     /// <p>The ID for the phone number order.</p>
     #[doc(hidden)]
@@ -39656,17 +39453,10 @@ impl GetPhoneNumberOrderInput {
         self.phone_number_order_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPhoneNumberOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPhoneNumberOrderInput");
-        formatter.field("phone_number_order_id", &self.phone_number_order_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPhoneNumberInput {
     /// <p>The phone number ID.</p>
     #[doc(hidden)]
@@ -39678,28 +39468,15 @@ impl GetPhoneNumberInput {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetPhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMessagingSessionEndpointInput {}
-impl std::fmt::Debug for GetMessagingSessionEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMessagingSessionEndpointInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -39711,17 +39488,10 @@ impl GetMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetMediaCapturePipelineInput {
     /// <p>The ID of the pipeline that you want to get.</p>
     #[doc(hidden)]
@@ -39733,28 +39503,15 @@ impl GetMediaCapturePipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetGlobalSettingsInput {}
-impl std::fmt::Debug for GetGlobalSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetGlobalSettingsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39773,18 +39530,10 @@ impl GetEventsConfigurationInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetEventsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetEventsConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetChannelMessageInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -39810,19 +39559,10 @@ impl GetChannelMessageInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for GetChannelMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetChannelMessageInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBotInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39841,18 +39581,10 @@ impl GetBotInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetBotInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetBotInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -39871,18 +39603,10 @@ impl GetAttendeeInput {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -39894,17 +39618,10 @@ impl GetAppInstanceStreamingConfigurationsInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppInstanceStreamingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInstanceStreamingConfigurationsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -39916,17 +39633,10 @@ impl GetAppInstanceRetentionSettingsInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GetAppInstanceRetentionSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAppInstanceRetentionSettingsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39938,17 +39648,10 @@ impl GetAccountSettingsInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccountSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountSettingsInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39960,17 +39663,10 @@ impl GetAccountInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateSigninDelegateGroupsFromAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -39989,18 +39685,10 @@ impl DisassociateSigninDelegateGroupsFromAccountInput {
         self.group_names.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateSigninDelegateGroupsFromAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateSigninDelegateGroupsFromAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("group_names", &self.group_names);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     #[doc(hidden)]
@@ -40019,18 +39707,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
         self.e164_phone_numbers.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePhoneNumbersFromVoiceConnectorGroupInput");
-        formatter.field("voice_connector_group_id", &self.voice_connector_group_id);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40049,18 +39729,10 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInput {
         self.e164_phone_numbers.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePhoneNumbersFromVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePhoneNumbersFromVoiceConnectorInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociatePhoneNumberFromUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -40079,18 +39751,10 @@ impl DisassociatePhoneNumberFromUserInput {
         self.user_id.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociatePhoneNumberFromUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociatePhoneNumberFromUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -40116,19 +39780,10 @@ impl DescribeChannelModeratorInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelModeratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelModeratorInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("channel_moderator_arn", &self.channel_moderator_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelModeratedByAppInstanceUserInput {
     /// <p>The ARN of the moderated channel.</p>
     #[doc(hidden)]
@@ -40154,19 +39809,10 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelModeratedByAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelModeratedByAppInstanceUserInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUserInput {
     /// <p>The ARN of the channel to which the user belongs.</p>
     #[doc(hidden)]
@@ -40192,19 +39838,10 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelMembershipForAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelMembershipForAppInstanceUserInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelMembershipInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -40230,19 +39867,10 @@ impl DescribeChannelMembershipInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelMembershipInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelBanInput {
     /// <p>The ARN of the channel from which the user is banned.</p>
     #[doc(hidden)]
@@ -40268,19 +39896,10 @@ impl DescribeChannelBanInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelBanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelBanInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -40299,18 +39918,10 @@ impl DescribeChannelInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeChannelInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceUserInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
@@ -40322,17 +39933,10 @@ impl DescribeAppInstanceUserInput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceUserInput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
     #[doc(hidden)]
@@ -40351,18 +39955,10 @@ impl DescribeAppInstanceAdminInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -40374,17 +39970,10 @@ impl DescribeAppInstanceInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAppInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAppInstanceInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationCredentialsInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40403,18 +39992,10 @@ impl DeleteVoiceConnectorTerminationCredentialsInput {
         self.usernames.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorTerminationCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorTerminationCredentialsInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("usernames", &self.usernames);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorTerminationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40426,17 +40007,10 @@ impl DeleteVoiceConnectorTerminationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorTerminationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorTerminationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorStreamingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40448,17 +40022,10 @@ impl DeleteVoiceConnectorStreamingConfigurationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorStreamingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorStreamingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40470,17 +40037,10 @@ impl DeleteVoiceConnectorProxyInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorProxyInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40492,17 +40052,10 @@ impl DeleteVoiceConnectorOriginationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorOriginationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorOriginationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     #[doc(hidden)]
@@ -40514,17 +40067,10 @@ impl DeleteVoiceConnectorGroupInput {
         self.voice_connector_group_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorGroupInput");
-        formatter.field("voice_connector_group_id", &self.voice_connector_group_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40536,18 +40082,10 @@ impl DeleteVoiceConnectorEmergencyCallingConfigurationInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorEmergencyCallingConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter =
-            f.debug_struct("DeleteVoiceConnectorEmergencyCallingConfigurationInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -40559,17 +40097,10 @@ impl DeleteVoiceConnectorInput {
         self.voice_connector_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteVoiceConnectorInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSipRuleInput {
     /// <p>The SIP rule ID.</p>
     #[doc(hidden)]
@@ -40581,17 +40112,10 @@ impl DeleteSipRuleInput {
         self.sip_rule_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSipRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSipRuleInput");
-        formatter.field("sip_rule_id", &self.sip_rule_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
@@ -40603,17 +40127,10 @@ impl DeleteSipMediaApplicationInput {
         self.sip_media_application_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteSipMediaApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteSipMediaApplicationInput");
-        formatter.field("sip_media_application_id", &self.sip_media_application_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -40639,19 +40156,10 @@ impl DeleteRoomMembershipInput {
         self.member_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRoomMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRoomMembershipInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRoomInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -40670,18 +40178,10 @@ impl DeleteRoomInput {
         self.room_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRoomInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRoomInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteProxySessionInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
@@ -40700,18 +40200,10 @@ impl DeleteProxySessionInput {
         self.proxy_session_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteProxySessionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteProxySessionInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("proxy_session_id", &self.proxy_session_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePhoneNumberInput {
     /// <p>The phone number ID.</p>
     #[doc(hidden)]
@@ -40723,17 +40215,10 @@ impl DeletePhoneNumberInput {
         self.phone_number_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeletePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePhoneNumberInput");
-        formatter.field("phone_number_id", &self.phone_number_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -40745,17 +40230,10 @@ impl DeleteMeetingInput {
         self.meeting_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMeetingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMeetingInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteMediaCapturePipelineInput {
     /// <p>The ID of the media capture pipeline being deleted. </p>
     #[doc(hidden)]
@@ -40767,17 +40245,10 @@ impl DeleteMediaCapturePipelineInput {
         self.media_pipeline_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteMediaCapturePipelineInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteMediaCapturePipelineInput");
-        formatter.field("media_pipeline_id", &self.media_pipeline_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteEventsConfigurationInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -40796,18 +40267,10 @@ impl DeleteEventsConfigurationInput {
         self.bot_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteEventsConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteEventsConfigurationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("bot_id", &self.bot_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -40833,19 +40296,10 @@ impl DeleteChannelModeratorInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelModeratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelModeratorInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("channel_moderator_arn", &self.channel_moderator_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelMessageInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -40871,19 +40325,10 @@ impl DeleteChannelMessageInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelMessageInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("message_id", &self.message_id);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelMembershipInput {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
     #[doc(hidden)]
@@ -40909,19 +40354,10 @@ impl DeleteChannelMembershipInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelMembershipInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelBanInput {
     /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
     #[doc(hidden)]
@@ -40947,19 +40383,10 @@ impl DeleteChannelBanInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelBanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelBanInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteChannelInput {
     /// <p>The ARN of the channel being deleted.</p>
     #[doc(hidden)]
@@ -40978,18 +40405,10 @@ impl DeleteChannelInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteChannelInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteChannelInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -41008,18 +40427,10 @@ impl DeleteAttendeeInput {
         self.attendee_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendee_id", &self.attendee_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceUserInput {
     /// <p>The ARN of the user request being deleted.</p>
     #[doc(hidden)]
@@ -41031,17 +40442,10 @@ impl DeleteAppInstanceUserInput {
         self.app_instance_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceUserInput");
-        formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the streaming configurations being deleted.</p>
     #[doc(hidden)]
@@ -41053,17 +40457,10 @@ impl DeleteAppInstanceStreamingConfigurationsInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceStreamingConfigurationsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceStreamingConfigurationsInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
     #[doc(hidden)]
@@ -41082,18 +40479,10 @@ impl DeleteAppInstanceAdminInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -41105,17 +40494,10 @@ impl DeleteAppInstanceInput {
         self.app_instance_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAppInstanceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAppInstanceInput");
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -41127,17 +40509,10 @@ impl DeleteAccountInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupInput {
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     #[doc(hidden)]
@@ -41158,18 +40533,10 @@ impl CreateVoiceConnectorGroupInput {
         self.voice_connector_items.as_deref()
     }
 }
-impl std::fmt::Debug for CreateVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVoiceConnectorGroupInput");
-        formatter.field("name", &self.name);
-        formatter.field("voice_connector_items", &self.voice_connector_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateVoiceConnectorInput {
     /// <p>The name of the Amazon Chime Voice Connector.</p>
     #[doc(hidden)]
@@ -41193,15 +40560,6 @@ impl CreateVoiceConnectorInput {
     /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
     pub fn require_encryption(&self) -> std::option::Option<bool> {
         self.require_encryption
-    }
-}
-impl std::fmt::Debug for CreateVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateVoiceConnectorInput");
-        formatter.field("name", &self.name);
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("require_encryption", &self.require_encryption);
-        formatter.finish()
     }
 }
 
@@ -41253,7 +40611,7 @@ impl std::fmt::Debug for CreateUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSipRuleInput {
     /// <p>The name of the SIP rule.</p>
     #[doc(hidden)]
@@ -41294,17 +40652,6 @@ impl CreateSipRuleInput {
         &self,
     ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
         self.target_applications.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateSipRuleInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSipRuleInput");
-        formatter.field("name", &self.name);
-        formatter.field("trigger_type", &self.trigger_type);
-        formatter.field("trigger_value", &self.trigger_value);
-        formatter.field("disabled", &self.disabled);
-        formatter.field("target_applications", &self.target_applications);
-        formatter.finish()
     }
 }
 
@@ -41360,7 +40707,7 @@ impl std::fmt::Debug for CreateSipMediaApplicationCallInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateSipMediaApplicationInput {
     /// <p>The AWS Region assigned to the SIP media application.</p>
     #[doc(hidden)]
@@ -41386,19 +40733,10 @@ impl CreateSipMediaApplicationInput {
         self.endpoints.as_deref()
     }
 }
-impl std::fmt::Debug for CreateSipMediaApplicationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateSipMediaApplicationInput");
-        formatter.field("aws_region", &self.aws_region);
-        formatter.field("name", &self.name);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -41429,16 +40767,6 @@ impl CreateRoomMembershipInput {
     /// <p>The role of the member.</p>
     pub fn role(&self) -> std::option::Option<&crate::model::RoomMembershipRole> {
         self.role.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateRoomMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRoomMembershipInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("member_id", &self.member_id);
-        formatter.field("role", &self.role);
-        formatter.finish()
     }
 }
 
@@ -41562,7 +40890,7 @@ impl std::fmt::Debug for CreateProxySessionInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderInput {
     /// <p>The phone number product type.</p>
     #[doc(hidden)]
@@ -41579,14 +40907,6 @@ impl CreatePhoneNumberOrderInput {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePhoneNumberOrderInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePhoneNumberOrderInput");
-        formatter.field("product_type", &self.product_type);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
-        formatter.finish()
     }
 }
 
@@ -41854,7 +41174,7 @@ impl std::fmt::Debug for CreateMediaCapturePipelineInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelModeratorInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
@@ -41880,19 +41200,10 @@ impl CreateChannelModeratorInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for CreateChannelModeratorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelModeratorInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("channel_moderator_arn", &self.channel_moderator_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     #[doc(hidden)]
@@ -41925,20 +41236,10 @@ impl CreateChannelMembershipInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for CreateChannelMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelMembershipInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateChannelBanInput {
     /// <p>The ARN of the ban request.</p>
     #[doc(hidden)]
@@ -41962,15 +41263,6 @@ impl CreateChannelBanInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateChannelBanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateChannelBanInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("member_arn", &self.member_arn);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
     }
 }
 
@@ -42192,7 +41484,7 @@ impl std::fmt::Debug for CreateAppInstanceUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAppInstanceAdminInput {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
     #[doc(hidden)]
@@ -42209,14 +41501,6 @@ impl CreateAppInstanceAdminInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CreateAppInstanceAdminInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAppInstanceAdminInput");
-        formatter.field("app_instance_admin_arn", &self.app_instance_admin_arn);
-        formatter.field("app_instance_arn", &self.app_instance_arn);
-        formatter.finish()
     }
 }
 
@@ -42268,7 +41552,7 @@ impl std::fmt::Debug for CreateAppInstanceInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateAccountInput {
     /// <p>The name of the Amazon Chime account.</p>
     #[doc(hidden)]
@@ -42280,17 +41564,10 @@ impl CreateAccountInput {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateAccountInput");
-        formatter.field("name", &self.name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -42312,18 +41589,10 @@ impl BatchUpdateUserInput {
         self.update_user_request_items.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("update_user_request_items", &self.update_user_request_items);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberInput {
     /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
     #[doc(hidden)]
@@ -42338,20 +41607,10 @@ impl BatchUpdatePhoneNumberInput {
         self.update_phone_number_request_items.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdatePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdatePhoneNumberInput");
-        formatter.field(
-            "update_phone_number_request_items",
-            &self.update_phone_number_request_items,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUnsuspendUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -42370,18 +41629,10 @@ impl BatchUnsuspendUserInput {
         self.user_id_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUnsuspendUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUnsuspendUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id_list", &self.user_id_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSuspendUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -42400,18 +41651,10 @@ impl BatchSuspendUserInput {
         self.user_id_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchSuspendUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSuspendUserInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("user_id_list", &self.user_id_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
     #[doc(hidden)]
@@ -42423,17 +41666,10 @@ impl BatchDeletePhoneNumberInput {
         self.phone_number_ids.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeletePhoneNumberInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeletePhoneNumberInput");
-        formatter.field("phone_number_ids", &self.phone_number_ids);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -42459,19 +41695,10 @@ impl BatchCreateRoomMembershipInput {
         self.membership_item_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateRoomMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateRoomMembershipInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("room_id", &self.room_id);
-        formatter.field("membership_item_list", &self.membership_item_list);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     #[doc(hidden)]
@@ -42504,20 +41731,10 @@ impl BatchCreateChannelMembershipInput {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateChannelMembershipInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateChannelMembershipInput");
-        formatter.field("channel_arn", &self.channel_arn);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("member_arns", &self.member_arns);
-        formatter.field("chime_bearer", &self.chime_bearer);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchCreateAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
@@ -42536,18 +41753,10 @@ impl BatchCreateAttendeeInput {
         self.attendees.as_deref()
     }
 }
-impl std::fmt::Debug for BatchCreateAttendeeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchCreateAttendeeInput");
-        formatter.field("meeting_id", &self.meeting_id);
-        formatter.field("attendees", &self.attendees);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateSigninDelegateGroupsWithAccountInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
@@ -42567,14 +41776,6 @@ impl AssociateSigninDelegateGroupsWithAccountInput {
         &self,
     ) -> std::option::Option<&[crate::model::SigninDelegateGroup]> {
         self.signin_delegate_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateSigninDelegateGroupsWithAccountInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateSigninDelegateGroupsWithAccountInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.field("signin_delegate_groups", &self.signin_delegate_groups);
-        formatter.finish()
     }
 }
 
@@ -42618,7 +41819,7 @@ impl std::fmt::Debug for AssociatePhoneNumberWithUserInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// <p>The Amazon Chime Voice Connector group ID.</p>
     #[doc(hidden)]
@@ -42644,19 +41845,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
         self.force_associate
     }
 }
-impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorGroupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePhoneNumbersWithVoiceConnectorGroupInput");
-        formatter.field("voice_connector_group_id", &self.voice_connector_group_id);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
-        formatter.field("force_associate", &self.force_associate);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
@@ -42680,14 +41872,5 @@ impl AssociatePhoneNumbersWithVoiceConnectorInput {
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(&self) -> std::option::Option<bool> {
         self.force_associate
-    }
-}
-impl std::fmt::Debug for AssociatePhoneNumbersWithVoiceConnectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociatePhoneNumbersWithVoiceConnectorInput");
-        formatter.field("voice_connector_id", &self.voice_connector_id);
-        formatter.field("e164_phone_numbers", &self.e164_phone_numbers);
-        formatter.field("force_associate", &self.force_associate);
-        formatter.finish()
     }
 }

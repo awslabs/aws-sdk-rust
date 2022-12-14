@@ -9170,7 +9170,7 @@ impl UpdateRepositoryInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateRepositoryInput {
     /// <p> The name of the domain associated with the repository to update. </p>
     #[doc(hidden)]
@@ -9210,21 +9210,10 @@ impl UpdateRepositoryInput {
         self.upstreams.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("description", &self.description);
-        formatter.field("upstreams", &self.upstreams);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusInput {
     /// <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
     #[doc(hidden)]
@@ -9313,26 +9302,10 @@ impl UpdatePackageVersionsStatusInput {
         self.target_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePackageVersionsStatusInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePackageVersionsStatusInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.field("target_status", &self.target_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
     #[doc(hidden)]
@@ -9351,18 +9324,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
     #[doc(hidden)]
@@ -9381,18 +9346,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository to set the resource policy on. </p>
     #[doc(hidden)]
@@ -9432,21 +9389,10 @@ impl PutRepositoryPermissionsPolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     #[doc(hidden)]
@@ -9512,23 +9458,10 @@ impl PutPackageOriginConfigurationInput {
         self.restrictions.as_ref()
     }
 }
-impl std::fmt::Debug for PutPackageOriginConfigurationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPackageOriginConfigurationInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("restrictions", &self.restrictions);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyInput {
     /// <p> The name of the domain on which to set the resource policy. </p>
     #[doc(hidden)]
@@ -9561,20 +9494,10 @@ impl PutDomainPermissionsPolicyInput {
         self.policy_document.as_deref()
     }
 }
-impl std::fmt::Debug for PutDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.field("policy_document", &self.policy_document);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
     #[doc(hidden)]
@@ -9586,17 +9509,10 @@ impl ListTagsForResourceInput {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsForResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInDomainInput {
     /// <p> The name of the domain that contains the returned list of repositories. </p>
     #[doc(hidden)]
@@ -9643,22 +9559,10 @@ impl ListRepositoriesInDomainInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositoriesInDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("administrator_account", &self.administrator_account);
-        formatter.field("repository_prefix", &self.repository_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListRepositoriesInput {
     /// <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
     #[doc(hidden)]
@@ -9684,19 +9588,10 @@ impl ListRepositoriesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListRepositoriesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListRepositoriesInput");
-        formatter.field("repository_prefix", &self.repository_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     #[doc(hidden)]
@@ -9788,27 +9683,10 @@ impl ListPackageVersionsInput {
         self.origin_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("status", &self.status);
-        formatter.field("sort_by", &self.sort_by);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("origin_type", &self.origin_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesInput {
     /// <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
     #[doc(hidden)]
@@ -9879,24 +9757,10 @@ impl ListPackageVersionDependenciesInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionDependenciesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionDependenciesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackageVersionAssetsInput {
     /// <p> The name of the domain that contains the repository associated with the package version assets. </p>
     #[doc(hidden)]
@@ -9974,25 +9838,10 @@ impl ListPackageVersionAssetsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPackageVersionAssetsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackageVersionAssetsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPackagesInput {
     /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
     #[doc(hidden)]
@@ -10077,26 +9926,10 @@ impl ListPackagesInput {
         self.upstream.as_ref()
     }
 }
-impl std::fmt::Debug for ListPackagesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPackagesInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package_prefix", &self.package_prefix);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("publish", &self.publish);
-        formatter.field("upstream", &self.upstream);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p> The maximum number of results to return per page. </p>
     #[doc(hidden)]
@@ -10115,18 +9948,10 @@ impl ListDomainsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDomainsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDomainsInput");
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
     #[doc(hidden)]
@@ -10152,19 +9977,10 @@ impl GetRepositoryPermissionsPolicyInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for GetRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRepositoryEndpointInput {
     /// <p> The name of the domain that contains the repository. </p>
     #[doc(hidden)]
@@ -10197,20 +10013,10 @@ impl GetRepositoryEndpointInput {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for GetRepositoryEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRepositoryEndpointInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionReadmeInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
     #[doc(hidden)]
@@ -10274,23 +10080,10 @@ impl GetPackageVersionReadmeInput {
         self.package_version.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionReadmeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionReadmeInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPackageVersionAssetInput {
     /// <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
     #[doc(hidden)]
@@ -10368,25 +10161,10 @@ impl GetPackageVersionAssetInput {
         self.package_version_revision.as_deref()
     }
 }
-impl std::fmt::Debug for GetPackageVersionAssetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPackageVersionAssetInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.field("asset", &self.asset);
-        formatter.field("package_version_revision", &self.package_version_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetDomainPermissionsPolicyInput {
     /// <p> The name of the domain to which the resource policy is attached. </p>
     #[doc(hidden)]
@@ -10405,18 +10183,10 @@ impl GetDomainPermissionsPolicyInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for GetDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAuthorizationTokenInput {
     /// <p> The name of the domain that is in scope for the generated authorization token. </p>
     #[doc(hidden)]
@@ -10442,19 +10212,10 @@ impl GetAuthorizationTokenInput {
         self.duration_seconds
     }
 }
-impl std::fmt::Debug for GetAuthorizationTokenInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAuthorizationTokenInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("duration_seconds", &self.duration_seconds);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisposePackageVersionsInput {
     /// <p> The name of the domain that contains the repository you want to dispose. </p>
     #[doc(hidden)]
@@ -10536,25 +10297,10 @@ impl DisposePackageVersionsInput {
         self.expected_status.as_ref()
     }
 }
-impl std::fmt::Debug for DisposePackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisposePackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisassociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
     #[doc(hidden)]
@@ -10587,20 +10333,10 @@ impl DisassociateExternalConnectionInput {
         self.external_connection.as_deref()
     }
 }
-impl std::fmt::Debug for DisassociateExternalConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisassociateExternalConnectionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("external_connection", &self.external_connection);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeRepositoryInput {
     /// <p> The name of the domain that contains the repository to describe. </p>
     #[doc(hidden)]
@@ -10626,19 +10362,10 @@ impl DescribeRepositoryInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageVersionInput {
     /// <p> The name of the domain that contains the repository that contains the package version. </p>
     #[doc(hidden)]
@@ -10702,23 +10429,10 @@ impl DescribePackageVersionInput {
         self.package_version.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageVersionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageVersionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("package_version", &self.package_version);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribePackageInput {
     /// <p>The name of the domain that contains the repository that contains the package.</p>
     #[doc(hidden)]
@@ -10775,22 +10489,10 @@ impl DescribePackageInput {
         self.package.as_deref()
     }
 }
-impl std::fmt::Debug for DescribePackageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribePackageInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDomainInput {
     /// <p> A string that specifies the name of the requested domain. </p>
     #[doc(hidden)]
@@ -10809,18 +10511,10 @@ impl DescribeDomainInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
     #[doc(hidden)]
@@ -10853,20 +10547,10 @@ impl DeleteRepositoryPermissionsPolicyInput {
         self.policy_revision.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteRepositoryInput {
     /// <p> The name of the domain that contains the repository to delete. </p>
     #[doc(hidden)]
@@ -10892,19 +10576,10 @@ impl DeleteRepositoryInput {
         self.repository.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePackageVersionsInput {
     /// <p> The name of the domain that contains the package to delete. </p>
     #[doc(hidden)]
@@ -10975,24 +10650,10 @@ impl DeletePackageVersionsInput {
         self.expected_status.as_ref()
     }
 }
-impl std::fmt::Debug for DeletePackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("expected_status", &self.expected_status);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainPermissionsPolicyInput {
     /// <p> The name of the domain associated with the resource policy to be deleted. </p>
     #[doc(hidden)]
@@ -11018,19 +10679,10 @@ impl DeleteDomainPermissionsPolicyInput {
         self.policy_revision.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainPermissionsPolicyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainPermissionsPolicyInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("policy_revision", &self.policy_revision);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p> The name of the domain to delete. </p>
     #[doc(hidden)]
@@ -11049,18 +10701,10 @@ impl DeleteDomainInput {
         self.domain_owner.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateRepositoryInput {
     /// <p> The name of the domain that contains the created repository. </p>
     #[doc(hidden)]
@@ -11107,22 +10751,10 @@ impl CreateRepositoryInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateRepositoryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateRepositoryInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("description", &self.description);
-        formatter.field("upstreams", &self.upstreams);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
     #[doc(hidden)]
@@ -11152,19 +10784,10 @@ impl CreateDomainInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateDomainInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateDomainInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("encryption_key", &self.encryption_key);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CopyPackageVersionsInput {
     /// <p> The name of the domain that contains the source and destination repositories. </p>
     #[doc(hidden)]
@@ -11268,27 +10891,10 @@ impl CopyPackageVersionsInput {
         self.include_from_upstream
     }
 }
-impl std::fmt::Debug for CopyPackageVersionsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CopyPackageVersionsInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("source_repository", &self.source_repository);
-        formatter.field("destination_repository", &self.destination_repository);
-        formatter.field("format", &self.format);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("package", &self.package);
-        formatter.field("versions", &self.versions);
-        formatter.field("version_revisions", &self.version_revisions);
-        formatter.field("allow_overwrite", &self.allow_overwrite);
-        formatter.field("include_from_upstream", &self.include_from_upstream);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AssociateExternalConnectionInput {
     /// <p>The name of the domain that contains the repository.</p>
     #[doc(hidden)]
@@ -11335,15 +10941,5 @@ impl AssociateExternalConnectionInput {
     /// </ul>
     pub fn external_connection(&self) -> std::option::Option<&str> {
         self.external_connection.as_deref()
-    }
-}
-impl std::fmt::Debug for AssociateExternalConnectionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AssociateExternalConnectionInput");
-        formatter.field("domain", &self.domain);
-        formatter.field("domain_owner", &self.domain_owner);
-        formatter.field("repository", &self.repository);
-        formatter.field("external_connection", &self.external_connection);
-        formatter.finish()
     }
 }

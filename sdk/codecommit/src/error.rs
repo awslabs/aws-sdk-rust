@@ -2,18 +2,11 @@
 
 /// <p>A repository name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryNameRequiredException {
     /// Returns the error message.
@@ -69,18 +62,11 @@ impl RepositoryNameRequiredException {
 
 /// <p>The specified repository name already exists.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNameExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryNameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNameExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryNameExistsException {
     /// Returns the error message.
@@ -136,18 +122,11 @@ impl RepositoryNameExistsException {
 
 /// <p>The specified repository does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryDoesNotExistException {
     /// Returns the error message.
@@ -205,18 +184,11 @@ impl RepositoryDoesNotExistException {
 /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryNameException {
     /// Returns the error message.
@@ -272,18 +244,11 @@ impl InvalidRepositoryNameException {
 
 /// <p>The specified repository description is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryDescriptionException {
     /// Returns the error message.
@@ -339,18 +304,11 @@ impl InvalidRepositoryDescriptionException {
 
 /// <p>The encryption key is not available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyUnavailableException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EncryptionKeyUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EncryptionKeyUnavailableException {
     /// Returns the error message.
@@ -406,18 +364,11 @@ impl EncryptionKeyUnavailableException {
 
 /// <p>No encryption key was found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyNotFoundException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EncryptionKeyNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyNotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EncryptionKeyNotFoundException {
     /// Returns the error message.
@@ -473,18 +424,11 @@ impl EncryptionKeyNotFoundException {
 
 /// <p>The encryption key is disabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyDisabledException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EncryptionKeyDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyDisabledException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EncryptionKeyDisabledException {
     /// Returns the error message.
@@ -540,18 +484,11 @@ impl EncryptionKeyDisabledException {
 
 /// <p>An encryption key could not be accessed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionKeyAccessDeniedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EncryptionKeyAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionKeyAccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EncryptionKeyAccessDeniedException {
     /// Returns the error message.
@@ -607,18 +544,11 @@ impl EncryptionKeyAccessDeniedException {
 
 /// <p>An encryption integrity check failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionIntegrityChecksFailedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for EncryptionIntegrityChecksFailedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionIntegrityChecksFailedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl EncryptionIntegrityChecksFailedException {
     /// Returns the error message.
@@ -674,18 +604,11 @@ impl EncryptionIntegrityChecksFailedException {
 
 /// <p>A pull request title is required. It cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TitleRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TitleRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TitleRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TitleRequiredException {
     /// Returns the error message.
@@ -741,18 +664,11 @@ impl TitleRequiredException {
 
 /// <p>A pull request ID is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestIdRequiredException {
     /// Returns the error message.
@@ -808,18 +724,11 @@ impl PullRequestIdRequiredException {
 
 /// <p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestDoesNotExistException {
     /// Returns the error message.
@@ -875,18 +784,11 @@ impl PullRequestDoesNotExistException {
 
 /// <p>The pull request status cannot be updated because it is already closed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestAlreadyClosedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestAlreadyClosedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestAlreadyClosedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestAlreadyClosedException {
     /// Returns the error message.
@@ -942,18 +844,11 @@ impl PullRequestAlreadyClosedException {
 
 /// <p>The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTitleException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTitleException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTitleException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTitleException {
     /// Returns the error message.
@@ -1009,18 +904,11 @@ impl InvalidTitleException {
 
 /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPullRequestIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPullRequestIdException {
     /// Returns the error message.
@@ -1076,18 +964,11 @@ impl InvalidPullRequestIdException {
 
 /// <p>A pull request status is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestStatusRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestStatusRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestStatusRequiredException {
     /// Returns the error message.
@@ -1143,18 +1024,11 @@ impl PullRequestStatusRequiredException {
 
 /// <p>The pull request status update is not valid. The only valid update is from <code>OPEN</code> to <code>CLOSED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestStatusUpdateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPullRequestStatusUpdateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestStatusUpdateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPullRequestStatusUpdateException {
     /// Returns the error message.
@@ -1210,18 +1084,11 @@ impl InvalidPullRequestStatusUpdateException {
 
 /// <p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestStatusException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPullRequestStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPullRequestStatusException {
     /// Returns the error message.
@@ -1277,18 +1144,11 @@ impl InvalidPullRequestStatusException {
 
 /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDescriptionException {
     /// Returns the error message.
@@ -1344,18 +1204,11 @@ impl InvalidDescriptionException {
 
 /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionNotCurrentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RevisionNotCurrentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionNotCurrentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RevisionNotCurrentException {
     /// Returns the error message.
@@ -1411,18 +1264,11 @@ impl RevisionNotCurrentException {
 
 /// <p>A revision ID is required, but was not provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RevisionIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RevisionIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RevisionIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RevisionIdRequiredException {
     /// Returns the error message.
@@ -1478,18 +1324,11 @@ impl RevisionIdRequiredException {
 
 /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestCannotBeApprovedByAuthorException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestCannotBeApprovedByAuthorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestCannotBeApprovedByAuthorException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestCannotBeApprovedByAuthorException {
     /// Returns the error message.
@@ -1545,18 +1384,11 @@ impl PullRequestCannotBeApprovedByAuthorException {
 
 /// <p>The number of approvals required for the approval rule exceeds the maximum number allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumNumberOfApprovalsExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumNumberOfApprovalsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumNumberOfApprovalsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumNumberOfApprovalsExceededException {
     /// Returns the error message.
@@ -1612,18 +1444,11 @@ impl MaximumNumberOfApprovalsExceededException {
 
 /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRevisionIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRevisionIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRevisionIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRevisionIdException {
     /// Returns the error message.
@@ -1679,18 +1504,11 @@ impl InvalidRevisionIdException {
 
 /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalStateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalStateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalStateException {
     /// Returns the error message.
@@ -1746,18 +1564,11 @@ impl InvalidApprovalStateException {
 
 /// <p>An approval state is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalStateRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalStateRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalStateRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalStateRequiredException {
     /// Returns the error message.
@@ -1813,18 +1624,11 @@ impl ApprovalStateRequiredException {
 
 /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRuleContentSha256Exception {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRuleContentSha256Exception {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRuleContentSha256Exception");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRuleContentSha256Exception {
     /// Returns the error message.
@@ -1880,18 +1684,11 @@ impl InvalidRuleContentSha256Exception {
 
 /// <p>The name for the approval rule is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalRuleNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalRuleNameException {
     /// Returns the error message.
@@ -1947,18 +1744,11 @@ impl InvalidApprovalRuleNameException {
 
 /// <p>The content for the approval rule is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalRuleContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalRuleContentException {
     /// Returns the error message.
@@ -2014,18 +1804,11 @@ impl InvalidApprovalRuleContentException {
 
 /// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotModifyApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CannotModifyApprovalRuleFromTemplateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotModifyApprovalRuleFromTemplateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CannotModifyApprovalRuleFromTemplateException {
     /// Returns the error message.
@@ -2081,18 +1864,11 @@ impl CannotModifyApprovalRuleFromTemplateException {
 
 /// <p>An approval rule name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleNameRequiredException {
     /// Returns the error message.
@@ -2148,18 +1924,11 @@ impl ApprovalRuleNameRequiredException {
 
 /// <p>The specified approval rule does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleDoesNotExistException {
     /// Returns the error message.
@@ -2215,18 +1984,11 @@ impl ApprovalRuleDoesNotExistException {
 
 /// <p>The content for the approval rule is empty. You must provide some content for an approval rule. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleContentRequiredException {
     /// Returns the error message.
@@ -2282,18 +2044,11 @@ impl ApprovalRuleContentRequiredException {
 
 /// <p>The specified reference name is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBranchNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidBranchNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBranchNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidBranchNameException {
     /// Returns the error message.
@@ -2349,18 +2104,11 @@ impl InvalidBranchNameException {
 
 /// <p>A branch name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BranchNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BranchNameRequiredException {
     /// Returns the error message.
@@ -2416,18 +2164,11 @@ impl BranchNameRequiredException {
 
 /// <p>The specified branch does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BranchDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BranchDoesNotExistException {
     /// Returns the error message.
@@ -2483,18 +2224,11 @@ impl BranchDoesNotExistException {
 
 /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommentIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCommentIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommentIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCommentIdException {
     /// Returns the error message.
@@ -2550,18 +2284,11 @@ impl InvalidCommentIdException {
 
 /// <p>You cannot modify or delete this comment. Only comment authors can modify or delete their comments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentNotCreatedByCallerException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentNotCreatedByCallerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentNotCreatedByCallerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentNotCreatedByCallerException {
     /// Returns the error message.
@@ -2617,18 +2344,11 @@ impl CommentNotCreatedByCallerException {
 
 /// <p>The comment ID is missing or null. A comment ID is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentIdRequiredException {
     /// Returns the error message.
@@ -2684,18 +2404,11 @@ impl CommentIdRequiredException {
 
 /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentDoesNotExistException {
     /// Returns the error message.
@@ -2751,18 +2464,11 @@ impl CommentDoesNotExistException {
 
 /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentDeletedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentDeletedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentDeletedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentDeletedException {
     /// Returns the error message.
@@ -2818,18 +2524,11 @@ impl CommentDeletedException {
 
 /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentContentSizeLimitExceededException {
     /// Returns the error message.
@@ -2885,18 +2584,11 @@ impl CommentContentSizeLimitExceededException {
 
 /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommentContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommentContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommentContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommentContentRequiredException {
     /// Returns the error message.
@@ -2952,18 +2644,11 @@ impl CommentContentRequiredException {
 
 /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalRuleTemplateNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalRuleTemplateNameException {
     /// Returns the error message.
@@ -3019,18 +2704,11 @@ impl InvalidApprovalRuleTemplateNameException {
 
 /// <p>An approval rule template name is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleTemplateNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleTemplateNameRequiredException {
     /// Returns the error message.
@@ -3086,18 +2764,11 @@ impl ApprovalRuleTemplateNameRequiredException {
 
 /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleTemplateNameAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateNameAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleTemplateNameAlreadyExistsException {
     /// Returns the error message.
@@ -3154,18 +2825,11 @@ impl ApprovalRuleTemplateNameAlreadyExistsException {
 
 /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleTemplateDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleTemplateDoesNotExistException {
     /// Returns the error message.
@@ -3221,18 +2885,11 @@ impl ApprovalRuleTemplateDoesNotExistException {
 
 /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalRuleTemplateDescriptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateDescriptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Returns the error message.
@@ -3289,18 +2946,11 @@ impl InvalidApprovalRuleTemplateDescriptionException {
 
 /// <p>The content of the approval rule template is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidApprovalRuleTemplateContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidApprovalRuleTemplateContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidApprovalRuleTemplateContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidApprovalRuleTemplateContentException {
     /// Returns the error message.
@@ -3356,18 +3006,11 @@ impl InvalidApprovalRuleTemplateContentException {
 
 /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleTemplateContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleTemplateContentRequiredException {
     /// Returns the error message.
@@ -3423,18 +3066,11 @@ impl ApprovalRuleTemplateContentRequiredException {
 
 /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TooManyTagsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyTagsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyTagsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TooManyTagsException {
     /// Returns the error message.
@@ -3490,18 +3126,11 @@ impl TooManyTagsException {
 
 /// <p>The tag policy is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagPolicyException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TagPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagPolicyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TagPolicyException {
     /// Returns the error message.
@@ -3557,18 +3186,11 @@ impl TagPolicyException {
 
 /// <p>A list of tag keys is required. The list cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagKeysListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TagKeysListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagKeysListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TagKeysListRequiredException {
     /// Returns the error message.
@@ -3624,18 +3246,11 @@ impl TagKeysListRequiredException {
 
 /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceArnRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourceArnRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceArnRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourceArnRequiredException {
     /// Returns the error message.
@@ -3691,18 +3306,11 @@ impl ResourceArnRequiredException {
 
 /// <p>The list of tags is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagKeysListException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagKeysListException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagKeysListException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagKeysListException {
     /// Returns the error message.
@@ -3758,18 +3366,11 @@ impl InvalidTagKeysListException {
 
 /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSystemTagUsageException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSystemTagUsageException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSystemTagUsageException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSystemTagUsageException {
     /// Returns the error message.
@@ -3825,18 +3426,11 @@ impl InvalidSystemTagUsageException {
 
 /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidResourceArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidResourceArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidResourceArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidResourceArnException {
     /// Returns the error message.
@@ -3892,18 +3486,11 @@ impl InvalidResourceArnException {
 
 /// <p>The list of triggers for the repository is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggersListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryTriggersListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggersListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryTriggersListRequiredException {
     /// Returns the error message.
@@ -3959,18 +3546,11 @@ impl RepositoryTriggersListRequiredException {
 
 /// <p>A name for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryTriggerNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryTriggerNameRequiredException {
     /// Returns the error message.
@@ -4026,18 +3606,11 @@ impl RepositoryTriggerNameRequiredException {
 
 /// <p>At least one event for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerEventsListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryTriggerEventsListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerEventsListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryTriggerEventsListRequiredException {
     /// Returns the error message.
@@ -4093,18 +3666,11 @@ impl RepositoryTriggerEventsListRequiredException {
 
 /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerDestinationArnRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryTriggerDestinationArnRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerDestinationArnRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryTriggerDestinationArnRequiredException {
     /// Returns the error message.
@@ -4161,18 +3727,11 @@ impl RepositoryTriggerDestinationArnRequiredException {
 
 /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryTriggerBranchNameListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryTriggerBranchNameListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryTriggerBranchNameListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryTriggerBranchNameListRequiredException {
     /// Returns the error message.
@@ -4229,18 +3788,11 @@ impl RepositoryTriggerBranchNameListRequiredException {
 
 /// <p>The number of triggers allowed for the repository was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRepositoryTriggersExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumRepositoryTriggersExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRepositoryTriggersExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumRepositoryTriggersExceededException {
     /// Returns the error message.
@@ -4296,18 +3848,11 @@ impl MaximumRepositoryTriggersExceededException {
 
 /// <p>The number of branches for the trigger was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumBranchesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumBranchesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumBranchesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumBranchesExceededException {
     /// Returns the error message.
@@ -4363,18 +3908,11 @@ impl MaximumBranchesExceededException {
 
 /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerRegionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerRegionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerRegionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerRegionException {
     /// Returns the error message.
@@ -4430,18 +3968,11 @@ impl InvalidRepositoryTriggerRegionException {
 
 /// <p>The name of the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerNameException {
     /// Returns the error message.
@@ -4497,18 +4028,11 @@ impl InvalidRepositoryTriggerNameException {
 
 /// <p>One or more events specified for the trigger is not valid. Check to make sure that all events specified match the requirements for allowed events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerEventsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerEventsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerEventsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerEventsException {
     /// Returns the error message.
@@ -4564,18 +4088,11 @@ impl InvalidRepositoryTriggerEventsException {
 
 /// <p>The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for this error is that the ARN does not meet the requirements for the service type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerDestinationArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerDestinationArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerDestinationArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerDestinationArnException {
     /// Returns the error message.
@@ -4632,18 +4149,11 @@ impl InvalidRepositoryTriggerDestinationArnException {
 
 /// <p>The custom data provided for the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerCustomDataException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerCustomDataException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerCustomDataException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerCustomDataException {
     /// Returns the error message.
@@ -4699,18 +4209,11 @@ impl InvalidRepositoryTriggerCustomDataException {
 
 /// <p>One or more branch names specified for the trigger is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRepositoryTriggerBranchNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRepositoryTriggerBranchNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRepositoryTriggerBranchNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRepositoryTriggerBranchNameException {
     /// Returns the error message.
@@ -4766,18 +4269,11 @@ impl InvalidRepositoryTriggerBranchNameException {
 
 /// <p>A map of tags is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagsMapRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TagsMapRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagsMapRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TagsMapRequiredException {
     /// Returns the error message.
@@ -4833,18 +4329,11 @@ impl TagsMapRequiredException {
 
 /// <p>The map of tags is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTagsMapException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTagsMapException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTagsMapException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTagsMapException {
     /// Returns the error message.
@@ -4900,18 +4389,11 @@ impl InvalidTagsMapException {
 
 /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SameFileContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SameFileContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SameFileContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SameFileContentException {
     /// Returns the error message.
@@ -4967,18 +4449,11 @@ impl SameFileContentException {
 
 /// <p>The folderPath for a location cannot be null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PathRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PathRequiredException {
     /// Returns the error message.
@@ -5034,18 +4509,11 @@ impl PathRequiredException {
 
 /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParentCommitIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParentCommitIdRequiredException {
     /// Returns the error message.
@@ -5101,18 +4569,11 @@ impl ParentCommitIdRequiredException {
 
 /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitIdOutdatedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParentCommitIdOutdatedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitIdOutdatedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParentCommitIdOutdatedException {
     /// Returns the error message.
@@ -5168,18 +4629,11 @@ impl ParentCommitIdOutdatedException {
 
 /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParentCommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ParentCommitDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParentCommitDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ParentCommitDoesNotExistException {
     /// Returns the error message.
@@ -5235,18 +4689,11 @@ impl ParentCommitDoesNotExistException {
 
 /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NameLengthExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NameLengthExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NameLengthExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NameLengthExceededException {
     /// Returns the error message.
@@ -5302,18 +4749,11 @@ impl NameLengthExceededException {
 
 /// <p>The specified path is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPathException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPathException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPathException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPathException {
     /// Returns the error message.
@@ -5369,18 +4809,11 @@ impl InvalidPathException {
 
 /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParentCommitIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParentCommitIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParentCommitIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidParentCommitIdException {
     /// Returns the error message.
@@ -5436,18 +4869,11 @@ impl InvalidParentCommitIdException {
 
 /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFileModeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFileModeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFileModeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFileModeException {
     /// Returns the error message.
@@ -5503,18 +4929,11 @@ impl InvalidFileModeException {
 
 /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidEmailException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidEmailException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidEmailException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidEmailException {
     /// Returns the error message.
@@ -5570,18 +4989,11 @@ impl InvalidEmailException {
 
 /// <p>The specified deletion parameter is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDeletionParameterException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDeletionParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDeletionParameterException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDeletionParameterException {
     /// Returns the error message.
@@ -5637,18 +5049,11 @@ impl InvalidDeletionParameterException {
 
 /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FolderContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FolderContentSizeLimitExceededException {
     /// Returns the error message.
@@ -5704,18 +5109,11 @@ impl FolderContentSizeLimitExceededException {
 
 /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FilePathConflictsWithSubmodulePathException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FilePathConflictsWithSubmodulePathException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FilePathConflictsWithSubmodulePathException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FilePathConflictsWithSubmodulePathException {
     /// Returns the error message.
@@ -5771,18 +5169,11 @@ impl FilePathConflictsWithSubmodulePathException {
 
 /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileNameConflictsWithDirectoryNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileNameConflictsWithDirectoryNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileNameConflictsWithDirectoryNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileNameConflictsWithDirectoryNameException {
     /// Returns the error message.
@@ -5838,18 +5229,11 @@ impl FileNameConflictsWithDirectoryNameException {
 
 /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentSizeLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileContentSizeLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentSizeLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileContentSizeLimitExceededException {
     /// Returns the error message.
@@ -5905,18 +5289,11 @@ impl FileContentSizeLimitExceededException {
 
 /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileContentRequiredException {
     /// Returns the error message.
@@ -5972,18 +5349,11 @@ impl FileContentRequiredException {
 
 /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DirectoryNameConflictsWithFileNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DirectoryNameConflictsWithFileNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DirectoryNameConflictsWithFileNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DirectoryNameConflictsWithFileNameException {
     /// Returns the error message.
@@ -6039,18 +5409,11 @@ impl DirectoryNameConflictsWithFileNameException {
 
 /// <p>The commit message is too long. Provide a shorter string. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitMessageLengthExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitMessageLengthExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitMessageLengthExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitMessageLengthExceededException {
     /// Returns the error message.
@@ -6106,18 +5469,11 @@ impl CommitMessageLengthExceededException {
 
 /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameIsTagNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BranchNameIsTagNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameIsTagNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BranchNameIsTagNameException {
     /// Returns the error message.
@@ -6173,18 +5529,11 @@ impl BranchNameIsTagNameException {
 
 /// <p>A reaction value is required. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionValueRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReactionValueRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionValueRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReactionValueRequiredException {
     /// Returns the error message.
@@ -6240,18 +5589,11 @@ impl ReactionValueRequiredException {
 
 /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReactionLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReactionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReactionLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReactionLimitExceededException {
     /// Returns the error message.
@@ -6307,18 +5649,11 @@ impl ReactionLimitExceededException {
 
 /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReactionValueException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReactionValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReactionValueException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReactionValueException {
     /// Returns the error message.
@@ -6374,18 +5709,11 @@ impl InvalidReactionValueException {
 
 /// <p>The client request token is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidClientRequestTokenException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidClientRequestTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidClientRequestTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidClientRequestTokenException {
     /// Returns the error message.
@@ -6441,18 +5769,11 @@ impl InvalidClientRequestTokenException {
 
 /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IdempotencyParameterMismatchException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for IdempotencyParameterMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IdempotencyParameterMismatchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl IdempotencyParameterMismatchException {
     /// Returns the error message.
@@ -6508,18 +5829,11 @@ impl IdempotencyParameterMismatchException {
 
 /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientRequestTokenRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ClientRequestTokenRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientRequestTokenRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ClientRequestTokenRequiredException {
     /// Returns the error message.
@@ -6575,18 +5889,11 @@ impl ClientRequestTokenRequiredException {
 
 /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNotAssociatedWithPullRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryNotAssociatedWithPullRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNotAssociatedWithPullRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryNotAssociatedWithPullRequestException {
     /// Returns the error message.
@@ -6643,18 +5950,11 @@ impl RepositoryNotAssociatedWithPullRequestException {
 
 /// <p>The specified path does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PathDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PathDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PathDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PathDoesNotExistException {
     /// Returns the error message.
@@ -6710,18 +6010,11 @@ impl PathDoesNotExistException {
 
 /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRelativeFileVersionEnumException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidRelativeFileVersionEnumException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRelativeFileVersionEnumException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidRelativeFileVersionEnumException {
     /// Returns the error message.
@@ -6777,18 +6070,11 @@ impl InvalidRelativeFileVersionEnumException {
 
 /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFilePositionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFilePositionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFilePositionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFilePositionException {
     /// Returns the error message.
@@ -6844,18 +6130,11 @@ impl InvalidFilePositionException {
 
 /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidFileLocationException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidFileLocationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidFileLocationException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidFileLocationException {
     /// Returns the error message.
@@ -6911,18 +6190,11 @@ impl InvalidFileLocationException {
 
 /// <p>The specified commit ID is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommitIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCommitIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommitIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCommitIdException {
     /// Returns the error message.
@@ -6978,18 +6250,11 @@ impl InvalidCommitIdException {
 
 /// <p>A commit ID was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitIdRequiredException {
     /// Returns the error message.
@@ -7045,18 +6310,11 @@ impl CommitIdRequiredException {
 
 /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitDoesNotExistException {
     /// Returns the error message.
@@ -7112,18 +6370,11 @@ impl CommitDoesNotExistException {
 
 /// <p>The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and the after commit ID must be different commit IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BeforeCommitIdAndAfterCommitIdAreSameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BeforeCommitIdAndAfterCommitIdAreSameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BeforeCommitIdAndAfterCommitIdAreSameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BeforeCommitIdAndAfterCommitIdAreSameException {
     /// Returns the error message.
@@ -7180,18 +6431,11 @@ impl BeforeCommitIdAndAfterCommitIdAreSameException {
 
 /// <p>An override status is required, but no value was provided. Valid values include OVERRIDE and REVOKE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideStatusRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OverrideStatusRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideStatusRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OverrideStatusRequiredException {
     /// Returns the error message.
@@ -7247,18 +6491,11 @@ impl OverrideStatusRequiredException {
 
 /// <p>The pull request has already had its approval rules set to override.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OverrideAlreadySetException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for OverrideAlreadySetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OverrideAlreadySetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl OverrideAlreadySetException {
     /// Returns the error message.
@@ -7314,18 +6551,11 @@ impl OverrideAlreadySetException {
 
 /// <p>The override status is not valid. Valid statuses are OVERRIDE and REVOKE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOverrideStatusException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOverrideStatusException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOverrideStatusException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOverrideStatusException {
     /// Returns the error message.
@@ -7381,18 +6611,11 @@ impl InvalidOverrideStatusException {
 
 /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TipsDivergenceExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TipsDivergenceExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TipsDivergenceExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TipsDivergenceExceededException {
     /// Returns the error message.
@@ -7448,18 +6671,11 @@ impl TipsDivergenceExceededException {
 
 /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TipOfSourceReferenceIsDifferentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TipOfSourceReferenceIsDifferentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TipOfSourceReferenceIsDifferentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TipOfSourceReferenceIsDifferentException {
     /// Returns the error message.
@@ -7515,18 +6731,11 @@ impl TipOfSourceReferenceIsDifferentException {
 
 /// <p>A replacement type is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplacementTypeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReplacementTypeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplacementTypeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReplacementTypeRequiredException {
     /// Returns the error message.
@@ -7582,18 +6791,11 @@ impl ReplacementTypeRequiredException {
 
 /// <p>USE_NEW_CONTENT was specified, but no replacement content has been provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReplacementContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReplacementContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReplacementContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReplacementContentRequiredException {
     /// Returns the error message.
@@ -7649,18 +6851,11 @@ impl ReplacementContentRequiredException {
 
 /// <p>The pull request cannot be merged because one or more approval rules applied to the pull request have conditions that have not been met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PullRequestApprovalRulesNotSatisfiedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PullRequestApprovalRulesNotSatisfiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PullRequestApprovalRulesNotSatisfiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PullRequestApprovalRulesNotSatisfiedException {
     /// Returns the error message.
@@ -7716,18 +6911,11 @@ impl PullRequestApprovalRulesNotSatisfiedException {
 
 /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleConflictResolutionEntriesException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MultipleConflictResolutionEntriesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleConflictResolutionEntriesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MultipleConflictResolutionEntriesException {
     /// Returns the error message.
@@ -7783,18 +6971,11 @@ impl MultipleConflictResolutionEntriesException {
 
 /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumItemsToCompareExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumItemsToCompareExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumItemsToCompareExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumItemsToCompareExceededException {
     /// Returns the error message.
@@ -7850,18 +7031,11 @@ impl MaximumItemsToCompareExceededException {
 
 /// <p>The number of files to load exceeds the allowed limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumFileContentToLoadExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumFileContentToLoadExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumFileContentToLoadExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumFileContentToLoadExceededException {
     /// Returns the error message.
@@ -7917,18 +7091,11 @@ impl MaximumFileContentToLoadExceededException {
 
 /// <p>The number of allowed conflict resolution entries was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumConflictResolutionEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumConflictResolutionEntriesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumConflictResolutionEntriesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumConflictResolutionEntriesExceededException {
     /// Returns the error message.
@@ -7985,18 +7152,11 @@ impl MaximumConflictResolutionEntriesExceededException {
 
 /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ManualMergeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ManualMergeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ManualMergeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ManualMergeRequiredException {
     /// Returns the error message.
@@ -8052,18 +7212,11 @@ impl ManualMergeRequiredException {
 
 /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReplacementTypeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReplacementTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReplacementTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReplacementTypeException {
     /// Returns the error message.
@@ -8119,18 +7272,11 @@ impl InvalidReplacementTypeException {
 
 /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReplacementContentException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReplacementContentException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReplacementContentException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReplacementContentException {
     /// Returns the error message.
@@ -8186,18 +7332,11 @@ impl InvalidReplacementContentException {
 
 /// <p>The specified conflict resolution strategy is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictResolutionStrategyException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConflictResolutionStrategyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictResolutionStrategyException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConflictResolutionStrategyException {
     /// Returns the error message.
@@ -8253,18 +7392,11 @@ impl InvalidConflictResolutionStrategyException {
 
 /// <p>The specified conflict resolution list is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictResolutionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConflictResolutionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictResolutionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConflictResolutionException {
     /// Returns the error message.
@@ -8320,18 +7452,11 @@ impl InvalidConflictResolutionException {
 
 /// <p>The specified conflict detail level is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidConflictDetailLevelException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidConflictDetailLevelException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidConflictDetailLevelException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidConflictDetailLevelException {
     /// Returns the error message.
@@ -8387,18 +7512,11 @@ impl InvalidConflictDetailLevelException {
 
 /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConcurrentReferenceUpdateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ConcurrentReferenceUpdateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConcurrentReferenceUpdateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ConcurrentReferenceUpdateException {
     /// Returns the error message.
@@ -8454,18 +7572,11 @@ impl ConcurrentReferenceUpdateException {
 
 /// <p>The specified reference does not exist. You must provide a full commit ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReferenceDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReferenceDoesNotExistException {
     /// Returns the error message.
@@ -8521,18 +7632,11 @@ impl ReferenceDoesNotExistException {
 
 /// <p>The specified target branch is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetBranchException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTargetBranchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetBranchException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTargetBranchException {
     /// Returns the error message.
@@ -8588,18 +7692,11 @@ impl InvalidTargetBranchException {
 
 /// <p>The specified commit is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidCommitException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidCommitException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidCommitException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidCommitException {
     /// Returns the error message.
@@ -8655,18 +7752,11 @@ impl InvalidCommitException {
 
 /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileModeRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileModeRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileModeRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileModeRequiredException {
     /// Returns the error message.
@@ -8722,18 +7812,11 @@ impl FileModeRequiredException {
 
 /// <p>A commit was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitRequiredException {
     /// Returns the error message.
@@ -8789,18 +7872,11 @@ impl CommitRequiredException {
 
 /// <p>The specified number of maximum results is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxResultsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMaxResultsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxResultsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMaxResultsException {
     /// Returns the error message.
@@ -8856,18 +7932,11 @@ impl InvalidMaxResultsException {
 
 /// <p>The specified continuation token is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidContinuationTokenException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidContinuationTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidContinuationTokenException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidContinuationTokenException {
     /// Returns the error message.
@@ -8923,18 +7992,11 @@ impl InvalidContinuationTokenException {
 
 /// <p>The specified sort by value is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSortByException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSortByException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSortByException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSortByException {
     /// Returns the error message.
@@ -8990,18 +8052,11 @@ impl InvalidSortByException {
 
 /// <p>The specified sort order is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidOrderException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidOrderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidOrderException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidOrderException {
     /// Returns the error message.
@@ -9057,18 +8112,11 @@ impl InvalidOrderException {
 
 /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the author of the pull request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidAuthorArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidAuthorArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidAuthorArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidAuthorArnException {
     /// Returns the error message.
@@ -9124,18 +8172,11 @@ impl InvalidAuthorArnException {
 
 /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AuthorDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthorDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AuthorDoesNotExistException {
     /// Returns the error message.
@@ -9191,18 +8232,11 @@ impl AuthorDoesNotExistException {
 
 /// <p>A merge option or stategy is required, and none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MergeOptionRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MergeOptionRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MergeOptionRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MergeOptionRequiredException {
     /// Returns the error message.
@@ -9258,18 +8292,11 @@ impl MergeOptionRequiredException {
 
 /// <p>The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidSourceCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidSourceCommitSpecifierException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidSourceCommitSpecifierException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidSourceCommitSpecifierException {
     /// Returns the error message.
@@ -9325,18 +8352,11 @@ impl InvalidSourceCommitSpecifierException {
 
 /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMergeOptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMergeOptionException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMergeOptionException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMergeOptionException {
     /// Returns the error message.
@@ -9392,18 +8412,11 @@ impl InvalidMergeOptionException {
 
 /// <p>The specified value for the number of conflict files to return is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxConflictFilesException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMaxConflictFilesException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxConflictFilesException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMaxConflictFilesException {
     /// Returns the error message.
@@ -9459,18 +8472,11 @@ impl InvalidMaxConflictFilesException {
 
 /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidDestinationCommitSpecifierException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidDestinationCommitSpecifierException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidDestinationCommitSpecifierException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidDestinationCommitSpecifierException {
     /// Returns the error message.
@@ -9526,18 +8532,11 @@ impl InvalidDestinationCommitSpecifierException {
 
 /// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FolderDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FolderDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FolderDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FolderDoesNotExistException {
     /// Returns the error message.
@@ -9593,18 +8592,11 @@ impl FolderDoesNotExistException {
 
 /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileTooLargeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileTooLargeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileTooLargeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileTooLargeException {
     /// Returns the error message.
@@ -9660,18 +8652,11 @@ impl FileTooLargeException {
 
 /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileDoesNotExistException {
     /// Returns the error message.
@@ -9727,18 +8712,11 @@ impl FileDoesNotExistException {
 
 /// <p>The specified commit ID does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitIdDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitIdDoesNotExistException {
     /// Returns the error message.
@@ -9794,18 +8772,11 @@ impl CommitIdDoesNotExistException {
 
 /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReactionUserArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReactionUserArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReactionUserArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReactionUserArnException {
     /// Returns the error message.
@@ -9861,18 +8832,11 @@ impl InvalidReactionUserArnException {
 
 /// <p>The specified blob is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidBlobIdException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidBlobIdException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidBlobIdException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidBlobIdException {
     /// Returns the error message.
@@ -9928,18 +8892,11 @@ impl InvalidBlobIdException {
 
 /// <p>A blob ID is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobIdRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BlobIdRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobIdRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BlobIdRequiredException {
     /// Returns the error message.
@@ -9995,18 +8952,11 @@ impl BlobIdRequiredException {
 
 /// <p>The specified blob does not exist.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BlobIdDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BlobIdDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BlobIdDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BlobIdDoesNotExistException {
     /// Returns the error message.
@@ -10062,18 +9012,11 @@ impl BlobIdDoesNotExistException {
 
 /// <p>The pull request event type is not valid. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidPullRequestEventTypeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidPullRequestEventTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidPullRequestEventTypeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidPullRequestEventTypeException {
     /// Returns the error message.
@@ -10129,18 +9072,11 @@ impl InvalidPullRequestEventTypeException {
 
 /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidActorArnException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidActorArnException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidActorArnException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidActorArnException {
     /// Returns the error message.
@@ -10196,18 +9132,11 @@ impl InvalidActorArnException {
 
 /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ActorDoesNotExistException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ActorDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ActorDoesNotExistException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ActorDoesNotExistException {
     /// Returns the error message.
@@ -10263,18 +9192,11 @@ impl ActorDoesNotExistException {
 
 /// <p>The specified value for the number of merge hunks to return is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidMaxMergeHunksException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidMaxMergeHunksException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidMaxMergeHunksException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidMaxMergeHunksException {
     /// Returns the error message.
@@ -10330,18 +9252,11 @@ impl InvalidMaxMergeHunksException {
 
 /// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CannotDeleteApprovalRuleFromTemplateException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CannotDeleteApprovalRuleFromTemplateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CannotDeleteApprovalRuleFromTemplateException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CannotDeleteApprovalRuleFromTemplateException {
     /// Returns the error message.
@@ -10397,18 +9312,11 @@ impl CannotDeleteApprovalRuleFromTemplateException {
 
 /// <p>The specified branch is the default branch for the repository, and cannot be deleted. To delete this branch, you must first set another branch as the default branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultBranchCannotBeDeletedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DefaultBranchCannotBeDeletedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultBranchCannotBeDeletedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl DefaultBranchCannotBeDeletedException {
     /// Returns the error message.
@@ -10464,18 +9372,11 @@ impl DefaultBranchCannotBeDeletedException {
 
 /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleTemplateInUseException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleTemplateInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleTemplateInUseException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleTemplateInUseException {
     /// Returns the error message.
@@ -10531,18 +9432,11 @@ impl ApprovalRuleTemplateInUseException {
 
 /// <p>A repository resource limit was exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryLimitExceededException {
     /// Returns the error message.
@@ -10598,18 +9492,11 @@ impl RepositoryLimitExceededException {
 
 /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfRulesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NumberOfRulesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfRulesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NumberOfRulesExceededException {
     /// Returns the error message.
@@ -10665,18 +9552,11 @@ impl NumberOfRulesExceededException {
 
 /// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApprovalRuleNameAlreadyExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ApprovalRuleNameAlreadyExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApprovalRuleNameAlreadyExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ApprovalRuleNameAlreadyExistsException {
     /// Returns the error message.
@@ -10732,18 +9612,11 @@ impl ApprovalRuleNameAlreadyExistsException {
 
 /// <p>An array of target objects is required. It cannot be empty or null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetsRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetsRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetsRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetsRequiredException {
     /// Returns the error message.
@@ -10799,18 +9672,11 @@ impl TargetsRequiredException {
 
 /// <p>A pull request target is required. It cannot be empty or null. A pull request target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TargetRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TargetRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TargetRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl TargetRequiredException {
     /// Returns the error message.
@@ -10866,18 +9732,11 @@ impl TargetRequiredException {
 
 /// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceAndDestinationAreSameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceAndDestinationAreSameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceAndDestinationAreSameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceAndDestinationAreSameException {
     /// Returns the error message.
@@ -10933,18 +9792,11 @@ impl SourceAndDestinationAreSameException {
 
 /// <p>The specified reference is not a supported type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceTypeNotSupportedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReferenceTypeNotSupportedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceTypeNotSupportedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReferenceTypeNotSupportedException {
     /// Returns the error message.
@@ -11000,18 +9852,11 @@ impl ReferenceTypeNotSupportedException {
 
 /// <p>A reference name is required, but none was provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReferenceNameRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ReferenceNameRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReferenceNameRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ReferenceNameRequiredException {
     /// Returns the error message.
@@ -11067,18 +9912,11 @@ impl ReferenceNameRequiredException {
 
 /// <p>You cannot include more than one repository in a pull request. Make sure you have specified only one repository name in your request, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MultipleRepositoriesInPullRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MultipleRepositoriesInPullRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MultipleRepositoriesInPullRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MultipleRepositoriesInPullRequestException {
     /// Returns the error message.
@@ -11134,18 +9972,11 @@ impl MultipleRepositoriesInPullRequestException {
 
 /// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumOpenPullRequestsExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumOpenPullRequestsExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumOpenPullRequestsExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumOpenPullRequestsExceededException {
     /// Returns the error message.
@@ -11201,18 +10032,11 @@ impl MaximumOpenPullRequestsExceededException {
 
 /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTargetsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTargetsException {
     /// Returns the error message.
@@ -11268,18 +10092,11 @@ impl InvalidTargetsException {
 
 /// <p>The target for the pull request is not valid. A target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidTargetException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidTargetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidTargetException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidTargetException {
     /// Returns the error message.
@@ -11335,18 +10152,11 @@ impl InvalidTargetException {
 
 /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidReferenceNameException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidReferenceNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidReferenceNameException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl InvalidReferenceNameException {
     /// Returns the error message.
@@ -11402,18 +10212,11 @@ impl InvalidReferenceNameException {
 
 /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SourceFileOrContentRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SourceFileOrContentRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SourceFileOrContentRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SourceFileOrContentRequiredException {
     /// Returns the error message.
@@ -11469,18 +10272,11 @@ impl SourceFileOrContentRequiredException {
 
 /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SamePathRequestException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for SamePathRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SamePathRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl SamePathRequestException {
     /// Returns the error message.
@@ -11536,18 +10332,11 @@ impl SamePathRequestException {
 
 /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestrictedSourceFileException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RestrictedSourceFileException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestrictedSourceFileException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RestrictedSourceFileException {
     /// Returns the error message.
@@ -11603,18 +10392,11 @@ impl RestrictedSourceFileException {
 
 /// <p>The commit cannot be created because one or more files specified in the commit reference both a file and a folder.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutFileEntryConflictException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for PutFileEntryConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutFileEntryConflictException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl PutFileEntryConflictException {
     /// Returns the error message.
@@ -11670,18 +10452,11 @@ impl PutFileEntryConflictException {
 
 /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoChangeException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NoChangeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NoChangeException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NoChangeException {
     /// Returns the error message.
@@ -11737,18 +10512,11 @@ impl NoChangeException {
 
 /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumFileEntriesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumFileEntriesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumFileEntriesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumFileEntriesExceededException {
     /// Returns the error message.
@@ -11804,18 +10572,11 @@ impl MaximumFileEntriesExceededException {
 
 /// <p>The commit cannot be created because no files have been specified as added, updated, or changed (PutFile or DeleteFile) for the commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileEntryRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileEntryRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileEntryRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileEntryRequiredException {
     /// Returns the error message.
@@ -11871,18 +10632,11 @@ impl FileEntryRequiredException {
 
 /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FileContentAndSourceFileSpecifiedException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for FileContentAndSourceFileSpecifiedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FileContentAndSourceFileSpecifiedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl FileContentAndSourceFileSpecifiedException {
     /// Returns the error message.
@@ -11938,18 +10692,11 @@ impl FileContentAndSourceFileSpecifiedException {
 
 /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BranchNameExistsException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BranchNameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BranchNameExistsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BranchNameExistsException {
     /// Returns the error message.
@@ -12005,18 +10752,11 @@ impl BranchNameExistsException {
 
 /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NumberOfRuleTemplatesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NumberOfRuleTemplatesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NumberOfRuleTemplatesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NumberOfRuleTemplatesExceededException {
     /// Returns the error message.
@@ -12072,18 +10812,11 @@ impl NumberOfRuleTemplatesExceededException {
 
 /// <p>At least one repository name object is required, but was not specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RepositoryNamesRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for RepositoryNamesRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RepositoryNamesRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl RepositoryNamesRequiredException {
     /// Returns the error message.
@@ -12139,18 +10872,11 @@ impl RepositoryNamesRequiredException {
 
 /// <p>The maximum number of allowed repository names was exceeded. Currently, this number is 100.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRepositoryNamesExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumRepositoryNamesExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRepositoryNamesExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumRepositoryNamesExceededException {
     /// Returns the error message.
@@ -12206,18 +10932,11 @@ impl MaximumRepositoryNamesExceededException {
 
 /// <p>A list of commit IDs is required, but was either not specified or the list was empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdsListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitIdsListRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdsListRequiredException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitIdsListRequiredException {
     /// Returns the error message.
@@ -12273,18 +10992,11 @@ impl CommitIdsListRequiredException {
 
 /// <p>The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests contains no more than 100 commit IDs, and then try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CommitIdsLimitExceededException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CommitIdsLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CommitIdsLimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl CommitIdsLimitExceededException {
     /// Returns the error message.
@@ -12340,18 +11052,11 @@ impl CommitIdsLimitExceededException {
 
 /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for MaximumRuleTemplatesAssociatedWithRepositoryException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MaximumRuleTemplatesAssociatedWithRepositoryException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl MaximumRuleTemplatesAssociatedWithRepositoryException {
     /// Returns the error message.

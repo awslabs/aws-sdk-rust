@@ -2,7 +2,7 @@
 
 /// <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
@@ -12,13 +12,6 @@ impl UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
         self.pipeline.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdatePipelineStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineStatusOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
     }
 }
 /// See [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput).
@@ -57,7 +50,7 @@ impl UpdatePipelineStatusOutput {
 
 /// <p>The <code>UpdatePipelineNotificationsResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
     #[doc(hidden)]
@@ -67,13 +60,6 @@ impl UpdatePipelineNotificationsOutput {
     /// <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::Pipeline> {
         self.pipeline.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdatePipelineNotificationsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineNotificationsOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.finish()
     }
 }
 /// See [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput).
@@ -112,7 +98,7 @@ impl UpdatePipelineNotificationsOutput {
 
 /// <p>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdatePipelineOutput {
     /// <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
     #[doc(hidden)]
@@ -131,14 +117,6 @@ impl UpdatePipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for UpdatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput).
@@ -201,7 +179,7 @@ impl UpdatePipelineOutput {
 /// <p>The <code>TestRoleResponse</code> structure.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -218,14 +196,6 @@ impl TestRoleOutput {
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
         self.messages.as_deref()
-    }
-}
-impl std::fmt::Debug for TestRoleOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TestRoleOutput");
-        formatter.field("success", &self.success);
-        formatter.field("messages", &self.messages);
-        formatter.finish()
     }
 }
 /// See [`TestRoleOutput`](crate::output::TestRoleOutput).
@@ -285,7 +255,7 @@ impl TestRoleOutput {
 
 /// <p>The <code>ReadPresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
     #[doc(hidden)]
@@ -295,13 +265,6 @@ impl ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
     pub fn preset(&self) -> std::option::Option<&crate::model::Preset> {
         self.preset.as_ref()
-    }
-}
-impl std::fmt::Debug for ReadPresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPresetOutput");
-        formatter.field("preset", &self.preset);
-        formatter.finish()
     }
 }
 /// See [`ReadPresetOutput`](crate::output::ReadPresetOutput).
@@ -340,7 +303,7 @@ impl ReadPresetOutput {
 
 /// <p>The <code>ReadPipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
@@ -359,14 +322,6 @@ impl ReadPipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for ReadPipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadPipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`ReadPipelineOutput`](crate::output::ReadPipelineOutput).
@@ -428,7 +383,7 @@ impl ReadPipelineOutput {
 
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     #[doc(hidden)]
@@ -438,13 +393,6 @@ impl ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for ReadJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ReadJobOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`ReadJobOutput`](crate::output::ReadJobOutput).
@@ -481,7 +429,7 @@ impl ReadJobOutput {
 
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
     #[doc(hidden)]
@@ -498,14 +446,6 @@ impl ListPresetsOutput {
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPresetsOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPresetsOutput");
-        formatter.field("presets", &self.presets);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
     }
 }
 /// See [`ListPresetsOutput`](crate::output::ListPresetsOutput).
@@ -568,7 +508,7 @@ impl ListPresetsOutput {
 
 /// <p>A list of the pipelines associated with the current AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
     #[doc(hidden)]
@@ -585,14 +525,6 @@ impl ListPipelinesOutput {
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListPipelinesOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListPipelinesOutput");
-        formatter.field("pipelines", &self.pipelines);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
     }
 }
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
@@ -655,7 +587,7 @@ impl ListPipelinesOutput {
 
 /// <p> The <code>ListJobsByStatusResponse</code> structure. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
     #[doc(hidden)]
@@ -672,14 +604,6 @@ impl ListJobsByStatusOutput {
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJobsByStatusOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByStatusOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
     }
 }
 /// See [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput).
@@ -742,7 +666,7 @@ impl ListJobsByStatusOutput {
 
 /// <p>The <code>ListJobsByPipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJobsByPipelineOutput {
     /// <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
     #[doc(hidden)]
@@ -759,14 +683,6 @@ impl ListJobsByPipelineOutput {
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
-    }
-}
-impl std::fmt::Debug for ListJobsByPipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListJobsByPipelineOutput");
-        formatter.field("jobs", &self.jobs);
-        formatter.field("next_page_token", &self.next_page_token);
-        formatter.finish()
     }
 }
 /// See [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput).
@@ -829,14 +745,8 @@ impl ListJobsByPipelineOutput {
 
 /// <p>The <code>DeletePresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePresetOutput {}
-impl std::fmt::Debug for DeletePresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePresetOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePresetOutput`](crate::output::DeletePresetOutput).
 pub mod delete_preset_output {
 
@@ -859,14 +769,8 @@ impl DeletePresetOutput {
 
 /// <p>The <code>DeletePipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeletePipelineOutput {}
-impl std::fmt::Debug for DeletePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeletePipelineOutput");
-        formatter.finish()
-    }
-}
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
@@ -889,7 +793,7 @@ impl DeletePipelineOutput {
 
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     #[doc(hidden)]
@@ -906,14 +810,6 @@ impl CreatePresetOutput {
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
     pub fn warning(&self) -> std::option::Option<&str> {
         self.warning.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePresetOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePresetOutput");
-        formatter.field("preset", &self.preset);
-        formatter.field("warning", &self.warning);
-        formatter.finish()
     }
 }
 /// See [`CreatePresetOutput`](crate::output::CreatePresetOutput).
@@ -964,7 +860,7 @@ impl CreatePresetOutput {
 
 /// <p>When you create a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline that is created.</p>
     #[doc(hidden)]
@@ -983,14 +879,6 @@ impl CreatePipelineOutput {
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub fn warnings(&self) -> std::option::Option<&[crate::model::Warning]> {
         self.warnings.as_deref()
-    }
-}
-impl std::fmt::Debug for CreatePipelineOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreatePipelineOutput");
-        formatter.field("pipeline", &self.pipeline);
-        formatter.field("warnings", &self.warnings);
-        formatter.finish()
     }
 }
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
@@ -1052,7 +940,7 @@ impl CreatePipelineOutput {
 
 /// <p>The CreateJobResponse structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
     #[doc(hidden)]
@@ -1062,13 +950,6 @@ impl CreateJobOutput {
     /// <p>A section of the response body that provides information about the job that is created.</p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
-    }
-}
-impl std::fmt::Debug for CreateJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateJobOutput");
-        formatter.field("job", &self.job);
-        formatter.finish()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -1105,14 +986,8 @@ impl CreateJobOutput {
 
 /// <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelJobOutput {}
-impl std::fmt::Debug for CancelJobOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CancelJobOutput");
-        formatter.finish()
-    }
-}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
 

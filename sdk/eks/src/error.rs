@@ -2,7 +2,7 @@
 
 /// <p>These errors are usually caused by a server-side issue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -29,16 +29,6 @@ impl ServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ServerException {
@@ -134,7 +124,7 @@ impl ServerException {
 
 /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceNotFoundException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -168,17 +158,6 @@ impl ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceNotFoundException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("fargate_profile_name", &self.fargate_profile_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceNotFoundException {
@@ -289,7 +268,7 @@ impl ResourceNotFoundException {
 
 /// <p>The specified resource is in use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceInUseException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -316,16 +295,6 @@ impl ResourceInUseException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceInUseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceInUseException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceInUseException {
@@ -421,7 +390,7 @@ impl ResourceInUseException {
 
 /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidRequestException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -448,16 +417,6 @@ impl InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidRequestException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidRequestException {
@@ -553,7 +512,7 @@ impl InvalidRequestException {
 
 /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -587,17 +546,6 @@ impl InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("fargate_profile_name", &self.fargate_profile_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl InvalidParameterException {
@@ -708,7 +656,7 @@ impl InvalidParameterException {
 
 /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -735,16 +683,6 @@ impl ClientException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn addon_name(&self) -> std::option::Option<&str> {
         self.addon_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ClientException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("addon_name", &self.addon_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ClientException {
@@ -840,18 +778,11 @@ impl ClientException {
 
 /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NotFoundException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl NotFoundException {
     /// Returns the error message.
@@ -907,18 +838,11 @@ impl NotFoundException {
 
 /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for BadRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BadRequestException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl BadRequestException {
     /// Returns the error message.
@@ -974,18 +898,11 @@ impl BadRequestException {
 
 /// <p>The service is unavailable. Back off and retry the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceUnavailableException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceUnavailableException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
@@ -1041,18 +958,11 @@ impl ServiceUnavailableException {
 
 /// <p>Required resources (such as service-linked roles) were created and are still propagating. Retry later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourcePropagationDelayException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ResourcePropagationDelayException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourcePropagationDelayException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl ResourcePropagationDelayException {
     /// Returns the error message.
@@ -1108,7 +1018,7 @@ impl ResourcePropagationDelayException {
 
 /// <p>You have encountered a service limit on the specified resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ResourceLimitExceededException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
@@ -1128,15 +1038,6 @@ impl ResourceLimitExceededException {
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ResourceLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ResourceLimitExceededException");
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 impl ResourceLimitExceededException {
@@ -1220,18 +1121,11 @@ impl ResourceLimitExceededException {
 
 /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
 }
 impl AccessDeniedException {
     /// Returns the error message.
@@ -1287,7 +1181,7 @@ impl AccessDeniedException {
 
 /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnsupportedAvailabilityZoneException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1314,16 +1208,6 @@ impl UnsupportedAvailabilityZoneException {
     /// <p>The supported Availability Zones for your account. Choose subnets in these Availability Zones for your cluster.</p>
     pub fn valid_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.valid_zones.as_deref()
-    }
-}
-impl std::fmt::Debug for UnsupportedAvailabilityZoneException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnsupportedAvailabilityZoneException");
-        formatter.field("message", &self.message);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("nodegroup_name", &self.nodegroup_name);
-        formatter.field("valid_zones", &self.valid_zones);
-        formatter.finish()
     }
 }
 impl UnsupportedAvailabilityZoneException {

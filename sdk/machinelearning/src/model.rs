@@ -8,7 +8,7 @@
 /// <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Prediction {
     /// <p>The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.</p>
     #[doc(hidden)]
@@ -47,16 +47,6 @@ impl Prediction {
         &std::collections::HashMap<crate::model::DetailsAttributes, std::string::String>,
     > {
         self.details.as_ref()
-    }
-}
-impl std::fmt::Debug for Prediction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Prediction");
-        formatter.field("predicted_label", &self.predicted_label);
-        formatter.field("predicted_value", &self.predicted_value);
-        formatter.field("predicted_scores", &self.predicted_scores);
-        formatter.field("details", &self.details);
-        formatter.finish()
     }
 }
 /// See [`Prediction`](crate::model::Prediction).
@@ -358,7 +348,7 @@ impl AsRef<str> for MlModelType {
 
 /// <p> Describes the real-time endpoint information for an <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RealtimeEndpointInfo {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
     #[doc(hidden)]
@@ -401,16 +391,6 @@ impl RealtimeEndpointInfo {
     /// </ul>
     pub fn endpoint_status(&self) -> std::option::Option<&crate::model::RealtimeEndpointStatus> {
         self.endpoint_status.as_ref()
-    }
-}
-impl std::fmt::Debug for RealtimeEndpointInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RealtimeEndpointInfo");
-        formatter.field("peak_requests_per_second", &self.peak_requests_per_second);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("endpoint_url", &self.endpoint_url);
-        formatter.field("endpoint_status", &self.endpoint_status);
-        formatter.finish()
     }
 }
 /// See [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
@@ -743,7 +723,7 @@ impl AsRef<str> for EntityStatus {
 /// </ul>
 /// <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PerformanceMetrics {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -757,13 +737,6 @@ impl PerformanceMetrics {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.properties.as_ref()
-    }
-}
-impl std::fmt::Debug for PerformanceMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PerformanceMetrics");
-        formatter.field("properties", &self.properties);
-        formatter.finish()
     }
 }
 /// See [`PerformanceMetrics`](crate::model::PerformanceMetrics).
@@ -818,7 +791,7 @@ impl PerformanceMetrics {
 
 /// <p>The datasource details that are specific to Amazon RDS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsMetadata {
     /// <p>The database details required to connect to an Amazon RDS.</p>
     #[doc(hidden)]
@@ -863,18 +836,6 @@ impl RdsMetadata {
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
     pub fn data_pipeline_id(&self) -> std::option::Option<&str> {
         self.data_pipeline_id.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsMetadata");
-        formatter.field("database", &self.database);
-        formatter.field("database_user_name", &self.database_user_name);
-        formatter.field("select_sql_query", &self.select_sql_query);
-        formatter.field("resource_role", &self.resource_role);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("data_pipeline_id", &self.data_pipeline_id);
-        formatter.finish()
     }
 }
 /// See [`RdsMetadata`](crate::model::RdsMetadata).
@@ -988,7 +949,7 @@ impl RdsMetadata {
 
 /// <p>The database details of an Amazon RDS database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsDatabase {
     /// <p>The ID of an RDS DB instance.</p>
     #[doc(hidden)]
@@ -1005,14 +966,6 @@ impl RdsDatabase {
     /// <p>The name of a database hosted on an RDS DB instance.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsDatabase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsDatabase");
-        formatter.field("instance_identifier", &self.instance_identifier);
-        formatter.field("database_name", &self.database_name);
-        formatter.finish()
     }
 }
 /// See [`RdsDatabase`](crate::model::RdsDatabase).
@@ -1069,7 +1022,7 @@ impl RdsDatabase {
 
 /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftMetadata {
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
     #[doc(hidden)]
@@ -1093,15 +1046,6 @@ impl RedshiftMetadata {
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
     pub fn select_sql_query(&self) -> std::option::Option<&str> {
         self.select_sql_query.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftMetadata");
-        formatter.field("redshift_database", &self.redshift_database);
-        formatter.field("database_user_name", &self.database_user_name);
-        formatter.field("select_sql_query", &self.select_sql_query);
-        formatter.finish()
     }
 }
 /// See [`RedshiftMetadata`](crate::model::RedshiftMetadata).
@@ -1173,7 +1117,7 @@ impl RedshiftMetadata {
 
 /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDatabase {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
     #[doc(hidden)]
@@ -1190,14 +1134,6 @@ impl RedshiftDatabase {
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftDatabase {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDatabase");
-        formatter.field("database_name", &self.database_name);
-        formatter.field("cluster_identifier", &self.cluster_identifier);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDatabase`](crate::model::RedshiftDatabase).
@@ -1254,7 +1190,7 @@ impl RedshiftDatabase {
 
 /// <p>A custom key-value pair associated with an ML object, such as an ML model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>A unique identifier for the tag. Valid characters include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.</p>
     #[doc(hidden)]
@@ -1271,14 +1207,6 @@ impl Tag {
     /// <p>An optional string, typically used to describe or define the tag. Valid characters include Unicode letters, digits, white space, _, ., /, =, +, -, %, and @.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -1432,7 +1360,7 @@ impl AsRef<str> for TaggableResourceType {
 /// <p> Represents the output of a <code>GetMLModel</code> operation. </p>
 /// <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MlModel {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     #[doc(hidden)]
@@ -1620,34 +1548,6 @@ impl MlModel {
     /// <p>A timestamp represented in epoch time.</p>
     pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
-    }
-}
-impl std::fmt::Debug for MlModel {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MlModel");
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("training_data_source_id", &self.training_data_source_id);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("size_in_bytes", &self.size_in_bytes);
-        formatter.field("endpoint_info", &self.endpoint_info);
-        formatter.field("training_parameters", &self.training_parameters);
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("algorithm", &self.algorithm);
-        formatter.field("ml_model_type", &self.ml_model_type);
-        formatter.field("score_threshold", &self.score_threshold);
-        formatter.field(
-            "score_threshold_last_updated_at",
-            &self.score_threshold_last_updated_at,
-        );
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.finish()
     }
 }
 /// See [`MlModel`](crate::model::MlModel).
@@ -2343,7 +2243,7 @@ impl AsRef<str> for MlModelFilterVariable {
 /// <p> Represents the output of <code>GetEvaluation</code> operation. </p>
 /// <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
     #[doc(hidden)]
@@ -2470,26 +2370,6 @@ impl Evaluation {
     /// <p>A timestamp represented in epoch time.</p>
     pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
-    }
-}
-impl std::fmt::Debug for Evaluation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Evaluation");
-        formatter.field("evaluation_id", &self.evaluation_id);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field("evaluation_data_source_id", &self.evaluation_data_source_id);
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("performance_metrics", &self.performance_metrics);
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.finish()
     }
 }
 /// See [`Evaluation`](crate::model::Evaluation).
@@ -2904,7 +2784,7 @@ impl AsRef<str> for EvaluationFilterVariable {
 /// <p> Represents the output of the <code>GetDataSource</code> operation. </p>
 /// <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
     #[doc(hidden)]
@@ -3047,30 +2927,6 @@ impl DataSource {
     /// <p>A timestamp represented in epoch time.</p>
     pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSource");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_location_s3", &self.data_location_s3);
-        formatter.field("data_rearrangement", &self.data_rearrangement);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("data_size_in_bytes", &self.data_size_in_bytes);
-        formatter.field("number_of_files", &self.number_of_files);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("message", &self.message);
-        formatter.field("redshift_metadata", &self.redshift_metadata);
-        formatter.field("rds_metadata", &self.rds_metadata);
-        formatter.field("role_arn", &self.role_arn);
-        formatter.field("compute_statistics", &self.compute_statistics);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.finish()
     }
 }
 /// See [`DataSource`](crate::model::DataSource).
@@ -3507,7 +3363,7 @@ impl AsRef<str> for DataSourceFilterVariable {
 /// <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p>
 /// <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPrediction {
     /// <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request. </p>
     #[doc(hidden)]
@@ -3636,31 +3492,6 @@ impl BatchPrediction {
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn invalid_record_count(&self) -> std::option::Option<i64> {
         self.invalid_record_count
-    }
-}
-impl std::fmt::Debug for BatchPrediction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPrediction");
-        formatter.field("batch_prediction_id", &self.batch_prediction_id);
-        formatter.field("ml_model_id", &self.ml_model_id);
-        formatter.field(
-            "batch_prediction_data_source_id",
-            &self.batch_prediction_data_source_id,
-        );
-        formatter.field("input_data_location_s3", &self.input_data_location_s3);
-        formatter.field("created_by_iam_user", &self.created_by_iam_user);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("output_uri", &self.output_uri);
-        formatter.field("message", &self.message);
-        formatter.field("compute_time", &self.compute_time);
-        formatter.field("finished_at", &self.finished_at);
-        formatter.field("started_at", &self.started_at);
-        formatter.field("total_record_count", &self.total_record_count);
-        formatter.field("invalid_record_count", &self.invalid_record_count);
-        formatter.finish()
     }
 }
 /// See [`BatchPrediction`](crate::model::BatchPrediction).
@@ -4086,7 +3917,7 @@ impl AsRef<str> for BatchPredictionFilterVariable {
 
 /// <p> Describes the data specification of a <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataSpec {
     /// <p>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing data files.</p>
     #[doc(hidden)]
@@ -4153,16 +3984,6 @@ impl S3DataSpec {
     /// <p>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</p>
     pub fn data_schema_location_s3(&self) -> std::option::Option<&str> {
         self.data_schema_location_s3.as_deref()
-    }
-}
-impl std::fmt::Debug for S3DataSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataSpec");
-        formatter.field("data_location_s3", &self.data_location_s3);
-        formatter.field("data_rearrangement", &self.data_rearrangement);
-        formatter.field("data_schema", &self.data_schema);
-        formatter.field("data_schema_location_s3", &self.data_schema_location_s3);
-        formatter.finish()
     }
 }
 /// See [`S3DataSpec`](crate::model::S3DataSpec).
@@ -4282,7 +4103,7 @@ impl S3DataSpec {
 
 /// <p>Describes the data specification of an Amazon Redshift <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDataSpec {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     #[doc(hidden)]
@@ -4372,19 +4193,6 @@ impl RedshiftDataSpec {
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn data_schema_uri(&self) -> std::option::Option<&str> {
         self.data_schema_uri.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftDataSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDataSpec");
-        formatter.field("database_information", &self.database_information);
-        formatter.field("select_sql_query", &self.select_sql_query);
-        formatter.field("database_credentials", &self.database_credentials);
-        formatter.field("s3_staging_location", &self.s3_staging_location);
-        formatter.field("data_rearrangement", &self.data_rearrangement);
-        formatter.field("data_schema", &self.data_schema);
-        formatter.field("data_schema_uri", &self.data_schema_uri);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
@@ -4553,7 +4361,7 @@ impl RedshiftDataSpec {
 
 /// <p>Describes the database credentials for connecting to a database on an Amazon Redshift cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftDatabaseCredentials {
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     #[doc(hidden)]
@@ -4570,14 +4378,6 @@ impl RedshiftDatabaseCredentials {
     /// <p>A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for RedshiftDatabaseCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RedshiftDatabaseCredentials");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }
 /// See [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
@@ -4628,7 +4428,7 @@ impl RedshiftDatabaseCredentials {
 
 /// <p>The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsDataSpec {
     /// <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code> of an Amazon RDS database.</p>
     #[doc(hidden)]
@@ -4746,23 +4546,6 @@ impl RdsDataSpec {
     /// <p>The security group IDs to be used to access a VPC-based RDS DB instance. Ensure that there are appropriate ingress rules set up to allow access to the RDS DB instance. This attribute is used by Data Pipeline to carry out the copy operation from Amazon RDS to an Amazon S3 task.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsDataSpec {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsDataSpec");
-        formatter.field("database_information", &self.database_information);
-        formatter.field("select_sql_query", &self.select_sql_query);
-        formatter.field("database_credentials", &self.database_credentials);
-        formatter.field("s3_staging_location", &self.s3_staging_location);
-        formatter.field("data_rearrangement", &self.data_rearrangement);
-        formatter.field("data_schema", &self.data_schema);
-        formatter.field("data_schema_uri", &self.data_schema_uri);
-        formatter.field("resource_role", &self.resource_role);
-        formatter.field("service_role", &self.service_role);
-        formatter.field("subnet_id", &self.subnet_id);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`RdsDataSpec`](crate::model::RdsDataSpec).
@@ -4987,7 +4770,7 @@ impl RdsDataSpec {
 
 /// <p>The database credentials to connect to a database on an RDS DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RdsDatabaseCredentials {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     #[doc(hidden)]
@@ -5004,14 +4787,6 @@ impl RdsDatabaseCredentials {
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
-    }
-}
-impl std::fmt::Debug for RdsDatabaseCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RdsDatabaseCredentials");
-        formatter.field("username", &self.username);
-        formatter.field("password", &self.password);
-        formatter.finish()
     }
 }
 /// See [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).

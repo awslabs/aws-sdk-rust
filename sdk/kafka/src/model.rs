@@ -2,7 +2,7 @@
 
 /// <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionInfo {
     /// <p>The data-volume encryption details.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl EncryptionInfo {
     /// <p>The details for encryption in transit.</p>
     pub fn encryption_in_transit(&self) -> std::option::Option<&crate::model::EncryptionInTransit> {
         self.encryption_in_transit.as_ref()
-    }
-}
-impl std::fmt::Debug for EncryptionInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionInfo");
-        formatter.field("encryption_at_rest", &self.encryption_at_rest);
-        formatter.field("encryption_in_transit", &self.encryption_in_transit);
-        formatter.finish()
     }
 }
 /// See [`EncryptionInfo`](crate::model::EncryptionInfo).
@@ -83,7 +75,7 @@ impl EncryptionInfo {
 
 /// <p>The settings for encrypting data in transit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
     /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
@@ -110,14 +102,6 @@ impl EncryptionInTransit {
     /// <p>The default value is true.</p>
     pub fn in_cluster(&self) -> bool {
         self.in_cluster
-    }
-}
-impl std::fmt::Debug for EncryptionInTransit {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionInTransit");
-        formatter.field("client_broker", &self.client_broker);
-        formatter.field("in_cluster", &self.in_cluster);
-        formatter.finish()
     }
 }
 /// See [`EncryptionInTransit`](crate::model::EncryptionInTransit).
@@ -276,7 +260,7 @@ impl AsRef<str> for ClientBroker {
 
 /// <p>The data-volume encryption details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EncryptionAtRest {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     #[doc(hidden)]
@@ -286,13 +270,6 @@ impl EncryptionAtRest {
     /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
     pub fn data_volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.data_volume_kms_key_id.as_deref()
-    }
-}
-impl std::fmt::Debug for EncryptionAtRest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EncryptionAtRest");
-        formatter.field("data_volume_kms_key_id", &self.data_volume_kms_key_id);
-        formatter.finish()
     }
 }
 /// See [`EncryptionAtRest`](crate::model::EncryptionAtRest).
@@ -334,7 +311,7 @@ impl EncryptionAtRest {
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     #[doc(hidden)]
@@ -358,15 +335,6 @@ impl ClientAuthentication {
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub fn unauthenticated(&self) -> std::option::Option<&crate::model::Unauthenticated> {
         self.unauthenticated.as_ref()
-    }
-}
-impl std::fmt::Debug for ClientAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClientAuthentication");
-        formatter.field("sasl", &self.sasl);
-        formatter.field("tls", &self.tls);
-        formatter.field("unauthenticated", &self.unauthenticated);
-        formatter.finish()
     }
 }
 /// See [`ClientAuthentication`](crate::model::ClientAuthentication).
@@ -432,7 +400,7 @@ impl ClientAuthentication {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     #[doc(hidden)]
@@ -442,13 +410,6 @@ impl Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Unauthenticated {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Unauthenticated");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Unauthenticated`](crate::model::Unauthenticated).
@@ -487,7 +448,7 @@ impl Unauthenticated {
 
 /// <p>Details for client authentication using TLS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
     #[doc(hidden)]
@@ -504,17 +465,6 @@ impl Tls {
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Tls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tls");
-        formatter.field(
-            "certificate_authority_arn_list",
-            &self.certificate_authority_arn_list,
-        );
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Tls`](crate::model::Tls).
@@ -578,7 +528,7 @@ impl Tls {
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     #[doc(hidden)]
@@ -595,14 +545,6 @@ impl Sasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn iam(&self) -> std::option::Option<&crate::model::Iam> {
         self.iam.as_ref()
-    }
-}
-impl std::fmt::Debug for Sasl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Sasl");
-        formatter.field("scram", &self.scram);
-        formatter.field("iam", &self.iam);
-        formatter.finish()
     }
 }
 /// See [`Sasl`](crate::model::Sasl).
@@ -653,7 +595,7 @@ impl Sasl {
 
 /// <p>Details for IAM access control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
@@ -663,13 +605,6 @@ impl Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Iam {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Iam");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Iam`](crate::model::Iam).
@@ -708,7 +643,7 @@ impl Iam {
 
 /// <p>Details for SASL/SCRAM client authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     #[doc(hidden)]
@@ -718,13 +653,6 @@ impl Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Scram {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Scram");
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Scram`](crate::model::Scram).
@@ -763,7 +691,7 @@ impl Scram {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -773,13 +701,6 @@ impl LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
     pub fn broker_logs(&self) -> std::option::Option<&crate::model::BrokerLogs> {
         self.broker_logs.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingInfo");
-        formatter.field("broker_logs", &self.broker_logs);
-        formatter.finish()
     }
 }
 /// See [`LoggingInfo`](crate::model::LoggingInfo).
@@ -821,7 +742,7 @@ impl LoggingInfo {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerLogs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -845,15 +766,6 @@ impl BrokerLogs {
     #[allow(missing_docs)] // documentation missing in model
     pub fn s3(&self) -> std::option::Option<&crate::model::S3> {
         self.s3.as_ref()
-    }
-}
-impl std::fmt::Debug for BrokerLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerLogs");
-        formatter.field("cloud_watch_logs", &self.cloud_watch_logs);
-        formatter.field("firehose", &self.firehose);
-        formatter.field("s3", &self.s3);
-        formatter.finish()
     }
 }
 /// See [`BrokerLogs`](crate::model::BrokerLogs).
@@ -919,7 +831,7 @@ impl BrokerLogs {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3 {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -943,15 +855,6 @@ impl S3 {
     #[allow(missing_docs)] // documentation missing in model
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3 {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("enabled", &self.enabled);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
     }
 }
 /// See [`S3`](crate::model::S3).
@@ -1014,7 +917,7 @@ impl S3 {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1031,14 +934,6 @@ impl Firehose {
     #[allow(missing_docs)] // documentation missing in model
     pub fn enabled(&self) -> bool {
         self.enabled
-    }
-}
-impl std::fmt::Debug for Firehose {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Firehose");
-        formatter.field("delivery_stream", &self.delivery_stream);
-        formatter.field("enabled", &self.enabled);
-        formatter.finish()
     }
 }
 /// See [`Firehose`](crate::model::Firehose).
@@ -1092,7 +987,7 @@ impl Firehose {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -1109,14 +1004,6 @@ impl CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
-    }
-}
-impl std::fmt::Debug for CloudWatchLogs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CloudWatchLogs");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("log_group", &self.log_group);
-        formatter.finish()
     }
 }
 /// See [`CloudWatchLogs`](crate::model::CloudWatchLogs).
@@ -1167,7 +1054,7 @@ impl CloudWatchLogs {
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenMonitoringInfo {
     /// <p>Prometheus settings.</p>
     #[doc(hidden)]
@@ -1177,13 +1064,6 @@ impl OpenMonitoringInfo {
     /// <p>Prometheus settings.</p>
     pub fn prometheus(&self) -> std::option::Option<&crate::model::PrometheusInfo> {
         self.prometheus.as_ref()
-    }
-}
-impl std::fmt::Debug for OpenMonitoringInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenMonitoringInfo");
-        formatter.field("prometheus", &self.prometheus);
-        formatter.finish()
     }
 }
 /// See [`OpenMonitoringInfo`](crate::model::OpenMonitoringInfo).
@@ -1225,7 +1105,7 @@ impl OpenMonitoringInfo {
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PrometheusInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -1242,14 +1122,6 @@ impl PrometheusInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporterInfo> {
         self.node_exporter.as_ref()
-    }
-}
-impl std::fmt::Debug for PrometheusInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PrometheusInfo");
-        formatter.field("jmx_exporter", &self.jmx_exporter);
-        formatter.field("node_exporter", &self.node_exporter);
-        formatter.finish()
     }
 }
 /// See [`PrometheusInfo`](crate::model::PrometheusInfo).
@@ -1306,7 +1178,7 @@ impl PrometheusInfo {
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
@@ -1316,13 +1188,6 @@ impl NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
-    }
-}
-impl std::fmt::Debug for NodeExporterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeExporterInfo");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
     }
 }
 /// See [`NodeExporterInfo`](crate::model::NodeExporterInfo).
@@ -1361,7 +1226,7 @@ impl NodeExporterInfo {
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -1371,13 +1236,6 @@ impl JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
-    }
-}
-impl std::fmt::Debug for JmxExporterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JmxExporterInfo");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
     }
 }
 /// See [`JmxExporterInfo`](crate::model::JmxExporterInfo).
@@ -1523,7 +1381,7 @@ impl AsRef<str> for EnhancedMonitoring {
 
 /// <p>Information about the broker access configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
     #[doc(hidden)]
@@ -1533,13 +1391,6 @@ impl ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
     pub fn public_access(&self) -> std::option::Option<&crate::model::PublicAccess> {
         self.public_access.as_ref()
-    }
-}
-impl std::fmt::Debug for ConnectivityInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectivityInfo");
-        formatter.field("public_access", &self.public_access);
-        formatter.finish()
     }
 }
 /// See [`ConnectivityInfo`](crate::model::ConnectivityInfo).
@@ -1581,7 +1432,7 @@ impl ConnectivityInfo {
 
 /// Public access control for brokers.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
     #[doc(hidden)]
@@ -1591,13 +1442,6 @@ impl PublicAccess {
     /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
-    }
-}
-impl std::fmt::Debug for PublicAccess {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PublicAccess");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`PublicAccess`](crate::model::PublicAccess).
@@ -1636,7 +1480,7 @@ impl PublicAccess {
 
 /// <p>Describes a configuration revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
     #[doc(hidden)]
@@ -1660,15 +1504,6 @@ impl ConfigurationRevision {
     /// <p>The revision number.</p>
     pub fn revision(&self) -> i64 {
         self.revision
-    }
-}
-impl std::fmt::Debug for ConfigurationRevision {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationRevision");
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
@@ -1734,7 +1569,7 @@ impl ConfigurationRevision {
 
 /// <p>Specifies the configuration to use for the brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
     #[doc(hidden)]
@@ -1751,14 +1586,6 @@ impl ConfigurationInfo {
     /// <p>The revision of the configuration to use.</p>
     pub fn revision(&self) -> i64 {
         self.revision
-    }
-}
-impl std::fmt::Debug for ConfigurationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfigurationInfo");
-        formatter.field("arn", &self.arn);
-        formatter.field("revision", &self.revision);
-        formatter.finish()
     }
 }
 /// See [`ConfigurationInfo`](crate::model::ConfigurationInfo).
@@ -1809,7 +1636,7 @@ impl ConfigurationInfo {
 
 /// <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
     #[doc(hidden)]
@@ -1835,15 +1662,6 @@ impl BrokerEbsVolumeInfo {
     /// <p>Size of the EBS volume to update.</p>
     pub fn volume_size_gb(&self) -> i32 {
         self.volume_size_gb
-    }
-}
-impl std::fmt::Debug for BrokerEbsVolumeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerEbsVolumeInfo");
-        formatter.field("kafka_broker_node_id", &self.kafka_broker_node_id);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("volume_size_gb", &self.volume_size_gb);
-        formatter.finish()
     }
 }
 /// See [`BrokerEbsVolumeInfo`](crate::model::BrokerEbsVolumeInfo).
@@ -1915,7 +1733,7 @@ impl BrokerEbsVolumeInfo {
 
 /// Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedThroughput {
     /// Provisioned throughput is enabled or not.
     #[doc(hidden)]
@@ -1932,14 +1750,6 @@ impl ProvisionedThroughput {
     /// Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.
     pub fn volume_throughput(&self) -> i32 {
         self.volume_throughput
-    }
-}
-impl std::fmt::Debug for ProvisionedThroughput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedThroughput");
-        formatter.field("enabled", &self.enabled);
-        formatter.field("volume_throughput", &self.volume_throughput);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
@@ -1990,7 +1800,7 @@ impl ProvisionedThroughput {
 
 /// <p>The node information object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeInfo {
     /// <p>The start time.</p>
     #[doc(hidden)]
@@ -2035,18 +1845,6 @@ impl NodeInfo {
     /// <p>The ZookeeperNodeInfo.</p>
     pub fn zookeeper_node_info(&self) -> std::option::Option<&crate::model::ZookeeperNodeInfo> {
         self.zookeeper_node_info.as_ref()
-    }
-}
-impl std::fmt::Debug for NodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeInfo");
-        formatter.field("added_to_cluster_time", &self.added_to_cluster_time);
-        formatter.field("broker_node_info", &self.broker_node_info);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("node_arn", &self.node_arn);
-        formatter.field("node_type", &self.node_type);
-        formatter.field("zookeeper_node_info", &self.zookeeper_node_info);
-        formatter.finish()
     }
 }
 /// See [`NodeInfo`](crate::model::NodeInfo).
@@ -2157,7 +1955,7 @@ impl NodeInfo {
 
 /// <p>Zookeeper node information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ZookeeperNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
     #[doc(hidden)]
@@ -2195,17 +1993,6 @@ impl ZookeeperNodeInfo {
     /// <p>The version of Zookeeper.</p>
     pub fn zookeeper_version(&self) -> std::option::Option<&str> {
         self.zookeeper_version.as_deref()
-    }
-}
-impl std::fmt::Debug for ZookeeperNodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ZookeeperNodeInfo");
-        formatter.field("attached_eni_id", &self.attached_eni_id);
-        formatter.field("client_vpc_ip_address", &self.client_vpc_ip_address);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.field("zookeeper_id", &self.zookeeper_id);
-        formatter.field("zookeeper_version", &self.zookeeper_version);
-        formatter.finish()
     }
 }
 /// See [`ZookeeperNodeInfo`](crate::model::ZookeeperNodeInfo).
@@ -2395,7 +2182,7 @@ impl AsRef<str> for NodeType {
 
 /// <p>BrokerNodeInfo</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerNodeInfo {
     /// <p>The attached elastic network interface of the broker.</p>
     #[doc(hidden)]
@@ -2442,21 +2229,6 @@ impl BrokerNodeInfo {
     /// <p>Endpoints for accessing the broker.</p>
     pub fn endpoints(&self) -> std::option::Option<&[std::string::String]> {
         self.endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerNodeInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerNodeInfo");
-        formatter.field("attached_eni_id", &self.attached_eni_id);
-        formatter.field("broker_id", &self.broker_id);
-        formatter.field("client_subnet", &self.client_subnet);
-        formatter.field("client_vpc_ip_address", &self.client_vpc_ip_address);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
     }
 }
 /// See [`BrokerNodeInfo`](crate::model::BrokerNodeInfo).
@@ -2580,7 +2352,7 @@ impl BrokerNodeInfo {
 
 /// <p>Information about the current software installed on the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
@@ -2604,15 +2376,6 @@ impl BrokerSoftwareInfo {
     /// <p>The version of Apache Kafka.</p>
     pub fn kafka_version(&self) -> std::option::Option<&str> {
         self.kafka_version.as_deref()
-    }
-}
-impl std::fmt::Debug for BrokerSoftwareInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerSoftwareInfo");
-        formatter.field("configuration_arn", &self.configuration_arn);
-        formatter.field("configuration_revision", &self.configuration_revision);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.finish()
     }
 }
 /// See [`BrokerSoftwareInfo`](crate::model::BrokerSoftwareInfo).
@@ -2681,7 +2444,7 @@ impl BrokerSoftwareInfo {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct KafkaVersion {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -2698,14 +2461,6 @@ impl KafkaVersion {
     #[allow(missing_docs)] // documentation missing in model
     pub fn status(&self) -> std::option::Option<&crate::model::KafkaVersionStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for KafkaVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KafkaVersion");
-        formatter.field("version", &self.version);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`KafkaVersion`](crate::model::KafkaVersion).
@@ -2851,7 +2606,7 @@ impl AsRef<str> for KafkaVersionStatus {
 
 /// <p>Represents an MSK Configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
@@ -2903,19 +2658,6 @@ impl Configuration {
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
         self.state.as_ref()
-    }
-}
-impl std::fmt::Debug for Configuration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Configuration");
-        formatter.field("arn", &self.arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("description", &self.description);
-        formatter.field("kafka_versions", &self.kafka_versions);
-        formatter.field("latest_revision", &self.latest_revision);
-        formatter.field("name", &self.name);
-        formatter.field("state", &self.state);
-        formatter.finish()
     }
 }
 /// See [`Configuration`](crate::model::Configuration).
@@ -3141,7 +2883,7 @@ impl AsRef<str> for ConfigurationState {
 
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
     #[doc(hidden)]
@@ -3225,23 +2967,6 @@ impl Cluster {
     /// <p>Information about the serverless cluster.</p>
     pub fn serverless(&self) -> std::option::Option<&crate::model::Serverless> {
         self.serverless.as_ref()
-    }
-}
-impl std::fmt::Debug for Cluster {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Cluster");
-        formatter.field("active_operation_arn", &self.active_operation_arn);
-        formatter.field("cluster_type", &self.cluster_type);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("current_version", &self.current_version);
-        formatter.field("state", &self.state);
-        formatter.field("state_info", &self.state_info);
-        formatter.field("tags", &self.tags);
-        formatter.field("provisioned", &self.provisioned);
-        formatter.field("serverless", &self.serverless);
-        formatter.finish()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
@@ -3438,7 +3163,7 @@ impl Cluster {
 
 /// <p>Serverless cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Serverless {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
     #[doc(hidden)]
@@ -3457,14 +3182,6 @@ impl Serverless {
         &self,
     ) -> std::option::Option<&crate::model::ServerlessClientAuthentication> {
         self.client_authentication.as_ref()
-    }
-}
-impl std::fmt::Debug for Serverless {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Serverless");
-        formatter.field("vpc_configs", &self.vpc_configs);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.finish()
     }
 }
 /// See [`Serverless`](crate::model::Serverless).
@@ -3531,7 +3248,7 @@ impl Serverless {
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     #[doc(hidden)]
@@ -3541,13 +3258,6 @@ impl ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn sasl(&self) -> std::option::Option<&crate::model::ServerlessSasl> {
         self.sasl.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerlessClientAuthentication {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessClientAuthentication");
-        formatter.field("sasl", &self.sasl);
-        formatter.finish()
     }
 }
 /// See [`ServerlessClientAuthentication`](crate::model::ServerlessClientAuthentication).
@@ -3587,7 +3297,7 @@ impl ServerlessClientAuthentication {
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessSasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
@@ -3597,13 +3307,6 @@ impl ServerlessSasl {
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn iam(&self) -> std::option::Option<&crate::model::Iam> {
         self.iam.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerlessSasl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessSasl");
-        formatter.field("iam", &self.iam);
-        formatter.finish()
     }
 }
 /// See [`ServerlessSasl`](crate::model::ServerlessSasl).
@@ -3640,7 +3343,7 @@ impl ServerlessSasl {
 
 /// <p>The configuration of the Amazon VPCs for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The IDs of the subnets associated with the cluster.</p>
     #[doc(hidden)]
@@ -3657,14 +3360,6 @@ impl VpcConfig {
     /// <p>The IDs of the security groups associated with the cluster.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for VpcConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("VpcConfig");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`VpcConfig`](crate::model::VpcConfig).
@@ -3733,7 +3428,7 @@ impl VpcConfig {
 
 /// <p>Provisioned cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Provisioned {
     /// <p>Information about the brokers.</p>
     #[doc(hidden)]
@@ -3812,28 +3507,6 @@ impl Provisioned {
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster on a TLS port.</p>
     pub fn zookeeper_connect_string_tls(&self) -> std::option::Option<&str> {
         self.zookeeper_connect_string_tls.as_deref()
-    }
-}
-impl std::fmt::Debug for Provisioned {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Provisioned");
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("zookeeper_connect_string", &self.zookeeper_connect_string);
-        formatter.field(
-            "zookeeper_connect_string_tls",
-            &self.zookeeper_connect_string_tls,
-        );
-        formatter.finish()
     }
 }
 /// See [`Provisioned`](crate::model::Provisioned).
@@ -4014,7 +3687,7 @@ impl Provisioned {
 
 /// <p>Describes the setup to be used for Apache Kafka broker nodes in the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
     /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
@@ -4063,18 +3736,6 @@ impl BrokerNodeGroupInfo {
     /// <p>Information about the broker access configuration.</p>
     pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
         self.connectivity_info.as_ref()
-    }
-}
-impl std::fmt::Debug for BrokerNodeGroupInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BrokerNodeGroupInfo");
-        formatter.field("broker_az_distribution", &self.broker_az_distribution);
-        formatter.field("client_subnets", &self.client_subnets);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("security_groups", &self.security_groups);
-        formatter.field("storage_info", &self.storage_info);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.finish()
     }
 }
 /// See [`BrokerNodeGroupInfo`](crate::model::BrokerNodeGroupInfo).
@@ -4205,7 +3866,7 @@ impl BrokerNodeGroupInfo {
 
 /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StorageInfo {
     /// <p>EBS volume information.</p>
     #[doc(hidden)]
@@ -4215,13 +3876,6 @@ impl StorageInfo {
     /// <p>EBS volume information.</p>
     pub fn ebs_storage_info(&self) -> std::option::Option<&crate::model::EbsStorageInfo> {
         self.ebs_storage_info.as_ref()
-    }
-}
-impl std::fmt::Debug for StorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StorageInfo");
-        formatter.field("ebs_storage_info", &self.ebs_storage_info);
-        formatter.finish()
     }
 }
 /// See [`StorageInfo`](crate::model::StorageInfo).
@@ -4263,7 +3917,7 @@ impl StorageInfo {
 
 /// <p>Contains information about the EBS storage volumes attached to Apache Kafka broker nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsStorageInfo {
     /// EBS volume provisioned throughput information.
     #[doc(hidden)]
@@ -4282,14 +3936,6 @@ impl EbsStorageInfo {
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     pub fn volume_size(&self) -> i32 {
         self.volume_size
-    }
-}
-impl std::fmt::Debug for EbsStorageInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EbsStorageInfo");
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("volume_size", &self.volume_size);
-        formatter.finish()
     }
 }
 /// See [`EbsStorageInfo`](crate::model::EbsStorageInfo).
@@ -4434,7 +4080,7 @@ impl AsRef<str> for BrokerAzDistribution {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StateInfo {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
@@ -4451,14 +4097,6 @@ impl StateInfo {
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for StateInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StateInfo");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`StateInfo`](crate::model::StateInfo).
@@ -4728,7 +4366,7 @@ impl AsRef<str> for ClusterType {
 
 /// <p>Returns information about a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterInfo {
     /// <p>Arn of active cluster operation.</p>
     #[doc(hidden)]
@@ -4867,36 +4505,6 @@ impl ClusterInfo {
     /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
     pub fn zookeeper_connect_string_tls(&self) -> std::option::Option<&str> {
         self.zookeeper_connect_string_tls.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterInfo");
-        formatter.field("active_operation_arn", &self.active_operation_arn);
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("cluster_name", &self.cluster_name);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field(
-            "current_broker_software_info",
-            &self.current_broker_software_info,
-        );
-        formatter.field("current_version", &self.current_version);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("state", &self.state);
-        formatter.field("state_info", &self.state_info);
-        formatter.field("tags", &self.tags);
-        formatter.field("zookeeper_connect_string", &self.zookeeper_connect_string);
-        formatter.field(
-            "zookeeper_connect_string_tls",
-            &self.zookeeper_connect_string_tls,
-        );
-        formatter.finish()
     }
 }
 /// See [`ClusterInfo`](crate::model::ClusterInfo).
@@ -5202,7 +4810,7 @@ impl ClusterInfo {
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
     #[doc(hidden)]
@@ -5212,13 +4820,6 @@ impl OpenMonitoring {
     /// <p>Prometheus settings.</p>
     pub fn prometheus(&self) -> std::option::Option<&crate::model::Prometheus> {
         self.prometheus.as_ref()
-    }
-}
-impl std::fmt::Debug for OpenMonitoring {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OpenMonitoring");
-        formatter.field("prometheus", &self.prometheus);
-        formatter.finish()
     }
 }
 /// See [`OpenMonitoring`](crate::model::OpenMonitoring).
@@ -5260,7 +4861,7 @@ impl OpenMonitoring {
 
 /// <p>Prometheus settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Prometheus {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -5277,14 +4878,6 @@ impl Prometheus {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn node_exporter(&self) -> std::option::Option<&crate::model::NodeExporter> {
         self.node_exporter.as_ref()
-    }
-}
-impl std::fmt::Debug for Prometheus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Prometheus");
-        formatter.field("jmx_exporter", &self.jmx_exporter);
-        formatter.field("node_exporter", &self.node_exporter);
-        formatter.finish()
     }
 }
 /// See [`Prometheus`](crate::model::Prometheus).
@@ -5341,7 +4934,7 @@ impl Prometheus {
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
@@ -5351,13 +4944,6 @@ impl NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
-    }
-}
-impl std::fmt::Debug for NodeExporter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("NodeExporter");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
     }
 }
 /// See [`NodeExporter`](crate::model::NodeExporter).
@@ -5396,7 +4982,7 @@ impl NodeExporter {
 
 /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JmxExporter {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
@@ -5406,13 +4992,6 @@ impl JmxExporter {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     pub fn enabled_in_broker(&self) -> bool {
         self.enabled_in_broker
-    }
-}
-impl std::fmt::Debug for JmxExporter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JmxExporter");
-        formatter.field("enabled_in_broker", &self.enabled_in_broker);
-        formatter.finish()
     }
 }
 /// See [`JmxExporter`](crate::model::JmxExporter).
@@ -5451,7 +5030,7 @@ impl JmxExporter {
 
 /// <p>Returns information about a cluster operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationInfo {
     /// <p>The ID of the API request that triggered this operation.</p>
     #[doc(hidden)]
@@ -5531,23 +5110,6 @@ impl ClusterOperationInfo {
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     pub fn target_cluster_info(&self) -> std::option::Option<&crate::model::MutableClusterInfo> {
         self.target_cluster_info.as_ref()
-    }
-}
-impl std::fmt::Debug for ClusterOperationInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationInfo");
-        formatter.field("client_request_id", &self.client_request_id);
-        formatter.field("cluster_arn", &self.cluster_arn);
-        formatter.field("creation_time", &self.creation_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("error_info", &self.error_info);
-        formatter.field("operation_arn", &self.operation_arn);
-        formatter.field("operation_state", &self.operation_state);
-        formatter.field("operation_steps", &self.operation_steps);
-        formatter.field("operation_type", &self.operation_type);
-        formatter.field("source_cluster_info", &self.source_cluster_info);
-        formatter.field("target_cluster_info", &self.target_cluster_info);
-        formatter.finish()
     }
 }
 /// See [`ClusterOperationInfo`](crate::model::ClusterOperationInfo).
@@ -5743,7 +5305,7 @@ impl ClusterOperationInfo {
 
 /// <p>Information about cluster attributes that can be updated via update APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MutableClusterInfo {
     /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
     #[doc(hidden)]
@@ -5828,23 +5390,6 @@ impl MutableClusterInfo {
     /// <p>Information about the broker access configuration.</p>
     pub fn connectivity_info(&self) -> std::option::Option<&crate::model::ConnectivityInfo> {
         self.connectivity_info.as_ref()
-    }
-}
-impl std::fmt::Debug for MutableClusterInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MutableClusterInfo");
-        formatter.field("broker_ebs_volume_info", &self.broker_ebs_volume_info);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("instance_type", &self.instance_type);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("connectivity_info", &self.connectivity_info);
-        formatter.finish()
     }
 }
 /// See [`MutableClusterInfo`](crate::model::MutableClusterInfo).
@@ -6040,7 +5585,7 @@ impl MutableClusterInfo {
 
 /// <p>Step taken during a cluster operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationStep {
     /// <p>Information about the step and its status.</p>
     #[doc(hidden)]
@@ -6057,14 +5602,6 @@ impl ClusterOperationStep {
     /// <p>The name of the step.</p>
     pub fn step_name(&self) -> std::option::Option<&str> {
         self.step_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterOperationStep {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationStep");
-        formatter.field("step_info", &self.step_info);
-        formatter.field("step_name", &self.step_name);
-        formatter.finish()
     }
 }
 /// See [`ClusterOperationStep`](crate::model::ClusterOperationStep).
@@ -6118,7 +5655,7 @@ impl ClusterOperationStep {
 
 /// <p>State information about the operation step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
     #[doc(hidden)]
@@ -6128,13 +5665,6 @@ impl ClusterOperationStepInfo {
     /// <p>The steps current status.</p>
     pub fn step_status(&self) -> std::option::Option<&str> {
         self.step_status.as_deref()
-    }
-}
-impl std::fmt::Debug for ClusterOperationStepInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClusterOperationStepInfo");
-        formatter.field("step_status", &self.step_status);
-        formatter.finish()
     }
 }
 /// See [`ClusterOperationStepInfo`](crate::model::ClusterOperationStepInfo).
@@ -6173,7 +5703,7 @@ impl ClusterOperationStepInfo {
 
 /// <p>Returns information about an error state of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>A number describing the error programmatically.</p>
     #[doc(hidden)]
@@ -6190,14 +5720,6 @@ impl ErrorInfo {
     /// <p>An optional field to provide more details about the error.</p>
     pub fn error_string(&self) -> std::option::Option<&str> {
         self.error_string.as_deref()
-    }
-}
-impl std::fmt::Debug for ErrorInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorInfo");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_string", &self.error_string);
-        formatter.finish()
     }
 }
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
@@ -6248,7 +5770,7 @@ impl ErrorInfo {
 
 /// <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
     #[doc(hidden)]
@@ -6265,14 +5787,6 @@ impl CompatibleKafkaVersion {
     /// <p>A list of Apache Kafka versions.</p>
     pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.target_versions.as_deref()
-    }
-}
-impl std::fmt::Debug for CompatibleKafkaVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CompatibleKafkaVersion");
-        formatter.field("source_version", &self.source_version);
-        formatter.field("target_versions", &self.target_versions);
-        formatter.finish()
     }
 }
 /// See [`CompatibleKafkaVersion`](crate::model::CompatibleKafkaVersion).
@@ -6335,7 +5849,7 @@ impl CompatibleKafkaVersion {
 
 /// <p>Serverless cluster request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServerlessRequest {
     /// <p>The configuration of the Amazon VPCs for the cluster.</p>
     #[doc(hidden)]
@@ -6354,14 +5868,6 @@ impl ServerlessRequest {
         &self,
     ) -> std::option::Option<&crate::model::ServerlessClientAuthentication> {
         self.client_authentication.as_ref()
-    }
-}
-impl std::fmt::Debug for ServerlessRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServerlessRequest");
-        formatter.field("vpc_configs", &self.vpc_configs);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.finish()
     }
 }
 /// See [`ServerlessRequest`](crate::model::ServerlessRequest).
@@ -6428,7 +5934,7 @@ impl ServerlessRequest {
 
 /// <p>Provisioned cluster request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
     #[doc(hidden)]
@@ -6498,21 +6004,6 @@ impl ProvisionedRequest {
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn number_of_broker_nodes(&self) -> i32 {
         self.number_of_broker_nodes
-    }
-}
-impl std::fmt::Debug for ProvisionedRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProvisionedRequest");
-        formatter.field("broker_node_group_info", &self.broker_node_group_info);
-        formatter.field("client_authentication", &self.client_authentication);
-        formatter.field("configuration_info", &self.configuration_info);
-        formatter.field("encryption_info", &self.encryption_info);
-        formatter.field("enhanced_monitoring", &self.enhanced_monitoring);
-        formatter.field("open_monitoring", &self.open_monitoring);
-        formatter.field("kafka_version", &self.kafka_version);
-        formatter.field("logging_info", &self.logging_info);
-        formatter.field("number_of_broker_nodes", &self.number_of_broker_nodes);
-        formatter.finish()
     }
 }
 /// See [`ProvisionedRequest`](crate::model::ProvisionedRequest).
@@ -6671,7 +6162,7 @@ impl ProvisionedRequest {
 
 /// <p>Error info for scram secret associate/disassociate failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UnprocessedScramSecret {
     /// <p>Error code for associate/disassociate failure.</p>
     #[doc(hidden)]
@@ -6695,15 +6186,6 @@ impl UnprocessedScramSecret {
     /// <p>AWS Secrets Manager secret ARN.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for UnprocessedScramSecret {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UnprocessedScramSecret");
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.finish()
     }
 }
 /// See [`UnprocessedScramSecret`](crate::model::UnprocessedScramSecret).

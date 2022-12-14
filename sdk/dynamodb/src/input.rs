@@ -11779,7 +11779,7 @@ impl UpdateTimeToLiveInput {
 
 /// <p>Represents the input of an <code>UpdateTimeToLive</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
     #[doc(hidden)]
@@ -11800,21 +11800,10 @@ impl UpdateTimeToLiveInput {
         self.time_to_live_specification.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTimeToLiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTimeToLiveInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "time_to_live_specification",
-            &self.time_to_live_specification,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingInput {
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
     #[doc(hidden)]
@@ -11855,26 +11844,10 @@ impl UpdateTableReplicaAutoScalingInput {
         self.replica_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateTableReplicaAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableReplicaAutoScalingInput");
-        formatter.field(
-            "global_secondary_index_updates",
-            &self.global_secondary_index_updates,
-        );
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "provisioned_write_capacity_auto_scaling_update",
-            &self.provisioned_write_capacity_auto_scaling_update,
-        );
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>UpdateTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     #[doc(hidden)]
@@ -11980,28 +11953,10 @@ impl UpdateTableInput {
         self.table_class.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateTableInput");
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field(
-            "global_secondary_index_updates",
-            &self.global_secondary_index_updates,
-        );
-        formatter.field("stream_specification", &self.stream_specification);
-        formatter.field("sse_specification", &self.sse_specification);
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.field("table_class", &self.table_class);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateItemInput {
     /// <p>The name of the table containing the item to update.</p>
     #[doc(hidden)]
@@ -12269,37 +12224,10 @@ impl UpdateItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("attribute_updates", &self.attribute_updates);
-        formatter.field("expected", &self.expected);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("update_expression", &self.update_expression);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsInput {
     /// <p>The name of the global table</p>
     #[doc(hidden)]
@@ -12366,31 +12294,10 @@ impl UpdateGlobalTableSettingsInput {
         self.replica_settings_update.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalTableSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalTableSettingsInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("global_table_billing_mode", &self.global_table_billing_mode);
-        formatter.field(
-            "global_table_provisioned_write_capacity_units",
-            &self.global_table_provisioned_write_capacity_units,
-        );
-        formatter.field(
-            "global_table_provisioned_write_capacity_auto_scaling_settings_update",
-            &self.global_table_provisioned_write_capacity_auto_scaling_settings_update,
-        );
-        formatter.field(
-            "global_table_global_secondary_index_settings_update",
-            &self.global_table_global_secondary_index_settings_update,
-        );
-        formatter.field("replica_settings_update", &self.replica_settings_update);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateGlobalTableInput {
     /// <p>The global table name.</p>
     #[doc(hidden)]
@@ -12409,18 +12316,10 @@ impl UpdateGlobalTableInput {
         self.replica_updates.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("replica_updates", &self.replica_updates);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContributorInsightsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -12448,22 +12347,10 @@ impl UpdateContributorInsightsInput {
         self.contributor_insights_action.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field(
-            "contributor_insights_action",
-            &self.contributor_insights_action,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateContinuousBackupsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -12485,21 +12372,10 @@ impl UpdateContinuousBackupsInput {
         self.point_in_time_recovery_specification.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateContinuousBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateContinuousBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field(
-            "point_in_time_recovery_specification",
-            &self.point_in_time_recovery_specification,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UntagResourceInput {
     /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -12518,18 +12394,10 @@ impl UntagResourceInput {
         self.tag_keys.as_deref()
     }
 }
-impl std::fmt::Debug for UntagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UntagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tag_keys", &self.tag_keys);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactWriteItemsInput {
     /// <p>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or <code>Delete</code> object. These can operate on items in different tables, but the tables must reside in the same Amazon Web Services account and Region, and no two of them can operate on the same item. </p>
     #[doc(hidden)]
@@ -12583,23 +12451,10 @@ impl TransactWriteItemsInput {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for TransactWriteItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactWriteItemsInput");
-        formatter.field("transact_items", &self.transact_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TransactGetItemsInput {
     /// <p>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure.</p>
     #[doc(hidden)]
@@ -12620,18 +12475,10 @@ impl TransactGetItemsInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for TransactGetItemsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TransactGetItemsInput");
-        formatter.field("transact_items", &self.transact_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -12650,18 +12497,10 @@ impl TagResourceInput {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for TagResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TagResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>Scan</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScanInput {
     /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     #[doc(hidden)]
@@ -12921,38 +12760,10 @@ impl ScanInput {
         self.consistent_read
     }
 }
-impl std::fmt::Debug for ScanInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScanInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("limit", &self.limit);
-        formatter.field("select", &self.select);
-        formatter.field("scan_filter", &self.scan_filter);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("exclusive_start_key", &self.exclusive_start_key);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("total_segments", &self.total_segments);
-        formatter.field("segment", &self.segment);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableToPointInTimeInput {
     /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -13037,41 +12848,10 @@ impl RestoreTableToPointInTimeInput {
         self.sse_specification_override.as_ref()
     }
 }
-impl std::fmt::Debug for RestoreTableToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableToPointInTimeInput");
-        formatter.field("source_table_arn", &self.source_table_arn);
-        formatter.field("source_table_name", &self.source_table_name);
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field(
-            "use_latest_restorable_time",
-            &self.use_latest_restorable_time,
-        );
-        formatter.field("restore_date_time", &self.restore_date_time);
-        formatter.field("billing_mode_override", &self.billing_mode_override);
-        formatter.field(
-            "global_secondary_index_override",
-            &self.global_secondary_index_override,
-        );
-        formatter.field(
-            "local_secondary_index_override",
-            &self.local_secondary_index_override,
-        );
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field(
-            "sse_specification_override",
-            &self.sse_specification_override,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
     #[doc(hidden)]
@@ -13135,35 +12915,10 @@ impl RestoreTableFromBackupInput {
         self.sse_specification_override.as_ref()
     }
 }
-impl std::fmt::Debug for RestoreTableFromBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RestoreTableFromBackupInput");
-        formatter.field("target_table_name", &self.target_table_name);
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.field("billing_mode_override", &self.billing_mode_override);
-        formatter.field(
-            "global_secondary_index_override",
-            &self.global_secondary_index_override,
-        );
-        formatter.field(
-            "local_secondary_index_override",
-            &self.local_secondary_index_override,
-        );
-        formatter.field(
-            "provisioned_throughput_override",
-            &self.provisioned_throughput_override,
-        );
-        formatter.field(
-            "sse_specification_override",
-            &self.sse_specification_override,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>Query</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryInput {
     /// <p>The name of the table containing the requested items.</p>
     #[doc(hidden)]
@@ -13471,39 +13226,10 @@ impl QueryInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for QueryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.field("select", &self.select);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("limit", &self.limit);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("key_conditions", &self.key_conditions);
-        formatter.field("query_filter", &self.query_filter);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("scan_index_forward", &self.scan_index_forward);
-        formatter.field("exclusive_start_key", &self.exclusive_start_key);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field("filter_expression", &self.filter_expression);
-        formatter.field("key_condition_expression", &self.key_condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutItemInput {
     /// <p>The name of the table to contain the item.</p>
     #[doc(hidden)]
@@ -13709,35 +13435,10 @@ impl PutItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for PutItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("item", &self.item);
-        formatter.field("expected", &self.expected);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTagsOfResourceInput {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
@@ -13756,18 +13457,10 @@ impl ListTagsOfResourceInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListTagsOfResourceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTagsOfResourceInput");
-        formatter.field("resource_arn", &self.resource_arn);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>ListTables</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListTablesInput {
     /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
     #[doc(hidden)]
@@ -13786,21 +13479,10 @@ impl ListTablesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListTablesInput");
-        formatter.field(
-            "exclusive_start_table_name",
-            &self.exclusive_start_table_name,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
     #[doc(hidden)]
@@ -13826,19 +13508,10 @@ impl ListImportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListImportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("page_size", &self.page_size);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListGlobalTablesInput {
     /// <p>The first global table name that this operation will evaluate.</p>
     #[doc(hidden)]
@@ -13866,22 +13539,10 @@ impl ListGlobalTablesInput {
         self.region_name.as_deref()
     }
 }
-impl std::fmt::Debug for ListGlobalTablesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListGlobalTablesInput");
-        formatter.field(
-            "exclusive_start_global_table_name",
-            &self.exclusive_start_global_table_name,
-        );
-        formatter.field("limit", &self.limit);
-        formatter.field("region_name", &self.region_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListExportsInput {
     /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
     #[doc(hidden)]
@@ -13907,19 +13568,10 @@ impl ListExportsInput {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListExportsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListExportsInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("max_results", &self.max_results);
-        formatter.field("next_token", &self.next_token);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListContributorInsightsInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -13945,19 +13597,10 @@ impl ListContributorInsightsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListBackupsInput {
     /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
     #[doc(hidden)]
@@ -14016,25 +13659,10 @@ impl ListBackupsInput {
         self.backup_type.as_ref()
     }
 }
-impl std::fmt::Debug for ListBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("limit", &self.limit);
-        formatter.field("time_range_lower_bound", &self.time_range_lower_bound);
-        formatter.field("time_range_upper_bound", &self.time_range_upper_bound);
-        formatter.field(
-            "exclusive_start_backup_arn",
-            &self.exclusive_start_backup_arn,
-        );
-        formatter.field("backup_type", &self.backup_type);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ImportTableInput {
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
@@ -14089,22 +13717,10 @@ impl ImportTableInput {
         self.table_creation_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for ImportTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ImportTableInput");
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket_source", &self.s3_bucket_source);
-        formatter.field("input_format", &self.input_format);
-        formatter.field("input_format_options", &self.input_format_options);
-        formatter.field("input_compression_type", &self.input_compression_type);
-        formatter.field("table_creation_parameters", &self.table_creation_parameters);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>GetItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetItemInput {
     /// <p>The name of the table containing the requested item.</p>
     #[doc(hidden)]
@@ -14226,26 +13842,10 @@ impl GetItemInput {
         self.expression_attribute_names.as_ref()
     }
 }
-impl std::fmt::Debug for GetItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("attributes_to_get", &self.attributes_to_get);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("projection_expression", &self.projection_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
     #[doc(hidden)]
@@ -14325,25 +13925,10 @@ impl ExportTableToPointInTimeInput {
         self.export_format.as_ref()
     }
 }
-impl std::fmt::Debug for ExportTableToPointInTimeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExportTableToPointInTimeInput");
-        formatter.field("table_arn", &self.table_arn);
-        formatter.field("export_time", &self.export_time);
-        formatter.field("client_token", &self.client_token);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3_bucket_owner", &self.s3_bucket_owner);
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.field("s3_sse_algorithm", &self.s3_sse_algorithm);
-        formatter.field("s3_sse_kms_key_id", &self.s3_sse_kms_key_id);
-        formatter.field("export_format", &self.export_format);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteTransactionInput {
     /// <p>The list of PartiQL statements representing the transaction to run.</p>
     #[doc(hidden)]
@@ -14374,19 +13959,10 @@ impl ExecuteTransactionInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for ExecuteTransactionInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteTransactionInput");
-        formatter.field("transact_statements", &self.transact_statements);
-        formatter.field("client_request_token", &self.client_request_token);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The PartiQL statement representing the operation to run.</p>
     #[doc(hidden)]
@@ -14445,22 +14021,10 @@ impl ExecuteStatementInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExecuteStatementInput");
-        formatter.field("statement", &self.statement);
-        formatter.field("parameters", &self.parameters);
-        formatter.field("consistent_read", &self.consistent_read);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field("limit", &self.limit);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -14479,18 +14043,10 @@ impl EnableKinesisStreamingDestinationInput {
         self.stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for EnableKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnableKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
@@ -14509,18 +14065,10 @@ impl DisableKinesisStreamingDestinationInput {
         self.stream_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DisableKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DisableKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("stream_arn", &self.stream_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTimeToLiveInput {
     /// <p>The name of the table to be described.</p>
     #[doc(hidden)]
@@ -14532,17 +14080,10 @@ impl DescribeTimeToLiveInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTimeToLiveInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTimeToLiveInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableReplicaAutoScalingInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -14554,17 +14095,10 @@ impl DescribeTableReplicaAutoScalingInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableReplicaAutoScalingInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableReplicaAutoScalingInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeTableInput {
     /// <p>The name of the table to describe.</p>
     #[doc(hidden)]
@@ -14576,28 +14110,15 @@ impl DescribeTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeTableInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DescribeLimits</code> operation. Has no content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeLimitsInput {}
-impl std::fmt::Debug for DescribeLimitsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeLimitsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationInput {
     /// <p>The name of the table being described.</p>
     #[doc(hidden)]
@@ -14609,17 +14130,10 @@ impl DescribeKinesisStreamingDestinationInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeKinesisStreamingDestinationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeKinesisStreamingDestinationInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeImportInput {
     /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
     #[doc(hidden)]
@@ -14631,17 +14145,10 @@ impl DescribeImportInput {
         self.import_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeImportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeImportInput");
-        formatter.field("import_arn", &self.import_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalTableSettingsInput {
     /// <p>The name of the global table to describe.</p>
     #[doc(hidden)]
@@ -14653,17 +14160,10 @@ impl DescribeGlobalTableSettingsInput {
         self.global_table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalTableSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalTableSettingsInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeGlobalTableInput {
     /// <p>The name of the global table.</p>
     #[doc(hidden)]
@@ -14675,17 +14175,10 @@ impl DescribeGlobalTableInput {
         self.global_table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeExportInput {
     /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
     #[doc(hidden)]
@@ -14697,28 +14190,15 @@ impl DescribeExportInput {
         self.export_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeExportInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeExportInput");
-        formatter.field("export_arn", &self.export_arn);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeEndpointsInput {}
-impl std::fmt::Debug for DescribeEndpointsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeEndpointsInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContributorInsightsInput {
     /// <p>The name of the table to describe.</p>
     #[doc(hidden)]
@@ -14737,18 +14217,10 @@ impl DescribeContributorInsightsInput {
         self.index_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContributorInsightsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContributorInsightsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("index_name", &self.index_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeContinuousBackupsInput {
     /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
     #[doc(hidden)]
@@ -14760,17 +14232,10 @@ impl DescribeContinuousBackupsInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeContinuousBackupsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeContinuousBackupsInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeBackupInput {
     /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
     #[doc(hidden)]
@@ -14782,17 +14247,10 @@ impl DescribeBackupInput {
         self.backup_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeBackupInput");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteTableInput {
     /// <p>The name of the table to delete.</p>
     #[doc(hidden)]
@@ -14804,17 +14262,10 @@ impl DeleteTableInput {
         self.table_name.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteTableInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>DeleteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteItemInput {
     /// <p>The name of the table from which to delete the item.</p>
     #[doc(hidden)]
@@ -15010,35 +14461,10 @@ impl DeleteItemInput {
         self.expression_attribute_values.as_ref()
     }
 }
-impl std::fmt::Debug for DeleteItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteItemInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key", &self.key);
-        formatter.field("expected", &self.expected);
-        formatter.field("conditional_operator", &self.conditional_operator);
-        formatter.field("return_values", &self.return_values);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.field("condition_expression", &self.condition_expression);
-        formatter.field(
-            "expression_attribute_names",
-            &self.expression_attribute_names,
-        );
-        formatter.field(
-            "expression_attribute_values",
-            &self.expression_attribute_values,
-        );
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteBackupInput {
     /// <p>The ARN associated with the backup.</p>
     #[doc(hidden)]
@@ -15050,17 +14476,10 @@ impl DeleteBackupInput {
         self.backup_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteBackupInput");
-        formatter.field("backup_arn", &self.backup_arn);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>CreateTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     #[doc(hidden)]
@@ -15275,27 +14694,10 @@ impl CreateTableInput {
         self.table_class.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateTableInput");
-        formatter.field("attribute_definitions", &self.attribute_definitions);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("key_schema", &self.key_schema);
-        formatter.field("local_secondary_indexes", &self.local_secondary_indexes);
-        formatter.field("global_secondary_indexes", &self.global_secondary_indexes);
-        formatter.field("billing_mode", &self.billing_mode);
-        formatter.field("provisioned_throughput", &self.provisioned_throughput);
-        formatter.field("stream_specification", &self.stream_specification);
-        formatter.field("sse_specification", &self.sse_specification);
-        formatter.field("tags", &self.tags);
-        formatter.field("table_class", &self.table_class);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateGlobalTableInput {
     /// <p>The global table name.</p>
     #[doc(hidden)]
@@ -15314,18 +14716,10 @@ impl CreateGlobalTableInput {
         self.replication_group.as_deref()
     }
 }
-impl std::fmt::Debug for CreateGlobalTableInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateGlobalTableInput");
-        formatter.field("global_table_name", &self.global_table_name);
-        formatter.field("replication_group", &self.replication_group);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateBackupInput {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
@@ -15344,18 +14738,10 @@ impl CreateBackupInput {
         self.backup_name.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBackupInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CreateBackupInput");
-        formatter.field("table_name", &self.table_name);
-        formatter.field("backup_name", &self.backup_name);
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchWriteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchWriteItemInput {
     /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
@@ -15422,22 +14808,10 @@ impl BatchWriteItemInput {
         self.return_item_collection_metrics.as_ref()
     }
 }
-impl std::fmt::Debug for BatchWriteItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchWriteItemInput");
-        formatter.field("request_items", &self.request_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.field(
-            "return_item_collection_metrics",
-            &self.return_item_collection_metrics,
-        );
-        formatter.finish()
-    }
-}
 
 /// <p>Represents the input of a <code>BatchGetItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetItemInput {
     /// <p>A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request.</p>
     /// <p>Each element in the map of items to retrieve consists of the following:</p>
@@ -15522,18 +14896,10 @@ impl BatchGetItemInput {
         self.return_consumed_capacity.as_ref()
     }
 }
-impl std::fmt::Debug for BatchGetItemInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetItemInput");
-        formatter.field("request_items", &self.request_items);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     #[doc(hidden)]
@@ -15562,13 +14928,5 @@ impl BatchExecuteStatementInput {
         &self,
     ) -> std::option::Option<&crate::model::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
-    }
-}
-impl std::fmt::Debug for BatchExecuteStatementInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchExecuteStatementInput");
-        formatter.field("statements", &self.statements);
-        formatter.field("return_consumed_capacity", &self.return_consumed_capacity);
-        formatter.finish()
     }
 }

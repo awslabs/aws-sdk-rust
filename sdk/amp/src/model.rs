@@ -2,7 +2,7 @@
 
 /// Stores information about a field passed inside a request that resulted in an exception.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ValidationExceptionField {
     /// The field name.
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl ValidationExceptionField {
     /// Message describing why the field failed validation.
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
-    }
-}
-impl std::fmt::Debug for ValidationExceptionField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ValidationExceptionField");
-        formatter.field("name", &self.name);
-        formatter.field("message", &self.message);
-        formatter.finish()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -184,7 +176,7 @@ impl AsRef<str> for ValidationExceptionReason {
 
 /// Represents a summary of the properties of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceSummary {
     /// Unique string identifying this workspace.
     #[doc(hidden)]
@@ -233,18 +225,6 @@ impl WorkspaceSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceSummary");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
@@ -366,7 +346,7 @@ impl WorkspaceSummary {
 
 /// Represents the status of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
     #[doc(hidden)]
@@ -376,13 +356,6 @@ impl WorkspaceStatus {
     /// Status code of this workspace.
     pub fn status_code(&self) -> std::option::Option<&crate::model::WorkspaceStatusCode> {
         self.status_code.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceStatus`](crate::model::WorkspaceStatus).
@@ -537,7 +510,7 @@ impl AsRef<str> for WorkspaceStatusCode {
 
 /// Represents the properties of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkspaceDescription {
     /// Unique string identifying this workspace.
     #[doc(hidden)]
@@ -593,19 +566,6 @@ impl WorkspaceDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for WorkspaceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkspaceDescription");
-        formatter.field("workspace_id", &self.workspace_id);
-        formatter.field("alias", &self.alias);
-        formatter.field("arn", &self.arn);
-        formatter.field("status", &self.status);
-        formatter.field("prometheus_endpoint", &self.prometheus_endpoint);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
@@ -742,7 +702,7 @@ impl WorkspaceDescription {
 
 /// Represents a summary of the rule groups namespace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupsNamespaceSummary {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
@@ -791,18 +751,6 @@ impl RuleGroupsNamespaceSummary {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleGroupsNamespaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupsNamespaceSummary");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupsNamespaceSummary`](crate::model::RuleGroupsNamespaceSummary).
@@ -927,7 +875,7 @@ impl RuleGroupsNamespaceSummary {
 
 /// Represents the status of a namespace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupsNamespaceStatus {
     /// Status code of this namespace.
     #[doc(hidden)]
@@ -944,14 +892,6 @@ impl RuleGroupsNamespaceStatus {
     /// The reason for failure if any.
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for RuleGroupsNamespaceStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupsNamespaceStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupsNamespaceStatus`](crate::model::RuleGroupsNamespaceStatus).
@@ -1127,7 +1067,7 @@ impl AsRef<str> for RuleGroupsNamespaceStatusCode {
 
 /// Represents a description of the rule groups namespace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
@@ -1183,19 +1123,6 @@ impl RuleGroupsNamespaceDescription {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
-    }
-}
-impl std::fmt::Debug for RuleGroupsNamespaceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RuleGroupsNamespaceDescription");
-        formatter.field("arn", &self.arn);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("data", &self.data);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.field("tags", &self.tags);
-        formatter.finish()
     }
 }
 /// See [`RuleGroupsNamespaceDescription`](crate::model::RuleGroupsNamespaceDescription).
@@ -1332,7 +1259,7 @@ impl RuleGroupsNamespaceDescription {
 
 /// Represents the status of a logging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfigurationStatus {
     /// Status code of the logging configuration.
     #[doc(hidden)]
@@ -1351,14 +1278,6 @@ impl LoggingConfigurationStatus {
     /// The reason for failure if any.
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for LoggingConfigurationStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfigurationStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfigurationStatus`](crate::model::LoggingConfigurationStatus).
@@ -1534,7 +1453,7 @@ impl AsRef<str> for LoggingConfigurationStatusCode {
 
 /// Represents the properties of a logging configuration metadata.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LoggingConfigurationMetadata {
     /// The status of the logging configuration.
     #[doc(hidden)]
@@ -1572,17 +1491,6 @@ impl LoggingConfigurationMetadata {
     /// The time when the logging configuration was modified.
     pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
-    }
-}
-impl std::fmt::Debug for LoggingConfigurationMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LoggingConfigurationMetadata");
-        formatter.field("status", &self.status);
-        formatter.field("workspace", &self.workspace);
-        formatter.field("log_group_arn", &self.log_group_arn);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.finish()
     }
 }
 /// See [`LoggingConfigurationMetadata`](crate::model::LoggingConfigurationMetadata).
@@ -1681,7 +1589,7 @@ impl LoggingConfigurationMetadata {
 
 /// Represents the status of a definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlertManagerDefinitionStatus {
     /// Status code of this definition.
     #[doc(hidden)]
@@ -1700,14 +1608,6 @@ impl AlertManagerDefinitionStatus {
     /// The reason for failure if any.
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for AlertManagerDefinitionStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlertManagerDefinitionStatus");
-        formatter.field("status_code", &self.status_code);
-        formatter.field("status_reason", &self.status_reason);
-        formatter.finish()
     }
 }
 /// See [`AlertManagerDefinitionStatus`](crate::model::AlertManagerDefinitionStatus).
@@ -1886,7 +1786,7 @@ impl AsRef<str> for AlertManagerDefinitionStatusCode {
 
 /// Represents the properties of an alert manager definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
     #[doc(hidden)]
@@ -1917,16 +1817,6 @@ impl AlertManagerDefinitionDescription {
     /// The time when the alert manager definition was modified.
     pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
-    }
-}
-impl std::fmt::Debug for AlertManagerDefinitionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlertManagerDefinitionDescription");
-        formatter.field("status", &self.status);
-        formatter.field("data", &self.data);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("modified_at", &self.modified_at);
-        formatter.finish()
     }
 }
 /// See [`AlertManagerDefinitionDescription`](crate::model::AlertManagerDefinitionDescription).

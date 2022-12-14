@@ -361,7 +361,7 @@ impl std::fmt::Debug for ServiceSummary {
 pub mod service_summary {
 
     /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -622,6 +622,29 @@ pub mod service_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("service_id", &self.service_id);
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("owner_account_id", &self.owner_account_id);
+            formatter.field("created_by_account_id", &self.created_by_account_id);
+            formatter.field("description", &self.description);
+            formatter.field("environment_id", &self.environment_id);
+            formatter.field("application_id", &self.application_id);
+            formatter.field("vpc_id", &self.vpc_id);
+            formatter.field("endpoint_type", &self.endpoint_type);
+            formatter.field("url_endpoint", &self.url_endpoint);
+            formatter.field("lambda_endpoint", &self.lambda_endpoint);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("error", &self.error);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.finish()
+        }
+    }
 }
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
@@ -632,7 +655,7 @@ impl ServiceSummary {
 
 /// <p>Error associated with a resource returned for a Get or List resource response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ErrorResponse {
     /// <p>The error code associated with the error. </p>
     #[doc(hidden)]
@@ -681,18 +704,6 @@ impl ErrorResponse {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.additional_details.as_ref()
-    }
-}
-impl std::fmt::Debug for ErrorResponse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ErrorResponse");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("resource_identifier", &self.resource_identifier);
-        formatter.field("resource_type", &self.resource_type);
-        formatter.field("additional_details", &self.additional_details);
-        formatter.finish()
     }
 }
 /// See [`ErrorResponse`](crate::model::ErrorResponse).
@@ -1268,7 +1279,7 @@ impl AsRef<str> for ServiceState {
 
 /// <p>The summary for the Lambda endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
@@ -1278,13 +1289,6 @@ impl LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaEndpointSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaEndpointSummary");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
@@ -1321,7 +1325,7 @@ impl LambdaEndpointSummary {
 
 /// <p>The summary of the configuration for the URL endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UrlEndpointSummary {
     /// <p> The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     #[doc(hidden)]
@@ -1338,14 +1342,6 @@ impl UrlEndpointSummary {
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL.</p>
     pub fn health_url(&self) -> std::option::Option<&str> {
         self.health_url.as_deref()
-    }
-}
-impl std::fmt::Debug for UrlEndpointSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UrlEndpointSummary");
-        formatter.field("url", &self.url);
-        formatter.field("health_url", &self.health_url);
-        formatter.finish()
     }
 }
 /// See [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
@@ -1647,7 +1643,7 @@ impl std::fmt::Debug for RouteSummary {
 pub mod route_summary {
 
     /// A builder for [`RouteSummary`](crate::model::RouteSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) route_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1928,6 +1924,29 @@ pub mod route_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("route_id", &self.route_id);
+            formatter.field("arn", &self.arn);
+            formatter.field("owner_account_id", &self.owner_account_id);
+            formatter.field("created_by_account_id", &self.created_by_account_id);
+            formatter.field("route_type", &self.route_type);
+            formatter.field("service_id", &self.service_id);
+            formatter.field("application_id", &self.application_id);
+            formatter.field("environment_id", &self.environment_id);
+            formatter.field("source_path", &self.source_path);
+            formatter.field("methods", &self.methods);
+            formatter.field("include_child_paths", &self.include_child_paths);
+            formatter.field("path_resource_to_id", &self.path_resource_to_id);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("error", &self.error);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.finish()
+        }
+    }
 }
 impl RouteSummary {
     /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary).
@@ -2143,7 +2162,7 @@ impl AsRef<str> for RouteType {
 
 /// <p>Provides summary information for the <code>EnvironmentVpc</code> resource as a response to <code>ListEnvironmentVpc</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EnvironmentVpc {
     /// <p>The unique identifier of the environment. </p>
     #[doc(hidden)]
@@ -2195,19 +2214,6 @@ impl EnvironmentVpc {
     /// <p>A timestamp that indicates when the VPC is first added to the environment. </p>
     pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
-    }
-}
-impl std::fmt::Debug for EnvironmentVpc {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EnvironmentVpc");
-        formatter.field("environment_id", &self.environment_id);
-        formatter.field("vpc_id", &self.vpc_id);
-        formatter.field("account_id", &self.account_id);
-        formatter.field("cidr_blocks", &self.cidr_blocks);
-        formatter.field("vpc_name", &self.vpc_name);
-        formatter.field("last_updated_time", &self.last_updated_time);
-        formatter.field("created_time", &self.created_time);
-        formatter.finish()
     }
 }
 /// See [`EnvironmentVpc`](crate::model::EnvironmentVpc).
@@ -2451,7 +2457,7 @@ impl std::fmt::Debug for EnvironmentSummary {
 pub mod environment_summary {
 
     /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2644,6 +2650,24 @@ pub mod environment_summary {
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("description", &self.description);
+            formatter.field("environment_id", &self.environment_id);
+            formatter.field("network_fabric_type", &self.network_fabric_type);
+            formatter.field("owner_account_id", &self.owner_account_id);
+            formatter.field("transit_gateway_id", &self.transit_gateway_id);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("error", &self.error);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.finish()
         }
     }
 }
@@ -2974,7 +2998,7 @@ impl std::fmt::Debug for ApplicationSummary {
 pub mod application_summary {
 
     /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3199,6 +3223,26 @@ pub mod application_summary {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &self.name);
+            formatter.field("arn", &self.arn);
+            formatter.field("owner_account_id", &self.owner_account_id);
+            formatter.field("created_by_account_id", &self.created_by_account_id);
+            formatter.field("application_id", &self.application_id);
+            formatter.field("environment_id", &self.environment_id);
+            formatter.field("vpc_id", &self.vpc_id);
+            formatter.field("proxy_type", &self.proxy_type);
+            formatter.field("api_gateway_proxy", &self.api_gateway_proxy);
+            formatter.field("state", &self.state);
+            formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("error", &self.error);
+            formatter.field("last_updated_time", &self.last_updated_time);
+            formatter.field("created_time", &self.created_time);
+            formatter.finish()
+        }
+    }
 }
 impl ApplicationSummary {
     /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
@@ -3314,7 +3358,7 @@ impl AsRef<str> for ApplicationState {
 
 /// <p>A wrapper object holding the Amazon API Gateway proxy summary. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
     #[doc(hidden)]
@@ -3366,19 +3410,6 @@ impl ApiGatewayProxySummary {
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiGatewayProxySummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiGatewayProxySummary");
-        formatter.field("proxy_url", &self.proxy_url);
-        formatter.field("api_gateway_id", &self.api_gateway_id);
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.field("nlb_arn", &self.nlb_arn);
-        formatter.field("nlb_name", &self.nlb_name);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
     }
 }
 /// See [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
@@ -3672,7 +3703,7 @@ impl AsRef<str> for ProxyType {
 
 /// <p>The configuration for the Lambda endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaEndpointConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
@@ -3682,13 +3713,6 @@ impl LambdaEndpointConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaEndpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaEndpointConfig");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
@@ -3725,7 +3749,7 @@ impl LambdaEndpointConfig {
 
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
     #[doc(hidden)]
@@ -3742,14 +3766,6 @@ impl UrlEndpointConfig {
     /// <p>The health check URL of the URL endpoint type. </p>
     pub fn health_url(&self) -> std::option::Option<&str> {
         self.health_url.as_deref()
-    }
-}
-impl std::fmt::Debug for UrlEndpointConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UrlEndpointConfig");
-        formatter.field("url", &self.url);
-        formatter.field("health_url", &self.health_url);
-        formatter.finish()
     }
 }
 /// See [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
@@ -3800,7 +3816,7 @@ impl UrlEndpointConfig {
 
 /// <p>A wrapper object holding the Amazon API Gateway proxy configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiGatewayProxyConfig {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
     #[doc(hidden)]
@@ -3852,19 +3868,6 @@ impl ApiGatewayProxyConfig {
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiGatewayProxyConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiGatewayProxyConfig");
-        formatter.field("proxy_url", &self.proxy_url);
-        formatter.field("api_gateway_id", &self.api_gateway_id);
-        formatter.field("vpc_link_id", &self.vpc_link_id);
-        formatter.field("nlb_arn", &self.nlb_arn);
-        formatter.field("nlb_name", &self.nlb_name);
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
     }
 }
 /// See [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
@@ -3981,7 +3984,7 @@ impl ApiGatewayProxyConfig {
 
 /// <p>The input for the Lambda endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
@@ -3991,13 +3994,6 @@ impl LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
-    }
-}
-impl std::fmt::Debug for LambdaEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LambdaEndpointInput");
-        formatter.field("arn", &self.arn);
-        formatter.finish()
     }
 }
 /// See [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
@@ -4034,7 +4030,7 @@ impl LambdaEndpointInput {
 
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UrlEndpointInput {
     /// <p>The URL to route traffic to. The URL must be an <a href="https://datatracker.ietf.org/doc/html/rfc3986">rfc3986-formatted URL</a>. If the host is a domain name, the name must be resolvable over the public internet. If the scheme is <code>https</code>, the top level domain of the host must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root zone database</a>. </p>
     #[doc(hidden)]
@@ -4051,14 +4047,6 @@ impl UrlEndpointInput {
     /// <p>The health check URL of the URL endpoint type. If the URL is a public endpoint, the <code>HealthUrl</code> must also be a public endpoint. If the URL is a private endpoint inside a virtual private cloud (VPC), the health URL must also be a private endpoint, and the host must be the same as the URL. </p>
     pub fn health_url(&self) -> std::option::Option<&str> {
         self.health_url.as_deref()
-    }
-}
-impl std::fmt::Debug for UrlEndpointInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UrlEndpointInput");
-        formatter.field("url", &self.url);
-        formatter.field("health_url", &self.health_url);
-        formatter.finish()
     }
 }
 /// See [`UrlEndpointInput`](crate::model::UrlEndpointInput).
@@ -4109,7 +4097,7 @@ impl UrlEndpointInput {
 
 /// <p>The configuration for the URI path route type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UriPathRouteInput {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     #[doc(hidden)]
@@ -4140,16 +4128,6 @@ impl UriPathRouteInput {
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(&self) -> std::option::Option<bool> {
         self.include_child_paths
-    }
-}
-impl std::fmt::Debug for UriPathRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UriPathRouteInput");
-        formatter.field("source_path", &self.source_path);
-        formatter.field("activation_state", &self.activation_state);
-        formatter.field("methods", &self.methods);
-        formatter.field("include_child_paths", &self.include_child_paths);
-        formatter.finish()
     }
 }
 /// See [`UriPathRouteInput`](crate::model::UriPathRouteInput).
@@ -4236,7 +4214,7 @@ impl UriPathRouteInput {
 
 /// <p> The configuration for the default route type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DefaultRouteInput {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
     #[doc(hidden)]
@@ -4246,13 +4224,6 @@ impl DefaultRouteInput {
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
     pub fn activation_state(&self) -> std::option::Option<&crate::model::RouteActivationState> {
         self.activation_state.as_ref()
-    }
-}
-impl std::fmt::Debug for DefaultRouteInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DefaultRouteInput");
-        formatter.field("activation_state", &self.activation_state);
-        formatter.finish()
     }
 }
 /// See [`DefaultRouteInput`](crate::model::DefaultRouteInput).
@@ -4294,7 +4265,7 @@ impl DefaultRouteInput {
 
 /// <p>A wrapper object holding the Amazon API Gateway endpoint input. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ApiGatewayProxyInput {
     /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
@@ -4313,14 +4284,6 @@ impl ApiGatewayProxyInput {
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ApiGatewayProxyInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ApiGatewayProxyInput");
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("stage_name", &self.stage_name);
-        formatter.finish()
     }
 }
 /// See [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).

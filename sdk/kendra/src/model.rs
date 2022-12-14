@@ -2,7 +2,7 @@
 
 /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Path {
     /// <p>The name of the S3 bucket that contains the file.</p>
     #[doc(hidden)]
@@ -19,14 +19,6 @@ impl S3Path {
     /// <p>The name of the file.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Path {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Path");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("key", &self.key);
-        formatter.finish()
     }
 }
 /// See [`S3Path`](crate::model::S3Path).
@@ -169,7 +161,7 @@ impl AsRef<str> for Mode {
 /// <p>To set up an IAM Identity Center identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>. You must also grant the required permissions to use IAM Identity Center with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for IAM Identity Center</a>.</p>
 /// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to fetch access levels of groups and users. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     #[doc(hidden)]
@@ -181,16 +173,6 @@ impl UserGroupResolutionConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::UserGroupResolutionMode> {
         self.user_group_resolution_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for UserGroupResolutionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserGroupResolutionConfiguration");
-        formatter.field(
-            "user_group_resolution_mode",
-            &self.user_group_resolution_mode,
-        );
-        formatter.finish()
     }
 }
 /// See [`UserGroupResolutionConfiguration`](crate::model::UserGroupResolutionConfiguration).
@@ -420,7 +402,7 @@ impl AsRef<str> for UserContextPolicy {
 
 /// <p>Provides the configuration information for a token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserTokenConfiguration {
     /// <p>Information about the JWT token type configuration.</p>
     #[doc(hidden)]
@@ -442,20 +424,6 @@ impl UserTokenConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::JsonTokenTypeConfiguration> {
         self.json_token_type_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for UserTokenConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserTokenConfiguration");
-        formatter.field(
-            "jwt_token_type_configuration",
-            &self.jwt_token_type_configuration,
-        );
-        formatter.field(
-            "json_token_type_configuration",
-            &self.json_token_type_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`UserTokenConfiguration`](crate::model::UserTokenConfiguration).
@@ -520,7 +488,7 @@ impl UserTokenConfiguration {
 
 /// <p>Provides the configuration information for the JSON token type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
     #[doc(hidden)]
@@ -537,14 +505,6 @@ impl JsonTokenTypeConfiguration {
     /// <p>The group attribute field.</p>
     pub fn group_attribute_field(&self) -> std::option::Option<&str> {
         self.group_attribute_field.as_deref()
-    }
-}
-impl std::fmt::Debug for JsonTokenTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonTokenTypeConfiguration");
-        formatter.field("user_name_attribute_field", &self.user_name_attribute_field);
-        formatter.field("group_attribute_field", &self.group_attribute_field);
-        formatter.finish()
     }
 }
 /// See [`JsonTokenTypeConfiguration`](crate::model::JsonTokenTypeConfiguration).
@@ -601,7 +561,7 @@ impl JsonTokenTypeConfiguration {
 
 /// <p>Provides the configuration information for the JWT token type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
     #[doc(hidden)]
@@ -653,19 +613,6 @@ impl JwtTokenTypeConfiguration {
     /// <p>The regular expression that identifies the claim.</p>
     pub fn claim_regex(&self) -> std::option::Option<&str> {
         self.claim_regex.as_deref()
-    }
-}
-impl std::fmt::Debug for JwtTokenTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JwtTokenTypeConfiguration");
-        formatter.field("key_location", &self.key_location);
-        formatter.field("url", &self.url);
-        formatter.field("secret_manager_arn", &self.secret_manager_arn);
-        formatter.field("user_name_attribute_field", &self.user_name_attribute_field);
-        formatter.field("group_attribute_field", &self.group_attribute_field);
-        formatter.field("issuer", &self.issuer);
-        formatter.field("claim_regex", &self.claim_regex);
-        formatter.finish()
     }
 }
 /// See [`JwtTokenTypeConfiguration`](crate::model::JwtTokenTypeConfiguration).
@@ -878,7 +825,7 @@ impl AsRef<str> for KeyLocation {
 
 /// <p>Specifies additional capacity units configured for your Enterprise Edition index. You can add and remove capacity units to fit your usage requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CapacityUnitsConfiguration {
     /// <p>The amount of extra storage capacity for an index. A single capacity unit provides 30 GB of storage space or 100,000 documents, whichever is reached first. You can add up to 100 extra capacity units.</p>
     #[doc(hidden)]
@@ -899,14 +846,6 @@ impl CapacityUnitsConfiguration {
     /// <p> <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity for an index, or the base capacity of 2.5 calls per second, whichever is higher. For example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code> capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code> capacity is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
     pub fn query_capacity_units(&self) -> std::option::Option<i32> {
         self.query_capacity_units
-    }
-}
-impl std::fmt::Debug for CapacityUnitsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CapacityUnitsConfiguration");
-        formatter.field("storage_capacity_units", &self.storage_capacity_units);
-        formatter.field("query_capacity_units", &self.query_capacity_units);
-        formatter.finish()
     }
 }
 /// See [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
@@ -961,7 +900,7 @@ impl CapacityUnitsConfiguration {
 
 /// <p>Specifies the properties, such as relevance tuning and searchability, of an index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
     #[doc(hidden)]
@@ -992,16 +931,6 @@ impl DocumentMetadataConfiguration {
     /// <p>Provides information about how the field is used during a search.</p>
     pub fn search(&self) -> std::option::Option<&crate::model::Search> {
         self.search.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentMetadataConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentMetadataConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("relevance", &self.relevance);
-        formatter.field("search", &self.search);
-        formatter.finish()
     }
 }
 /// See [`DocumentMetadataConfiguration`](crate::model::DocumentMetadataConfiguration).
@@ -1082,7 +1011,7 @@ impl DocumentMetadataConfiguration {
 
 /// <p>Provides information about how a custom index field is used during a search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Search {
     /// <p>Indicates that the field can be used to create search facets, a count of results for each value in the field. The default is <code>false</code> .</p>
     #[doc(hidden)]
@@ -1113,16 +1042,6 @@ impl Search {
     /// <p>Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is <code>false</code>.</p>
     pub fn sortable(&self) -> bool {
         self.sortable
-    }
-}
-impl std::fmt::Debug for Search {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Search");
-        formatter.field("facetable", &self.facetable);
-        formatter.field("searchable", &self.searchable);
-        formatter.field("displayable", &self.displayable);
-        formatter.field("sortable", &self.sortable);
-        formatter.finish()
     }
 }
 /// See [`Search`](crate::model::Search).
@@ -1197,7 +1116,7 @@ impl Search {
 
 /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Relevance {
     /// <p>Indicates that this field determines how "fresh" a document is. For example, if document 1 was created on November 5, and document 2 was created on October 31, document 1 is "fresher" than document 2. You can only set the <code>Freshness</code> field on one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.</p>
     #[doc(hidden)]
@@ -1248,17 +1167,6 @@ impl Relevance {
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.value_importance_map.as_ref()
-    }
-}
-impl std::fmt::Debug for Relevance {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Relevance");
-        formatter.field("freshness", &self.freshness);
-        formatter.field("importance", &self.importance);
-        formatter.field("duration", &self.duration);
-        formatter.field("rank_order", &self.rank_order);
-        formatter.field("value_importance_map", &self.value_importance_map);
-        formatter.finish()
     }
 }
 /// See [`Relevance`](crate::model::Relevance).
@@ -1562,7 +1470,7 @@ impl AsRef<str> for DocumentAttributeValueType {
 
 /// <p>Provides the configuration information for your Amazon Kendra experience. This includes the data source IDs and/or FAQ IDs, and user or group information to grant access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperienceConfiguration {
     /// <p>The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the <code>BatchPutDocument</code> API. This is the content you want to use for your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -1583,20 +1491,6 @@ impl ExperienceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::UserIdentityConfiguration> {
         self.user_identity_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for ExperienceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperienceConfiguration");
-        formatter.field(
-            "content_source_configuration",
-            &self.content_source_configuration,
-        );
-        formatter.field(
-            "user_identity_configuration",
-            &self.user_identity_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`ExperienceConfiguration`](crate::model::ExperienceConfiguration).
@@ -1661,7 +1555,7 @@ impl ExperienceConfiguration {
 
 /// <p>Provides the configuration information for the identifiers of your users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserIdentityConfiguration {
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     #[doc(hidden)]
@@ -1671,13 +1565,6 @@ impl UserIdentityConfiguration {
     /// <p>The IAM Identity Center field name that contains the identifiers of your users, such as their emails. This is used for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a> and for granting access to your Amazon Kendra experience. You must set up IAM Identity Center with Amazon Kendra. You must include your users and groups in your Access Control List when you ingest documents into your index. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>.</p>
     pub fn identity_attribute_name(&self) -> std::option::Option<&str> {
         self.identity_attribute_name.as_deref()
-    }
-}
-impl std::fmt::Debug for UserIdentityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserIdentityConfiguration");
-        formatter.field("identity_attribute_name", &self.identity_attribute_name);
-        formatter.finish()
     }
 }
 /// See [`UserIdentityConfiguration`](crate::model::UserIdentityConfiguration).
@@ -1719,7 +1606,7 @@ impl UserIdentityConfiguration {
 
 /// <p>Provides the configuration information for your content sources, such as data sources, FAQs, and content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -1743,15 +1630,6 @@ impl ContentSourceConfiguration {
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(&self) -> bool {
         self.direct_put_content
-    }
-}
-impl std::fmt::Debug for ContentSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ContentSourceConfiguration");
-        formatter.field("data_source_ids", &self.data_source_ids);
-        formatter.field("faq_ids", &self.faq_ids);
-        formatter.field("direct_put_content", &self.direct_put_content);
-        formatter.finish()
     }
 }
 /// See [`ContentSourceConfiguration`](crate::model::ContentSourceConfiguration).
@@ -1833,7 +1711,7 @@ impl ContentSourceConfiguration {
 /// <p>Provides the configuration information for altering document metadata and content during the document ingestion process.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomDocumentEnrichmentConfiguration {
     /// <p>Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra.</p>
     #[doc(hidden)]
@@ -1872,22 +1750,6 @@ impl CustomDocumentEnrichmentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for CustomDocumentEnrichmentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CustomDocumentEnrichmentConfiguration");
-        formatter.field("inline_configurations", &self.inline_configurations);
-        formatter.field(
-            "pre_extraction_hook_configuration",
-            &self.pre_extraction_hook_configuration,
-        );
-        formatter.field(
-            "post_extraction_hook_configuration",
-            &self.post_extraction_hook_configuration,
-        );
-        formatter.field("role_arn", &self.role_arn);
-        formatter.finish()
     }
 }
 /// See [`CustomDocumentEnrichmentConfiguration`](crate::model::CustomDocumentEnrichmentConfiguration).
@@ -1993,7 +1855,7 @@ impl CustomDocumentEnrichmentConfiguration {
 /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>. You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
@@ -2021,15 +1883,6 @@ impl HookConfiguration {
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
-    }
-}
-impl std::fmt::Debug for HookConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HookConfiguration");
-        formatter.field("invocation_condition", &self.invocation_condition);
-        formatter.field("lambda_arn", &self.lambda_arn);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.finish()
     }
 }
 /// See [`HookConfiguration`](crate::model::HookConfiguration).
@@ -2103,7 +1956,7 @@ impl HookConfiguration {
 /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
 /// <p>Amazon Kendra cannot create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly created metadata field to your index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
@@ -2135,18 +1988,6 @@ impl DocumentAttributeCondition {
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub fn condition_on_value(&self) -> std::option::Option<&crate::model::DocumentAttributeValue> {
         self.condition_on_value.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentAttributeCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttributeCondition");
-        formatter.field(
-            "condition_document_attribute_key",
-            &self.condition_document_attribute_key,
-        );
-        formatter.field("operator", &self.operator);
-        formatter.field("condition_on_value", &self.condition_on_value);
-        formatter.finish()
     }
 }
 /// See [`DocumentAttributeCondition`](crate::model::DocumentAttributeCondition).
@@ -2229,7 +2070,7 @@ impl DocumentAttributeCondition {
 
 /// <p>The value of a document attribute. You can only provide one value for a document attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAttributeValue {
     /// <p>A string, such as "department".</p>
     #[doc(hidden)]
@@ -2262,16 +2103,6 @@ impl DocumentAttributeValue {
     /// <p>It is important for the time zone to be included in the ISO 8601 date-time format. For example, 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in Central European Time.</p>
     pub fn date_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_value.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttributeValue");
-        formatter.field("string_value", &self.string_value);
-        formatter.field("string_list_value", &self.string_list_value);
-        formatter.field("long_value", &self.long_value);
-        formatter.field("date_value", &self.date_value);
-        formatter.finish()
     }
 }
 /// See [`DocumentAttributeValue`](crate::model::DocumentAttributeValue).
@@ -2510,7 +2341,7 @@ impl AsRef<str> for ConditionOperator {
 /// <p>Provides the configuration information for applying basic logic to alter document metadata and content when ingesting documents into Amazon Kendra. To apply advanced logic, to go beyond what you can do with basic logic, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_HookConfiguration.html">HookConfiguration</a>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InlineCustomDocumentEnrichmentConfiguration {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     #[doc(hidden)]
@@ -2534,15 +2365,6 @@ impl InlineCustomDocumentEnrichmentConfiguration {
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_deletion(&self) -> bool {
         self.document_content_deletion
-    }
-}
-impl std::fmt::Debug for InlineCustomDocumentEnrichmentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InlineCustomDocumentEnrichmentConfiguration");
-        formatter.field("condition", &self.condition);
-        formatter.field("target", &self.target);
-        formatter.field("document_content_deletion", &self.document_content_deletion);
-        formatter.finish()
     }
 }
 /// See [`InlineCustomDocumentEnrichmentConfiguration`](crate::model::InlineCustomDocumentEnrichmentConfiguration).
@@ -2614,7 +2436,7 @@ impl InlineCustomDocumentEnrichmentConfiguration {
 /// <p>Amazon Kendra cannot create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly created metadata field to your index field.</p>
 /// <p>You can also use this with <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_DocumentAttributeCondition.html">DocumentAttributeCondition</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAttributeTarget {
     /// <p>The identifier of the target document attribute or metadata field.</p>
     /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
@@ -2644,24 +2466,6 @@ impl DocumentAttributeTarget {
         &self,
     ) -> std::option::Option<&crate::model::DocumentAttributeValue> {
         self.target_document_attribute_value.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentAttributeTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttributeTarget");
-        formatter.field(
-            "target_document_attribute_key",
-            &self.target_document_attribute_key,
-        );
-        formatter.field(
-            "target_document_attribute_value_deletion",
-            &self.target_document_attribute_value_deletion,
-        );
-        formatter.field(
-            "target_document_attribute_value",
-            &self.target_document_attribute_value,
-        );
-        formatter.finish()
     }
 }
 /// See [`DocumentAttributeTarget`](crate::model::DocumentAttributeTarget).
@@ -2746,7 +2550,7 @@ impl DocumentAttributeTarget {
 
 /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceVpcConfiguration {
     /// <p>A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in the VPC, and they should have outgoing access to the Internet through a NAT device.</p>
     #[doc(hidden)]
@@ -2763,14 +2567,6 @@ impl DataSourceVpcConfiguration {
     /// <p>A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Kendra to connect to the data source.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceVpcConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceVpcConfiguration");
-        formatter.field("subnet_ids", &self.subnet_ids);
-        formatter.field("security_group_ids", &self.security_group_ids);
-        formatter.finish()
     }
 }
 /// See [`DataSourceVpcConfiguration`](crate::model::DataSourceVpcConfiguration).
@@ -2839,7 +2635,7 @@ impl DataSourceVpcConfiguration {
 
 /// <p>Provides the configuration information for an Amazon Kendra data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
     #[doc(hidden)]
@@ -2992,33 +2788,6 @@ impl DataSourceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::TemplateConfiguration> {
         self.template_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceConfiguration");
-        formatter.field("s3_configuration", &self.s3_configuration);
-        formatter.field("share_point_configuration", &self.share_point_configuration);
-        formatter.field("database_configuration", &self.database_configuration);
-        formatter.field("salesforce_configuration", &self.salesforce_configuration);
-        formatter.field("one_drive_configuration", &self.one_drive_configuration);
-        formatter.field("service_now_configuration", &self.service_now_configuration);
-        formatter.field("confluence_configuration", &self.confluence_configuration);
-        formatter.field(
-            "google_drive_configuration",
-            &self.google_drive_configuration,
-        );
-        formatter.field("web_crawler_configuration", &self.web_crawler_configuration);
-        formatter.field("work_docs_configuration", &self.work_docs_configuration);
-        formatter.field("fsx_configuration", &self.fsx_configuration);
-        formatter.field("slack_configuration", &self.slack_configuration);
-        formatter.field("box_configuration", &self.box_configuration);
-        formatter.field("quip_configuration", &self.quip_configuration);
-        formatter.field("jira_configuration", &self.jira_configuration);
-        formatter.field("git_hub_configuration", &self.git_hub_configuration);
-        formatter.field("alfresco_configuration", &self.alfresco_configuration);
-        formatter.field("template_configuration", &self.template_configuration);
-        formatter.finish()
     }
 }
 /// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
@@ -3356,7 +3125,7 @@ impl DataSourceConfiguration {
 
 /// <p>Provides a template for the configuration information to connect to your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TemplateConfiguration {
     /// <p>The template schema used for the data source, where templates schemas are supported.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
@@ -3368,13 +3137,6 @@ impl TemplateConfiguration {
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub fn template(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.template.as_ref()
-    }
-}
-impl std::fmt::Debug for TemplateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TemplateConfiguration");
-        formatter.field("template", &self.template);
-        formatter.finish()
     }
 }
 /// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
@@ -3420,7 +3182,7 @@ impl TemplateConfiguration {
 /// <p>Alfresco data source connector is currently in preview mode. Basic authentication is currently supported. If you would like to use Alfresco connector in production, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AlfrescoConfiguration {
     /// <p>The URL of the Alfresco site. For example, <i>https://hostname:8080</i>.</p>
     #[doc(hidden)]
@@ -3535,28 +3297,6 @@ impl AlfrescoConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for AlfrescoConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AlfrescoConfiguration");
-        formatter.field("site_url", &self.site_url);
-        formatter.field("site_id", &self.site_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
-        formatter.field("crawl_system_folders", &self.crawl_system_folders);
-        formatter.field("crawl_comments", &self.crawl_comments);
-        formatter.field("entity_filter", &self.entity_filter);
-        formatter.field(
-            "document_library_field_mappings",
-            &self.document_library_field_mappings,
-        );
-        formatter.field("blog_field_mappings", &self.blog_field_mappings);
-        formatter.field("wiki_field_mappings", &self.wiki_field_mappings);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`AlfrescoConfiguration`](crate::model::AlfrescoConfiguration).
@@ -3824,7 +3564,7 @@ impl AlfrescoConfiguration {
 
 /// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceToIndexFieldMapping {
     /// <p>The name of the column or attribute in the data source.</p>
     #[doc(hidden)]
@@ -3848,15 +3588,6 @@ impl DataSourceToIndexFieldMapping {
     /// <p>The name of the field in the index.</p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
     }
 }
 /// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping).
@@ -4023,7 +3754,7 @@ impl AsRef<str> for AlfrescoEntity {
 
 /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GitHubConfiguration {
     /// <p>Configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
     #[doc(hidden)]
@@ -4224,79 +3955,6 @@ impl GitHubConfiguration {
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.git_hub_pull_request_document_attachment_configuration_field_mappings
             .as_deref()
-    }
-}
-impl std::fmt::Debug for GitHubConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GitHubConfiguration");
-        formatter.field("saa_s_configuration", &self.saa_s_configuration);
-        formatter.field("on_premise_configuration", &self.on_premise_configuration);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field(
-            "git_hub_document_crawl_properties",
-            &self.git_hub_document_crawl_properties,
-        );
-        formatter.field("repository_filter", &self.repository_filter);
-        formatter.field(
-            "inclusion_folder_name_patterns",
-            &self.inclusion_folder_name_patterns,
-        );
-        formatter.field(
-            "inclusion_file_type_patterns",
-            &self.inclusion_file_type_patterns,
-        );
-        formatter.field(
-            "inclusion_file_name_patterns",
-            &self.inclusion_file_name_patterns,
-        );
-        formatter.field(
-            "exclusion_folder_name_patterns",
-            &self.exclusion_folder_name_patterns,
-        );
-        formatter.field(
-            "exclusion_file_type_patterns",
-            &self.exclusion_file_type_patterns,
-        );
-        formatter.field(
-            "exclusion_file_name_patterns",
-            &self.exclusion_file_name_patterns,
-        );
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field(
-            "git_hub_repository_configuration_field_mappings",
-            &self.git_hub_repository_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_commit_configuration_field_mappings",
-            &self.git_hub_commit_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_issue_document_configuration_field_mappings",
-            &self.git_hub_issue_document_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_issue_comment_configuration_field_mappings",
-            &self.git_hub_issue_comment_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_issue_attachment_configuration_field_mappings",
-            &self.git_hub_issue_attachment_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_pull_request_comment_configuration_field_mappings",
-            &self.git_hub_pull_request_comment_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_pull_request_document_configuration_field_mappings",
-            &self.git_hub_pull_request_document_configuration_field_mappings,
-        );
-        formatter.field(
-            "git_hub_pull_request_document_attachment_configuration_field_mappings",
-            &self.git_hub_pull_request_document_attachment_configuration_field_mappings,
-        );
-        formatter.finish()
     }
 }
 /// See [`GitHubConfiguration`](crate::model::GitHubConfiguration).
@@ -4831,7 +4489,7 @@ impl GitHubConfiguration {
 
 /// <p>Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GitHubDocumentCrawlProperties {
     /// <p> <code>TRUE</code> to index all files with a repository.</p>
     #[doc(hidden)]
@@ -4883,31 +4541,6 @@ impl GitHubDocumentCrawlProperties {
     /// <p> <code>TRUE</code> to include all comment attachments for pull requests.</p>
     pub fn crawl_pull_request_comment_attachment(&self) -> bool {
         self.crawl_pull_request_comment_attachment
-    }
-}
-impl std::fmt::Debug for GitHubDocumentCrawlProperties {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GitHubDocumentCrawlProperties");
-        formatter.field(
-            "crawl_repository_documents",
-            &self.crawl_repository_documents,
-        );
-        formatter.field("crawl_issue", &self.crawl_issue);
-        formatter.field("crawl_issue_comment", &self.crawl_issue_comment);
-        formatter.field(
-            "crawl_issue_comment_attachment",
-            &self.crawl_issue_comment_attachment,
-        );
-        formatter.field("crawl_pull_request", &self.crawl_pull_request);
-        formatter.field(
-            "crawl_pull_request_comment",
-            &self.crawl_pull_request_comment,
-        );
-        formatter.field(
-            "crawl_pull_request_comment_attachment",
-            &self.crawl_pull_request_comment_attachment,
-        );
-        formatter.finish()
     }
 }
 /// See [`GitHubDocumentCrawlProperties`](crate::model::GitHubDocumentCrawlProperties).
@@ -5118,7 +4751,7 @@ impl AsRef<str> for Type {
 
 /// <p>Provides the configuration information to connect to GitHub Enterprise Server (on premises).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OnPremiseConfiguration {
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://on-prem-host-url/api/v3/</i> </p>
     #[doc(hidden)]
@@ -5144,15 +4777,6 @@ impl OnPremiseConfiguration {
     /// <p>You can simply generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
-    }
-}
-impl std::fmt::Debug for OnPremiseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OnPremiseConfiguration");
-        formatter.field("host_url", &self.host_url);
-        formatter.field("organization_name", &self.organization_name);
-        formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
-        formatter.finish()
     }
 }
 /// See [`OnPremiseConfiguration`](crate::model::OnPremiseConfiguration).
@@ -5223,7 +4847,7 @@ impl OnPremiseConfiguration {
 
 /// <p>Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     #[doc(hidden)]
@@ -5240,14 +4864,6 @@ impl SaaSConfiguration {
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     pub fn host_url(&self) -> std::option::Option<&str> {
         self.host_url.as_deref()
-    }
-}
-impl std::fmt::Debug for SaaSConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SaaSConfiguration");
-        formatter.field("organization_name", &self.organization_name);
-        formatter.field("host_url", &self.host_url);
-        formatter.finish()
     }
 }
 /// See [`SaaSConfiguration`](crate::model::SaaSConfiguration).
@@ -5301,7 +4917,7 @@ impl SaaSConfiguration {
 
 /// <p>Provides the configuration information to connect to Jira as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JiraConfiguration {
     /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>. You can find your Jira account URL in the URL of your profile page for Jira desktop.</p>
     #[doc(hidden)]
@@ -5434,27 +5050,6 @@ impl JiraConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for JiraConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JiraConfiguration");
-        formatter.field("jira_account_url", &self.jira_account_url);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field("project", &self.project);
-        formatter.field("issue_type", &self.issue_type);
-        formatter.field("status", &self.status);
-        formatter.field("issue_sub_entity_filter", &self.issue_sub_entity_filter);
-        formatter.field("attachment_field_mappings", &self.attachment_field_mappings);
-        formatter.field("comment_field_mappings", &self.comment_field_mappings);
-        formatter.field("issue_field_mappings", &self.issue_field_mappings);
-        formatter.field("project_field_mappings", &self.project_field_mappings);
-        formatter.field("work_log_field_mappings", &self.work_log_field_mappings);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`JiraConfiguration`](crate::model::JiraConfiguration).
@@ -5893,7 +5488,7 @@ impl AsRef<str> for IssueSubEntity {
 
 /// <p>Provides the configuration information to connect to Quip as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuipConfiguration {
     /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
     #[doc(hidden)]
@@ -5997,24 +5592,6 @@ impl QuipConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for QuipConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuipConfiguration");
-        formatter.field("domain", &self.domain);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("crawl_file_comments", &self.crawl_file_comments);
-        formatter.field("crawl_chat_rooms", &self.crawl_chat_rooms);
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field("folder_ids", &self.folder_ids);
-        formatter.field("thread_field_mappings", &self.thread_field_mappings);
-        formatter.field("message_field_mappings", &self.message_field_mappings);
-        formatter.field("attachment_field_mappings", &self.attachment_field_mappings);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`QuipConfiguration`](crate::model::QuipConfiguration).
@@ -6263,7 +5840,7 @@ impl QuipConfiguration {
 
 /// <p>Provides the configuration information to connect to Box as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BoxConfiguration {
     /// <p>The identifier of the Box Enterprise platform. You can find the enterprise ID in the Box Developer Console settings or when you create an app in Box and download your authentication credentials. For example, <i>801234567</i>.</p>
     #[doc(hidden)]
@@ -6387,25 +5964,6 @@ impl BoxConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for BoxConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BoxConfiguration");
-        formatter.field("enterprise_id", &self.enterprise_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field("crawl_comments", &self.crawl_comments);
-        formatter.field("crawl_tasks", &self.crawl_tasks);
-        formatter.field("crawl_web_links", &self.crawl_web_links);
-        formatter.field("file_field_mappings", &self.file_field_mappings);
-        formatter.field("task_field_mappings", &self.task_field_mappings);
-        formatter.field("comment_field_mappings", &self.comment_field_mappings);
-        formatter.field("web_link_field_mappings", &self.web_link_field_mappings);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.finish()
     }
 }
 /// See [`BoxConfiguration`](crate::model::BoxConfiguration).
@@ -6683,7 +6241,7 @@ impl BoxConfiguration {
 
 /// <p>Provides the configuration information to connect to Slack as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SlackConfiguration {
     /// <p>The identifier of the team in the Slack workspace. For example, <i>T0123456789</i>.</p>
     /// <p>You can find your team ID in the URL of the main page of your Slack workspace. When you log in to Slack via a browser, you are directed to the URL of the main page. For example, <i>https://app.slack.com/client/<b>T0123456789</b>/...</i>.</p>
@@ -6799,26 +6357,6 @@ impl SlackConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for SlackConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SlackConfiguration");
-        formatter.field("team_id", &self.team_id);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("slack_entity_list", &self.slack_entity_list);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field("crawl_bot_message", &self.crawl_bot_message);
-        formatter.field("exclude_archived", &self.exclude_archived);
-        formatter.field("since_crawl_date", &self.since_crawl_date);
-        formatter.field("look_back_period", &self.look_back_period);
-        formatter.field("private_channel_filter", &self.private_channel_filter);
-        formatter.field("public_channel_filter", &self.public_channel_filter);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`SlackConfiguration`](crate::model::SlackConfiguration).
@@ -7195,7 +6733,7 @@ impl AsRef<str> for SlackEntity {
 
 /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FsxConfiguration {
     /// <p>The identifier of the Amazon FSx file system.</p>
     /// <p>You can find your file system ID on the file system dashboard in the Amazon FSx console. For information on how to create a file system in Amazon FSx console, using Windows File Server as an example, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started-step1.html">Amazon FSx Getting started guide</a>.</p>
@@ -7262,19 +6800,6 @@ impl FsxConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for FsxConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FsxConfiguration");
-        formatter.field("file_system_id", &self.file_system_id);
-        formatter.field("file_system_type", &self.file_system_type);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`FsxConfiguration`](crate::model::FsxConfiguration).
@@ -7526,7 +7051,7 @@ impl AsRef<str> for FsxFileSystemType {
 /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
 /// <p>Amazon WorkDocs connector is available in Oregon, North Virginia, Sydney, Singapore and Ireland regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
@@ -7578,18 +7103,6 @@ impl WorkDocsConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for WorkDocsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WorkDocsConfiguration");
-        formatter.field("organization_id", &self.organization_id);
-        formatter.field("crawl_comments", &self.crawl_comments);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration).
@@ -7726,7 +7239,7 @@ impl WorkDocsConfiguration {
 
 /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct WebCrawlerConfiguration {
     /// <p>Specifies the seed or starting point URLs of the websites or the sitemap URLs of the websites you want to crawl.</p>
     /// <p>You can include website subdomains. You can list up to 100 seed URLs and up to three sitemap URLs.</p>
@@ -7825,30 +7338,6 @@ impl WebCrawlerConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for WebCrawlerConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("WebCrawlerConfiguration");
-        formatter.field("urls", &self.urls);
-        formatter.field("crawl_depth", &self.crawl_depth);
-        formatter.field("max_links_per_page", &self.max_links_per_page);
-        formatter.field(
-            "max_content_size_per_page_in_mega_bytes",
-            &self.max_content_size_per_page_in_mega_bytes,
-        );
-        formatter.field(
-            "max_urls_per_minute_crawl_rate",
-            &self.max_urls_per_minute_crawl_rate,
-        );
-        formatter.field("url_inclusion_patterns", &self.url_inclusion_patterns);
-        formatter.field("url_exclusion_patterns", &self.url_exclusion_patterns);
-        formatter.field("proxy_configuration", &self.proxy_configuration);
-        formatter.field(
-            "authentication_configuration",
-            &self.authentication_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`WebCrawlerConfiguration`](crate::model::WebCrawlerConfiguration).
@@ -8048,7 +7537,7 @@ impl WebCrawlerConfiguration {
 
 /// <p>Provides the configuration information to connect to websites that require user authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AuthenticationConfiguration {
     /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
     /// <p>The list includes the name and port number of the website host.</p>
@@ -8063,13 +7552,6 @@ impl AuthenticationConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::BasicAuthenticationConfiguration]> {
         self.basic_authentication.as_deref()
-    }
-}
-impl std::fmt::Debug for AuthenticationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AuthenticationConfiguration");
-        formatter.field("basic_authentication", &self.basic_authentication);
-        formatter.finish()
     }
 }
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
@@ -8125,7 +7607,7 @@ impl AuthenticationConfiguration {
 
 /// <p>Provides the configuration information to connect to websites that require basic user authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BasicAuthenticationConfiguration {
     /// <p>The name of the website host you want to connect to using authentication credentials.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
@@ -8155,15 +7637,6 @@ impl BasicAuthenticationConfiguration {
     /// <p>You use a secret if basic authentication credentials are required to connect to a website. The secret stores your credentials of user name and password.</p>
     pub fn credentials(&self) -> std::option::Option<&str> {
         self.credentials.as_deref()
-    }
-}
-impl std::fmt::Debug for BasicAuthenticationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BasicAuthenticationConfiguration");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("credentials", &self.credentials);
-        formatter.finish()
     }
 }
 /// See [`BasicAuthenticationConfiguration`](crate::model::BasicAuthenticationConfiguration).
@@ -8232,7 +7705,7 @@ impl BasicAuthenticationConfiguration {
 
 /// <p>Provides the configuration information for a web proxy to connect to website hosts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ProxyConfiguration {
     /// <p>The name of the website host you want to connect to via a web proxy server.</p>
     /// <p>For example, the host name of https://a.example.com/page1.html is "a.example.com".</p>
@@ -8262,15 +7735,6 @@ impl ProxyConfiguration {
     /// <p>The credentials are optional. You use a secret if web proxy credentials are required to connect to a website host. Amazon Kendra currently support basic authentication to connect to a web proxy server. The secret stores your credentials.</p>
     pub fn credentials(&self) -> std::option::Option<&str> {
         self.credentials.as_deref()
-    }
-}
-impl std::fmt::Debug for ProxyConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ProxyConfiguration");
-        formatter.field("host", &self.host);
-        formatter.field("port", &self.port);
-        formatter.field("credentials", &self.credentials);
-        formatter.finish()
     }
 }
 /// See [`ProxyConfiguration`](crate::model::ProxyConfiguration).
@@ -8341,7 +7805,7 @@ impl ProxyConfiguration {
 /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to.</p>
@@ -8368,14 +7832,6 @@ impl Urls {
         &self,
     ) -> std::option::Option<&crate::model::SiteMapsConfiguration> {
         self.site_maps_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for Urls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Urls");
-        formatter.field("seed_url_configuration", &self.seed_url_configuration);
-        formatter.field("site_maps_configuration", &self.site_maps_configuration);
-        formatter.finish()
     }
 }
 /// See [`Urls`](crate::model::Urls).
@@ -8443,7 +7899,7 @@ impl Urls {
 /// <p>Provides the configuration information for the sitemap URLs to crawl.</p>
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SiteMapsConfiguration {
     /// <p>The list of sitemap URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of three sitemap URLs.</p>
@@ -8455,13 +7911,6 @@ impl SiteMapsConfiguration {
     /// <p>The list can include a maximum of three sitemap URLs.</p>
     pub fn site_maps(&self) -> std::option::Option<&[std::string::String]> {
         self.site_maps.as_deref()
-    }
-}
-impl std::fmt::Debug for SiteMapsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SiteMapsConfiguration");
-        formatter.field("site_maps", &self.site_maps);
-        formatter.finish()
     }
 }
 /// See [`SiteMapsConfiguration`](crate::model::SiteMapsConfiguration).
@@ -8512,7 +7961,7 @@ impl SiteMapsConfiguration {
 /// <p>Provides the configuration information for the seed or starting point URLs to crawl.</p>
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SeedUrlConfiguration {
     /// <p>The list of seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>The list can include a maximum of 100 seed URLs.</p>
@@ -8543,14 +7992,6 @@ impl SeedUrlConfiguration {
     /// <p>The default mode is set to <code>HOST_ONLY</code>.</p>
     pub fn web_crawler_mode(&self) -> std::option::Option<&crate::model::WebCrawlerMode> {
         self.web_crawler_mode.as_ref()
-    }
-}
-impl std::fmt::Debug for SeedUrlConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SeedUrlConfiguration");
-        formatter.field("seed_urls", &self.seed_urls);
-        formatter.field("web_crawler_mode", &self.web_crawler_mode);
-        formatter.finish()
     }
 }
 /// See [`SeedUrlConfiguration`](crate::model::SeedUrlConfiguration).
@@ -8722,7 +8163,7 @@ impl AsRef<str> for WebCrawlerMode {
 
 /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GoogleDriveConfiguration {
     /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret that contains the credentials required to connect to Google Drive. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data source</a>.</p>
     #[doc(hidden)]
@@ -8779,19 +8220,6 @@ impl GoogleDriveConfiguration {
     /// <p>A list of identifiers or shared drives to exclude from the index. All files and folders stored on the shared drive are excluded.</p>
     pub fn exclude_shared_drives(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_shared_drives.as_deref()
-    }
-}
-impl std::fmt::Debug for GoogleDriveConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GoogleDriveConfiguration");
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("exclude_mime_types", &self.exclude_mime_types);
-        formatter.field("exclude_user_accounts", &self.exclude_user_accounts);
-        formatter.field("exclude_shared_drives", &self.exclude_shared_drives);
-        formatter.finish()
     }
 }
 /// See [`GoogleDriveConfiguration`](crate::model::GoogleDriveConfiguration).
@@ -8962,7 +8390,7 @@ impl GoogleDriveConfiguration {
 
 /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceConfiguration {
     /// <p>The URL of your Confluence instance. Use the full URL of the server. For example, <i>https://server.example.com:port/</i>. You can also use an IP address, for example, <i>https://192.168.1.113/</i>.</p>
     #[doc(hidden)]
@@ -9070,24 +8498,6 @@ impl ConfluenceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ConfluenceAuthenticationType> {
         self.authentication_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ConfluenceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceConfiguration");
-        formatter.field("server_url", &self.server_url);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("version", &self.version);
-        formatter.field("space_configuration", &self.space_configuration);
-        formatter.field("page_configuration", &self.page_configuration);
-        formatter.field("blog_configuration", &self.blog_configuration);
-        formatter.field("attachment_configuration", &self.attachment_configuration);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("proxy_configuration", &self.proxy_configuration);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceConfiguration`](crate::model::ConfluenceConfiguration).
@@ -9423,7 +8833,7 @@ impl AsRef<str> for ConfluenceAuthenticationType {
 
 /// <p>Configuration of attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceAttachmentConfiguration {
     /// <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
     #[doc(hidden)]
@@ -9445,14 +8855,6 @@ impl ConfluenceAttachmentConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ConfluenceAttachmentToIndexFieldMapping]> {
         self.attachment_field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceAttachmentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceAttachmentConfiguration");
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field("attachment_field_mappings", &self.attachment_field_mappings);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceAttachmentConfiguration`](crate::model::ConfluenceAttachmentConfiguration).
@@ -9521,7 +8923,7 @@ impl ConfluenceAttachmentConfiguration {
 
 /// <p>Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confuence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
     /// <p>You must first create the index field using the <code>UpdateIndex</code> API. </p>
@@ -9549,15 +8951,6 @@ impl ConfluenceAttachmentToIndexFieldMapping {
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceAttachmentToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceAttachmentToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceAttachmentToIndexFieldMapping`](crate::model::ConfluenceAttachmentToIndexFieldMapping).
@@ -9784,7 +9177,7 @@ impl AsRef<str> for ConfluenceAttachmentFieldName {
 
 /// <p>Configuration of blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceBlogConfiguration {
     /// <p>Maps attributes or field names of Confluence blogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least one field mapping.</p>
@@ -9799,13 +9192,6 @@ impl ConfluenceBlogConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ConfluenceBlogToIndexFieldMapping]> {
         self.blog_field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceBlogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceBlogConfiguration");
-        formatter.field("blog_field_mappings", &self.blog_field_mappings);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceBlogConfiguration`](crate::model::ConfluenceBlogConfiguration).
@@ -9861,7 +9247,7 @@ impl ConfluenceBlogConfiguration {
 
 /// <p>Maps attributes or field names of Confluence blog to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceBlogToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
     #[doc(hidden)]
@@ -9887,15 +9273,6 @@ impl ConfluenceBlogToIndexFieldMapping {
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceBlogToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceBlogToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceBlogToIndexFieldMapping`](crate::model::ConfluenceBlogToIndexFieldMapping).
@@ -10108,7 +9485,7 @@ impl AsRef<str> for ConfluenceBlogFieldName {
 
 /// <p>Configuration of the page settings for the Confluence data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluencePageConfiguration {
     /// <p>Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>PageFieldMappings</code> parameter, you must specify at least one field mapping.</p>
@@ -10123,13 +9500,6 @@ impl ConfluencePageConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ConfluencePageToIndexFieldMapping]> {
         self.page_field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluencePageConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluencePageConfiguration");
-        formatter.field("page_field_mappings", &self.page_field_mappings);
-        formatter.finish()
     }
 }
 /// See [`ConfluencePageConfiguration`](crate::model::ConfluencePageConfiguration).
@@ -10185,7 +9555,7 @@ impl ConfluencePageConfiguration {
 
 /// <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluencePageToIndexFieldMapping {
     /// <p>The name of the field in the data source.</p>
     #[doc(hidden)]
@@ -10211,15 +9581,6 @@ impl ConfluencePageToIndexFieldMapping {
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluencePageToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluencePageToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
     }
 }
 /// See [`ConfluencePageToIndexFieldMapping`](crate::model::ConfluencePageToIndexFieldMapping).
@@ -10450,7 +9811,7 @@ impl AsRef<str> for ConfluencePageFieldName {
 
 /// <p>Configuration information for indexing Confluence spaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceSpaceConfiguration {
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     #[doc(hidden)]
@@ -10493,17 +9854,6 @@ impl ConfluenceSpaceConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::ConfluenceSpaceToIndexFieldMapping]> {
         self.space_field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceSpaceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceSpaceConfiguration");
-        formatter.field("crawl_personal_spaces", &self.crawl_personal_spaces);
-        formatter.field("crawl_archived_spaces", &self.crawl_archived_spaces);
-        formatter.field("include_spaces", &self.include_spaces);
-        formatter.field("exclude_spaces", &self.exclude_spaces);
-        formatter.field("space_field_mappings", &self.space_field_mappings);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceSpaceConfiguration`](crate::model::ConfluenceSpaceConfiguration).
@@ -10625,7 +9975,7 @@ impl ConfluenceSpaceConfiguration {
 
 /// <p>&gt;Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConfluenceSpaceToIndexFieldMapping {
     /// <p>The name of the field in the data source. </p>
     #[doc(hidden)]
@@ -10651,15 +10001,6 @@ impl ConfluenceSpaceToIndexFieldMapping {
     /// <p>The name of the index field to map to the Confluence data source field. The index field type must match the Confluence field type.</p>
     pub fn index_field_name(&self) -> std::option::Option<&str> {
         self.index_field_name.as_deref()
-    }
-}
-impl std::fmt::Debug for ConfluenceSpaceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConfluenceSpaceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
     }
 }
 /// See [`ConfluenceSpaceToIndexFieldMapping`](crate::model::ConfluenceSpaceToIndexFieldMapping).
@@ -10929,7 +10270,7 @@ impl AsRef<str> for ConfluenceVersion {
 
 /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowConfiguration {
     /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
     #[doc(hidden)]
@@ -10986,24 +10327,6 @@ impl ServiceNowConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::ServiceNowAuthenticationType> {
         self.authentication_type.as_ref()
-    }
-}
-impl std::fmt::Debug for ServiceNowConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowConfiguration");
-        formatter.field("host_url", &self.host_url);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("service_now_build_version", &self.service_now_build_version);
-        formatter.field(
-            "knowledge_article_configuration",
-            &self.knowledge_article_configuration,
-        );
-        formatter.field(
-            "service_catalog_configuration",
-            &self.service_catalog_configuration,
-        );
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowConfiguration`](crate::model::ServiceNowConfiguration).
@@ -11224,7 +10547,7 @@ impl AsRef<str> for ServiceNowAuthenticationType {
 
 /// <p>Provides the configuration information for crawling service catalog items in the ServiceNow site</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowServiceCatalogConfiguration {
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
     #[doc(hidden)]
@@ -11276,24 +10599,6 @@ impl ServiceNowServiceCatalogConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowServiceCatalogConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowServiceCatalogConfiguration");
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field(
-            "include_attachment_file_patterns",
-            &self.include_attachment_file_patterns,
-        );
-        formatter.field(
-            "exclude_attachment_file_patterns",
-            &self.exclude_attachment_file_patterns,
-        );
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowServiceCatalogConfiguration`](crate::model::ServiceNowServiceCatalogConfiguration).
@@ -11441,7 +10746,7 @@ impl ServiceNowServiceCatalogConfiguration {
 
 /// <p>Provides the configuration information for crawling knowledge articles in the ServiceNow site.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowKnowledgeArticleConfiguration {
     /// <p> <code>TRUE</code> to index attachments to knowledge articles.</p>
     #[doc(hidden)]
@@ -11502,25 +10807,6 @@ impl ServiceNowKnowledgeArticleConfiguration {
     /// <p>The query string must be one generated by the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/servicenow-query.html">Specifying documents to index with a query</a>. </p>
     pub fn filter_query(&self) -> std::option::Option<&str> {
         self.filter_query.as_deref()
-    }
-}
-impl std::fmt::Debug for ServiceNowKnowledgeArticleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceNowKnowledgeArticleConfiguration");
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field(
-            "include_attachment_file_patterns",
-            &self.include_attachment_file_patterns,
-        );
-        formatter.field(
-            "exclude_attachment_file_patterns",
-            &self.exclude_attachment_file_patterns,
-        );
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("filter_query", &self.filter_query);
-        formatter.finish()
     }
 }
 /// See [`ServiceNowKnowledgeArticleConfiguration`](crate::model::ServiceNowKnowledgeArticleConfiguration).
@@ -11774,7 +11060,7 @@ impl AsRef<str> for ServiceNowBuildVersionType {
 
 /// <p>Provides the configuration information to connect to OneDrive as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OneDriveConfiguration {
     /// <p>The Azure Active Directory domain of the organization. </p>
     #[doc(hidden)]
@@ -11833,19 +11119,6 @@ impl OneDriveConfiguration {
     /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(&self) -> bool {
         self.disable_local_groups
-    }
-}
-impl std::fmt::Debug for OneDriveConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OneDriveConfiguration");
-        formatter.field("tenant_domain", &self.tenant_domain);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("one_drive_users", &self.one_drive_users);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("disable_local_groups", &self.disable_local_groups);
-        formatter.finish()
     }
 }
 /// See [`OneDriveConfiguration`](crate::model::OneDriveConfiguration).
@@ -11997,7 +11270,7 @@ impl OneDriveConfiguration {
 
 /// <p>User accounts whose documents should be indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OneDriveUsers {
     /// <p>A list of users whose documents should be indexed. Specify the user names in email format, for example, <code>username@tenantdomain</code>. If you need to index the documents of more than 100 users, use the <code>OneDriveUserS3Path</code> field to specify the location of a file containing a list of users.</p>
     #[doc(hidden)]
@@ -12014,14 +11287,6 @@ impl OneDriveUsers {
     /// <p>The S3 bucket location of a file containing a list of users whose documents should be indexed.</p>
     pub fn one_drive_user_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.one_drive_user_s3_path.as_ref()
-    }
-}
-impl std::fmt::Debug for OneDriveUsers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OneDriveUsers");
-        formatter.field("one_drive_user_list", &self.one_drive_user_list);
-        formatter.field("one_drive_user_s3_path", &self.one_drive_user_s3_path);
-        formatter.finish()
     }
 }
 /// See [`OneDriveUsers`](crate::model::OneDriveUsers).
@@ -12084,7 +11349,7 @@ impl OneDriveUsers {
 
 /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
     #[doc(hidden)]
@@ -12182,39 +11447,6 @@ impl SalesforceConfiguration {
     /// <p>The pattern is applied to the name of the attached file.</p>
     pub fn exclude_attachment_file_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_attachment_file_patterns.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceConfiguration");
-        formatter.field("server_url", &self.server_url);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field(
-            "standard_object_configurations",
-            &self.standard_object_configurations,
-        );
-        formatter.field(
-            "knowledge_article_configuration",
-            &self.knowledge_article_configuration,
-        );
-        formatter.field(
-            "chatter_feed_configuration",
-            &self.chatter_feed_configuration,
-        );
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field(
-            "standard_object_attachment_configuration",
-            &self.standard_object_attachment_configuration,
-        );
-        formatter.field(
-            "include_attachment_file_patterns",
-            &self.include_attachment_file_patterns,
-        );
-        formatter.field(
-            "exclude_attachment_file_patterns",
-            &self.exclude_attachment_file_patterns,
-        );
-        formatter.finish()
     }
 }
 /// See [`SalesforceConfiguration`](crate::model::SalesforceConfiguration).
@@ -12434,7 +11666,7 @@ impl SalesforceConfiguration {
 
 /// <p>Provides the configuration information for processing attachments to Salesforce standard objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceStandardObjectAttachmentConfiguration {
     /// <p>The name of the field used for the document title.</p>
     #[doc(hidden)]
@@ -12454,14 +11686,6 @@ impl SalesforceStandardObjectAttachmentConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceStandardObjectAttachmentConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceStandardObjectAttachmentConfiguration");
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`SalesforceStandardObjectAttachmentConfiguration`](crate::model::SalesforceStandardObjectAttachmentConfiguration).
@@ -12528,7 +11752,7 @@ impl SalesforceStandardObjectAttachmentConfiguration {
 
 /// <p>The configuration information for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceChatterFeedConfiguration {
     /// <p>The name of the column in the Salesforce FeedItem table that contains the content to index. Typically this is the <code>Body</code> column.</p>
     #[doc(hidden)]
@@ -12565,16 +11789,6 @@ impl SalesforceChatterFeedConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::SalesforceChatterFeedIncludeFilterType]> {
         self.include_filter_types.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceChatterFeedConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceChatterFeedConfiguration");
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("include_filter_types", &self.include_filter_types);
-        formatter.finish()
     }
 }
 /// See [`SalesforceChatterFeedConfiguration`](crate::model::SalesforceChatterFeedConfiguration).
@@ -12776,7 +11990,7 @@ impl AsRef<str> for SalesforceChatterFeedIncludeFilterType {
 
 /// <p>Provides the configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceKnowledgeArticleConfiguration {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
     #[doc(hidden)]
@@ -12812,21 +12026,6 @@ impl SalesforceKnowledgeArticleConfiguration {
     ) -> std::option::Option<&[crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration]>
     {
         self.custom_knowledge_article_type_configurations.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceKnowledgeArticleConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceKnowledgeArticleConfiguration");
-        formatter.field("included_states", &self.included_states);
-        formatter.field(
-            "standard_knowledge_article_type_configuration",
-            &self.standard_knowledge_article_type_configuration,
-        );
-        formatter.field(
-            "custom_knowledge_article_type_configurations",
-            &self.custom_knowledge_article_type_configurations,
-        );
-        formatter.finish()
     }
 }
 /// See [`SalesforceKnowledgeArticleConfiguration`](crate::model::SalesforceKnowledgeArticleConfiguration).
@@ -12933,7 +12132,7 @@ impl SalesforceKnowledgeArticleConfiguration {
 
 /// <p>Provides the configuration information for indexing Salesforce custom articles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceCustomKnowledgeArticleTypeConfiguration {
     /// <p>The name of the configuration.</p>
     #[doc(hidden)]
@@ -12967,16 +12166,6 @@ impl SalesforceCustomKnowledgeArticleTypeConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceCustomKnowledgeArticleTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceCustomKnowledgeArticleTypeConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`SalesforceCustomKnowledgeArticleTypeConfiguration`](crate::model::SalesforceCustomKnowledgeArticleTypeConfiguration).
@@ -13071,7 +12260,7 @@ impl SalesforceCustomKnowledgeArticleTypeConfiguration {
 
 /// <p>Provides the configuration information for standard Salesforce knowledge articles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceStandardKnowledgeArticleTypeConfiguration {
     /// <p>The name of the field that contains the document data to index.</p>
     #[doc(hidden)]
@@ -13098,15 +12287,6 @@ impl SalesforceStandardKnowledgeArticleTypeConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceStandardKnowledgeArticleTypeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceStandardKnowledgeArticleTypeConfiguration");
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`SalesforceStandardKnowledgeArticleTypeConfiguration`](crate::model::SalesforceStandardKnowledgeArticleTypeConfiguration).
@@ -13286,7 +12466,7 @@ impl AsRef<str> for SalesforceKnowledgeArticleState {
 
 /// <p>Provides the configuration information for indexing a single standard object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SalesforceStandardObjectConfiguration {
     /// <p>The name of the standard object.</p>
     #[doc(hidden)]
@@ -13320,16 +12500,6 @@ impl SalesforceStandardObjectConfiguration {
         &self,
     ) -> std::option::Option<&[crate::model::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
-    }
-}
-impl std::fmt::Debug for SalesforceStandardObjectConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SalesforceStandardObjectConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("document_data_field_name", &self.document_data_field_name);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.finish()
     }
 }
 /// See [`SalesforceStandardObjectConfiguration`](crate::model::SalesforceStandardObjectConfiguration).
@@ -13611,7 +12781,7 @@ impl AsRef<str> for SalesforceStandardObjectName {
 
 /// <p>Provides the configuration information to connect to a index. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
     #[doc(hidden)]
@@ -13660,18 +12830,6 @@ impl DatabaseConfiguration {
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
     pub fn sql_configuration(&self) -> std::option::Option<&crate::model::SqlConfiguration> {
         self.sql_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for DatabaseConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DatabaseConfiguration");
-        formatter.field("database_engine_type", &self.database_engine_type);
-        formatter.field("connection_configuration", &self.connection_configuration);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("column_configuration", &self.column_configuration);
-        formatter.field("acl_configuration", &self.acl_configuration);
-        formatter.field("sql_configuration", &self.sql_configuration);
-        formatter.finish()
     }
 }
 /// See [`DatabaseConfiguration`](crate::model::DatabaseConfiguration).
@@ -13795,7 +12953,7 @@ impl DatabaseConfiguration {
 
 /// <p>Provides the configuration information to use a SQL database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SqlConfiguration {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
@@ -13814,16 +12972,6 @@ impl SqlConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::QueryIdentifiersEnclosingOption> {
         self.query_identifiers_enclosing_option.as_ref()
-    }
-}
-impl std::fmt::Debug for SqlConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SqlConfiguration");
-        formatter.field(
-            "query_identifiers_enclosing_option",
-            &self.query_identifiers_enclosing_option,
-        );
-        formatter.finish()
     }
 }
 /// See [`SqlConfiguration`](crate::model::SqlConfiguration).
@@ -13967,7 +13115,7 @@ impl AsRef<str> for QueryIdentifiersEnclosingOption {
 
 /// <p>Provides information about the column that should be used for filtering the query response by groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AclConfiguration {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     #[doc(hidden)]
@@ -13977,16 +13125,6 @@ impl AclConfiguration {
     /// <p>A list of groups, separated by semi-colons, that filters a query response based on user context. The document is only returned to users that are in one of the groups specified in the <code>UserContext</code> field of the <code>Query</code> API.</p>
     pub fn allowed_groups_column_name(&self) -> std::option::Option<&str> {
         self.allowed_groups_column_name.as_deref()
-    }
-}
-impl std::fmt::Debug for AclConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AclConfiguration");
-        formatter.field(
-            "allowed_groups_column_name",
-            &self.allowed_groups_column_name,
-        );
-        formatter.finish()
     }
 }
 /// See [`AclConfiguration`](crate::model::AclConfiguration).
@@ -14028,7 +13166,7 @@ impl AclConfiguration {
 
 /// <p>Provides information about how Amazon Kendra should use the columns of a database in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ColumnConfiguration {
     /// <p>The column that provides the document's unique identifier.</p>
     #[doc(hidden)]
@@ -14069,20 +13207,6 @@ impl ColumnConfiguration {
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
     pub fn change_detecting_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.change_detecting_columns.as_deref()
-    }
-}
-impl std::fmt::Debug for ColumnConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ColumnConfiguration");
-        formatter.field("document_id_column_name", &self.document_id_column_name);
-        formatter.field("document_data_column_name", &self.document_data_column_name);
-        formatter.field(
-            "document_title_column_name",
-            &self.document_title_column_name,
-        );
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("change_detecting_columns", &self.change_detecting_columns);
-        formatter.finish()
     }
 }
 /// See [`ColumnConfiguration`](crate::model::ColumnConfiguration).
@@ -14201,7 +13325,7 @@ impl ColumnConfiguration {
 
 /// <p>Provides the configuration information that's required to connect to a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ConnectionConfiguration {
     /// <p>The name of the host for the database. Can be either a string (host.subdomain.domain.tld) or an IPv4 or IPv6 address.</p>
     #[doc(hidden)]
@@ -14239,17 +13363,6 @@ impl ConnectionConfiguration {
     /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials should be a user/password pair. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a Database Data Source</a>. For more information about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
-    }
-}
-impl std::fmt::Debug for ConnectionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConnectionConfiguration");
-        formatter.field("database_host", &self.database_host);
-        formatter.field("database_port", &self.database_port);
-        formatter.field("database_name", &self.database_name);
-        formatter.field("table_name", &self.table_name);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.finish()
     }
 }
 /// See [`ConnectionConfiguration`](crate::model::ConnectionConfiguration).
@@ -14449,7 +13562,7 @@ impl AsRef<str> for DatabaseEngineType {
 
 /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
     #[doc(hidden)]
@@ -14571,26 +13684,6 @@ impl SharePointConfiguration {
     /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
     pub fn proxy_configuration(&self) -> std::option::Option<&crate::model::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for SharePointConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SharePointConfiguration");
-        formatter.field("share_point_version", &self.share_point_version);
-        formatter.field("urls", &self.urls);
-        formatter.field("secret_arn", &self.secret_arn);
-        formatter.field("crawl_attachments", &self.crawl_attachments);
-        formatter.field("use_change_log", &self.use_change_log);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field("vpc_configuration", &self.vpc_configuration);
-        formatter.field("field_mappings", &self.field_mappings);
-        formatter.field("document_title_field_name", &self.document_title_field_name);
-        formatter.field("disable_local_groups", &self.disable_local_groups);
-        formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
-        formatter.field("authentication_type", &self.authentication_type);
-        formatter.field("proxy_configuration", &self.proxy_configuration);
-        formatter.finish()
     }
 }
 /// See [`SharePointConfiguration`](crate::model::SharePointConfiguration).
@@ -15063,7 +14156,7 @@ impl AsRef<str> for SharePointVersion {
 
 /// <p>Provides the configuration information to connect to an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3DataSourceConfiguration {
     /// <p>The name of the bucket that contains the documents.</p>
     #[doc(hidden)]
@@ -15138,24 +14231,6 @@ impl S3DataSourceConfiguration {
         &self,
     ) -> std::option::Option<&crate::model::AccessControlListConfiguration> {
         self.access_control_list_configuration.as_ref()
-    }
-}
-impl std::fmt::Debug for S3DataSourceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3DataSourceConfiguration");
-        formatter.field("bucket_name", &self.bucket_name);
-        formatter.field("inclusion_prefixes", &self.inclusion_prefixes);
-        formatter.field("inclusion_patterns", &self.inclusion_patterns);
-        formatter.field("exclusion_patterns", &self.exclusion_patterns);
-        formatter.field(
-            "documents_metadata_configuration",
-            &self.documents_metadata_configuration,
-        );
-        formatter.field(
-            "access_control_list_configuration",
-            &self.access_control_list_configuration,
-        );
-        formatter.finish()
     }
 }
 /// See [`S3DataSourceConfiguration`](crate::model::S3DataSourceConfiguration).
@@ -15319,7 +14394,7 @@ impl S3DataSourceConfiguration {
 
 /// <p>Access Control List files for the documents in a data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access control for S3 data sources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlListConfiguration {
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     #[doc(hidden)]
@@ -15329,13 +14404,6 @@ impl AccessControlListConfiguration {
     /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
     pub fn key_path(&self) -> std::option::Option<&str> {
         self.key_path.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessControlListConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlListConfiguration");
-        formatter.field("key_path", &self.key_path);
-        formatter.finish()
     }
 }
 /// See [`AccessControlListConfiguration`](crate::model::AccessControlListConfiguration).
@@ -15374,7 +14442,7 @@ impl AccessControlListConfiguration {
 
 /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
     #[doc(hidden)]
@@ -15384,13 +14452,6 @@ impl DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
     pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentsMetadataConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentsMetadataConfiguration");
-        formatter.field("s3_prefix", &self.s3_prefix);
-        formatter.finish()
     }
 }
 /// See [`DocumentsMetadataConfiguration`](crate::model::DocumentsMetadataConfiguration).
@@ -15429,7 +14490,7 @@ impl DocumentsMetadataConfiguration {
 
 /// <p> Information to define the hierarchy for which documents users should have access to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
     #[doc(hidden)]
@@ -15439,13 +14500,6 @@ impl HierarchicalPrincipal {
     /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
     pub fn principal_list(&self) -> std::option::Option<&[crate::model::Principal]> {
         self.principal_list.as_deref()
-    }
-}
-impl std::fmt::Debug for HierarchicalPrincipal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HierarchicalPrincipal");
-        formatter.field("principal_list", &self.principal_list);
-        formatter.finish()
     }
 }
 /// See [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal).
@@ -15493,7 +14547,7 @@ impl HierarchicalPrincipal {
 
 /// <p>Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Principal {
     /// <p>The name of the user or group.</p>
     #[doc(hidden)]
@@ -15524,16 +14578,6 @@ impl Principal {
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Principal {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Principal");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("access", &self.access);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
     }
 }
 /// See [`Principal`](crate::model::Principal).
@@ -15794,7 +14838,7 @@ impl AsRef<str> for PrincipalType {
 
 /// <p>A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key for the tag. Keys are not case sensitive and must be unique for the index, FAQ, or data source.</p>
     #[doc(hidden)]
@@ -15811,14 +14855,6 @@ impl Tag {
     /// <p>The value associated with the tag. The value may be an empty string but it can't be null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Tag`](crate::model::Tag).
@@ -15869,7 +14905,7 @@ impl Tag {
 
 /// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RelevanceFeedback {
     /// <p>The unique identifier of the search result that the user provided relevance feedback for.</p>
     #[doc(hidden)]
@@ -15886,14 +14922,6 @@ impl RelevanceFeedback {
     /// <p>Whether to document was relevant or not relevant to the search.</p>
     pub fn relevance_value(&self) -> std::option::Option<&crate::model::RelevanceType> {
         self.relevance_value.as_ref()
-    }
-}
-impl std::fmt::Debug for RelevanceFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("RelevanceFeedback");
-        formatter.field("result_id", &self.result_id);
-        formatter.field("relevance_value", &self.relevance_value);
-        formatter.finish()
     }
 }
 /// See [`RelevanceFeedback`](crate::model::RelevanceFeedback).
@@ -16037,7 +15065,7 @@ impl AsRef<str> for RelevanceType {
 
 /// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ClickFeedback {
     /// <p>The unique identifier of the search result that was clicked.</p>
     #[doc(hidden)]
@@ -16054,14 +15082,6 @@ impl ClickFeedback {
     /// <p>The Unix timestamp of the date and time that the result was clicked.</p>
     pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.click_time.as_ref()
-    }
-}
-impl std::fmt::Debug for ClickFeedback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ClickFeedback");
-        formatter.field("result_id", &self.result_id);
-        formatter.field("click_time", &self.click_time);
-        formatter.finish()
     }
 }
 /// See [`ClickFeedback`](crate::model::ClickFeedback).
@@ -16115,7 +15135,7 @@ impl ClickFeedback {
 
 /// <p>A query with suggested spell corrections. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpellCorrectedQuery {
     /// <p>The query with the suggested spell corrections.</p>
     #[doc(hidden)]
@@ -16132,14 +15152,6 @@ impl SpellCorrectedQuery {
     /// <p>The corrected misspelled word or words in a query.</p>
     pub fn corrections(&self) -> std::option::Option<&[crate::model::Correction]> {
         self.corrections.as_deref()
-    }
-}
-impl std::fmt::Debug for SpellCorrectedQuery {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpellCorrectedQuery");
-        formatter.field("suggested_query_text", &self.suggested_query_text);
-        formatter.field("corrections", &self.corrections);
-        formatter.finish()
     }
 }
 /// See [`SpellCorrectedQuery`](crate::model::SpellCorrectedQuery).
@@ -16202,7 +15214,7 @@ impl SpellCorrectedQuery {
 
 /// <p>A corrected misspelled word in a query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Correction {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
     #[doc(hidden)]
@@ -16233,16 +15245,6 @@ impl Correction {
     /// <p>The string or text of a corrected misspelled word in a query.</p>
     pub fn corrected_term(&self) -> std::option::Option<&str> {
         self.corrected_term.as_deref()
-    }
-}
-impl std::fmt::Debug for Correction {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Correction");
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("term", &self.term);
-        formatter.field("corrected_term", &self.corrected_term);
-        formatter.finish()
     }
 }
 /// See [`Correction`](crate::model::Correction).
@@ -16320,7 +15322,7 @@ impl Correction {
 
 /// <p>The warning code and message that explains a problem with a query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Warning {
     /// <p>The message that explains the problem with the query.</p>
     #[doc(hidden)]
@@ -16337,14 +15339,6 @@ impl Warning {
     /// <p>The code used to show the type of warning for the query.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::WarningCode> {
         self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for Warning {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Warning");
-        formatter.field("message", &self.message);
-        formatter.field("code", &self.code);
-        formatter.finish()
     }
 }
 /// See [`Warning`](crate::model::Warning).
@@ -16480,7 +15474,7 @@ impl AsRef<str> for WarningCode {
 
 /// <p>The facet values for the documents in the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FacetResult {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
     #[doc(hidden)]
@@ -16510,21 +15504,6 @@ impl FacetResult {
         &self,
     ) -> std::option::Option<&[crate::model::DocumentAttributeValueCountPair]> {
         self.document_attribute_value_count_pairs.as_deref()
-    }
-}
-impl std::fmt::Debug for FacetResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FacetResult");
-        formatter.field("document_attribute_key", &self.document_attribute_key);
-        formatter.field(
-            "document_attribute_value_type",
-            &self.document_attribute_value_type,
-        );
-        formatter.field(
-            "document_attribute_value_count_pairs",
-            &self.document_attribute_value_count_pairs,
-        );
-        formatter.finish()
     }
 }
 /// See [`FacetResult`](crate::model::FacetResult).
@@ -16614,7 +15593,7 @@ impl FacetResult {
 
 /// <p>Provides the count of documents that match a particular attribute when doing a faceted search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAttributeValueCountPair {
     /// <p>The value of the attribute. For example, "HR".</p>
     #[doc(hidden)]
@@ -16642,15 +15621,6 @@ impl DocumentAttributeValueCountPair {
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     pub fn facet_results(&self) -> std::option::Option<&[crate::model::FacetResult]> {
         self.facet_results.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentAttributeValueCountPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttributeValueCountPair");
-        formatter.field("document_attribute_value", &self.document_attribute_value);
-        formatter.field("count", &self.count);
-        formatter.field("facet_results", &self.facet_results);
-        formatter.finish()
     }
 }
 /// See [`DocumentAttributeValueCountPair`](crate::model::DocumentAttributeValueCountPair).
@@ -16732,7 +15702,7 @@ impl DocumentAttributeValueCountPair {
 /// <p>A single query result.</p>
 /// <p>A query result contains information about a document returned by the query. This includes the original location of the document, a list of attributes assigned to the document, and relevant text from the document that satisfies the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryResultItem {
     /// <p>The unique identifier for the query result.</p>
     #[doc(hidden)]
@@ -16810,22 +15780,6 @@ impl QueryResultItem {
     /// <p>A token that identifies a particular result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html"> Submitting feedback </a>.</p>
     pub fn feedback_token(&self) -> std::option::Option<&str> {
         self.feedback_token.as_deref()
-    }
-}
-impl std::fmt::Debug for QueryResultItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QueryResultItem");
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("additional_attributes", &self.additional_attributes);
-        formatter.field("document_id", &self.document_id);
-        formatter.field("document_title", &self.document_title);
-        formatter.field("document_excerpt", &self.document_excerpt);
-        formatter.field("document_uri", &self.document_uri);
-        formatter.field("document_attributes", &self.document_attributes);
-        formatter.field("score_attributes", &self.score_attributes);
-        formatter.field("feedback_token", &self.feedback_token);
-        formatter.finish()
     }
 }
 /// See [`QueryResultItem`](crate::model::QueryResultItem).
@@ -17012,7 +15966,7 @@ impl QueryResultItem {
 
 /// <p>Provides a relative ranking that indicates how confident Amazon Kendra is that the response matches the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ScoreAttributes {
     /// <p>A relative ranking for how well the response matches the query.</p>
     #[doc(hidden)]
@@ -17022,13 +15976,6 @@ impl ScoreAttributes {
     /// <p>A relative ranking for how well the response matches the query.</p>
     pub fn score_confidence(&self) -> std::option::Option<&crate::model::ScoreConfidence> {
         self.score_confidence.as_ref()
-    }
-}
-impl std::fmt::Debug for ScoreAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ScoreAttributes");
-        formatter.field("score_confidence", &self.score_confidence);
-        formatter.finish()
     }
 }
 /// See [`ScoreAttributes`](crate::model::ScoreAttributes).
@@ -17175,7 +16122,7 @@ impl AsRef<str> for ScoreConfidence {
 
 /// <p>A document attribute or metadata field. To create custom document attributes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom attributes</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentAttribute {
     /// <p>The identifier for the attribute.</p>
     #[doc(hidden)]
@@ -17192,14 +16139,6 @@ impl DocumentAttribute {
     /// <p>The value of the attribute.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::DocumentAttributeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`DocumentAttribute`](crate::model::DocumentAttribute).
@@ -17253,7 +16192,7 @@ impl DocumentAttribute {
 
 /// <p>Provides text and information about where to highlight the text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextWithHighlights {
     /// <p>The text to display to the user.</p>
     #[doc(hidden)]
@@ -17270,14 +16209,6 @@ impl TextWithHighlights {
     /// <p>The beginning and end of the text that should be highlighted.</p>
     pub fn highlights(&self) -> std::option::Option<&[crate::model::Highlight]> {
         self.highlights.as_deref()
-    }
-}
-impl std::fmt::Debug for TextWithHighlights {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextWithHighlights");
-        formatter.field("text", &self.text);
-        formatter.field("highlights", &self.highlights);
-        formatter.finish()
     }
 }
 /// See [`TextWithHighlights`](crate::model::TextWithHighlights).
@@ -17337,7 +16268,7 @@ impl TextWithHighlights {
 
 /// <p>Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     #[doc(hidden)]
@@ -17368,16 +16299,6 @@ impl Highlight {
     /// <p>The highlight type. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::HighlightType> {
         self.r#type.as_ref()
-    }
-}
-impl std::fmt::Debug for Highlight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Highlight");
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.field("top_answer", &self.top_answer);
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
     }
 }
 /// See [`Highlight`](crate::model::Highlight).
@@ -17542,7 +16463,7 @@ impl AsRef<str> for HighlightType {
 
 /// <p>An attribute returned from an index query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
     #[doc(hidden)]
@@ -17568,15 +16489,6 @@ impl AdditionalResultAttribute {
     /// <p>An object that contains the attribute value.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::AdditionalResultAttributeValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for AdditionalResultAttribute {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalResultAttribute");
-        formatter.field("key", &self.key);
-        formatter.field("value_type", &self.value_type);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`AdditionalResultAttribute`](crate::model::AdditionalResultAttribute).
@@ -17649,7 +16561,7 @@ impl AdditionalResultAttribute {
 
 /// <p>An attribute returned with a document from a search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
     #[doc(hidden)]
@@ -17661,16 +16573,6 @@ impl AdditionalResultAttributeValue {
         &self,
     ) -> std::option::Option<&crate::model::TextWithHighlights> {
         self.text_with_highlights_value.as_ref()
-    }
-}
-impl std::fmt::Debug for AdditionalResultAttributeValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AdditionalResultAttributeValue");
-        formatter.field(
-            "text_with_highlights_value",
-            &self.text_with_highlights_value,
-        );
-        formatter.finish()
     }
 }
 /// See [`AdditionalResultAttributeValue`](crate::model::AdditionalResultAttributeValue).
@@ -17904,7 +16806,7 @@ impl AsRef<str> for QueryResultType {
 /// <p>Suggested spell corrections are based on words that appear in your indexed documents and how closely a corrected word matches a misspelled word.</p>
 /// <p>This feature is designed with certain defaults or limits. For information on the current limits and how to request more support for some limits, see the <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html">Spell Checker documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SpellCorrectionConfiguration {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     #[doc(hidden)]
@@ -17914,16 +16816,6 @@ impl SpellCorrectionConfiguration {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn include_query_spell_check_suggestions(&self) -> bool {
         self.include_query_spell_check_suggestions
-    }
-}
-impl std::fmt::Debug for SpellCorrectionConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SpellCorrectionConfiguration");
-        formatter.field(
-            "include_query_spell_check_suggestions",
-            &self.include_query_spell_check_suggestions,
-        );
-        formatter.finish()
     }
 }
 /// See [`SpellCorrectionConfiguration`](crate::model::SpellCorrectionConfiguration).
@@ -17974,7 +16866,7 @@ impl SpellCorrectionConfiguration {
 /// </ul>
 /// <p>If you provide both, an exception is thrown.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserContext {
     /// <p>The user context token for filtering search results for a user. It must be a JWT or a JSON token.</p>
     #[doc(hidden)]
@@ -18005,16 +16897,6 @@ impl UserContext {
     /// <p>The list of data source groups you want to filter search results based on groups' access to documents in that data source.</p>
     pub fn data_source_groups(&self) -> std::option::Option<&[crate::model::DataSourceGroup]> {
         self.data_source_groups.as_deref()
-    }
-}
-impl std::fmt::Debug for UserContext {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UserContext");
-        formatter.field("token", &self.token);
-        formatter.field("user_id", &self.user_id);
-        formatter.field("groups", &self.groups);
-        formatter.field("data_source_groups", &self.data_source_groups);
-        formatter.finish()
     }
 }
 /// See [`UserContext`](crate::model::UserContext).
@@ -18108,7 +16990,7 @@ impl UserContext {
 
 /// <p>Data source information for user context filtering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceGroup {
     /// <p>The identifier of the group you want to add to your list of groups. This is for filtering search results based on the groups' access to documents.</p>
     #[doc(hidden)]
@@ -18125,14 +17007,6 @@ impl DataSourceGroup {
     /// <p>The identifier of the data source group you want to add to your list of data source groups. This is for filtering search results based on the groups' access to documents in that data source.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceGroup");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
     }
 }
 /// See [`DataSourceGroup`](crate::model::DataSourceGroup).
@@ -18196,7 +17070,7 @@ impl DataSourceGroup {
 /// <li> <p>String list value</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SortingConfiguration {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
@@ -18229,14 +17103,6 @@ impl SortingConfiguration {
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
-    }
-}
-impl std::fmt::Debug for SortingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SortingConfiguration");
-        formatter.field("document_attribute_key", &self.document_attribute_key);
-        formatter.field("sort_order", &self.sort_order);
-        formatter.finish()
     }
 }
 /// See [`SortingConfiguration`](crate::model::SortingConfiguration).
@@ -18399,7 +17265,7 @@ impl AsRef<str> for SortOrder {
 
 /// <p>Overrides the document relevance properties of a custom index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
     #[doc(hidden)]
@@ -18416,14 +17282,6 @@ impl DocumentRelevanceConfiguration {
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn relevance(&self) -> std::option::Option<&crate::model::Relevance> {
         self.relevance.as_ref()
-    }
-}
-impl std::fmt::Debug for DocumentRelevanceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentRelevanceConfiguration");
-        formatter.field("name", &self.name);
-        formatter.field("relevance", &self.relevance);
-        formatter.finish()
     }
 }
 /// See [`DocumentRelevanceConfiguration`](crate::model::DocumentRelevanceConfiguration).
@@ -18479,7 +17337,7 @@ impl DocumentRelevanceConfiguration {
 /// <p>For example, the document attribute or facet "Department" includes the values "HR", "Engineering", and "Accounting". You can display these values in the search results so that documents can be searched by department.</p>
 /// <p>You can display up to 10 facet values per facet for a query. If you want to increase this limit, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Facet {
     /// <p>The unique key for the document attribute.</p>
     #[doc(hidden)]
@@ -18507,15 +17365,6 @@ impl Facet {
     /// <p>Maximum number of facet values per facet. The default is 10. You can use this to limit the number of facet values to less than 10. If you want to increase the default, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
-    }
-}
-impl std::fmt::Debug for Facet {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Facet");
-        formatter.field("document_attribute_key", &self.document_attribute_key);
-        formatter.field("facets", &self.facets);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
     }
 }
 /// See [`Facet`](crate::model::Facet).
@@ -18605,7 +17454,7 @@ impl Facet {
 /// <p>If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2."</p>
 /// <p>If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with the message "<code>AttributeFilter</code> cannot have a length of more than 10".</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AttributeFilter {
     /// <p>Performs a logical <code>AND</code> operation on all supplied filters.</p>
     #[doc(hidden)]
@@ -18678,22 +17527,6 @@ impl AttributeFilter {
     /// <p>Performs a less than or equals operation on two document attributes or metadata fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.</p>
     pub fn less_than_or_equals(&self) -> std::option::Option<&crate::model::DocumentAttribute> {
         self.less_than_or_equals.as_ref()
-    }
-}
-impl std::fmt::Debug for AttributeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AttributeFilter");
-        formatter.field("and_all_filters", &self.and_all_filters);
-        formatter.field("or_all_filters", &self.or_all_filters);
-        formatter.field("not_filter", &self.not_filter);
-        formatter.field("equals_to", &self.equals_to);
-        formatter.field("contains_all", &self.contains_all);
-        formatter.field("contains_any", &self.contains_any);
-        formatter.field("greater_than", &self.greater_than);
-        formatter.field("greater_than_or_equals", &self.greater_than_or_equals);
-        formatter.field("less_than", &self.less_than);
-        formatter.field("less_than_or_equals", &self.less_than_or_equals);
-        formatter.finish()
     }
 }
 /// See [`AttributeFilter`](crate::model::AttributeFilter).
@@ -18887,7 +17720,7 @@ impl AttributeFilter {
 
 /// <p>A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupMembers {
     /// <p>A list of sub groups that belong to a group. For example, the sub groups "Research", "Engineering", and "Sales and Marketing" all belong to the group "Company".</p>
     #[doc(hidden)]
@@ -18913,15 +17746,6 @@ impl GroupMembers {
     /// <p>You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code> is optional. The value of <code>type</code> for a group is always <code>GROUP</code> and for a user it is always <code>USER</code>.</p>
     pub fn s3_pathfor_group_members(&self) -> std::option::Option<&crate::model::S3Path> {
         self.s3_pathfor_group_members.as_ref()
-    }
-}
-impl std::fmt::Debug for GroupMembers {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupMembers");
-        formatter.field("member_groups", &self.member_groups);
-        formatter.field("member_users", &self.member_users);
-        formatter.field("s3_pathfor_group_members", &self.s3_pathfor_group_members);
-        formatter.finish()
     }
 }
 /// See [`GroupMembers`](crate::model::GroupMembers).
@@ -19007,7 +17831,7 @@ impl GroupMembers {
 
 /// <p>The users that belong to a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberUser {
     /// <p>The identifier of the user you want to map to a group.</p>
     #[doc(hidden)]
@@ -19017,13 +17841,6 @@ impl MemberUser {
     /// <p>The identifier of the user you want to map to a group.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberUser {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberUser");
-        formatter.field("user_id", &self.user_id);
-        formatter.finish()
     }
 }
 /// See [`MemberUser`](crate::model::MemberUser).
@@ -19062,7 +17879,7 @@ impl MemberUser {
 
 /// <p>The sub groups that belong to a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MemberGroup {
     /// <p>The identifier of the sub group you want to map to a group.</p>
     #[doc(hidden)]
@@ -19079,14 +17896,6 @@ impl MemberGroup {
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
     pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
-    }
-}
-impl std::fmt::Debug for MemberGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MemberGroup");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.finish()
     }
 }
 /// See [`MemberGroup`](crate::model::MemberGroup).
@@ -19140,7 +17949,7 @@ impl MemberGroup {
 
 /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ThesaurusSummary {
     /// <p>The identifier of the thesaurus.</p>
     #[doc(hidden)]
@@ -19178,17 +17987,6 @@ impl ThesaurusSummary {
     /// <p>The Unix datetime that the thesaurus was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for ThesaurusSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ThesaurusSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`ThesaurusSummary`](crate::model::ThesaurusSummary).
@@ -19403,7 +18201,7 @@ impl AsRef<str> for ThesaurusStatus {
 /// <p>This includes information on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>
 /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QuerySuggestionsBlockListSummary {
     /// <p>The identifier of a block list.</p>
     #[doc(hidden)]
@@ -19448,18 +18246,6 @@ impl QuerySuggestionsBlockListSummary {
     /// <p>The number of items in the block list file.</p>
     pub fn item_count(&self) -> std::option::Option<i32> {
         self.item_count
-    }
-}
-impl std::fmt::Debug for QuerySuggestionsBlockListSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("QuerySuggestionsBlockListSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("item_count", &self.item_count);
-        formatter.finish()
     }
 }
 /// See [`QuerySuggestionsBlockListSummary`](crate::model::QuerySuggestionsBlockListSummary).
@@ -19686,7 +18472,7 @@ impl AsRef<str> for QuerySuggestionsBlockListStatus {
 
 /// <p>Summary information on the configuration of an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexConfigurationSummary {
     /// <p>The identifier of the index.</p>
     #[doc(hidden)]
@@ -19731,18 +18517,6 @@ impl IndexConfigurationSummary {
     /// <p>The current status of the index. When the status is <code>ACTIVE</code>, the index is ready to search.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::IndexStatus> {
         self.status.as_ref()
-    }
-}
-impl std::fmt::Debug for IndexConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexConfigurationSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("edition", &self.edition);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.finish()
     }
 }
 /// See [`IndexConfigurationSummary`](crate::model::IndexConfigurationSummary).
@@ -20057,7 +18831,7 @@ impl AsRef<str> for IndexEdition {
 
 /// <p>Summary information for groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The identifier of the group you want group summary information on.</p>
     #[doc(hidden)]
@@ -20074,14 +18848,6 @@ impl GroupSummary {
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn ordering_id(&self) -> std::option::Option<i64> {
         self.ordering_id
-    }
-}
-impl std::fmt::Debug for GroupSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupSummary");
-        formatter.field("group_id", &self.group_id);
-        formatter.field("ordering_id", &self.ordering_id);
-        formatter.finish()
     }
 }
 /// See [`GroupSummary`](crate::model::GroupSummary).
@@ -20132,7 +18898,7 @@ impl GroupSummary {
 
 /// <p>Summary information for frequently asked questions and answers included in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaqSummary {
     /// <p>The unique identifier of the FAQ.</p>
     #[doc(hidden)]
@@ -20184,19 +18950,6 @@ impl FaqSummary {
     /// <p>The code for a language. This shows a supported language for the FAQ document as part of the summary information for FAQs. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
-    }
-}
-impl std::fmt::Debug for FaqSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaqSummary");
-        formatter.field("id", &self.id);
-        formatter.field("name", &self.name);
-        formatter.field("status", &self.status);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("file_format", &self.file_format);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 /// See [`FaqSummary`](crate::model::FaqSummary).
@@ -20519,7 +19272,7 @@ impl AsRef<str> for FaqStatus {
 
 /// <p>Summary information for your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperiencesSummary {
     /// <p>The name of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -20557,17 +19310,6 @@ impl ExperiencesSummary {
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
     pub fn endpoints(&self) -> std::option::Option<&[crate::model::ExperienceEndpoint]> {
         self.endpoints.as_deref()
-    }
-}
-impl std::fmt::Debug for ExperiencesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperiencesSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("status", &self.status);
-        formatter.field("endpoints", &self.endpoints);
-        formatter.finish()
     }
 }
 /// See [`ExperiencesSummary`](crate::model::ExperiencesSummary).
@@ -20669,7 +19411,7 @@ impl ExperiencesSummary {
 
 /// <p>Provides the configuration information for the endpoint for your Amazon Kendra experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperienceEndpoint {
     /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your Amazon Kendra experience.</p>
     #[doc(hidden)]
@@ -20686,14 +19428,6 @@ impl ExperienceEndpoint {
     /// <p>The endpoint of your Amazon Kendra experience.</p>
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
-    }
-}
-impl std::fmt::Debug for ExperienceEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperienceEndpoint");
-        formatter.field("endpoint_type", &self.endpoint_type);
-        formatter.field("endpoint", &self.endpoint);
-        formatter.finish()
     }
 }
 /// See [`ExperienceEndpoint`](crate::model::ExperienceEndpoint).
@@ -20932,7 +19666,7 @@ impl AsRef<str> for ExperienceStatus {
 
 /// <p>Summary information for users or groups in your IAM Identity Center identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExperienceEntitiesSummary {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
@@ -20956,15 +19690,6 @@ impl ExperienceEntitiesSummary {
     /// <p>Information about the user entity.</p>
     pub fn display_data(&self) -> std::option::Option<&crate::model::EntityDisplayData> {
         self.display_data.as_ref()
-    }
-}
-impl std::fmt::Debug for ExperienceEntitiesSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ExperienceEntitiesSummary");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_type", &self.entity_type);
-        formatter.field("display_data", &self.display_data);
-        formatter.finish()
     }
 }
 /// See [`ExperienceEntitiesSummary`](crate::model::ExperienceEntitiesSummary).
@@ -21088,7 +19813,7 @@ impl std::fmt::Debug for EntityDisplayData {
 pub mod entity_display_data {
 
     /// A builder for [`EntityDisplayData`](crate::model::EntityDisplayData).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -21159,6 +19884,17 @@ pub mod entity_display_data {
                 first_name: self.first_name,
                 last_name: self.last_name,
             }
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("group_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("identified_user_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+            formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -21261,7 +19997,7 @@ impl AsRef<str> for EntityType {
 
 /// <p>Summary information for users or groups in your IAM Identity Center identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PersonasSummary {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
@@ -21292,16 +20028,6 @@ impl PersonasSummary {
     /// <p>The date-time the summary information was last updated.</p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
-    }
-}
-impl std::fmt::Debug for PersonasSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PersonasSummary");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("persona", &self.persona);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.finish()
     }
 }
 /// See [`PersonasSummary`](crate::model::PersonasSummary).
@@ -21472,7 +20198,7 @@ impl AsRef<str> for Persona {
 
 /// <p>Provides information about a data source synchronization job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSyncJob {
     /// <p>A unique identifier for the synchronization job.</p>
     #[doc(hidden)]
@@ -21531,20 +20257,6 @@ impl DataSourceSyncJob {
     /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
     pub fn metrics(&self) -> std::option::Option<&crate::model::DataSourceSyncJobMetrics> {
         self.metrics.as_ref()
-    }
-}
-impl std::fmt::Debug for DataSourceSyncJob {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceSyncJob");
-        formatter.field("execution_id", &self.execution_id);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.field("status", &self.status);
-        formatter.field("error_message", &self.error_message);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("data_source_error_code", &self.data_source_error_code);
-        formatter.field("metrics", &self.metrics);
-        formatter.finish()
     }
 }
 /// See [`DataSourceSyncJob`](crate::model::DataSourceSyncJob).
@@ -21688,7 +20400,7 @@ impl DataSourceSyncJob {
 
 /// <p>Maps a batch delete document request to a specific data source sync job. This is optional and should only be supplied when documents are deleted by a data source connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSyncJobMetrics {
     /// <p>The number of documents added from the data source up to now in the data source sync.</p>
     #[doc(hidden)]
@@ -21726,17 +20438,6 @@ impl DataSourceSyncJobMetrics {
     /// <p>The current number of documents crawled by the current sync job in the data source.</p>
     pub fn documents_scanned(&self) -> std::option::Option<&str> {
         self.documents_scanned.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceSyncJobMetrics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceSyncJobMetrics");
-        formatter.field("documents_added", &self.documents_added);
-        formatter.field("documents_modified", &self.documents_modified);
-        formatter.field("documents_deleted", &self.documents_deleted);
-        formatter.field("documents_failed", &self.documents_failed);
-        formatter.field("documents_scanned", &self.documents_scanned);
-        formatter.finish()
     }
 }
 /// See [`DataSourceSyncJobMetrics`](crate::model::DataSourceSyncJobMetrics).
@@ -22053,7 +20754,7 @@ impl AsRef<str> for DataSourceSyncJobStatus {
 
 /// <p>Provides a range of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TimeRange {
     /// <p>The UNIX datetime of the beginning of the time range.</p>
     #[doc(hidden)]
@@ -22070,14 +20771,6 @@ impl TimeRange {
     /// <p>The UNIX datetime of the end of the time range.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
-    }
-}
-impl std::fmt::Debug for TimeRange {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TimeRange");
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
     }
 }
 /// See [`TimeRange`](crate::model::TimeRange).
@@ -22134,7 +20827,7 @@ impl TimeRange {
 
 /// <p>Summary information for an Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSummary {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
@@ -22186,19 +20879,6 @@ impl DataSourceSummary {
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceSummary");
-        formatter.field("name", &self.name);
-        formatter.field("id", &self.id);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("created_at", &self.created_at);
-        formatter.field("updated_at", &self.updated_at);
-        formatter.field("status", &self.status);
-        formatter.field("language_code", &self.language_code);
-        formatter.finish()
     }
 }
 /// See [`DataSourceSummary`](crate::model::DataSourceSummary).
@@ -22624,7 +21304,7 @@ impl AsRef<str> for DataSourceType {
 
 /// <p>Summary information on an access control configuration that you created for your documents in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AccessControlConfigurationSummary {
     /// <p>The identifier of the access control configuration.</p>
     #[doc(hidden)]
@@ -22634,13 +21314,6 @@ impl AccessControlConfigurationSummary {
     /// <p>The identifier of the access control configuration.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
-    }
-}
-impl std::fmt::Debug for AccessControlConfigurationSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessControlConfigurationSummary");
-        formatter.field("id", &self.id);
-        formatter.finish()
     }
 }
 /// See [`AccessControlConfigurationSummary`](crate::model::AccessControlConfigurationSummary).
@@ -22911,7 +21584,7 @@ impl AsRef<str> for Interval {
 
 /// <p>A single query suggestion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Suggestion {
     /// <p>The unique UUID (universally unique identifier) of a single query suggestion.</p>
     #[doc(hidden)]
@@ -22930,14 +21603,6 @@ impl Suggestion {
     /// <p>The value is the text string of a suggestion.</p>
     pub fn value(&self) -> std::option::Option<&crate::model::SuggestionValue> {
         self.value.as_ref()
-    }
-}
-impl std::fmt::Debug for Suggestion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Suggestion");
-        formatter.field("id", &self.id);
-        formatter.field("value", &self.value);
-        formatter.finish()
     }
 }
 /// See [`Suggestion`](crate::model::Suggestion).
@@ -22993,7 +21658,7 @@ impl Suggestion {
 
 /// <p>The <code>SuggestionTextWithHighlights</code> structure information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestionValue {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
     #[doc(hidden)]
@@ -23003,13 +21668,6 @@ impl SuggestionValue {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
     pub fn text(&self) -> std::option::Option<&crate::model::SuggestionTextWithHighlights> {
         self.text.as_ref()
-    }
-}
-impl std::fmt::Debug for SuggestionValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestionValue");
-        formatter.field("text", &self.text);
-        formatter.finish()
     }
 }
 /// See [`SuggestionValue`](crate::model::SuggestionValue).
@@ -23049,7 +21707,7 @@ impl SuggestionValue {
 
 /// <p>Provides text and information about where to highlight the query suggestion text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestionTextWithHighlights {
     /// <p>The query suggestion text to display to the user.</p>
     #[doc(hidden)]
@@ -23066,14 +21724,6 @@ impl SuggestionTextWithHighlights {
     /// <p>The beginning and end of the query suggestion text that should be highlighted.</p>
     pub fn highlights(&self) -> std::option::Option<&[crate::model::SuggestionHighlight]> {
         self.highlights.as_deref()
-    }
-}
-impl std::fmt::Debug for SuggestionTextWithHighlights {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestionTextWithHighlights");
-        formatter.field("text", &self.text);
-        formatter.field("highlights", &self.highlights);
-        formatter.finish()
     }
 }
 /// See [`SuggestionTextWithHighlights`](crate::model::SuggestionTextWithHighlights).
@@ -23134,7 +21784,7 @@ impl SuggestionTextWithHighlights {
 
 /// <p>The text highlights for a single query suggestion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     #[doc(hidden)]
@@ -23151,14 +21801,6 @@ impl SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn end_offset(&self) -> std::option::Option<i32> {
         self.end_offset
-    }
-}
-impl std::fmt::Debug for SuggestionHighlight {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SuggestionHighlight");
-        formatter.field("begin_offset", &self.begin_offset);
-        formatter.field("end_offset", &self.end_offset);
-        formatter.finish()
     }
 }
 /// See [`SuggestionHighlight`](crate::model::SuggestionHighlight).
@@ -23209,7 +21851,7 @@ impl SuggestionHighlight {
 
 /// <p>Information on the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FailedEntity {
     /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
@@ -23226,14 +21868,6 @@ impl FailedEntity {
     /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for FailedEntity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FailedEntity");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`FailedEntity`](crate::model::FailedEntity).
@@ -23287,7 +21921,7 @@ impl FailedEntity {
 
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
@@ -23304,14 +21938,6 @@ impl EntityConfiguration {
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub fn entity_type(&self) -> std::option::Option<&crate::model::EntityType> {
         self.entity_type.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityConfiguration");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("entity_type", &self.entity_type);
-        formatter.finish()
     }
 }
 /// See [`EntityConfiguration`](crate::model::EntityConfiguration).
@@ -23457,7 +22083,7 @@ impl AsRef<str> for QuerySuggestionsStatus {
 
 /// <p>Summary information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GroupOrderingIdSummary {
     /// <p>The current processing status of actions for mapping users to their groups. The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
     #[doc(hidden)]
@@ -23495,17 +22121,6 @@ impl GroupOrderingIdSummary {
     /// <p>The reason an action could not be processed. An action can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for GroupOrderingIdSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GroupOrderingIdSummary");
-        formatter.field("status", &self.status);
-        formatter.field("last_updated_at", &self.last_updated_at);
-        formatter.field("received_at", &self.received_at);
-        formatter.field("ordering_id", &self.ordering_id);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary).
@@ -23711,7 +22326,7 @@ impl AsRef<str> for PrincipalMappingStatus {
 
 /// <p>Provides information about the number of documents and the number of questions and answers in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct IndexStatistics {
     /// <p>The number of question and answer topics in the index.</p>
     #[doc(hidden)]
@@ -23730,14 +22345,6 @@ impl IndexStatistics {
         &self,
     ) -> std::option::Option<&crate::model::TextDocumentStatistics> {
         self.text_document_statistics.as_ref()
-    }
-}
-impl std::fmt::Debug for IndexStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("IndexStatistics");
-        formatter.field("faq_statistics", &self.faq_statistics);
-        formatter.field("text_document_statistics", &self.text_document_statistics);
-        formatter.finish()
     }
 }
 /// See [`IndexStatistics`](crate::model::IndexStatistics).
@@ -23798,7 +22405,7 @@ impl IndexStatistics {
 
 /// <p>Provides information about text documents indexed in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextDocumentStatistics {
     /// <p>The number of text documents indexed.</p>
     #[doc(hidden)]
@@ -23815,17 +22422,6 @@ impl TextDocumentStatistics {
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn indexed_text_bytes(&self) -> i64 {
         self.indexed_text_bytes
-    }
-}
-impl std::fmt::Debug for TextDocumentStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TextDocumentStatistics");
-        formatter.field(
-            "indexed_text_documents_count",
-            &self.indexed_text_documents_count,
-        );
-        formatter.field("indexed_text_bytes", &self.indexed_text_bytes);
-        formatter.finish()
     }
 }
 /// See [`TextDocumentStatistics`](crate::model::TextDocumentStatistics).
@@ -23876,7 +22472,7 @@ impl TextDocumentStatistics {
 
 /// <p>Provides statistical information about the FAQ questions and answers contained in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct FaqStatistics {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     #[doc(hidden)]
@@ -23886,16 +22482,6 @@ impl FaqStatistics {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     pub fn indexed_question_answers_count(&self) -> i32 {
         self.indexed_question_answers_count
-    }
-}
-impl std::fmt::Debug for FaqStatistics {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("FaqStatistics");
-        formatter.field(
-            "indexed_question_answers_count",
-            &self.indexed_question_answers_count,
-        );
-        formatter.finish()
     }
 }
 /// See [`FaqStatistics`](crate::model::FaqStatistics).
@@ -23962,7 +22548,7 @@ impl std::fmt::Debug for ServerSideEncryptionConfiguration {
 pub mod server_side_encryption_configuration {
 
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
@@ -23984,6 +22570,13 @@ pub mod server_side_encryption_configuration {
             }
         }
     }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("kms_key_id", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
+        }
+    }
 }
 impl ServerSideEncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -23994,7 +22587,7 @@ impl ServerSideEncryptionConfiguration {
 
 /// <p>Provides information about a document that could not be indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutDocumentResponseFailedDocument {
     /// <p>The unique identifier of the document.</p>
     #[doc(hidden)]
@@ -24018,15 +22611,6 @@ impl BatchPutDocumentResponseFailedDocument {
     /// <p>A description of the reason why the document could not be indexed.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchPutDocumentResponseFailedDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutDocumentResponseFailedDocument");
-        formatter.field("id", &self.id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchPutDocumentResponseFailedDocument`](crate::model::BatchPutDocumentResponseFailedDocument).
@@ -24095,7 +22679,7 @@ impl BatchPutDocumentResponseFailedDocument {
 
 /// <p>A document in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Document {
     /// <p>A unique identifier of the document in the index.</p>
     /// <p>Note, each document ID must be unique per index. You cannot create a data source to index your documents with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.</p>
@@ -24170,27 +22754,6 @@ impl Document {
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub fn access_control_configuration_id(&self) -> std::option::Option<&str> {
         self.access_control_configuration_id.as_deref()
-    }
-}
-impl std::fmt::Debug for Document {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Document");
-        formatter.field("id", &self.id);
-        formatter.field("title", &self.title);
-        formatter.field("blob", &self.blob);
-        formatter.field("s3_path", &self.s3_path);
-        formatter.field("attributes", &self.attributes);
-        formatter.field("access_control_list", &self.access_control_list);
-        formatter.field(
-            "hierarchical_access_control_list",
-            &self.hierarchical_access_control_list,
-        );
-        formatter.field("content_type", &self.content_type);
-        formatter.field(
-            "access_control_configuration_id",
-            &self.access_control_configuration_id,
-        );
-        formatter.finish()
     }
 }
 /// See [`Document`](crate::model::Document).
@@ -24476,7 +23039,7 @@ impl AsRef<str> for ContentType {
 
 /// <p>Provides information about the status of documents submitted for indexing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Status {
     /// <p>The unique identifier of the document.</p>
     #[doc(hidden)]
@@ -24509,16 +23072,6 @@ impl Status {
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-}
-impl std::fmt::Debug for Status {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Status");
-        formatter.field("document_id", &self.document_id);
-        formatter.field("document_status", &self.document_status);
-        formatter.field("failure_code", &self.failure_code);
-        formatter.field("failure_reason", &self.failure_reason);
-        formatter.finish()
     }
 }
 /// See [`Status`](crate::model::Status).
@@ -24718,7 +23271,7 @@ impl AsRef<str> for DocumentStatus {
 
 /// <p>Provides a response when the status of a document could not be retrieved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchGetDocumentStatusResponseError {
     /// <p>The unique identifier of the document whose status could not be retrieved.</p>
     #[doc(hidden)]
@@ -24742,15 +23295,6 @@ impl BatchGetDocumentStatusResponseError {
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchGetDocumentStatusResponseError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchGetDocumentStatusResponseError");
-        formatter.field("document_id", &self.document_id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchGetDocumentStatusResponseError`](crate::model::BatchGetDocumentStatusResponseError).
@@ -24819,7 +23363,7 @@ impl BatchGetDocumentStatusResponseError {
 
 /// <p>Identifies a document for which to retrieve status information</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DocumentInfo {
     /// <p>The unique identifier of the document.</p>
     #[doc(hidden)]
@@ -24860,14 +23404,6 @@ impl DocumentInfo {
     /// </ul>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::DocumentAttribute]> {
         self.attributes.as_deref()
-    }
-}
-impl std::fmt::Debug for DocumentInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DocumentInfo");
-        formatter.field("document_id", &self.document_id);
-        formatter.field("attributes", &self.attributes);
-        formatter.finish()
     }
 }
 /// See [`DocumentInfo`](crate::model::DocumentInfo).
@@ -24951,7 +23487,7 @@ impl DocumentInfo {
 
 /// <p>Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDocumentResponseFailedDocument {
     /// <p>The identifier of the document that couldn't be removed from the index.</p>
     #[doc(hidden)]
@@ -24975,15 +23511,6 @@ impl BatchDeleteDocumentResponseFailedDocument {
     /// <p>An explanation for why the document couldn't be removed from the index.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchDeleteDocumentResponseFailedDocument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDocumentResponseFailedDocument");
-        formatter.field("id", &self.id);
-        formatter.field("error_code", &self.error_code);
-        formatter.field("error_message", &self.error_message);
-        formatter.finish()
     }
 }
 /// See [`BatchDeleteDocumentResponseFailedDocument`](crate::model::BatchDeleteDocumentResponseFailedDocument).
@@ -25052,7 +23579,7 @@ impl BatchDeleteDocumentResponseFailedDocument {
 
 /// <p>Maps a particular data source sync job to a particular data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
     #[doc(hidden)]
@@ -25073,14 +23600,6 @@ impl DataSourceSyncJobMetricTarget {
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
     pub fn data_source_sync_job_id(&self) -> std::option::Option<&str> {
         self.data_source_sync_job_id.as_deref()
-    }
-}
-impl std::fmt::Debug for DataSourceSyncJobMetricTarget {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceSyncJobMetricTarget");
-        formatter.field("data_source_id", &self.data_source_id);
-        formatter.field("data_source_sync_job_id", &self.data_source_sync_job_id);
-        formatter.finish()
     }
 }
 /// See [`DataSourceSyncJobMetricTarget`](crate::model::DataSourceSyncJobMetricTarget).
@@ -25141,7 +23660,7 @@ impl DataSourceSyncJobMetricTarget {
 
 /// <p>Provides the configuration information for users or groups in your IAM Identity Center identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EntityPersonaConfiguration {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
@@ -25158,14 +23677,6 @@ impl EntityPersonaConfiguration {
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(&self) -> std::option::Option<&crate::model::Persona> {
         self.persona.as_ref()
-    }
-}
-impl std::fmt::Debug for EntityPersonaConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("EntityPersonaConfiguration");
-        formatter.field("entity_id", &self.entity_id);
-        formatter.field("persona", &self.persona);
-        formatter.finish()
     }
 }
 /// See [`EntityPersonaConfiguration`](crate::model::EntityPersonaConfiguration).

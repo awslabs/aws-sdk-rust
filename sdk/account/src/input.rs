@@ -491,7 +491,7 @@ impl GetContactInformationInput {
 pub mod put_alternate_contact_input {
 
     /// A builder for [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
@@ -592,6 +592,18 @@ pub mod put_alternate_contact_input {
                 alternate_contact_type: self.alternate_contact_type,
                 account_id: self.account_id,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("name", &"*** Sensitive Data Redacted ***");
+            formatter.field("title", &"*** Sensitive Data Redacted ***");
+            formatter.field("email_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+            formatter.field("alternate_contact_type", &self.alternate_contact_type);
+            formatter.field("account_id", &self.account_id);
+            formatter.finish()
         }
     }
 }
@@ -872,7 +884,7 @@ impl PutContactInformationInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutContactInformationInput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     #[doc(hidden)]
@@ -897,18 +909,10 @@ impl PutContactInformationInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for PutContactInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutContactInformationInput");
-        formatter.field("contact_information", &self.contact_information);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetContactInformationInput {
     /// <p>Specifies the 12-digit account ID number of the Amazon Web Services account that you want to access or modify with this operation. If you don't specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation. To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account. The specified account ID must also be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>
     /// <p>The management account can't specify its own <code>AccountId</code>. It must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>
@@ -924,13 +928,6 @@ impl GetContactInformationInput {
     /// <p>To call this operation on an account that is not a member of an organization, don't specify this parameter. Instead, call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetContactInformationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetContactInformationInput");
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }
 
@@ -1010,7 +1007,7 @@ impl std::fmt::Debug for PutAlternateContactInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DeleteAlternateContactInput {
     /// <p>Specifies which of the alternate contacts to delete. </p>
     #[doc(hidden)]
@@ -1041,18 +1038,10 @@ impl DeleteAlternateContactInput {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteAlternateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DeleteAlternateContactInput");
-        formatter.field("alternate_contact_type", &self.alternate_contact_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAlternateContactInput {
     /// <p>Specifies which alternate contact you want to retrieve.</p>
     #[doc(hidden)]
@@ -1081,13 +1070,5 @@ impl GetAlternateContactInput {
     /// <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetAlternateContactInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAlternateContactInput");
-        formatter.field("alternate_contact_type", &self.alternate_contact_type);
-        formatter.field("account_id", &self.account_id);
-        formatter.finish()
     }
 }

@@ -2950,7 +2950,7 @@ impl StopAssessmentInput {
 pub mod update_application_component_config_input {
 
     /// A builder for [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq)]
     pub struct Builder {
         pub(crate) application_component_id: std::option::Option<std::string::String>,
         pub(crate) inclusion_status: std::option::Option<crate::model::InclusionStatus>,
@@ -3044,6 +3044,17 @@ pub mod update_application_component_config_input {
                 source_code_list: self.source_code_list,
                 secrets_manager_key: self.secrets_manager_key,
             })
+        }
+    }
+    impl std::fmt::Debug for Builder {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            let mut formatter = f.debug_struct("Builder");
+            formatter.field("application_component_id", &self.application_component_id);
+            formatter.field("inclusion_status", &self.inclusion_status);
+            formatter.field("strategy_option", &self.strategy_option);
+            formatter.field("source_code_list", &self.source_code_list);
+            formatter.field("secrets_manager_key", &"*** Sensitive Data Redacted ***");
+            formatter.finish()
         }
     }
 }
@@ -3316,7 +3327,7 @@ impl UpdateServerConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
     #[doc(hidden)]
@@ -3333,14 +3344,6 @@ impl UpdateServerConfigInput {
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(&self) -> std::option::Option<&crate::model::StrategyOption> {
         self.strategy_option.as_ref()
-    }
-}
-impl std::fmt::Debug for UpdateServerConfigInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("UpdateServerConfigInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("strategy_option", &self.strategy_option);
-        formatter.finish()
     }
 }
 
@@ -3400,7 +3403,7 @@ impl std::fmt::Debug for UpdateApplicationComponentConfigInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
     #[doc(hidden)]
@@ -3412,17 +3415,10 @@ impl StopAssessmentInput {
         self.assessment_id.as_deref()
     }
 }
-impl std::fmt::Debug for StopAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StopAssessmentInput");
-        formatter.field("assessment_id", &self.assessment_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationInput {
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     #[doc(hidden)]
@@ -3441,18 +3437,10 @@ impl StartRecommendationReportGenerationInput {
         self.group_id_filter.as_deref()
     }
 }
-impl std::fmt::Debug for StartRecommendationReportGenerationInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartRecommendationReportGenerationInput");
-        formatter.field("output_format", &self.output_format);
-        formatter.field("group_id_filter", &self.group_id_filter);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
     #[doc(hidden)]
@@ -3499,22 +3487,10 @@ impl StartImportFileTaskInput {
         self.s3bucket_for_report_data.as_deref()
     }
 }
-impl std::fmt::Debug for StartImportFileTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartImportFileTaskInput");
-        formatter.field("name", &self.name);
-        formatter.field("s3_bucket", &self.s3_bucket);
-        formatter.field("s3key", &self.s3key);
-        formatter.field("data_source_type", &self.data_source_type);
-        formatter.field("group_id", &self.group_id);
-        formatter.field("s3bucket_for_report_data", &self.s3bucket_for_report_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartAssessmentInput {
     /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
     #[doc(hidden)]
@@ -3533,21 +3509,10 @@ impl StartAssessmentInput {
         self.s3bucket_for_report_data.as_deref()
     }
 }
-impl std::fmt::Debug for StartAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("StartAssessmentInput");
-        formatter.field(
-            "s3bucket_for_analysis_data",
-            &self.s3bucket_for_analysis_data,
-        );
-        formatter.field("s3bucket_for_report_data", &self.s3bucket_for_report_data);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PutPortfolioPreferencesInput {
     /// <p> The rank of the business goals based on priority. </p>
     #[doc(hidden)]
@@ -3577,19 +3542,10 @@ impl PutPortfolioPreferencesInput {
         self.database_preferences.as_ref()
     }
 }
-impl std::fmt::Debug for PutPortfolioPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("PutPortfolioPreferencesInput");
-        formatter.field("prioritize_business_goals", &self.prioritize_business_goals);
-        formatter.field("application_preferences", &self.application_preferences);
-        formatter.field("database_preferences", &self.database_preferences);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListServersInput {
     /// <p> Criteria for filtering servers. </p>
     #[doc(hidden)]
@@ -3636,22 +3592,10 @@ impl ListServersInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListServersInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListServersInput");
-        formatter.field("server_criteria", &self.server_criteria);
-        formatter.field("filter_value", &self.filter_value);
-        formatter.field("sort", &self.sort);
-        formatter.field("group_id_filter", &self.group_id_filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListImportFileTaskInput {
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     #[doc(hidden)]
@@ -3670,18 +3614,10 @@ impl ListImportFileTaskInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListImportFileTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListImportFileTaskInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCollectorsInput {
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     #[doc(hidden)]
@@ -3700,18 +3636,10 @@ impl ListCollectorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListCollectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListCollectorsInput");
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListApplicationComponentsInput {
     /// <p> Criteria for filtering the list of application components. </p>
     #[doc(hidden)]
@@ -3761,25 +3689,10 @@ impl ListApplicationComponentsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListApplicationComponentsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListApplicationComponentsInput");
-        formatter.field(
-            "application_component_criteria",
-            &self.application_component_criteria,
-        );
-        formatter.field("filter_value", &self.filter_value);
-        formatter.field("sort", &self.sort);
-        formatter.field("group_id_filter", &self.group_id_filter);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServerStrategiesInput {
     /// <p> The ID of the server. </p>
     #[doc(hidden)]
@@ -3791,17 +3704,10 @@ impl GetServerStrategiesInput {
         self.server_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetServerStrategiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServerStrategiesInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetServerDetailsInput {
     /// <p> The ID of the server. </p>
     #[doc(hidden)]
@@ -3827,19 +3733,10 @@ impl GetServerDetailsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for GetServerDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetServerDetailsInput");
-        formatter.field("server_id", &self.server_id);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsInput {
     /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
     #[doc(hidden)]
@@ -3851,39 +3748,20 @@ impl GetRecommendationReportDetailsInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetRecommendationReportDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetRecommendationReportDetailsInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPortfolioSummaryInput {}
-impl std::fmt::Debug for GetPortfolioSummaryInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPortfolioSummaryInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetPortfolioPreferencesInput {}
-impl std::fmt::Debug for GetPortfolioPreferencesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetPortfolioPreferencesInput");
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetImportFileTaskInput {
     /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
     #[doc(hidden)]
@@ -3895,17 +3773,10 @@ impl GetImportFileTaskInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetImportFileTaskInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetImportFileTaskInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetAssessmentInput {
     /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
     #[doc(hidden)]
@@ -3917,17 +3788,10 @@ impl GetAssessmentInput {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for GetAssessmentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetAssessmentInput");
-        formatter.field("id", &self.id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
     #[doc(hidden)]
@@ -3939,17 +3803,10 @@ impl GetApplicationComponentStrategiesInput {
         self.application_component_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetApplicationComponentStrategiesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationComponentStrategiesInput");
-        formatter.field("application_component_id", &self.application_component_id);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetApplicationComponentDetailsInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
     #[doc(hidden)]
@@ -3959,12 +3816,5 @@ impl GetApplicationComponentDetailsInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
     pub fn application_component_id(&self) -> std::option::Option<&str> {
         self.application_component_id.as_deref()
-    }
-}
-impl std::fmt::Debug for GetApplicationComponentDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("GetApplicationComponentDetailsInput");
-        formatter.field("application_component_id", &self.application_component_id);
-        formatter.finish()
     }
 }

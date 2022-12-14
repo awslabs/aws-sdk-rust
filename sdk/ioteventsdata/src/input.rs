@@ -2002,7 +2002,7 @@ impl ListDetectorsInput {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListDetectorsInput {
     /// <p>The name of the detector model whose detectors (instances) are listed.</p>
     #[doc(hidden)]
@@ -2035,20 +2035,10 @@ impl ListDetectorsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListDetectorsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListDetectorsInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("state_name", &self.state_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListAlarmsInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -2074,19 +2064,10 @@ impl ListAlarmsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAlarmsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ListAlarmsInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("next_token", &self.next_token);
-        formatter.field("max_results", &self.max_results);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     #[doc(hidden)]
@@ -2105,18 +2086,10 @@ impl DescribeDetectorInput {
         self.key_value.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeDetectorInput");
-        formatter.field("detector_model_name", &self.detector_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeAlarmInput {
     /// <p>The name of the alarm model.</p>
     #[doc(hidden)]
@@ -2135,18 +2108,10 @@ impl DescribeAlarmInput {
         self.key_value.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DescribeAlarmInput");
-        formatter.field("alarm_model_name", &self.alarm_model_name);
-        formatter.field("key_value", &self.key_value);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchUpdateDetectorInput {
     /// <p>The list of detectors (instances) to update, along with the values to update.</p>
     #[doc(hidden)]
@@ -2158,17 +2123,10 @@ impl BatchUpdateDetectorInput {
         self.detectors.as_deref()
     }
 }
-impl std::fmt::Debug for BatchUpdateDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchUpdateDetectorInput");
-        formatter.field("detectors", &self.detectors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
@@ -2183,17 +2141,10 @@ impl BatchSnoozeAlarmInput {
         self.snooze_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchSnoozeAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchSnoozeAlarmInput");
-        formatter.field("snooze_action_requests", &self.snooze_action_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchResetAlarmInput {
     /// <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
@@ -2208,17 +2159,10 @@ impl BatchResetAlarmInput {
         self.reset_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchResetAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchResetAlarmInput");
-        formatter.field("reset_action_requests", &self.reset_action_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchPutMessageInput {
     /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
     #[doc(hidden)]
@@ -2230,17 +2174,10 @@ impl BatchPutMessageInput {
         self.messages.as_deref()
     }
 }
-impl std::fmt::Debug for BatchPutMessageInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchPutMessageInput");
-        formatter.field("messages", &self.messages);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchEnableAlarmInput {
     /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
@@ -2255,17 +2192,10 @@ impl BatchEnableAlarmInput {
         self.enable_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchEnableAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchEnableAlarmInput");
-        formatter.field("enable_action_requests", &self.enable_action_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDisableAlarmInput {
     /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
@@ -2280,17 +2210,10 @@ impl BatchDisableAlarmInput {
         self.disable_action_requests.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDisableAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDisableAlarmInput");
-        formatter.field("disable_action_requests", &self.disable_action_requests);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchDeleteDetectorInput {
     /// <p>The list of one or more detectors to be deleted.</p>
     #[doc(hidden)]
@@ -2302,17 +2225,10 @@ impl BatchDeleteDetectorInput {
         self.detectors.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDeleteDetectorInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchDeleteDetectorInput");
-        formatter.field("detectors", &self.detectors);
-        formatter.finish()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
@@ -2325,15 +2241,5 @@ impl BatchAcknowledgeAlarmInput {
         &self,
     ) -> std::option::Option<&[crate::model::AcknowledgeAlarmActionRequest]> {
         self.acknowledge_action_requests.as_deref()
-    }
-}
-impl std::fmt::Debug for BatchAcknowledgeAlarmInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("BatchAcknowledgeAlarmInput");
-        formatter.field(
-            "acknowledge_action_requests",
-            &self.acknowledge_action_requests,
-        );
-        formatter.finish()
     }
 }
